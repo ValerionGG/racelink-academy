@@ -28,6 +28,9 @@ const vehicleFields = ["make", "model", "generation", "engine", "body_type", "fu
 const vehicleFilters = [...vehicleFields, "year"];
 const validFilter = value => value != null && value !== "" && !["all", "any", "*"].includes(String(value));
 const specKey = value => normalize(value).replace(/[^a-z0-9]/g, "");
+const contentFormats = {tutorial: "tutorial", tutorial_candidate: "tutorial", demonstration: "demonstration",
+  telemetry_demonstration: "demonstration", course: "course", course_candidate: "course", lecture: "course",
+  stream: "stream", training_stream_candidate: "stream", unspecified: "unspecified"};
 const taskPhrases = {
   oil_change: ["vidange", "oil change", "change oil", "cambio de aceite", "cambiar aceite"],
   oil_filter: ["filtre a huile", "oil filter", "filtro de aceite"],
@@ -63,8 +66,12 @@ export function prepareCatalog(payload) {
   for (const raw of payload.items || []) {
     if (!unique.has(raw.id)) {
       const item = {...raw};
+      item.resource_type = "video";
+      item.pedagogical_format = contentFormats[item.content_format || item.contentFormat] || "unspecified";
+      item.format_status = item.format_status || (item.pedagogical_format === "unspecified" ? "not_classified" : "metadata_candidate");
       const searchWords = wordsOf(item._search || [
         item.title, item.creator, item.description, ...(item.tags || []),
+        ...(item.source_questions || []).flatMap(question => [question.question, question.excerpt]),
       ].join(" "));
       item._tokens = [...new Set(searchWords)];
       item._titleTokens = wordsOf(item.title);
@@ -88,7 +95,7 @@ export function prepareCatalog(payload) {
     for (const spec of item.automotive.specifications) specifications.add(spec.value);
   }
   return {items, byId: unique, stats: payload.stats || {},
-    applications: [...applications.values()], specifications: [...specifications],
+    applications: [...applications.values()], specifications: [...specifications], guides: payload.guides || [],
     discovery: payload.discovery || {version: 1, intents: [], topics: [], shelves: []}, _discoveryCounts: new Map()};
 }
 
@@ -314,6 +321,9 @@ export function searchCatalog(catalog, params = {}, options = {}) {
   const perPage = numberParam(params, "per_page", 24, 100);
   const q = param(params, "q").trim();
   if (q.length > 300) throw new Error("Recherche limitée à 300 caractères");
+  const resourceFormat = param(params, "format", "all") || "all", contentFormat = param(params, "content_format");
+  if (!["all", "video", "guide", "image"].includes(resourceFormat)) throw new Error("Format de ressource invalide");
+  if (validFilter(contentFormat) && !Object.values(contentFormats).includes(contentFormat)) throw new Error("Format pédagogique invalide");
   const interpretation = inferAutomotive(catalog, q, params);
   const effective = Object.fromEntries(vehicleFilters.map(key => [key, param(params, key)]));
   for (const [key, value] of Object.entries(interpretation.vehicle)) if (!effective[key]) effective[key] = value;
@@ -337,6 +347,8 @@ export function searchCatalog(catalog, params = {}, options = {}) {
   if (ids && (ids.length > 100 || ids.some(id => !/^[A-Za-z0-9_:-]{1,100}$/.test(id)))) throw new Error("Identifiants invalides");
   const valid = value => value && !["all", "any", "*"].includes(value);
   const filtered = catalog.items.filter(item => {
+    if (!["all", "video"].includes(resourceFormat)) return false;
+    if (validFilter(contentFormat) && item.pedagogical_format !== contentFormat) return false;
     if (interpretation.conflicts.length) return false;
     if (Object.keys(vehicle).length && !item._vehicles.some(application => vehicleMatches(application, vehicle))) return false;
     if (validFilter(task) && !item.automotive.tasks.includes(task)) return false;
@@ -381,6 +393,8 @@ export function searchCatalog(catalog, params = {}, options = {}) {
     .map(key => [key, facet(results, key)]));
   facets.transcript = facet(results, "has_transcript", value => value ? "available" : "missing");
   facets.domain = facet(results, "domain_scope");
+  facets.content_format = facet(results, "pedagogical_format");
+  facets.format = [{value: "video", count: results.length}];
   for (const field of ["task", "system", "spec"]) facets[field] = automotiveFacet(results, field);
   const score = item => groups.reduce((sum, group) => sum +
     (group.some(term => termMatch(item._titleTokens, normalize(item.title), term)) ? 5 : 0) +
@@ -399,7 +413,8 @@ export function searchCatalog(catalog, params = {}, options = {}) {
       sorted.sort((a, b) => scores.get(b.id) - scores.get(a.id) || compareTitle(a, b));
     } else sorted.sort((a, b) => Number(selection(b)) - Number(selection(a)) || compareTitle(a, b));
   } else sorted.sort(compareTitle);
-  return {items: sorted.slice((page - 1) * perPage, page * perPage).map(clean), total: results.length,
+  const offset = options.offset ?? (page - 1) * perPage;
+  return {items: sorted.slice(offset, offset + perPage).map(clean), total: results.length,
     page, per_page: perPage, pages: Math.ceil(results.length / perPage), facets, query: q, sort,
     search_mode: searchMode, expanded_topics: expandedTopics, engine: "static-prefix",
     inferred_vehicle: interpretation.vehicle, inferred_task: interpretation.task, inferred_spec: interpretation.spec,
@@ -412,12 +427,17 @@ export function catalogStats(catalog) {
   const facets = Object.fromEntries(["category", "language", "platform", "level", "license"]
     .map(key => [key, facet(items, key)]));
   facets.domain = facet(items, "domain_scope");
+  facets.content_format = facet(items, "pedagogical_format");
+  facets.format = [{value: "video", count: items.length}, {value: "guide", count: catalog.guides.length}, {value: "image", count: 0}];
   for (const field of ["task", "system", "spec"]) facets[field] = automotiveFacet(items, field);
-  return {...catalog.stats, total_videos: items.length,
+  return {...catalog.stats, total_videos: items.length, total_guides: catalog.guides.length,
+    total_images: 0, total_resources: items.length + catalog.guides.length,
     platforms: new Set(items.map(item => item.platform)).size,
     languages: new Set(items.map(item => item.language).filter(value => !["und", "mul"].includes(value))).size,
     categories: new Set(items.map(item => item.category)).size,
     with_transcript: items.filter(item => item.has_transcript).length,
+    with_source_questions: items.filter(item => item.source_questions?.length).length,
+    total_source_questions: items.reduce((total, item) => total + (item.source_questions?.length || 0), 0),
     with_vehicle_mentions: items.filter(item => item._vehicles.length).length,
     selected_videos: items.filter(item => item.review_status === "editorial_selection").length,
     verified_videos: items.filter(item => item.content_verified).length,
@@ -434,8 +454,67 @@ export function videoDetail(catalog, id) {
   return {...clean(item), transcript: null, related};
 }
 
+function matchingGuides(catalog, params, interpretation) {
+  if (interpretation.conflicts.length || Object.keys(interpretation.vehicle).length || interpretation.spec ||
+      [...vehicleFilters, "spec", "system", "duration", "content_format"].some(key => validFilter(param(params, key)))) return [];
+  const task = param(params, "task") || interpretation.task;
+  const terms = wordsOf(interpretation.residual).filter(word => !automotiveStopwords.has(word));
+  return catalog.guides.filter(guide => {
+    if (validFilter(task) && guide.task !== task) return false;
+    for (const [key, column] of [["language", "language"], ["platform", "platform"], ["category", "category"],
+      ["level", "level"], ["license", "license"], ["domain", "domain_scope"]])
+      if (validFilter(param(params, key)) && param(params, key) !== String(guide[column] || "")) return false;
+    if (["available", "true", "1"].includes(param(params, "transcript"))) return false;
+    if (param(params, "ids") && !param(params, "ids").split(",").includes(guide.id)) return false;
+    const original = guide.guide || {};
+    const text = ["title", "intro", "summary", "steps", "checklist", "fields", "missingDetailsMessage"]
+      .map(key => discoveryText(original[key])).join(" ") + " " + (taskPhrases[guide.task] || []).join(" ");
+    const words = wordsOf(text);
+    return terms.every(term => words.some(word => word.startsWith(term)));
+  }).sort(compareTitle);
+}
+
+export function searchResources(catalog, params = {}, options = {}) {
+  const kind = param(params, "format", "all") || "all";
+  if (!["all", "video", "guide", "image"].includes(kind)) throw new Error("Format de ressource invalide");
+  const videoParams = Object.fromEntries(Object.entries(params instanceof URLSearchParams ? Object.fromEntries(params) : params)
+    .filter(([key]) => key !== "format"));
+  const interpretation = inferAutomotive(catalog, param(params, "q").trim(), params);
+  const guides = matchingGuides(catalog, params, interpretation);
+  const page = numberParam(params, "page", 1, 1000000), size = numberParam(params, "per_page", 24, 100);
+  const start = (page - 1) * size, offset = kind === "all" ? Math.max(0, start - guides.length) : start;
+  const videos = searchCatalog(catalog, videoParams, {countOnly: options.countOnly, offset});
+  const total = (["all", "video"].includes(kind) ? videos.total : 0) + (["all", "guide"].includes(kind) ? guides.length : 0);
+  if (options.countOnly) return {total};
+  const items = ["all", "guide"].includes(kind) ? guides.slice(start, start + size) : [];
+  if (["all", "video"].includes(kind)) items.push(...videos.items.slice(0, size - items.length));
+  const facets = Object.fromEntries(Object.entries(videos.facets).map(([key, values]) =>
+    [key, ["all", "video"].includes(kind) ? [...values] : []]));
+  if (["all", "guide"].includes(kind)) {
+    for (const [name, column] of [["category", "category"], ["level", "level"], ["language", "language"],
+      ["platform", "platform"], ["license", "license"], ["domain", "domain_scope"], ["task", "task"], ["transcript", "transcript_status"]]) {
+      const counts = new Map((facets[name] || []).map(item => [item.value, item.count]));
+      for (const guide of guides) {
+        const value = name === "transcript" ? "missing" : guide[column];
+        if (value) counts.set(value, (counts.get(value) || 0) + 1);
+      }
+      facets[name] = [...counts].map(([value, count]) => ({value, count}))
+        .sort((a, b) => b.count - a.count || (a.value < b.value ? -1 : a.value > b.value ? 1 : 0));
+    }
+  }
+  facets.format = [{value: "video", count: videos.total}, {value: "guide", count: guides.length}, {value: "image", count: 0}];
+  return {...videos, items, total, pages: Math.ceil(total / size), facets, format: kind,
+    total_videos: videos.total, total_guides: guides.length, total_images: 0,
+    ordering: "guides_first_then_videos", compatibility_verified: false};
+}
+
+export function guideDetail(catalog, id) {
+  const resource = catalog.guides.find(guide => guide.id === id);
+  return resource ? {resource} : null;
+}
+
 const discoveryFilters = [...vehicleFilters, "task", "system", "spec", "category", "level",
-  "language", "platform", "license", "duration", "transcript", "domain", "ids"];
+  "language", "platform", "license", "duration", "transcript", "domain", "ids", "format", "content_format"];
 const discoveryContext = params => Object.fromEntries(discoveryFilters.map(key => [key, param(params, key)])
   .filter(([, value]) => validFilter(value)));
 const discoveryText = value => value && typeof value === "object"
@@ -455,7 +534,7 @@ function discoveryCount(catalog, params) {
   const key = JSON.stringify(Object.entries(params).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0));
   if (!catalog._discoveryCounts.has(key)) {
     if (catalog._discoveryCounts.size >= 512) catalog._discoveryCounts.delete(catalog._discoveryCounts.keys().next().value);
-    catalog._discoveryCounts.set(key, searchCatalog(catalog, params, {countOnly: true}).total);
+    catalog._discoveryCounts.set(key, searchResources(catalog, params, {countOnly: true}).total);
   }
   return catalog._discoveryCounts.get(key);
 }
@@ -627,6 +706,14 @@ export function suggestCatalog(catalog, params = {}, config = catalog.discovery)
     }
     if (items.length >= (query ? 3 : 5)) break;
   }
+  if (query && items.length < 6 && ["all", "guide"].includes(context.format || "all")) {
+    const found = searchResources(catalog, {...context, format: "guide", q: query, per_page: String(6 - items.length)});
+    items.push(...found.items.map(guide => ({type: "guide", resource_type: "guide", id: guide.id,
+      label: guide.title, query, filters: context, reason: {
+        fr: "Guide RaceLink avec sources citées, correspondant à la recherche.",
+        en: "RaceLink guide with cited sources matching the search.",
+        es: "Guía RaceLink con fuentes citadas que coincide con la búsqueda."}})));
+  }
   if (query && items.length < 6) {
     const result = searchCatalog(catalog, {...context, q: query, per_page: String(6 - items.length), sort: "title"});
     items.push(...result.items.map(item => ({type: "video", id: item.id, video_id: item.id, label: item.title, query,
@@ -655,8 +742,11 @@ export function recommendCatalog(catalog, params = {}, config = catalog.discover
   }
   const sameFilters = filters => Object.keys(filters).length === Object.keys(context).length &&
     Object.entries(filters).every(([key, value]) => context[key] === value);
-  const topics = discoveryTopics(catalog, config, context).filter(topic => topic.count > 0 && !interpretation.conflicts.length &&
+  let topics = discoveryTopics(catalog, config, context).filter(topic => topic.count > 0 && !interpretation.conflicts.length &&
     !(sameFilters(topic.filters) && normalize(topic.query || "") === normalize(query)));
+  const related = topics.filter(topic => topicScore(topic, query) > 0 ||
+    (interpretation.task && topic.filters.task === interpretation.task));
+  if (query && (interpretation.task || (config.topics || []).some(topic => topicScore(topic, query) > 0))) topics = related;
   const defaults = config.defaultTopicIds || [], positions = new Map(topics.map((topic, index) => [topic.id, index]));
   const order = topic => defaults.includes(topic.id) ? defaults.indexOf(topic.id) : defaults.length + positions.get(topic.id);
   topics.sort((a, b) => topicScore(b, query) - topicScore(a, query) || order(a) - order(b));
@@ -721,6 +811,11 @@ if (typeof self !== "undefined" && typeof self.postMessage === "function" && typ
         const url = new URL(path, catalogLocation);
         const route = decodeURIComponent(url.pathname).replace(/^.*\/api\//, "/api/");
         if (route === "/api/stats") result = catalogStats(loadedCatalog);
+        else if (route === "/api/resources" || route === "/api/resources/") result = searchResources(loadedCatalog, url.searchParams);
+        else if (route.startsWith("/api/resources/guide/")) {
+          result = guideDetail(loadedCatalog, route.slice("/api/resources/guide/".length));
+          if (!result) throw new Error("Guide introuvable");
+        }
         else if (route === "/api/discovery") result = discoveryCatalog(loadedCatalog, url.searchParams);
         else if (route === "/api/suggestions") result = suggestCatalog(loadedCatalog, url.searchParams);
         else if (route === "/api/recommendations") result = recommendCatalog(loadedCatalog, url.searchParams);

@@ -3,6 +3,7 @@ import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui
 import {createDiscoveryUI} from './discovery-ui.js';
 import {createRaceLinkPicks} from './racelink-picks.js';
 import {createMobileUI} from './mobile-ui.js';
+import {createGuideUI} from './guide-ui.js';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -14,6 +15,8 @@ const dictionaries = {
   en: {brandSub:'KNOWLEDGE MAKES THE DIFFERENCE.',explore:'Explore',paths:'Learning paths',help:'Help & FAQ',saved:'My collection',academy:'Masterclasses ↗',openLibrary:'THE OPEN MOTORSPORT LIBRARY',headline:'ONE QUESTION.<br>ONE INSIGHT.<br><span>ONE LAP AHEAD.</span>',intro:'From your first braking point to professional precision.<br>Paddock knowledge, brought together for you.',try:'Explore',startHere:'START HERE',pathLabel:'LEARNING PATH · DRIVING',featureTitle:'YOUR NEXT CORNER<br>STARTS HERE.',featureCta:'Explore the fundamentals',references:'videos indexed',accessNote:'Public sources · Credited creators · Direct access',method:'Our approach ↗',findAnswer:'THE RIGHT KNOWLEDGE, AT THE RIGHT TIME',catalogTitle:'Find your own racing line.',filters:'Filters',refine:'Refine your search',reset:'Clear',discipline:'DISCIPLINE',level:'LEVEL',language:'VIDEO LANGUAGE',platform:'PLATFORM',duration:'AVAILABLE TIME',withTranscript:'With transcript',freeLicense:'Confirmed open license',filterNote:'Every step forward starts with a good question.',catalogDisclosure:'Listings are based on public metadata. Teaching quality, language and level still need confirmation for videos marked “To review”.',notAlone:'LOOKING FOR A STARTING POINT?',helpTitle:'Learning starts<br>with asking questions.',faqQuick1:'How do I read a transcript?',faqQuick2:'What if the video is in another language?',faqQuick3:'Explore all help topics',footer:'Share the passion. Share the knowledge.'},
   es: {brandSub:'EL SABER MARCA LA DIFERENCIA.',explore:'Explorar',paths:'Itinerarios',help:'Ayuda y FAQ',saved:'Mi selección',academy:'Clases magistrales ↗',openLibrary:'LA BIBLIOTECA ABIERTA DEL AUTOMOVILISMO',headline:'UNA PREGUNTA.<br>UNA NUEVA IDEA.<br><span>UNA VUELTA POR DELANTE.</span>',intro:'De la primera frenada a la precisión profesional.<br>El conocimiento del paddock, reunido para ti.',try:'Explora',startHere:'EMPIEZA AQUÍ',pathLabel:'ITINERARIO · PILOTAJE',featureTitle:'TU PRÓXIMA CURVA<br>EMPIEZA AQUÍ.',featureCta:'Explora los fundamentos',references:'vídeos referenciados',accessNote:'Fuentes públicas · Autores acreditados · Acceso directo',method:'Nuestro método ↗',findAnswer:'EL CONOCIMIENTO QUE NECESITAS',catalogTitle:'Encuentra tu propia trazada.',filters:'Filtros',refine:'Afinar la búsqueda',reset:'Borrar',discipline:'DISCIPLINA',level:'NIVEL',language:'IDIOMA DEL VÍDEO',platform:'PLATAFORMA',duration:'TIEMPO DISPONIBLE',withTranscript:'Con transcripción',freeLicense:'Licencia libre confirmada',filterNote:'Cada avance empieza con una buena pregunta.',catalogDisclosure:'Las referencias se basan en metadatos públicos. La calidad didáctica, el idioma y el nivel requieren confirmación en los vídeos marcados «Por revisar».',notAlone:'¿BUSCAS UN PUNTO DE PARTIDA?',helpTitle:'Aprender empieza<br>haciendo preguntas.',faqQuick1:'¿Cómo leer una transcripción?',faqQuick2:'¿Y si el vídeo está en otro idioma?',faqQuick3:'Ver toda la ayuda',footer:'La pasión se comparte. El conocimiento también.'}
 };
+Object.assign(dictionaries.en,{explore:'Home',openLibrary:'YOUR NEXT STEP STARTS HERE',headline:'A question?<br><span>Find out how.</span>',intro:'Maintain your car, improve on track or in a simulator.<br>Videos and guides to put knowledge into practice.',catalogTitle:'Find your answer.',discipline:'TOPIC',language:'LANGUAGE'});
+Object.assign(dictionaries.es,{explore:'Inicio',openLibrary:'TU PRÓXIMO PASO EMPIEZA AQUÍ',headline:'¿Una pregunta?<br><span>Descubre cómo.</span>',intro:'Cuida tu coche, mejora en pista o en simulación.<br>Vídeos y guías para pasar a la práctica.',catalogTitle:'Encuentra tu respuesta.',discipline:'TEMA',language:'IDIOMA'});
 const originalText = Object.fromEntries($$('[data-i18n]').map(el => [el.dataset.i18n,el.innerHTML]));
 const t = (fr,en,es) => ui === 'en' ? en : ui === 'es' ? es : fr;
 const categories = [
@@ -28,7 +31,7 @@ const categories = [
 ];
 const catName = value => {const c = categories.find(c => c[0] === value);return c ? t(c[2],c[3],c[4]) : value;};
 const levelName = value => ({beginner:t('Débutant','Beginner','Principiante'),intermediate:t('Intermédiaire','Intermediate','Intermedio'),advanced:t('Avancé / Pro','Advanced / Pro','Avanzado / Pro'),all:t('Tous niveaux','All levels','Todos los niveles'),unknown:t('À qualifier','To review','Por revisar')})[value] || value;
-const platformName = value => ({youtube:'YouTube',dailymotion:'Dailymotion',vimeo:'Vimeo',tiktok:'TikTok',instagram:'Instagram',facebook:'Facebook',twitch:'Twitch',bilibili:'Bilibili'})[value] || value;
+const platformName = value => ({youtube:'YouTube',dailymotion:'Dailymotion',vimeo:'Vimeo',tiktok:'TikTok',instagram:'Instagram',facebook:'Facebook',twitch:'Twitch',bilibili:'Bilibili',racelink:'RaceLink'})[value] || value;
 const licenseName = value => value==='creative-commons'?'Creative Commons · CC BY':value==='public-domain'?t('Domaine public','Public domain','Dominio público'):value==='permission'?t('Autorisation de l’auteur','Creator permission','Permiso del autor'):t('Non confirmée','Unconfirmed','Sin confirmar');
 function readingSegments(raw){
   const groups=[];
@@ -46,7 +49,8 @@ const langName = value => {if (!value || value === 'und') return t('Non confirm�
 const fmtDuration = seconds => {if (!seconds) return t('Durée inconnue','Duration unknown','Duración desconocida');const n=Math.round(seconds);return n>=3600 ? `${Math.floor(n/3600)}:${String(Math.floor(n%3600/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}` : `${Math.floor(n/60)}:${String(n%60).padStart(2,'0')}`;};
 const safeUrl = (value, image = false) => {try{const u = new URL(value);return u.protocol === 'https:' || (!image && u.protocol === 'http:' && ['localhost','127.0.0.1'].includes(u.hostname)) ? u.href : '';}catch{return '';}};
 const readSaved = () => storage.get('rl-library-saved',{});let saved = readSaved();
-let state = {...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};
+let state = {...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};
+let browsing=false;
 let view='explore',stats=null,loadedItems=[],detail=null,requestVersion=0,detailVersion=0,toastTimer=null,lastTotal=null,activeTrack='';
 let faqItems = [];
 const seedFaq = [
@@ -59,12 +63,14 @@ const seedFaq = [
 ];
 
 const raceLinkPicks=createRaceLinkPicks({escape,t,getUi:()=>ui});
+const guideUI=createGuideUI({escape,t,picks:raceLinkPicks,safeUrl});
+const openGuide=id=>{++detailVersion;detail=null;guideUI.open(id);};
 const automotiveUI=createAutomotiveUI({
   escape,t,storage,picks:raceLinkPicks,getState:()=>state,getUi:()=>ui,change:setFilter,toast:showToast,
-  patch(patch){state={...state,...patch,page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
+  patch(patch){browsing=true;state={...state,...patch,page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
 });
 const discoveryUI=createDiscoveryUI({
-  escape,t,storage,picks:raceLinkPicks,getState:()=>state,getUi:()=>ui,langName,openVideo,
+  escape,t,storage,picks:raceLinkPicks,getState:()=>state,getUi:()=>ui,langName,openVideo,openGuide,
   onPicksChange(){
     const grid=$('#video-grid');
     if(loadedItems.length&&grid.getAttribute('aria-busy')!=='true'){grid.innerHTML=loadedItems.map(cardMarkup).join('');setImageFallback(grid);}
@@ -75,7 +81,7 @@ const discoveryUI=createDiscoveryUI({
   clearVehicle(){vehicleKeys.forEach(key=>state[key]='');syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();},
   applySearch(patch){
     document.dispatchEvent(new Event('rl:search-chosen'));
-    state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',duration:'',transcript:'',license:'',sort:'relevance',page:1,...patch};
+    browsing=true;state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1,...patch};
     changeView('explore',false);syncControls();syncUrl(true);automotiveUI.loadOptions();loadVideos();
     $('#catalog-heading').scrollIntoView({behavior:'smooth'});
   }
@@ -85,28 +91,35 @@ const mobileUI=createMobileUI({t,getState:()=>state,getTotal:()=>lastTotal,isLoa
 function showToast(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3000);}
 function updateSavedCount(){$('#saved-count').textContent=Object.keys(saved).length;}
 function syncUrl(push=false){
-  const u=new URL(location.href);u.search='';
+  const u=new URL(location.href);u.search='';if(!browsing)u.hash='';
+  if(browsing)u.searchParams.set('browse','1');
   if(view!=='explore')u.searchParams.set('view',view);
   if(view==='paths'&&activeTrack)u.searchParams.set('track',activeTrack);
-  for(const [key,value] of Object.entries(state))if(value&&!(key==='page'&&value===1)&&!(key==='sort'&&value==='relevance'))u.searchParams.set(key,value);
+  for(const [key,value] of Object.entries(state))if(value&&!(key==='page'&&value===1)&&!(key==='sort'&&value==='relevance')&&!(key==='format'&&value==='all'))u.searchParams.set(key,value);
   if(ui!=='fr')u.searchParams.set('ui',ui);
   history[push?'pushState':'replaceState']({},'',u);
 }
 function restoreUrl(){
   const p=new URLSearchParams(location.search);
-  for(const key of Object.keys(state))state[key]=p.get(key)||(key==='page'?1:key==='sort'?'relevance':'');
+  for(const key of Object.keys(state))state[key]=p.get(key)||(key==='page'?1:key==='sort'?'relevance':key==='format'?'all':'');
+  browsing=p.has('browse')||Object.entries(state).some(([k,v])=>v&&!['page','sort'].includes(k)&&!(k==='format'&&v==='all'));
   state.page=Math.max(1,Number(state.page)||1);
   if(['fr','en','es'].includes(p.get('ui')))ui=p.get('ui');
   view=['paths','faq','saved'].includes(p.get('view'))?p.get('view'):'explore';
   activeTrack=tracks[p.get('track')]?p.get('track'):'';
 }
 function syncControls(){
+  document.body.classList.toggle('results-mode',browsing);
+  $('#explore-view .catalog').hidden=!browsing;
+  $$('#format-tabs button').forEach(b=>b.setAttribute('aria-pressed',String((state.format||'all')===b.dataset.format)));
+  $('.results-back').textContent=t('← Accueil','← Home','← Inicio');
+  $('.advanced-filters>summary').textContent=t('Plus de filtres','More filters','Más filtros');
   $('#search').value=state.q;
-  for(const key of ['level','language','platform','duration','sort','domain'])$(`#${key}`).value=state[key]||'';
+  for(const key of ['level','language','platform','duration','sort','domain','content_format'])$(`#${key}`).value=state[key]||'';
   $('#transcript').checked=Boolean(state.transcript);$('#license').checked=Boolean(state.license);automotiveUI.sync();
   const selectedVehicle=vehicleKeys.map(key=>state[key]).filter(Boolean);
   $('#vehicle-disclosure-value').textContent=selectedVehicle.length?selectedVehicle.join(' · '):t('Marque, moteur, huile, intervention…','Make, engine, oil, task…','Marca, motor, aceite, tarea…');
-  if(selectedVehicle.length||location.hash==='#vehicle-hub')$('#vehicle-disclosure').open=true;
+  if(location.hash==='#vehicle-hub')$('#vehicle-disclosure').open=true;
   mobileUI.update();
 }
 function applyTranslations(){
@@ -116,8 +129,14 @@ function applyTranslations(){
   $('#search').setAttribute('aria-label',t('Rechercher des tutoriels','Search tutorials','Buscar tutoriales'));
   $('#search-form button').setAttribute('aria-label',t('Lancer la recherche','Search','Buscar'));
   $('.results-toolbar label .sr-only').textContent=t('Trier les résultats','Sort results','Ordenar resultados');
-  $('#hero-feature img').alt=t('Voiture de course GT rouge en piste','Red GT racing car on track','Coche GT rojo en pista');
   $('label[for="domain"]').textContent=t('CONTEXTE','CONTEXT','CONTEXTO');
+  $('label[for="content_format"]').textContent=t('TYPE DE VIDÉO','VIDEO TYPE','TIPO DE VÍDEO');
+  $('.filter-explainer').textContent=t('Tutoriel, démonstration, cours ou direct. Classement selon les informations disponibles.','Tutorial, demonstration, course or stream. Classification uses available information.','Tutorial, demostración, curso o directo. Clasificación según la información disponible.');
+  $('#format-tabs').setAttribute('aria-label',t('Format de la ressource','Resource format','Formato del recurso'));
+  $('.hero h1').tabIndex=-1;
+  $('.suggestions [data-query="vidange"]').textContent=t('Faire une vidange','Change engine oil','Cambiar el aceite');
+  $('.suggestions [data-query="freinage"]').textContent=t('Mieux freiner','Improve braking','Mejorar la frenada');
+  $('.suggestions [data-query="sim racing"]').textContent=t('Régler mon simulateur','Set up my simulator','Ajustar mi simulador');
   $('#domain').innerHTML=[['',t('Tous les contextes','All contexts','Todos los contextos')],['motorsport',t('Motorsport & fondamentaux','Motorsport & fundamentals','Automovilismo y fundamentos')],['automotive_adjacent',t('Mécanique automobile','Automotive mechanics','Mecánica del automóvil')]].map(([v,l])=>`<option value="${v}">${l}</option>`).join('');
   $('#level').innerHTML=`<option value="">${t('Tous les niveaux','All levels','Todos los niveles')}</option>${['beginner','intermediate','advanced'].map(x=>`<option value="${x}">${levelName(x)}</option>`).join('')}`;
   $('#duration').innerHTML=[['',t('Toutes les durées','Any duration','Cualquier duración')],['short',t('Moins de 10 min','Under 10 min','Menos de 10 min')],['medium','10–30 min'],['long',t('Plus de 30 min','Over 30 min','Más de 30 min')]].map(([v,l])=>`<option value="${v}">${l}</option>`).join('');
@@ -150,14 +169,19 @@ function renderFacets(){
   $('#language').innerHTML=`<option value="">${t('Toutes les langues','All languages','Todos los idiomas')}</option>${langs.map(f=>`<option value="${escape(f.value)}">${escape(langName(f.value))} (${f.count})</option>`).join('')}`;
   if(currentLang&&!langs.some(f=>f.value===currentLang))$('#language').insertAdjacentHTML('beforeend',`<option value="${escape(currentLang)}">${escape(langName(currentLang))}</option>`);
   $('#language').value=currentLang;
-  const platforms=['youtube','dailymotion','vimeo','tiktok','instagram','facebook','twitch','bilibili'];
+  const platforms=['youtube','dailymotion','vimeo','tiktok','instagram','facebook','twitch','bilibili','racelink'].filter(v=>v===state.platform||(facets.platform||[]).some(f=>f.value===v&&f.count>0));
   $('#platform').innerHTML=`<option value="">${t('Toutes les plateformes','All platforms','Todas las plataformas')}</option>${platforms.map(value=>`<option value="${value}">${platformName(value)} (${(facets.platform||[]).find(f=>f.value===value)?.count||0})</option>`).join('')}`;
   $('#platform').value=state.platform;
+  const types={tutorial:t('Tutoriel','Tutorial','Tutorial'),demonstration:t('Démonstration','Demonstration','Demostración'),course:t('Cours','Course','Curso'),stream:t('Direct / replay','Stream / replay','Directo / repetición'),unspecified:t('Type à confirmer','Unconfirmed type','Tipo sin confirmar')};
+  $('#content_format').innerHTML=`<option value="">${t('Tous les types','All types','Todos los tipos')}</option>${Object.entries(types).map(([v,l])=>`<option value="${v}">${l} (${(facets.content_format||[]).find(f=>f.value===v)?.count||0})</option>`).join('')}`;
+  $('#content_format').value=state.content_format;
+  $$('#format-tabs button').forEach(button=>{const v=button.dataset.format,label=v==='all'?t('Tout','All','Todo'):v==='video'?t('Vidéos','Videos','Vídeos'):t('Guides','Guides','Guías');const n=v==='all'?(facets.format||[]).reduce((sum,x)=>sum+x.count,0):(facets.format||[]).find(f=>f.value===v)?.count;button.innerHTML=`${label}${n===undefined?'':` <span>${Number(n).toLocaleString(ui)}</span>`}`;});
 }
 function cardMarkup(video){
+  if(video.resource_type==='guide')return guideUI.card(video);
   const image=safeUrl(video.thumbnail_url||video.thumbnailUrl,true), id=escape(video.id);
   const review=['curated','editorial_review','editorial_selection','verified'].includes(video.review_status||video.reviewStatus);
-  return `<article class="video-card ${raceLinkPicks.has('video',video.id)?'is-racelink-pick':''}"><button class="thumbnail" data-video="${id}" aria-label="${escape(t('Ouvrir : ','Open: ','Abrir: ')+video.title)}">${image?`<img src="${escape(image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:`<span class="thumb-fallback">${escape(catName(video.category))}</span>`}${raceLinkPicks.badge('video',video.id,{overlay:true})}<span class="thumb-platform"><i class="platform-dot"></i>${escape(platformName(video.platform))}</span><span class="thumb-play" aria-hidden="true">▶</span><span class="thumb-duration">${escape(fmtDuration(video.duration_seconds))}</span></button><div class="card-heading"><h3 dir="auto"><button class="title-button" data-video="${id}">${escape(video.title)}</button></h3><button class="save-card ${saved[video.id]?'saved':''}" data-save="${id}" aria-label="${escape(saved[video.id]?t('Retirer de ma sélection','Remove from collection','Quitar de mi selección'):t('Enregistrer la vidéo','Save video','Guardar vídeo'))}" aria-pressed="${Boolean(saved[video.id])}">${saved[video.id]?'▰':'▱'}</button></div><p class="creator">${escape(video.creator||platformName(video.platform))}</p><div class="card-tags"><span class="tag category">${escape(catName(video.category))}</span><span class="tag">${escape(langName(video.language))}${/estimate|inferred/.test(String(video.language_status||''))?' *':''}</span>${video.domain_scope==='automotive_adjacent'?`<span class="tag">${t('Mécanique auto','Automotive','Mecánica auto')}</span>`:''}${(video.content_format||video.contentFormat)==='telemetry_demonstration'?`<span class="tag">${t('Tour & télémétrie','Lap & telemetry','Vuelta y telemetría')}</span>`:''}${video.has_transcript?`<span class="tag transcript">${t('Transcription','Transcript','Transcripción')}</span>`:''}<span class="tag review">${review?t('Sélection éditoriale','Editorial pick','Selección editorial'):t('À qualifier','To review','Por revisar')}</span></div>${automotiveUI.cardMarkup(video)}</article>`;
+  return `<article class="video-card ${raceLinkPicks.has('video',video.id)?'is-racelink-pick':''}"><button class="thumbnail" data-video="${id}" aria-label="${escape(t('Ouvrir : ','Open: ','Abrir: ')+video.title)}">${image?`<img src="${escape(image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:`<span class="thumb-fallback">${escape(platformName(video.platform))}<small>${t('Aperçu indisponible','Preview unavailable','Vista previa no disponible')}</small></span>`}${raceLinkPicks.badge('video',video.id,{overlay:true})}<span class="thumb-platform"><i class="platform-dot"></i>${escape(platformName(video.platform))}</span><span class="thumb-play" aria-hidden="true">▶</span><span class="thumb-duration">${escape(fmtDuration(video.duration_seconds))}</span></button><div class="card-heading"><h3 dir="auto"><button class="title-button" data-video="${id}">${escape(video.title)}</button></h3><button class="save-card ${saved[video.id]?'saved':''}" data-save="${id}" aria-label="${escape(saved[video.id]?t('Retirer de ma sélection','Remove from collection','Quitar de mi selección'):t('Enregistrer la vidéo','Save video','Guardar vídeo'))}" aria-pressed="${Boolean(saved[video.id])}">${saved[video.id]?'▰':'▱'}</button></div><p class="creator">${escape(video.creator||platformName(video.platform))}</p><div class="card-tags"><span class="tag category">${escape(catName(video.category))}</span><span class="tag">${escape(langName(video.language))}${/estimate|inferred/.test(String(video.language_status||''))?' *':''}</span>${video.domain_scope==='automotive_adjacent'?`<span class="tag">${t('Mécanique auto','Automotive','Mecánica auto')}</span>`:''}${(video.content_format||video.contentFormat)==='telemetry_demonstration'?`<span class="tag">${t('Tour & télémétrie','Lap & telemetry','Vuelta y telemetría')}</span>`:''}${video.has_transcript?`<span class="tag transcript">${t('Transcription','Transcript','Transcripción')}</span>`:''}<span class="tag review">${review?t('Sélection éditoriale','Editorial pick','Selección editorial'):t('À qualifier','To review','Por revisar')}</span></div>${automotiveUI.cardMarkup(video)}</article>`;
 }
 function setImageFallback(root){
   $$('img',root).forEach(img=>img.addEventListener('error',()=>{img.style.display='none';const parent=img.parentElement;if(parent.classList.contains('thumbnail'))parent.insertAdjacentHTML('afterbegin','<span class="thumb-fallback">RACELINK</span>');},{once:true}));
@@ -176,7 +200,7 @@ async function loadVideos(){
   $('#results-status').textContent=t('Recherche en cours…','Searching…','Buscando…');
   if(!loadedItems.length)grid.innerHTML=Array.from({length:6},()=>'<div class="skeleton" aria-hidden="true"></div>').join('');
   try{
-    const data=await window.getCatalogJson(`/aide/api/videos?${params}`);if(version!==requestVersion)return;
+    const data=await window.getCatalogJson(`/aide/api/resources?${params}`);if(version!==requestVersion)return;
     loadedItems=data.items||[];
     if(data.facets)facets=data.facets;
     const n=Number(data.total)||0;
@@ -186,7 +210,7 @@ async function loadVideos(){
     const understood=[...Object.values(data.inferred_vehicle||{}),data.inferred_task?automotiveUI.filterLabel('task',data.inferred_task):'',data.inferred_spec||''].filter(Boolean);
     if(understood.length){$('#search-mode').hidden=false;$('#search-mode').textContent=t('Votre recherche a été comprise comme : ','Your search was interpreted as: ','Tu búsqueda se interpretó como: ')+understood.join(' · ');}
     if(data.interpretation_conflicts?.length){$('#search-mode').hidden=false;$('#search-mode').textContent+=t(' Le véhicule cité diffère de votre sélection. Vérifiez les filtres.',' The vehicle mentioned differs from your selection. Check the filters.',' El vehículo mencionado difiere de tu selección. Comprueba los filtros.');}
-    $('#results-status').innerHTML=`<strong>${n.toLocaleString(ui)}</strong> ${t('ressources à explorer','resources to explore','recursos para explorar')}${state.q?` · « ${escape(state.q)} »`:''}`;
+    $('#results-status').innerHTML=`<strong>${n.toLocaleString(ui)}</strong> ${n===1?t('ressource trouvée','resource found','recurso encontrado'):t('ressources trouvées','resources found','recursos encontrados')}${state.q?` · « ${escape(state.q)} »`:''}`;
     grid.innerHTML=loadedItems.length?loadedItems.map(cardMarkup).join(''):`<div class="empty"><strong>${t('Une autre trajectoire ?','Try another racing line?','¿Otra trazada?')}</strong><p>${vehicleKeys.some(key=>state[key])?t('Aucune correspondance explicite pour cette version et ces critères. Le moteur ou l’année peut manquer dans le titre. Retirer un filtre élargit les résultats, sans confirmer leur compatibilité.','No explicit match for this version and these filters. Titles may omit the engine or year. Removing a filter broadens results without confirming compatibility.','No hay coincidencia explícita para esta versión. El título puede omitir motor o año. Quitar un filtro amplía resultados sin confirmar compatibilidad.'):t('Aucun résultat avec ces critères. Essayez un mot plus simple ou retirez un filtre.','No results match these filters. Try a simpler term or remove a filter.','No hay resultados con estos filtros. Prueba otro término o elimina un filtro.')}</p><button data-reset>${t('Repartir de zéro','Reset search','Restablecer búsqueda')}</button></div>`;
     setImageFallback(grid);
     discoveryUI.recommendations(data);
@@ -199,13 +223,14 @@ async function loadVideos(){
   }finally{if(version===requestVersion){grid.setAttribute('aria-busy','false');grid.inert=false;mobileUI.update();}}
 }
 function renderActiveFilters(){
-  $('#active-filters').innerHTML=Object.entries(state).filter(([key,val])=>val&&!['sort','page'].includes(key)).map(([key,value])=>{
-    const label=[...vehicleKeys,'task','system','spec'].includes(key)?automotiveUI.filterLabel(key,value):key==='category'?catName(value):key==='domain'?(value==='motorsport'?'Motorsport':t('Mécanique automobile','Automotive mechanics','Mecánica del automóvil')):key==='level'?levelName(value):key==='language'?langName(value):key==='platform'?platformName(value):key==='transcript'?t('Transcription','Transcript','Transcripción'):key==='license'?t('Licence libre','Open license','Licencia libre'):value;
+  $('#active-filters').innerHTML=Object.entries(state).filter(([key,val])=>val&&!['sort','page'].includes(key)&&!(key==='format'&&val==='all')).map(([key,value])=>{
+    const label=[...vehicleKeys,'task','system','spec'].includes(key)?automotiveUI.filterLabel(key,value):key==='format'?(value==='guide'?t('Guides','Guides','Guías'):t('Vidéos','Videos','Vídeos')):key==='content_format'?$('#content_format').selectedOptions[0]?.textContent: key==='category'?catName(value):key==='domain'?(value==='motorsport'?'Motorsport':t('Mécanique automobile','Automotive mechanics','Mecánica del automóvil')):key==='level'?levelName(value):key==='language'?langName(value):key==='platform'?platformName(value):key==='transcript'?t('Transcription','Transcript','Transcripción'):key==='license'?t('Licence libre','Open license','Licencia libre'):value;
     return `<button data-remove="${key}" aria-label="${escape(t('Retirer le filtre ','Remove filter ','Quitar filtro ')+label)}">${escape(label)} ×</button>`;
   }).join('');
 }
-function setFilter(key,value){Object.assign(state,automotiveUI.dependentPatch(key,value));state.page=1;syncControls();syncUrl();if(vehicleKeys.includes(key))automotiveUI.loadOptions();loadVideos();}
-function reset(){state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
+function setFilter(key,value){browsing=true;if(key==='format'&&!value)value='all';Object.assign(state,automotiveUI.dependentPatch(key,value));state.page=1;syncControls();syncUrl();if(vehicleKeys.includes(key))automotiveUI.loadOptions();loadVideos();}
+function reset(){browsing=true;state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
+function goHome(){state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};browsing=false;$('#vehicle-disclosure').open=false;changeView('explore');syncControls();automotiveUI.loadOptions();loadVideos();window.scrollTo({top:0,behavior:'instant'});}
 function changeView(next,push=true){
   view=next;$$('main>section').forEach(el=>el.hidden=el.id!==`${next}-view`);
   $$('[data-view]').forEach(el=>{el.classList.toggle('active',el.dataset.view===next);if(el.dataset.view===next)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
@@ -277,7 +302,7 @@ function setDetailTab(name){
     const provenance=transcriptBased
       ? t('Résumé français établi à partir de la transcription de la source. Les pistes automatiques peuvent contenir des erreurs ; les éléments uniquement visuels ne sont pas couverts.','French summary based on the source transcript. Automatic captions may contain errors; visual-only information is not covered.','Resumen en francés basado en la transcripción. Los subtítulos automáticos pueden contener errores; no cubre información solo visual.')
       : reviewed?t('Sélection issue des métadonnées publiques. Le contenu intégral n’a pas été audité.','Selected using public metadata. The full content has not been audited.','Seleccionado a partir de metadatos públicos. No se ha auditado el contenido completo.'):t('Ressource à qualifier : le titre et les informations publiques ont permis son référencement. Sa pertinence pédagogique reste à confirmer.','Resource awaiting review: indexed using its title and public information. Its teaching value still needs confirmation.','Recurso pendiente de revisión: indexado por su título e información pública. Su valor didáctico aún debe confirmarse.');
-    panel.innerHTML=`<h3>${t('Ce que présente cette ressource','What this resource covers','Qué presenta este recurso')}</h3><p dir="auto">${escape(detail.description||t('Aucun descriptif disponible. Consultez la source pour connaître le contenu.','No description is available. Check the source to understand the content.','No hay descripción. Consulta la fuente para conocer el contenido.'))}</p>${automotiveUI.detailMarkup(detail)}${formatNote?`<p class="small-note">${escape(formatNote)}</p>`:''}${points.length?`<p class="detail-label">${t('À COMPRENDRE','KEY CONCEPTS','CONCEPTOS CLAVE')}</p><ul class="detail-points">${points.map(point=>`<li>${escape(point)}</li>`).join('')}</ul>`:''}<p class="detail-label">${t('REPÈRES ÉDITORIAUX','EDITORIAL CONTEXT','CONTEXTO EDITORIAL')}</p><p>${escape(provenance)}</p><p class="source-info">${t('Référence contrôlée le','Reference checked on','Referencia comprobada el')} ${escape(detail.verified_at||'—')}<br><a href="${escape(safeUrl(detail.source_url||detail.url))}" target="_blank" rel="noopener noreferrer">${t('Consulter la référence d’origine','See the original reference','Ver referencia original')} ↗</a></p>`;
+    panel.innerHTML=`<h3>${t('Ce que présente cette ressource','What this resource covers','Qué presenta este recurso')}</h3><p dir="auto">${escape(detail.description||t('Aucun descriptif disponible. Consultez la source pour connaître le contenu.','No description is available. Check the source to understand the content.','No hay descripción. Consulta la fuente para conocer el contenido.'))}</p>${automotiveUI.detailMarkup(detail)}${(detail.source_questions||[]).length?`<section class="comment-questions"><h3>${t('Questions posées dans les commentaires','Questions in the comments','Preguntas en los comentarios')}</h3><p>${t('Questions reformulées en français à partir de commentaires publics consultés. Elles ne valident pas les réponses de la vidéo.','Questions paraphrased in French from public comments. They do not validate the answers in the video.','Preguntas reformuladas en francés a partir de comentarios públicos. No validan las respuestas del vídeo.')}</p>${detail.source_questions.map(x=>`<div><blockquote>${escape(x.question)}</blockquote><a href="${escape(safeUrl(x.source_url))}" target="_blank" rel="noopener noreferrer">${t('Voir le contexte','View context','Ver contexto')} ↗</a></div>`).join('')}</section>`:''}${formatNote?`<p class="small-note">${escape(formatNote)}</p>`:''}${points.length?`<p class="detail-label">${t('À COMPRENDRE','KEY CONCEPTS','CONCEPTOS CLAVE')}</p><ul class="detail-points">${points.map(point=>`<li>${escape(point)}</li>`).join('')}</ul>`:''}<p class="detail-label">${t('REPÈRES ÉDITORIAUX','EDITORIAL CONTEXT','CONTEXTO EDITORIAL')}</p><p>${escape(provenance)}</p><p class="source-info">${t('Référence contrôlée le','Reference checked on','Referencia comprobada el')} ${escape(detail.verified_at||'—')}<br><a href="${escape(safeUrl(detail.source_url||detail.url))}" target="_blank" rel="noopener noreferrer">${t('Consulter la référence d’origine','See the original reference','Ver referencia original')} ↗</a></p>`;
   }else if(name==='notes'){
     const note=storage.get(`rl-note-${detail.id}`,'');
     panel.innerHTML=`<h3>${t('Gardez le déclic.','Capture the insight.','Guarda la idea.')}</h3><textarea class="notes-area" id="video-notes" aria-label="${t('Notes personnelles','Personal notes','Notas personales')}" placeholder="${t('Une idée à tester, une notion à revoir…','An idea to try, a concept to revisit…','Una idea para probar, un concepto para repasar…')}">${escape(note)}</textarea><p class="small-note" id="notes-status">${t('Notes privées, enregistrées automatiquement dans ce navigateur.','Private notes, saved automatically in this browser.','Notas privadas guardadas automáticamente en este navegador.')}</p>`;
@@ -296,12 +321,15 @@ function setDetailTab(name){
 }
 document.addEventListener('click',async event=>{
   const el=event.target.closest('button,a');if(!el)return;
-  if(el.dataset.view){event.preventDefault();changeView(el.dataset.view);}
+  if(el.hasAttribute('data-home')){goHome();}
+  else if(el.dataset.view){event.preventDefault();if(el.dataset.view==='explore')goHome();else changeView(el.dataset.view);}
+  else if(el.hasAttribute('data-format'))setFilter('format',el.dataset.format);
+  else if(el.hasAttribute('data-guide'))openGuide(el.dataset.guide);
   else if(el.hasAttribute('data-query')){changeView('explore');setFilter('q',el.dataset.query);$('#catalog-heading').scrollIntoView({behavior:'smooth'});}
   else if(el.hasAttribute('data-category'))setFilter('category',el.dataset.category);
   else if(el.hasAttribute('data-path')){activeTrack=el.dataset.path;changeView('paths');}
   else if(el.hasAttribute('data-all-tracks')){activeTrack='';renderPaths();syncUrl(true);}
-  else if(el.hasAttribute('data-step-query')){changeView('explore');state={...automotiveDefaults,q:el.dataset.stepQuery,category:el.dataset.stepCategory,domain:'',level:'',language:'',platform:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();$('#catalog-heading').scrollIntoView({behavior:'smooth'});}
+  else if(el.hasAttribute('data-step-query')){browsing=true;changeView('explore');state={...automotiveDefaults,q:el.dataset.stepQuery,category:el.dataset.stepCategory,domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();$('#catalog-heading').scrollIntoView({behavior:'smooth'});}
   else if(el.hasAttribute('data-complete-step')){const key=el.dataset.completeStep,p=storage.get('rl-library-progress',{});p[key]=!p[key];storage.set('rl-library-progress',p);renderPaths();$$('[data-complete-step]').find(button=>button.dataset.completeStep===key)?.focus({preventScroll:true});}
   else if(el.hasAttribute('data-remove'))setFilter(el.dataset.remove,'');
   else if(el.hasAttribute('data-reset'))reset();
@@ -317,18 +345,18 @@ document.addEventListener('click',async event=>{
   else if(el.hasAttribute('data-share')){try{await navigator.clipboard.writeText(detail.url);showToast(t('Lien source copié','Source link copied','Enlace de origen copiado'));}catch{showToast(t('Utilisez le bouton Voir la source pour copier l’adresse.','Use View source to copy its address.','Usa Ver fuente para copiar la dirección.'));}}
 });
 $('#search-form').addEventListener('submit',e=>{e.preventDefault();document.dispatchEvent(new Event('rl:search-chosen'));setFilter('q',$('#search').value.trim());$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
-for(const key of ['level','language','platform','duration','sort','domain'])$(`#${key}`).addEventListener('change',e=>setFilter(key,e.target.value));
+for(const key of ['level','language','platform','duration','sort','domain','content_format'])$(`#${key}`).addEventListener('change',e=>setFilter(key,e.target.value));
 $('#transcript').addEventListener('change',e=>setFilter('transcript',e.target.checked?'available':''));
 $('#license').addEventListener('change',e=>setFilter('license',e.target.checked?'open':''));
 $('#reset-filters').addEventListener('click',reset);
 $('#method-link').addEventListener('click',e=>{e.preventDefault();changeView('faq');renderFaq('method');});
-$('.workshop-jump').addEventListener('click',()=>{$('#vehicle-disclosure').open=true;});
+$('.workshop-jump').addEventListener('click',e=>{e.preventDefault();browsing=true;syncControls();syncUrl();$('#vehicle-disclosure').open=true;$('#vehicle-hub').scrollIntoView({behavior:'smooth'});});
 $('#ui-language').addEventListener('change',e=>{ui=e.target.value;storage.set('rl-library-language',ui);applyTranslations();syncUrl();loadVideos();});
 $('#video-dialog').addEventListener('close',()=>{++detailVersion;$('#video-detail').innerHTML='';detail=null;});
 $('#video-dialog').addEventListener('click',e=>{if(e.target===$('#video-dialog')){const rect=e.target.getBoundingClientRect();if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom)e.target.close();}});
 document.addEventListener('keydown',e=>{
   if(e.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)&&!$('#video-dialog').open){e.preventDefault();mobileUI.openSearch();}
-  if(e.target.closest('[role=tablist]')&&['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const tabs=$$('[role=tab]');const idx=tabs.indexOf(e.target);const next=e.key==='Home'?0:e.key==='End'?tabs.length-1:(idx+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[next].focus();setDetailTab(tabs[next].dataset.tab);}
+  if(e.target.closest('.detail-tabs')&&['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const tabs=$$('[role=tab]');const idx=tabs.indexOf(e.target);const next=e.key==='Home'?0:e.key==='End'?tabs.length-1:(idx+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[next].focus();setDetailTab(tabs[next].dataset.tab);}
 });
 window.addEventListener('popstate',()=>{restoreUrl();applyTranslations();changeView(view,false);automotiveUI.loadOptions();loadVideos();});
 async function init(){

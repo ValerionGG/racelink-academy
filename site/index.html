@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="/racelink-academy/styles.css">
   <link rel="stylesheet" href="/racelink-academy/discovery.css">
   <link rel="stylesheet" href="/racelink-academy/refinements.css">
+  <link rel="stylesheet" href="/racelink-academy/experience.css">
   <script src="/racelink-academy/catalog-client.js" defer></script>
   <script type="module" src="/racelink-academy/app.js"></script>
 </head>
@@ -20,7 +21,7 @@
   <header class="header">
     <a href="/racelink-academy/" class="brand" aria-label="RaceLink Academy, accueil"><span class="brand-mark">RL</span><span><strong>RACELINK<span class="brand-academy"> ACADEMY</span></strong><small data-i18n="brandSub">LE SAVOIR FAIT LA DIFFÉRENCE.</small></span></a>
     <nav class="desktop-nav" aria-label="Navigation principale">
-      <button class="nav-item active" data-view="explore" data-i18n="explore">Explorer</button>
+      <button class="nav-item active" data-view="explore" data-i18n="explore">Accueil</button>
       <button class="nav-item" data-view="paths" data-i18n="paths">Parcours</button>
       <button class="nav-item" data-view="faq" data-i18n="help">Aide & FAQ</button>
     </nav>
@@ -34,41 +35,41 @@
     <section id="explore-view">
       <div class="hero wrap">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="live-dot"></span><span data-i18n="openLibrary">LA BIBLIOTHÈQUE OUVERTE DU MOTORSPORT</span></p>
-          <h1 data-i18n="headline">UNE QUESTION.<br>UN DÉCLIC.<br><span>UN TOUR D’AVANCE.</span></h1>
-          <p class="hero-description" data-i18n="intro">Du premier freinage à la précision d’un pro.<br>Les savoirs du paddock, réunis pour vous.</p>
+          <p class="eyebrow"><span class="live-dot"></span><span data-i18n="openLibrary">VOTRE PROCHAIN SAVOIR COMMENCE ICI</span></p>
+          <h1 data-i18n="headline">Une question ?<br><span>Trouvez comment faire.</span></h1>
+          <p class="hero-description" data-i18n="intro">Entretenir votre voiture, progresser en piste ou en simulation. <br>Des vidéos et des guides pour passer à la pratique.</p>
           <div class="search-shell"><form id="search-form" class="search-box" role="search">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
             <input id="search" name="q" type="search" role="combobox" aria-autocomplete="list" aria-controls="search-suggestions" aria-expanded="false" aria-label="Rechercher des tutoriels" placeholder="Qu’aimeriez-vous apprendre ?" autocomplete="off">
             <kbd>/</kbd><button type="submit" aria-label="Lancer la recherche">→</button>
           </form><div id="search-suggestions" role="listbox" aria-label="Suggestions de recherche" hidden></div><p id="suggestion-status" class="sr-only" role="status"></p></div>
-          <div class="suggestions"><span data-i18n="try">À explorer</span><button data-query="trail braking">Trail braking ↗</button><button data-query="telemetry">Télémétrie ↗</button><button data-query="sim racing">Sim racing ↗</button><a href="#vehicle-hub" class="workshop-jump">Mon véhicule & entretien ↘</a></div>
+          <div class="suggestions"><span data-i18n="try">À explorer</span><button data-query="vidange">Faire une vidange</button><button data-query="freinage">Mieux freiner</button><button data-query="sim racing">Régler mon simulateur</button><a href="#vehicle-hub" class="workshop-jump">Mon véhicule & entretien ↘</a></div>
         </div>
-        <button class="hero-feature" id="hero-feature" data-path="driving">
-          <img src="https://focus.racelink-app.co/assets/generated/course-braking-light-v2.webp" alt="Voiture de course GT rouge en piste" fetchpriority="high">
-          <span class="feature-shade"></span>
-          <span class="feature-top"><span data-i18n="startHere">COMMENCEZ ICI</span><span>01 / 08</span></span>
-          <span class="feature-bottom"><span class="feature-label" data-i18n="pathLabel">PARCOURS · PILOTAGE</span><strong data-i18n="featureTitle">LE PROCHAIN VIRAGE<br>COMMENCE ICI.</strong><span class="feature-cta"><span data-i18n="featureCta">Explorer les fondamentaux</span><span class="circle-arrow">↗</span></span></span>
-        </button>
+
       </div>
       <div class="catalog-meta wrap"><span><i aria-hidden="true"></i><strong id="catalog-total">…</strong> <span data-i18n="references">vidéos référencées</span></span><span id="language-total">…</span><span id="scope-totals" data-i18n="accessNote">Sources publiques · Auteurs crédités · Accès direct</span><a href="#method" id="method-link" data-i18n="method">Notre méthode ↗</a></div>
       <section id="discovery-hub" class="discovery-hub wrap" aria-label="Explorer par objectif"></section>
       <section class="catalog wrap" aria-labelledby="catalog-heading">
-        <details id="vehicle-disclosure" class="vehicle-disclosure"><summary><span id="vehicle-disclosure-label">Affiner pour votre voiture</span><span id="vehicle-disclosure-value">Marque, moteur, huile, intervention…</span><b aria-hidden="true">＋</b></summary><section id="vehicle-hub" class="vehicle-hub" aria-label="Mon véhicule et mes interventions"></section></details>
-        <div class="section-intro"><div><p class="eyebrow" data-i18n="findAnswer">LE BON SAVOIR, AU BON MOMENT</p><h2 id="catalog-heading" data-i18n="catalogTitle">À vous de trouver votre trajectoire.</h2></div></div>
+
+        <button type="button" class="results-back" data-home>← Accueil</button><div class="section-intro"><h1 id="catalog-heading" data-i18n="catalogTitle">Trouvez votre réponse.</h1></div><div id="results-search-desktop"></div>
         <div class="catalog-actions"><button type="button" id="edit-search"><span aria-hidden="true">⌕</span><span id="edit-search-label">Rechercher un tuto, une question…</span><small aria-hidden="true">↗</small></button><button id="mobile-filters" class="outline-button" aria-expanded="false" aria-controls="filters-dialog">Filtres</button></div>
+        <div id="format-tabs" class="format-tabs" role="group" aria-label="Format de la ressource"><button data-format="all" aria-pressed="true">Tout</button><button data-format="video" aria-pressed="false">Vidéos</button><button data-format="guide" aria-pressed="false">Guides</button></div>
+        <details id="vehicle-disclosure" class="vehicle-disclosure"><summary><span id="vehicle-disclosure-label">Affiner pour votre voiture</span><span id="vehicle-disclosure-value">Marque, moteur, huile, intervention…</span><b aria-hidden="true">＋</b></summary><section id="vehicle-hub" class="vehicle-hub" aria-label="Mon véhicule et mes interventions"></section></details>
         <div class="catalog-layout">
           <aside id="filters" class="filters" aria-label="Filtres du catalogue">
-            <div class="filter-heading"><strong data-i18n="refine">Affiner l’exploration</strong><button id="reset-filters" data-i18n="reset">Effacer</button></div>
-            <div class="filter-field context-field"><label for="domain">CONTEXTE</label><select id="domain"><option value="">Tous les contextes</option value="motorsport">Motorsport & fondamentaux</option value="automotive_adjacent">Mécanique automobile</option></select></div>
-            <fieldset class="category-list"><legend data-i18n="discipline">DISCIPLINE</legend><div id="category-filters"></div></fieldset>
+            <div class="filter-heading"><strong data-i18n="refine">Filtrer les résultats</strong><button id="reset-filters" data-i18n="reset">Effacer</button></div>
+
+            <fieldset class="category-list"><legend data-i18n="discipline">SUJET</legend><div id="category-filters"></div></fieldset>
             <div class="filter-field"><label for="level" data-i18n="level">NIVEAU</label><select id="level"><option value="">Tous les niveaux</option value="beginner">Débutant</option><option value="intermediate">Intermédiaire</option><option value="advanced">Avancé / Pro</option></select></div>
-            <div class="filter-field"><label for="language" data-i18n="language">LANGUE DE LA VIDÉO</label><select id="language"><option value="">Toutes les langues</option></select></div>
+            <div class="filter-field"><label for="language" data-i18n="language">LANGUE</label><select id="language"><option value="">Toutes les langues</option></select></div>
             <div class="filter-field"><label for="platform" data-i18n="platform">PLATEFORME</label><select id="platform"><option value="">Toutes les plateformes</option></select></div>
+            <details class="advanced-filters"><summary>Plus de filtres</summary>            <div class="filter-field context-field"><label for="domain">CONTEXTE</label><select id="domain"><option value="">Tous les contextes</option value="motorsport">Motorsport & fondamentaux</option value="automotive_adjacent">Mécanique automobile</option></select></div>
+            <div class="filter-field"><label for="content_format">TYPE DE VIDÉO</label><select id="content_format"><option value="">Tous les types</option></select><small class="filter-explainer">Tutoriel, démonstration, cours ou direct. Classement selon les informations disponibles.</small></div>
             <div class="filter-field"><label for="duration" data-i18n="duration">TEMPS DISPONIBLE</label><select id="duration"><option value="">Toutes les durées</option><option value="short">Moins de 10 min</option><option value="medium">10 à 30 min</option><option value="long">Plus de 30 min</option></select></div>
             <label class="check-filter"><input type="checkbox" id="transcript"><span data-i18n="withTranscript">Avec transcription</span></label>
             <label class="check-filter"><input type="checkbox" id="license"><span data-i18n="freeLicense">Licence libre confirmée</span></label>
-            <div class="filter-note"><span aria-hidden="true">↳</span><p data-i18n="filterNote">Chaque progression commence par une bonne question.</p></div>
+            </details>
+            <div class="filter-note"><span aria-hidden="true">↳</span><p data-i18n="filterNote">La plateforme indique où la ressource est publiée. Le format distingue vidéos et guides.</p></div>
           </aside>
           <div class="catalog-content">
             <div class="results-toolbar"><p id="results-status" role="status" aria-live="polite">Chargement du catalogue…</p><label><span class="sr-only">Trier les résultats</span><select id="sort"><option value="relevance">Pertinence</option><option value="newest">Les plus récentes</option><option value="duration">Les plus courtes</option><option value="title">Titre A → Z</option></select></label></div>
@@ -78,7 +79,7 @@
             <div id="video-grid" class="video-grid" aria-busy="true"></div>
             <section id="context-discovery" class="context-discovery" aria-label="Suggestions liées à votre recherche" hidden></section>
             <div id="pagination" class="pagination"></div>
-            <p class="catalog-disclosure" data-i18n="catalogDisclosure">Le référencement repose sur les métadonnées publiques. La pertinence pédagogique, la langue et le niveau restent à confirmer pour les vidéos signalées « À qualifier ».</p>
+            <p class="catalog-disclosure" data-i18n="catalogDisclosure">Le référencement repose sur les métadonnées publiques. La langue, le niveau et la pertinence pédagogique peuvent rester à confirmer : chaque fiche précise les informations consultées.</p>
           </div>
         </div>
       </section>
@@ -89,7 +90,7 @@
     <section id="saved-view" class="wrap alternate-view" hidden></section>
   </main>
   <footer class="footer wrap"><a href="/racelink-academy/" class="footer-brand">RACELINK <span>ACADEMY</span></a><p data-i18n="footer">La passion se partage. Le savoir aussi.</p><button data-faq="method" data-i18n="method">Notre méthode ↗</button><a href="https://focus.racelink-app.co/" target="_blank" rel="noopener">Focus ↗</a></footer>
-  <nav class="mobile-nav" aria-label="Navigation mobile"><button data-view="explore" class="active">⌕<span data-i18n="explore">Explorer</span></button><button data-view="paths">↗<span data-i18n="paths">Parcours</span></button><button data-view="faq">?<span data-i18n="help">Aide & FAQ</span></button><button data-view="saved">▱<span data-i18n="saved">Ma sélection</span></button></nav>
+  <nav class="mobile-nav" aria-label="Navigation mobile"><button data-view="explore" class="active">⌕<span data-i18n="explore">Accueil</span></button><button data-view="paths">↗<span data-i18n="paths">Parcours</span></button><button data-view="faq">?<span data-i18n="help">Aide & FAQ</span></button><button data-view="saved">▱<span data-i18n="saved">Ma sélection</span></button></nav>
   <dialog id="video-dialog" aria-labelledby="dialog-title"><div id="video-detail"></div></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
 </body>

@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "checked_at": "2026-10-20",
+  "purpose": "Illustrations des trois portes d’entrée de la bibliothèque",
+  "assets": [
+    {
+      "id": "maintenance",
+      "role": "discovery_entrance",
+      "label": "Entretenir ma voiture",
+      "url": "https://focus.racelink-app.co/assets/course-mechanic.jpg",
+      "alt": "Illustration Focus du cours de mécanique",
+      "source_course": "Mécanique de course · Dans le garage",
+      "source_category": "Mécanique",
+      "provenance": {
+        "publisher": "RaceLink Focus",
+        "page_url": "https://focus.racelink-app.co/",
+        "metadata_url": "https://focus.racelink-app.co/js/data.js",
+        "metadata_field": "COURSES[].img",
+        "original_path": "assets/course-mechanic.jpg",
+        "origin": "existing_focus_course_illustration",
+        "license": "not_stated",
+        "photographic_or_generated": "not_verified"
+      },
+      "verification": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 159659,
+        "method": "HEAD and source metadata",
+        "visual_inspection": true,
+        "visual_inspection_note": "Affichage contrôlé dans le navigateur local le 20 octobre 2026 ; pertinence pour les trois portes de navigation confirmée. Origine photographique ou générée non établie."
+      },
+      "usage": "Illustration de navigation ; ne représente pas une vidéo référencée ni une preuve de compatibilité avec un véhicule."
+    },
+    {
+      "id": "driving",
+      "role": "discovery_entrance",
+      "label": "Progresser au volant",
+      "url": "https://focus.racelink-app.co/assets/course-braking.jpg",
+      "alt": "Illustration Focus du cours de pilotage et freinage",
+      "source_category": "Pilotage",
+      "provenance": {
+        "publisher": "RaceLink Focus",
+        "page_url": "https://focus.racelink-app.co/",
+        "metadata_url": "https://focus.racelink-app.co/js/data.js",
+        "metadata_field": "COURSES[].img",
+        "original_path": "assets/course-braking.jpg",
+        "origin": "existing_focus_course_illustration",
+        "license": "not_stated",
+        "photographic_or_generated": "not_verified"
+      },
+      "verification": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 142006,
+        "method": "HEAD and source metadata",
+        "visual_inspection": true,
+        "visual_inspection_note": "Affichage contrôlé dans le navigateur local le 20 octobre 2026 ; pertinence pour les trois portes de navigation confirmée. Origine photographique ou générée non établie."
+      },
+      "usage": "Illustration de navigation ; ne représente pas une vidéo référencée ni une approbation par son créateur."
+    },
+    {
+      "id": "simracing",
+      "role": "discovery_entrance",
+      "label": "Progresser en sim racing",
+      "url": "https://focus.racelink-app.co/assets/course-simracing.jpg",
+      "alt": "Illustration Focus du cours de sim racing",
+      "source_course": "Sim Racing · Du virtuel au réel",
+      "source_category": "Sim Racing",
+      "provenance": {
+        "publisher": "RaceLink Focus",
+        "page_url": "https://focus.racelink-app.co/",
+        "metadata_url": "https://focus.racelink-app.co/js/data.js",
+        "metadata_field": "COURSES[].img",
+        "original_path": "assets/course-simracing.jpg",
+        "origin": "existing_focus_course_illustration",
+        "license": "not_stated",
+        "photographic_or_generated": "not_verified"
+      },
+      "verification": {
+        "http_status": 200,
+        "content_type": "image/jpeg",
+        "bytes": 143747,
+        "method": "HEAD and source metadata",
+        "visual_inspection": true,
+        "visual_inspection_note": "Affichage contrôlé dans le navigateur local le 20 octobre 2026 ; pertinence pour les trois portes de navigation confirmée. Origine photographique ou générée non établie."
+      },
+      "usage": "Illustration de navigation ; conserver les vignettes originales des créateurs sur les résultats vidéo."
+    }
+  ]
+}
