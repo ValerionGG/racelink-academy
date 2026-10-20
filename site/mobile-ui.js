@@ -1,0 +1,65 @@
+// The same search and filter controls are reused in native mobile dialogs.
+export function createMobileUI({t,getState,getTotal,isLoading,onExplore}) {
+  const $=s=>document.querySelector(s);
+  const mobile=matchMedia('(max-width:760px)');
+  const shell=$('.search-shell'),filters=$('#filters');
+  const searchAnchor=document.createComment('search home'),filterAnchor=document.createComment('filters home');
+  shell.before(searchAnchor);filters.before(filterAnchor);
+  document.body.insertAdjacentHTML('beforeend',`
+    <dialog id="search-dialog" class="search-dialog" aria-labelledby="mobile-search-title">
+      <header class="sheet-heading"><div><span class="eyebrow">RACELINK ACADEMY</span><h2 id="mobile-search-title"></h2></div><button type="button" data-sheet-close="search" aria-label="Fermer">×</button></header>
+      <div class="mobile-search-body"></div><p class="mobile-search-help"></p>
+    </dialog>
+    <dialog id="filters-dialog" class="filters-dialog" aria-labelledby="mobile-filter-title">
+      <header class="sheet-heading"><h2 id="mobile-filter-title"></h2><button type="button" data-sheet-close="filters" aria-label="Fermer">×</button></header>
+      <div class="mobile-filter-body"></div>
+      <footer class="sheet-footer"><button type="button" id="mobile-vehicle"></button><button type="button" id="show-filter-results"></button></footer>
+    </dialog>`);
+  const searchDialog=$('#search-dialog'),filterDialog=$('#filters-dialog');
+  let filterFocus=null;
+  function lock(){document.body.classList.toggle('sheet-open',searchDialog.open||filterDialog.open);}
+  function closeSearch(){if(searchDialog.open)searchDialog.close();}
+  function openSearch(){
+    onExplore();
+    if(mobile.matches){
+      if(!searchDialog.open){$('.mobile-search-body').append(shell);searchDialog.showModal();lock();}
+      $('#search').focus({preventScroll:true});
+    }else{$('#search').scrollIntoView({block:'center',behavior:'smooth'});$('#search').focus({preventScroll:true});}
+  }
+  function openFilters(){
+    if(!mobile.matches)return;
+    $('.mobile-filter-body').append(filters);
+    filterDialog.showModal();$('#mobile-filters').setAttribute('aria-expanded','true');lock();update();
+  }
+  function update(){
+    const state=getState(),total=getTotal();
+    $('#mobile-search-title').textContent=t('Que voulez-vous apprendre ?','What would you like to learn?','¿Qué quieres aprender?');
+    $('#mobile-filter-title').textContent=t('Votre recherche, en plus précis.','Make your search more precise.','Afina tu búsqueda.');
+    $('.mobile-search-help').textContent=t('Essayez « vidange Clio 3 », « huile 5W-30 » ou « freinage dégressif ». Ajoutez votre modèle pour préciser les résultats.','Try “oil change Clio 3”, “oil 5W-30” or “trail braking”. Add your model to refine the results.','Prueba « cambio aceite Clio 3 », « aceite 5W-30 » o « trail braking ». Añade tu modelo para afinar los resultados.');
+    $('#edit-search-label').textContent=state.q||t('Rechercher un tuto, une question…','Search a tutorial, a question…','Busca un tutorial, una pregunta…');
+    const number=Object.entries(state).filter(([k,v])=>v&&!['q','page','sort'].includes(k)).length;
+    $('#mobile-filters').innerHTML=`${t('Filtres','Filters','Filtros')}${number?` <b>${number}</b>`:''}`;
+    $('#mobile-vehicle').textContent=t('Préciser ma voiture ↗','Specify my car ↗','Precisar mi coche ↗');
+    $('#show-filter-results').textContent=total===null?(isLoading()?t('Recherche en cours…','Searching…','Buscando…'):t('Catalogue indisponible','Catalog unavailable','Catálogo no disponible')):`${t('Voir','Show','Ver')} ${Number(total).toLocaleString(document.documentElement.lang)} ${total===1?t('résultat','result','resultado'):t('résultats','results','resultados')} →`;
+    $('#show-filter-results').disabled=total===null;
+    document.querySelectorAll('[data-sheet-close]').forEach(b=>b.setAttribute('aria-label',t('Fermer','Close','Cerrar')));
+  }
+  $('#edit-search').addEventListener('click',openSearch);
+  $('#search').addEventListener('focus',()=>{if(mobile.matches&&!searchDialog.open&&!searchDialog.contains($('#search')))openSearch();});
+  $('#mobile-filters').addEventListener('click',openFilters);
+  searchDialog.addEventListener('close',()=>{
+    // Remove focus before restoring the field so closing never reopens the dialog.
+    $('#search').blur();searchAnchor.after(shell);lock();$('#edit-search').focus({preventScroll:true});
+    document.dispatchEvent(new Event('rl:close-suggestions'));
+  });
+  filterDialog.addEventListener('close',()=>{filterAnchor.after(filters);$('#mobile-filters').setAttribute('aria-expanded','false');lock();(filterFocus||$('#mobile-filters')).focus({preventScroll:true});filterFocus=null;});
+  document.querySelectorAll('[data-sheet-close]').forEach(b=>b.addEventListener('click',()=>b.dataset.sheetClose==='search'?closeSearch():filterDialog.close()));
+  $('#show-filter-results').addEventListener('click',()=>{filterFocus=$('#catalog-heading');filterFocus.tabIndex=-1;filterDialog.close();$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
+  $('#mobile-vehicle').addEventListener('click',()=>{filterFocus=$('#vehicle-make');$('#vehicle-disclosure').open=true;filterDialog.close();$('#vehicle-hub').scrollIntoView({behavior:'smooth'});});
+  document.addEventListener('rl:search-chosen',closeSearch);
+  for(const dialog of [searchDialog,filterDialog])dialog.addEventListener('click',event=>{
+    if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom)dialog.close();}
+  });
+  mobile.addEventListener('change',()=>{if(!mobile.matches){closeSearch();if(filterDialog.open)filterDialog.close();}});
+  return {update,openSearch,closeSearch};
+}

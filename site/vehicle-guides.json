@@ -1,0 +1,640 @@
+{
+  "schemaVersion": 1,
+  "language": "fr",
+  "updatedAt": "2026-10-20",
+  "title": "Entretenir et comprendre mon véhicule",
+  "scope": "Guides de démarche en français, destinés aux véhicules routiers. Les exemples de notices ne constituent pas des préconisations pour tous les modèles.",
+  "automaticCompatibility": false,
+  "identification": {
+    "id": "vehicle-identification",
+    "title": "Commencer par identifier votre véhicule",
+    "intro": "Le modèle commercial seul ne suffit pas. Ces guides expliquent une démarche ; ils ne certifient aucune pièce, huile ou compatibilité carburant pour votre véhicule.",
+    "fields": [
+      {
+        "id": "make",
+        "label": "Marque"
+      },
+      {
+        "id": "model",
+        "label": "Modèle exact et carrosserie"
+      },
+      {
+        "id": "generation",
+        "label": "Génération / phase"
+      },
+      {
+        "id": "year",
+        "label": "Année ou période de fabrication"
+      },
+      {
+        "id": "engine",
+        "label": "Motorisation et code moteur"
+      },
+      {
+        "id": "fuel",
+        "label": "Énergie"
+      },
+      {
+        "id": "market",
+        "label": "Pays / marché du véhicule"
+      },
+      {
+        "id": "manual",
+        "label": "Notice et édition correspondantes"
+      }
+    ],
+    "steps": [
+      "Réunir les informations du véhicule et comparer sa configuration à la notice sélectionnée.",
+      "Utiliser le VIN sur le portail officiel lorsque disponible ; sinon sélectionner modèle et période puis vérifier moteur et équipements.",
+      "Distinguer la date de première immatriculation de la période de fabrication ; utiliser le critère demandé par chaque portail.",
+      "Confirmer les références avec le constructeur si l'année, le code moteur ou la version restent inconnus."
+    ],
+    "missingDetailsMessage": "Année, code moteur ou version non confirmés : aucune référence d'huile, de pièce ou compatibilité carburant ne peut être recommandée automatiquement.",
+    "sources": [
+      {
+        "id": "ford-manuals",
+        "title": "Ford — manuels du conducteur",
+        "url": "https://www.ford.fr/support/manuels-proprietaire-details",
+        "publisher": "Ford",
+        "verifiedAt": "2026-10-20",
+        "scope": "Recherche par VIN ou année et modèle."
+      },
+      {
+        "id": "peugeot-manuals",
+        "title": "Peugeot — documents de bord",
+        "url": "https://public.servicebox.peugeot.com/APddb/",
+        "publisher": "Peugeot / Stellantis",
+        "verifiedAt": "2026-10-20",
+        "scope": "Choisir véhicule et période d'édition ; le portail demande la date de première mise en circulation."
+      },
+      {
+        "id": "citroen-manuals",
+        "title": "Citroën — notices d'emploi",
+        "url": "https://service.citroen.com/ACddb/",
+        "publisher": "Citroën / Stellantis",
+        "verifiedAt": "2026-10-20",
+        "scope": "Choisir véhicule et période d'édition ; le portail demande la date de première mise en circulation."
+      },
+      {
+        "id": "renault-engine",
+        "title": "Renault — identification et caractéristiques moteur",
+        "url": "https://www.user-manual.renault.com/fr/content/xfk/technical-specifications/information-about-vehicle/identification-moteur",
+        "publisher": "Renault",
+        "verifiedAt": "2026-10-20",
+        "scope": "Exemple de notice Kangoo XFK : méthode d'identification et définitions de carburants. Les compatibilités du tableau restent propres aux moteurs de cette notice."
+      }
+    ],
+    "recommendation": {
+      "enabled": true,
+      "reviewedAt": "2026-10-20T17:08:42Z",
+      "expiresAt": "2026-11-19T17:08:42Z",
+      "reason": {
+        "fr": "Un point de départ pour réunir la version exacte, la motorisation et la bonne notice avant une recherche d'entretien.",
+        "en": "A starting point for identifying the exact version, engine and correct manual before researching maintenance.",
+        "es": "Un punto de partida para identificar la versión exacta, el motor y el manual correspondiente antes de buscar mantenimiento."
+      },
+      "evidence": {
+        "note": {
+          "fr": "Sélection éditoriale après relecture du guide interne et de ses sources officielles déjà documentées. Elle porte sur la démarche expliquée ; elle ne confirme aucune compatibilité pour un véhicule.",
+          "en": "Editorial selection after reviewing the internal guide and its previously documented official sources. It concerns the method explained and does not confirm compatibility for any vehicle.",
+          "es": "Selección editorial tras revisar la guía interna y sus fuentes oficiales ya documentadas. Se refiere al método explicado y no confirma la compatibilidad con ningún vehículo."
+        }
+      }
+    }
+  },
+  "manuals": [
+    {
+      "make": "Renault",
+      "label": "Renault — notices d'utilisation",
+      "url": "https://www.user-manual.renault.com/fr",
+      "language": "fr",
+      "verifiedAt": "2026-10-20",
+      "note": "Portail de sélection de la notice."
+    },
+    {
+      "make": "Peugeot",
+      "label": "Peugeot — documents de bord",
+      "url": "https://public.servicebox.peugeot.com/APddb/",
+      "language": "fr",
+      "verifiedAt": "2026-10-20",
+      "note": "Choisir véhicule et période d'édition ; le portail demande la date de première mise en circulation."
+    },
+    {
+      "make": "Citroën",
+      "label": "Citroën — notices d'emploi",
+      "url": "https://service.citroen.com/ACddb/",
+      "language": "fr",
+      "verifiedAt": "2026-10-20",
+      "note": "Choisir véhicule et période d'édition ; le portail demande la date de première mise en circulation."
+    },
+    {
+      "make": "Ford",
+      "label": "Ford — manuels du conducteur",
+      "url": "https://www.ford.fr/support/manuels-proprietaire-details",
+      "language": "fr",
+      "verifiedAt": "2026-10-20",
+      "note": "Recherche par VIN ou année et modèle."
+    },
+    {
+      "make": "Volkswagen",
+      "label": "Volkswagen — carnet de bord digital",
+      "url": "https://www.volkswagen.fr/fr/entretenir-ma-volkswagen/carnet_bord_digital.html",
+      "language": "fr",
+      "verifiedAt": "2026-10-20",
+      "note": "Recherche avec VIN ; le module peut ne pas charger dans un lecteur automatique."
+    },
+    {
+      "make": "Toyota",
+      "label": "Toyota — manuel de votre véhicule",
+      "url": "https://www.toyota.fr/customer/manuel",
+      "language": "fr",
+      "verifiedAt": "2026-10-20",
+      "note": "Portail officiel du manuel du propriétaire ; informations du véhicule à renseigner."
+    }
+  ],
+  "guides": [
+    {
+      "id": "guide-fuel-choice",
+      "task": "fuel_choice",
+      "language": "fr",
+      "title": "Choisir le bon carburant",
+      "intro": "E5 et E10 désignent une essence contenant jusqu'à 5 % ou 10 % d'éthanol. SP95 et SP98 renvoient à l'indice d'octane RON. B7 désigne un gazole contenant jusqu'à 7 % d'esters méthyliques d'acides gras. E85 nécessite une compatibilité expressément documentée.",
+      "steps": [
+        "Identifier l'énergie et la motorisation exactes ; « hybride » ne suffit pas à déterminer le carburant.",
+        "Lire les carburants admis et l'indice d'octane requis sur la trappe et dans la notice de cette version.",
+        "Comparer ces indications avec l'étiquette du pistolet à la pompe, sans se fier uniquement au nom commercial.",
+        "Si l'E85 n'est pas explicitement autorisé pour le véhicule ou sa conversion documentée, ne pas le choisir par déduction à partir d'une compatibilité E10."
+      ],
+      "checklist": [
+        "Compatibilité confirmée pour le moteur et le marché du véhicule.",
+        "Gazole, essence et AdBlue ont des usages distincts."
+      ],
+      "sources": [
+        {
+          "id": "renault-engine",
+          "title": "Renault — identification et caractéristiques moteur",
+          "url": "https://www.user-manual.renault.com/fr/content/xfk/technical-specifications/information-about-vehicle/identification-moteur",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple de notice Kangoo XFK : méthode d'identification et définitions de carburants. Les compatibilités du tableau restent propres aux moteurs de cette notice."
+        },
+        {
+          "id": "renault-fuel",
+          "title": "Renault — réservoir carburant",
+          "url": "https://www.user-manual.renault.com/fr/faites-connaissance-avec-votre-v%C3%A9hicule/reservoir-carburant",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Notice d'un véhicule donné : vérifier étiquette de trappe, indice d'octane et carburant autorisé ; ne pas transposer la compatibilité."
+        },
+        {
+          "id": "acea-fuel",
+          "title": "ACEA — comprendre les identifiants de carburant",
+          "url": "https://www.acea.auto/press-release/fuel-labelling-information-to-help-consumers-and-operators-choose-right-fuel-now-published/",
+          "publisher": "ACEA",
+          "verifiedAt": "2026-10-20",
+          "scope": "Principes des étiquettes communes au véhicule et à la pompe ; publication du 21 juin 2018."
+        },
+        {
+          "id": "ford-e85",
+          "title": "Ford — technologie Flexifuel E85",
+          "url": "https://www.ford.fr/achat-voiture/offres/flexifuel-e85.html",
+          "publisher": "Ford",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple de motorisations expressément conçues pour l'E85. Ce n'est pas une compatibilité de toutes les Ford."
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "scope": "general_method_not_vehicle_compatibility",
+      "requiresVehicleConfirmation": true,
+      "relatedVideos": [
+        {
+          "id": "youtube:8VWEwEveGTQ",
+          "title": "Octane Ratings Explained - EricTheCarGuy",
+          "url": "https://www.youtube.com/watch?v=8VWEwEveGTQ",
+          "creator": "EricTheCarGuy",
+          "language": "en",
+          "selectionBasis": "catalog_title_metadata",
+          "contentReviewed": false,
+          "vehicleCompatibilityConfirmed": false,
+          "note": "Piste issue des métadonnées du catalogue. Contenu et application au véhicule à vérifier ; aucune prescription technique n'en est déduite."
+        }
+      ],
+      "recommendation": {
+        "enabled": true,
+        "reviewedAt": "2026-10-20T17:08:42Z",
+        "expiresAt": "2026-11-19T17:08:42Z",
+        "reason": {
+          "fr": "Le guide distingue les étiquettes E5/E10 et B7, l'indice SP95/SP98 et le cas de l'E85, puis renvoie à la trappe et à la notice du véhicule.",
+          "en": "The guide distinguishes E5/E10 and B7 labels, SP95/SP98 octane ratings and the case of E85, then refers to the fuel flap and the vehicle manual.",
+          "es": "La guía distingue las etiquetas E5/E10 y B7, el octanaje SP95/SP98 y el caso del E85, y remite a la tapa del depósito y al manual del vehículo."
+        },
+        "evidence": {
+          "note": {
+            "fr": "Sélection éditoriale après relecture du guide interne et de ses sources officielles déjà documentées. Elle porte sur la démarche expliquée ; elle ne confirme aucune compatibilité pour un véhicule.",
+            "en": "Editorial selection after reviewing the internal guide and its previously documented official sources. It concerns the method explained and does not confirm compatibility for any vehicle.",
+            "es": "Selección editorial tras revisar la guía interna y sus fuentes oficiales ya documentadas. Se refiere al método explicado y no confirma la compatibilidad con ningún vehículo."
+          }
+        }
+      }
+    },
+    {
+      "id": "guide-oil-spec",
+      "task": "oil_spec",
+      "language": "fr",
+      "title": "Lire une référence d'huile moteur",
+      "intro": "Un grade SAE comme 5W-30 décrit la viscosité, pas toutes les performances de l'huile. Les catégories ACEA ou API décrivent d'autres exigences. Une spécification ou homologation constructeur peut s'ajouter : deux huiles de même viscosité ne sont donc pas automatiquement interchangeables.",
+      "steps": [
+        "Relever dans le document d'entretien la motorisation, le grade SAE et les spécifications exigées pour cette version.",
+        "Comparer chaque exigence avec l'étiquette et la fiche technique du produit, y compris la référence constructeur complète.",
+        "Vérifier si la fiche annonce une homologation formelle ou une simple recommandation du fabricant d'huile ; conserver la preuve correspondante.",
+        "Si le code moteur, l'année ou la spécification manquent, obtenir la préconisation constructeur avant de sélectionner une référence."
+      ],
+      "checklist": [
+        "Grade SAE + catégorie exigée + référence constructeur vérifiés.",
+        "Aucune huile conseillée automatiquement à partir de la seule marque."
+      ],
+      "sources": [
+        {
+          "id": "api-oil",
+          "title": "API — Motor Oil Guide",
+          "url": "https://www.api.org/products-and-services/engine-oil/documents/motor-oil-guide",
+          "publisher": "American Petroleum Institute",
+          "verifiedAt": "2026-10-20",
+          "scope": "Guide de lecture : grade de viscosité SAE et catégories de performance ; suivre les exigences du constructeur."
+        },
+        {
+          "id": "acea-oil",
+          "title": "ACEA — séquences d'huile 2023, moteurs légers",
+          "url": "https://www.acea.auto/files/2023_ACEA_oil_sequences_light-duty_engines.pdf",
+          "publisher": "ACEA",
+          "verifiedAt": "2026-10-20",
+          "scope": "Les catégories décrivent des exigences d'essais ; les constructeurs peuvent imposer des exigences supplémentaires. Pas de choix de catégorie universelle."
+        },
+        {
+          "id": "ford-oil",
+          "title": "Ford — exemple de spécifications techniques des fluides",
+          "url": "https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1080793&Uid=G1080792&buildtype=web&countryCode=FRA&div=f&languageCode=fr&moidRef=G552700&userMarket=FRA&vFilteringEnabled=False&variantid=1534",
+          "publisher": "Ford",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple montrant une spécification constructeur, des viscosités et des capacités dépendantes du moteur. Aucune de ces valeurs n'est une préconisation pour le véhicule de l'utilisateur."
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "scope": "general_method_not_vehicle_compatibility",
+      "requiresVehicleConfirmation": true,
+      "relatedVideos": [
+        {
+          "id": "youtube:C4gGjGFyrNI",
+          "title": "How to choose the right engine oil for your car | AUTODOC",
+          "url": "https://www.youtube.com/watch?v=C4gGjGFyrNI",
+          "creator": "autodoc.co.uk",
+          "language": "en",
+          "selectionBasis": "catalog_title_metadata",
+          "contentReviewed": false,
+          "vehicleCompatibilityConfirmed": false,
+          "note": "Piste issue des métadonnées du catalogue. Contenu et application au véhicule à vérifier ; aucune prescription technique n'en est déduite."
+        }
+      ],
+      "recommendation": {
+        "enabled": true,
+        "reviewedAt": "2026-10-20T17:08:42Z",
+        "expiresAt": "2026-11-19T17:08:42Z",
+        "reason": {
+          "fr": "Des repères pour distinguer viscosité SAE, catégories ACEA/API et exigences constructeur avant de comparer une huile au document d'entretien.",
+          "en": "A guide to distinguishing SAE viscosity, ACEA/API categories and manufacturer requirements before comparing an oil with the maintenance document.",
+          "es": "Una guía para distinguir viscosidad SAE, categorías ACEA/API y requisitos del fabricante antes de comparar un aceite con el documento de mantenimiento."
+        },
+        "evidence": {
+          "note": {
+            "fr": "Sélection éditoriale après relecture du guide interne et de ses sources officielles déjà documentées. Elle porte sur la démarche expliquée ; elle ne confirme aucune compatibilité pour un véhicule.",
+            "en": "Editorial selection after reviewing the internal guide and its previously documented official sources. It concerns the method explained and does not confirm compatibility for any vehicle.",
+            "es": "Selección editorial tras revisar la guía interna y sus fuentes oficiales ya documentadas. Se refiere al método explicado y no confirma la compatibilidad con ningún vehículo."
+          }
+        }
+      }
+    },
+    {
+      "id": "guide-oil-change",
+      "task": "oil_change",
+      "language": "fr",
+      "title": "Préparer une vidange et contrôler le niveau",
+      "intro": "La quantité, le filtre, les joints, l'intervalle et les couples dépendent du moteur. Un appoint entre deux entretiens ne remplace pas une vidange.",
+      "steps": [
+        "Trouver le plan d'entretien et la procédure correspondant au moteur, puis confirmer l'huile et les pièces nécessaires.",
+        "Avant de commencer, vérifier les accès, les moyens de maintien du véhicule, les couples et la quantité avec ou sans remplacement du filtre.",
+        "Effectuer l'opération seulement avec cette procédure complète ; recueillir l'huile usagée pour une filière de collecte adaptée.",
+        "Contrôler le niveau dans les conditions indiquées par la notice, vérifier l'absence de fuite et inscrire date, kilométrage et produits utilisés."
+      ],
+      "checklist": [
+        "Ne pas dépasser le maximum indiqué par la méthode de mesure du véhicule.",
+        "L'absence de voyant d'huile ne confirme pas que l'entretien est à jour."
+      ],
+      "sources": [
+        {
+          "id": "renault-oil",
+          "title": "Renault — niveau, appoint et vidange d'huile moteur",
+          "url": "https://www.user-manual.renault.com/fr/acc%C3%A8s-moteur-niveaux/huile-moteur-16",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Méthode générale de contrôle et renvoi au document d'entretien. Les volumes et délais cités dans cette notice ne sont pas généralisés."
+        },
+        {
+          "id": "ford-oil",
+          "title": "Ford — exemple de spécifications techniques des fluides",
+          "url": "https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1080793&Uid=G1080792&buildtype=web&countryCode=FRA&div=f&languageCode=fr&moidRef=G552700&userMarket=FRA&vFilteringEnabled=False&variantid=1534",
+          "publisher": "Ford",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple montrant une spécification constructeur, des viscosités et des capacités dépendantes du moteur. Aucune de ces valeurs n'est une préconisation pour le véhicule de l'utilisateur."
+        },
+        {
+          "id": "api-oil",
+          "title": "API — Motor Oil Guide",
+          "url": "https://www.api.org/products-and-services/engine-oil/documents/motor-oil-guide",
+          "publisher": "American Petroleum Institute",
+          "verifiedAt": "2026-10-20",
+          "scope": "Guide de lecture : grade de viscosité SAE et catégories de performance ; suivre les exigences du constructeur."
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "scope": "general_method_not_vehicle_compatibility",
+      "requiresVehicleConfirmation": true,
+      "relatedVideos": [
+        {
+          "id": "youtube:ZTo9RzG4Qsk",
+          "title": "When, why, and how to change engine oil | AUTODOC tips",
+          "url": "https://www.youtube.com/watch?v=ZTo9RzG4Qsk",
+          "creator": "autodoc.co.uk",
+          "language": "en",
+          "selectionBasis": "catalog_title_metadata",
+          "contentReviewed": false,
+          "vehicleCompatibilityConfirmed": false,
+          "note": "Piste issue des métadonnées du catalogue. Contenu et application au véhicule à vérifier ; aucune prescription technique n'en est déduite."
+        }
+      ]
+    },
+    {
+      "id": "guide-wipers",
+      "task": "wipers",
+      "language": "fr",
+      "title": "Remplacer des balais d'essuie-glace",
+      "intro": "La longueur ne suffit pas : fixation, côté, génération et position de service doivent correspondre au véhicule.",
+      "steps": [
+        "Sélectionner les balais avec les détails exacts du véhicule et vérifier la fixation avant de démonter.",
+        "Placer les bras en position d'entretien si la notice le demande ; ne pas les forcer contre le capot.",
+        "Protéger la vitre avec un chiffon ou un carton et garder le contrôle du bras relevé.",
+        "Suivre la notice du balai ou sa vidéo de montage, vérifier le verrouillage puis remettre les bras en position selon la notice du véhicule."
+      ],
+      "checklist": [
+        "Référence et adaptateur confirmés.",
+        "Le bras métallique ne doit pas retomber sur le pare-brise."
+      ],
+      "sources": [
+        {
+          "id": "bosch-wipers",
+          "title": "Bosch — entretien et remplacement des essuie-glaces",
+          "url": "https://www.boschaftermarket.com/fr/fr/pieces/produits/balais-dessuie-glaces/",
+          "publisher": "Bosch",
+          "verifiedAt": "2026-10-20",
+          "scope": "Position de service selon le véhicule, protection du pare-brise et instructions de montage propres au balai."
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "scope": "general_method_not_vehicle_compatibility",
+      "requiresVehicleConfirmation": true,
+      "relatedVideos": [
+        {
+          "id": "youtube:ycRSe78VSpA",
+          "title": "How to change windscreen wipers [AUTODOC TUTORIAL]",
+          "url": "https://www.youtube.com/watch?v=ycRSe78VSpA",
+          "creator": "autodoc.co.uk",
+          "language": "en",
+          "selectionBasis": "catalog_title_metadata",
+          "contentReviewed": false,
+          "vehicleCompatibilityConfirmed": false,
+          "note": "Piste issue des métadonnées du catalogue. Contenu et application au véhicule à vérifier ; aucune prescription technique n'en est déduite."
+        },
+        {
+          "id": "youtube:Usiv6ePaAcA",
+          "title": "How to change front windshield wipers on PEUGEOT 308 I [TUTORIAL AUTODOC]",
+          "url": "https://www.youtube.com/watch?v=Usiv6ePaAcA",
+          "creator": "autodoc.co.uk",
+          "language": "en",
+          "selectionBasis": "catalog_title_metadata",
+          "contentReviewed": false,
+          "vehicleCompatibilityConfirmed": false,
+          "note": "Piste issue des métadonnées du catalogue. Contenu et application au véhicule à vérifier ; aucune prescription technique n'en est déduite."
+        }
+      ]
+    },
+    {
+      "id": "guide-wheel-change",
+      "task": "wheel_change",
+      "language": "fr",
+      "title": "Préparer un changement de roue",
+      "intro": "Une roue de secours se monte selon la notice du véhicule. Le point de levage, les fixations, le couple et les limites de la roue doivent être confirmés avant l'intervention.",
+      "steps": [
+        "Choisir un emplacement sûr et un sol ferme et horizontal ; immobiliser et caler le véhicule selon sa notice.",
+        "Vérifier roue de secours, pression, clé et cric adapté ; repérer précisément le point de levage prescrit.",
+        "Suivre l'ordre de dépose et de montage du constructeur. Ne jamais passer sous un véhicule soutenu uniquement par un cric.",
+        "Appliquer le couple prescrit avec l'outil approprié et vérifier les limitations d'utilisation de la roue de secours."
+      ],
+      "checklist": [
+        "Aucun couple ni point de levage supposé d'après une autre génération.",
+        "Si l'emplacement ne permet pas une intervention sûre, faire intervenir l'assistance."
+      ],
+      "sources": [
+        {
+          "id": "michelin-wheel",
+          "title": "Michelin — monter une roue de secours",
+          "url": "https://www.michelin.fr/auto/conseils/changer-pneus/roue-secours",
+          "publisher": "Michelin",
+          "verifiedAt": "2026-10-20",
+          "scope": "Préparation d'un changement de roue et points de levage ; se référer à la notice du véhicule."
+        },
+        {
+          "id": "michelin-torque",
+          "title": "Michelin — précautions de montage et démontage",
+          "url": "https://pro.michelin.fr/astuces-conseils/montage-et-demontage",
+          "publisher": "Michelin",
+          "verifiedAt": "2026-10-20",
+          "scope": "Source professionnelle pour le principe du serrage dynamométrique au couple prescrit ; ne pas transposer ses procédures poids lourds aux voitures."
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "scope": "general_method_not_vehicle_compatibility",
+      "requiresVehicleConfirmation": true,
+      "relatedVideos": []
+    },
+    {
+      "id": "guide-battery",
+      "task": "battery",
+      "language": "fr",
+      "title": "Identifier et entretenir la batterie 12 V",
+      "intro": "La batterie auxiliaire 12 V et la batterie de traction ont des fonctions différentes. Une batterie de remplacement doit correspondre aux caractéristiques prévues ; AGM, EFB et SLI désignent des technologies distinctes.",
+      "steps": [
+        "Identifier la batterie 12 V et les bornes de dépannage dans la notice exacte ; certains véhicules utilisent des points déportés.",
+        "Pour une recharge ou une aide au démarrage, suivre la procédure du véhicule et celle du matériel compatible.",
+        "Pour un remplacement, confirmer technologie, dimensions, polarité, capacité et exigences d'installation auprès de la documentation ou du catalogue d'application.",
+        "Vérifier si une initialisation ou un enregistrement de batterie est demandé pour cette version avant de remplacer."
+      ],
+      "checklist": [
+        "Ne pas improviser l'ordre de branchement ou de débranchement.",
+        "Cette fiche ne décrit aucune intervention sur la haute tension."
+      ],
+      "sources": [
+        {
+          "id": "toyota-battery",
+          "title": "Toyota — FAQ technique, batterie 12 V",
+          "url": "https://www.toyota.fr/informations/faq/informations-techniques",
+          "publisher": "Toyota",
+          "verifiedAt": "2026-10-20",
+          "scope": "Batterie auxiliaire et renvoi à la procédure de dépannage de la notice ; ne pas transposer les consignes d'une motorisation à une autre."
+        },
+        {
+          "id": "bosch-battery",
+          "title": "Bosch — technologies de batteries",
+          "url": "https://www.boschaftermarket.com/fr/fr/pieces/produits/batteries/",
+          "publisher": "Bosch",
+          "verifiedAt": "2026-10-20",
+          "scope": "Différences entre technologies SLI, EFB et AGM et recherche de la batterie adaptée ; aucune référence déduite pour un véhicule inconnu."
+        },
+        {
+          "id": "bosch-battery-catalog",
+          "title": "Bosch — catalogue batteries, légende des applications",
+          "url": "https://www.boschaftermarket.com/xrm/media/images/country_specific/it/xx_pdfs_28/catalogs/batterie.pdf",
+          "publisher": "Bosch",
+          "verifiedAt": "2026-10-20",
+          "scope": "La légende distingue les technologies, contraintes de capacité et cas nécessitant l'enregistrement du remplacement dans le calculateur ; aucune application du catalogue n'est recommandée ici."
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "scope": "general_method_not_vehicle_compatibility",
+      "requiresVehicleConfirmation": true,
+      "relatedVideos": []
+    },
+    {
+      "id": "guide-fuses",
+      "task": "fuses",
+      "language": "fr",
+      "title": "Repérer un fusible sans se tromper",
+      "intro": "L'emplacement et l'affectation des fusibles varient avec la génération et l'équipement. Un schéma trouvé pour un modèle voisin peut être différent.",
+      "steps": [
+        "Identifier la fonction en panne, puis consulter le schéma de la notice et l'étiquette du boîtier.",
+        "Suivre la mise hors tension prescrite et intervenir uniquement sur les fusibles accessibles autorisés par la notice.",
+        "Contrôler le fusible concerné et utiliser le même type et le même ampérage si son remplacement est prévu.",
+        "Si le fusible grille à nouveau, rechercher la cause du défaut au lieu d'augmenter son ampérage."
+      ],
+      "checklist": [
+        "Aucun numéro de fusible déduit d'une autre année.",
+        "Ne pas remplacer un fusible par un pont ni par un calibre supérieur."
+      ],
+      "sources": [
+        {
+          "id": "renault-fuses",
+          "title": "Renault — vérifier les fusibles",
+          "url": "https://www.user-manual.renault.com/fr/node/19296",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Même ampérage, affectation selon équipement et intervention limitée aux fusibles accessibles indiqués ; aucun numéro de fusible universel."
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "scope": "general_method_not_vehicle_compatibility",
+      "requiresVehicleConfirmation": true,
+      "relatedVideos": []
+    },
+    {
+      "id": "guide-lighting",
+      "task": "lighting",
+      "language": "fr",
+      "title": "Identifier une lampe ou un module d'éclairage",
+      "intro": "Un même modèle peut proposer plusieurs projecteurs. La procédure change selon qu'il s'agit d'une lampe remplaçable ou d'un module LED.",
+      "steps": [
+        "Identifier le feu concerné et la technologie réellement installée, puis lire la section correspondante de la notice.",
+        "Confirmer la référence, la puissance et les conditions d'accès avant d'acheter la pièce.",
+        "Si le remplacement est prévu pour l'utilisateur, couper le contact et suivre les consignes de manipulation, de positionnement et de fermeture des caches.",
+        "Contrôler le fonctionnement et le réglage demandé ; pour un module réservé à l'atelier, suivre cette orientation."
+      ],
+      "checklist": [
+        "Pas de référence H7 ou autre attribuée automatiquement au modèle.",
+        "Ne pas toucher le verre d'une lampe halogène lorsque sa notice le proscrit."
+      ],
+      "sources": [
+        {
+          "id": "renault-lighting",
+          "title": "Renault Kangoo — remplacement des lampes",
+          "url": "https://www.user-manual.renault.com/fr/feux-%C3%A9clairages-remplacement-des-lampes/eclairage-exterieur-remplacement-des-lampes-3",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple distinguant lampes remplaçables et modules LED ; les types et puissances de cette notice ne sont pas généralisés."
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "scope": "general_method_not_vehicle_compatibility",
+      "requiresVehicleConfirmation": true,
+      "relatedVideos": []
+    },
+    {
+      "id": "guide-diagnostics",
+      "task": "diagnostics",
+      "language": "fr",
+      "title": "Comprendre un diagnostic OBD",
+      "intro": "La lecture de défauts, l'analyse des mesures et les réglages sont des opérations différentes. Un code doit être interprété avec le système concerné, les symptômes et les contrôles de la documentation.",
+      "steps": [
+        "Noter le symptôme et le message exact, puis vérifier la compatibilité de l'outil avec le véhicule et le système à examiner.",
+        "Suivre la procédure de connexion de l'outil ; commencer par la lecture et sauvegarder le rapport des codes et données disponibles.",
+        "Comparer les observations aux instructions de contrôle du constructeur plutôt que remplacer une pièce sur le seul intitulé du code.",
+        "Garder l'effacement, les tests d'actionneurs, le codage et les adaptations pour la procédure appropriée, après diagnostic."
+      ],
+      "checklist": [
+        "Le rapport enregistré sert à comprendre la panne.",
+        "L'accès à certaines fonctions peut nécessiter un outil et une autorisation constructeur."
+      ],
+      "sources": [
+        {
+          "id": "bosch-diagnostics",
+          "title": "Bosch — diagnostic et documentation ESI[tronic]",
+          "url": "https://www.boschaftermarket.com/fr/fr/equipements/diagnostic-ecu/esitronic/",
+          "publisher": "Bosch",
+          "verifiedAt": "2026-10-20",
+          "scope": "Distingue lecture des défauts, valeurs réelles, tests, réglages et accès protégé ; documentation et identification précises du véhicule."
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "scope": "general_method_not_vehicle_compatibility",
+      "requiresVehicleConfirmation": true,
+      "relatedVideos": []
+    },
+    {
+      "id": "guide-service-reset",
+      "task": "service_reset",
+      "language": "fr",
+      "title": "Comprendre le menu d'entretien",
+      "intro": "Le compteur d'entretien est un rappel. Sa remise à zéro ne réalise ni vidange ni réparation ; certains véhicules distinguent révision et vidange.",
+      "steps": [
+        "Lire le libellé exact du rappel et retrouver la notice de la bonne génération et du bon tableau de bord.",
+        "Identifier l'opération réellement effectuée et conserver sa date et son kilométrage.",
+        "Réinitialiser seulement le compteur correspondant à l'entretien réalisé, selon la procédure propre au véhicule.",
+        "Vérifier l'affichage obtenu et le prochain terme prévu ; un voyant de panne demande un diagnostic distinct."
+      ],
+      "checklist": [
+        "Pas de séquence universelle de boutons ou de pédales.",
+        "Les intervalles affichés ne remplacent pas le plan d'entretien."
+      ],
+      "sources": [
+        {
+          "id": "renault-reset",
+          "title": "Renault — autonomie de révision et de vidange",
+          "url": "https://www.user-manual.renault.com/fr/ordinateur-de-bord/parametres-de-voyage-4",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple avec compteurs de révision et de vidange distincts ; aucune séquence de boutons universelle."
+        }
+      ],
+      "verifiedAt": "2026-10-20",
+      "scope": "general_method_not_vehicle_compatibility",
+      "requiresVehicleConfirmation": true,
+      "relatedVideos": []
+    }
+  ]
+}

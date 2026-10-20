@@ -1,0 +1,284 @@
+{
+  "schemaVersion": 1,
+  "language": "fr",
+  "updatedAt": "2026-10-20",
+  "items": [
+    {
+      "id": "vehicle-identity",
+      "question": "Pourquoi l'année et le code moteur sont-ils nécessaires ?",
+      "answer": "Un même nom de modèle peut couvrir plusieurs générations, moteurs et équipements. Sans identification suffisamment précise, Focus propose une méthode et des sources, mais ne valide aucune référence de pièce ou de fluide.",
+      "task": null,
+      "sources": [
+        {
+          "id": "renault-engine",
+          "title": "Renault — identification et caractéristiques moteur",
+          "url": "https://www.user-manual.renault.com/fr/content/xfk/technical-specifications/information-about-vehicle/identification-moteur",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple de notice Kangoo XFK : méthode d'identification et définitions de carburants. Les compatibilités du tableau restent propres aux moteurs de cette notice."
+        },
+        {
+          "id": "ford-manuals",
+          "title": "Ford — manuels du conducteur",
+          "url": "https://www.ford.fr/support/manuels-proprietaire-details",
+          "publisher": "Ford",
+          "verifiedAt": "2026-10-20",
+          "scope": "Recherche par VIN ou année et modèle."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "fuel-labels",
+      "question": "E5 ou E10, est-ce la même chose que SP95 ou SP98 ?",
+      "answer": "Non. E5/E10 indiquent une teneur maximale en éthanol ; SP95/SP98 renvoient à l'indice d'octane. Il faut respecter les deux critères prévus pour le moteur, en lisant la trappe et la notice.",
+      "task": "fuel_choice",
+      "sources": [
+        {
+          "id": "renault-engine",
+          "title": "Renault — identification et caractéristiques moteur",
+          "url": "https://www.user-manual.renault.com/fr/content/xfk/technical-specifications/information-about-vehicle/identification-moteur",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple de notice Kangoo XFK : méthode d'identification et définitions de carburants. Les compatibilités du tableau restent propres aux moteurs de cette notice."
+        },
+        {
+          "id": "renault-fuel",
+          "title": "Renault — réservoir carburant",
+          "url": "https://www.user-manual.renault.com/fr/faites-connaissance-avec-votre-v%C3%A9hicule/reservoir-carburant",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Notice d'un véhicule donné : vérifier étiquette de trappe, indice d'octane et carburant autorisé ; ne pas transposer la compatibilité."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "e85",
+      "question": "Si mon véhicule accepte l'E10, accepte-t-il l'E85 ?",
+      "answer": "La compatibilité E10 ne permet pas de conclure à une compatibilité E85. Il faut une autorisation explicite pour cette motorisation ou une conversion documentée applicable au véhicule.",
+      "task": "fuel_choice",
+      "sources": [
+        {
+          "id": "ford-e85",
+          "title": "Ford — technologie Flexifuel E85",
+          "url": "https://www.ford.fr/achat-voiture/offres/flexifuel-e85.html",
+          "publisher": "Ford",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple de motorisations expressément conçues pour l'E85. Ce n'est pas une compatibilité de toutes les Ford."
+        },
+        {
+          "id": "renault-fuel",
+          "title": "Renault — réservoir carburant",
+          "url": "https://www.user-manual.renault.com/fr/faites-connaissance-avec-votre-v%C3%A9hicule/reservoir-carburant",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Notice d'un véhicule donné : vérifier étiquette de trappe, indice d'octane et carburant autorisé ; ne pas transposer la compatibilité."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "diesel-b7",
+      "question": "Que signifie B7 ?",
+      "answer": "B7 est un identifiant de gazole contenant jusqu'à 7 % d'esters méthyliques d'acides gras. Ce n'est pas une essence E7. La trappe et la notice indiquent les carburants admis par le véhicule.",
+      "task": "fuel_choice",
+      "sources": [
+        {
+          "id": "renault-engine",
+          "title": "Renault — identification et caractéristiques moteur",
+          "url": "https://www.user-manual.renault.com/fr/content/xfk/technical-specifications/information-about-vehicle/identification-moteur",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple de notice Kangoo XFK : méthode d'identification et définitions de carburants. Les compatibilités du tableau restent propres aux moteurs de cette notice."
+        },
+        {
+          "id": "acea-fuel",
+          "title": "ACEA — comprendre les identifiants de carburant",
+          "url": "https://www.acea.auto/press-release/fuel-labelling-information-to-help-consumers-and-operators-choose-right-fuel-now-published/",
+          "publisher": "ACEA",
+          "verifiedAt": "2026-10-20",
+          "scope": "Principes des étiquettes communes au véhicule et à la pompe ; publication du 21 juin 2018."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "same-viscosity",
+      "question": "Deux huiles 5W-30 conviennent-elles forcément au même moteur ?",
+      "answer": "Non. Le grade SAE ne décrit pas toutes les performances. Il faut aussi comparer les catégories et la spécification ou homologation constructeur exigées pour le moteur.",
+      "task": "oil_spec",
+      "sources": [
+        {
+          "id": "api-oil",
+          "title": "API — Motor Oil Guide",
+          "url": "https://www.api.org/products-and-services/engine-oil/documents/motor-oil-guide",
+          "publisher": "American Petroleum Institute",
+          "verifiedAt": "2026-10-20",
+          "scope": "Guide de lecture : grade de viscosité SAE et catégories de performance ; suivre les exigences du constructeur."
+        },
+        {
+          "id": "acea-oil",
+          "title": "ACEA — séquences d'huile 2023, moteurs légers",
+          "url": "https://www.acea.auto/files/2023_ACEA_oil_sequences_light-duty_engines.pdf",
+          "publisher": "ACEA",
+          "verifiedAt": "2026-10-20",
+          "scope": "Les catégories décrivent des exigences d'essais ; les constructeurs peuvent imposer des exigences supplémentaires. Pas de choix de catégorie universelle."
+        },
+        {
+          "id": "ford-oil",
+          "title": "Ford — exemple de spécifications techniques des fluides",
+          "url": "https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G1080793&Uid=G1080792&buildtype=web&countryCode=FRA&div=f&languageCode=fr&moidRef=G552700&userMarket=FRA&vFilteringEnabled=False&variantid=1534",
+          "publisher": "Ford",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple montrant une spécification constructeur, des viscosités et des capacités dépendantes du moteur. Aucune de ces valeurs n'est une préconisation pour le véhicule de l'utilisateur."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "oil-interval",
+      "question": "Un appoint d'huile remplace-t-il la vidange ?",
+      "answer": "Non. L'appoint corrige le niveau ; la vidange fait partie de l'entretien prévu. L'absence de voyant n'indique pas que la qualité de l'huile et l'intervalle d'entretien sont encore conformes.",
+      "task": "oil_change",
+      "sources": [
+        {
+          "id": "renault-oil",
+          "title": "Renault — niveau, appoint et vidange d'huile moteur",
+          "url": "https://www.user-manual.renault.com/fr/acc%C3%A8s-moteur-niveaux/huile-moteur-16",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Méthode générale de contrôle et renvoi au document d'entretien. Les volumes et délais cités dans cette notice ne sont pas généralisés."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "wiper-reference",
+      "question": "Puis-je acheter un essuie-glace en me basant seulement sur sa longueur ?",
+      "answer": "Il faut aussi confirmer la fixation, l'adaptateur et l'application au véhicule. La notice indique si une position de service est nécessaire avant de relever les bras.",
+      "task": "wipers",
+      "sources": [
+        {
+          "id": "bosch-wipers",
+          "title": "Bosch — entretien et remplacement des essuie-glaces",
+          "url": "https://www.boschaftermarket.com/fr/fr/pieces/produits/balais-dessuie-glaces/",
+          "publisher": "Bosch",
+          "verifiedAt": "2026-10-20",
+          "scope": "Position de service selon le véhicule, protection du pare-brise et instructions de montage propres au balai."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "jack",
+      "question": "Puis-je travailler sous une voiture soutenue par son cric de secours ?",
+      "answer": "Non. Ne passez pas sous un véhicule soutenu uniquement par un cric. Pour changer une roue, utilisez l'emplacement et les moyens d'immobilisation prévus par la notice.",
+      "task": "wheel_change",
+      "sources": [
+        {
+          "id": "michelin-wheel",
+          "title": "Michelin — monter une roue de secours",
+          "url": "https://www.michelin.fr/auto/conseils/changer-pneus/roue-secours",
+          "publisher": "Michelin",
+          "verifiedAt": "2026-10-20",
+          "scope": "Préparation d'un changement de roue et points de levage ; se référer à la notice du véhicule."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "fuse-rating",
+      "question": "Puis-je mettre un fusible plus fort s'il grille à nouveau ?",
+      "answer": "Non. Un calibre supérieur peut laisser surchauffer le circuit. Respectez le type et l'ampérage prescrits et faites rechercher la cause si le défaut revient.",
+      "task": "fuses",
+      "sources": [
+        {
+          "id": "renault-fuses",
+          "title": "Renault — vérifier les fusibles",
+          "url": "https://www.user-manual.renault.com/fr/node/19296",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Même ampérage, affectation selon équipement et intervention limitée aux fusibles accessibles indiqués ; aucun numéro de fusible universel."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "battery-hybrid",
+      "question": "Une voiture hybride possède-t-elle aussi une batterie 12 V ?",
+      "answer": "Oui, de nombreux modèles disposent d'une batterie auxiliaire distincte de la batterie de traction. Consultez la notice pour la localiser et connaître les points et la procédure de dépannage.",
+      "task": "battery",
+      "sources": [
+        {
+          "id": "toyota-battery",
+          "title": "Toyota — FAQ technique, batterie 12 V",
+          "url": "https://www.toyota.fr/informations/faq/informations-techniques",
+          "publisher": "Toyota",
+          "verifiedAt": "2026-10-20",
+          "scope": "Batterie auxiliaire et renvoi à la procédure de dépannage de la notice ; ne pas transposer les consignes d'une motorisation à une autre."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "led-module",
+      "question": "Toutes les ampoules d'un même modèle sont-elles identiques ?",
+      "answer": "Non. La version des projecteurs et les équipements changent les références. Certains modules LED sont à remplacer en atelier selon la notice.",
+      "task": "lighting",
+      "sources": [
+        {
+          "id": "renault-lighting",
+          "title": "Renault Kangoo — remplacement des lampes",
+          "url": "https://www.user-manual.renault.com/fr/feux-%C3%A9clairages-remplacement-des-lampes/eclairage-exterieur-remplacement-des-lampes-3",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple distinguant lampes remplaçables et modules LED ; les types et puissances de cette notice ne sont pas généralisés."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "reset-service",
+      "question": "Effacer le rappel d'entretien règle-t-il un problème moteur ?",
+      "answer": "Non. Le rappel suit l'entretien ; un défaut moteur doit être diagnostiqué séparément. Réinitialisez uniquement le compteur correspondant à une opération effectivement réalisée.",
+      "task": "service_reset",
+      "sources": [
+        {
+          "id": "renault-reset",
+          "title": "Renault — autonomie de révision et de vidange",
+          "url": "https://www.user-manual.renault.com/fr/ordinateur-de-bord/parametres-de-voyage-4",
+          "publisher": "Renault",
+          "verifiedAt": "2026-10-20",
+          "scope": "Exemple avec compteurs de révision et de vidange distincts ; aucune séquence de boutons universelle."
+        },
+        {
+          "id": "bosch-diagnostics",
+          "title": "Bosch — diagnostic et documentation ESI[tronic]",
+          "url": "https://www.boschaftermarket.com/fr/fr/equipements/diagnostic-ecu/esitronic/",
+          "publisher": "Bosch",
+          "verifiedAt": "2026-10-20",
+          "scope": "Distingue lecture des défauts, valeurs réelles, tests, réglages et accès protégé ; documentation et identification précises du véhicule."
+        }
+      ],
+      "language": "fr"
+    },
+    {
+      "id": "obd-code",
+      "question": "Un code OBD me dit-il directement quelle pièce acheter ?",
+      "answer": "Il oriente les recherches. Les symptômes, les mesures et la procédure de contrôle permettent de déterminer la cause. Conservez le rapport avant tout effacement.",
+      "task": "diagnostics",
+      "sources": [
+        {
+          "id": "bosch-diagnostics",
+          "title": "Bosch — diagnostic et documentation ESI[tronic]",
+          "url": "https://www.boschaftermarket.com/fr/fr/equipements/diagnostic-ecu/esitronic/",
+          "publisher": "Bosch",
+          "verifiedAt": "2026-10-20",
+          "scope": "Distingue lecture des défauts, valeurs réelles, tests, réglages et accès protégé ; documentation et identification précises du véhicule."
+        }
+      ],
+      "language": "fr"
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "status": "Propositions éditoriales à adapter aux fonctions effectivement livrées",
+  "language": "fr",
+  "updatedAt": "2026-10-20",
+  "items": [
+    {
+      "id": "chercher-question",
+      "category": "Recherche",
+      "question": "Comment trouver un tutoriel qui répond à ma question ?",
+      "answer": "Décrivez ce que vous voulez comprendre ou le problème rencontré : « freiner sans bloquer les roues », « comprendre le sous-virage » ou « lire une trace de télémétrie ». Ajoutez votre véhicule, votre discipline ou votre simulateur si cela change la réponse.",
+      "keywords": ["recherche", "question", "tutoriel"]
+    },
+    {
+      "id": "recherche-precision",
+      "category": "Recherche",
+      "question": "Comment rendre ma recherche plus précise ?",
+      "answer": "Associez une technique à un contexte : « freinage dégressif GT3 » est plus précis que « pilotage ». Un nom d'outil, une version, une langue ou un niveau peut aussi aider.",
+      "keywords": ["recherche", "mots-clés", "contexte"]
+    },
+    {
+      "id": "aucun-resultat",
+      "category": "Recherche",
+      "question": "Que faire si je ne trouve aucun résultat ?",
+      "answer": "Essayez un terme plus général, un synonyme ou retirez un filtre. Par exemple, recherchez « freinage dégressif » puis « trail braking ». Une absence de résultat peut aussi indiquer que ce sujet n'est pas encore référencé.",
+      "keywords": ["aucun résultat", "synonymes", "filtres"]
+    },
+    {
+      "id": "choisir-niveau",
+      "category": "Apprendre",
+      "question": "Comment choisir entre débutant et avancé ?",
+      "answer": "Fiez-vous surtout aux prérequis et à ce que la ressource explique. Un tutoriel débutant introduit les notions ; un contenu avancé peut supposer que vous savez déjà les appliquer et analyser leurs effets.",
+      "keywords": ["niveau", "débutant", "avancé", "prérequis"]
+    },
+    {
+      "id": "commencer-pilotage",
+      "category": "Apprendre",
+      "question": "Par quoi commencer si je découvre le pilotage ?",
+      "answer": "Commencez par la vision, la trajectoire, le freinage et la compréhension des réactions du véhicule. Travaillez une notion à la fois et choisissez une ressource adaptée à votre contexte, simulateur ou pratique encadrée sur circuit.",
+      "keywords": ["débutant", "pilotage", "trajectoire", "vision"]
+    },
+    {
+      "id": "tuto-parcours",
+      "category": "Apprendre",
+      "question": "Quelle différence entre un tutoriel et un parcours ?",
+      "answer": "Un tutoriel répond à un besoin précis. Un parcours organise plusieurs notions dans un ordre progressif. Choisissez le premier pour débloquer une question, le second pour construire une compétence.",
+      "keywords": ["tutoriel", "parcours", "progression"]
+    },
+    {
+      "id": "courte-longue",
+      "category": "Apprendre",
+      "question": "Faut-il choisir une vidéo courte ou une explication longue ?",
+      "answer": "Une vidéo courte peut montrer un geste ou définir une notion. Une explication longue aide à comprendre les conditions, les exceptions et la méthode. Vérifiez que la durée correspond à votre question, pas seulement au temps dont vous disposez.",
+      "keywords": ["durée", "short", "vidéo"]
+    },
+    {
+      "id": "sim-reel",
+      "category": "Apprendre",
+      "question": "Une explication de sim racing s'applique-t-elle à une voiture réelle ?",
+      "answer": "Certaines notions se recoupent, mais le comportement du matériel, les risques et les conditions de pratique diffèrent. Vérifiez le contexte de la vidéo et faites valider les applications réelles par un encadrement qualifié.",
+      "keywords": ["sim racing", "circuit", "contexte"]
+    },
+    {
+      "id": "evaluer-pertinence",
+      "category": "Sources",
+      "question": "Comment savoir si une vidéo convient à mon besoin ?",
+      "answer": "Comparez le sujet traité, le niveau, les prérequis et le contexte avec votre situation. La date peut compter pour un logiciel ou un règlement. Une vidéo très regardée n'est pas forcément la plus adaptée à votre question.",
+      "keywords": ["pertinence", "qualité", "date", "niveau"]
+    },
+    {
+      "id": "sources-different",
+      "category": "Sources",
+      "question": "Deux tutoriels donnent des conseils différents : lequel suivre ?",
+      "answer": "Comparez leurs hypothèses : voiture, pneus, piste, météo, simulateur et objectif. Deux méthodes peuvent répondre à des situations différentes. Recherchez l'explication et les limites de chaque conseil avant de le généraliser.",
+      "keywords": ["conseils", "comparaison", "contexte"]
+    },
+    {
+      "id": "langue-audio-sous-titres",
+      "category": "Langues",
+      "question": "Quelle différence entre langue audio et langue des sous-titres ?",
+      "answer": "La langue audio est celle parlée dans la vidéo. Les sous-titres peuvent reprendre cette langue ou proposer une traduction. Une vidéo en anglais peut donc être utile en français si des sous-titres français sont disponibles.",
+      "keywords": ["langue", "audio", "sous-titres", "traduction"]
+    },
+    {
+      "id": "transcript-definition",
+      "category": "Transcriptions",
+      "question": "À quoi sert une transcription ?",
+      "answer": "Une transcription permet de lire les paroles d'une vidéo, retrouver un terme ou parcourir l'explication sans tout revoir. Elle peut omettre ce qui est uniquement montré à l'écran : schémas, gestes, réglages et démonstrations restent importants.",
+      "keywords": ["transcription", "texte", "vidéo"]
+    },
+    {
+      "id": "transcript-availability",
+      "category": "Transcriptions",
+      "question": "Pourquoi certaines vidéos n'ont-elles pas de transcription ?",
+      "answer": "La source peut ne pas en proposer, ou sa réutilisation peut ne pas être disponible. Vérifiez les options du lecteur d'origine. Une vidéo publique n'implique pas automatiquement qu'une transcription puisse être copiée ailleurs.",
+      "keywords": ["transcription", "disponibilité", "source"]
+    },
+    {
+      "id": "transcript-auto",
+      "category": "Transcriptions",
+      "question": "Une transcription automatique peut-elle contenir des erreurs ?",
+      "answer": "Oui, notamment sur les noms de pièces, les unités, les valeurs et le vocabulaire technique. En cas de doute, écoutez le passage et vérifiez le contexte ou une autre source avant d'appliquer l'information.",
+      "keywords": ["transcription automatique", "erreurs", "unités"]
+    },
+    {
+      "id": "traduction-technique",
+      "category": "Langues",
+      "question": "Comment comprendre un terme technique mal traduit ?",
+      "answer": "Conservez le terme original et recherchez-le avec son contexte. Par exemple, « trail braking » peut être présenté comme « freinage dégressif ». Une traduction littérale ne suffit pas toujours à décrire le geste.",
+      "keywords": ["traduction", "technique", "vocabulaire"]
+    },
+    {
+      "id": "sous-titres-activer",
+      "category": "Langues",
+      "question": "Comment activer les sous-titres ?",
+      "answer": "Cherchez le bouton de sous-titres ou les réglages du lecteur d'origine. Les langues proposées dépendent de la vidéo et de la plateforme. Si aucune langue adaptée n'est disponible, cherchez une autre ressource ou une explication écrite.",
+      "keywords": ["sous-titres", "lecteur", "langue"]
+    },
+    {
+      "id": "horodatage-definition",
+      "category": "Transcriptions",
+      "question": "Que signifie un horodatage comme 03:25 ?",
+      "answer": "Il désigne un moment de la vidéo : ici, 3 minutes et 25 secondes après le début. Lorsqu'un lien de passage est proposé, il permet de retrouver cette partie plus rapidement.",
+      "keywords": ["horodatage", "chapitre", "passage"]
+    },
+    {
+      "id": "resume-limites",
+      "category": "Transcriptions",
+      "question": "Un résumé suffit-il pour comprendre toute la vidéo ?",
+      "answer": "Un résumé aide à décider si la ressource répond à votre question. Pour comprendre les étapes, les limites et les démonstrations, consultez le passage ou la vidéo complète. Vérifiez également sur quel contenu le résumé a été établi.",
+      "keywords": ["résumé", "compréhension", "source"]
+    },
+    {
+      "id": "video-indisponible",
+      "category": "Lecture",
+      "question": "Pourquoi une vidéo peut-elle devenir indisponible ?",
+      "answer": "Le créateur peut la supprimer, la rendre privée ou modifier ses paramètres. Des restrictions de plateforme ou de pays peuvent aussi intervenir. Essayez le lien vers la source lorsqu'il est proposé.",
+      "keywords": ["vidéo indisponible", "lien", "plateforme"]
+    },
+    {
+      "id": "lecteur-externe",
+      "category": "Lecture",
+      "question": "Pourquoi faut-il parfois ouvrir la plateforme d'origine ?",
+      "answer": "Certaines plateformes ou certains créateurs limitent l'intégration de leur lecteur sur d'autres sites. Le lien d'origine permet alors de consulter la ressource dans les conditions prévues par son éditeur.",
+      "keywords": ["lecteur", "intégration", "source"]
+    },
+    {
+      "id": "public-libre",
+      "category": "Sources",
+      "question": "Une vidéo publique est-elle libre de droits ?",
+      "answer": "Non. « Publique » signifie qu'elle est visible selon les conditions de sa plateforme. La réutilisation dépend de sa licence et des autorisations du créateur. Consultez les indications de la source avant de copier, modifier ou republier le contenu.",
+      "keywords": ["public", "licence", "droits", "gratuit"],
+      "sourceUrl": "https://support.google.com/youtube/answer/2797468?hl=en"
+    },
+    {
+      "id": "reference-creator",
+      "category": "Sources",
+      "question": "Qui a créé les vidéos référencées ?",
+      "answer": "L'auteur ou la chaîne d'origine doit être identifié sur la ressource. Consultez sa page pour connaître le contexte, les autres publications et les éventuelles corrections. Le référencement d'une vidéo ne transfère pas sa propriété.",
+      "keywords": ["créateur", "auteur", "source"]
+    },
+    {
+      "id": "focus-masterclass",
+      "category": "Academy",
+      "question": "Comment retrouver une masterclass dans Focus ?",
+      "answer": "Depuis l'accueil Academy, utilisez la recherche par cours, mentor ou compétence, ou ouvrez une catégorie. Le catalogue permet de rechercher un cours et de choisir sa catégorie.",
+      "keywords": ["Focus", "Academy", "masterclass", "recherche"],
+      "evidence": "Accueil et catalogue publics observés le 2026-10-20"
+    },
+    {
+      "id": "focus-avant-cours",
+      "category": "Academy",
+      "question": "Que vérifier avant de rejoindre une masterclass ?",
+      "answer": "Lisez son niveau, ses objectifs, sa durée et son programme. Vérifiez ensuite les formats proposés et les conditions d'accès affichées sur la fiche : elles peuvent différer selon le cours.",
+      "keywords": ["masterclass", "programme", "niveau", "accès"],
+      "evidence": "Fiche publique ?course=braking observée le 2026-10-20"
+    }
+  ]
+}
