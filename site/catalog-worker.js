@@ -60,12 +60,25 @@ const phrasePattern = value => new RegExp("(?<![\\p{L}\\p{N}_])" +
   wordsOf(value).join("[^\\p{L}\\p{N}]*") + "(?![\\p{L}\\p{N}_])", "gu");
 const phraseFound = (text, value) => phrasePattern(value).test(text);
 const emptyAutomotive = () => ({vehicles: [], tasks: [], systems: [], specifications: [], status: "not_extracted"});
+function languageConfidence(language, status = "unknown") {
+  if (["und", "mul"].includes(language) || status.startsWith("unknown")) return "unknown";
+  if (["platform_metadata", "platform_declared", "original_audio_metadata"].includes(status)) return "platform_declared";
+  if (["caption_track", "original_caption_track", "original_automatic_caption_track", "source_caption_metadata"].includes(status)) return "source_caption_track";
+  return /^(inferred|estimated)/.test(status) ? "estimated" : "unknown";
+}
 
 export function prepareCatalog(payload) {
   const unique = new Map();
   for (const raw of payload.items || []) {
     if (!unique.has(raw.id)) {
       const item = {...raw};
+      if (item.language_status === "inferred_from_discovery_query") {
+        item.language = "und";
+        item.language_status = "unknown_query_only";
+      }
+      item.language_tag = item.language_tag || item.language || "und";
+      item.language = String(item.language || "und").toLowerCase().replaceAll("_", "-").split("-")[0];
+      item.language_confidence = languageConfidence(item.language, item.language_status);
       item.resource_type = "video";
       item.pedagogical_format = contentFormats[item.content_format || item.contentFormat] || "unspecified";
       item.format_status = item.format_status || (item.pedagogical_format === "unspecified" ? "not_classified" : "metadata_candidate");
@@ -424,6 +437,16 @@ export function searchCatalog(catalog, params = {}, options = {}) {
 
 export function catalogStats(catalog) {
   const items = catalog.items;
+  const languageGroups = new Map(), languageSummary = new Map();
+  for (const item of items) {
+    const status = item.language_status || "unknown", language = item.language || "und";
+    const key = JSON.stringify([language, status]);
+    const group = languageGroups.get(key) || {language, status, count: 0};
+    group.count++; languageGroups.set(key, group);
+    const entry = languageSummary.get(language) || {language, total: 0, platform_declared: 0,
+      source_caption_track: 0, estimated: 0, unknown: 0};
+    entry.total++; entry[languageConfidence(language, status)]++; languageSummary.set(language, entry);
+  }
   const facets = Object.fromEntries(["category", "language", "platform", "level", "license"]
     .map(key => [key, facet(items, key)]));
   facets.domain = facet(items, "domain_scope");
@@ -432,6 +455,9 @@ export function catalogStats(catalog) {
   for (const field of ["task", "system", "spec"]) facets[field] = automotiveFacet(items, field);
   return {...catalog.stats, total_videos: items.length, total_guides: catalog.guides.length,
     total_images: 0, total_resources: items.length + catalog.guides.length,
+    language_status_counts: [...languageGroups.values()].sort((a, b) =>
+      a.language.localeCompare(b.language) || a.status.localeCompare(b.status)),
+    language_summary: [...languageSummary.values()].sort((a, b) => b.total - a.total || a.language.localeCompare(b.language)),
     platforms: new Set(items.map(item => item.platform)).size,
     languages: new Set(items.map(item => item.language).filter(value => !["und", "mul"].includes(value))).size,
     categories: new Set(items.map(item => item.category)).size,

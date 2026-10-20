@@ -26,7 +26,7 @@
       <button class="nav-item" data-view="faq" data-i18n="help">Aide & FAQ</button>
     </nav>
     <div class="header-right">
-      <label class="interface-language"><span class="sr-only">Langue de l’interface</span><select id="ui-language"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option></select></label>
+      <label class="interface-language"><span id="interface-language-label">Site</span><select id="ui-language" aria-label="Langue de l’interface"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option></select></label>
       <button class="saved-button" data-view="saved"><span aria-hidden="true">▱</span><span data-i18n="saved">Ma sélection</span><b id="saved-count">0</b></button>
       <a class="academy-back" href="https://focus.racelink-app.co/" target="_blank" rel="noopener" data-i18n="academy">Les masterclass ↗</a>
     </div>
@@ -42,7 +42,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
             <input id="search" name="q" type="search" role="combobox" aria-autocomplete="list" aria-controls="search-suggestions" aria-expanded="false" aria-label="Rechercher des tutoriels" placeholder="Qu’aimeriez-vous apprendre ?" autocomplete="off">
             <kbd>/</kbd><button type="submit" aria-label="Lancer la recherche">→</button>
-          </form><div id="search-suggestions" role="listbox" aria-label="Suggestions de recherche" hidden></div><p id="suggestion-status" class="sr-only" role="status"></p></div>
+          </form><div id="search-suggestions" role="listbox" aria-label="Suggestions de recherche" hidden></div><p id="suggestion-status" class="sr-only" role="status"></p><div class="home-language-picker"><label for="home-language">Langue des vidéos</label><select id="home-language"><option value="">Toutes les langues</option><option value="fr">Français</option></select><button type="button" id="french-videos" data-content-language="fr">Vidéos en français <span aria-hidden="true">→</span></button></div></div>
           <div class="suggestions"><span data-i18n="try">À explorer</span><button data-query="vidange">Faire une vidange</button><button data-query="freinage">Mieux freiner</button><button data-query="sim racing">Régler mon simulateur</button><a href="#vehicle-hub" class="workshop-jump">Mon véhicule & entretien ↘</a></div>
         </div>
 
@@ -53,6 +53,7 @@
 
         <button type="button" class="results-back" data-home>← Accueil</button><div class="section-intro"><h1 id="catalog-heading" data-i18n="catalogTitle">Trouvez votre réponse.</h1></div><div id="results-search-desktop"></div>
         <div class="catalog-actions"><button type="button" id="edit-search"><span aria-hidden="true">⌕</span><span id="edit-search-label">Rechercher un tuto, une question…</span><small aria-hidden="true">↗</small></button><button id="mobile-filters" class="outline-button" aria-expanded="false" aria-controls="filters-dialog">Filtres</button></div>
+        <div class="content-language-bar"><div><label for="language">Langue des contenus</label><select id="language" aria-describedby="content-language-note"><option value="">Toutes les langues</option><option value="fr">Français</option></select></div><div class="language-shortcuts" role="group" aria-label="Choix rapide de langue"><button type="button" data-content-language="fr" aria-pressed="false">Français</button><button type="button" data-content-language="" aria-pressed="true">Toutes</button></div><p id="content-language-note">La langue peut être estimée à partir du titre et de la source.</p></div>
         <div id="format-tabs" class="format-tabs" role="group" aria-label="Format de la ressource"><button data-format="all" aria-pressed="true">Tout</button><button data-format="video" aria-pressed="false">Vidéos</button><button data-format="guide" aria-pressed="false">Guides</button></div>
         <details id="vehicle-disclosure" class="vehicle-disclosure"><summary><span id="vehicle-disclosure-label">Affiner pour votre voiture</span><span id="vehicle-disclosure-value">Marque, moteur, huile, intervention…</span><b aria-hidden="true">＋</b></summary><section id="vehicle-hub" class="vehicle-hub" aria-label="Mon véhicule et mes interventions"></section></details>
         <div class="catalog-layout">
@@ -61,7 +62,6 @@
 
             <fieldset class="category-list"><legend data-i18n="discipline">SUJET</legend><div id="category-filters"></div></fieldset>
             <div class="filter-field"><label for="level" data-i18n="level">NIVEAU</label><select id="level"><option value="">Tous les niveaux</option value="beginner">Débutant</option><option value="intermediate">Intermédiaire</option><option value="advanced">Avancé / Pro</option></select></div>
-            <div class="filter-field"><label for="language" data-i18n="language">LANGUE</label><select id="language"><option value="">Toutes les langues</option></select></div>
             <div class="filter-field"><label for="platform" data-i18n="platform">PLATEFORME</label><select id="platform"><option value="">Toutes les plateformes</option></select></div>
             <details class="advanced-filters"><summary>Plus de filtres</summary>            <div class="filter-field context-field"><label for="domain">CONTEXTE</label><select id="domain"><option value="">Tous les contextes</option value="motorsport">Motorsport & fondamentaux</option value="automotive_adjacent">Mécanique automobile</option></select></div>
             <div class="filter-field"><label for="content_format">TYPE DE VIDÉO</label><select id="content_format"><option value="">Tous les types</option></select><small class="filter-explainer">Tutoriel, démonstration, cours ou direct. Classement selon les informations disponibles.</small></div>

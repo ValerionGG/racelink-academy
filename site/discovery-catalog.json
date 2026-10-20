@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "updatedAt": "2026-10-20T17:01:37Z",
+  "updatedAt": "2026-10-20T20:44:13Z",
   "languageNote": {
     "fr": "Les thèmes sont traduits ; les ressources gardent leur langue source.",
     "en": "Topics are translated; resources retain their source language.",
@@ -1055,6 +1055,199 @@
     }
   ],
   "shelves": [
+    {
+      "id": "french-discovery",
+      "enabled": true,
+      "intentId": "understand",
+      "title": {
+        "fr": "À découvrir en français",
+        "en": "Discover in French",
+        "es": "Descubre en francés"
+      },
+      "description": {
+        "fr": "Pilotage, simulation, photo, électronique et métiers : six portes d’entrée différentes.",
+        "en": "Driving, simulation, photography, electronics and careers: six different starting points.",
+        "es": "Pilotaje, simulación, fotografía, electrónica y oficios: seis puntos de partida."
+      },
+      "reviewedAt": "2026-10-20T20:44:13Z",
+      "expiresAt": "2026-11-19T20:44:13Z",
+      "items": [
+        {
+          "videoId": "youtube:RxRaNgS6Lc0",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "La description annonce cinq bases utiles avant une première séance sur circuit : position, trajectoires, repères, freinage et équilibre de la voiture.",
+            "en": "The description lists five foundations for a first circuit session: driving position, racing lines, reference points, braking and vehicle balance.",
+            "es": "La descripción anuncia cinco bases para una primera sesión en circuito: posición, trazadas, referencias, frenada y equilibrio del coche."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=RxRaNgS6Lc0",
+            "sourceFile": "research/french-expansion-evidence/video-RxRaNgS6Lc0.json",
+            "note": {
+              "fr": "Le descriptif source énumère ces thèmes. Sélection de découverte sur métadonnées ; aucune validation des consignes de pilotage.",
+              "en": "The source description lists these subjects. Discovery selection based on metadata; driving instructions have not been validated.",
+              "es": "La descripción original enumera estos temas. Selección de descubrimiento basada en metadatos; las instrucciones de conducción no se han validado."
+            }
+          }
+        },
+        {
+          "videoId": "youtube:kGadtlhfQpA",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "Le titre et le descriptif annoncent un tutoriel de paramétrage de FlyPT Mover pour les simulateurs de mouvement.",
+            "en": "The title and description introduce a FlyPT Mover configuration tutorial for motion simulators.",
+            "es": "El título y la descripción presentan un tutorial de configuración de FlyPT Mover para simuladores de movimiento."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=kGadtlhfQpA",
+            "sourceFile": "research/french-expansion-evidence/video-kGadtlhfQpA.json",
+            "note": {
+              "fr": "La portée annoncée est le paramétrage logiciel ; la description signale des liens affiliés. Compatibilité du matériel non vérifiée.",
+              "en": "The stated scope is software configuration; the description discloses affiliate links. Hardware compatibility has not been checked.",
+              "es": "El alcance anunciado es la configuración del programa; la descripción declara enlaces de afiliación. No se ha comprobado la compatibilidad del equipo."
+            }
+          }
+        },
+        {
+          "videoId": "youtube:5ZPsr0ToH3A",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "Le sommaire publié relie photographie sportive, connaissance du sport, triangle d’exposition et exploration de techniques photo.",
+            "en": "The published chapter list connects sports photography, understanding the sport, the exposure triangle and exploring photographic techniques.",
+            "es": "El índice publicado relaciona fotografía deportiva, conocimiento del deporte, triángulo de exposición y exploración de técnicas fotográficas."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=5ZPsr0ToH3A",
+            "sourceFile": "research/french-expansion-evidence/video-5ZPsr0ToH3A.json",
+            "note": {
+              "fr": "Le sommaire comporte des chapitres horodatés et une promotion de formation. Le choix repose sur ces métadonnées, sans visionnage.",
+              "en": "The chapter list includes timestamps and a course promotion. The selection relies on this metadata, without watching the video.",
+              "es": "El índice incluye marcas de tiempo y una promoción de formación. La selección se basa en estos metadatos, sin visionado."
+            }
+          }
+        },
+        {
+          "videoId": "youtube:FwmaGp3NyIY",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "Le titre cible un cas précis de diagnostic électronique : plusieurs défauts associés à un circuit de capteurs alimenté en 5 V commun.",
+            "en": "The title focuses on a specific electronic diagnostic case: multiple faults associated with a shared 5 V sensor circuit.",
+            "es": "El título aborda un caso concreto de diagnóstico electrónico: varios fallos asociados a un circuito de sensores con alimentación común de 5 V."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=FwmaGp3NyIY",
+            "sourceFile": "research/french-expansion-evidence/video-FwmaGp3NyIY.json",
+            "note": {
+              "fr": "Le sujet précis provient du titre ; le descriptif présente surtout la démarche générale de la chaîne. Aucune procédure de réparation n’a été auditée.",
+              "en": "The specific topic comes from the title; the description mostly presents the channel’s general approach. No repair procedure has been audited.",
+              "es": "El tema concreto procede del título; la descripción presenta sobre todo el enfoque general del canal. No se ha auditado ningún procedimiento de reparación."
+            }
+          }
+        },
+        {
+          "videoId": "youtube:VQqxycfsoFw",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "Une porte d’entrée vers la formation professionnelle sur la consignation des véhicules hybrides, dont le descriptif précise le contexte d’habilitation électrique.",
+            "en": "An introduction to professional training on isolating hybrid vehicles, with the electrical authorisation context stated in the description.",
+            "es": "Una introducción a la formación profesional sobre consignación de vehículos híbridos, cuya descripción precisa el contexto de habilitación eléctrica."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=VQqxycfsoFw",
+            "sourceFile": "research/french-expansion-evidence/video-VQqxycfsoFw.json",
+            "note": {
+              "fr": "Contenu présenté par un organisme de formation et destiné au contexte professionnel. La fiche ne remplace ni formation ni habilitation ; aucune intervention haute tension n’est recommandée.",
+              "en": "Presented by a training provider for a professional context. This listing replaces neither training nor authorisation; it does not recommend any high-voltage intervention.",
+              "es": "Contenido presentado por un centro de formación en un contexto profesional. Esta ficha no sustituye formación ni habilitación; no recomienda ninguna intervención de alta tensión."
+            }
+          }
+        },
+        {
+          "videoId": "youtube:57H2-DkYbP4",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "Le descriptif détaille un parcours vers le métier de technicien de compétition : matières, pratique en entreprise, débouchés et modalités d’entrée.",
+            "en": "The description outlines a route into competition technician work: subjects, workplace practice, career options and entry arrangements.",
+            "es": "La descripción detalla una vía hacia el oficio de técnico de competición: materias, prácticas en empresa, salidas y modalidades de acceso."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=57H2-DkYbP4",
+            "sourceFile": "research/french-expansion-evidence/video-57H2-DkYbP4.json",
+            "note": {
+              "fr": "Présentation promotionnelle de sa propre formation par l’école. Sélection pour l’orientation métier ; les affirmations sur certification et financement ne sont pas vérifiées indépendamment.",
+              "en": "The school promotes its own course. Selected for career orientation; certification and funding claims have not been independently verified.",
+              "es": "La escuela presenta su propia formación con fines promocionales. Seleccionada para orientación profesional; no se han verificado de forma independiente las afirmaciones sobre certificación y financiación."
+            }
+          }
+        }
+      ]
+    },
     {
       "id": "corner-foundations",
       "enabled": true,

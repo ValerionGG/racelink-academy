@@ -46,6 +46,8 @@ function readingSegments(raw){
   return groups;
 }
 const langName = value => {if (!value || value === 'und') return t('Non confirmée','Unconfirmed','Sin confirmar');try{return new Intl.DisplayNames([ui],{type:'language'}).of(value);}catch{return value;}};
+const languageLabel = value => {const label=langName(value);return label.charAt(0).toLocaleUpperCase(ui)+label.slice(1);};
+const estimatedLanguage = video => video.language_confidence==='estimated'||/estimate|inferred/.test(String(video.language_status||''));
 const fmtDuration = seconds => {if (!seconds) return t('Durée inconnue','Duration unknown','Duración desconocida');const n=Math.round(seconds);return n>=3600 ? `${Math.floor(n/3600)}:${String(Math.floor(n%3600/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}` : `${Math.floor(n/60)}:${String(n%60).padStart(2,'0')}`;};
 const safeUrl = (value, image = false) => {try{const u = new URL(value);return u.protocol === 'https:' || (!image && u.protocol === 'http:' && ['localhost','127.0.0.1'].includes(u.hostname)) ? u.href : '';}catch{return '';}};
 const readSaved = () => storage.get('rl-library-saved',{});let saved = readSaved();
@@ -56,7 +58,7 @@ let faqItems = [];
 const seedFaq = [
   {id:'method',question:'Comment les vidéos sont-elles sélectionnées ?',answer:'Le catalogue rassemble des références trouvées dans les métadonnées publiques des plateformes. « À qualifier » signifie que le contenu a été repéré mais que sa pertinence pédagogique reste à vérifier. Une sélection éditoriale repose sur le titre, la source et le descriptif ; elle ne constitue pas une certification du contenu.'},
   {id:'transcripts',question:'Comment lire une transcription ?',answer:'Ouvrez une fiche puis l’onglet « Transcription ». Un texte n’est affiché que s’il a effectivement été obtenu avec une permission de réutilisation enregistrée. Les sous-titres disponibles chez l’auteur sont signalés séparément. Si le texte est absent, le lien vers la source permet de vérifier les sous-titres du lecteur d’origine.'},
-  {id:'language',question:'Et si la vidéo est dans une autre langue ?',answer:'Le filtre « Langue de la vidéo » utilise la langue audio lorsqu’elle est connue. Certaines langues sont estimées à partir de la recherche et doivent être confirmées. Le lecteur de la plateforme peut proposer des sous-titres ou une traduction automatique ; leur qualité et leur disponibilité dépendent de cette plateforme.'},
+  {id:'language',question:'Comment trouver des vidéos en français ou dans une autre langue ?',answer:'Sous la recherche, choisissez une langue ou ouvrez « Vidéos en français ». Ce choix reste visible dans les résultats et se conserve lorsque vous explorez un sujet. « Site FR » change seulement la langue de l’interface. La langue des vidéos provient des métadonnées de la plateforme, des pistes de sous-titres ou d’une estimation signalée à partir du titre, de la description et de la source. Une simple requête en français ne prouve pas la langue parlée. Les traductions et sous-titres supplémentaires dépendent du lecteur d’origine.'},
   {id:'public',question:'Public, gratuit et libre : quelle différence ?',answer:'Une vidéo accessible publiquement peut rester protégée par le droit d’auteur. Le catalogue renvoie vers sa source et ne prétend pas qu’elle est libre de réutilisation. Le filtre « Licence libre confirmée » nécessite une licence explicite enregistrée. Des restrictions régionales, une connexion ou une suppression peuvent changer l’accès.'},
   {id:'saved',question:'Où sont enregistrés mes favoris et mes notes ?',answer:'Votre sélection et vos notes restent dans ce navigateur, sur cet appareil. Aucun compte n’est nécessaire pour les utiliser. Si vous effacez les données du navigateur, elles seront perdues. Elles ne sont pas synchronisées avec votre compte Focus.'},
   {id:'focus',question:'Comment retrouver mes masterclass Focus ?',answer:'Le lien « Les masterclass » ouvre Focus et ses cours, mentors, groupes et agenda. La bibliothèque est un complément de ressources publiques. Les abonnements et achats restent gérés dans Focus.'}
@@ -81,7 +83,7 @@ const discoveryUI=createDiscoveryUI({
   clearVehicle(){vehicleKeys.forEach(key=>state[key]='');syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();},
   applySearch(patch){
     document.dispatchEvent(new Event('rl:search-chosen'));
-    browsing=true;state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1,...patch};
+    browsing=true;state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:state.language,platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1,...patch};
     changeView('explore',false);syncControls();syncUrl(true);automotiveUI.loadOptions();loadVideos();
     $('#catalog-heading').scrollIntoView({behavior:'smooth'});
   }
@@ -92,7 +94,7 @@ function showToast(message){$('#toast').textContent=message;$('#toast').classLis
 function updateSavedCount(){$('#saved-count').textContent=Object.keys(saved).length;}
 function syncUrl(push=false){
   const u=new URL(location.href);u.search='';if(!browsing)u.hash='';
-  if(browsing)u.searchParams.set('browse','1');
+  if(browsing)u.searchParams.set('browse','1');else if(state.language)u.searchParams.set('browse','0');
   if(view!=='explore')u.searchParams.set('view',view);
   if(view==='paths'&&activeTrack)u.searchParams.set('track',activeTrack);
   for(const [key,value] of Object.entries(state))if(value&&!(key==='page'&&value===1)&&!(key==='sort'&&value==='relevance')&&!(key==='format'&&value==='all'))u.searchParams.set(key,value);
@@ -102,7 +104,7 @@ function syncUrl(push=false){
 function restoreUrl(){
   const p=new URLSearchParams(location.search);
   for(const key of Object.keys(state))state[key]=p.get(key)||(key==='page'?1:key==='sort'?'relevance':key==='format'?'all':'');
-  browsing=p.has('browse')||Object.entries(state).some(([k,v])=>v&&!['page','sort'].includes(k)&&!(k==='format'&&v==='all'));
+  browsing=p.has('browse')?p.get('browse')!=='0':Object.entries(state).some(([k,v])=>v&&!['page','sort'].includes(k)&&!(k==='format'&&v==='all'));
   state.page=Math.max(1,Number(state.page)||1);
   if(['fr','en','es'].includes(p.get('ui')))ui=p.get('ui');
   view=['paths','faq','saved'].includes(p.get('view'))?p.get('view'):'explore';
@@ -116,6 +118,8 @@ function syncControls(){
   $('.advanced-filters>summary').textContent=t('Plus de filtres','More filters','Más filtros');
   $('#search').value=state.q;
   for(const key of ['level','language','platform','duration','sort','domain','content_format'])$(`#${key}`).value=state[key]||'';
+  $('#home-language').value=state.language||'';
+  $$('[data-content-language]').forEach(button=>button.setAttribute('aria-pressed',String(state.language===button.dataset.contentLanguage)));
   $('#transcript').checked=Boolean(state.transcript);$('#license').checked=Boolean(state.license);automotiveUI.sync();
   const selectedVehicle=vehicleKeys.map(key=>state[key]).filter(Boolean);
   $('#vehicle-disclosure-value').textContent=selectedVehicle.length?selectedVehicle.join(' · '):t('Marque, moteur, huile, intervention…','Make, engine, oil, task…','Marca, motor, aceite, tarea…');
@@ -124,6 +128,14 @@ function syncControls(){
 }
 function applyTranslations(){
   document.documentElement.lang=ui;$('#ui-language').value=ui;
+  $('#ui-language').setAttribute('aria-label',t('Langue de l’interface','Website language','Idioma del sitio'));
+  $('#interface-language-label').textContent=t('Site','Site','Sitio');
+  $('label[for="home-language"]').textContent=t('Langue des vidéos','Video language','Idioma de los vídeos');
+  $('label[for="language"]').textContent=t('Langue des contenus','Content language','Idioma del contenido');
+  $('.language-shortcuts').setAttribute('aria-label',t('Choix rapide de langue','Quick language choice','Selección rápida de idioma'));
+  $('.language-shortcuts [data-content-language="fr"]').textContent=t('Français','French','Francés');
+  $('.language-shortcuts [data-content-language=""]').textContent=t('Toutes','All','Todos');
+  $('#content-language-note').textContent=t('La langue peut être estimée à partir du titre et de la source.','Language may be estimated from the title and source.','El idioma puede estimarse a partir del título y la fuente.');
   $$('[data-i18n]').forEach(el=>{el.innerHTML=ui==='fr'?originalText[el.dataset.i18n]:dictionaries[ui]?.[el.dataset.i18n]||originalText[el.dataset.i18n];});
   $('#search').placeholder=t('Qu’aimeriez-vous apprendre ?','What would you like to learn?','¿Qué te gustaría aprender?');
   $('#search').setAttribute('aria-label',t('Rechercher des tutoriels','Search tutorials','Buscar tutoriales'));
@@ -155,8 +167,18 @@ function renderStats(){
   const core=domains.find(d=>d.value==='motorsport')?.count,auto=domains.find(d=>d.value==='automotive_adjacent')?.count;
   if(core!==undefined&&auto!==undefined)$('#scope-totals').textContent=`${Number(core).toLocaleString(ui)} motorsport · ${Number(auto).toLocaleString(ui)} ${t('mécanique auto','automotive mechanics','mecánica auto')}`;
   $('#language-total').textContent=`${count} ${t('langues repérées','languages identified','idiomas identificados')}`;
+  renderLanguages();
 }
 let facets={};
+function renderLanguages(){
+  // Keep the global choices even when the current query has no matching language.
+  const values=[...new Set(['fr','en',...(stats?.facets?.language||[]).map(f=>f.value),...(facets.language||[]).map(f=>f.value),state.language].filter(Boolean))];
+  values.sort((a,b)=>a==='fr'?-1:b==='fr'?1:a==='und'?1:b==='und'?-1:languageLabel(a).localeCompare(languageLabel(b),ui));
+  const options=`<option value="">${t('Toutes les langues','All languages','Todos los idiomas')}</option>${values.map(value=>`<option value="${escape(value)}">${escape(languageLabel(value))}</option>`).join('')}`;
+  for(const id of ['language','home-language']){const select=$(`#${id}`);select.innerHTML=options;select.value=state.language||'';}
+  const frenchCount=(stats?.facets?.language||[]).find(f=>f.value==='fr')?.count;
+  $('#french-videos').innerHTML=`${t('Vidéos en français','Videos in French','Vídeos en francés')}${frenchCount===undefined?'':` <small>${Number(frenchCount).toLocaleString(ui)}</small>`} <span aria-hidden="true">→</span>`;
+}
 function renderFacets(){
   automotiveUI.setResultFacets(facets);
   const categoriesFacet=facets.category||[];
@@ -164,11 +186,7 @@ function renderFacets(){
     const count=id?(categoriesFacet.find(f=>f.value===id)?.count??0):(lastTotal??stats?.total_videos);
     return `<button class="category-button ${state.category===id?'active':''}" data-category="${id}" aria-pressed="${state.category===id}"><span class="cat-icon" aria-hidden="true">${icon}</span>${escape(name)}<span class="cat-count">${count??'—'}</span></button>`;
   }).join('');
-  const langs=facets.language||[];
-  const currentLang=state.language;
-  $('#language').innerHTML=`<option value="">${t('Toutes les langues','All languages','Todos los idiomas')}</option>${langs.map(f=>`<option value="${escape(f.value)}">${escape(langName(f.value))} (${f.count})</option>`).join('')}`;
-  if(currentLang&&!langs.some(f=>f.value===currentLang))$('#language').insertAdjacentHTML('beforeend',`<option value="${escape(currentLang)}">${escape(langName(currentLang))}</option>`);
-  $('#language').value=currentLang;
+  renderLanguages();
   const platforms=['youtube','dailymotion','vimeo','tiktok','instagram','facebook','twitch','bilibili','racelink'].filter(v=>v===state.platform||(facets.platform||[]).some(f=>f.value===v&&f.count>0));
   $('#platform').innerHTML=`<option value="">${t('Toutes les plateformes','All platforms','Todas las plataformas')}</option>${platforms.map(value=>`<option value="${value}">${platformName(value)} (${(facets.platform||[]).find(f=>f.value===value)?.count||0})</option>`).join('')}`;
   $('#platform').value=state.platform;
@@ -181,7 +199,7 @@ function cardMarkup(video){
   if(video.resource_type==='guide')return guideUI.card(video);
   const image=safeUrl(video.thumbnail_url||video.thumbnailUrl,true), id=escape(video.id);
   const review=['curated','editorial_review','editorial_selection','verified'].includes(video.review_status||video.reviewStatus);
-  return `<article class="video-card ${raceLinkPicks.has('video',video.id)?'is-racelink-pick':''}"><button class="thumbnail" data-video="${id}" aria-label="${escape(t('Ouvrir : ','Open: ','Abrir: ')+video.title)}">${image?`<img src="${escape(image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:`<span class="thumb-fallback">${escape(platformName(video.platform))}<small>${t('Aperçu indisponible','Preview unavailable','Vista previa no disponible')}</small></span>`}${raceLinkPicks.badge('video',video.id,{overlay:true})}<span class="thumb-platform"><i class="platform-dot"></i>${escape(platformName(video.platform))}</span><span class="thumb-play" aria-hidden="true">▶</span><span class="thumb-duration">${escape(fmtDuration(video.duration_seconds))}</span></button><div class="card-heading"><h3 dir="auto"><button class="title-button" data-video="${id}">${escape(video.title)}</button></h3><button class="save-card ${saved[video.id]?'saved':''}" data-save="${id}" aria-label="${escape(saved[video.id]?t('Retirer de ma sélection','Remove from collection','Quitar de mi selección'):t('Enregistrer la vidéo','Save video','Guardar vídeo'))}" aria-pressed="${Boolean(saved[video.id])}">${saved[video.id]?'▰':'▱'}</button></div><p class="creator">${escape(video.creator||platformName(video.platform))}</p><div class="card-tags"><span class="tag category">${escape(catName(video.category))}</span><span class="tag">${escape(langName(video.language))}${/estimate|inferred/.test(String(video.language_status||''))?' *':''}</span>${video.domain_scope==='automotive_adjacent'?`<span class="tag">${t('Mécanique auto','Automotive','Mecánica auto')}</span>`:''}${(video.content_format||video.contentFormat)==='telemetry_demonstration'?`<span class="tag">${t('Tour & télémétrie','Lap & telemetry','Vuelta y telemetría')}</span>`:''}${video.has_transcript?`<span class="tag transcript">${t('Transcription','Transcript','Transcripción')}</span>`:''}<span class="tag review">${review?t('Sélection éditoriale','Editorial pick','Selección editorial'):t('À qualifier','To review','Por revisar')}</span></div>${automotiveUI.cardMarkup(video)}</article>`;
+  return `<article class="video-card ${raceLinkPicks.has('video',video.id)?'is-racelink-pick':''}"><button class="thumbnail" data-video="${id}" aria-label="${escape(t('Ouvrir : ','Open: ','Abrir: ')+video.title)}">${image?`<img src="${escape(image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:`<span class="thumb-fallback">${escape(platformName(video.platform))}<small>${t('Aperçu indisponible','Preview unavailable','Vista previa no disponible')}</small></span>`}${raceLinkPicks.badge('video',video.id,{overlay:true})}<span class="thumb-platform"><i class="platform-dot"></i>${escape(platformName(video.platform))}</span><span class="thumb-play" aria-hidden="true">▶</span><span class="thumb-duration">${escape(fmtDuration(video.duration_seconds))}</span></button><div class="card-heading"><h3 dir="auto"><button class="title-button" data-video="${id}">${escape(video.title)}</button></h3><button class="save-card ${saved[video.id]?'saved':''}" data-save="${id}" aria-label="${escape(saved[video.id]?t('Retirer de ma sélection','Remove from collection','Quitar de mi selección'):t('Enregistrer la vidéo','Save video','Guardar vídeo'))}" aria-pressed="${Boolean(saved[video.id])}">${saved[video.id]?'▰':'▱'}</button></div><p class="creator">${escape(video.creator||platformName(video.platform))}</p><div class="card-tags"><span class="tag category">${escape(catName(video.category))}</span><span class="tag language-tag">${escape(languageLabel(video.language))}${estimatedLanguage(video)?t(' · estimé',' · estimated',' · estimado'):''}</span>${video.domain_scope==='automotive_adjacent'?`<span class="tag">${t('Mécanique auto','Automotive','Mecánica auto')}</span>`:''}${(video.content_format||video.contentFormat)==='telemetry_demonstration'?`<span class="tag">${t('Tour & télémétrie','Lap & telemetry','Vuelta y telemetría')}</span>`:''}${video.has_transcript?`<span class="tag transcript">${t('Transcription','Transcript','Transcripción')}</span>`:''}<span class="tag review">${review?t('Sélection éditoriale','Editorial pick','Selección editorial'):t('À qualifier','To review','Por revisar')}</span></div>${automotiveUI.cardMarkup(video)}</article>`;
 }
 function setImageFallback(root){
   $$('img',root).forEach(img=>img.addEventListener('error',()=>{img.style.display='none';const parent=img.parentElement;if(parent.classList.contains('thumbnail'))parent.insertAdjacentHTML('afterbegin','<span class="thumb-fallback">RACELINK</span>');},{once:true}));
@@ -229,8 +247,18 @@ function renderActiveFilters(){
   }).join('');
 }
 function setFilter(key,value){browsing=true;if(key==='format'&&!value)value='all';Object.assign(state,automotiveUI.dependentPatch(key,value));state.page=1;syncControls();syncUrl();if(vehicleKeys.includes(key))automotiveUI.loadOptions();loadVideos();}
+function chooseContentLanguage(value,videoOnly=false){
+  const fromHome=!browsing;
+  state.q=$('#search').value.trim();
+  if(videoOnly)state.format='video';
+  discoveryUI.closeSuggestions();
+  document.dispatchEvent(new Event('rl:search-chosen'));
+  setFilter('language',value);const heading=$('#catalog-heading');
+  if(fromHome){heading.tabIndex=-1;heading.focus({preventScroll:true});}
+  heading.scrollIntoView({behavior:'smooth'});
+}
 function reset(){browsing=true;state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
-function goHome(){state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};browsing=false;$('#vehicle-disclosure').open=false;changeView('explore');syncControls();automotiveUI.loadOptions();loadVideos();window.scrollTo({top:0,behavior:'instant'});}
+function goHome(){state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:state.language,platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};browsing=false;$('#vehicle-disclosure').open=false;discoveryUI.refresh();changeView('explore');syncControls();automotiveUI.loadOptions();loadVideos();window.scrollTo({top:0,behavior:'instant'});}
 function changeView(next,push=true){
   view=next;$$('main>section').forEach(el=>el.hidden=el.id!==`${next}-view`);
   $$('[data-view]').forEach(el=>{el.classList.toggle('active',el.dataset.view===next);if(el.dataset.view===next)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
@@ -284,7 +312,7 @@ async function openVideo(id){
   try{
     const result=await window.getCatalogJson(`/aide/api/videos/${encodeURIComponent(id)}`);if(version!==detailVersion||!dialog.open)return;detail=result.video||result.item||result;
     const source=safeUrl(detail.url),image=safeUrl(detail.thumbnail_url,true),embed=embedUrl(detail);
-    $('#video-detail').innerHTML=`<div class="detail-header"><span>RACELINK ACADEMY <span aria-hidden="true"> / </span>${escape(catName(detail.category))}</span><button data-close aria-label="${t('Fermer','Close','Cerrar')}">×</button></div><div class="detail-layout"><div class="detail-main"><div class="player" id="player">${image?`<img src="${escape(image)}" alt="">`:''}<div class="player-prompt">${embed?`<button data-play>▶ ${t('Charger le lecteur','Load the player','Cargar el reproductor')}</button><p>${t('Le lecteur est fourni par la plateforme et peut utiliser des cookies.','The player is provided by the platform and may use cookies.','La plataforma proporciona el reproductor y puede utilizar cookies.')}</p>`:`<a class="outline-button" href="${escape(source)}" target="_blank" rel="noopener noreferrer">${t('Voir sur la plateforme','Watch on the platform','Ver en la plataforma')} ↗</a><p>${t('Cette ressource se consulte chez son auteur.','Open this resource at its original source.','Consulta este recurso en su fuente original.')}</p>`}</div></div><div id="detail-racelink-pick" class="detail-racelink-pick" hidden></div><h2 id="dialog-title">${escape(detail.title)}</h2><p class="detail-author">${escape(detail.creator)} · ${escape(platformName(detail.platform))} · ${escape(fmtDuration(detail.duration_seconds))}</p><div class="detail-actions"><a class="primary-action" href="${escape(source)}" target="_blank" rel="noopener noreferrer">${t('Voir la source','View source','Ver fuente')} ↗</a><button data-save="${escape(detail.id)}" aria-pressed="${Boolean(saved[detail.id])}">${saved[detail.id]?t('Enregistré ✓','Saved ✓','Guardado ✓'):t('Enregistrer','Save','Guardar')}</button><button data-share>${t('Copier le lien source','Copy source link','Copiar enlace de origen')}</button></div><dl class="detail-facts"><div><dt>${t('Discipline','Discipline','Disciplina')}</dt><dd>${escape(catName(detail.category))}</dd></div><div><dt>${t('Niveau indicatif','Estimated level','Nivel estimado')}</dt><dd>${escape(['all','unknown'].includes(detail.level)||String(detail.level_status).includes('unknown')?t('À déterminer','Unconfirmed','Sin confirmar'):levelName(detail.level))}</dd></div><div><dt>${t('Langue','Language','Idioma')}</dt><dd>${escape(langName(detail.language))}${/estimate|inferred/.test(String(detail.language_status||''))?' · '+t('estimée','estimated','estimado'):''}</dd></div><div><dt>${t('Licence de réutilisation','Reuse license','Licencia de reutilización')}</dt><dd>${escape(licenseName(detail.license))}</dd></div></dl></div><aside class="detail-side"><div class="detail-tabs" role="tablist" aria-label="${t('Informations vidéo','Video information','Información del vídeo')}"><button role="tab" id="tab-about" data-tab="about" aria-controls="detail-panel" aria-selected="true" class="active">${t('À propos','About','Acerca de')}</button><button role="tab" id="tab-transcript" data-tab="transcript" aria-controls="detail-panel" aria-selected="false" tabindex="-1">${t('Transcription','Transcript','Transcripción')}</button><button role="tab" id="tab-notes" data-tab="notes" aria-controls="detail-panel" aria-selected="false" tabindex="-1">${t('Mes notes','My notes','Mis notas')}</button></div><div class="detail-panel" id="detail-panel" role="tabpanel" aria-labelledby="tab-about" tabindex="0"></div></aside></div>`;
+    $('#video-detail').innerHTML=`<div class="detail-header"><span>RACELINK ACADEMY <span aria-hidden="true"> / </span>${escape(catName(detail.category))}</span><button data-close aria-label="${t('Fermer','Close','Cerrar')}">×</button></div><div class="detail-layout"><div class="detail-main"><div class="player" id="player">${image?`<img src="${escape(image)}" alt="">`:''}<div class="player-prompt">${embed?`<button data-play>▶ ${t('Charger le lecteur','Load the player','Cargar el reproductor')}</button><p>${t('Le lecteur est fourni par la plateforme et peut utiliser des cookies.','The player is provided by the platform and may use cookies.','La plataforma proporciona el reproductor y puede utilizar cookies.')}</p>`:`<a class="outline-button" href="${escape(source)}" target="_blank" rel="noopener noreferrer">${t('Voir sur la plateforme','Watch on the platform','Ver en la plataforma')} ↗</a><p>${t('Cette ressource se consulte chez son auteur.','Open this resource at its original source.','Consulta este recurso en su fuente original.')}</p>`}</div></div><div id="detail-racelink-pick" class="detail-racelink-pick" hidden></div><h2 id="dialog-title">${escape(detail.title)}</h2><p class="detail-author">${escape(detail.creator)} · ${escape(platformName(detail.platform))} · ${escape(fmtDuration(detail.duration_seconds))}</p><div class="detail-actions"><a class="primary-action" href="${escape(source)}" target="_blank" rel="noopener noreferrer">${t('Voir la source','View source','Ver fuente')} ↗</a><button data-save="${escape(detail.id)}" aria-pressed="${Boolean(saved[detail.id])}">${saved[detail.id]?t('Enregistré ✓','Saved ✓','Guardado ✓'):t('Enregistrer','Save','Guardar')}</button><button data-share>${t('Copier le lien source','Copy source link','Copiar enlace de origen')}</button></div><dl class="detail-facts"><div><dt>${t('Discipline','Discipline','Disciplina')}</dt><dd>${escape(catName(detail.category))}</dd></div><div><dt>${t('Niveau indicatif','Estimated level','Nivel estimado')}</dt><dd>${escape(['all','unknown'].includes(detail.level)||String(detail.level_status).includes('unknown')?t('À déterminer','Unconfirmed','Sin confirmar'):levelName(detail.level))}</dd></div><div><dt>${t('Langue','Language','Idioma')}</dt><dd>${escape(langName(detail.language))}${estimatedLanguage(detail)?' · '+t('estimée','estimated','estimado'):''}</dd></div><div><dt>${t('Licence de réutilisation','Reuse license','Licencia de reutilización')}</dt><dd>${escape(licenseName(detail.license))}</dd></div></dl></div><aside class="detail-side"><div class="detail-tabs" role="tablist" aria-label="${t('Informations vidéo','Video information','Información del vídeo')}"><button role="tab" id="tab-about" data-tab="about" aria-controls="detail-panel" aria-selected="true" class="active">${t('À propos','About','Acerca de')}</button><button role="tab" id="tab-transcript" data-tab="transcript" aria-controls="detail-panel" aria-selected="false" tabindex="-1">${t('Transcription','Transcript','Transcripción')}</button><button role="tab" id="tab-notes" data-tab="notes" aria-controls="detail-panel" aria-selected="false" tabindex="-1">${t('Mes notes','My notes','Mis notas')}</button></div><div class="detail-panel" id="detail-panel" role="tabpanel" aria-labelledby="tab-about" tabindex="0"></div></aside></div>`;
     renderDetailPick();setDetailTab('about');setImageFallback($('#video-detail'));
   }catch{
     if(version!==detailVersion)return;
@@ -323,13 +351,14 @@ document.addEventListener('click',async event=>{
   const el=event.target.closest('button,a');if(!el)return;
   if(el.hasAttribute('data-home')){goHome();}
   else if(el.dataset.view){event.preventDefault();if(el.dataset.view==='explore')goHome();else changeView(el.dataset.view);}
+  else if(el.hasAttribute('data-content-language'))chooseContentLanguage(el.dataset.contentLanguage,el.id==='french-videos');
   else if(el.hasAttribute('data-format'))setFilter('format',el.dataset.format);
   else if(el.hasAttribute('data-guide'))openGuide(el.dataset.guide);
   else if(el.hasAttribute('data-query')){changeView('explore');setFilter('q',el.dataset.query);$('#catalog-heading').scrollIntoView({behavior:'smooth'});}
   else if(el.hasAttribute('data-category'))setFilter('category',el.dataset.category);
   else if(el.hasAttribute('data-path')){activeTrack=el.dataset.path;changeView('paths');}
   else if(el.hasAttribute('data-all-tracks')){activeTrack='';renderPaths();syncUrl(true);}
-  else if(el.hasAttribute('data-step-query')){browsing=true;changeView('explore');state={...automotiveDefaults,q:el.dataset.stepQuery,category:el.dataset.stepCategory,domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();$('#catalog-heading').scrollIntoView({behavior:'smooth'});}
+  else if(el.hasAttribute('data-step-query')){browsing=true;changeView('explore');state={...automotiveDefaults,q:el.dataset.stepQuery,category:el.dataset.stepCategory,domain:'',level:'',language:state.language,platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();$('#catalog-heading').scrollIntoView({behavior:'smooth'});}
   else if(el.hasAttribute('data-complete-step')){const key=el.dataset.completeStep,p=storage.get('rl-library-progress',{});p[key]=!p[key];storage.set('rl-library-progress',p);renderPaths();$$('[data-complete-step]').find(button=>button.dataset.completeStep===key)?.focus({preventScroll:true});}
   else if(el.hasAttribute('data-remove'))setFilter(el.dataset.remove,'');
   else if(el.hasAttribute('data-reset'))reset();
@@ -345,7 +374,9 @@ document.addEventListener('click',async event=>{
   else if(el.hasAttribute('data-share')){try{await navigator.clipboard.writeText(detail.url);showToast(t('Lien source copié','Source link copied','Enlace de origen copiado'));}catch{showToast(t('Utilisez le bouton Voir la source pour copier l’adresse.','Use View source to copy its address.','Usa Ver fuente para copiar la dirección.'));}}
 });
 $('#search-form').addEventListener('submit',e=>{e.preventDefault();document.dispatchEvent(new Event('rl:search-chosen'));setFilter('q',$('#search').value.trim());$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
-for(const key of ['level','language','platform','duration','sort','domain','content_format'])$(`#${key}`).addEventListener('change',e=>setFilter(key,e.target.value));
+for(const key of ['level','platform','duration','sort','domain','content_format'])$(`#${key}`).addEventListener('change',e=>setFilter(key,e.target.value));
+$('#language').addEventListener('change',e=>chooseContentLanguage(e.target.value));
+$('#home-language').addEventListener('change',e=>chooseContentLanguage(e.target.value,true));
 $('#transcript').addEventListener('change',e=>setFilter('transcript',e.target.checked?'available':''));
 $('#license').addEventListener('change',e=>setFilter('license',e.target.checked?'open':''));
 $('#reset-filters').addEventListener('click',reset);

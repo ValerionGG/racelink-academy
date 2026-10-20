@@ -1,21 +1,19 @@
 # RaceLink Academy — bibliothèque ouverte
 
-Une bibliothèque d’aide et de ressources publiques autour du sport automobile, de la simulation et de la mécanique automobile, en complément de [Focus](https://focus.racelink-app.co/).
+[Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/) · [Vidéos en français](https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&format=video)
 
-Ce snapshot référence 33 333 vidéos et 11 guides et propose 7 transcriptions avec preuve de réutilisation. Les fiches précisent la source, la qualification éditoriale et les limites des métadonnées. Une référence publique ne vaut pas licence libre ni validation de compatibilité mécanique.
+Une bibliothèque autour du sport automobile, de la simulation et de l’entretien automobile, en complément de [Focus](https://focus.racelink-app.co/).
 
-Le site fonctionne sans compte. Favoris, notes et progression restent dans le navigateur. Les vidéos sont ouvertes chez leurs auteurs ou chargées à la demande depuis leur plateforme.
+Ce snapshot référence **33 633 vidéos et 11 guides**, dont **4 561 vidéos référencées en français**, avec des preuves de langue de niveaux différents et des estimations signalées. Sept transcriptions ont une preuve de réutilisation CC BY. Une référence publique ne vaut pas licence libre ni validation de compatibilité mécanique.
+
+Le choix de langue des contenus est visible à côté de la recherche, indépendamment de la langue de l’interface. Les suggestions conservent les précisions de véhicule et les références techniques. Six sélections françaises ouvrent sur le pilotage, la simulation, la photo, l’électronique, la formation hybride et les métiers.
+
+Couverture : 33 502 YouTube, 46 Facebook, 42 Dailymotion, 34 Instagram, 4 TikTok, 3 Vimeo, 2 Twitch. Cette itération ajoute 300 vidéos, dédoublonnées et reliées à leurs preuves publiques. Les titres et légendes des ajouts sociaux sont français ; leur audio n’a pas été écouté. Aucun commentaire ni transcription n’est inventé.
+
+Le site fonctionne sans compte. Favoris, notes et progression restent dans le navigateur. Les vidéos s’ouvrent chez leurs auteurs ou dans un lecteur tiers chargé à la demande.
 
 ## Publication
 
-`site/` est l’artefact statique public. GitHub Actions le publie avec GitHub Pages à chaque mise à jour de `main`. Les données sont chargées sous forme gzip par le Worker lorsque le navigateur le permet ; un JSON de repli reste disponible.
+`site/` est l’artefact statique public publié par GitHub Actions à chaque mise à jour de `main`. Le catalogue gzip est décompressé dans un Worker, avec JSON de repli. Aucun backend ou identifiant de service n’est nécessaire à cette distribution. Le domaine Focus original reste distinct.
 
-Aucun backend, base privée, média vidéo téléchargé ni identifiant de service n’est nécessaire au fonctionnement de cette distribution.
-
-## Recherche et découverte
-
-Trois entrées illustrées mènent à l'entretien automobile, au pilotage et à la simulation. Les résultats disposent d'onglets Tout / Vidéos / Guides, de filtres de plateforme et de critères avancés. Les suggestions conservent les précisions de véhicule et les références techniques. Les guides généraux ne confirment aucune compatibilité propre à une voiture.
-
-Le catalogue comprend 42 références Facebook et 29 Instagram, ainsi que 4 TikTok. Le dernier lot ajoute 66 identités nouvelles et enrichit 2 fiches existantes. Trois questions réellement consultées dans des commentaires sont reformulées en français, indexées et reliées à leur contexte ; elles ne sont pas présentées comme des réponses validées.
-
-Le design a été simplifié à l'aide d'[Impeccable](https://github.com/pbakaus/impeccable), retenu après comparaison de skills GitHub via [Agent Reach](https://github.com/Panniantong/agent-reach). Le classement des sources ne prétend pas à un visionnage complet ; seules sept transcriptions réutilisables sont disponibles.
+Le design s’appuie notamment sur [Impeccable](https://github.com/pbakaus/impeccable), comparé à d’autres skills GitHub via [Agent Reach](https://github.com/Panniantong/agent-reach). La collecte conserve les sources et ne prétend pas à un visionnage complet.
