@@ -4,20 +4,20 @@
 
 Bibliothèque de tutoriels autour du sport automobile, de la simulation et de l’entretien automobile, en complément de [Focus](https://focus.racelink-app.co/).
 
-Le snapshot du 21 octobre 2026 référence **36 894 vidéos et 11 guides**, dont **5 020 vidéos classées en français**, avec estimations signalées. La dernière extension ajoute **108 références : 53 TikTok et 55 Instagram**, dont **14 textes estimés français**.
+Le snapshot du 21 octobre 2026 référence **36 901 vidéos et 11 guides**, dont **5 022 classées en français** (estimations signalées). Cette itération ajoute **7 références TikTok**, dont **2 titres/libellés français**, sans ajout Instagram. Les sources sont six titres d’une archive de recherche GitHub et un lien publié sur le site du créateur. Aucun visionnage ni nouvelle transcription n’est revendiqué.
 
-Répartition : 36 502 YouTube, 159 TikTok, 140 Instagram, 46 Facebook, 42 Dailymotion, 3 Vimeo, 2 Twitch. Les titres, descriptions et hashtags sont séparés. Les mentions de véhicule et de moteur servent à la recherche ; elles ne garantissent pas la compatibilité.
+Répartition : 36 502 YouTube, **166 TikTok**, **140 Instagram**, 46 Facebook, 42 Dailymotion, 3 Vimeo, 2 Twitch. Les anciennes fiches sont conservées.
 
-[TikTok](https://valeriongg.github.io/racelink-academy/?browse=1&platform=tiktok&format=video) · [Instagram](https://valeriongg.github.io/racelink-academy/?browse=1&platform=instagram&format=video) · [TikTok en français](https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&platform=tiktok&format=video) · [Instagram en français](https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&platform=instagram&format=video)
+[TikTok en français](https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&platform=tiktok&format=video) · [Instagram en français](https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&platform=instagram&format=video)
 
-Cette extension résulte de la revue de 118 références déjà découvertes : 9 fiches retenues disposent de métadonnées directes et 99 reposent sur un titre indexé. Aucun visionnage, transcription ou nouveau badge éditorial n’est revendiqué. Les anciennes fiches restent inchangées. Les milliers de nouveaux tutoriels demandés ne sont pas atteints ; les quotas et accès des fournisseurs restent à résoudre. Une référence indexée n’est pas une garantie d’accès actuel ou de qualité technique.
+**Les milliers de nouveaux tutoriels sociaux ne sont pas encore acquis.** Un [nouveau collecteur et importateur d’exports](collector/README.md) est fourni : liens publiés sur les sites de créateurs, JSON/JSONL/CSV et pages TikTok Display/Meta Graph. La préparation est locale, bornée et relisible ; les tests synthétiques ne font jamais partie du catalogue. [Résultats, alternatives GitHub et conditions d’accès](research/alternative-sociale-2026-10-21.md).
 
 La recherche conserve les précisions de véhicule, moteur, intervention et références techniques. Le choix de langue est visible et indépendant de la langue de l'interface. Favoris, notes et progression restent dans le navigateur. Les vidéos s'ouvrent chez leurs auteurs ou dans un lecteur tiers chargé à la demande.
 
 
 ## Titres et légendes sociales
 
-Les 345 fiches TikTok, Instagram et Facebook disposent désormais de champs distincts : titre, description, hashtags et texte original consultable. 170 titres ont été nettoyés ou reformulés et 24 descriptions nettoyées. Les hashtags restent recherchables ; les mentions de véhicule, droits et transcriptions sont conservés. Les résumés éditoriaux sont distingués des légendes sources. Aucun visionnage n’est déduit de ce traitement des métadonnées.
+Les 352 fiches TikTok, Instagram et Facebook disposent désormais de champs distincts : titre, description, hashtags et texte original consultable. Les titres encombrés ont été nettoyés ou reformulés ; les légendes existantes restent distinctes. Les hashtags restent recherchables ; les mentions de véhicule, droits et transcriptions sont conservés. Les résumés éditoriaux sont distingués des légendes sources. Aucun visionnage n’est déduit de ce traitement des métadonnées.
 
 Le skill réutilisable [social-content-structure](skills/social-content-structure/SKILL.md) comprend un séparateur Python autonome et des instructions de revue sémantique. Il distingue les titres natifs, les légendes directes et les extraits indexés. Le code conserve les originaux ; les reformulations sont documentées et les cas ambigus restent signalés.
 
