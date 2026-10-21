@@ -1,0 +1,4 @@
+interface:
+  display_name: "Titres et légendes sociales"
+  short_description: "Séparer titres, descriptions et hashtags avec soin"
+  default_prompt: "Utilise $social-content-structure pour structurer ces publications sociales et proposer des titres clairs, fidèles et accrocheurs."

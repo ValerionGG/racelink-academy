@@ -14,6 +14,13 @@ La collecte a examiné 831 identités distinctes. Les milliers de nouveaux tutor
 
 La recherche conserve les précisions de véhicule, moteur, intervention et références techniques. Le choix de langue est visible et indépendant de la langue de l'interface. Favoris, notes et progression restent dans le navigateur. Les vidéos s'ouvrent chez leurs auteurs ou dans un lecteur tiers chargé à la demande.
 
+
+## Titres et légendes sociales
+
+Les 237 fiches TikTok, Instagram et Facebook disposent désormais de champs distincts : titre, description, hashtags et texte original consultable. 170 titres ont été nettoyés ou reformulés et 24 descriptions nettoyées. Les hashtags restent recherchables ; les mentions de véhicule, droits et transcriptions sont conservés. Les résumés éditoriaux sont distingués des légendes sources. Aucun visionnage n’est déduit de ce traitement des métadonnées.
+
+Le skill réutilisable [social-content-structure](skills/social-content-structure/SKILL.md) comprend un séparateur Python autonome et des instructions de revue sémantique. Il distingue les titres natifs, les légendes directes et les extraits indexés. Le code conserve les originaux ; les reformulations sont documentées et les cas ambigus restent signalés.
+
 ## Publication
 
 `site/` est l'artefact statique public publié par GitHub Actions à chaque mise à jour de `main`. Le catalogue compressé est décompressé dans un Worker, avec JSON de repli. La consultation ne nécessite aucun compte ou identifiant de service. Le domaine Focus original reste distinct.
