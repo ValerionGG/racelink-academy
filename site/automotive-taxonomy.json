@@ -608,8 +608,8 @@
     }
   ],
   "disclaimer": {
-    "fr": "Mentions extraites des titres. Elles ne confirment ni la compatibilité avec votre véhicule ni une préconisation d’entretien.",
-    "en": "Mentions extracted from titles. They do not confirm vehicle compatibility or maintenance recommendations.",
-    "es": "Menciones extraídas de los títulos. No confirman compatibilidad ni recomendaciones de mantenimiento."
+    "fr": "Mentions extraites des titres ou légendes sources. Elles ne confirment ni la compatibilité avec votre véhicule ni une préconisation d’entretien.",
+    "en": "Mentions extracted from source titles or captions. They do not confirm vehicle compatibility or maintenance recommendations.",
+    "es": "Menciones extraídas de los títulos o descripciones originales. No confirman compatibilidad ni recomendaciones de mantenimiento."
   }
 }

@@ -231,7 +231,7 @@ export function vehicleOptions(catalog, params = {}) {
       .sort((a, b) => a.value.toLowerCase() < b.value.toLowerCase() ? -1 : a.value.toLowerCase() > b.value.toLowerCase() ? 1 : 0);
   }
   return {options, facets: options, total_videos: matchingVideos.size, matching_applications: matchingApplications,
-    selected, evidence_scope: "title_mention", compatibility_verified: false};
+    selected, evidence_scope: "title_or_caption_mention", compatibility_verified: false};
 }
 
 export function inferAutomotive(catalog, q, params = {}) {
