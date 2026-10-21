@@ -1,3 +1,5 @@
+import {icon as glyph, categoryIcon} from './icons.js';
+import {createIdentityUI} from './identity-ui.js';
 import {tracks} from './tracks.js';
 import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js';
 import {createDiscoveryUI} from './discovery-ui.js';
@@ -17,6 +19,8 @@ const dictionaries = {
 };
 Object.assign(dictionaries.en,{explore:'Home',openLibrary:'YOUR NEXT STEP STARTS HERE',headline:'A question?<br><span>Find out how.</span>',intro:'Maintain your car, improve on track or in a simulator.<br>Videos and guides to put knowledge into practice.',catalogTitle:'Find your answer.',discipline:'TOPIC',language:'LANGUAGE'});
 Object.assign(dictionaries.es,{explore:'Inicio',openLibrary:'TU PRÓXIMO PASO EMPIEZA AQUÍ',headline:'¿Una pregunta?<br><span>Descubre cómo.</span>',intro:'Cuida tu coche, mejora en pista o en simulación.<br>Vídeos y guías para pasar a la práctica.',catalogTitle:'Encuentra tu respuesta.',discipline:'TEMA',language:'IDIOMA'});
+Object.assign(dictionaries.en,{openLibrary:'KNOWLEDGE MAKES THE DIFFERENCE',headline:'Learn the skill.<br><span>Take the wheel.</span>',intro:'Maintenance to do, a technique to understand?<br> Find the right tutorial and put it into practice.'});
+Object.assign(dictionaries.es,{openLibrary:'EL SABER MARCA LA DIFERENCIA',headline:'Aprende la técnica.<br><span>Toma el volante.</span>',intro:'¿Un mantenimiento o una técnica por aprender?<br> Encuentra el tutorial y pasa a la práctica.'});
 const originalText = Object.fromEntries($$('[data-i18n]').map(el => [el.dataset.i18n,el.innerHTML]));
 const t = (fr,en,es) => ui === 'en' ? en : ui === 'es' ? es : fr;
 const categories = [
@@ -91,6 +95,7 @@ const discoveryUI=createDiscoveryUI({
 const mobileUI=createMobileUI({t,getState:()=>state,getTotal:()=>lastTotal,isLoading:()=>$('#video-grid').getAttribute('aria-busy')==='true',onExplore:()=>{if(view!=='explore')changeView('explore');}});
 
 function showToast(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3000);}
+const identityUI=createIdentityUI({t,openSearch:()=>mobileUI.openSearch(),getView:()=>view,isBrowsing:()=>browsing});
 function updateSavedCount(){$('#saved-count').textContent=Object.keys(saved).length;}
 function syncUrl(push=false){
   const u=new URL(location.href);u.search='';if(!browsing)u.hash='';
@@ -157,7 +162,7 @@ function applyTranslations(){
   discoveryUI.refresh();
   $('#vehicle-disclosure-label').textContent=t('Affiner pour votre voiture','Refine for your car','Afinar para tu coche');
   $('.workshop-jump').textContent=t('Mon véhicule & entretien ↘','My vehicle & maintenance ↘','Mi vehículo y mantenimiento ↘');
-  renderFacets();syncControls();renderPaths();renderFaq();renderSaved();renderStats();
+  renderFacets();syncControls();renderPaths();renderFaq();renderSaved();renderStats();identityUI.update();
 }
 function renderStats(){
   if(!stats)return;
@@ -180,11 +185,12 @@ function renderLanguages(){
   $('#french-videos').innerHTML=`${t('Vidéos en français','Videos in French','Vídeos en francés')}${frenchCount===undefined?'':` <small>${Number(frenchCount).toLocaleString(ui)}</small>`} <span aria-hidden="true">→</span>`;
 }
 function renderFacets(){
+  identityUI.sync();
   automotiveUI.setResultFacets(facets);
   const categoriesFacet=facets.category||[];
   $('#category-filters').innerHTML=[['','⌘',t('Tout explorer','Explore everything','Explorar todo')],...categories.map(c=>[c[0],c[1],catName(c[0])])].map(([id,icon,name])=>{
     const count=id?(categoriesFacet.find(f=>f.value===id)?.count??0):(lastTotal??stats?.total_videos);
-    return `<button class="category-button ${state.category===id?'active':''}" data-category="${id}" aria-pressed="${state.category===id}"><span class="cat-icon" aria-hidden="true">${icon}</span>${escape(name)}<span class="cat-count">${count??'—'}</span></button>`;
+    return `<button class="category-button ${state.category===id?'active':''}" data-category="${id}" aria-pressed="${state.category===id}"><span class="cat-icon" aria-hidden="true">${glyph(categoryIcon[id]||'library',{size:20})}</span>${escape(name)}<span class="cat-count">${count??'—'}</span></button>`;
   }).join('');
   renderLanguages();
   const platforms=['youtube','dailymotion','vimeo','tiktok','instagram','facebook','twitch','bilibili','racelink'].filter(v=>v===state.platform||(facets.platform||[]).some(f=>f.value===v&&f.count>0));
@@ -193,13 +199,13 @@ function renderFacets(){
   const types={tutorial:t('Tutoriel','Tutorial','Tutorial'),demonstration:t('Démonstration','Demonstration','Demostración'),course:t('Cours','Course','Curso'),stream:t('Direct / replay','Stream / replay','Directo / repetición'),unspecified:t('Type à confirmer','Unconfirmed type','Tipo sin confirmar')};
   $('#content_format').innerHTML=`<option value="">${t('Tous les types','All types','Todos los tipos')}</option>${Object.entries(types).map(([v,l])=>`<option value="${v}">${l} (${(facets.content_format||[]).find(f=>f.value===v)?.count||0})</option>`).join('')}`;
   $('#content_format').value=state.content_format;
-  $$('#format-tabs button').forEach(button=>{const v=button.dataset.format,label=v==='all'?t('Tout','All','Todo'):v==='video'?t('Vidéos','Videos','Vídeos'):t('Guides','Guides','Guías');const n=v==='all'?(facets.format||[]).reduce((sum,x)=>sum+x.count,0):(facets.format||[]).find(f=>f.value===v)?.count;button.innerHTML=`${label}${n===undefined?'':` <span>${Number(n).toLocaleString(ui)}</span>`}`;});
+  $$('#format-tabs button').forEach(button=>{const v=button.dataset.format,label=v==='all'?t('Tout','All','Todo'):v==='video'?t('Vidéos','Videos','Vídeos'):t('Guides','Guides','Guías');const n=v==='all'?(facets.format||[]).reduce((sum,x)=>sum+x.count,0):(facets.format||[]).find(f=>f.value===v)?.count;button.innerHTML=`${glyph(v==='video'?'play':v==='guide'?'library':'filter',{size:18})}${label}${n===undefined?'':` <span>${Number(n).toLocaleString(ui)}</span>`}`;});
 }
 function cardMarkup(video){
   if(video.resource_type==='guide')return guideUI.card(video);
   const image=safeUrl(video.thumbnail_url||video.thumbnailUrl,true), id=escape(video.id);
   const review=['curated','editorial_review','editorial_selection','verified'].includes(video.review_status||video.reviewStatus);
-  return `<article class="video-card ${raceLinkPicks.has('video',video.id)?'is-racelink-pick':''}"><button class="thumbnail" data-video="${id}" aria-label="${escape(t('Ouvrir : ','Open: ','Abrir: ')+video.title)}">${image?`<img src="${escape(image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:`<span class="thumb-fallback">${escape(platformName(video.platform))}<small>${t('Aperçu indisponible','Preview unavailable','Vista previa no disponible')}</small></span>`}${raceLinkPicks.badge('video',video.id,{overlay:true})}<span class="thumb-platform"><i class="platform-dot"></i>${escape(platformName(video.platform))}</span><span class="thumb-play" aria-hidden="true">▶</span><span class="thumb-duration">${escape(fmtDuration(video.duration_seconds))}</span></button><div class="card-heading"><h3 dir="auto"><button class="title-button" data-video="${id}">${escape(video.title)}</button></h3><button class="save-card ${saved[video.id]?'saved':''}" data-save="${id}" aria-label="${escape(saved[video.id]?t('Retirer de ma sélection','Remove from collection','Quitar de mi selección'):t('Enregistrer la vidéo','Save video','Guardar vídeo'))}" aria-pressed="${Boolean(saved[video.id])}">${saved[video.id]?'▰':'▱'}</button></div><p class="creator">${escape(video.creator||platformName(video.platform))}</p><div class="card-tags"><span class="tag category">${escape(catName(video.category))}</span><span class="tag language-tag">${escape(languageLabel(video.language))}${estimatedLanguage(video)?t(' · estimé',' · estimated',' · estimado'):''}</span>${video.domain_scope==='automotive_adjacent'?`<span class="tag">${['mechanics','engineering'].includes(video.category)?t('Mécanique auto','Automotive','Mecánica auto'):t('Compétence complémentaire','Related skill','Competencia complementaria')}</span>`:''}${(video.content_format||video.contentFormat)==='telemetry_demonstration'?`<span class="tag">${t('Tour & télémétrie','Lap & telemetry','Vuelta y telemetría')}</span>`:''}${video.has_transcript?`<span class="tag transcript">${t('Transcription','Transcript','Transcripción')}</span>`:''}<span class="tag review">${review?t('Sélection éditoriale','Editorial pick','Selección editorial'):t('À qualifier','To review','Por revisar')}</span></div>${automotiveUI.cardMarkup(video)}</article>`;
+  return `<article class="video-card ${raceLinkPicks.has('video',video.id)?'is-racelink-pick':''}"><button class="thumbnail" data-video="${id}" aria-label="${escape(t('Ouvrir : ','Open: ','Abrir: ')+video.title)}">${image?`<img src="${escape(image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:`<span class="thumb-fallback">${escape(platformName(video.platform))}<small>${t('Aperçu indisponible','Preview unavailable','Vista previa no disponible')}</small></span>`}${raceLinkPicks.badge('video',video.id,{overlay:true})}<span class="thumb-platform"><i class="platform-dot"></i>${escape(platformName(video.platform))}</span><span class="thumb-play" aria-hidden="true">${glyph('play',{size:20})}</span><span class="thumb-duration">${escape(fmtDuration(video.duration_seconds))}</span></button><div class="card-heading"><h3 dir="auto"><button class="title-button" data-video="${id}">${escape(video.title)}</button></h3><button class="save-card ${saved[video.id]?'saved':''}" data-save="${id}" aria-label="${escape(saved[video.id]?t('Retirer de ma sélection','Remove from collection','Quitar de mi selección'):t('Enregistrer la vidéo','Save video','Guardar vídeo'))}" aria-pressed="${Boolean(saved[video.id])}">${glyph('bookmark',{size:21})}</button></div><p class="creator">${escape(video.creator||platformName(video.platform))}</p><div class="card-tags"><span class="tag category">${escape(catName(video.category))}</span><span class="tag language-tag">${escape(languageLabel(video.language))}${estimatedLanguage(video)?t(' · estimé',' · estimated',' · estimado'):''}</span>${video.domain_scope==='automotive_adjacent'?`<span class="tag">${['mechanics','engineering'].includes(video.category)?t('Mécanique auto','Automotive','Mecánica auto'):t('Compétence complémentaire','Related skill','Competencia complementaria')}</span>`:''}${(video.content_format||video.contentFormat)==='telemetry_demonstration'?`<span class="tag">${t('Tour & télémétrie','Lap & telemetry','Vuelta y telemetría')}</span>`:''}${video.has_transcript?`<span class="tag transcript">${t('Transcription','Transcript','Transcripción')}</span>`:''}<span class="tag review">${review?t('Sélection éditoriale','Editorial pick','Selección editorial'):t('À qualifier','To review','Por revisar')}</span></div>${automotiveUI.cardMarkup(video)}</article>`;
 }
 function setImageFallback(root){
   $$('img',root).forEach(img=>img.addEventListener('error',()=>{img.style.display='none';const parent=img.parentElement;if(parent.classList.contains('thumbnail'))parent.insertAdjacentHTML('afterbegin','<span class="thumb-fallback">RACELINK</span>');},{once:true}));
@@ -262,7 +268,7 @@ function goHome(){state={...automotiveDefaults,q:'',category:'',domain:'',level:
 function changeView(next,push=true){
   view=next;$$('main>section').forEach(el=>el.hidden=el.id!==`${next}-view`);
   $$('[data-view]').forEach(el=>{el.classList.toggle('active',el.dataset.view===next);if(el.dataset.view===next)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
-  if(next==='saved')renderSaved();if(next==='faq')renderFaq();if(next==='paths')renderPaths();
+  identityUI.sync();if(next==='saved')renderSaved();if(next==='faq')renderFaq();if(next==='paths')renderPaths();
   if(push){syncUrl(true);window.scrollTo({top:0,behavior:'instant'});$('#main').focus({preventScroll:true});}
 }
 function renderPaths(){
@@ -272,7 +278,7 @@ function renderPaths(){
     $('#paths-view').innerHTML=`<button class="track-back" data-all-tracks>← ${t('Tous les parcours','All learning paths','Todos los itinerarios')}</button><p class="eyebrow">${t('PARCOURS GUIDÉ · 4 ÉTAPES','GUIDED PATH · 4 STEPS','ITINERARIO · 4 PASOS')}</p><h1>${escape(catName(activeTrack)).toUpperCase()}<br><span class="track-accent">${t('UN REPÈRE À LA FOIS.','ONE STEP AT A TIME.','PASO A PASO.')}</span></h1><p class="lead">${t('Explorez les ressources, notez ce que vous retenez, puis marquez l’étape comprise. Ce suivi personnel ne délivre pas de certification.','Explore resources, take notes, then mark a step understood. This personal tracker does not award certification.','Explora recursos, toma notas y marca los pasos comprendidos. Este seguimiento no otorga certificación.')}</p><div class="track-progress"><span>${done} / 4 ${t('étapes comprises','steps understood','pasos comprendidos')}</span><progress max="4" value="${done}" aria-label="${t('Progression personnelle','Personal progress','Progreso personal')}"></progress></div><div class="track-steps">${steps.map((step,i)=>`<article class="track-step ${progress[`${activeTrack}:${i}`]?'done':''}"><span class="step-number">0${i+1}</span><div><h2>${escape(t(...step.title))}</h2><p>${escape(t(...step.goal))}</p><div class="step-actions"><button data-step-query="${escape(step.query)}" data-step-category="${activeTrack}">${t('Trouver les tutoriels','Find tutorials','Buscar tutoriales')} ↗</button><button class="step-done" data-complete-step="${activeTrack}:${i}" aria-pressed="${Boolean(progress[`${activeTrack}:${i}`])}">${progress[`${activeTrack}:${i}`]?t('Compris ✓','Understood ✓','Comprendido ✓'):t('Marquer comme compris','Mark as understood','Marcar como comprendido')}</button></div></div></article>`).join('')}</div>`;
     return;
   }
-  $('#paths-view').innerHTML=`<p class="eyebrow">${t('UN POINT DE DÉPART POUR CHAQUE AMBITION','A STARTING POINT FOR EVERY AMBITION','UN PUNTO DE PARTIDA PARA CADA AMBICIÓN')}</p><h1>${t('CHOISISSEZ VOTRE<br>PROCHAINE PROGRESSION.','CHOOSE YOUR<br>NEXT STEP.','ELIGE TU<br>PRÓXIMO PASO.')}</h1><p class="lead">${t('Huit portes d’entrée pour explorer le motorsport. Choisissez une discipline, puis adaptez les ressources à votre niveau.','Eight ways into motorsport. Pick a discipline, then filter the resources to your level.','Ocho puertas al automovilismo. Elige una disciplina y filtra los recursos según tu nivel.')}</p><div class="path-grid">${categories.map((c,i)=>`<button class="path-card" data-path="${c[0]}"><span class="path-number">0${i+1} / RACELINK</span><h2>${escape(catName(c[0]))}</h2><p>${ui==='fr'?c[5]:t('',`Explore tutorials, methods and explanations in ${catName(c[0]).toLowerCase()}.`,`Explora tutoriales, métodos y explicaciones de ${catName(c[0]).toLowerCase()}.`)}</p><span class="path-bottom">${t('Explorer les ressources','Explore resources','Explorar recursos')}<span>↗</span></span></button>`).join('')}</div>`;
+  $('#paths-view').innerHTML=`<p class="eyebrow">${t('UN POINT DE DÉPART POUR CHAQUE AMBITION','A STARTING POINT FOR EVERY AMBITION','UN PUNTO DE PARTIDA PARA CADA AMBICIÓN')}</p><h1>${t('CHOISISSEZ VOTRE<br>PROCHAINE PROGRESSION.','CHOOSE YOUR<br>NEXT STEP.','ELIGE TU<br>PRÓXIMO PASO.')}</h1><p class="lead">${t('Huit portes d’entrée pour explorer le motorsport. Choisissez une discipline, puis adaptez les ressources à votre niveau.','Eight ways into motorsport. Pick a discipline, then filter the resources to your level.','Ocho puertas al automovilismo. Elige una disciplina y filtra los recursos según tu nivel.')}</p><div class="path-grid">${categories.map((c,i)=>`<button class="path-card" data-path="${c[0]}"><span class="path-top"><span class="path-number">0${i+1} / RACELINK</span>${glyph(categoryIcon[c[0]],{size:32})}</span><h2>${escape(catName(c[0]))}</h2><p>${ui==='fr'?c[5]:t('',`Explore tutorials, methods and explanations in ${catName(c[0]).toLowerCase()}.`,`Explora tutoriales, métodos y explicaciones de ${catName(c[0]).toLowerCase()}.`)}</p><span class="path-bottom">${t('Explorer les ressources','Explore resources','Explorar recursos')}<span>↗</span></span></button>`).join('')}</div>`;
 }
 function renderFaq(openId){
   const merged=[...seedFaq,...faqItems.filter(x=>!seedFaq.some(s=>s.question===x.question))];
@@ -289,7 +295,7 @@ function toggleSave(id){
   if(!storage.set('rl-library-saved',saved))showToast(t('Sauvegarde indisponible dans ce navigateur.','Saving is unavailable in this browser.','No se puede guardar en este navegador.'));
   else showToast(saved[id]?t('Ajouté à votre sélection','Added to your collection','Añadido a tu selección'):t('Retiré de votre sélection','Removed from your collection','Quitado de tu selección'));
   updateSavedCount();
-  $$('[data-save]').filter(el=>el.dataset.save===id).forEach(el=>{el.classList.toggle('saved',Boolean(saved[id]));el.setAttribute('aria-pressed',String(Boolean(saved[id])));el.setAttribute('aria-label',saved[id]?t('Retirer de ma sélection','Remove from collection','Quitar de mi selección'):t('Enregistrer la vidéo','Save video','Guardar vídeo'));el.textContent=el.classList.contains('save-card')?(saved[id]?'▰':'▱'):(saved[id]?t('Enregistré ✓','Saved ✓','Guardado ✓'):t('Enregistrer','Save','Guardar'));});
+  $$('[data-save]').filter(el=>el.dataset.save===id).forEach(el=>{el.classList.toggle('saved',Boolean(saved[id]));el.setAttribute('aria-pressed',String(Boolean(saved[id])));el.setAttribute('aria-label',saved[id]?t('Retirer de ma sélection','Remove from collection','Quitar de mi selección'):t('Enregistrer la vidéo','Save video','Guardar vídeo'));if(el.classList.contains('save-card'))el.innerHTML=glyph('bookmark',{size:21});else el.textContent=saved[id]?t('Enregistré ✓','Saved ✓','Guardado ✓'):t('Enregistrer','Save','Guardar');});
   if(view==='saved')renderSaved();
 }
 function embedUrl(video,time=0){
@@ -386,7 +392,7 @@ $('#ui-language').addEventListener('change',e=>{ui=e.target.value;storage.set('r
 $('#video-dialog').addEventListener('close',()=>{++detailVersion;$('#video-detail').innerHTML='';detail=null;});
 $('#video-dialog').addEventListener('click',e=>{if(e.target===$('#video-dialog')){const rect=e.target.getBoundingClientRect();if(e.clientX<rect.left||e.clientX>rect.right||e.clientY<rect.top||e.clientY>rect.bottom)e.target.close();}});
 document.addEventListener('keydown',e=>{
-  if(e.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)&&!$('#video-dialog').open){e.preventDefault();mobileUI.openSearch();}
+  if(e.key==='/'&&!['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName)&&!document.querySelector('dialog[open]')){e.preventDefault();mobileUI.openSearch();}
   if(e.target.closest('.detail-tabs')&&['ArrowLeft','ArrowRight','Home','End'].includes(e.key)){e.preventDefault();const tabs=$$('[role=tab]');const idx=tabs.indexOf(e.target);const next=e.key==='Home'?0:e.key==='End'?tabs.length-1:(idx+(e.key==='ArrowRight'?1:-1)+tabs.length)%tabs.length;tabs[next].focus();setDetailTab(tabs[next].dataset.tab);}
 });
 window.addEventListener('popstate',()=>{restoreUrl();applyTranslations();changeView(view,false);automotiveUI.loadOptions();loadVideos();});

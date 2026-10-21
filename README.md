@@ -14,4 +14,10 @@ La recherche conserve les précisions de véhicule, moteur, intervention et réf
 
 `site/` est l'artefact statique public publié par GitHub Actions à chaque mise à jour de `main`. Le catalogue compressé est décompressé dans un Worker, avec JSON de repli. La consultation ne nécessite aucun compte ou identifiant de service. Le domaine Focus original reste distinct.
 
-La collecte s'appuie sur [Agent Reach](https://github.com/Panniantong/Agent-Reach) et yt-dlp. Pour l'extension sociale, le skill officiel [Apify](https://github.com/apify/agent-skills) a été inspecté et ses schémas testés via le MCP de découverte ; aucun run facturable n'a été lancé. Le design s'appuie notamment sur [Impeccable](https://github.com/pbakaus/impeccable).
+La collecte s'appuie sur [Agent Reach](https://github.com/Panniantong/Agent-Reach) et yt-dlp. Le paquet local contient aussi un collecteur sans abonnement : recherches et chaînes YouTube, liens publics Instagram/TikTok, découverte Exa facultative, cache et déduplication. Les essais sociaux portent sur un petit échantillon et ne garantissent pas une collecte massive. Aucun run Apify facturable n'a été lancé.
+
+## Identité et navigation
+
+La version du 21 octobre associe ivoire, graphite et rouge, un monogramme RL original et [28 icônes SVG originales](https://valeriongg.github.io/racelink-academy/identity-icons.html). Le menu visuel organise huit sujets ; la navigation mobile donne accès à l'accueil, à la recherche, aux parcours et à la sélection. Les choix de langue et les filtres existants restent disponibles.
+
+Une planche de direction artistique a été créée dans Flowith ; l'interface fonctionnelle et les SVG sont réalisés en code. Le travail utilise les skills design-inspiration et frontend-design, avec un benchmark documenté dans le paquet local. Les contrôles incluent les largeurs 320 et 390 px, la conservation des critères, les favoris, la traduction du menu et sa fermeture au clavier.

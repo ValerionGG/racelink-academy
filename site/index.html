@@ -12,47 +12,56 @@
   <link rel="stylesheet" href="/racelink-academy/styles.css">
   <link rel="stylesheet" href="/racelink-academy/discovery.css">
   <link rel="stylesheet" href="/racelink-academy/refinements.css">
-  <link rel="stylesheet" href="/racelink-academy/experience.css?v=languages-v6">
+  <link rel="stylesheet" href="/racelink-academy/experience.css?v=identity-v8">
   <script src="/racelink-academy/catalog-client.js" defer></script>
-  <script type="module" src="/racelink-academy/app.js?v=languages-v6"></script>
+  <script type="module" src="/racelink-academy/app.js?v=identity-v8"></script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
   <header class="header">
-    <a href="/racelink-academy/" class="brand" aria-label="RaceLink Academy, accueil"><span class="brand-mark">RL</span><span><strong>RACELINK<span class="brand-academy"> ACADEMY</span></strong><small data-i18n="brandSub">LE SAVOIR FAIT LA DIFFÉRENCE.</small></span></a>
+    <a href="/racelink-academy/" class="brand" aria-label="RaceLink Academy, accueil"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M9 27V9h9a6 6 0 0 1 0 12h-3l8 6M24 9v12h5" stroke="currentColor" stroke-width="3.3" stroke-linejoin="round"/><path d="M6 31h12" stroke="currentColor" stroke-width="2"/></svg></span><span><strong>RACELINK<span class="brand-academy"> ACADEMY</span></strong><small data-i18n="brandSub">LE SAVOIR FAIT LA DIFFÉRENCE.</small></span></a>
     <nav class="desktop-nav" aria-label="Navigation principale">
       <button class="nav-item active" data-view="explore" data-i18n="explore">Accueil</button>
+      <button class="nav-item nav-explore" data-open-navigation aria-haspopup="dialog" aria-expanded="false" aria-controls="navigation-dialog"><span data-identity-text="browse">Explorer</span><span data-icon="chevron-down"></span></button>
+      <button class="nav-item" data-browse-all data-library-nav data-identity-text="library">Bibliothèque</button>
       <button class="nav-item" data-view="paths" data-i18n="paths">Parcours</button>
-      <button class="nav-item" data-view="faq" data-i18n="help">Aide & FAQ</button>
+
     </nav>
     <div class="header-right">
       <label class="interface-language"><span id="interface-language-label">Site</span><select id="ui-language" aria-label="Langue de l’interface"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option></select></label>
-      <button class="saved-button" data-view="saved"><span aria-hidden="true">▱</span><span data-i18n="saved">Ma sélection</span><b id="saved-count">0</b></button>
+      <button class="saved-button" data-view="saved"><span data-icon="bookmark"></span><span data-i18n="saved">Ma sélection</span><b id="saved-count">0</b></button>
       <a class="academy-back" href="https://focus.racelink-app.co/" target="_blank" rel="noopener" data-i18n="academy">Les masterclass ↗</a>
+      <button type="button" class="mobile-menu-button icon-button" data-open-navigation aria-haspopup="dialog" aria-expanded="false" aria-controls="navigation-dialog" aria-label="Explorer tous les sujets"><span data-icon="menu"></span></button>
     </div>
   </header>
   <main id="main" tabindex="-1">
     <section id="explore-view">
       <div class="hero wrap">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="live-dot"></span><span data-i18n="openLibrary">VOTRE PROCHAIN SAVOIR COMMENCE ICI</span></p>
-          <h1 data-i18n="headline">Une question ?<br><span>Trouvez comment faire.</span></h1>
-          <p class="hero-description" data-i18n="intro">Entretenir votre voiture, progresser en piste ou en simulation. <br>Des vidéos et des guides pour passer à la pratique.</p>
+          <p class="eyebrow"><span class="live-dot"></span><span data-i18n="openLibrary">LE SAVOIR FAIT LA DIFFÉRENCE</span></p>
+          <h1 data-i18n="headline">Apprenez le geste.<br><span>Prenez le volant.</span></h1>
+          <p class="hero-description" data-i18n="intro">Un entretien à faire, une technique à comprendre ?<br> Trouvez le bon tuto et passez à la pratique.</p>
           <div class="search-shell"><form id="search-form" class="search-box" role="search">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
             <input id="search" name="q" type="search" role="combobox" aria-autocomplete="list" aria-controls="search-suggestions" aria-expanded="false" aria-label="Rechercher des tutoriels" placeholder="Qu’aimeriez-vous apprendre ?" autocomplete="off">
-            <kbd>/</kbd><button type="submit" aria-label="Lancer la recherche">→</button>
+            <kbd>/</kbd><button type="submit" aria-label="Lancer la recherche"><span data-icon="arrow-right"></span></button>
           </form><div id="search-suggestions" role="listbox" aria-label="Suggestions de recherche" hidden></div><p id="suggestion-status" class="sr-only" role="status"></p><div class="home-language-picker"><label for="home-language">Langue des vidéos</label><select id="home-language"><option value="">Toutes les langues</option><option value="fr">Français</option></select><button type="button" id="french-videos" data-content-language="fr">Vidéos en français <span aria-hidden="true">→</span></button></div></div>
           <div class="suggestions"><span data-i18n="try">À explorer</span><button data-query="vidange">Faire une vidange</button><button data-query="freinage">Mieux freiner</button><button data-query="sim racing">Régler mon simulateur</button><a href="#vehicle-hub" class="workshop-jump">Mon véhicule & entretien ↘</a></div>
         </div>
-
+        <button type="button" class="academy-scene" data-entry-category="mechanics" aria-label="Explorer la mécanique">
+          <img src="https://focus.racelink-app.co/assets/course-mechanic.jpg" alt="" width="640" height="720" fetchpriority="high" decoding="async">
+          <span class="scene-shade" aria-hidden="true"></span>
+          <span class="scene-top"><span class="scene-index">01 / ACADEMY</span><span class="scene-badge" data-icon="wrench"></span></span>
+          <svg class="scene-track" viewBox="0 0 430 500" fill="none" aria-hidden="true"><path d="M430 76H210c-60 0-92 25-92 76s38 69 94 69h58c44 0 63 29 63 60s-25 60-72 60H0" stroke="currentColor" stroke-width="2"/><path d="M430 89H213c-51 0-82 20-82 63s33 56 80 56h62c52 0 73 34 73 73s-30 73-85 73H0" stroke="currentColor" stroke-width="1"/><circle cx="118" cy="152" r="5" fill="currentColor"/></svg>
+          <span class="scene-copy"><small data-identity-text="heroEyebrow">APPRENDRE. COMPRENDRE. PRATIQUER.</small><strong data-identity-text="heroCaption">Le savoir prend le volant.</strong><span class="scene-action"><span data-identity-text="heroAction">Entrer dans l’atelier</span><span data-icon="arrow-up-right"></span></span></span>
+        </button>
       </div>
       <div class="catalog-meta wrap"><span><i aria-hidden="true"></i><strong id="catalog-total">…</strong> <span data-i18n="references">vidéos référencées</span></span><span id="language-total">…</span><span id="scope-totals" data-i18n="accessNote">Sources publiques · Auteurs crédités · Accès direct</span><a href="#method" id="method-link" data-i18n="method">Notre méthode ↗</a></div>
       <section id="discovery-hub" class="discovery-hub wrap" aria-label="Explorer par objectif"></section>
       <section class="catalog wrap" aria-labelledby="catalog-heading">
 
         <button type="button" class="results-back" data-home>← Accueil</button><div class="section-intro"><h1 id="catalog-heading" data-i18n="catalogTitle">Trouvez votre réponse.</h1></div><div id="results-search-desktop"></div>
-        <div class="catalog-actions"><button type="button" id="edit-search"><span aria-hidden="true">⌕</span><span id="edit-search-label">Rechercher un tuto, une question…</span><small aria-hidden="true">↗</small></button><button id="mobile-filters" class="outline-button" aria-expanded="false" aria-controls="filters-dialog">Filtres</button></div>
+        <div class="catalog-actions"><button type="button" id="edit-search"><span data-icon="search"></span><span id="edit-search-label">Rechercher un tuto, une question…</span><small aria-hidden="true">↗</small></button><button id="mobile-filters" class="outline-button" aria-expanded="false" aria-controls="filters-dialog">Filtres</button></div>
         <div class="content-language-bar"><div><label for="language">Langue des contenus</label><select id="language" aria-describedby="content-language-note"><option value="">Toutes les langues</option><option value="fr">Français</option></select></div><div class="language-shortcuts" role="group" aria-label="Choix rapide de langue"><button type="button" data-content-language="fr" aria-pressed="false">Français</button><button type="button" data-content-language="" aria-pressed="true">Toutes</button></div><p id="content-language-note">La langue peut être estimée à partir du titre et de la source.</p></div>
         <div id="format-tabs" class="format-tabs" role="group" aria-label="Format de la ressource"><button data-format="all" aria-pressed="true">Tout</button><button data-format="video" aria-pressed="false">Vidéos</button><button data-format="guide" aria-pressed="false">Guides</button></div>
         <details id="vehicle-disclosure" class="vehicle-disclosure"><summary><span id="vehicle-disclosure-label">Affiner pour votre voiture</span><span id="vehicle-disclosure-value">Marque, moteur, huile, intervention…</span><b aria-hidden="true">＋</b></summary><section id="vehicle-hub" class="vehicle-hub" aria-label="Mon véhicule et mes interventions"></section></details>
@@ -90,7 +99,7 @@
     <section id="saved-view" class="wrap alternate-view" hidden></section>
   </main>
   <footer class="footer wrap"><a href="/racelink-academy/" class="footer-brand">RACELINK <span>ACADEMY</span></a><p data-i18n="footer">La passion se partage. Le savoir aussi.</p><button data-faq="method" data-i18n="method">Notre méthode ↗</button><a href="https://focus.racelink-app.co/" target="_blank" rel="noopener">Focus ↗</a></footer>
-  <nav class="mobile-nav" aria-label="Navigation mobile"><button data-view="explore" class="active">⌕<span data-i18n="explore">Accueil</span></button><button data-view="paths">↗<span data-i18n="paths">Parcours</span></button><button data-view="faq">?<span data-i18n="help">Aide & FAQ</span></button><button data-view="saved">▱<span data-i18n="saved">Ma sélection</span></button></nav>
+  <nav class="mobile-nav" aria-label="Navigation mobile"><button data-view="explore" class="active"><span data-icon="home"></span><span data-i18n="explore">Accueil</span></button><button data-open-search><span data-icon="search"></span><span data-identity-text="search">Rechercher</span></button><button data-view="paths"><span data-icon="route"></span><span data-i18n="paths">Parcours</span></button><button data-view="saved"><span data-icon="bookmark"></span><span data-i18n="saved">Ma sélection</span></button></nav>
   <dialog id="video-dialog" aria-labelledby="dialog-title"><div id="video-detail"></div></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
 </body>
