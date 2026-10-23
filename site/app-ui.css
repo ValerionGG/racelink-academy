@@ -1042,6 +1042,10 @@ body.results-mode {background:#f0f1f3}
 @media(max-width:360px){.catalog.wrap{padding-inline:12px}.library-heading h1{font-size:22px}.library-controls{gap:5px;grid-template-columns:minmax(0,1.15fr) minmax(0,.9fr) auto}.library-typebar .format-tabs button{font-size:11px;gap:4px}.library-typebar .format-tabs span{font-size:9px}.resource-card h3{font-size:20px}.resource-card-body{padding-inline:14px}.filters-dialog .mobile-filter-body{padding-inline:16px}.filters-dialog .sheet-heading{padding-inline:16px}.filters-dialog .category-button{font-size:11px}.filter-pair{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.resource-photo img,.resource-card{transition:none}}
 .filter-topics>summary {cursor:pointer;min-height:44px;display:flex;align-items:center;justify-content:space-between;list-style:none}.filter-topics>summary:after {content:"+";font-size:22px}.filter-topics[open]>summary:after {content:"−"}.filter-topics>summary h3 {margin:0}.filter-topics[open]>summary {margin-bottom:16px}
+/* Keep related topics in the same neutral reading surface as the results. */
+.context-discovery {background:#fff;border:1px solid #dfe0e3;border-radius:12px;padding:24px;margin-top:28px}
+.context-discovery>p {color:#5b5e65}
+@media(max-width:360px){.library-vehicle>span:last-child{display:none}}
 
 /* Append inside the product layer after existing detail rules. Video-only scope. */
 #video-dialog:has(.resource-workspace){width:min(1240px,calc(100% - 48px));max-width:1240px;background:#fff;scroll-padding-top:84px}
