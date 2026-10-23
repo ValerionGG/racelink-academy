@@ -1,11 +1,11 @@
 import {icon as glyph, categoryIcon} from './icons.js';
-import {createIdentityUI} from './identity-ui.js?v=visual-v17';
+import {createIdentityUI} from './identity-ui.js?v=visual-v17b';
 import {tracks} from './tracks.js';
-import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=visual-v17';
-import {createDiscoveryUI} from './discovery-ui.js?v=visual-v17';
+import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=visual-v17b';
+import {createDiscoveryUI} from './discovery-ui.js?v=visual-v17b';
 import {createRaceLinkPicks} from './racelink-picks.js';
-import {createMobileUI} from './mobile-ui.js?v=visual-v17';
-import {createGuideUI} from './guide-ui.js?v=visual-v17';
+import {createMobileUI} from './mobile-ui.js?v=visual-v17b';
+import {createGuideUI} from './guide-ui.js?v=visual-v17b';
 import {socialContentMarkup} from './social-content.js';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];

@@ -89,7 +89,7 @@ export function createDiscoveryUI(ctx) {
     try{
       const [data,visuals]=await Promise.all([
         window.getCatalogJson('/aide/api/discovery'),
-        fetch(new URL('./visual-assets.json?v=visual-v17',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
+        fetch(new URL('./visual-assets.json?v=visual-v17b',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
       ]);
       catalog=data;visualAssets=Array.isArray(visuals?.assets)?visuals.assets:[];
       ctx.picks?.setVideos(catalog.shelves||[]);render();ctx.onPicksChange?.();
