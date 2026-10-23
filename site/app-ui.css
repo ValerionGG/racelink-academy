@@ -857,7 +857,7 @@ dialog::backdrop {background:#141c2db3;backdrop-filter:blur(3px)}
   .path-card:nth-child(n) {grid-template-columns:1fr;padding:25px 0;gap:12px;min-height:0}.path-card h2 {font-size:25px}.path-card p {font-size:14px}.path-bottom {justify-content:space-between;min-height:44px}
   .track-step {grid-template-columns:32px minmax(0,1fr);gap:16px}.step-number {font-size:22px}.track-step h2 {font-size:22px}.track-step p {font-size:14px}.step-actions button {min-height:44px;font-size:13px}
   .faq-layout {display:block}.faq-side {padding:20px;margin-bottom:24px}.faq-item summary {font-size:17px}.faq-item p {font-size:15px}.faq-search {font-size:16px}
-  dialog,.navigation-dialog {width:100%;max-width:none;height:100dvh;max-height:100dvh;margin:0;border-radius:0;box-shadow:none}
+  dialog,.navigation-dialog {inset:0;width:100%;max-width:none;height:100dvh;max-height:100dvh;margin:0;border-radius:0;box-shadow:none}
   .detail-header {min-height:66px;padding:10px 20px;background:#fff;font-size:11px}.detail-header button {width:44px;height:44px}
   .detail-layout {display:block}.detail-main {padding:22px 20px;border:0;border-bottom:1px solid var(--line)}.detail-main h2 {font-size:25px;line-height:1.35}.detail-author {font-size:13px}.detail-actions {gap:8px}.detail-actions a,.detail-actions button {font-size:13px;min-height:44px;padding:10px 12px}
   .detail-side {padding:24px 20px}.detail-tabs {gap:24px;top:66px}.detail-tabs button {font-size:14px;min-height:48px}.detail-facts dt {font-size:12px}.detail-facts dd {font-size:13px}
@@ -881,7 +881,7 @@ dialog::backdrop {background:#141c2db3;backdrop-filter:blur(3px)}
   .home-language-picker label {font-size:11px}.home-language-picker select {max-width:58%;font-size:16px;padding-left:8px}
   .entry-grid,.featured-grid {margin-inline:-16px;padding-inline:16px;scroll-padding-inline:16px}.entry-card,.editorial-video {flex-basis:92%}
   .home-intro h2,.editorial-heading h3 {font-size:24px}.home-intro button,.editorial-heading button {font-size:11px;max-width:92px}
-  .guides-feature-copy {padding:23px}.guides-feature h3 {font-size:26px}.format-tabs {gap:16px}.format-tabs svg {display:none}
+  .guides-feature-copy {padding:23px}.guides-feature h3 {font-size:26px}.format-tabs {gap:12px}.format-tabs svg {display:none}
   .vehicle-disclosure>summary>span:nth-child(2) {display:none}.video-card h3,.guide-card h3 {font-size:21px}.guide-card-footer {flex-wrap:wrap}.guide-read {margin-left:0}
   .mobile-nav {padding-inline:6px}.mobile-nav button span {font-size:10px}.sheet-heading h2 {font-size:25px}.sheet-footer {padding-inline:14px;gap:7px}.sheet-footer button {font-size:11px}
 }
