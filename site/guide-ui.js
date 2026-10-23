@@ -1,9 +1,13 @@
+import {guideArt,guideTopic} from './guide-art.js';
+import {icon} from './icons.js';
+
 // Guide resources share the library search, while keeping their original sources.
 export function createGuideUI({escape:e,t,picks,safeUrl}) {
   let version=0;
   const $=s=>document.querySelector(s);
   function card(resource){
-    return `<article class="video-card guide-card"><button class="guide-cover" data-guide="${e(resource.id)}" aria-label="${e(t('Lire : ','Read: ','Leer: ')+resource.title)}"><span class="guide-cover-label">RACELINK · ${t('GUIDE','GUIDE','GUÍA')}</span><span class="guide-cover-symbol" aria-hidden="true">↳</span><span>${t('Comprendre, étape par étape.','Understand, step by step.','Entender, paso a paso.')}</span>${picks.badge('guide',resource.id,{overlay:true})}</button><div class="card-heading"><h3><button class="title-button" data-guide="${e(resource.id)}">${e(resource.title)}</button></h3></div><p class="creator">RaceLink · ${t('Lecture en français','Written in French','Lectura en francés')}</p><p class="card-excerpt">${e(resource.description)}</p><button class="guide-read" data-guide="${e(resource.id)}">${t('Lire le guide','Read guide','Leer guía')} ↗</button></article>`;
+    const topic=guideTopic(resource,{t});
+    return `<article class="video-card guide-card"><button class="guide-cover" data-guide="${e(resource.id)}" data-guide-topic="${e(topic.key)}" aria-label="${e(t('Lire : ','Read: ','Leer: ')+resource.title)}"><span class="guide-cover-label">RACELINK <span>${t('GUIDE','GUIDE','GUÍA')}</span></span>${guideArt(resource)}<span class="guide-cover-bottom"><strong class="guide-cover-topic">${e(topic.label)}</strong><span>${t('Lire','Read','Leer')} ${icon('arrow-up-right',{size:14})}</span></span>${picks.badge('guide',resource.id,{overlay:true})}</button><div class="card-heading"><h3><button class="title-button" data-guide="${e(resource.id)}">${e(resource.title)}</button></h3></div><p class="creator">RaceLink · ${t('Lecture en français','Written in French','Lectura en francés')}</p><p class="card-excerpt">${e(resource.description)}</p><button class="guide-read" data-guide="${e(resource.id)}">${t('Lire le guide','Read guide','Leer guía')} ↗</button></article>`;
   }
   async function open(id){
     const current=++version,dialog=$('#video-dialog');
