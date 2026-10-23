@@ -8,10 +8,10 @@
   <title>RaceLink Academy — La bibliothèque ouverte</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=workshop-v20&amp;rev=2">
-  <script src="/racelink-academy/catalog-client.js?v=workshop-v20" defer></script>
-  <script type="module" src="/racelink-academy/app.js?v=workshop-v20"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Onest:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=cinema-v21">
+  <script src="/racelink-academy/catalog-client.js?v=cinema-v21" defer></script>
+  <script type="module" src="/racelink-academy/app.js?v=cinema-v21"></script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
@@ -44,12 +44,16 @@
   <main id="main" tabindex="-1">
     <section id="explore-view">
       <div class="hero wrap">
-        <div class="hero-copy">
-          <p class="home-greeting" data-product-text="greeting">Un peu de curiosité. Beaucoup à découvrir.</p>
-          <h1 data-i18n="headline">La passion.<br><span>Le savoir-faire.</span></h1>
-          <p class="hero-description" data-i18n="intro">Entretenir, piloter, progresser. Des vidéos et des guides pour apprendre les bons gestes.</p>
-
+        <div class="cinema-backdrop" aria-hidden="true"><img src="./assets/photos/service.jpg" alt="" width="960" height="540" fetchpriority="high" decoding="async"></div>
+        <div class="hero-copy"><p class="home-greeting" data-cinema-copy="heroLabel">LE SAVOIR SE TRANSMET.</p>
+          <h1 data-i18n="headline">L’AUTO.<br><span>ÇA S’APPREND.</span></h1>
+          <p class="hero-description" data-i18n="intro">Du premier entretien au prochain virage.<br>Des vidéos et des guides pour passer à la pratique.</p>
+          <div class="hero-actions"><button class="cinema-primary" data-browse-all><span data-icon="play"></span><span data-cinema-copy="explore">Explorer les tutos</span></button><button class="cinema-secondary" data-open-vehicle><span data-icon="car"></span><span data-cinema-copy="vehicle">Pour ma voiture</span></button></div>
         </div>
+        <button type="button" class="academy-scene" data-guide="guide-oil-change"><span class="spotlight-index" aria-hidden="true">01</span><span><small data-cinema-copy="featured">LE GUIDE À DÉCOUVRIR</small><strong data-cinema-copy="featuredTitle">Avant votre première vidange.</strong><span data-cinema-copy="featuredAction">Préparer l’intervention →</span></span></button>
+        <span class="hero-caption" data-cinema-copy="heroCaption">MÉCANIQUE · PILOTAGE · SIM RACING</span>
+      </div>
+      <section class="home-finder wrap" aria-labelledby="home-finder-title"><div class="finder-label"><span class="eyebrow" data-cinema-copy="finderEyebrow">VOTRE PROCHAINE DÉCOUVERTE</span><h2 id="home-finder-title" data-cinema-copy="finderTitle">Qu’avez-vous envie d’apprendre ?</h2></div>
         <div class="hero-search">
           <div class="search-shell"><form id="search-form" class="search-box" role="search">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
@@ -58,14 +62,9 @@
           </form><div class="home-language-picker"><label for="home-language">Langue des vidéos</label><select id="home-language"><option value="">Toutes les langues</option><option value="fr">Français</option></select><button type="button" id="french-videos" data-content-language="fr">Vidéos en français <span aria-hidden="true">→</span></button></div><div id="search-suggestions" role="listbox" aria-label="Suggestions de recherche" hidden></div><p id="suggestion-status" class="sr-only" role="status"></p></div>
           <div class="suggestions"><span data-i18n="try">À explorer</span><button data-query="vidange">Faire une vidange</button><button data-query="freinage">Mieux freiner</button><button data-query="sim racing">Régler mon simulateur</button><a href="#vehicle-hub" class="workshop-jump">Mon véhicule & entretien ↘</a></div>
         </div>
-        <button type="button" class="academy-scene" data-entry-category="mechanics" aria-label="Explorer la mécanique">
-          <img src="./assets/photos/oil.jpg" alt="" width="960" height="640" fetchpriority="high" decoding="async">
-          <span class="scene-shade" aria-hidden="true"></span>
-          <span class="scene-top"><span class="scene-index">RaceLink Academy</span></span>
-          <span class="scene-copy"><small data-identity-text="heroEyebrow">À portée de main</small><strong data-identity-text="heroCaption">Comprendre votre voiture.</strong><span class="scene-action"><span data-identity-text="heroAction">Explorer la mécanique</span><span data-icon="arrow-up-right"></span></span></span>
-        </button>
-      </div>
+      </section>
       <div class="catalog-meta wrap" aria-label="À propos de la bibliothèque"><span><i aria-hidden="true"></i><strong id="catalog-total">…</strong> <span data-i18n="references">vidéos référencées</span></span><span id="language-total">…</span><span id="scope-totals" data-i18n="accessNote">Sources publiques · Auteurs crédités · Accès direct</span><a href="#method" id="method-link" data-i18n="method">Notre méthode ↗</a></div>
+      <section id="cinema-home" class="wrap" aria-label="Collections RaceLink"></section>
       <section id="discovery-hub" class="discovery-hub wrap" aria-label="Explorer par objectif"></section>
       <section class="catalog wrap" aria-labelledby="catalog-heading">
 

@@ -1,14 +1,15 @@
+import {createCinemaHome} from './cinema-home.js?v=cinema-v21';
 import {icon as glyph, categoryIcon} from './icons.js';
-import {createIdentityUI} from './identity-ui.js?v=workshop-v20';
+import {createIdentityUI} from './identity-ui.js?v=cinema-v21';
 import {tracks} from './tracks.js';
-import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=workshop-v20';
-import {createDiscoveryUI} from './discovery-ui.js?v=workshop-v20';
+import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=cinema-v21';
+import {createDiscoveryUI} from './discovery-ui.js?v=cinema-v21';
 import {createRaceLinkPicks} from './racelink-picks.js';
-import {createMobileUI} from './mobile-ui.js?v=workshop-v20';
-import {createGuideUI} from './guide-ui.js?v=workshop-v20';
+import {createMobileUI} from './mobile-ui.js?v=cinema-v21';
+import {createGuideUI} from './guide-ui.js?v=cinema-v21';
 import {socialContentMarkup} from './social-content.js';
-import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=workshop-v20';
-import {resourceCard} from './resource-card.js?v=workshop-v20';
+import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=cinema-v21';
+import {resourceCard} from './resource-card.js?v=cinema-v21';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -24,6 +25,8 @@ Object.assign(dictionaries.en,{explore:'Home',openLibrary:'YOUR NEXT STEP STARTS
 Object.assign(dictionaries.es,{explore:'Inicio',openLibrary:'TU PRÓXIMO PASO EMPIEZA AQUÍ',headline:'¿Una pregunta?<br><span>Descubre cómo.</span>',intro:'Cuida tu coche, mejora en pista o en simulación.<br>Vídeos y guías para pasar a la práctica.',catalogTitle:'Encuentra tu respuesta.',discipline:'TEMA',language:'IDIOMA'});
 Object.assign(dictionaries.en,{brandSub:'Your automotive library',saved:'Saved',headline:'The passion.<br><span>The know-how.</span>',intro:'Maintain, drive, improve. Videos and guides to turn curiosity into skills.',catalogTitle:'Find the right tutorial',discipline:'Topic',level:'Level',platform:'Platform',duration:'Duration'});
 Object.assign(dictionaries.es,{brandSub:'Tu biblioteca del automóvil',saved:'Guardados',headline:'La pasión.<br><span>El saber hacer.</span>',intro:'Cuidar, pilotar, progresar. Vídeos y guías para aprender a hacerlo bien.',catalogTitle:'Encuentra el tutorial adecuado',discipline:'Tema',level:'Nivel',platform:'Plataforma',duration:'Duración'});
+Object.assign(dictionaries.en,{headline:'CARS.<br><span>LEARN BY DOING.</span>',intro:'From your first service to your next corner.<br>Videos and guides to put knowledge into practice.',catalogTitle:'Find your next discovery.'});
+Object.assign(dictionaries.es,{headline:'EL AUTOMÓVIL.<br><span>SE APRENDE.</span>',intro:'Del primer mantenimiento a la próxima curva.<br>Vídeos y guías para pasar a la práctica.',catalogTitle:'Tu próximo descubrimiento.'});
 const originalText = Object.fromEntries($$('[data-i18n]').map(el => [el.dataset.i18n,el.innerHTML]));
 const t = (fr,en,es) => ui === 'en' ? en : ui === 'es' ? es : fr;
 const categories = [
@@ -81,6 +84,7 @@ const automotiveUI=createAutomotiveUI({
 const discoveryUI=createDiscoveryUI({
   escape,t,storage,picks:raceLinkPicks,getState:()=>state,getUi:()=>ui,langName,openVideo,openGuide,
   onPicksChange(){
+    cinemaHome.render();
     const grid=$('#video-grid');
     if(loadedItems.length&&grid.getAttribute('aria-busy')!=='true'){grid.innerHTML=loadedItems.map(cardMarkup).join('');setImageFallback(grid);}
     if(view==='saved')renderSaved();
@@ -95,6 +99,12 @@ const discoveryUI=createDiscoveryUI({
     $('#catalog-heading').scrollIntoView({behavior:'smooth'});
   }
 });
+const cinemaHome=createCinemaHome({root:$('#cinema-home'),escape,t,getUi:()=>ui,getState:()=>state,langName,picks:raceLinkPicks,getJson:url=>window.getCatalogJson(url)});
+function translateCinema(){
+  const labels={heroLabel:t('LE SAVOIR SE TRANSMET.','KNOWLEDGE IS MEANT TO BE SHARED.','EL SABER SE COMPARTE.'),explore:t('Explorer les tutos','Explore tutorials','Explorar tutoriales'),vehicle:t('Pour ma voiture','For my car','Para mi coche'),featured:t('LE GUIDE À DÉCOUVRIR','A GUIDE TO EXPLORE','UNA GUÍA POR DESCUBRIR'),featuredTitle:t('Avant votre première vidange.','Before your first oil change.','Antes de tu primer cambio de aceite.'),featuredAction:t('Préparer l’intervention →','Prepare the task →','Preparar la intervención →'),heroCaption:t('MÉCANIQUE · PILOTAGE · SIM RACING','MECHANICS · DRIVING · SIM RACING','MECÁNICA · PILOTAJE · SIM RACING'),finderEyebrow:t('VOTRE PROCHAINE DÉCOUVERTE','YOUR NEXT DISCOVERY','TU PRÓXIMO DESCUBRIMIENTO'),finderTitle:t('Qu’avez-vous envie d’apprendre ?','What would you like to learn?','¿Qué te gustaría aprender?')};
+  $$('[data-cinema-copy]').forEach(el=>{el.textContent=labels[el.dataset.cinemaCopy]||'';});
+  cinemaHome.render();
+}
 const mobileUI=createMobileUI({t,getState:()=>state,getTotal:()=>lastTotal,isLoading:()=>$('#video-grid').getAttribute('aria-busy')==='true',onExplore:()=>{if(view!=='explore')changeView('explore');}});
 
 function showToast(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3000);}
@@ -176,7 +186,7 @@ function applyTranslations(){
   discoveryUI.refresh();
   $('#vehicle-disclosure-label').textContent=t('Affiner pour votre voiture','Refine for your car','Afinar para tu coche');
   $('.workshop-jump').textContent=t('Mon véhicule & entretien ↘','My vehicle & maintenance ↘','Mi vehículo y mantenimiento ↘');
-  renderFacets();syncControls();renderPaths();renderFaq();renderSaved();renderStats();identityUI.update();
+  renderFacets();syncControls();renderPaths();renderFaq();renderSaved();renderStats();identityUI.update();translateCinema();
 }
 function renderStats(){
   if(!stats)return;
@@ -286,7 +296,7 @@ function chooseContentLanguage(value,videoOnly=false){
   heading.scrollIntoView({behavior:'smooth'});
 }
 function reset(){browsing=true;state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
-function goHome(){state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:state.language,platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};browsing=false;$('#vehicle-disclosure').open=false;discoveryUI.refresh();changeView('explore');syncControls();automotiveUI.loadOptions();loadVideos();window.scrollTo({top:0,behavior:'instant'});}
+function goHome(){state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:state.language,platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};browsing=false;$('#vehicle-disclosure').open=false;discoveryUI.refresh();cinemaHome.render();changeView('explore');syncControls();automotiveUI.loadOptions();loadVideos();window.scrollTo({top:0,behavior:'instant'});}
 function changeView(next,push=true){
   view=next;$$('main>section').forEach(el=>el.hidden=el.id!==`${next}-view`);
   $$('[data-view]').forEach(el=>{el.classList.toggle('active',el.dataset.view===next);if(el.dataset.view===next)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
@@ -300,7 +310,7 @@ function renderPaths(){
     $('#paths-view').innerHTML=`<button class="track-back" data-all-tracks>← ${t('Tous les parcours','All learning paths','Todos los itinerarios')}</button><p class="eyebrow">${t('PARCOURS GUIDÉ · 4 ÉTAPES','GUIDED PATH · 4 STEPS','ITINERARIO · 4 PASOS')}</p><h1>${escape(catName(activeTrack)).toUpperCase()}<br><span class="track-accent">${t('UN REPÈRE À LA FOIS.','ONE STEP AT A TIME.','PASO A PASO.')}</span></h1><p class="lead">${t('Explorez les ressources, notez ce que vous retenez, puis marquez l’étape comprise. Ce suivi personnel ne délivre pas de certification.','Explore resources, take notes, then mark a step understood. This personal tracker does not award certification.','Explora recursos, toma notas y marca los pasos comprendidos. Este seguimiento no otorga certificación.')}</p><div class="track-progress"><span>${done} / 4 ${t('étapes comprises','steps understood','pasos comprendidos')}</span><progress max="4" value="${done}" aria-label="${t('Progression personnelle','Personal progress','Progreso personal')}"></progress></div><div class="track-steps">${steps.map((step,i)=>`<article class="track-step ${progress[`${activeTrack}:${i}`]?'done':''}"><span class="step-number">0${i+1}</span><div><h2>${escape(t(...step.title))}</h2><p>${escape(t(...step.goal))}</p><div class="step-actions"><button data-step-query="${escape(step.query)}" data-step-category="${activeTrack}">${t('Trouver les tutoriels','Find tutorials','Buscar tutoriales')} ↗</button><button class="step-done" data-complete-step="${activeTrack}:${i}" aria-pressed="${Boolean(progress[`${activeTrack}:${i}`])}">${progress[`${activeTrack}:${i}`]?t('Compris ✓','Understood ✓','Comprendido ✓'):t('Marquer comme compris','Mark as understood','Marcar como comprendido')}</button></div></div></article>`).join('')}</div>`;
     return;
   }
-  $('#paths-view').innerHTML=`<p class="eyebrow">${t('UN POINT DE DÉPART POUR CHAQUE AMBITION','A STARTING POINT FOR EVERY AMBITION','UN PUNTO DE PARTIDA PARA CADA AMBICIÓN')}</p><h1>${t('Apprenez, étape par étape.','Learn, step by step.','Aprende, paso a paso.')}</h1><p class="lead">${t('Huit portes d’entrée pour explorer le motorsport. Choisissez une discipline, puis adaptez les ressources à votre niveau.','Eight ways into motorsport. Pick a discipline, then filter the resources to your level.','Ocho puertas al automovilismo. Elige una disciplina y filtra los recursos según tu nivel.')}</p><div class="path-grid">${categories.map((c,i)=>`<button class="path-card" data-path="${c[0]}"><span class="path-top"><span class="path-number">0${i+1} / RACELINK</span>${glyph(categoryIcon[c[0]],{size:32})}</span><h2>${escape(catName(c[0]))}</h2><p>${ui==='fr'?c[5]:t('',`Explore tutorials, methods and explanations in ${catName(c[0]).toLowerCase()}.`,`Explora tutoriales, métodos y explicaciones de ${catName(c[0]).toLowerCase()}.`)}</p><span class="path-bottom">${t('Découvrir le parcours','Explore this path','Descubrir el itinerario')}<span>↗</span></span></button>`).join('')}</div>`;
+  $('#paths-view').innerHTML=`<p class="eyebrow">${t('UN POINT DE DÉPART POUR CHAQUE AMBITION','A STARTING POINT FOR EVERY AMBITION','UN PUNTO DE PARTIDA PARA CADA AMBICIÓN')}</p><h1>${t('Apprenez, étape par étape.','Learn, step by step.','Aprende, paso a paso.')}</h1><p class="lead">${t('Huit portes d’entrée pour explorer le motorsport. Choisissez une discipline, puis adaptez les ressources à votre niveau.','Eight ways into motorsport. Pick a discipline, then filter the resources to your level.','Ocho puertas al automovilismo. Elige una disciplina y filtra los recursos según tu nivel.')}</p><div class="path-grid">${categories.map((c,i)=>`<button class="path-card" data-path="${c[0]}">${['mechanics','driving','simracing'].includes(c[0])?`<img class="path-photo" src="./assets/photos/${c[0]==='mechanics'?'service':c[0]}.jpg" alt="" width="960" height="640" loading="lazy">`:''}<span class="path-top"><span class="path-number">0${i+1} / RACELINK</span></span><h2>${escape(catName(c[0]))}</h2><p>${ui==='fr'?c[5]:t('',`Explore tutorials, methods and explanations in ${catName(c[0]).toLowerCase()}.`,`Explora tutoriales, métodos y explicaciones de ${catName(c[0]).toLowerCase()}.`)}</p><span class="path-bottom">${t('Découvrir le parcours','Explore this path','Descubrir el itinerario')}<span>↗</span></span></button>`).join('')}</div>`;
 }
 function renderFaq(openId){
   const merged=[...seedFaq,...faqItems.filter(x=>!seedFaq.some(s=>s.question===x.question))];
@@ -429,6 +439,8 @@ async function init(){
   if(view==='faq')renderFaq();
   await loadVideos();
   await discoveryLoad;
+  const cinemaResult=await cinemaHome.load();
+  document.body.classList.toggle('cinema-ready',Boolean(cinemaResult?.ready));
   if(new URLSearchParams(location.search).has('video'))openVideo(new URLSearchParams(location.search).get('video'));
 }
 init();
