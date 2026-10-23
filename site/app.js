@@ -5,7 +5,7 @@ import {tracks} from './tracks.js';
 import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=cinema-v21';
 import {createDiscoveryUI} from './discovery-ui.js?v=cinema-v21';
 import {createRaceLinkPicks} from './racelink-picks.js';
-import {createMobileUI} from './mobile-ui.js?v=cinema-v21';
+import {createMobileUI} from './mobile-ui.js?v=cinema-v21&rev=2';
 import {createGuideUI} from './guide-ui.js?v=cinema-v21';
 import {socialContentMarkup} from './social-content.js';
 import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=cinema-v21';
@@ -416,7 +416,7 @@ $('#reset-filters').addEventListener('click',()=>{const query=state.q,format=sta
 $('#method-link').addEventListener('click',e=>{e.preventDefault();changeView('faq');renderFaq('method');});
 function openVehicle(){
   browsing=true;changeView('explore',false);syncControls();syncUrl(true);loadVideos();
-  $('#vehicle-disclosure').open=true;$('#vehicle-hub').scrollIntoView({behavior:'smooth',block:'start'});
+  $('#vehicle-disclosure').open=true;$('#vehicle-disclosure').scrollIntoView({behavior:'smooth',block:'start'});
   $('#vehicle-make')?.focus({preventScroll:true});
 }
 $('.workshop-jump').addEventListener('click',e=>{e.preventDefault();openVehicle();});

@@ -90,7 +90,7 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore}) {
   filterDialog.addEventListener('close',()=>{filterAnchor.after(filters);$('#mobile-filters').setAttribute('aria-expanded','false');lock();(filterFocus||$('#mobile-filters')).focus({preventScroll:true});filterFocus=null;});
   document.querySelectorAll('[data-sheet-close]').forEach(b=>b.addEventListener('click',()=>b.dataset.sheetClose==='search'?closeSearch():filterDialog.close()));
   $('#show-filter-results').addEventListener('click',()=>{filterFocus=$('#catalog-heading');filterFocus.tabIndex=-1;filterDialog.close();$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
-  $('#mobile-vehicle').addEventListener('click',()=>{filterFocus=$('#vehicle-make');$('#vehicle-disclosure').open=true;filterDialog.close();$('#vehicle-hub').scrollIntoView({behavior:'smooth'});});
+  $('#mobile-vehicle').addEventListener('click',()=>{filterFocus=$('#vehicle-make');$('#vehicle-disclosure').open=true;filterDialog.close();$('#vehicle-disclosure').scrollIntoView({behavior:'smooth'});});
   document.addEventListener('rl:search-chosen',closeSearch);
   for(const dialog of [searchDialog,filterDialog])dialog.addEventListener('click',event=>{
     if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom){if(dialog===searchDialog)closeSearch();else dialog.close();}}
