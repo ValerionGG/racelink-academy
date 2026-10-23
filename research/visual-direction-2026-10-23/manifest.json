@@ -278,23 +278,26 @@
       {
         "path": "SKILL.md",
         "url": "https://github.com/X-T-E-R/design-prompts-skill/blob/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/SKILL.md",
-        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\X-T-E-R--design-prompts-skill\\SKILL.md",
         "bytes": 3253,
-        "sha256": "d09ad4e1a1584e6baa0a0e1baa88bc3276e3bde8ad0efbf1a78a67d5b747e5c5"
+        "sha256": "d09ad4e1a1584e6baa0a0e1baa88bc3276e3bde8ad0efbf1a78a67d5b747e5c5",
+        "distributed": false,
+        "note": "URL and hash retained; full third-party text excluded because reuse license is not established."
       },
       {
         "path": "README.md",
         "url": "https://github.com/X-T-E-R/design-prompts-skill/blob/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/README.md",
-        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\X-T-E-R--design-prompts-skill\\README.md",
         "bytes": 2570,
-        "sha256": "606911decd77369061e4c8fb5dc0d86ddb617159ae98e434a93e657ad5441b06"
+        "sha256": "606911decd77369061e4c8fb5dc0d86ddb617159ae98e434a93e657ad5441b06",
+        "distributed": false,
+        "note": "URL and hash retained; full third-party text excluded because reuse license is not established."
       },
       {
         "path": "SOURCE.md",
         "url": "https://github.com/X-T-E-R/design-prompts-skill/blob/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/SOURCE.md",
-        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\X-T-E-R--design-prompts-skill\\SOURCE.md",
         "bytes": 2530,
-        "sha256": "4e3773ca8184678ce2b9c6ba02214bd54bab5ac880f90508411306e575e27081"
+        "sha256": "4e3773ca8184678ce2b9c6ba02214bd54bab5ac880f90508411306e575e27081",
+        "distributed": false,
+        "note": "URL and hash retained; full third-party text excluded because reuse license is not established."
       }
     ]
   }
