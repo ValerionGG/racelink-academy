@@ -1,0 +1,80 @@
+{
+  "date": "2026-10-23",
+  "tool": "Codex CUA, public GitHub Pages",
+  "latest_code_commit": "f39bfee6941ccd454b38d6f438f4c606a920e826",
+  "status": "passed_with_documented_scope",
+  "frames": [
+    {
+      "width": 320,
+      "client_width": 305,
+      "scroll_width": 305,
+      "version": "brand-v14c",
+      "language_label_visible": true,
+      "language_select_width": 243
+    },
+    {
+      "width": 390,
+      "client_width": 375,
+      "scroll_width": 375,
+      "version": "brand-v14b",
+      "final_capture_version": "brand-v14c",
+      "hero_height_before": 464.609375,
+      "hero_height_after": 348.421875
+    },
+    {
+      "width": 430,
+      "client_width": 415,
+      "scroll_width": 415,
+      "version": "brand-v14b"
+    },
+    {
+      "width": 768,
+      "client_width": 753,
+      "scroll_width": 753,
+      "version": "brand-v14b"
+    },
+    {
+      "width": 1280,
+      "height": 720,
+      "client_width": 1265,
+      "scroll_width": 1265,
+      "version": "brand-v14b",
+      "final_capture_version": "brand-v14c"
+    }
+  ],
+  "interactions": [
+    {
+      "version": "brand-v14",
+      "check": "Guides filter displays 11 guides; fuel guide opens with its sources; closing restores focus to its cover",
+      "passed": true
+    },
+    {
+      "version": "brand-v14",
+      "check": "Mobile French video language, query vidange Clio 3, suggestions and Enter return two videos; focus restored to edit-search",
+      "passed": true
+    },
+    {
+      "version": "brand-v14",
+      "check": "Mobile YouTube filter preserves query and French; closes filters and focuses catalog-heading",
+      "passed": true
+    },
+    {
+      "version": "brand-v14c",
+      "check": "All 11 distinct topic illustrations visible in final guide view; selection badge background rgb(255, 242, 244)",
+      "passed": true
+    }
+  ],
+  "screenshots": {
+    "brand-desktop.png": "brand-v14c",
+    "brand-mobile.png": "brand-v14c at 390px",
+    "brand-mobile-320.png": "brand-v14c at 320px",
+    "brand-mobile-430.png": "brand-v14b at 430px; no wider-screen CSS changed afterward",
+    "brand-tablet.png": "brand-v14b at 768px; no wider-screen CSS changed afterward",
+    "brand-guides.png": "brand-v14c"
+  },
+  "limits": [
+    "No physical device or screen-reader audit",
+    "Reduced-motion rule verified statically, not emulated",
+    "UI references are not a usability study"
+  ]
+}

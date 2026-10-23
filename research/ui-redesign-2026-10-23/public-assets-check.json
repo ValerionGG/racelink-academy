@@ -1,0 +1,70 @@
+{
+  "checked_at": "2026-10-23T09:28:28.683619+00:00",
+  "code_commit": "f39bfee6941ccd454b38d6f438f4c606a920e826",
+  "status": "passed",
+  "scope": "HTTP source bytes, no browser rendering",
+  "files": [
+    {
+      "path": "index.html",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "f8c04a25928b35e6a3111d053d4de8038ee89a6c28c1cc91b54928e3d170babe"
+    },
+    {
+      "path": "app-ui.css",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "92f624aaaba1e25c9705dd85309536bdf00bd5df9877c1e84ca663b1fb530640"
+    },
+    {
+      "path": "product-ui.css",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "0269978c6529ac14017353c2e152ace5d52980ab6b667b012ea61fd572580227"
+    },
+    {
+      "path": "app.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "c3fb9ee6dedbff4ab4fd95ef2ade5cd21ed725be24875518e60c0fff0defc21f"
+    },
+    {
+      "path": "guide-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "10b0bd9d7de0f77b1e43639c1bbc6a8226c0b515849ede2fcdd0bc30fb38a788"
+    },
+    {
+      "path": "guide-art.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "3aa4dd909bcec15ca532c7f56b892e7124913970db623caacbbd565f81af1b82"
+    },
+    {
+      "path": "mobile-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "447d29d3a596472b28c41521999e03e7a5523299ca022b498f99eb5eefc7df78"
+    },
+    {
+      "path": "identity-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "fdae76a397b6a6b267a8206241537de58b85de9a874b9b267706dd64164e25a5"
+    },
+    {
+      "path": "discovery-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "3374e4b4329c7d4864f8cb3698522f2ed063b28688daab0653362905692b7f95"
+    },
+    {
+      "path": "preview-mobile.html",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "574ea77ccbeebb22984458b0217392a56f385dca13d85f2c01a10f5c5c57218e"
+    }
+  ],
+  "catalog_sha256": "05db8aca2806f1c4da81c3daa79f3cb5a3d335dd94c6395ce10b314867ab3b84",
+  "catalog_unchanged": true
+}

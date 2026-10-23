@@ -1,0 +1,56 @@
+{
+  "status": "published_and_browser_verified",
+  "url": "https://valeriongg.github.io/racelink-academy/",
+  "french_url": "https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&format=video",
+  "repository": "https://github.com/ValerionGG/racelink-academy",
+  "commit": "1fcc25ce448923551302cd7e877240715caf3859",
+  "workflow": "https://github.com/ValerionGG/racelink-academy/actions/runs/39617673556",
+  "workflow_conclusion": "success",
+  "verified_at": "2026-10-21T14:37:02.820716+00:00",
+  "catalog_videos": 36901,
+  "guides": 11,
+  "french_videos": 5022,
+  "new_social_videos": 7,
+  "new_french_text_estimates": 2,
+  "platforms": {
+    "dailymotion": 42,
+    "facebook": 46,
+    "instagram": 140,
+    "tiktok": 166,
+    "twitch": 2,
+    "vimeo": 3,
+    "youtube": 36502
+  },
+  "catalog_sha256": "05db8aca2806f1c4da81c3daa79f3cb5a3d335dd94c6395ce10b314867ab3b84",
+  "focus_domain_integrated": false,
+  "screenshots": [
+    "focus-academy/screenshots/social-alternative-public.png"
+  ],
+  "thousands_of_new_social_videos_achieved": false,
+  "acquisition_limits": [
+    "No accessible qualified bulk French automotive social export",
+    "TikHub preview requires account; coverage unmeasured",
+    "No Instagram extension connection",
+    "Exa quota exhausted; vidIQ credits insufficient"
+  ],
+  "social_fields": {
+    "structured_records": 352,
+    "skill": "social-content-structure",
+    "skill_version": "1.0.2",
+    "new_titles_reviewed": 7
+  },
+  "social_alternative": {
+    "tiktok_added": 7,
+    "instagram_added": 0,
+    "archived_index_titles": 6,
+    "creator_site_link_labels": 1,
+    "new_captions": 0,
+    "new_transcripts": 0,
+    "new_editorial_badges": 0
+  },
+  "previous_release": {
+    "commit": "5fe7b966dfdcd38dcd0c20acfa789f1a63aa0af1",
+    "catalog_videos": 36894,
+    "report": "focus-academy/research/deployment-before-alternative-2026-10-21.json"
+  }
+}

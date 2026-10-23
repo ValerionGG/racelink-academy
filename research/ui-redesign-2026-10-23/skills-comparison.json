@@ -1,0 +1,268 @@
+{
+  "created_at": "2026-10-23T07:38:00.813252+00:00",
+  "method": "Agent Reach GitHub: gh search repos by stars; gh api repo/commit/tree/contents; read-only text review",
+  "remote_code_executed": false,
+  "application_database_or_git_changed": false,
+  "comparisons": [
+    {
+      "repository": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "observed_at": "2026-10-23T07:26:22.594098+00:00",
+      "stars_repository_scope": 183120,
+      "default_branch_commit_at": "2026-10-09T18:45:49Z",
+      "pushed_at": "2026-10-09T18:45:52Z",
+      "commit_sha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+      "archived": false,
+      "reviewed_skill_license": "Apache-2.0",
+      "recommended_role": "identity_and_copy_quality",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "2fb9c4cc026366ea6e21c60cb23c908a4d27c62071819cc06beffaac102d0694",
+          "bytes": 5552,
+          "github_blob_sha": "eb54ee8b92f2d40b4b26569be0772be3c1e23156",
+          "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/README.md"
+        },
+        {
+          "path": "skills/frontend-design/SKILL.md",
+          "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+          "bytes": 9390,
+          "github_blob_sha": "a5333457c414d20d625f307df945842c0952ecc3",
+          "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/SKILL.md"
+        },
+        {
+          "path": "skills/frontend-design/LICENSE.txt",
+          "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+          "bytes": 10174,
+          "github_blob_sha": "f433b1a53f5b830a205fd2df78e2b34974656c7b",
+          "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/LICENSE.txt"
+        }
+      ]
+    },
+    {
+      "repository": "Dammyjay93/interface-design",
+      "url": "https://github.com/Dammyjay93/interface-design",
+      "observed_at": "2026-10-23T07:26:17.331068+00:00",
+      "stars_repository_scope": 5839,
+      "default_branch_commit_at": "2026-06-20T11:32:44Z",
+      "pushed_at": "2026-06-20T11:32:45Z",
+      "commit_sha": "2f9be3206855bcb2d1d0af262c8bae25cba6658d",
+      "archived": false,
+      "reviewed_skill_license": "MIT",
+      "recommended_role": "component_system_consistency",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "0673dd349234afd119bda38977cdd3a4fc8837fdc67f34b39460fb5550d20739",
+          "bytes": 11262,
+          "github_blob_sha": "c6b93b1bc98d650ad275e2be94e7ea955800ca69",
+          "url": "https://github.com/Dammyjay93/interface-design/blob/2f9be3206855bcb2d1d0af262c8bae25cba6658d/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "54c405ef24e71634b73c994133d028e7a96d1906f42615366296d6583dcaba8f",
+          "bytes": 1072,
+          "github_blob_sha": "fe236841aef0a6abe04284f0cfcb3630e7393725",
+          "url": "https://github.com/Dammyjay93/interface-design/blob/2f9be3206855bcb2d1d0af262c8bae25cba6658d/LICENSE"
+        },
+        {
+          "path": ".claude/skills/interface-design/SKILL.md",
+          "sha256": "720b31a31276e899fbe3006a33cbfeaceb77a73ba4c27b80d29afd38c8b7b208",
+          "bytes": 29614,
+          "github_blob_sha": "92e1df4eb5ca30923149c60f142db7ebeaaad334",
+          "url": "https://github.com/Dammyjay93/interface-design/blob/2f9be3206855bcb2d1d0af262c8bae25cba6658d/.claude/skills/interface-design/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repository": "emilkowalski/skills",
+      "url": "https://github.com/emilkowalski/skills",
+      "observed_at": "2026-10-23T07:26:23.830725+00:00",
+      "stars_repository_scope": 48821,
+      "default_branch_commit_at": "2026-10-11T13:58:32Z",
+      "pushed_at": "2026-10-11T13:58:36Z",
+      "commit_sha": "2d228630ba1446365f614a108cb8252f1feda202",
+      "archived": false,
+      "reviewed_skill_license": "MIT",
+      "recommended_role": "interaction_polish",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "ea3361e7b4b0cd0862a557fa69e059749c9b6c56707cb783bb3c7fd6cf41e0af",
+          "bytes": 4590,
+          "github_blob_sha": "3cc865e4f4d678c29dd938d11f96342942b7b52c",
+          "url": "https://github.com/emilkowalski/skills/blob/2d228630ba1446365f614a108cb8252f1feda202/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b",
+          "bytes": 1070,
+          "github_blob_sha": "57b46f1fd11dc62351ea548104a88aa3f659c11b",
+          "url": "https://github.com/emilkowalski/skills/blob/2d228630ba1446365f614a108cb8252f1feda202/LICENSE"
+        },
+        {
+          "path": "skills/emil-design-eng/SKILL.md",
+          "sha256": "ffbe68e6007fb42cb8149f089b400a1ca007d59ba23e8948e2be4476f3175939",
+          "bytes": 27123,
+          "github_blob_sha": "62ce902af8dd32c590ea7203e9ab2edb1d6ef81a",
+          "url": "https://github.com/emilkowalski/skills/blob/2d228630ba1446365f614a108cb8252f1feda202/skills/emil-design-eng/SKILL.md"
+        }
+      ]
+    },
+    {
+      "repository": "Leonxlnx/taste-skill",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "observed_at": "2026-10-23T07:26:22.172750+00:00",
+      "stars_repository_scope": 101283,
+      "default_branch_commit_at": "2026-10-20T18:38:06Z",
+      "pushed_at": "2026-10-20T22:04:30Z",
+      "commit_sha": "6010f91a9935f1c167dfc500fb1a475681892e6b",
+      "archived": false,
+      "reviewed_skill_license": "MIT",
+      "recommended_role": "app_layout_comparison",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "a3e3735d1bd37553801bc09918804f93b8f0a98448f3cb58001332832bb89357",
+          "bytes": 15088,
+          "github_blob_sha": "8efa355f7d03ada51edccea568dccf26e628b511",
+          "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df",
+          "bytes": 1065,
+          "github_blob_sha": "48a2f6640b81ff8eca9ce7f6a96337692713ef5b",
+          "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/LICENSE"
+        },
+        {
+          "path": "skills/taste-skill/SKILL.md",
+          "sha256": "d955dae4ba8ab2d994f4bb06b4bf412a1d9875433a8597939c391f4bae91dd7a",
+          "bytes": 38458,
+          "github_blob_sha": "433d92105c76671250013e0312d82cb413f552bc",
+          "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/skills/taste-skill/SKILL.md"
+        },
+        {
+          "path": "skills/taste-skill/references/app-screens.md",
+          "sha256": "55e937ec30de605b53a11310b446f328a3ce7403de24fff008920a00be1a5ed4",
+          "bytes": 85358,
+          "github_blob_sha": "784439ed799484a98958764a5bf3ede2a1d25296",
+          "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/skills/taste-skill/references/app-screens.md"
+        }
+      ]
+    },
+    {
+      "repository": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "observed_at": "2026-10-23T07:26:17.466757+00:00",
+      "stars_repository_scope": 139140,
+      "default_branch_commit_at": "2026-10-23T01:06:30Z",
+      "pushed_at": "2026-10-23T01:06:30Z",
+      "commit_sha": "28327f2f214d31bbd7555ed0c012a5df6484ed96",
+      "archived": false,
+      "reviewed_skill_license": "MIT",
+      "recommended_role": "targeted_ux_reference",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "44f4cd60bdadc4aa271cde9154a1e65fde174e7e92141414b9cc75996fbbd298",
+          "bytes": 39932,
+          "github_blob_sha": "478738265751cf01352d1082c2e65be4467cd55c",
+          "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/28327f2f214d31bbd7555ed0c012a5df6484ed96/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "738f69dfa83db5c347c678fb9d90e560877059f0de93a327c39001bff92dc014",
+          "bytes": 1075,
+          "github_blob_sha": "1e71cbf26660f31903807d099fe902c098fc7e4c",
+          "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/28327f2f214d31bbd7555ed0c012a5df6484ed96/LICENSE"
+        },
+        {
+          "path": ".claude/skills/ui-ux-pro-max/SKILL.md",
+          "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9",
+          "bytes": 15969,
+          "github_blob_sha": "41f8e2fd7f8c568228d0b55186ebe3f7b4007377",
+          "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/28327f2f214d31bbd7555ed0c012a5df6484ed96/.claude/skills/ui-ux-pro-max/SKILL.md"
+        },
+        {
+          "path": ".claude/skills/ui-ux-pro-max/references/quick-reference.md",
+          "sha256": "0609bc7c89dacb40472465d8fc14257b56b2c43439660fc8d6fa3b8c022e1876",
+          "bytes": 24526,
+          "github_blob_sha": "7acc7e7540ca6981d878a90aae4455c1638e2385",
+          "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/28327f2f214d31bbd7555ed0c012a5df6484ed96/.claude/skills/ui-ux-pro-max/references/quick-reference.md"
+        }
+      ]
+    },
+    {
+      "repository": "pbakaus/impeccable",
+      "url": "https://github.com/pbakaus/impeccable",
+      "observed_at": "2026-10-23T07:26:18.047495+00:00",
+      "stars_repository_scope": 85134,
+      "default_branch_commit_at": "2026-10-23T00:49:46Z",
+      "pushed_at": "2026-10-23T01:54:52Z",
+      "commit_sha": "5cb95eea9c96479f57afe0732a45470d30183326",
+      "archived": false,
+      "reviewed_skill_license": "Apache-2.0",
+      "recommended_role": "main_workflow_operate_read",
+      "files": [
+        {
+          "path": "README.md",
+          "sha256": "2cd828772f12fc196c8f2f4a9b5abbfd82e05a55b7944c47e4e85a57f39d0355",
+          "bytes": 30214,
+          "github_blob_sha": "82f74064346bda53f48e6e1c4b729427da76b569",
+          "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/README.md"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812",
+          "bytes": 10766,
+          "github_blob_sha": "bb3f6d23b1f8025514a62a12b51b47d73e3c9aa9",
+          "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/LICENSE"
+        },
+        {
+          "path": ".agents/skills/impeccable/SKILL.md",
+          "sha256": "88e9a46a91b6ddd1059f03f578bd0f9bbe6d212d6a395124379b9bb5c97c5cf2",
+          "bytes": 11659,
+          "github_blob_sha": "7da92d6e902cd1bf001f05a80f7592b61d6381f4",
+          "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/.agents/skills/impeccable/SKILL.md"
+        },
+        {
+          "path": ".agents/skills/impeccable/reference/operate.md",
+          "sha256": "a9d2203acd45ca33a13d5c68b02b23ed512425ac15f0e8438318ed124b43729d",
+          "bytes": 4145,
+          "github_blob_sha": "524f2c3ae9fa497284e9699f3ca5320cce5d05cf",
+          "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/.agents/skills/impeccable/reference/operate.md"
+        },
+        {
+          "path": ".agents/skills/impeccable/reference/shape.md",
+          "sha256": "a55f016c046cb6a27c55bd7f346375aeb506a755c4fbca19a5f92dbd42309c23",
+          "bytes": 3547,
+          "github_blob_sha": "90a74ae813331cbce8fff6beb498ced77970fadf",
+          "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/.agents/skills/impeccable/reference/shape.md"
+        },
+        {
+          "path": ".agents/skills/impeccable/reference/audit.md",
+          "sha256": "4b726d8f13ca1dbb82ca8179cbfefca8c53c13766fef4d7b8870f5d4324da2d6",
+          "bytes": 9250,
+          "github_blob_sha": "29eefcc071b9e0c4f33c86cae96fdb7eed1685b4",
+          "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/.agents/skills/impeccable/reference/audit.md"
+        },
+        {
+          "path": ".agents/skills/impeccable/reference/mode-operate.md",
+          "sha256": "7a52dd7a94ee75f6ae89542c86a1b6e1d306812b16e0d9dbf12d4acad44d148b",
+          "bytes": 4716,
+          "github_blob_sha": "833775ba85f03bf65a4c1b23e39192f7653414e6",
+          "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/.agents/skills/impeccable/reference/mode-operate.md"
+        },
+        {
+          "path": ".agents/skills/impeccable/reference/mode-read.md",
+          "sha256": "a569989e6a3d6453b4c45e9474e162a15cc54e11732ac6baa7990a6e7cccc0b5",
+          "bytes": 4396,
+          "github_blob_sha": "b30c4c9139e3094bd35c60738decb6109326153f",
+          "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/.agents/skills/impeccable/reference/mode-read.md"
+        }
+      ]
+    }
+  ],
+  "scope": "Read-only GitHub skill research; metadata and hashes retained, upstream files not included in this deliverable."
+}

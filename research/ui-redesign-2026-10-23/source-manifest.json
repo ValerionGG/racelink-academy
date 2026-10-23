@@ -1,0 +1,294 @@
+{
+  "access_date": "2026-10-23",
+  "scope": "Product research: first-party documentation and portfolio page text, plus separately reported visual inspection by the root agent. No full upstream source text included.",
+  "context_files": [
+    "PRODUCT.md",
+    "public/index.html"
+  ],
+  "visual_inspection": {
+    "completed": true,
+    "performed_by": "Root agent using CUA",
+    "scope": "Official RaceLink page and reported published v14 scenarios; documentary references retain their individual evidence levels.",
+    "validation_report": "VALIDATION.md",
+    "image_search_descriptions_treated_as_visual_observation": false
+  },
+  "references": [
+    {
+      "id": "ifixit",
+      "creator": "iFixit",
+      "title": "Parts of a Guide Page; Car and Truck",
+      "urls": [
+        "https://about.ifixit.com/Wiki/Parts_of_a_Guide_Page",
+        "https://www.ifixit.com/Device/Car_and_Truck",
+        "https://www.ifixit.com/Guide/Car+and+Truck+Wiper+Blades+Replacement/166672"
+      ],
+      "evidence": "page_text_inspected",
+      "locators": "Details lines 111–120; guide types lines 155–172; car page Guides and Techniques headings",
+      "observation": "Preparation fields and procedure types are documented separately; mobile full-screen reading is described.",
+      "interaction_tested": false
+    },
+    {
+      "id": "autodoc",
+      "creator": "AUTODOC Club",
+      "title": "Car repair manuals and video guides",
+      "urls": [
+        "https://club.autodoc.co.uk/manuals",
+        "https://club.autodoc.co.uk/manuals/windscreen-cleaning-system/wiper-blades"
+      ],
+      "evidence": "page_text_inspected",
+      "locators": "Make, Model, Car parts category and Find fields, main page lines 13–23; video/PDF sections",
+      "observation": "Vehicle and part category are independent search inputs; video and PDF resources are identified.",
+      "interaction_tested": false
+    },
+    {
+      "id": "youtube",
+      "creator": "Google / YouTube Help",
+      "title": "Recherche avancée; Afficher les transcriptions de vidéos",
+      "urls": [
+        "https://support.google.com/youtube/answer/111997?hl=fr",
+        "https://support.google.com/youtube/answer/15930243?hl=fr",
+        "https://support.google.com/youtube/answer/3029103?hl=en-USp"
+      ],
+      "evidence": "page_text_inspected",
+      "locators": "Search advanced lines 23–34; transcript lines 23–29",
+      "observation": "Filtering follows a submitted search; transcript lines can link to corresponding moments when captions exist.",
+      "interaction_tested": false
+    },
+    {
+      "id": "skillshare",
+      "creator": "Skillshare Help Center",
+      "title": "Search FAQ; How do I save a class for later?",
+      "urls": [
+        "https://help.skillshare.com/hc/en-us/articles/16267180286221-Search-FAQ",
+        "https://help.skillshare.com/hc/en-us/articles/204537268-How-do-I-save-a-class-for-later"
+      ],
+      "evidence": "page_text_inspected",
+      "displayed_update_dates": [
+        "2025-07-17",
+        "2025-10-24"
+      ],
+      "locators": "Search FAQ lines 50–74; save article lines 36–53",
+      "observation": "Facet counts update; no-result options are greyed. Saved classes have a mobile bottom-menu destination. Documentation states app/web differences.",
+      "interaction_tested": false
+    },
+    {
+      "id": "masterclass",
+      "creator": "MasterClass Help Center",
+      "title": "Downloading Classes for Offline Viewing",
+      "urls": [
+        "https://www.masterclass.com/help-center/masterclass/answers/downloading-classes-for-offline-viewing--id--c1GMEnNOQqiRDFdE0oa_pA"
+      ],
+      "evidence": "page_text_inspected",
+      "locators": "Article lines 15–35",
+      "observation": "Eligible, downloading and downloaded states are distinguished; My Progress is reachable in the bottom navigation. No offline capability inferred for RaceLink.",
+      "interaction_tested": false
+    },
+    {
+      "id": "linear",
+      "creator": "Linear Docs",
+      "title": "Search; Filters",
+      "urls": [
+        "https://linear.app/docs/search",
+        "https://linear.app/docs/filters"
+      ],
+      "evidence": "page_text_inspected",
+      "locators": "Search: Basics, Search filters, Recent issues. Filters: Apply filters.",
+      "observation": "Direct search, recent items and contextual filters are documented. Main filters are represented in shareable URLs.",
+      "interaction_tested": false
+    },
+    {
+      "id": "raycast",
+      "creator": "Raycast Manual",
+      "title": "Search Bar; Action Panel",
+      "urls": [
+        "https://manual.raycast.com/search-bar",
+        "https://manual.raycast.com/action-panel"
+      ],
+      "evidence": "page_text_inspected",
+      "locators": "Search Bar opening section; Action Panel primary action and navigation sections",
+      "observation": "One central input and a primary action are distinguished from contextual secondary actions. Desktop pattern, not a mobile app audit.",
+      "interaction_tested": false
+    },
+    {
+      "id": "dribbble",
+      "creator": "Parthik Kalsariya",
+      "title": "Modern Mobile UI for Online Learning Platform",
+      "urls": [
+        "https://dribbble.com/shots/26306305-Modern-Mobile-UI-for-Online-Learning-Platform"
+      ],
+      "evidence": "page_text_inspected_by_research_agent; image_visually_inspected_by_root",
+      "locators": "Description and features lines 32–40",
+      "observation": "Author documents search/filter, categorized courses and bottom navigation. Root separately confirmed visual inspection; no measured usability outcome claimed.",
+      "image_reference": "https://cdn.dribbble.com/userupload/44200627/file/original-c84d820afeeb3b336170c3e2c3ec246e.jpg?resize=2048x2048&vertical=center",
+      "image_reference_origin": "Discovered through image search; root subsequently inspected the actual project image through CUA. No downloaded project asset included.",
+      "interaction_tested": false
+    },
+    {
+      "id": "behance",
+      "creator": "Gorsel Kutman",
+      "title": "E-learning mobile app - UX Case Study",
+      "urls": [
+        "https://www.behance.net/gallery/115613205/E-learning-mobile-app-UX-Case-Study"
+      ],
+      "evidence": "page_text_inspected",
+      "published_date": "2021-06-14",
+      "locators": "Design Approach, High-fidelity Design, Conclusion - Design principles",
+      "observation": "Author describes four experiences, progressive complexity, prototypes and testing; no independent outcome evidence or visual inspection.",
+      "interaction_tested": false
+    },
+    {
+      "id": "pinterest",
+      "creator": null,
+      "title": "Simple E-Learning App UI Design",
+      "urls": [
+        "https://www.pinterest.com/pin/simple-elearning-app-ui-design--30680841204302881/"
+      ],
+      "evidence": "indexed_only_then_unavailable",
+      "error": "403 Forbidden",
+      "observation": "Title only. Original author unknown. Excluded from design decisions.",
+      "retry_after_refusal": false
+    }
+  ],
+  "additional_attempts": [
+    {
+      "url": "https://www.behance.net/gallery/179376823/Online-Learning-Mobile-App-E-Learning-App-UI",
+      "outcome": "403 Forbidden",
+      "retry_after_refusal": false,
+      "used_for_recommendations": false
+    },
+    {
+      "url": "https://m3.material.io/components/navigation-bar/overview",
+      "outcome": "Page text only says JavaScript required",
+      "used_for_recommendations": false
+    },
+    {
+      "url": "https://cdn.dribbble.com/assets/announcements/tag-2x-3c27404f54c5caf05d40115b6aae1ccac1163241756e184accbb2fbd3fcb98f2.png",
+      "outcome": "Page image link resolves to site announcement art, not project. Not used."
+    }
+  ],
+  "accessibility_reference": {
+    "url": "https://www.w3.org/WAI/ARIA/apg/patterns/combobox/",
+    "evidence": "page_text_inspected",
+    "scope": "Combobox semantics, manual selection and keyboard behavior. No claim of WCAG conformance."
+  },
+  "recommendations_status": "Historical benchmark preserved. DECISIONS.md and DESIGN.md describe published v14 d4cdda4; VALIDATION.md records actual browser scenarios and the separate status of v14b.",
+  "copying_policy": "No third-party brand, image, layout or asset copied into the product. Notes paraphrase source behavior; source links retained.",
+  "parent_visual_inspections": [
+    {
+      "subject": "Existing public RaceLink Academy homepage before redesign",
+      "evidence": "Root agent confirmed real CUA inspection and screenshot",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "archive_filename": "before-desktop.png",
+      "archive_sha256": "4c879fe315bbab4efa8f2049e2683fe62403216e676f9822cb64486f5a0d6a81",
+      "image_included_in_this_deliverable": false,
+      "date": "2026-10-23"
+    },
+    {
+      "subject": "Modern Mobile UI for Online Learning Platform",
+      "creator": "Parthik Kalsariya",
+      "url": "https://dribbble.com/shots/26306305-Modern-Mobile-UI-for-Online-Learning-Platform",
+      "evidence": "Root agent confirmed real image visually inspected through CUA",
+      "date": "2026-10-23",
+      "assets_copied_into_app": false
+    },
+    {
+      "subject": "Official RaceLink brand page",
+      "url": "https://racelink-app.co/",
+      "date": "2026-10-23",
+      "evidence": "Real CUA visual inspection and computed typography reported by the root agent",
+      "observation": "Black page, red glow and Motorsport heading, rounded dark navigation, white Apple action, dark phone mockup. Body Onest, h1 Orbitron 800."
+    }
+  ],
+  "implementation_snapshot": {
+    "status": "Historical pre-v14 source snapshot from the first documentation freeze; hashes below are not the current release.",
+    "date": "2026-10-23",
+    "files": [
+      {
+        "path": "public/index.html",
+        "bytes": 15663,
+        "sha256": "1f17d175fb93a686c6ee2bdfef753142b4de3296cc03ec218f7f77219f46b9aa"
+      },
+      {
+        "path": "public/product-ui.css",
+        "bytes": 47403,
+        "sha256": "5b2f2962e49077035da466ff59400fd3ba391dec2030746079bf61d901216594"
+      },
+      {
+        "path": "public/app-ui.css",
+        "bytes": 123715,
+        "sha256": "05fc98ff4f8c4099c9a8fa35f2647f93aa8adc5fbfd70b11ef060060532a4b12"
+      },
+      {
+        "path": "public/discovery-ui.js",
+        "bytes": 22390,
+        "sha256": "a85438aab2bddb14ad650861aa59b9b56c91bd8cfca3dd9f38c1175e9f5b9959"
+      },
+      {
+        "path": "DESIGN.md",
+        "bytes": 8628,
+        "sha256": "e1871aa114d5e5710bd30ae4631792c637a1c639a57ef021645e40706a379faf"
+      }
+    ],
+    "known_check": {
+      "command": "node --check outputs/focus-academy/public/discovery-ui.js",
+      "result": "passed after discovery module change",
+      "scope": "JavaScript syntax only"
+    },
+    "not_claimed": [
+      "New rendered desktop/mobile visual acceptance",
+      "Physical device testing",
+      "Exhaustive WCAG audit",
+      "Production deployment verification"
+    ],
+    "scope": "Preserved historical evidence. For current publication and browser validation see VALIDATION.md."
+  },
+  "skills": {
+    "metadata_file": "skills-comparison.json",
+    "metadata_sha256": "6ab15f011ad448238e1b76faf5c89975ff9fdfe5a4fce2ede5f916d2a82d24c7",
+    "repositories": 6,
+    "method": "Agent Reach GitHub: gh search repos by stars; gh api repo/commit/tree/contents; read-only text review",
+    "upstream_source_files_included": false
+  },
+  "documentation_files": [
+    {
+      "path": "benchmark-mobile.md",
+      "sha256": "13f8f1c95d79606706a6c87d74d9b87b394be5929458ced6e93fd86a750d13dd"
+    },
+    {
+      "path": "skills-report.md",
+      "sha256": "2c082f0084bc746596a7274d5680b29f7b148e31599130b1c75c032d191b5f87"
+    },
+    {
+      "path": "skills-comparison.json",
+      "sha256": "6ab15f011ad448238e1b76faf5c89975ff9fdfe5a4fce2ede5f916d2a82d24c7"
+    },
+    {
+      "path": "DECISIONS.md",
+      "sha256": "49abebf687e97ada4e634c661aad0b08cc559642d69c1599f82831f0fbff9bf9"
+    },
+    {
+      "path": "brand-direction.md",
+      "sha256": "ac04ecfcf88ed9acd88b28f90da6339b0d43b3a218489464d65da2867344cea1"
+    }
+  ],
+  "current_release": {
+    "version": "v14",
+    "commit": "d4cdda4",
+    "url": "https://github.com/ValerionGG/racelink-academy/commit/d4cdda4",
+    "date": "2026-10-23",
+    "published": true,
+    "validation_report": "VALIDATION.md",
+    "observed_scenarios": [
+      "Home 1280x720 and mobile iframe 390; all 11 guide covers visible",
+      "Fuel guide opened and closed with focus restored",
+      "French language plus vidange Clio 3 returned two videos; suggestions visible; Enter restored edit-search focus",
+      "YouTube filter preserved query and French language; focus returned to results heading",
+      "Mobile document scrollWidth 375 equals clientWidth 375"
+    ],
+    "follow_up": "v14b mobile compactness and remaining green badge/scope styling; final validation is tracked separately in VALIDATION.md",
+    "catalogue_changed": false
+  }
+}

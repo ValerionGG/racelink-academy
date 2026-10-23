@@ -1,10 +1,20 @@
 # RaceLink Academy — bibliothèque ouverte
 
+Version finale **v14c**, commit [f39bfee](https://github.com/ValerionGG/racelink-academy/commit/f39bfee), publiée et contrôlée. Les observations sont détaillées dans [VALIDATION.md](research/ui-redesign-2026-10-23/VALIDATION.md).
+
 [Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/) · [Vidéos en français](https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&format=video)
 
 Bibliothèque de tutoriels autour du sport automobile, de la simulation et de l’entretien automobile, en complément de [Focus](https://focus.racelink-app.co/).
 
-Le snapshot du 21 octobre 2026 référence **36 901 vidéos et 11 guides**, dont **5 022 classées en français** (estimations signalées). Cette itération ajoute **7 références TikTok**, dont **2 titres/libellés français**, sans ajout Instagram. Les sources sont six titres d’une archive de recherche GitHub et un lien publié sur le site du créateur. Aucun visionnage ni nouvelle transcription n’est revendiqué.
+## Nouvelle interface produit — 23 octobre 2026
+
+La **v14 est publiée** dans le commit [d4cdda4](https://github.com/ValerionGG/racelink-academy/commit/d4cdda4). Corps Onest, accents Orbitron, noir/rouge/blanc : la direction reprend le site officiel RaceLink, réellement inspecté. Accueil compact avec champ blanc, photos non teintées et légendes séparées, **11 couvertures de guides SVG originales**. Navigation permanente sur ordinateur, quatre destinations mobiles, recherche et critères véhicule à la demande.
+
+[Ouvrir l’aperçu mobile](https://valeriongg.github.io/racelink-academy/preview-mobile.html) · [Étude de 10 références](research/ui-redesign-2026-10-23/benchmark-mobile.md) · [Comparaison de 6 skills GitHub](research/ui-redesign-2026-10-23/skills-report.md) · [Choix réalisés](research/ui-redesign-2026-10-23/DECISIONS.md) · [Validation et limites](research/ui-redesign-2026-10-23/VALIDATION.md).
+
+Le catalogue n’a pas changé lors de cette refonte. La v14 a été observée via CUA à 1280 × 720 et dans l’aperçu mobile de 390 px : onze guides visibles, guide carburants ouvert/fermé avec focus restauré, recherche française « vidange Clio 3 », suggestions et filtre YouTube conservant la requête et la langue. Aucun débordement horizontal dans la zone mobile mesurée. La retouche v14b compacte le mobile et retire le vert résiduel des badges ; sa validation finale sera consignée séparément dans [le rapport de validation](research/ui-redesign-2026-10-23/VALIDATION.md).
+
+Le snapshot du 21 octobre 2026 référence **36 901 vidéos et 11 guides**, dont **5 022 classées en français** (estimations signalées). La campagne du 21 octobre a ajouté **7 références TikTok**, dont **2 titres/libellés français**, sans ajout Instagram. Les sources sont six titres d’une archive de recherche GitHub et un lien publié sur le site du créateur. Aucun visionnage ni nouvelle transcription n’est revendiqué.
 
 Répartition : 36 502 YouTube, **166 TikTok**, **140 Instagram**, 46 Facebook, 42 Dailymotion, 3 Vimeo, 2 Twitch. Les anciennes fiches sont conservées.
 
@@ -27,7 +37,7 @@ Le skill réutilisable [social-content-structure](skills/social-content-structur
 
 La collecte s'appuie sur [Agent Reach](https://github.com/Panniantong/Agent-Reach), yt-dlp et la recherche publique Exa. Le paquet local conserve les caches, preuves et décisions de revue. Cette campagne a effectué 201 recherches Exa et 94 récupérations directes de métadonnées réussies, puis une revue des titres et légendes disponibles. Aucun média, cookie utilisateur ou nouvelle transcription n'a été téléchargé. Aucun run Apify facturable n'a été lancé.
 
-## Identité et navigation
+## Historique : identité et navigation du 21 octobre
 
 La version du 21 octobre associe ivoire, graphite et rouge, un monogramme RL original et [28 icônes SVG originales](https://valeriongg.github.io/racelink-academy/identity-icons.html). Le menu visuel organise huit sujets ; la navigation mobile donne accès à l'accueil, à la recherche, aux parcours et à la sélection. Les choix de langue et les filtres existants restent disponibles.
 

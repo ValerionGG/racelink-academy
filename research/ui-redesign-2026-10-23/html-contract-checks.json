@@ -1,0 +1,76 @@
+{
+  "checked_at": "2026-10-23T09:20:26.969370+00:00",
+  "scope": "Static HTMLParser/source checks; no browser, network, application JS execution or database access",
+  "status": "passed",
+  "tests_run": 14,
+  "tests_passed": 14,
+  "failures": [],
+  "observations": {
+    "static_nodes": 276,
+    "static_id_count": 52,
+    "unique_static_ids": 52,
+    "main_views": [
+      "explore-view",
+      "paths-view",
+      "faq-view",
+      "saved-view"
+    ],
+    "explicit_label_count": 7,
+    "form_controls": 12,
+    "aria_targets_declared_in_js_only": [
+      "dialog-title",
+      "filters-dialog",
+      "navigation-dialog"
+    ],
+    "context_option_values": [
+      "",
+      "motorsport",
+      "automotive_adjacent"
+    ],
+    "local_scripts": [
+      "/aide/catalog-client.js",
+      "/aide/app.js?v=brand-v14c"
+    ],
+    "local_stylesheets": [
+      "/aide/app-ui.css?v=brand-v14c"
+    ]
+  },
+  "limitations": [
+    "HTMLParser is not a complete HTML5 validator or browser tree builder.",
+    "Runtime ARIA target IDs are verified as declarations in local JS only; their insertion timing and runtime uniqueness are not established here.",
+    "Label relationships do not establish a computed accessible name, focus behavior, contrast or visual visibility.",
+    "Module import checks cover static relative/local imports, not arbitrary dynamic runtime URLs.",
+    "External fonts/images were not fetched. No viewport, touch, screen-reader or real-device validation."
+  ],
+  "files": [
+    {
+      "path": "public/index.html",
+      "sha256": "374b575d9e8b411f0b9c59cfe07026cc753cd888e2d8bf45a9da9b521587e6a3"
+    },
+    {
+      "path": "public/app.js",
+      "sha256": "1c782733b991678656079377125e2c15f605548918a0e6ddc638a9cba38b6dfc"
+    },
+    {
+      "path": "public/app-ui.css",
+      "sha256": "b7bc1fca630175536027ba74edaf2ea019545d04c44ba9b58e6721621fc33c39"
+    },
+    {
+      "path": "public/product-ui.css",
+      "sha256": "46a750a5dcbc45211cf47cee0a9b390c2b96ad7ad29d1a99481190d05e69a789"
+    },
+    {
+      "path": "public/guide-ui.js",
+      "sha256": "10b0bd9d7de0f77b1e43639c1bbc6a8226c0b515849ede2fcdd0bc30fb38a788"
+    },
+    {
+      "path": "public/guide-art.js",
+      "sha256": "3aa4dd909bcec15ca532c7f56b892e7124913970db623caacbbd565f81af1b82"
+    },
+    {
+      "path": "tests_ui_html.py",
+      "sha256": "fc8e1e7286dc1e0fa2b5b763f01e99c9f60f22adbc94bf8f02ba9515cae76164"
+    }
+  ],
+  "test_output": "test_aria_references_have_static_or_declared_runtime_target (__main__.HTMLContract.test_aria_references_have_static_or_declared_runtime_target) ... ok\ntest_context_options_have_real_start_tags (__main__.HTMLContract.test_context_options_have_real_start_tags) ... ok\ntest_explicit_labels_resolve (__main__.HTMLContract.test_explicit_labels_resolve) ... ok\ntest_form_controls_have_label_relationship (__main__.HTMLContract.test_form_controls_have_label_relationship) ... ok\ntest_four_main_views (__main__.HTMLContract.test_four_main_views) ... ok\ntest_ids_are_unique (__main__.HTMLContract.test_ids_are_unique) ... ok\ntest_layered_bundle_matches_current_sources (__main__.HTMLContract.test_layered_bundle_matches_current_sources) ... ok\ntest_local_script_stylesheet_files_exist (__main__.HTMLContract.test_local_script_stylesheet_files_exist) ... ok\ntest_markup_structure_and_duplicate_attributes (__main__.HTMLContract.test_markup_structure_and_duplicate_attributes) ... ok\ntest_modified_module_cache_markers_match_entry (__main__.HTMLContract.test_modified_module_cache_markers_match_entry) ... ok\ntest_module_imports_exist_recursively (__main__.HTMLContract.test_module_imports_exist_recursively) ... ok\ntest_native_dialog_and_search_contract (__main__.HTMLContract.test_native_dialog_and_search_contract) ... ok\ntest_navigation_values_match_views (__main__.HTMLContract.test_navigation_values_match_views) ... ok\ntest_static_images_declare_alt (__main__.HTMLContract.test_static_images_declare_alt) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.076s\n\nOK\n"
+}
