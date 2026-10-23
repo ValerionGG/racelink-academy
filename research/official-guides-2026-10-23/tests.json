@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "scope": "Static contracts and simulated navigation; browser checks recorded separately",
+  "html_contracts": 14,
+  "simulated_navigation": 16,
+  "guide_sources_js": 10,
+  "guide_data_contracts": 6,
+  "guide_backend_regressions": 4,
+  "static_export": 6,
+  "editorial_badges": 6,
+  "social_content": 7
+}

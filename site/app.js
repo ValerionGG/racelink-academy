@@ -1,11 +1,11 @@
 import {icon as glyph, categoryIcon} from './icons.js';
-import {createIdentityUI} from './identity-ui.js?v=photo-v15';
+import {createIdentityUI} from './identity-ui.js?v=guide-v16';
 import {tracks} from './tracks.js';
-import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js';
-import {createDiscoveryUI} from './discovery-ui.js?v=photo-v15';
+import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=guide-v16';
+import {createDiscoveryUI} from './discovery-ui.js?v=guide-v16';
 import {createRaceLinkPicks} from './racelink-picks.js';
-import {createMobileUI} from './mobile-ui.js?v=photo-v15';
-import {createGuideUI} from './guide-ui.js?v=photo-v15';
+import {createMobileUI} from './mobile-ui.js?v=guide-v16';
+import {createGuideUI} from './guide-ui.js?v=guide-v16';
 import {socialContentMarkup} from './social-content.js';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
@@ -71,7 +71,7 @@ const seedFaq = [
 
 const raceLinkPicks=createRaceLinkPicks({escape,t,getUi:()=>ui});
 const guideUI=createGuideUI({escape,t,picks:raceLinkPicks,safeUrl});
-const openGuide=id=>{++detailVersion;detail=null;guideUI.open(id);};
+const openGuide=(id,section)=>{++detailVersion;detail=null;guideUI.open(id,section);};
 const automotiveUI=createAutomotiveUI({
   escape,t,storage,picks:raceLinkPicks,getState:()=>state,getUi:()=>ui,change:setFilter,toast:showToast,
   patch(patch){browsing=true;state={...state,...patch,page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
@@ -360,7 +360,7 @@ document.addEventListener('click',async event=>{
   else if(el.dataset.view){event.preventDefault();if(el.dataset.view==='explore')goHome();else changeView(el.dataset.view);}
   else if(el.hasAttribute('data-content-language'))chooseContentLanguage(el.dataset.contentLanguage,el.id==='french-videos');
   else if(el.hasAttribute('data-format'))setFilter('format',el.dataset.format);
-  else if(el.hasAttribute('data-guide'))openGuide(el.dataset.guide);
+  else if(el.hasAttribute('data-guide'))openGuide(el.dataset.guide,el.dataset.guideSection);
   else if(el.hasAttribute('data-query')){changeView('explore');setFilter('q',el.dataset.query);$('#catalog-heading').scrollIntoView({behavior:'smooth'});}
   else if(el.hasAttribute('data-category'))setFilter('category',el.dataset.category);
   else if(el.hasAttribute('data-path')){activeTrack=el.dataset.path;changeView('paths');}

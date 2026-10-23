@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "language": "fr",
-  "updatedAt": "2026-10-20",
+  "updatedAt": "2026-10-23",
   "title": "Entretenir et comprendre mon véhicule",
   "scope": "Guides de démarche en français, destinés aux véhicules routiers. Les exemples de notices ne constituent pas des préconisations pour tous les modèles.",
   "automaticCompatibility": false,
@@ -52,6 +52,34 @@
     "missingDetailsMessage": "Année, code moteur ou version non confirmés : aucune référence d'huile, de pièce ou compatibilité carburant ne peut être recommandée automatiquement.",
     "sources": [
       {
+        "id": "renault-clio5-2023-2025-identification",
+        "title": "Clio 5 — Plaques d’identification véhicule",
+        "url": "https://www.user-manual.renault.com/fr/informations-v%C3%A9hicule/plaques-didentification-vehicule-2",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_specification",
+        "vehicleScope": "Renault Clio 5 ; période de notice affichée : 02/06/2023–16/03/2025 ; version française. Présence et emplacement des informations variables selon le véhicule.",
+        "section": "Plaques d’identification véhicule — plaque constructeur A et marquage B",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Contenu de la page constructeur lu : en-tête du modèle et de la période, repères de la plaque et liste de ses informations. Le lien interne historique a été résolu vers cette URL directe.",
+        "summary": "Repérer le numéro d’identification et les informations de la plaque constructeur pour retrouver la bonne documentation. Cette page ne détermine pas à elle seule une compatibilité de pièces.",
+        "description": "Repérer le numéro d’identification et les informations de la plaque constructeur pour retrouver la bonne documentation. Cette page ne détermine pas à elle seule une compatibilité de pièces.",
+        "scope": "Renault Clio 5 ; période de notice affichée : 02/06/2023–16/03/2025 ; version française. Présence et emplacement des informations variables selon le véhicule."
+      },
+      {
+        "id": "tesla-model3-2024-identification",
+        "title": "Model 3 2024+ — Étiquettes d’identification",
+        "url": "https://www.tesla.com/ownersmanual/model3/fr_fr/GUID-B27A666D-866B-4766-B690-CCD1B66E2134.html",
+        "publisher": "Tesla",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Tesla Model 3 2024+ ; Europe ; manuel français, version logicielle 2026.32 affichée lors de la vérification. Un emplacement supplémentaire est réservé aux véhicules construits à Shanghai.",
+        "section": "Étiquettes d’identification → Numéro d’identification du véhicule",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Section VIN lue et rattachement vérifié au sommaire https://www.tesla.com/ownersmanual/model3/fr_fr/ : consultation à l’écran et emplacements physiques, dont une particularité d’usine.",
+        "summary": "Retrouver le VIN dans les commandes du véhicule ou sur ses marquages. Les emplacements décrits concernent cette version du Model 3, sans décodage universel du VIN.",
+        "description": "Retrouver le VIN dans les commandes du véhicule ou sur ses marquages. Les emplacements décrits concernent cette version du Model 3, sans décodage universel du VIN.",
+        "scope": "Tesla Model 3 2024+ ; Europe ; manuel français, version logicielle 2026.32 affichée lors de la vérification. Un emplacement supplémentaire est réservé aux véhicules construits à Shanghai."
+      },
+      {
         "id": "ford-manuals",
         "title": "Ford — manuels du conducteur",
         "url": "https://www.ford.fr/support/manuels-proprietaire-details",
@@ -100,7 +128,11 @@
           "es": "Selección editorial tras revisar la guía interna y sus fuentes oficiales ya documentadas. Se refiere al método explicado y no confirma la compatibilidad con ningún vehículo."
         }
       }
-    }
+    },
+    "sourcesUpdatedAt": "2026-10-23",
+    "cardSummary": "Retrouvez le VIN, la motorisation et la bonne édition de notice avant de choisir une pièce ou un produit.",
+    "scope": "general_method_not_vehicle_compatibility",
+    "requiresVehicleConfirmation": true
   },
   "manuals": [
     {
@@ -171,6 +203,36 @@
       ],
       "sources": [
         {
+          "id": "renault-clio5p1-fuel-tank",
+          "title": "Renault Clio 5 phase 1 — Réservoir carburant",
+          "url": "https://www.user-manual.renault.com/fr/chapitre1-faites-connaissance-avec-votre-v%C3%A9hicule/reservoir-carburant",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; paragraphes essence, Diesel et GPL à distinguer selon l'équipement.",
+          "section": "Réservoir carburant > Qualité du carburant ; Version essence ; Version diesel ; Remplissage carburant",
+          "verifiedAt": "2026-10-23T13:01:40Z",
+          "evidenceNote": "La notice demande de confronter le carburant à l'étiquette de trappe et au tableau des caractéristiques moteur. Elle traite aussi l'ouverture, le remplissage et la fermeture.",
+          "summary": "Point d'entrée pour identifier le carburant prescrit et retrouver la procédure de ravitaillement du véhicule.",
+          "limits": "Ne donne aucune autorisation générale d'utiliser de l'E85. Un nom de modèle ou un indice d'octane isolé ne suffit pas à établir la compatibilité.",
+          "description": "Point d'entrée pour identifier le carburant prescrit et retrouver la procédure de ravitaillement du véhicule.",
+          "scope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; paragraphes essence, Diesel et GPL à distinguer selon l'équipement. Ne donne aucune autorisation générale d'utiliser de l'E85. Un nom de modèle ou un indice d'octane isolé ne suffit pas à établir la compatibilité."
+        },
+        {
+          "id": "renault-clio5p1-engine-fuel-spec",
+          "title": "Renault Clio 5 phase 1 — Caractéristiques moteurs et types de carburant",
+          "url": "https://www.user-manual.renault.com/fr/chapitre6-caract%C3%A9ristiques-techniques/caracteristiques-moteurs",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_specification",
+          "vehicleScope": "Renault Clio 5 phase 1, période 18/12/2018 à 01/06/2023. Tableau lu : 1.0 SCe/B4D, 1.0 TCe/H4D Turbo, 1.3 TCe/H5H Turbo et 1.5 dCi/K9K Turbo ; marché européen pour les indications de carburants normalisés.",
+          "section": "Caractéristiques moteurs > Versions ; Type moteur ; Type de carburant ; Types de carburant répondant aux normes européennes",
+          "verifiedAt": "2026-10-23T13:01:40Z",
+          "evidenceNote": "Le tableau associe les colonnes de motorisation aux familles de carburant, aux normes et au renvoi à la trappe. Les versions E-Tech ne figurent pas dans le tableau consulté.",
+          "summary": "Complément technique pour lire la bonne colonne moteur et le périmètre de marché, sans extrapolation à toutes les Clio.",
+          "limits": "La présence de plusieurs carburants dans une page ne signifie pas qu'ils conviennent à toutes ses motorisations. Confirmer la colonne, le moteur et l'étiquette réelle.",
+          "description": "Complément technique pour lire la bonne colonne moteur et le périmètre de marché, sans extrapolation à toutes les Clio.",
+          "scope": "Renault Clio 5 phase 1, période 18/12/2018 à 01/06/2023. Tableau lu : 1.0 SCe/B4D, 1.0 TCe/H4D Turbo, 1.3 TCe/H5H Turbo et 1.5 dCi/K9K Turbo ; marché européen pour les indications de carburants normalisés. La présence de plusieurs carburants dans une page ne signifie pas qu'ils conviennent à toutes ses motorisations. Confirmer la colonne, le moteur et l'étiquette réelle."
+        },
+        {
           "id": "renault-engine",
           "title": "Renault — identification et caractéristiques moteur",
           "url": "https://www.user-manual.renault.com/fr/content/xfk/technical-specifications/information-about-vehicle/identification-moteur",
@@ -235,7 +297,29 @@
             "es": "Selección editorial tras revisar la guía interna y sus fuentes oficiales ya documentadas. Se refiere al método explicado y no confirma la compatibilidad con ningún vehículo."
           }
         }
-      }
+      },
+      "sourcesUpdatedAt": "2026-10-23",
+      "sourceReadingSteps": [
+        {
+          "text": "Identifier le moteur et retrouver sa colonne dans le tableau.",
+          "sourceIds": [
+            "renault-clio5p1-engine-fuel-spec"
+          ]
+        },
+        {
+          "text": "Comparer les indications à l'étiquette située dans la trappe.",
+          "sourceIds": [
+            "renault-clio5p1-fuel-tank"
+          ]
+        },
+        {
+          "text": "Lire uniquement la procédure essence, Diesel ou GPL correspondant au véhicule.",
+          "sourceIds": [
+            "renault-clio5p1-fuel-tank"
+          ]
+        }
+      ],
+      "cardSummary": "Comparez carburant, étiquette de trappe et notice pour confirmer ce que votre moteur accepte."
     },
     {
       "id": "guide-oil-spec",
@@ -254,6 +338,36 @@
         "Aucune huile conseillée automatiquement à partir de la seule marque."
       ],
       "sources": [
+        {
+          "id": "ford-puma-15-ecoblue-oil-spec-7589",
+          "title": "Ford Puma — Quantités et spécifications : 1.5L EcoBlue",
+          "url": "https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G2137156&Uid=G2133999&buildtype=web&countryCode=FRA&div=f&languageCode=fr&moidRef=G1635371&userMarket=fra&vFilteringEnabled=False&variantid=7589",
+          "publisher": "Ford Motor Company",
+          "sourceType": "manufacturer_specification",
+          "vehicleScope": "Ford Puma, moteur 1.5L EcoBlue, manuel français variantid=7589. Année, phase et période d'application exactes non affichées dans la section consultée : à confirmer avec la notice d'origine.",
+          "section": "Quantités et spécifications — 1.5L EcoBlue > Moteur > Huile moteur > Matériaux",
+          "verifiedAt": "2026-10-23T13:01:40Z",
+          "evidenceNote": "La page identifie le moteur et le manuel Puma. Le tableau associe SAE 0W-20 à WSS-M2C952-A1 ; un paragraphe distinct encadre une solution d'appoint. Le contenu a été lu, pas seulement son statut HTTP.",
+          "summary": "Exemple concret de lecture conjointe de la viscosité et de l'homologation constructeur. Ford donne priorité au manuel fourni d'origine avec le véhicule.",
+          "limits": "Ne pas généraliser cette référence aux autres Puma ni aux autres moteurs. La règle d'appoint n'est pas une équivalence universelle pour une vidange complète.",
+          "description": "Exemple concret de lecture conjointe de la viscosité et de l'homologation constructeur. Ford donne priorité au manuel fourni d'origine avec le véhicule.",
+          "scope": "Ford Puma, moteur 1.5L EcoBlue, manuel français variantid=7589. Année, phase et période d'application exactes non affichées dans la section consultée : à confirmer avec la notice d'origine. Ne pas généraliser cette référence aux autres Puma ni aux autres moteurs. La règle d'appoint n'est pas une équivalence universelle pour une vidange complète."
+        },
+        {
+          "id": "renault-clio5p1-oil-quality",
+          "title": "Renault Clio 5 phase 1 — Où trouver la qualité d'huile prescrite",
+          "url": "https://www.user-manual.renault.com/fr/chapitre4-entretien/niveau-huile-moteur-appoint-remplissage-vidange-moteur",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 5 phase 1 ; période affichée par la notice : 18/12/2018 à 01/06/2023 ; moteur à identifier séparément.",
+          "section": "Niveau huile moteur : appoint, remplissage, vidange moteur > Qualité d'huile moteur",
+          "verifiedAt": "2026-10-23T13:01:40Z",
+          "evidenceNote": "La rubrique Qualité d'huile moteur renvoie explicitement au document d'entretien du véhicule.",
+          "summary": "Permet de repérer le document complémentaire nécessaire pour choisir l'huile.",
+          "limits": "La page ne fournit pas de norme RN, de viscosité ou de tableau de compatibilité moteur.",
+          "description": "Permet de repérer le document complémentaire nécessaire pour choisir l'huile.",
+          "scope": "Renault Clio 5 phase 1 ; période affichée par la notice : 18/12/2018 à 01/06/2023 ; moteur à identifier séparément. La page ne fournit pas de norme RN, de viscosité ou de tableau de compatibilité moteur."
+        },
         {
           "id": "api-oil",
           "title": "API — Motor Oil Guide",
@@ -311,7 +425,29 @@
             "es": "Selección editorial tras revisar la guía interna y sus fuentes oficiales ya documentadas. Se refiere al método explicado y no confirma la compatibilidad con ningún vehículo."
           }
         }
-      }
+      },
+      "sourcesUpdatedAt": "2026-10-23",
+      "sourceReadingSteps": [
+        {
+          "text": "Identifier la motorisation et l'édition avant de lire le tableau.",
+          "sourceIds": [
+            "ford-puma-15-ecoblue-oil-spec-7589"
+          ]
+        },
+        {
+          "text": "Relever ensemble la viscosité et l'homologation ; distinguer les exceptions d'appoint.",
+          "sourceIds": [
+            "ford-puma-15-ecoblue-oil-spec-7589"
+          ]
+        },
+        {
+          "text": "Si la notice renvoie au document d'entretien, obtenir celui du véhicule avant de choisir une référence.",
+          "sourceIds": [
+            "renault-clio5p1-oil-quality"
+          ]
+        }
+      ],
+      "cardSummary": "Distinguez viscosité, normes et homologations, puis comparez-les aux exigences de votre moteur."
     },
     {
       "id": "guide-oil-change",
@@ -330,6 +466,36 @@
         "L'absence de voyant d'huile ne confirme pas que l'entretien est à jour."
       ],
       "sources": [
+        {
+          "id": "renault-clio5p1-oil-level",
+          "title": "Renault Clio 5 phase 1 — Niveau huile moteur : généralités",
+          "url": "https://www.user-manual.renault.com/fr/chapitre4-entretien/niveau-huile-moteur-generalites",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; illustration et jauge à rapprocher du moteur réel.",
+          "section": "Niveau huile moteur : généralités > Lecture du niveau d'huile",
+          "verifiedAt": "2026-10-23T13:01:40Z",
+          "evidenceNote": "Le texte décrit les conditions de lecture, l'utilisation de la jauge et les repères minimum/maximum. Il distingue cette lecture de l'alerte du tableau de bord.",
+          "summary": "Procédure propriétaire pour contrôler le niveau d'huile, utile avant et après une intervention.",
+          "limits": "Ne couvre ni démontage du filtre, ni bouchon de vidange, ni couple de serrage.",
+          "description": "Procédure propriétaire pour contrôler le niveau d'huile, utile avant et après une intervention.",
+          "scope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; illustration et jauge à rapprocher du moteur réel. Ne couvre ni démontage du filtre, ni bouchon de vidange, ni couple de serrage."
+        },
+        {
+          "id": "renault-clio5p1-oil-topup-drain",
+          "title": "Renault Clio 5 phase 1 — Appoint, remplissage et renseignements de vidange",
+          "url": "https://www.user-manual.renault.com/fr/chapitre4-entretien/niveau-huile-moteur-appoint-remplissage-vidange-moteur",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; capacité et entretien dépendent du moteur.",
+          "section": "Niveau huile moteur : appoint, remplissage, vidange moteur > Appoint/remplissage ; Vidange moteur ; Capacité de vidange",
+          "verifiedAt": "2026-10-23T13:01:40Z",
+          "evidenceNote": "Le texte décrit l'appoint et le contrôle à la jauge. Capacité et périodicité sont renvoyées au document d'entretien ou au représentant de la marque.",
+          "summary": "Référence pour préparer l'intervention et comprendre les informations à obtenir avant la vidange.",
+          "limits": "Ce n'est pas une procédure complète de vidange : bouchon, filtre, joint et couples ne sont pas détaillés.",
+          "description": "Référence pour préparer l'intervention et comprendre les informations à obtenir avant la vidange.",
+          "scope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; capacité et entretien dépendent du moteur. Ce n'est pas une procédure complète de vidange : bouchon, filtre, joint et couples ne sont pas détaillés."
+        },
         {
           "id": "renault-oil",
           "title": "Renault — niveau, appoint et vidange d'huile moteur",
@@ -370,7 +536,30 @@
           "vehicleCompatibilityConfirmed": false,
           "note": "Piste issue des métadonnées du catalogue. Contenu et application au véhicule à vérifier ; aucune prescription technique n'en est déduite."
         }
-      ]
+      ],
+      "sourcesUpdatedAt": "2026-10-23",
+      "sourceReadingSteps": [
+        {
+          "text": "Lire d'abord la méthode de contrôle correspondant à la jauge du véhicule.",
+          "sourceIds": [
+            "renault-clio5p1-oil-level"
+          ]
+        },
+        {
+          "text": "Repérer les renvois vers le document d'entretien pour la capacité et l'échéance.",
+          "sourceIds": [
+            "renault-clio5p1-oil-topup-drain"
+          ]
+        },
+        {
+          "text": "Obtenir une procédure moteur complète avant toute dépose du bouchon ou du filtre.",
+          "sourceIds": [
+            "renault-clio5p1-oil-topup-drain"
+          ]
+        }
+      ],
+      "sourceCoverageNote": "Aucune procédure constructeur gratuite de vidange complète, avec filtre et serrages pour un moteur précisément identifié, n'a été vérifiée dans ce lot. Le guide peut légitimement présenter préparation, niveau et recherche du document ; il ne doit pas annoncer une procédure intégrale.",
+      "cardSummary": "Préparez les documents et les pièces, puis contrôlez le niveau selon la méthode de votre moteur."
     },
     {
       "id": "guide-wipers",
@@ -389,6 +578,38 @@
         "Le bras métallique ne doit pas retomber sur le pare-brise."
       ],
       "sources": [
+        {
+          "id": "renault-clio5p1-wiper-replacement",
+          "title": "Renault Clio 5 phase 1 — Balais d'essuie-vitres : remplacement",
+          "url": "https://www.user-manual.renault.com/fr/chapitre5-conseils-pratiques/balais-dessuie-vitres-remplacement",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; remplacement avant et arrière séparément décrit.",
+          "section": "Balais d'essuie-vitres : remplacement > Remplacement des balais d'essuie-vitre avant ; Remontage ; Balai d'essuie-vitre arrière",
+          "verifiedAt": "2026-10-23T13:01:40Z",
+          "evidenceNote": "La page explique la position de service, le déverrouillage, le réenclenchement et le contrôle du verrouillage. La manœuvre arrière est distincte.",
+          "summary": "Procédure de remplacement directement exploitable avec la notice exacte et les balais appropriés.",
+          "limits": "Aucune référence commerciale ni longueur universelle de balai n'est établie. Protéger le vitrage et ne pas transposer la commande de position de service à un autre modèle.",
+          "description": "Procédure de remplacement directement exploitable avec la notice exacte et les balais appropriés.",
+          "scope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; remplacement avant et arrière séparément décrit. Aucune référence commerciale ni longueur universelle de balai n'est établie. Protéger le vitrage et ne pas transposer la commande de position de service à un autre modèle."
+        },
+        {
+          "id": "peugeot-208-p21-wipers-ed01-20",
+          "title": "Peugeot 208 / e-208 — Changement d'un balai d'essuie-vitre",
+          "url": "https://public.servicebox.peugeot.com/APddb/modeles/208.p2/eGuide_p21_ed01-20/pdfs/9999_9999_401_fr-FR.pdf#page=68",
+          "publisher": "Automobiles Peugeot",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Peugeot 208 / e-208, famille P21 identifiée par le répertoire officiel 208.p2. Archive eGuide_p21_ed01-20 ; date d'édition non confirmée dans le contenu lu.",
+          "section": "Éclairage et visibilité > Position particulière des essuie-vitres avant ; Changement d'un balai d'essuie-vitre",
+          "printedPages": "66–67",
+          "pdfPages": "68–69 (numérotation du fichier en base 1)",
+          "verifiedAt": "2026-10-23T13:01:40Z",
+          "evidenceNote": "Texte PDF lu : position d'entretien puis démontage/remontage avant et arrière.",
+          "summary": "Procédure illustrée spécifique à cette notice ; vérifier ses figures dans le PDF avant intervention.",
+          "limits": "Figures non inspectées ici. Dimensions et références des pièces non établies.",
+          "description": "Procédure illustrée spécifique à cette notice ; vérifier ses figures dans le PDF avant intervention.",
+          "scope": "Peugeot 208 / e-208, famille P21 identifiée par le répertoire officiel 208.p2. Archive eGuide_p21_ed01-20 ; date d'édition non confirmée dans le contenu lu. Figures non inspectées ici. Dimensions et références des pièces non établies."
+        },
         {
           "id": "bosch-wipers",
           "title": "Bosch — entretien et remplacement des essuie-glaces",
@@ -424,7 +645,30 @@
           "vehicleCompatibilityConfirmed": false,
           "note": "Piste issue des métadonnées du catalogue. Contenu et application au véhicule à vérifier ; aucune prescription technique n'en est déduite."
         }
-      ]
+      ],
+      "sourcesUpdatedAt": "2026-10-23",
+      "sourceReadingSteps": [
+        {
+          "text": "Repérer la position de service et la procédure avant/arrière voulue.",
+          "sourceIds": [
+            "renault-clio5p1-wiper-replacement",
+            "peugeot-208-p21-wipers-ed01-20"
+          ]
+        },
+        {
+          "text": "Identifier sur le véhicule le verrou décrit, sans forcer un autre montage.",
+          "sourceIds": [
+            "renault-clio5p1-wiper-replacement"
+          ]
+        },
+        {
+          "text": "Lire le contrôle de verrouillage et la remise en position normale.",
+          "sourceIds": [
+            "renault-clio5p1-wiper-replacement"
+          ]
+        }
+      ],
+      "cardSummary": "Repérez la position de service et le verrouillage du balai dans la notice de votre version."
     },
     {
       "id": "guide-wheel-change",
@@ -443,6 +687,38 @@
         "Si l'emplacement ne permet pas une intervention sûre, faire intervenir l'assistance."
       ],
       "sources": [
+        {
+          "id": "renault-clio5p1-wheel-change",
+          "title": "Renault Clio 5 phase 1 — Changement de roue",
+          "url": "https://www.user-manual.renault.com/fr/chapitre5-conseils-pratiques/changement-de-roue",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; procédure pour les véhicules équipés du cric et de la clé de roue décrits.",
+          "section": "Changement de roue > Véhicules équipés du cric et de la clé de roue",
+          "verifiedAt": "2026-10-23T13:01:40Z",
+          "evidenceNote": "Lecture des conditions de stationnement, des repères de levage, de la dépose et du remontage. La page demande un contrôle rapide du serrage et de la pression après remplacement.",
+          "summary": "Procédure de dépannage spécifique au cric embarqué et aux points d'appui du véhicule.",
+          "limits": "Aucun couple chiffré vérifié sur cette page. Le cric de dépannage ne permet pas de travailler sous le véhicule. Vérifier aussi la notice de la roue de secours et l'équipement réellement fourni.",
+          "description": "Procédure de dépannage spécifique au cric embarqué et aux points d'appui du véhicule.",
+          "scope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; procédure pour les véhicules équipés du cric et de la clé de roue décrits. Aucun couple chiffré vérifié sur cette page. Le cric de dépannage ne permet pas de travailler sous le véhicule. Vérifier aussi la notice de la roue de secours et l'équipement réellement fourni."
+        },
+        {
+          "id": "peugeot-208-p21-wheel-change-ed01-20",
+          "title": "Peugeot 208 / e-208 — Démontage et montage de la roue",
+          "url": "https://public.servicebox.peugeot.com/APddb/modeles/208.p2/eGuide_p21_ed01-20/pdfs/9999_9999_401_fr-FR.pdf#page=182",
+          "publisher": "Automobiles Peugeot",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Peugeot 208 / e-208, famille P21 (répertoire 208.p2), archive eGuide_p21_ed01-20 ; équipement de secours selon version. Date d'édition non confirmée.",
+          "section": "En cas de panne > Roue de secours > Démontage de la roue ; Montage de la roue ; Après un changement de roue",
+          "printedPages": "180–183",
+          "pdfPages": "182–185 (numérotation du fichier en base 1)",
+          "verifiedAt": "2026-10-23T13:01:40Z",
+          "evidenceNote": "Texte lu : stationnement, points de levage A/B, dépose, montage et contrôles ultérieurs.",
+          "summary": "Procédure avec repères propres au véhicule et restrictions de roue de secours.",
+          "limits": "Pas de couple chiffré repris. Vérifier les figures et le cric correspondant à la version.",
+          "description": "Procédure avec repères propres au véhicule et restrictions de roue de secours.",
+          "scope": "Peugeot 208 / e-208, famille P21 (répertoire 208.p2), archive eGuide_p21_ed01-20 ; équipement de secours selon version. Date d'édition non confirmée. Pas de couple chiffré repris. Vérifier les figures et le cric correspondant à la version."
+        },
         {
           "id": "michelin-wheel",
           "title": "Michelin — monter une roue de secours",
@@ -463,7 +739,30 @@
       "verifiedAt": "2026-10-20",
       "scope": "general_method_not_vehicle_compatibility",
       "requiresVehicleConfirmation": true,
-      "relatedVideos": []
+      "relatedVideos": [],
+      "sourcesUpdatedAt": "2026-10-23",
+      "sourceReadingSteps": [
+        {
+          "text": "Vérifier le matériel fourni et les conditions de mise en sécurité.",
+          "sourceIds": [
+            "renault-clio5p1-wheel-change"
+          ]
+        },
+        {
+          "text": "Repérer les points de levage de cette notice sur le véhicule réel.",
+          "sourceIds": [
+            "renault-clio5p1-wheel-change",
+            "peugeot-208-p21-wheel-change-ed01-20"
+          ]
+        },
+        {
+          "text": "Lire les limites de la roue de secours et les contrôles après montage.",
+          "sourceIds": [
+            "peugeot-208-p21-wheel-change-ed01-20"
+          ]
+        }
+      ],
+      "cardSummary": "Retrouvez les points de levage, le matériel et les contrôles prévus pour une roue de secours."
     },
     {
       "id": "guide-battery",
@@ -482,6 +781,34 @@
         "Cette fiche ne décrit aucune intervention sur la haute tension."
       ],
       "sources": [
+        {
+          "id": "renault-clio5-2025-2026-battery",
+          "title": "Clio 5 — Batterie : dépannage",
+          "url": "https://www.user-manual.renault.com/fr/d%C3%A9pannage/batterie-depannage",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 5 ; période de notice affichée : 15/09/2025–16/03/2026 ; version française. Suivre la branche correspondant au véhicule, notamment E-tech full hybrid.",
+          "section": "Branchement d’un chargeur ; démarrage avec la batterie d’un autre véhicule ; bornes déportées",
+          "verifiedAt": "2026-10-23",
+          "evidenceNote": "Page complète lue, avec identification du modèle, de la période, des bornes illustrées et des différences propres à l’hybride. La restriction sur l’emploi de l’hybride comme véhicule donneur est explicite.",
+          "summary": "Consulter les conditions constructeur de recharge et de dépannage de la batterie 12 V. Les branchements varient avec la version ; cette référence ne décrit pas une intervention sur la batterie de traction.",
+          "description": "Consulter les conditions constructeur de recharge et de dépannage de la batterie 12 V. Les branchements varient avec la version ; cette référence ne décrit pas une intervention sur la batterie de traction.",
+          "scope": "Renault Clio 5 ; période de notice affichée : 15/09/2025–16/03/2026 ; version française. Suivre la branche correspondant au véhicule, notamment E-tech full hybrid."
+        },
+        {
+          "id": "tesla-model3-north-america-lead-acid-battery",
+          "title": "Model 3 — Remplacement de la batterie plomb-acide basse tension, Amérique du Nord",
+          "url": "https://service.tesla.com/docs/Public/diy/model3/fr_fr/GUID-2588F809-41E3-43F1-84E5-6745C7C18DBE.html",
+          "publisher": "Tesla",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Tesla Model 3 équipée d’une batterie basse tension plomb-acide ; Amérique du Nord uniquement, malgré la langue française de la page. Procédures séparées avant/après octobre 2020 environ ; identifier d’abord la technologie de batterie, variable selon l’usine et la date de fabrication. Pas applicable aux batteries lithium-ion ni à la haute tension.",
+          "section": "Remplacement de la batterie plomb-acide basse tension — conditions initiales et branches avant/après octobre 2020 environ",
+          "verifiedAt": "2026-10-23",
+          "evidenceNote": "Introduction, restrictions de marché, critères de technologie et première branche de dépose lus. La page indique une portée nord-américaine ; aucune compatibilité européenne n’en est tirée et aucun couple de serrage n’est repris.",
+          "summary": "Procédure constructeur détaillée pour une configuration précise du Model 3. Vérifier le marché, la batterie et la branche de fabrication avant de suivre la notice complète ; le titre français ne signifie pas que la procédure convient à un véhicule français.",
+          "description": "Procédure constructeur détaillée pour une configuration précise du Model 3. Vérifier le marché, la batterie et la branche de fabrication avant de suivre la notice complète ; le titre français ne signifie pas que la procédure convient à un véhicule français.",
+          "scope": "Tesla Model 3 équipée d’une batterie basse tension plomb-acide ; Amérique du Nord uniquement, malgré la langue française de la page. Procédures séparées avant/après octobre 2020 environ ; identifier d’abord la technologie de batterie, variable selon l’usine et la date de fabrication. Pas applicable aux batteries lithium-ion ni à la haute tension."
+        },
         {
           "id": "toyota-battery",
           "title": "Toyota — FAQ technique, batterie 12 V",
@@ -510,7 +837,9 @@
       "verifiedAt": "2026-10-20",
       "scope": "general_method_not_vehicle_compatibility",
       "requiresVehicleConfirmation": true,
-      "relatedVideos": []
+      "relatedVideos": [],
+      "sourcesUpdatedAt": "2026-10-23",
+      "cardSummary": "Identifiez la batterie basse tension et les branchements autorisés pour votre version."
     },
     {
       "id": "guide-fuses",
@@ -530,6 +859,34 @@
       ],
       "sources": [
         {
+          "id": "renault-clio5-2025-fuses",
+          "title": "Clio 5 — Compartiments et affectation des fusibles",
+          "url": "https://www.user-manual.renault.com/fr/content/clio/practical-advice/fusibles",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 5 ; période de notice affichée : 17/03/2025–14/09/2025 ; version française. Affectations dépendantes de l’équipement ; cas GPL séparé.",
+          "section": "Compartiments à fusibles ; affectation des fusibles ; fusible GPL dans le compartiment avant",
+          "verifiedAt": "2026-10-23",
+          "evidenceNote": "Sections et tableau d’affectation lus. Le document distingue les trappes de l’habitacle, le boîtier moteur et le cas GPL ; il réserve certaines opérations au professionnel.",
+          "summary": "Repérer les accès et rapprocher la panne de l’étiquette présente sur le véhicule. La page exige le calibre d’origine et limite l’intervention aux fusibles indiqués ; ses affectations ne valent pas pour toute Clio.",
+          "description": "Repérer les accès et rapprocher la panne de l’étiquette présente sur le véhicule. La page exige le calibre d’origine et limite l’intervention aux fusibles indiqués ; ses affectations ne valent pas pour toute Clio.",
+          "scope": "Renault Clio 5 ; période de notice affichée : 17/03/2025–14/09/2025 ; version française. Affectations dépendantes de l’équipement ; cas GPL séparé."
+        },
+        {
+          "id": "renault-clio5-phase1-fuses",
+          "title": "Clio 5 phase 1 — Fusibles",
+          "url": "https://www.user-manual.renault.com/fr/chapitre5-conseils-pratiques/fusibles",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 5 phase 1 ; période de notice affichée : 18/12/2018–01/06/2023 ; version française. Vérifier équipement et étiquette du véhicule.",
+          "section": "Compartiments à fusibles ; affectation des fusibles ; fusibles du compartiment moteur",
+          "verifiedAt": "2026-10-23",
+          "evidenceNote": "En-tête de phase et période vérifiés ; accès, pince et affectations lus. Il s’agit d’une édition distincte de celle de 2025, et non d’une extension de sa compatibilité.",
+          "summary": "Consulter les repères propres à la première phase et identifier les opérations renvoyées à un professionnel. La notice ne justifie ni un calibre différent, ni l’emploi d’un emplacement libre.",
+          "description": "Consulter les repères propres à la première phase et identifier les opérations renvoyées à un professionnel. La notice ne justifie ni un calibre différent, ni l’emploi d’un emplacement libre.",
+          "scope": "Renault Clio 5 phase 1 ; période de notice affichée : 18/12/2018–01/06/2023 ; version française. Vérifier équipement et étiquette du véhicule."
+        },
+        {
           "id": "renault-fuses",
           "title": "Renault — vérifier les fusibles",
           "url": "https://www.user-manual.renault.com/fr/node/19296",
@@ -541,7 +898,9 @@
       "verifiedAt": "2026-10-20",
       "scope": "general_method_not_vehicle_compatibility",
       "requiresVehicleConfirmation": true,
-      "relatedVideos": []
+      "relatedVideos": [],
+      "sourcesUpdatedAt": "2026-10-23",
+      "cardSummary": "Repérez le bon boîtier, son affectation et le calibre d’origine avant toute intervention."
     },
     {
       "id": "guide-lighting",
@@ -561,6 +920,34 @@
       ],
       "sources": [
         {
+          "id": "renault-clio5-2025-2026-lighting",
+          "title": "Clio 5 — Éclairage extérieur : remplacement des lampes",
+          "url": "https://www.user-manual.renault.com/fr/feux-%C3%A9clairages-remplacement-des-lampes/eclairage-exterieur-remplacement-des-lampes",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 5 ; période de notice affichée : 15/09/2025–16/03/2026 ; version française. Équipement LED et particularités E-tech full hybrid à distinguer.",
+          "section": "Projecteurs avant ; feux arrière et latéraux ; particularité version E-tech full hybrid",
+          "verifiedAt": "2026-10-23",
+          "evidenceNote": "Page lue : elle oppose les modules pour lesquels Renault demande une intervention à certaines lampes arrière décrites pas à pas. L’ancien lien fr.e-guide a été écarté car il redirigeait vers l’accueil générique.",
+          "summary": "Identifier le type d’éclairage avant toute intervention et consulter la procédure correspondant au bloc concerné. Les références de lampes de la notice ne sont pas présentées comme universelles.",
+          "description": "Identifier le type d’éclairage avant toute intervention et consulter la procédure correspondant au bloc concerné. Les références de lampes de la notice ne sont pas présentées comme universelles.",
+          "scope": "Renault Clio 5 ; période de notice affichée : 15/09/2025–16/03/2026 ; version française. Équipement LED et particularités E-tech full hybrid à distinguer."
+        },
+        {
+          "id": "renault-clio4-phase2-front-lighting",
+          "title": "Clio 4 phase 2 — Projecteurs avant : remplacement des lampes",
+          "url": "https://www.user-manual.renault.com/fr/content/x98/section-5-practical-advice/projecteurs-avant-remplacement-des-lampes-13",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 4 phase 2 ; période de notice affichée : 01/09/2016–30/12/2020 ; version française. Branches halogènes et LED selon l’équipement.",
+          "section": "Projecteurs avant : remplacement des lampes (1/3) — croisement/route halogènes et éclairage LED",
+          "verifiedAt": "2026-10-23",
+          "evidenceNote": "Modèle, phase et période lus ; séquences pour lampes halogènes et renvois au professionnel pour plusieurs autres équipements vérifiés dans le texte.",
+          "summary": "La procédure illustre pourquoi l’accès et le remplacement diffèrent entre halogène et LED. Choisir la branche de son équipement et suivre la notice complète ; aucun rétrofit ni équivalence de lampe n’est déduit.",
+          "description": "La procédure illustre pourquoi l’accès et le remplacement diffèrent entre halogène et LED. Choisir la branche de son équipement et suivre la notice complète ; aucun rétrofit ni équivalence de lampe n’est déduit.",
+          "scope": "Renault Clio 4 phase 2 ; période de notice affichée : 01/09/2016–30/12/2020 ; version française. Branches halogènes et LED selon l’équipement."
+        },
+        {
           "id": "renault-lighting",
           "title": "Renault Kangoo — remplacement des lampes",
           "url": "https://www.user-manual.renault.com/fr/feux-%C3%A9clairages-remplacement-des-lampes/eclairage-exterieur-remplacement-des-lampes-3",
@@ -572,7 +959,9 @@
       "verifiedAt": "2026-10-20",
       "scope": "general_method_not_vehicle_compatibility",
       "requiresVehicleConfirmation": true,
-      "relatedVideos": []
+      "relatedVideos": [],
+      "sourcesUpdatedAt": "2026-10-23",
+      "cardSummary": "Distinguez lampes et modules LED, puis retrouvez les accès et les opérations autorisées par la notice."
     },
     {
       "id": "guide-diagnostics",
@@ -592,6 +981,20 @@
       ],
       "sources": [
         {
+          "id": "volvo-xc90-2025-obd",
+          "title": "XC90 2025 — Prise de diagnostic embarqué",
+          "url": "https://www.volvocars.com/fr/support/car/xc90/article/47d2c97fd33effd3c0a8cc3718c999b7-e1da020cd919ef8bc0a8cc37305f60cc-8664b2fa77a7e089c0a8296870d1a409/",
+          "publisher": "Volvo Cars",
+          "sourceType": "manufacturer_specification",
+          "vehicleScope": "Volvo XC90, année-modèle 2025 ; support France ; article mis à jour le 28/10/2024. Aucune motorisation ou génération supplémentaire n’est déduite.",
+          "section": "Manuel de l’utilisateur → Entretien et maintenance → Entretien et réparations → Prise de diagnostic embarqué",
+          "verifiedAt": "2026-10-23",
+          "evidenceNote": "Fil d’Ariane XC90 2025 et contenu intégral de la courte section lus : type OBDII, localisation sous le tableau de bord et conditions de connexion des équipements agréés.",
+          "summary": "Comprendre le rôle et l’emplacement de la prise OBDII sur ce modèle. La source encadre les équipements autorisés ; elle ne fournit ni procédure universelle de lecture/effacement des codes, ni diagnostic d’une panne particulière.",
+          "description": "Comprendre le rôle et l’emplacement de la prise OBDII sur ce modèle. La source encadre les équipements autorisés ; elle ne fournit ni procédure universelle de lecture/effacement des codes, ni diagnostic d’une panne particulière.",
+          "scope": "Volvo XC90, année-modèle 2025 ; support France ; article mis à jour le 28/10/2024. Aucune motorisation ou génération supplémentaire n’est déduite."
+        },
+        {
           "id": "bosch-diagnostics",
           "title": "Bosch — diagnostic et documentation ESI[tronic]",
           "url": "https://www.boschaftermarket.com/fr/fr/equipements/diagnostic-ecu/esitronic/",
@@ -603,7 +1006,9 @@
       "verifiedAt": "2026-10-20",
       "scope": "general_method_not_vehicle_compatibility",
       "requiresVehicleConfirmation": true,
-      "relatedVideos": []
+      "relatedVideos": [],
+      "sourcesUpdatedAt": "2026-10-23",
+      "cardSummary": "Repérez la prise OBD et distinguez lecture des codes, diagnostic et réglages."
     },
     {
       "id": "guide-service-reset",
@@ -623,6 +1028,34 @@
       ],
       "sources": [
         {
+          "id": "renault-clio4-phase2-service-reset",
+          "title": "Clio 4 phase 2 — Autonomie de révision et de vidange",
+          "url": "https://www.user-manual.renault.com/fr/content/x98/section-1-getting-know-your-vehicle/ordinateur-de-bord-parametres-de-voyage-15",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio 4 phase 2 ; période de notice affichée : 01/09/2016–30/12/2020 ; version française. Affichage conditionné par l’équipement et le pays.",
+          "section": "Ordinateur de bord : paramètres de voyage (1/5) → h) Autonomie de révision ou de vidange → Réinitialisation",
+          "verifiedAt": "2026-10-23",
+          "evidenceNote": "Sous-section entretien et ses deux compteurs lus. La source distingue le compteur à remettre à zéro selon qu’une vidange a réellement accompagné la révision.",
+          "summary": "Retrouver les échéances et la remise à zéro correspondant à l’entretien effectué. Les valeurs affichées dans les exemples ne deviennent pas des intervalles universels ; un reset ne remplace pas l’entretien.",
+          "description": "Retrouver les échéances et la remise à zéro correspondant à l’entretien effectué. Les valeurs affichées dans les exemples ne deviennent pas des intervalles universels ; un reset ne remplace pas l’entretien.",
+          "scope": "Renault Clio 4 phase 2 ; période de notice affichée : 01/09/2016–30/12/2020 ; version française. Affichage conditionné par l’équipement et le pays."
+        },
+        {
+          "id": "renault-clio-from-2026-07-service-reset",
+          "title": "Clio, notice à partir du 15/07/2026 — Autonomie de révision et de vidange",
+          "url": "https://www.user-manual.renault.com/fr/content/nouvelle-renault-clio-1/faites-connaissance-avec-votre-vehicule/ordinateur-de-bord-1",
+          "publisher": "Renault",
+          "sourceType": "manufacturer_procedure",
+          "vehicleScope": "Renault Clio, nom affiché sans numéro de génération ; période de notice : 15/07/2026 à aujourd’hui lors de la vérification ; version française. Aucun numéro de génération ou moteur n’est inféré du chemin URL.",
+          "section": "Paramètres de voyage → f) Autonomie de révision et de vidange → Réinitialisation",
+          "verifiedAt": "2026-10-23",
+          "evidenceNote": "En-tête et sous-section lus : commande OK, distinction révision/vidange et dépendance à l’équipement et au pays. La période ouverte est celle affichée le jour de la consultation.",
+          "summary": "Consulter le menu et les compteurs de cette édition précise. La séquence de commande diffère de celle de la Clio 4 ; elle ne sert pas à effacer une alerte de panne ou de pression d’huile.",
+          "description": "Consulter le menu et les compteurs de cette édition précise. La séquence de commande diffère de celle de la Clio 4 ; elle ne sert pas à effacer une alerte de panne ou de pression d’huile.",
+          "scope": "Renault Clio, nom affiché sans numéro de génération ; période de notice : 15/07/2026 à aujourd’hui lors de la vérification ; version française. Aucun numéro de génération ou moteur n’est inféré du chemin URL."
+        },
+        {
           "id": "renault-reset",
           "title": "Renault — autonomie de révision et de vidange",
           "url": "https://www.user-manual.renault.com/fr/ordinateur-de-bord/parametres-de-voyage-4",
@@ -634,7 +1067,9 @@
       "verifiedAt": "2026-10-20",
       "scope": "general_method_not_vehicle_compatibility",
       "requiresVehicleConfirmation": true,
-      "relatedVideos": []
+      "relatedVideos": [],
+      "sourcesUpdatedAt": "2026-10-23",
+      "cardSummary": "Retrouvez le bon compteur et sa remise à zéro après l’entretien réellement effectué."
     }
   ]
 }

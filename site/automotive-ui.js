@@ -128,21 +128,14 @@ export function createAutomotiveUI(ctx){
   }
   function renderGuides(){
     const box=$('#vehicle-guides');if(!box)return;
-    box.innerHTML=`${ctx.getUi()!=='fr'?`<p class="small-note">${t('','Guidance articles are currently in French.','Las guías están disponibles en francés.')}</p>`:''}<div class="vehicle-guide-grid">${guides.map(guide=>`<details data-guide-id="${e(guide.id)}" class="${ctx.picks?.has('guide',guide.id)?'is-racelink-pick':''}"><summary><span>${e(guide.title)}</span>${ctx.picks?.badge('guide',guide.id,{compact:true})||''}</summary>${ctx.picks?.note('guide',guide.id)||''}<p>${e(guide.intro||guide.summary||'')}</p>${guide.fields?.length?`<ul>${guide.fields.map(field=>`<li>${e(field.label)}</li>`).join('')}</ul>`:''}${guide.missingDetailsMessage?`<p class="small-note">${e(guide.missingDetailsMessage)}</p>`:''}${guide.steps?.length?`<ol>${guide.steps.map(step=>`<li>${e(typeof step==='string'?step:step.text)}</li>`).join('')}</ol>`:''}${guide.checklist?.length?`<ul>${guide.checklist.map(step=>`<li>${e(step)}</li>`).join('')}</ul>`:''}<div class="guide-sources">${sourceLinks(guide.sources)}</div>${guide.relatedVideos?.length?`<div class="guide-related">${guide.relatedVideos.map(video=>`<button type="button" data-video="${e(video.id)}">▶ ${e(video.title)}</button>`).join('')}<span>${t('Sélection sur titre · compatibilité à vérifier','Selected by title · check applicability','Selección por título · comprobar compatibilidad')}</span></div>`:''}${guide.task?`<button type="button" data-guide-task="${e(guide.task)}">${t('Trouver les tutoriels','Find tutorials','Buscar tutoriales')} ↗</button>`:''}</details>`).join('')}</div>${manuals.length?`<p class="detail-label">${t('NOTICES CONSTRUCTEURS','OWNER’S MANUALS','MANUALES DEL FABRICANTE')}</p><div class="manual-links">${sourceLinks(manuals)}</div>`:''}`;
-    box.querySelectorAll('[data-guide-task]').forEach(button=>button.addEventListener('click',()=>{ctx.change('task',button.dataset.guideTask);$('#catalog-heading').scrollIntoView({behavior:'smooth'});}));
+    box.innerHTML=`${ctx.getUi()!=='fr'?`<p class="small-note">${t('','Guidance articles are currently in French.','Las guías están disponibles en francés.')}</p>`:''}<div class="vehicle-guide-grid">${guides.map(guide=>`<article class="workshop-guide"><h3>${e(guide.title)}</h3><p>${e(guide.cardSummary||guide.intro||'')}</p><button type="button" data-guide="${e(guide.id)}">${t('Ouvrir le guide et ses sources','Open guide and sources','Abrir guía y fuentes')} <span aria-hidden="true">→</span></button></article>`).join('')}</div>${manuals.length?`<p class="detail-label">${t('TROUVER LA NOTICE DE MON VÉHICULE','FIND MY VEHICLE MANUAL','ENCONTRAR EL MANUAL DE MI VEHÍCULO')}</p><div class="manual-links">${sourceLinks(manuals)}</div>`:''}`;
   }
   function renderContext(task=ctx.getState().task){
     const hint=$('#maintenance-guide-hint');if(!hint)return;
     const guide=guides.find(g=>g.task&&g.task===task);
     hint.hidden=!guide;
     if(!guide){hint.innerHTML='';return;}
-    hint.innerHTML=`<div>${ctx.picks?.badge('guide',guide.id,{compact:true})||''}<strong>${e(guide.title)}</strong><p>${e(guide.intro)}</p></div><button type="button">${t('Lire les repères sourcés','Read sourced guidance','Leer la guía con fuentes')} ↗</button>`;
-    hint.querySelector('button').addEventListener('click',()=>{
-      if($('#vehicle-disclosure'))$('#vehicle-disclosure').open=true;
-      $('.workshop-guidance').open=true;
-      const item=[...root.querySelectorAll('[data-guide-id]')].find(el=>el.dataset.guideId===guide.id);
-      if(item){item.open=true;item.scrollIntoView({behavior:'smooth',block:'center'});item.querySelector('summary').focus({preventScroll:true});}
-    });
+    hint.innerHTML=`<div><span class="guide-card-kind">${t('Les repères RaceLink','RaceLink guidance','Guía RaceLink')}</span><strong>${e(guide.title)}</strong><p>${e(guide.cardSummary||guide.intro)}</p></div><button type="button" data-guide="${e(guide.id)}">${t('Guide & notices constructeur','Guide & manufacturer manuals','Guía y manuales del fabricante')} <span aria-hidden="true">→</span></button>`;
   }
   function cardMarkup(video){
     const vehicles=video.automotive?.vehicles||[];
@@ -159,7 +152,7 @@ export function createAutomotiveUI(ctx){
   async function load(){
     const [tax,guidance]=await Promise.allSettled([
       fetch('/racelink-academy/automotive-taxonomy.json').then(r=>r.ok?r.json():Promise.reject()),
-      fetch('/racelink-academy/vehicle-guides.json').then(r=>r.ok?r.json():Promise.reject())
+      fetch('/racelink-academy/vehicle-guides.json?v=guide-v16').then(r=>r.ok?r.json():Promise.reject())
     ]);
     if(tax.status==='fulfilled')taxonomy=tax.value;
     if(guidance.status==='fulfilled'){guides=[...(guidance.value.identification?[guidance.value.identification]:[]),...(guidance.value.guides||[])];manuals=guidance.value.manuals||[];ctx.picks?.setResources(guides.filter(g=>g.recommendation).map(g=>({kind:'guide',id:g.id,...g.recommendation})));}

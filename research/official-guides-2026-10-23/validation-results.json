@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-23T13:08:59.116738+00:00",
+  "result": "passed",
+  "tests": {
+    "guide_contract": 6,
+    "existing_backend_guide_regressions": 4,
+    "total": 10,
+    "browser_visual_tests": 0
+  },
+  "guides": 11,
+  "source_links": 45,
+  "new_source_links": 21,
+  "videos": 36901,
+  "production_video_rows_unchanged": true,
+  "videos_rows_sha256": "e86b6c26d4a604292dcbc0674d4b8a09a02bc20124b69a3813bcb5da078920eb",
+  "production_database_access": "read-only URI; no imports/migrations/exports against production",
+  "temporary_export_verified": true,
+  "worker_guide_list_and_detail_parity": true,
+  "changed_app_files": [
+    {
+      "path": "server.py",
+      "sha256": "49ea5682be7a6a4dbfac06da9101057a45ff0ad5abc882ae6b51a947f24a55b4"
+    },
+    {
+      "path": "public/vehicle-guides.json",
+      "sha256": "560b4641e6aaae5475f10e580fee1d13f8d063069239d0bf227dcc008f915899"
+    },
+    {
+      "path": "tests_guides_contract.py",
+      "sha256": "5f6a1f463613a90a897fbab7e51058cf4ae939d6faad5771617dcb6bb71778df"
+    }
+  ],
+  "notes": [
+    "cardSummary projected to description; full intro preserved in guide",
+    "source_count computed from validated sources",
+    "manufacturer examples remain general guidance without inferred compatibility",
+    "production export and publication left to parent"
+  ]
+}

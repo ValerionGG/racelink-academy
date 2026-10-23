@@ -1,0 +1,93 @@
+{
+  "generated_at": "2026-10-23T13:11:06.437Z",
+  "runtime": "v24.16.0",
+  "command": "node tests_navigation.mjs",
+  "status": "passed",
+  "passed": 16,
+  "failed": 0,
+  "results": [
+    {
+      "name": "syntax: app/mobile/identity/discovery",
+      "status": "passed"
+    },
+    {
+      "name": "active navigation: home, library category, FAQ and saved",
+      "status": "passed"
+    },
+    {
+      "name": "sidebar vehicle action closes menu before dispatch",
+      "status": "passed"
+    },
+    {
+      "name": "search from another view preserves exact filters and draft (desktop)",
+      "status": "passed"
+    },
+    {
+      "name": "search from another view preserves exact filters and draft (mobile)",
+      "status": "passed"
+    },
+    {
+      "name": "resource close cannot reopen search; subsequent explicit search still works",
+      "status": "passed"
+    },
+    {
+      "name": "an older queued close event does not close a newly reopened search",
+      "status": "passed"
+    },
+    {
+      "name": "Escape/cancel restores search controls and leaves the sheet lock cleared",
+      "status": "passed"
+    },
+    {
+      "name": "mobile to desktop resize closes sheets and moves the original search node",
+      "status": "passed"
+    },
+    {
+      "name": "filter sheet returns the same controls and vehicle focus",
+      "status": "passed"
+    },
+    {
+      "name": "UI language event leaves content language and vehicle filters intact",
+      "status": "passed"
+    },
+    {
+      "name": "content language event retains UI language, typed query and specification",
+      "status": "passed"
+    },
+    {
+      "name": "home language picker selects video format without changing UI locale",
+      "status": "passed"
+    },
+    {
+      "name": "URL restore and serialize preserve independent ui/language and exact vehicle fields",
+      "status": "passed"
+    },
+    {
+      "name": "submit from saved switches to Explore and keeps precise filters",
+      "status": "passed"
+    },
+    {
+      "name": "all current product labels have FR/EN/ES text; sidebar EN/ES are localized",
+      "status": "passed"
+    }
+  ],
+  "source_sha256": {
+    "public/app.js": "38974f60bf31abede469fbd33c2e2dca83452d07fb67b70431eb71781faf4cc1",
+    "public/mobile-ui.js": "e3a2d79c4da5c0a24c9786a4ceb6ec4ce3b60416ed473c14d2e89fea3856bc09",
+    "public/identity-ui.js": "f259417fac9a147e0b9f201aaf1fbfcb44eba6aa964cf5e69ba6a82597d34892",
+    "public/index.html": "4b6319e55f8006b89aff59479904992417cec0815ab2c9efab37ac87e76ea698"
+  },
+  "scope": {
+    "browser_used": false,
+    "visual_test": false,
+    "network_used": false,
+    "application_modified": false,
+    "executed": "Real mobile/identity modules; production app language/submit listeners and syncUrl/restoreUrl/chooseContentLanguage extracted unchanged.",
+    "test_doubles": "Minimal DOM nodes/events, controlled dialog focus/close queue; app renderer/loadVideos/setFilter/changeView callbacks stubbed in app handler tests.",
+    "limits": [
+      "No browser layout, CSS rendering, native dialog conformance, touch keyboard or screen reader validation.",
+      "The full app bootstrap, API requests and view rendering are not executed.",
+      "Language handler tests isolate callbacks; they do not prove every renderer is side-effect free."
+    ]
+  }
+}

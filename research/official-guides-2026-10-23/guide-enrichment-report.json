@@ -1,0 +1,74 @@
+{
+  "source_batches": [
+    {
+      "file": "work\\official-procedures\\sources-a.json",
+      "sha256": "1020dc2c156f049d5df18113a97e3d1eacf75a49a8f7d04de660d6f838e66a41"
+    },
+    {
+      "file": "work\\official-procedures\\sources-b.json",
+      "sha256": "587c82a9af6f2496d55cfa7f4e4e7503878cf3886a7975854e04f05949171f50"
+    }
+  ],
+  "guides": [
+    {
+      "id": "vehicle-identification",
+      "sources": 6,
+      "card_summary_length": 105
+    },
+    {
+      "id": "guide-fuel-choice",
+      "sources": 6,
+      "card_summary_length": 93
+    },
+    {
+      "id": "guide-oil-spec",
+      "sources": 5,
+      "card_summary_length": 95
+    },
+    {
+      "id": "guide-oil-change",
+      "sources": 5,
+      "card_summary_length": 96
+    },
+    {
+      "id": "guide-wipers",
+      "sources": 3,
+      "card_summary_length": 91
+    },
+    {
+      "id": "guide-wheel-change",
+      "sources": 4,
+      "card_summary_length": 93
+    },
+    {
+      "id": "guide-battery",
+      "sources": 5,
+      "card_summary_length": 86
+    },
+    {
+      "id": "guide-fuses",
+      "sources": 3,
+      "card_summary_length": 89
+    },
+    {
+      "id": "guide-lighting",
+      "sources": 3,
+      "card_summary_length": 102
+    },
+    {
+      "id": "guide-diagnostics",
+      "sources": 2,
+      "card_summary_length": 77
+    },
+    {
+      "id": "guide-service-reset",
+      "sources": 3,
+      "card_summary_length": 84
+    }
+  ],
+  "new_source_entries": 21,
+  "guide_count": 11,
+  "source_entries": 45,
+  "before_sha256": "98a380e2fdb17fdbaafa874f56e02e6a63a9153e12189802c24484d46486f720",
+  "after_sha256": "560b4641e6aaae5475f10e580fee1d13f8d063069239d0bf227dcc008f915899"
+}

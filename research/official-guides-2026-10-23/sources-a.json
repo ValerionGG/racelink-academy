@@ -1,0 +1,199 @@
+{
+  "_meta": {
+    "version": "1.0.0",
+    "checkedAt": "2026-10-23T13:01:40Z",
+    "language": "fr",
+    "scope": "Références complémentaires pour cinq guides RaceLink. Lecture de contenu sur les sites officiels des constructeurs ; aucune vérification de compatibilité individuelle et aucune modification du catalogue.",
+    "counts": {"tasks": 5, "sourceEntries": 10, "distinctDocuments": 8, "manufacturerProcedureEntries": 8, "manufacturerSpecificationEntries": 2, "manualPortalEntries": 0},
+    "method": "Pages HTML lues et sections PDF consultées dans le texte extrait. Les pages PDF indiquées sont des positions dans le fichier, en base 1 ; la pagination imprimée est conservée séparément. Les figures du PDF n'ont pas été inspectées visuellement, car l'outil de capture a échoué.",
+    "applicability": "Ces notices sont des exemples précisément délimités, jamais des prescriptions pour tous les véhicules portant le même nom. Vérifier véhicule, moteur, équipement, marché et édition avant emploi. Les champs de quantité, couple et référence de pièce ne sont pas déduits.",
+    "editionPolicy": "La période Renault est affichée par le site. Le code d'archive Peugeot ed01-20 est conservé tel quel sans en déduire une date d'édition certaine. Le copyright Ford 2026 n'est pas considéré comme l'année du véhicule ou de la notice.",
+    "attemptedButNotVerified": [
+      {
+        "url": "https://www.user-manual.renault.com/fr/notice/18147/pdf",
+        "status": "pdf_download_not_verified",
+        "note": "La page de téléchargement a été lue, mais l'ouverture de son lien PDF a produit une erreur interne de l'outil. Le PDF Renault n'est donc pas présenté comme consulté ; les sections HTML ci-dessous l'ont été."
+      }
+    ]
+  },
+  "oil_spec": {
+    "sources": [
+      {
+        "id": "ford-puma-15-ecoblue-oil-spec-7589",
+        "title": "Ford Puma — Quantités et spécifications : 1.5L EcoBlue",
+        "url": "https://www.fordservicecontent.com/Ford_Content/vdirsnet/OwnerManual/Home/Content?ProcUid=G2137156&Uid=G2133999&buildtype=web&countryCode=FRA&div=f&languageCode=fr&moidRef=G1635371&userMarket=fra&vFilteringEnabled=False&variantid=7589",
+        "publisher": "Ford Motor Company",
+        "sourceType": "manufacturer_specification",
+        "vehicleScope": "Ford Puma, moteur 1.5L EcoBlue, manuel français variantid=7589. Année, phase et période d'application exactes non affichées dans la section consultée : à confirmer avec la notice d'origine.",
+        "section": "Quantités et spécifications — 1.5L EcoBlue > Moteur > Huile moteur > Matériaux",
+        "verifiedAt": "2026-10-23T13:01:40Z",
+        "evidenceNote": "La page identifie le moteur et le manuel Puma. Le tableau associe SAE 0W-20 à WSS-M2C952-A1 ; un paragraphe distinct encadre une solution d'appoint. Le contenu a été lu, pas seulement son statut HTTP.",
+        "summary": "Exemple concret de lecture conjointe de la viscosité et de l'homologation constructeur. Ford donne priorité au manuel fourni d'origine avec le véhicule.",
+        "limits": "Ne pas généraliser cette référence aux autres Puma ni aux autres moteurs. La règle d'appoint n'est pas une équivalence universelle pour une vidange complète."
+      },
+      {
+        "id": "renault-clio5p1-oil-quality",
+        "title": "Renault Clio 5 phase 1 — Où trouver la qualité d'huile prescrite",
+        "url": "https://www.user-manual.renault.com/fr/chapitre4-entretien/niveau-huile-moteur-appoint-remplissage-vidange-moteur",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 5 phase 1 ; période affichée par la notice : 18/12/2018 à 01/06/2023 ; moteur à identifier séparément.",
+        "section": "Niveau huile moteur : appoint, remplissage, vidange moteur > Qualité d'huile moteur",
+        "verifiedAt": "2026-10-23T13:01:40Z",
+        "evidenceNote": "La rubrique Qualité d'huile moteur renvoie explicitement au document d'entretien du véhicule.",
+        "summary": "Permet de repérer le document complémentaire nécessaire pour choisir l'huile.",
+        "limits": "La page ne fournit pas de norme RN, de viscosité ou de tableau de compatibilité moteur."
+      }
+    ],
+    "readingSteps": [
+      {"text": "Identifier la motorisation et l'édition avant de lire le tableau.", "sourceIds": ["ford-puma-15-ecoblue-oil-spec-7589"]},
+      {"text": "Relever ensemble la viscosité et l'homologation ; distinguer les exceptions d'appoint.", "sourceIds": ["ford-puma-15-ecoblue-oil-spec-7589"]},
+      {"text": "Si la notice renvoie au document d'entretien, obtenir celui du véhicule avant de choisir une référence.", "sourceIds": ["renault-clio5p1-oil-quality"]}
+    ]
+  },
+  "oil_change": {
+    "sources": [
+      {
+        "id": "renault-clio5p1-oil-level",
+        "title": "Renault Clio 5 phase 1 — Niveau huile moteur : généralités",
+        "url": "https://www.user-manual.renault.com/fr/chapitre4-entretien/niveau-huile-moteur-generalites",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; illustration et jauge à rapprocher du moteur réel.",
+        "section": "Niveau huile moteur : généralités > Lecture du niveau d'huile",
+        "verifiedAt": "2026-10-23T13:01:40Z",
+        "evidenceNote": "Le texte décrit les conditions de lecture, l'utilisation de la jauge et les repères minimum/maximum. Il distingue cette lecture de l'alerte du tableau de bord.",
+        "summary": "Procédure propriétaire pour contrôler le niveau d'huile, utile avant et après une intervention.",
+        "limits": "Ne couvre ni démontage du filtre, ni bouchon de vidange, ni couple de serrage."
+      },
+      {
+        "id": "renault-clio5p1-oil-topup-drain",
+        "title": "Renault Clio 5 phase 1 — Appoint, remplissage et renseignements de vidange",
+        "url": "https://www.user-manual.renault.com/fr/chapitre4-entretien/niveau-huile-moteur-appoint-remplissage-vidange-moteur",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; capacité et entretien dépendent du moteur.",
+        "section": "Niveau huile moteur : appoint, remplissage, vidange moteur > Appoint/remplissage ; Vidange moteur ; Capacité de vidange",
+        "verifiedAt": "2026-10-23T13:01:40Z",
+        "evidenceNote": "Le texte décrit l'appoint et le contrôle à la jauge. Capacité et périodicité sont renvoyées au document d'entretien ou au représentant de la marque.",
+        "summary": "Référence pour préparer l'intervention et comprendre les informations à obtenir avant la vidange.",
+        "limits": "Ce n'est pas une procédure complète de vidange : bouchon, filtre, joint et couples ne sont pas détaillés."
+      }
+    ],
+    "readingSteps": [
+      {"text": "Lire d'abord la méthode de contrôle correspondant à la jauge du véhicule.", "sourceIds": ["renault-clio5p1-oil-level"]},
+      {"text": "Repérer les renvois vers le document d'entretien pour la capacité et l'échéance.", "sourceIds": ["renault-clio5p1-oil-topup-drain"]},
+      {"text": "Obtenir une procédure moteur complète avant toute dépose du bouchon ou du filtre.", "sourceIds": ["renault-clio5p1-oil-topup-drain"]}
+    ],
+    "coverageGap": "Aucune procédure constructeur gratuite de vidange complète, avec filtre et serrages pour un moteur précisément identifié, n'a été vérifiée dans ce lot. Le guide peut légitimement présenter préparation, niveau et recherche du document ; il ne doit pas annoncer une procédure intégrale."
+  },
+  "fuel_choice": {
+    "sources": [
+      {
+        "id": "renault-clio5p1-fuel-tank",
+        "title": "Renault Clio 5 phase 1 — Réservoir carburant",
+        "url": "https://www.user-manual.renault.com/fr/chapitre1-faites-connaissance-avec-votre-v%C3%A9hicule/reservoir-carburant",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; paragraphes essence, Diesel et GPL à distinguer selon l'équipement.",
+        "section": "Réservoir carburant > Qualité du carburant ; Version essence ; Version diesel ; Remplissage carburant",
+        "verifiedAt": "2026-10-23T13:01:40Z",
+        "evidenceNote": "La notice demande de confronter le carburant à l'étiquette de trappe et au tableau des caractéristiques moteur. Elle traite aussi l'ouverture, le remplissage et la fermeture.",
+        "summary": "Point d'entrée pour identifier le carburant prescrit et retrouver la procédure de ravitaillement du véhicule.",
+        "limits": "Ne donne aucune autorisation générale d'utiliser de l'E85. Un nom de modèle ou un indice d'octane isolé ne suffit pas à établir la compatibilité."
+      },
+      {
+        "id": "renault-clio5p1-engine-fuel-spec",
+        "title": "Renault Clio 5 phase 1 — Caractéristiques moteurs et types de carburant",
+        "url": "https://www.user-manual.renault.com/fr/chapitre6-caract%C3%A9ristiques-techniques/caracteristiques-moteurs",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_specification",
+        "vehicleScope": "Renault Clio 5 phase 1, période 18/12/2018 à 01/06/2023. Tableau lu : 1.0 SCe/B4D, 1.0 TCe/H4D Turbo, 1.3 TCe/H5H Turbo et 1.5 dCi/K9K Turbo ; marché européen pour les indications de carburants normalisés.",
+        "section": "Caractéristiques moteurs > Versions ; Type moteur ; Type de carburant ; Types de carburant répondant aux normes européennes",
+        "verifiedAt": "2026-10-23T13:01:40Z",
+        "evidenceNote": "Le tableau associe les colonnes de motorisation aux familles de carburant, aux normes et au renvoi à la trappe. Les versions E-Tech ne figurent pas dans le tableau consulté.",
+        "summary": "Complément technique pour lire la bonne colonne moteur et le périmètre de marché, sans extrapolation à toutes les Clio.",
+        "limits": "La présence de plusieurs carburants dans une page ne signifie pas qu'ils conviennent à toutes ses motorisations. Confirmer la colonne, le moteur et l'étiquette réelle."
+      }
+    ],
+    "readingSteps": [
+      {"text": "Identifier le moteur et retrouver sa colonne dans le tableau.", "sourceIds": ["renault-clio5p1-engine-fuel-spec"]},
+      {"text": "Comparer les indications à l'étiquette située dans la trappe.", "sourceIds": ["renault-clio5p1-fuel-tank"]},
+      {"text": "Lire uniquement la procédure essence, Diesel ou GPL correspondant au véhicule.", "sourceIds": ["renault-clio5p1-fuel-tank"]}
+    ]
+  },
+  "wipers": {
+    "sources": [
+      {
+        "id": "renault-clio5p1-wiper-replacement",
+        "title": "Renault Clio 5 phase 1 — Balais d'essuie-vitres : remplacement",
+        "url": "https://www.user-manual.renault.com/fr/chapitre5-conseils-pratiques/balais-dessuie-vitres-remplacement",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; remplacement avant et arrière séparément décrit.",
+        "section": "Balais d'essuie-vitres : remplacement > Remplacement des balais d'essuie-vitre avant ; Remontage ; Balai d'essuie-vitre arrière",
+        "verifiedAt": "2026-10-23T13:01:40Z",
+        "evidenceNote": "La page explique la position de service, le déverrouillage, le réenclenchement et le contrôle du verrouillage. La manœuvre arrière est distincte.",
+        "summary": "Procédure de remplacement directement exploitable avec la notice exacte et les balais appropriés.",
+        "limits": "Aucune référence commerciale ni longueur universelle de balai n'est établie. Protéger le vitrage et ne pas transposer la commande de position de service à un autre modèle."
+      },
+      {
+        "id": "peugeot-208-p21-wipers-ed01-20",
+        "title": "Peugeot 208 / e-208 — Changement d'un balai d'essuie-vitre",
+        "url": "https://public.servicebox.peugeot.com/APddb/modeles/208.p2/eGuide_p21_ed01-20/pdfs/9999_9999_401_fr-FR.pdf#page=68",
+        "publisher": "Automobiles Peugeot",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Peugeot 208 / e-208, famille P21 identifiée par le répertoire officiel 208.p2. Archive eGuide_p21_ed01-20 ; date d'édition non confirmée dans le contenu lu.",
+        "section": "Éclairage et visibilité > Position particulière des essuie-vitres avant ; Changement d'un balai d'essuie-vitre",
+        "printedPages": "66–67",
+        "pdfPages": "68–69 (numérotation du fichier en base 1)",
+        "verifiedAt": "2026-10-23T13:01:40Z",
+        "evidenceNote": "Texte PDF lu : position d'entretien puis démontage/remontage avant et arrière.",
+        "summary": "Procédure illustrée spécifique à cette notice ; vérifier ses figures dans le PDF avant intervention.",
+        "limits": "Figures non inspectées ici. Dimensions et références des pièces non établies."
+      }
+    ],
+    "readingSteps": [
+      {"text": "Repérer la position de service et la procédure avant/arrière voulue.", "sourceIds": ["renault-clio5p1-wiper-replacement", "peugeot-208-p21-wipers-ed01-20"]},
+      {"text": "Identifier sur le véhicule le verrou décrit, sans forcer un autre montage.", "sourceIds": ["renault-clio5p1-wiper-replacement"]},
+      {"text": "Lire le contrôle de verrouillage et la remise en position normale.", "sourceIds": ["renault-clio5p1-wiper-replacement"]}
+    ]
+  },
+  "wheel_change": {
+    "sources": [
+      {
+        "id": "renault-clio5p1-wheel-change",
+        "title": "Renault Clio 5 phase 1 — Changement de roue",
+        "url": "https://www.user-manual.renault.com/fr/chapitre5-conseils-pratiques/changement-de-roue",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 5 phase 1 ; période affichée : 18/12/2018 à 01/06/2023 ; procédure pour les véhicules équipés du cric et de la clé de roue décrits.",
+        "section": "Changement de roue > Véhicules équipés du cric et de la clé de roue",
+        "verifiedAt": "2026-10-23T13:01:40Z",
+        "evidenceNote": "Lecture des conditions de stationnement, des repères de levage, de la dépose et du remontage. La page demande un contrôle rapide du serrage et de la pression après remplacement.",
+        "summary": "Procédure de dépannage spécifique au cric embarqué et aux points d'appui du véhicule.",
+        "limits": "Aucun couple chiffré vérifié sur cette page. Le cric de dépannage ne permet pas de travailler sous le véhicule. Vérifier aussi la notice de la roue de secours et l'équipement réellement fourni."
+      },
+      {
+        "id": "peugeot-208-p21-wheel-change-ed01-20",
+        "title": "Peugeot 208 / e-208 — Démontage et montage de la roue",
+        "url": "https://public.servicebox.peugeot.com/APddb/modeles/208.p2/eGuide_p21_ed01-20/pdfs/9999_9999_401_fr-FR.pdf#page=182",
+        "publisher": "Automobiles Peugeot",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Peugeot 208 / e-208, famille P21 (répertoire 208.p2), archive eGuide_p21_ed01-20 ; équipement de secours selon version. Date d'édition non confirmée.",
+        "section": "En cas de panne > Roue de secours > Démontage de la roue ; Montage de la roue ; Après un changement de roue",
+        "printedPages": "180–183",
+        "pdfPages": "182–185 (numérotation du fichier en base 1)",
+        "verifiedAt": "2026-10-23T13:01:40Z",
+        "evidenceNote": "Texte lu : stationnement, points de levage A/B, dépose, montage et contrôles ultérieurs.",
+        "summary": "Procédure avec repères propres au véhicule et restrictions de roue de secours.",
+        "limits": "Pas de couple chiffré repris. Vérifier les figures et le cric correspondant à la version."
+      }
+    ],
+    "readingSteps": [
+      {"text": "Vérifier le matériel fourni et les conditions de mise en sécurité.", "sourceIds": ["renault-clio5p1-wheel-change"]},
+      {"text": "Repérer les points de levage de cette notice sur le véhicule réel.", "sourceIds": ["renault-clio5p1-wheel-change", "peugeot-208-p21-wheel-change-ed01-20"]},
+      {"text": "Lire les limites de la roue de secours et les contrôles après montage.", "sourceIds": ["peugeot-208-p21-wheel-change-ed01-20"]}
+    ]
+  }
+}

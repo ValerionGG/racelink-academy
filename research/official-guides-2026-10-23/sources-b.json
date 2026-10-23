@@ -1,0 +1,158 @@
+{
+  "vehicle-identification": {
+    "sources": [
+      {
+        "id": "renault-clio5-2023-2025-identification",
+        "title": "Clio 5 — Plaques d’identification véhicule",
+        "url": "https://www.user-manual.renault.com/fr/informations-v%C3%A9hicule/plaques-didentification-vehicule-2",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_specification",
+        "vehicleScope": "Renault Clio 5 ; période de notice affichée : 02/06/2023–16/03/2025 ; version française. Présence et emplacement des informations variables selon le véhicule.",
+        "section": "Plaques d’identification véhicule — plaque constructeur A et marquage B",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Contenu de la page constructeur lu : en-tête du modèle et de la période, repères de la plaque et liste de ses informations. Le lien interne historique a été résolu vers cette URL directe.",
+        "summary": "Repérer le numéro d’identification et les informations de la plaque constructeur pour retrouver la bonne documentation. Cette page ne détermine pas à elle seule une compatibilité de pièces."
+      },
+      {
+        "id": "tesla-model3-2024-identification",
+        "title": "Model 3 2024+ — Étiquettes d’identification",
+        "url": "https://www.tesla.com/ownersmanual/model3/fr_fr/GUID-B27A666D-866B-4766-B690-CCD1B66E2134.html",
+        "publisher": "Tesla",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Tesla Model 3 2024+ ; Europe ; manuel français, version logicielle 2026.32 affichée lors de la vérification. Un emplacement supplémentaire est réservé aux véhicules construits à Shanghai.",
+        "section": "Étiquettes d’identification → Numéro d’identification du véhicule",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Section VIN lue et rattachement vérifié au sommaire https://www.tesla.com/ownersmanual/model3/fr_fr/ : consultation à l’écran et emplacements physiques, dont une particularité d’usine.",
+        "summary": "Retrouver le VIN dans les commandes du véhicule ou sur ses marquages. Les emplacements décrits concernent cette version du Model 3, sans décodage universel du VIN."
+      }
+    ]
+  },
+  "diagnostics": {
+    "sources": [
+      {
+        "id": "volvo-xc90-2025-obd",
+        "title": "XC90 2025 — Prise de diagnostic embarqué",
+        "url": "https://www.volvocars.com/fr/support/car/xc90/article/47d2c97fd33effd3c0a8cc3718c999b7-e1da020cd919ef8bc0a8cc37305f60cc-8664b2fa77a7e089c0a8296870d1a409/",
+        "publisher": "Volvo Cars",
+        "sourceType": "manufacturer_specification",
+        "vehicleScope": "Volvo XC90, année-modèle 2025 ; support France ; article mis à jour le 28/10/2024. Aucune motorisation ou génération supplémentaire n’est déduite.",
+        "section": "Manuel de l’utilisateur → Entretien et maintenance → Entretien et réparations → Prise de diagnostic embarqué",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Fil d’Ariane XC90 2025 et contenu intégral de la courte section lus : type OBDII, localisation sous le tableau de bord et conditions de connexion des équipements agréés.",
+        "summary": "Comprendre le rôle et l’emplacement de la prise OBDII sur ce modèle. La source encadre les équipements autorisés ; elle ne fournit ni procédure universelle de lecture/effacement des codes, ni diagnostic d’une panne particulière."
+      }
+    ]
+  },
+  "battery": {
+    "sources": [
+      {
+        "id": "renault-clio5-2025-2026-battery",
+        "title": "Clio 5 — Batterie : dépannage",
+        "url": "https://www.user-manual.renault.com/fr/d%C3%A9pannage/batterie-depannage",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 5 ; période de notice affichée : 15/09/2025–16/03/2026 ; version française. Suivre la branche correspondant au véhicule, notamment E-tech full hybrid.",
+        "section": "Branchement d’un chargeur ; démarrage avec la batterie d’un autre véhicule ; bornes déportées",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Page complète lue, avec identification du modèle, de la période, des bornes illustrées et des différences propres à l’hybride. La restriction sur l’emploi de l’hybride comme véhicule donneur est explicite.",
+        "summary": "Consulter les conditions constructeur de recharge et de dépannage de la batterie 12 V. Les branchements varient avec la version ; cette référence ne décrit pas une intervention sur la batterie de traction."
+      },
+      {
+        "id": "tesla-model3-north-america-lead-acid-battery",
+        "title": "Model 3 — Remplacement de la batterie plomb-acide basse tension, Amérique du Nord",
+        "url": "https://service.tesla.com/docs/Public/diy/model3/fr_fr/GUID-2588F809-41E3-43F1-84E5-6745C7C18DBE.html",
+        "publisher": "Tesla",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Tesla Model 3 équipée d’une batterie basse tension plomb-acide ; Amérique du Nord uniquement, malgré la langue française de la page. Procédures séparées avant/après octobre 2020 environ ; identifier d’abord la technologie de batterie, variable selon l’usine et la date de fabrication. Pas applicable aux batteries lithium-ion ni à la haute tension.",
+        "section": "Remplacement de la batterie plomb-acide basse tension — conditions initiales et branches avant/après octobre 2020 environ",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Introduction, restrictions de marché, critères de technologie et première branche de dépose lus. La page indique une portée nord-américaine ; aucune compatibilité européenne n’en est tirée et aucun couple de serrage n’est repris.",
+        "summary": "Procédure constructeur détaillée pour une configuration précise du Model 3. Vérifier le marché, la batterie et la branche de fabrication avant de suivre la notice complète ; le titre français ne signifie pas que la procédure convient à un véhicule français."
+      }
+    ]
+  },
+  "fuses": {
+    "sources": [
+      {
+        "id": "renault-clio5-2025-fuses",
+        "title": "Clio 5 — Compartiments et affectation des fusibles",
+        "url": "https://www.user-manual.renault.com/fr/content/clio/practical-advice/fusibles",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 5 ; période de notice affichée : 17/03/2025–14/09/2025 ; version française. Affectations dépendantes de l’équipement ; cas GPL séparé.",
+        "section": "Compartiments à fusibles ; affectation des fusibles ; fusible GPL dans le compartiment avant",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Sections et tableau d’affectation lus. Le document distingue les trappes de l’habitacle, le boîtier moteur et le cas GPL ; il réserve certaines opérations au professionnel.",
+        "summary": "Repérer les accès et rapprocher la panne de l’étiquette présente sur le véhicule. La page exige le calibre d’origine et limite l’intervention aux fusibles indiqués ; ses affectations ne valent pas pour toute Clio."
+      },
+      {
+        "id": "renault-clio5-phase1-fuses",
+        "title": "Clio 5 phase 1 — Fusibles",
+        "url": "https://www.user-manual.renault.com/fr/chapitre5-conseils-pratiques/fusibles",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 5 phase 1 ; période de notice affichée : 18/12/2018–01/06/2023 ; version française. Vérifier équipement et étiquette du véhicule.",
+        "section": "Compartiments à fusibles ; affectation des fusibles ; fusibles du compartiment moteur",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "En-tête de phase et période vérifiés ; accès, pince et affectations lus. Il s’agit d’une édition distincte de celle de 2025, et non d’une extension de sa compatibilité.",
+        "summary": "Consulter les repères propres à la première phase et identifier les opérations renvoyées à un professionnel. La notice ne justifie ni un calibre différent, ni l’emploi d’un emplacement libre."
+      }
+    ]
+  },
+  "lighting": {
+    "sources": [
+      {
+        "id": "renault-clio5-2025-2026-lighting",
+        "title": "Clio 5 — Éclairage extérieur : remplacement des lampes",
+        "url": "https://www.user-manual.renault.com/fr/feux-%C3%A9clairages-remplacement-des-lampes/eclairage-exterieur-remplacement-des-lampes",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 5 ; période de notice affichée : 15/09/2025–16/03/2026 ; version française. Équipement LED et particularités E-tech full hybrid à distinguer.",
+        "section": "Projecteurs avant ; feux arrière et latéraux ; particularité version E-tech full hybrid",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Page lue : elle oppose les modules pour lesquels Renault demande une intervention à certaines lampes arrière décrites pas à pas. L’ancien lien fr.e-guide a été écarté car il redirigeait vers l’accueil générique.",
+        "summary": "Identifier le type d’éclairage avant toute intervention et consulter la procédure correspondant au bloc concerné. Les références de lampes de la notice ne sont pas présentées comme universelles."
+      },
+      {
+        "id": "renault-clio4-phase2-front-lighting",
+        "title": "Clio 4 phase 2 — Projecteurs avant : remplacement des lampes",
+        "url": "https://www.user-manual.renault.com/fr/content/x98/section-5-practical-advice/projecteurs-avant-remplacement-des-lampes-13",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 4 phase 2 ; période de notice affichée : 01/09/2016–30/12/2020 ; version française. Branches halogènes et LED selon l’équipement.",
+        "section": "Projecteurs avant : remplacement des lampes (1/3) — croisement/route halogènes et éclairage LED",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Modèle, phase et période lus ; séquences pour lampes halogènes et renvois au professionnel pour plusieurs autres équipements vérifiés dans le texte.",
+        "summary": "La procédure illustre pourquoi l’accès et le remplacement diffèrent entre halogène et LED. Choisir la branche de son équipement et suivre la notice complète ; aucun rétrofit ni équivalence de lampe n’est déduit."
+      }
+    ]
+  },
+  "service_reset": {
+    "sources": [
+      {
+        "id": "renault-clio4-phase2-service-reset",
+        "title": "Clio 4 phase 2 — Autonomie de révision et de vidange",
+        "url": "https://www.user-manual.renault.com/fr/content/x98/section-1-getting-know-your-vehicle/ordinateur-de-bord-parametres-de-voyage-15",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio 4 phase 2 ; période de notice affichée : 01/09/2016–30/12/2020 ; version française. Affichage conditionné par l’équipement et le pays.",
+        "section": "Ordinateur de bord : paramètres de voyage (1/5) → h) Autonomie de révision ou de vidange → Réinitialisation",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "Sous-section entretien et ses deux compteurs lus. La source distingue le compteur à remettre à zéro selon qu’une vidange a réellement accompagné la révision.",
+        "summary": "Retrouver les échéances et la remise à zéro correspondant à l’entretien effectué. Les valeurs affichées dans les exemples ne deviennent pas des intervalles universels ; un reset ne remplace pas l’entretien."
+      },
+      {
+        "id": "renault-clio-from-2026-07-service-reset",
+        "title": "Clio, notice à partir du 15/07/2026 — Autonomie de révision et de vidange",
+        "url": "https://www.user-manual.renault.com/fr/content/nouvelle-renault-clio-1/faites-connaissance-avec-votre-vehicule/ordinateur-de-bord-1",
+        "publisher": "Renault",
+        "sourceType": "manufacturer_procedure",
+        "vehicleScope": "Renault Clio, nom affiché sans numéro de génération ; période de notice : 15/07/2026 à aujourd’hui lors de la vérification ; version française. Aucun numéro de génération ou moteur n’est inféré du chemin URL.",
+        "section": "Paramètres de voyage → f) Autonomie de révision et de vidange → Réinitialisation",
+        "verifiedAt": "2026-10-23",
+        "evidenceNote": "En-tête et sous-section lus : commande OK, distinction révision/vidange et dépendance à l’équipement et au pays. La période ouverte est celle affichée le jour de la consultation.",
+        "summary": "Consulter le menu et les compteurs de cette édition précise. La séquence de commande diffère de celle de la Clio 4 ; elle ne sert pas à effacer une alerte de panne ou de pression d’huile."
+      }
+    ]
+  }
+}
