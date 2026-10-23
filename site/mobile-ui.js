@@ -51,7 +51,6 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore}) {
     if(draft.start!==null&&draft.end!==null)input.setSelectionRange(draft.start,draft.end,draft.direction||'none');
   }
   function openFilters(){
-    if(!mobile.matches)return;
     $('.mobile-filter-body').append(filters);
     filterDialog.showModal();$('#mobile-filters').setAttribute('aria-expanded','true');lock();update();
   }
@@ -59,11 +58,11 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore}) {
   function update(){
     restoreSearch();
     const state=getState(),total=getTotal();
-    $('#mobile-search-title').textContent=t('Que voulez-vous apprendre ?','What would you like to learn?','¿Qué quieres aprender?');
-    $('#mobile-filter-title').textContent=t('Votre recherche, en plus précis.','Make your search more precise.','Afina tu búsqueda.');
+    $('#mobile-search-title').textContent=t('Rechercher un tuto','Find a tutorial','Buscar un tutorial');
+    $('#mobile-filter-title').textContent=t('Affiner les résultats','Refine results','Afinar resultados');
     $('.mobile-search-help').textContent=t('Essayez « vidange Clio 3 », « huile 5W-30 » ou « freinage dégressif ». Ajoutez votre modèle pour préciser les résultats.','Try “oil change Clio 3”, “oil 5W-30” or “trail braking”. Add your model to refine the results.','Prueba « cambio aceite Clio 3 », « aceite 5W-30 » o « trail braking ». Añade tu modelo para afinar los resultados.');
     $('#edit-search-label').textContent=state.q||t('Rechercher un tuto, une question…','Search a tutorial, a question…','Busca un tutorial, una pregunta…');
-    const number=Object.entries(state).filter(([k,v])=>v&&!['q','page','sort','format'].includes(k)).length;
+    const number=Object.entries(state).filter(([k,v])=>v&&!['q','page','sort','format','language','make','model','generation','engine','year','fuel_type','body_type'].includes(k)).length;
     $('#mobile-filters').innerHTML=`${t('Filtres','Filters','Filtros')}${number?` <b>${number}</b>`:''}`;
     $('#mobile-vehicle').textContent=t('Préciser ma voiture ↗','Specify my car ↗','Precisar mi coche ↗');
     $('#show-filter-results').textContent=total===null?(isLoading()?t('Recherche en cours…','Searching…','Buscando…'):t('Catalogue indisponible','Catalog unavailable','Catálogo no disponible')):`${t('Voir','Show','Ver')} ${Number(total).toLocaleString(document.documentElement.lang)} ${total===1?t('résultat','result','resultado'):t('résultats','results','resultados')} →`;
@@ -96,6 +95,6 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore}) {
   for(const dialog of [searchDialog,filterDialog])dialog.addEventListener('click',event=>{
     if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom){if(dialog===searchDialog)closeSearch();else dialog.close();}}
   });
-  mobile.addEventListener('change',()=>{if(!mobile.matches){closeSearch();if(filterDialog.open)filterDialog.close();}restoreSearch();});
-  return {update,openSearch,closeSearch};
+  mobile.addEventListener('change',()=>{if(!mobile.matches){closeSearch();}restoreSearch();});
+  return {update,openSearch,closeSearch,openFilters};
 }

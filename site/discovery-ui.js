@@ -1,5 +1,5 @@
 import {icon} from './icons.js';
-import {attachRailNavigation} from './rail-navigation.js?v=atelier-v19d';
+import {attachRailNavigation} from './rail-navigation.js?v=workshop-v20';
 export function createDiscoveryUI(ctx) {
   const {escape:e,t}=ctx;
   const $=s=>document.querySelector(s);
@@ -99,7 +99,7 @@ export function createDiscoveryUI(ctx) {
     try{
       const [data,visuals]=await Promise.all([
         window.getCatalogJson('/aide/api/discovery'),
-        fetch(new URL('./visual-assets.json?v=atelier-v19d',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
+        fetch(new URL('./visual-assets.json?v=workshop-v20',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
       ]);
       catalog=data;visualAssets=Array.isArray(visuals?.assets)?visuals.assets:[];
       ctx.picks?.setVideos(catalog.shelves||[]);render();ctx.onPicksChange?.();
@@ -122,12 +122,14 @@ export function createDiscoveryUI(ctx) {
   }
   function renderSuggestions() {
     const root=$('#search-suggestions');
-    root.innerHTML=suggestions.map((item,i)=>`<button type="button" role="option" tabindex="-1" id="suggestion-${i}" data-suggestion="${i}" aria-selected="${active===i}"><span class="suggestion-copy"><span class="suggestion-kind">${item.type==='history'?t('Recherche récente','Recent search','Búsqueda reciente'):item.type==='video'?t('Vidéo','Video','Vídeo'):item.type==='guide'?t('Guide pratique','Practical guide','Guía práctica'):t('Explorer un sujet','Explore a topic','Explorar un tema')}</span><strong dir="auto">${e((item.match_basis==='editorial_default'?'':item.completion)||text(item.label))}</strong>${item.completion&&item.match_basis!=='editorial_default'?`<small>${e(text(item.label))}</small>`:''}${item.correction?`<small class="suggestion-correction">${e(item.corrections?.length ? t('Proposition : ','Suggestion: ','Propuesta: ')+item.corrections.map(c=>`${c.from} → ${c.to}`).join(' · ') : text(item.correction))}</small>`:''}${suggestionDetail(item)?`<small>${e(suggestionDetail(item))}</small>`:''}</span><b aria-hidden="true">${item.type==='video'?'↗':'→'}</b></button>`).join('');
+    let group='';
+    root.innerHTML=suggestions.map((item,i)=>{const kind=item.type==='history'?'history':item.type==='video'||item.type==='guide'?'resource':'topic';const title=kind==='history'?t('Vos recherches récentes','Your recent searches','Tus búsquedas recientes'):kind==='resource'?t('Ressources à découvrir','Resources to explore','Recursos para descubrir'):t('Pistes de recherche','Search suggestions','Sugerencias de búsqueda');const heading=kind!==group?`<div class="suggestion-group-label" role="presentation">${title}</div>`:'';group=kind;return heading+`<button type="button" role="option" tabindex="-1" id="suggestion-${i}" data-suggestion="${i}" aria-selected="${active===i}"><span class="suggestion-copy"><span class="suggestion-kind">${item.type==='history'?t('Recherche récente','Recent search','Búsqueda reciente'):item.type==='video'?t('Vidéo','Video','Vídeo'):item.type==='guide'?t('Guide pratique','Practical guide','Guía práctica'):t('Explorer un sujet','Explore a topic','Explorar un tema')}</span><strong dir="auto">${e((item.match_basis==='editorial_default'?'':item.completion)||text(item.label))}</strong>${item.completion&&item.match_basis!=='editorial_default'?`<small>${e(text(item.label))}</small>`:''}${item.correction?`<small class="suggestion-correction">${e(item.corrections?.length ? t('Proposition : ','Suggestion: ','Propuesta: ')+item.corrections.map(c=>`${c.from} → ${c.to}`).join(' · ') : text(item.correction))}</small>`:''}${suggestionDetail(item)?`<small>${e(suggestionDetail(item))}</small>`:''}</span><b aria-hidden="true">${item.type==='video'?'↗':'→'}</b></button>`;}).join('');
     root.hidden=!suggestions.length;$('#search').setAttribute('aria-expanded',String(suggestions.length>0));
     if(active>=0)$('#search').setAttribute('aria-activedescendant',`suggestion-${active}`);else $('#search').removeAttribute('aria-activedescendant');
     $('#suggestion-status').textContent=suggestions.length?`${suggestions.length} ${t('suggestions disponibles. Flèches pour parcourir, Entrée pour choisir.','suggestions available. Use arrows to navigate and Enter to choose.','sugerencias. Usa las flechas y pulsa Intro para elegir.')}`:'';
     const hasRecent=suggestions.some(x=>x.type==='history');
     $('#search-helper').innerHTML=`<span>${suggestions.length?t('Suggestions liées à votre recherche.','Suggestions related to your search.','Sugerencias relacionadas con tu búsqueda.'):t('Pas de suggestion précise. Lancez votre recherche avec Entrée.','No precise suggestion. Press Enter to search.','Sin sugerencias precisas. Pulsa Intro para buscar.')}</span>${hasRecent?`<button type="button" data-clear-recent>${t('Effacer l’historique','Clear history','Borrar historial')}</button>`:''}`;
+    $('#search-helper').insertAdjacentHTML('beforeend',`<button type="button" data-submit-search>${t('Voir les résultats →','Show results →','Ver resultados →')}</button>`);
     $('#search-helper').hidden=false;
   }
   async function suggest() {
@@ -169,6 +171,7 @@ export function createDiscoveryUI(ctx) {
     } catch {if(version===recommendVersion)root.hidden=true;}
   }
   document.addEventListener('click',event=>{
+    if(event.target.closest('[data-submit-search]')){$('#search-form').requestSubmit();return;}
     const entry=event.target.closest('[data-entry-category]');if(entry){closeSuggestions();ctx.applySearch({...ctx.getState(),category:entry.dataset.entryCategory,page:1});return;}
     if(event.target.closest('[data-browse-all]')){closeSuggestions();ctx.applySearch({});return;}
     if(event.target.closest('[data-browse-guides]')){closeSuggestions();ctx.applySearch({format:'guide'});return;}

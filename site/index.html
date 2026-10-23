@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=atelier-v19d">
-  <script src="/racelink-academy/catalog-client.js?v=atelier-v19d" defer></script>
-  <script type="module" src="/racelink-academy/app.js?v=atelier-v19d"></script>
+  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=workshop-v20">
+  <script src="/racelink-academy/catalog-client.js?v=workshop-v20" defer></script>
+  <script type="module" src="/racelink-academy/app.js?v=workshop-v20"></script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
@@ -69,33 +69,31 @@
       <section id="discovery-hub" class="discovery-hub wrap" aria-label="Explorer par objectif"></section>
       <section class="catalog wrap" aria-labelledby="catalog-heading">
 
-        <button type="button" class="results-back" data-home>← Accueil</button><div class="section-intro"><h1 id="catalog-heading" data-i18n="catalogTitle">La bibliothèque</h1></div><div id="results-search-desktop"></div>
-        <div class="catalog-actions"><button type="button" id="edit-search"><span data-icon="search"></span><span id="edit-search-label">Rechercher un tuto, une question…</span><small aria-hidden="true">↗</small></button><button id="mobile-filters" class="outline-button" aria-expanded="false" aria-controls="filters-dialog">Filtres</button></div>
-        <div class="catalog-context-row"><div class="content-language-bar"><div><label for="language">Langue des contenus</label><select id="language" aria-describedby="content-language-note"><option value="">Toutes les langues</option><option value="fr">Français</option></select></div><div class="language-shortcuts" role="group" aria-label="Choix rapide de langue"><button type="button" data-content-language="fr" aria-pressed="false">Français</button><button type="button" data-content-language="" aria-pressed="true">Toutes</button></div><p id="content-language-note">La langue peut être estimée à partir du titre et de la source.</p></div>
-
-        <details id="vehicle-disclosure" class="vehicle-disclosure"><summary><span id="vehicle-disclosure-label">Affiner pour votre voiture</span><span id="vehicle-disclosure-value">Marque, moteur, huile, intervention…</span><b aria-hidden="true">＋</b></summary><section id="vehicle-hub" class="vehicle-hub" aria-label="Mon véhicule et mes interventions"></section></details>
-        </div>
-        <div id="format-tabs" class="format-tabs" role="group" aria-label="Format de la ressource"><button data-format="all" aria-pressed="true">Tout</button><button data-format="video" aria-pressed="false">Vidéos</button><button data-format="guide" aria-pressed="false">Guides</button></div>
+        <header class="library-head">
+          <div class="library-heading"><button type="button" class="results-back" data-home>← Accueil</button><h1 id="catalog-heading" tabindex="-1" data-i18n="catalogTitle">Trouver le bon tuto</h1></div>
+          <div class="library-search-row"><div id="results-search-desktop"></div><div class="catalog-actions"><button type="button" id="edit-search"><span data-icon="search"></span><span id="edit-search-label">Rechercher un tuto, une question…</span><small aria-hidden="true">Modifier</small></button></div></div>
+          <div class="library-controls">
+            <div class="content-language-bar"><div><label for="language">Langue</label><select id="language" aria-describedby="content-language-note"><option value="">Toutes les langues</option><option value="fr">Français</option></select></div><div class="language-shortcuts" role="group" aria-label="Choix rapide de langue"><button type="button" data-content-language="fr" aria-pressed="false">Français</button><button type="button" data-content-language="" aria-pressed="true">Toutes</button></div><p id="content-language-note">La langue peut être estimée à partir du titre et de la source.</p></div>
+            <button type="button" class="library-vehicle" data-open-vehicle><span data-icon="car"></span><span id="vehicle-trigger-label">Ma voiture</span><span aria-hidden="true">＋</span></button>
+            <button id="mobile-filters" class="library-filter-button" aria-expanded="false" aria-controls="filters-dialog">Filtres</button>
+          </div>
+        </header>
+        <details id="vehicle-disclosure" class="vehicle-disclosure"><summary><span id="vehicle-disclosure-label">Votre véhicule</span><span id="vehicle-disclosure-value">Marque, moteur, huile, intervention…</span><b aria-hidden="true">−</b></summary><section id="vehicle-hub" class="vehicle-hub" aria-label="Mon véhicule et mes interventions"></section><button type="button" class="vehicle-apply" data-close-vehicle>Voir les résultats →</button></details>
+        <div class="library-typebar"><div id="format-tabs" class="format-tabs" role="group" aria-label="Format de la ressource"><button data-format="all" aria-pressed="true">Tout</button><button data-format="video" aria-pressed="false">Vidéos</button><button data-format="guide" aria-pressed="false">Guides</button></div><span id="library-context-caption"></span></div>
         <div class="catalog-layout">
           <aside id="filters" class="filters" aria-label="Filtres du catalogue">
             <div class="filter-heading"><strong data-i18n="refine">Filtrer les résultats</strong><button id="reset-filters" data-i18n="reset">Effacer</button></div>
 
-            <fieldset class="category-list"><legend data-i18n="discipline">SUJET</legend><div id="category-filters"></div></fieldset>
-            <div class="filter-field"><label for="level" data-i18n="level">NIVEAU</label><select id="level"><option value="">Tous les niveaux</option><option value="beginner">Débutant</option><option value="intermediate">Intermédiaire</option><option value="advanced">Avancé / Pro</option></select></div>
-            <div class="filter-field"><label for="platform" data-i18n="platform">PLATEFORME</label><select id="platform"><option value="">Toutes les plateformes</option></select></div>
-            <details class="advanced-filters"><summary>Plus de filtres</summary>            <div class="filter-field context-field"><label for="domain">CONTEXTE</label><select id="domain"><option value="">Tous les contextes</option><option value="motorsport">Motorsport & fondamentaux</option><option value="automotive_adjacent">Mécanique automobile</option></select></div>
-            <div class="filter-field"><label for="content_format">TYPE DE VIDÉO</label><select id="content_format"><option value="">Tous les types</option></select><small class="filter-explainer">Tutoriel, démonstration, cours ou direct. Classement selon les informations disponibles.</small></div>
-            <div class="filter-field"><label for="duration" data-i18n="duration">TEMPS DISPONIBLE</label><select id="duration"><option value="">Toutes les durées</option><option value="short">Moins de 10 min</option><option value="medium">10 à 30 min</option><option value="long">Plus de 30 min</option></select></div>
-            <label class="check-filter"><input type="checkbox" id="transcript"><span data-i18n="withTranscript">Avec transcription</span></label>
-            <label class="check-filter"><input type="checkbox" id="license"><span data-i18n="freeLicense">Licence libre confirmée</span></label>
-            </details>
-            <div class="filter-note"><span aria-hidden="true">↳</span><p data-i18n="filterNote">La plateforme indique où la ressource est publiée. Le format distingue vidéos et guides.</p></div>
+            <section class="filter-section"><h3 data-filter-copy="preferences">Quel contenu vous convient ?</h3><div class="filter-pair"><div class="filter-field"><label for="level" data-i18n="level">Niveau</label><select id="level"><option value="">Tous les niveaux</option><option value="beginner">Débutant</option><option value="intermediate">Intermédiaire</option><option value="advanced">Avancé / Pro</option></select></div><div class="filter-field"><label for="duration" data-i18n="duration">Durée</label><select id="duration"><option value="">Toutes les durées</option><option value="short">Moins de 10 min</option><option value="medium">10 à 30 min</option><option value="long">Plus de 30 min</option></select></div></div><div class="filter-field"><label for="content_format">Type de vidéo</label><select id="content_format"><option value="">Tous les types</option></select><small class="filter-explainer">Tutoriel, démonstration, cours ou direct. Classement selon les informations disponibles.</small></div></section>
+            <section class="filter-section"><h3 data-filter-copy="source">Où regarder ?</h3><p data-filter-copy="sourceHint">Choisissez la plateforme qui publie la vidéo.</p><div class="filter-field platform-field"><label class="sr-only" for="platform" data-i18n="platform">PLATEFORME</label><select id="platform" hidden><option value="">Toutes les plateformes</option></select><div id="platform-choices" class="platform-choices" role="group" aria-label="Plateformes"></div></div></section>
+            <details class="filter-section filter-topics"><summary><h3 data-filter-copy="topic">Quel sujet ?</h3></summary><fieldset class="category-list"><legend class="sr-only" data-i18n="discipline">SUJET</legend><div id="category-filters"></div></fieldset></details>
+            <details class="advanced-filters"><summary>Disponibilité du texte et droits</summary><div class="filter-field context-field"><label for="domain">CONTEXTE</label><select id="domain"><option value="">Tous les contextes</option><option value="motorsport">Motorsport & fondamentaux</option><option value="automotive_adjacent">Mécanique automobile</option></select></div><label class="check-filter"><input type="checkbox" id="transcript"><span data-i18n="withTranscript">Avec transcription</span></label><label class="check-filter"><input type="checkbox" id="license"><span data-i18n="freeLicense">Licence libre confirmée</span></label></details>
+            <div class="filter-note"><p data-i18n="filterNote">La plateforme indique où la ressource est publiée. Le format distingue vidéos et guides.</p></div>
           </aside>
           <div class="catalog-content">
             <div class="results-toolbar"><p id="results-status" role="status" aria-live="polite">Chargement du catalogue…</p><label><span class="sr-only">Trier les résultats</span><select id="sort"><option value="relevance">Pertinence</option><option value="newest">Les plus récentes</option><option value="duration">Les plus courtes</option><option value="title">Titre A → Z</option></select></label></div>
-            <p id="search-mode" class="search-mode" hidden></p>
             <div id="active-filters" class="active-filters"></div>
-            <div id="maintenance-guide-hint" hidden></div>
+            <details class="result-explanation"><summary id="result-explanation-label">Comprendre ces résultats</summary><p id="search-mode" class="search-mode" hidden></p><div id="maintenance-guide-hint" hidden></div></details>
             <div id="video-grid" class="video-grid" aria-busy="true"></div>
             <section id="context-discovery" class="context-discovery" aria-label="Suggestions liées à votre recherche" hidden></section>
             <div id="pagination" class="pagination"></div>
