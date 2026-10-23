@@ -6,12 +6,13 @@
   <meta name="theme-color" content="#101012">
   <meta name="description" content="La bibliothèque ouverte de RaceLink Academy : tutoriels motorsport, recherche, parcours et aide, du premier tour au perfectionnement.">
   <title>RaceLink Academy — La bibliothèque ouverte</title>
+  <script src="/racelink-academy/theme.js?v=themes-v22"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Onest:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=cinema-v21&amp;rev=4">
-  <script src="/racelink-academy/catalog-client.js?v=cinema-v21" defer></script>
-  <script type="module" src="/racelink-academy/app.js?v=cinema-v21&amp;rev=3"></script>
+  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=themes-v22&amp;rev=1">
+  <script src="/racelink-academy/catalog-client.js?v=themes-v22" defer></script>
+  <script type="module" src="/racelink-academy/app.js?v=themes-v22&amp;rev=1"></script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
@@ -24,6 +25,16 @@
       <button class="nav-item" data-view="saved"><span data-icon="bookmark"></span><span data-i18n="saved">Enregistrés</span></button>
     </nav>
     <div class="header-right"><button class="header-search" aria-label="Rechercher" data-open-search><span data-icon="search"></span><span data-product-text="search">Rechercher</span><kbd>/</kbd></button>
+<div class="theme-controls" data-theme-controls role="group" aria-label="Apparence">
+  <button type="button" class="theme-choice" data-theme-choice="light" aria-pressed="false" aria-label="Thème clair" title="Thème clair">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+    <span data-theme-label>Clair</span>
+  </button>
+  <button type="button" class="theme-choice" data-theme-choice="dark" aria-pressed="false" aria-label="Thème sombre" title="Thème sombre">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20.9 13a9 9 0 0 1-9.9-9.9A9 9 0 1 0 20.9 13Z"/></svg>
+    <span data-theme-label>Sombre</span>
+  </button>
+</div>
       <label class="interface-language"><span id="interface-language-label">Site</span><select id="ui-language" aria-label="Langue de l’interface"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option></select></label>
       <button class="saved-button" data-view="saved"><span data-icon="bookmark"></span><span data-i18n="saved">Enregistrés</span><b id="saved-count">0</b></button>
       <a class="academy-back" href="https://focus.racelink-app.co/" target="_blank" rel="noopener" data-i18n="academy">Les masterclass ↗</a>

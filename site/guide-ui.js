@@ -1,5 +1,5 @@
-import {guidePhoto,guideTopic} from './guide-art.js?v=cinema-v21';
-import {createGuideSources,isManufacturerReference} from './guide-sources.js?v=cinema-v21';
+import {guidePhoto,guideTopic} from './guide-art.js?v=themes-v22';
+import {createGuideSources,isManufacturerReference} from './guide-sources.js?v=themes-v22';
 
 export function createGuideUI({escape:e,t,picks,safeUrl}) {
   let version=0;

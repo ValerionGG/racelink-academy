@@ -1,6 +1,6 @@
-import {GUIDE_PHOTOS} from './guide-photos.js?v=cinema-v21';
+import {GUIDE_PHOTOS} from './guide-photos.js?v=themes-v22';
 import {icon} from './icons.js';
-import {attachRailNavigation} from './rail-navigation.js?v=cinema-v21';
+import {attachRailNavigation} from './rail-navigation.js?v=themes-v22';
 
 // Composition only: the catalogue and photo registries remain the sources of truth.
 const ESSENTIALS = ['oil_spec', 'fuel_choice', 'wheel_change', 'wipers', 'battery', 'diagnostics'];
@@ -132,7 +132,7 @@ export function createCinemaHome(ctx) {
     if (disposed) return {ready:false, guides:0, videos:0};
     if (loading) return loading;
     const staticJson = async file => {
-      const response = await fetch(new URL(`./${file}?v=cinema-v21`, import.meta.url));
+      const response = await fetch(new URL(`./${file}?v=themes-v22`, import.meta.url));
       if (!response.ok) throw new Error('Static collection unavailable');
       return response.json();
     };

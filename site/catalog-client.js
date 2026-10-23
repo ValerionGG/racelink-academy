@@ -32,7 +32,7 @@
     if (!workerPromise) {
       workerPromise = (async () => {
         if (!window.Worker) throw new Error("Ce navigateur ne prend pas en charge la recherche locale.");
-        worker = new Worker(new URL("catalog-worker.js?v=cinema-v21", base), {type: "module"});
+        worker = new Worker(new URL("catalog-worker.js?v=themes-v22", base), {type: "module"});
         worker.onmessage = event => {
           const entry = pending.get(event.data.id);
           if (!entry) return;
