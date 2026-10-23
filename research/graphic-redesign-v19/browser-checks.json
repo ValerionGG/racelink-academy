@@ -1,0 +1,291 @@
+{
+  "checked_at": "2026-10-23T17:14:05.411Z",
+  "release": "atelier-v19d",
+  "final_code_commit": "850e57869e9ad9219c054000c8e7b46718835a25",
+  "scope": "Public GitHub Pages via CUA; desktop and emulated responsive viewport. No physical-device or exhaustive accessibility audit.",
+  "observations": [
+    {
+      "case": "search French",
+      "dialogScroll": 390,
+      "dialogWidth": 390,
+      "documentWidth": 390,
+      "focus": "search",
+      "language": "fr",
+      "open": true,
+      "query": "vidange Clio 3",
+      "scrollWidth": 390
+    },
+    {
+      "case": "video close",
+      "focus": "edit-search",
+      "query": "vidange Clio 3",
+      "searchOpen": false,
+      "videoOpen": false
+    },
+    {
+      "case": "guide manufacturer jump",
+      "dialogScroll": 360,
+      "dialogWidth": 360,
+      "focus": "guide-sources",
+      "heading": 88.0625,
+      "photoLoaded": true
+    },
+    {
+      "case": "v19b results",
+      "heroDisplay": "none",
+      "language": "fr",
+      "query": "vidange Clio 3",
+      "results": "2 ressources trouvées · « vidange Clio 3 »",
+      "scrollWidth": 375,
+      "width": 375
+    },
+    {
+      "case": "320 Spanish home",
+      "languageBottom": 392.0625,
+      "navTop": 666,
+      "photoBottom": 628.6875,
+      "scrollWidth": 305,
+      "searchBottom": 338.0625,
+      "width": 305
+    },
+    {
+      "case": "320 menu",
+      "focus": "Cerrar el menú",
+      "scrollWidth": 305,
+      "width": 305
+    },
+    {
+      "case": "768 home",
+      "header": {
+        "bottom": 80,
+        "height": 80,
+        "left": 0,
+        "right": 753,
+        "top": 0,
+        "width": 753,
+        "x": 0,
+        "y": 0
+      },
+      "scrollWidth": 753,
+      "search": {
+        "bottom": 462.609375,
+        "height": 62,
+        "left": 30,
+        "right": 353.40625,
+        "top": 400.609375,
+        "width": 323.40625,
+        "x": 30,
+        "y": 400.609375
+      },
+      "width": 753
+    },
+    {
+      "case": "1280 guide library",
+      "columns": "450px 450px",
+      "guideCount": 11,
+      "photoWidths": [
+        450,
+        450
+      ],
+      "scrollWidth": 1265,
+      "width": 1265
+    },
+    {
+      "case": "v19c desktop home",
+      "image": [
+        {
+          "loaded": true,
+          "src": "./assets/photos/oil.jpg"
+        },
+        {
+          "loaded": true,
+          "src": "https://valeriongg.github.io/racelink-academy/assets/photos/service.jpg"
+        },
+        {
+          "loaded": true,
+          "src": "https://valeriongg.github.io/racelink-academy/assets/photos/driving.jpg"
+        },
+        {
+          "loaded": true,
+          "src": "https://valeriongg.github.io/racelink-academy/assets/photos/simracing.jpg"
+        }
+      ],
+      "scrollWidth": 1265,
+      "stylesheet": "/racelink-academy/app-ui.css?v=atelier-v19c",
+      "width": 1265
+    },
+    {
+      "case": "v19c path open",
+      "heading": "MÉCANIQUEUN REPÈRE À LA FOIS.",
+      "scrollWidth": 1265,
+      "steps": 4,
+      "width": 1265
+    },
+    {
+      "case": "v19c mobile home",
+      "languageBottom": 415.46875,
+      "scrollWidth": 375,
+      "searchBottom": 361.46875,
+      "width": 375
+    },
+    {
+      "case": "v19c mobile guide tabs",
+      "guides": 11,
+      "hero": "none",
+      "scrollWidth": 375,
+      "tabs": {
+        "client": 48,
+        "overflow": "visible",
+        "scroll": 48
+      },
+      "width": 375
+    },
+    {
+      "bodyOverflow": "hidden",
+      "case": "v19c reader scroll containment",
+      "dialog": [
+        {
+          "overscroll": "contain",
+          "scrollWidth": 375,
+          "width": 375
+        }
+      ],
+      "focus": "dialog-title"
+    },
+    {
+      "case": "v19c guide sources",
+      "focus": "guide-sources",
+      "headingTop": 88.28125,
+      "links": []
+    },
+    {
+      "bodyOverflow": "visible",
+      "case": "v19c 320 library",
+      "focus": "Lire : Choisir le bon carburant",
+      "scrollWidth": 305,
+      "tabsScroll": 278,
+      "tabsWidth": 273,
+      "width": 305
+    },
+    {
+      "bodyOverflow": "hidden",
+      "case": "v19c 320 full screen menu",
+      "dialog": {
+        "bottom": 752,
+        "height": 740,
+        "left": 12,
+        "right": 332,
+        "top": 12,
+        "width": 320,
+        "x": 12,
+        "y": 12
+      },
+      "scrollWidth": 305
+    },
+    {
+      "case": "v19c tablet English",
+      "hero": "The passion.The know-how.",
+      "scrollWidth": 753,
+      "searchName": "Search",
+      "width": 753
+    },
+    {
+      "case": "v19d 320 loaded library",
+      "guides": 11,
+      "release": "/racelink-academy/app-ui.css?v=atelier-v19d",
+      "scrollWidth": 305,
+      "tabs": {
+        "clientHeight": 48,
+        "clientWidth": 273,
+        "scrollHeight": 48,
+        "scrollWidth": 273,
+        "text": "Tout\n36 912\nVidéos\n36 901\nGuides\n11"
+      },
+      "width": 305
+    },
+    {
+      "case": "v19d 320 menu corrected",
+      "clientWidth": 305,
+      "rect": {
+        "bottom": 740,
+        "height": 740,
+        "left": 0,
+        "right": 320,
+        "top": 0,
+        "width": 320,
+        "x": 0,
+        "y": 0
+      },
+      "scrollWidth": 305
+    },
+    {
+      "case": "v19d mobile home final",
+      "languageBottom": 415.46875,
+      "scrollWidth": 375,
+      "searchBottom": 361.46875,
+      "width": 375
+    },
+    {
+      "case": "v19d desktop home final French",
+      "language": "fr",
+      "scrollWidth": 1265,
+      "width": 1265
+    },
+    {
+      "case": "v19d mobile home final French",
+      "language": "fr",
+      "scrollWidth": 375,
+      "width": 375
+    }
+  ],
+  "version_notes": {
+    "unprefixed": "Initial V19 c14fed7",
+    "v19b": "8498987",
+    "v19c": "a1db7a7",
+    "v19d": "850e578"
+  },
+  "fixes": [
+    {
+      "issue": "Hero remained above mobile results in V19",
+      "resolved": "V19b"
+    },
+    {
+      "issue": "Format tabs had 1px vertical overflow and guide background could scroll",
+      "resolved": "V19c"
+    },
+    {
+      "issue": "320px menu kept inherited 12px inset; tabs overflowed internally by5px",
+      "resolved": "V19d: menu origin0/0 and tabs client/scrollWidth273"
+    }
+  ],
+  "screenshots": {
+    "desktop-home-final.png": "V19d French 1280",
+    "mobile-home-final.png": "V19d French390",
+    "mobile-menu-final.png": "V19d 320",
+    "mobile-guides-final.png": "V19c390",
+    "mobile-reader-final.png": "V19c390",
+    "desktop-paths-final.png": "V19c1280",
+    "mobile-paths-final.png": "V19c320",
+    "desktop-home.png": "V19 initial",
+    "mobile-home.png": "V19 initial",
+    "mobile-results.png": "V19 known hero visibility defect, corrected",
+    "mobile-results-final.png": "V19b hero corrected, tab overflow not yet corrected",
+    "mobile-search.png": "V19 initial",
+    "mobile-guide.png": "V19 initial",
+    "mobile-sources.png": "V19 initial",
+    "mobile-filters.png": "V19b",
+    "mobile-320-spanish.png": "V19b",
+    "menu-320-spanish.png": "V19b",
+    "tablet-home.png": "V19b",
+    "desktop-guides.png": "V19b",
+    "desktop-paths.png": "V19b old cards",
+    "desktop-faq.png": "V19b"
+  },
+  "limitations": [
+    "Not every page and viewport combination retested on V19d; final patch scope two CSS rules and cache markers.",
+    "No physical phone, system zoom, OS reduced-motion setting or screen-reader test.",
+    "Source links presented and scoped; earlier research established links, not reverified externally in this UI pass.",
+    "Guide source observation links array empty because the DOM selector missed the link class; the two Renault links were present in the accessibility observation."
+  ],
+  "viewport_reset": true
+}

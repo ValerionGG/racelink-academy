@@ -1,0 +1,30 @@
+{
+  "generated_at": "2026-10-23T17:07:58.291056+00:00",
+  "release": "atelier-v19c",
+  "revision_scope": "Editorial path rows and translated Discover the learning path CTA",
+  "command": "python -B -m unittest tests_export_static -v (same suite, report capture)",
+  "status": "failed",
+  "tests_run": 6,
+  "tests_passed": 5,
+  "test_output": "test_caption_vehicle_status_and_evidence_survive_public_export (tests_export_static.StaticExportTests.test_caption_vehicle_status_and_evidence_survive_public_export) ... ok\ntest_default_aide_export_remains_nested (tests_export_static.StaticExportTests.test_default_aide_export_remains_nested) ... ok\ntest_gzip_is_lossless_and_cache_key_matches_actual_catalog (tests_export_static.StaticExportTests.test_gzip_is_lossless_and_cache_key_matches_actual_catalog) ... ok\ntest_pages_flat_layout_and_public_prefix (tests_export_static.StaticExportTests.test_pages_flat_layout_and_public_prefix) ... ok\ntest_prefix_rejects_traversal_and_html_injection (tests_export_static.StaticExportTests.test_prefix_rejects_traversal_and_html_injection) ... ERROR\ntest_social_public_fields_survive_api_and_export_without_private_metadata (tests_export_static.StaticExportTests.test_social_public_fields_survive_api_and_export_without_private_metadata) ... ok\n\n======================================================================\nERROR: test_prefix_rejects_traversal_and_html_injection (tests_export_static.StaticExportTests.test_prefix_rejects_traversal_and_html_injection)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\Nad\\Documents\\Codex\\2026-10-20\\a-x20\\outputs\\focus-academy\\tests_export_static.py\", line 25, in tearDown\n    self.temp.cleanup()\n  File \"C:\\Users\\Nad\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\tempfile.py\", line 947, in cleanup\n    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)\n  File \"C:\\Users\\Nad\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\tempfile.py\", line 929, in _rmtree\n    _shutil.rmtree(name, onerror=onerror)\n  File \"C:\\Users\\Nad\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\shutil.py\", line 787, in rmtree\n    return _rmtree_unsafe(path, onerror)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Nad\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\shutil.py\", line 638, in _rmtree_unsafe\n    onerror(os.rmdir, path, sys.exc_info())\n  File \"C:\\Users\\Nad\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\shutil.py\", line 636, in _rmtree_unsafe\n    os.rmdir(path)\nOSError: [WinError 145] Le répertoire n’est pas vide: 'C:\\\\Users\\\\Nad\\\\AppData\\\\Local\\\\Temp\\\\tmprvbdhg97'\n\n----------------------------------------------------------------------\nRan 6 tests in 0.830s\n\nFAILED (errors=1)\n",
+  "failures": [
+    {
+      "test": "test_prefix_rejects_traversal_and_html_injection (tests_export_static.StaticExportTests.test_prefix_rejects_traversal_and_html_injection)",
+      "detail": "Traceback (most recent call last):\n  File \"C:\\Users\\Nad\\Documents\\Codex\\2026-10-20\\a-x20\\outputs\\focus-academy\\tests_export_static.py\", line 25, in tearDown\n    self.temp.cleanup()\n  File \"C:\\Users\\Nad\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\tempfile.py\", line 947, in cleanup\n    self._rmtree(self.name, ignore_errors=self._ignore_cleanup_errors)\n  File \"C:\\Users\\Nad\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\tempfile.py\", line 929, in _rmtree\n    _shutil.rmtree(name, onerror=onerror)\n  File \"C:\\Users\\Nad\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\shutil.py\", line 787, in rmtree\n    return _rmtree_unsafe(path, onerror)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\Nad\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\shutil.py\", line 638, in _rmtree_unsafe\n    onerror(os.rmdir, path, sys.exc_info())\n  File \"C:\\Users\\Nad\\AppData\\Roaming\\uv\\python\\cpython-3.11-windows-x86_64-none\\Lib\\shutil.py\", line 636, in _rmtree_unsafe\n    os.rmdir(path)\nOSError: [WinError 145] Le répertoire n’est pas vide: 'C:\\\\Users\\\\Nad\\\\AppData\\\\Local\\\\Temp\\\\tmprvbdhg97'\n"
+    }
+  ],
+  "scope": {
+    "database": "temporary fixture only",
+    "production_database_modified": false,
+    "browser_used": false,
+    "frontend_modified": false
+  },
+  "source_sha256": {
+    "tests_export_static.py": "9a75b091cf46a3b4226c014ff54d88b9d7826a8a3e0257236b5bce1dc3464a9d",
+    "scripts/export_static.py": "d990ce9be1368e7dd6f7899e96f5c97f9b8fd85043893baa650c11b410254054",
+    "public/index.html": "8322b2bc7a3c1e730aaa19bc26932432371bab6bd14fd3dde5cfa236182b4d95",
+    "public/app.js": "4ea3f37dcbfa24ee8219065eb8feafea9e259c583e1ceca684c0530f67a515bb",
+    "public/product-ui.css": "c4f3c50227c9597b40eef105d38a49240e764bbf55dc1ca569966bbf5e756432",
+    "public/app-ui.css": "2aef6d0255a4e1330653b7f24e8bd00a8cdd0cf637d88e8be080e29c4bfe1ab0"
+  }
+}

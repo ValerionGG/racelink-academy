@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-10-23T17:11:37.618750+00:00",
+  "release": "atelier-v19d",
+  "revision_scope": "Mobile navigation-dialog inset and narrow-screen format-tabs gap; cache-marker-only JavaScript changes",
+  "command": "python -B -m unittest tests_export_static -v (same suite, report capture)",
+  "status": "passed",
+  "tests_run": 6,
+  "tests_passed": 6,
+  "test_output": "test_caption_vehicle_status_and_evidence_survive_public_export (tests_export_static.StaticExportTests.test_caption_vehicle_status_and_evidence_survive_public_export) ... ok\ntest_default_aide_export_remains_nested (tests_export_static.StaticExportTests.test_default_aide_export_remains_nested) ... ok\ntest_gzip_is_lossless_and_cache_key_matches_actual_catalog (tests_export_static.StaticExportTests.test_gzip_is_lossless_and_cache_key_matches_actual_catalog) ... ok\ntest_pages_flat_layout_and_public_prefix (tests_export_static.StaticExportTests.test_pages_flat_layout_and_public_prefix) ... ok\ntest_prefix_rejects_traversal_and_html_injection (tests_export_static.StaticExportTests.test_prefix_rejects_traversal_and_html_injection) ... ok\ntest_social_public_fields_survive_api_and_export_without_private_metadata (tests_export_static.StaticExportTests.test_social_public_fields_survive_api_and_export_without_private_metadata) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.664s\n\nOK\n",
+  "failures": [],
+  "scope": {
+    "database": "temporary fixture only",
+    "production_database_modified": false,
+    "browser_used": false,
+    "frontend_modified": false
+  },
+  "source_sha256": {
+    "tests_export_static.py": "05d8fe4afd292406cc1bd8a327fa39332d8f8bb6308993d859120b74dc5f571f",
+    "scripts/export_static.py": "d990ce9be1368e7dd6f7899e96f5c97f9b8fd85043893baa650c11b410254054",
+    "public/index.html": "6c2316392934ab583c1633d4f09c730ef756a9d0835014e0814d727a1c93ac3a",
+    "public/app.js": "d5f6de8eace30379a57b4b098fbd85ab99bd35d677b80e3d104b7ee8605035f7",
+    "public/product-ui.css": "b08749e39c6e25fc376b7525475e71f7fc856ccf75f401cd581c186fae101176",
+    "public/app-ui.css": "427e370727dcb08cdf3b541730aeb263639f703ab585a951ab2f34f920c7779e"
+  }
+}

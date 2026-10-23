@@ -1,0 +1,123 @@
+{
+  "generated_at": "2026-10-23T17:11:57.780538+00:00",
+  "release": "atelier-v19d",
+  "status": "passed",
+  "checks": {
+    "navigation": {
+      "passed": 17,
+      "report": "navigation-checks.json",
+      "release": "atelier-v19c",
+      "rerun": false,
+      "scope_note": "17 tests passed on final V19c learning-path revision. Retained as historical JS-behavior evidence; not rerun or relabeled V19d. Current iteration changes CSS and JS cache markers per release owner."
+    },
+    "html_and_css_build": {
+      "passed": 14,
+      "report": "html-contract-checks.json",
+      "bundle_regenerated": false,
+      "bundle_verified_equal_to_current_sources": true,
+      "release": "atelier-v19d",
+      "rerun": true
+    },
+    "export": {
+      "passed": 6,
+      "report": "export-checks.json",
+      "database": "temporary fixtures",
+      "release": "atelier-v19d",
+      "rerun": true
+    },
+    "module_syntax": {
+      "passed": 16,
+      "report": "asset-build-checks.json",
+      "release": "atelier-v19",
+      "rerun": false,
+      "scope_note": "Earlier V19 auxiliary check retained; not rerun for V19d."
+    },
+    "local_assets": {
+      "present_nonempty": 12,
+      "report": "asset-build-checks.json",
+      "release": "atelier-v19",
+      "rerun": false,
+      "scope_note": "Earlier V19 auxiliary check retained; not rerun for V19d."
+    },
+    "guide_sources": {
+      "passed": 10,
+      "report": "asset-build-checks.json",
+      "release": "atelier-v19",
+      "rerun": false,
+      "scope_note": "Earlier V19 auxiliary check retained; not rerun for V19d."
+    }
+  },
+  "test_changes": [
+    {
+      "path": "tests_export_static.py",
+      "change": "V19d rerun changes three cache expectations from atelier-v19c to atelier-v19d; no assertion logic changed."
+    },
+    {
+      "path": "tests_navigation.mjs",
+      "change": "Only product-text count: 9 -> 8. V19 removes the header app-context caption; every remaining label must still be nonempty in FR/EN/ES, with exact sidebar localization assertions retained."
+    }
+  ],
+  "commands": [
+    "node tests_navigation.mjs",
+    "python -B tests_ui_html.py",
+    "python -B -m unittest tests_export_static -v",
+    "node --check public/<each of 16 JS modules>",
+    "node tests_guide_sources.mjs"
+  ],
+  "report_routing": "Navigation and HTML report writes redirected in test harness to research/graphic-redesign-v19; no change to their default historical report path or to application code. Export suite captured with unittest runner. The original console report paths refer to the test defaults, not the redirected files.",
+  "scope": {
+    "browser_used": false,
+    "visual_validation": false,
+    "network_used": false,
+    "frontend_modified": false,
+    "production_database_opened": false,
+    "production_catalog_exported": false,
+    "git_or_deployment_changed": false
+  },
+  "limitations": [
+    "DOM simulation and HTML parsing do not establish rendered layout, touch keyboard behavior, native dialog/browser conformance or screen-reader behavior.",
+    "Assets checked for local existence and nonzero bytes; no image render or remote-font check.",
+    "Only test expectations and reports were modified."
+  ],
+  "test_source_sha256": {
+    "tests_navigation.mjs": "840e67144bfee41e0d129036484470f6d1c207aec29dedb402b9f59e8ac8d83d",
+    "tests_ui_html.py": "fc8e1e7286dc1e0fa2b5b763f01e99c9f60f22adbc94bf8f02ba9515cae76164",
+    "tests_export_static.py": "05d8fe4afd292406cc1bd8a327fa39332d8f8bb6308993d859120b74dc5f571f",
+    "tests_guide_sources.mjs": "f2a15b27644d9c8a964de64073a0fe81619bc35474a8145a59f007d9edc12f1b"
+  },
+  "v19b_changes_observed": {
+    "results_visibility_selector": ".results-mode .hero.wrap",
+    "hero_action_fr": "Explorer la mécanique",
+    "search_placeholder_fr": "Un sujet, un modèle...",
+    "validation_scope": "Source and generated-bundle checked. Browser visibility fix remains for parent visual verification."
+  },
+  "v19c_validation": {
+    "checks": "Navigation 17/17, HTML and exact CSS bundle 14/14, temporary-fixture export 6/6.",
+    "test_expectations_changed": "Cache markers only.",
+    "browser_claim": false,
+    "frontend_modified": false
+  },
+  "revision_scope": "Mobile menu inset:0 and <=360px format tab spacing; cache-marker update",
+  "latest_rerun": {
+    "navigation_rerun": false,
+    "navigation_retained_release": "atelier-v19c",
+    "html_and_build": 14,
+    "export": 6,
+    "test_files_modified": [
+      "tests_export_static.py: three expected cache markers c -> d only"
+    ],
+    "frontend_modified": false,
+    "production_database_modified": false,
+    "export_retry": false
+  },
+  "latest_application_sha256": {
+    "public/app.js": "d5f6de8eace30379a57b4b098fbd85ab99bd35d677b80e3d104b7ee8605035f7",
+    "public/product-ui.css": "b08749e39c6e25fc376b7525475e71f7fc856ccf75f401cd581c186fae101176",
+    "public/app-ui.css": "427e370727dcb08cdf3b541730aeb263639f703ab585a951ab2f34f920c7779e",
+    "public/index.html": "6c2316392934ab583c1633d4f09c730ef756a9d0835014e0814d727a1c93ac3a"
+  },
+  "commands_current_iteration": [
+    "python -B tests_ui_html.py (report output redirected only)",
+    "python -B -m unittest tests_export_static -v (same suite captured as JSON)"
+  ]
+}

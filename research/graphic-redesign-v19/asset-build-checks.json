@@ -1,0 +1,232 @@
+{
+  "generated_at": "2026-10-23T16:56:53.328704+00:00",
+  "status": "passed",
+  "scope": {
+    "browser_used": false,
+    "network_used": false,
+    "production_database_opened": false,
+    "frontend_modified": false,
+    "assets_test": "literal public ./assets/ and /aide/assets/ references in JS/CSS/HTML/JSON; existence/nonempty/hash, no visual or remote-image claim"
+  },
+  "modules": [
+    {
+      "path": "public/app.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "cdd77595ea8fa80bd145b66306d8962562b31e350b92b8386e4f67d4b8c55039"
+    },
+    {
+      "path": "public/automotive-ui.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "c82c5ad59b93782fa4a169be61e179febfd89e14b2cb873a7d3ec9a342d44eea"
+    },
+    {
+      "path": "public/catalog-client.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "9eb2354a89384d35389a163f55b91718c6e15e07edaae97a118cb55fd148a046"
+    },
+    {
+      "path": "public/catalog-worker.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "7887f1b5b00c39126a6d24361473a4806b1e2ba98c0d85011f8d4e4ee4b60e6e"
+    },
+    {
+      "path": "public/discovery-ui.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "506c41b1bbe75bb9ebd17b29f48b366ecfbba3561c286a92e916a51632c4206e"
+    },
+    {
+      "path": "public/guide-art.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "14ee472e99c10437fdaa13eb73a07fb10414a744a22927cf34c6ea393f2d1576"
+    },
+    {
+      "path": "public/guide-photos.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "32eb70b4a4a6b55e1bdfaf7af339a570dedc915f2fbe446f2d208e539c8dd1ca"
+    },
+    {
+      "path": "public/guide-sources.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "0ba7f84f41256a6a8cfd2c9ceedc6c26976e7d72ecc12ca5e9fa6192d535f7c6"
+    },
+    {
+      "path": "public/guide-ui.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "87aa9cb5da0042374eaa2bbc756a342ecd60e1197795428146135c87fcc3bd2f"
+    },
+    {
+      "path": "public/icons.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "a2b635e13a10a6b06b0a2c8bf98200664a5d2cbfa2e168472a456ae788abc6ef"
+    },
+    {
+      "path": "public/identity-ui.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "3e27f3197104cb7c86b01a7b18e7133e8897ae09632fdb34c6bf8634552facab"
+    },
+    {
+      "path": "public/mobile-ui.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "ffe3bd0e5f693a5e4c497aad03247e8198eed9223e0c3e01668a55e3fef7b03b"
+    },
+    {
+      "path": "public/racelink-picks.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "433747109bf22b9edb00e8c370c99ead5321c0fc84012e3ec4ca0fc552e5a862"
+    },
+    {
+      "path": "public/rail-navigation.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "5e45bfa0ab111f242e230a5cb4a6d57cf16b6821f5b9b2be676c5691d04de535"
+    },
+    {
+      "path": "public/social-content.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "95570169343ad3c1dd3d7a3e4991179db29864954d96ed178d46c8a8c3a5c714"
+    },
+    {
+      "path": "public/tracks.js",
+      "status": "passed",
+      "stderr": "",
+      "sha256": "9febecc7dd419c0a5ac18053c62eb36820ab0e5a8cab90058cb4edc861e06fd1"
+    }
+  ],
+  "asset_count": 12,
+  "assets": {
+    "assets/photos/wheel.jpg": {
+      "present": true,
+      "bytes": 77338,
+      "sha256": "c8b8ffc45875e9658cf9951d97858a19e4835b7a7a5a09fca2cab55c582f3afa",
+      "references": [
+        "discovery-ui.js",
+        "guide-photos.js",
+        "photo-credits.html"
+      ]
+    },
+    "assets/photos/fuel.jpg": {
+      "present": true,
+      "bytes": 72947,
+      "sha256": "6d535d9c2c72ca49eca54ac51d11590800453a6f5bb3e6aee97d0c79c723a8be",
+      "references": [
+        "guide-photos.js",
+        "photo-credits.html"
+      ]
+    },
+    "assets/photos/oil.jpg": {
+      "present": true,
+      "bytes": 85782,
+      "sha256": "9763f70c18d8070c05f405c3f92238dbe4e6516f5b6156369c5b93b3e83d1d97",
+      "references": [
+        "guide-photos.js",
+        "guide-photos.js",
+        "index.html",
+        "photo-credits.html"
+      ]
+    },
+    "assets/photos/battery.jpg": {
+      "present": true,
+      "bytes": 98032,
+      "sha256": "450475c9ba1334bfedec9a426efd5595f4fbb1447da7bffd7bea9637baaeae7b",
+      "references": [
+        "guide-photos.js",
+        "photo-credits.html"
+      ]
+    },
+    "assets/photos/wipers.jpg": {
+      "present": true,
+      "bytes": 35243,
+      "sha256": "e3aeaa70c861e3f80f965fc6a6d99555bd51504fbe44fb69ea75571f33eb30e7",
+      "references": [
+        "guide-photos.js",
+        "photo-credits.html"
+      ]
+    },
+    "assets/photos/identification.jpg": {
+      "present": true,
+      "bytes": 208703,
+      "sha256": "a57ce5af994109188e83b527dd605eae77a40a9bf6d6a3e51756e9372d258fc3",
+      "references": [
+        "guide-photos.js",
+        "photo-credits.html"
+      ]
+    },
+    "assets/photos/diagnostics.jpg": {
+      "present": true,
+      "bytes": 228592,
+      "sha256": "079f4355c5640f4191434dd7bc5fa30cd2c4e249859247199b0a0808232ab7e7",
+      "references": [
+        "guide-photos.js",
+        "photo-credits.html"
+      ]
+    },
+    "assets/photos/fuses.jpg": {
+      "present": true,
+      "bytes": 92482,
+      "sha256": "52524ed72ccf0a1fbef547ca8cbc14ed14577471c8e5af162b3a99f4b06d5132",
+      "references": [
+        "guide-photos.js",
+        "photo-credits.html"
+      ]
+    },
+    "assets/photos/lighting.jpg": {
+      "present": true,
+      "bytes": 101243,
+      "sha256": "10b3fc1edbc898f05efa567aa39309b80927ddc178da1e0fb9b006109e01b474",
+      "references": [
+        "guide-photos.js",
+        "photo-credits.html"
+      ]
+    },
+    "assets/photos/service.jpg": {
+      "present": true,
+      "bytes": 70233,
+      "sha256": "de63628db92cecb9382b3ebdcf3fe7d3ea424b988c6b4fbe4e2db4a9f8bd5fe4",
+      "references": [
+        "guide-photos.js",
+        "guide-photos.js",
+        "photo-credits.html",
+        "photo-sources.json",
+        "visual-assets.json"
+      ]
+    },
+    "assets/photos/driving.jpg": {
+      "present": true,
+      "bytes": 225505,
+      "sha256": "b1d4e57edcbc0e46bac0322738d65ef2ff3f7d06915276e0c002587e89bb5a40",
+      "references": [
+        "photo-sources.json",
+        "visual-assets.json"
+      ]
+    },
+    "assets/photos/simracing.jpg": {
+      "present": true,
+      "bytes": 153946,
+      "sha256": "330a115f6d8615c704c022bd43f17e3393ef97e0c448c0d8b4cbfd3b586b644c",
+      "references": [
+        "photo-sources.json",
+        "visual-assets.json"
+      ]
+    }
+  },
+  "guide_sources": {
+    "command": "node tests_guide_sources.mjs",
+    "exit_code": 0,
+    "stdout": "✔ an empty collection produces no source article (1.1469ms)\n✔ the injected safeUrl rejects javascript and data links before rendering (1.4718ms)\n✔ all text-bearing fields escape markup, including vehicle scope and limits (0.5828ms)\n✔ fallback scope is escaped when vehicleScope is absent (0.2783ms)\n✔ safe outbound links escape attributes and isolate the new browsing context (0.1792ms)\n✔ procedure, specification and manual portal retain distinct labels (0.225ms)\n✔ official-reference classification excludes a portal and missing evidence (0.1982ms)\n✔ an ISO timestamp containing a time renders its calendar date in French (0.1867ms)\n✔ scope limitations and evidence are inside the native disclosure (0.2496ms)\n✔ a limitation-only source must not silently hide its applicability boundary (0.3154ms)\nℹ tests 10\nℹ suites 0\nℹ pass 10\nℹ fail 0\nℹ cancelled 0\nℹ skipped 0\nℹ todo 0\nℹ duration_ms 13.4869\n",
+    "stderr": ""
+  }
+}
