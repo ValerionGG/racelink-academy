@@ -1,13 +1,29 @@
-import {guideArt,guideTopic} from './guide-art.js';
-import {icon} from './icons.js';
+import {guidePhoto,guideTopic} from './guide-art.js?v=photo-v15';
 
 // Guide resources share the library search, while keeping their original sources.
 export function createGuideUI({escape:e,t,picks,safeUrl}) {
   let version=0;
   const $=s=>document.querySelector(s);
+  function photoSource(value){
+    if(typeof value!=='string')return '';
+    if(/^(?:\/aide\/|\.\/)?(?:assets|images)\/[\w./-]+$/.test(value)&&!value.split('/').includes('..'))return value;
+    return safeUrl(value,true);
+  }
+  function photoPosition(value){
+    const position=typeof value==='string'?value.trim():'';
+    return /^(?:left|right|top|bottom|center|\d+(?:\.\d+)?%)(?:\s+(?:left|right|top|bottom|center|\d+(?:\.\d+)?%))?$/.test(position)?position:'50% 50%';
+  }
+  function photoCredit(photo){
+    const source=safeUrl(photo.sourceUrl),license=safeUrl(photo.licenseUrl);
+    const author=photo.credit||t('Source photo','Photo source','Fuente de la foto');
+    const attribution=source?`<a href="${e(source)}" target="_blank" rel="noopener noreferrer">${e(author)}</a>`:e(author);
+    const rights=photo.license?` · ${license?`<a href="${e(license)}" target="_blank" rel="noopener noreferrer">${e(photo.license)}</a>`:e(photo.license)}`:'';
+    return `<details class="guide-photo-credit"><summary>${t('Crédit photo','Photo credit','Crédito de la foto')}</summary><p>${attribution}${rights}</p><p>${t('Photo d’illustration · cadrage adapté à l’écran.','Illustrative photo · display crop adapted to the screen.','Foto ilustrativa · encuadre adaptado a la pantalla.')}</p></details>`;
+  }
   function card(resource){
-    const topic=guideTopic(resource,{t});
-    return `<article class="video-card guide-card"><button class="guide-cover" data-guide="${e(resource.id)}" data-guide-topic="${e(topic.key)}" aria-label="${e(t('Lire : ','Read: ','Leer: ')+resource.title)}"><span class="guide-cover-label">RACELINK <span>${t('GUIDE','GUIDE','GUÍA')}</span></span>${guideArt(resource)}<span class="guide-cover-bottom"><strong class="guide-cover-topic">${e(topic.label)}</strong><span>${t('Lire','Read','Leer')} ${icon('arrow-up-right',{size:14})}</span></span>${picks.badge('guide',resource.id,{overlay:true})}</button><div class="card-heading"><h3><button class="title-button" data-guide="${e(resource.id)}">${e(resource.title)}</button></h3></div><p class="creator">RaceLink · ${t('Lecture en français','Written in French','Lectura en francés')}</p><p class="card-excerpt">${e(resource.description)}</p><button class="guide-read" data-guide="${e(resource.id)}">${t('Lire le guide','Read guide','Leer guía')} ↗</button></article>`;
+    const topic=guideTopic(resource,{t}),photo=guidePhoto(resource),src=photoSource(photo?.src);
+    const image=src?`<img class="guide-photo" src="${e(src)}" alt="${e(photo.alt||'')}" width="640" height="360" loading="lazy" decoding="async" style="object-position:${e(photoPosition(photo.position))}">`:'';
+    return `<article class="video-card guide-card"><button class="guide-cover" data-guide="${e(resource.id)}" data-guide-topic="${e(topic.key)}" aria-label="${e(t('Lire : ','Read: ','Leer: ')+resource.title)}">${image}<small class="guide-cover-label">${t('Guide','Guide','Guía')}</small>${picks.badge('guide',resource.id,{overlay:true})}</button><div class="card-heading"><h3><button class="title-button" data-guide="${e(resource.id)}">${e(resource.title)}</button></h3></div><p class="creator">RaceLink · ${t('Lecture en français','Written in French','Lectura en francés')}</p><p class="card-excerpt">${e(resource.description)}</p><button class="guide-read" data-guide="${e(resource.id)}">${t('Lire le guide','Read guide','Leer guía')} ↗</button>${src?photoCredit(photo):''}</article>`;
   }
   async function open(id){
     const current=++version,dialog=$('#video-dialog');

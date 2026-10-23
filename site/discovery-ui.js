@@ -1,4 +1,4 @@
-import {icon, categoryIcon} from './icons.js';
+import {icon} from './icons.js';
 export function createDiscoveryUI(ctx) {
   const {escape:e,t}=ctx;
   const $=s=>document.querySelector(s);
@@ -10,7 +10,7 @@ export function createDiscoveryUI(ctx) {
   function remember(query){if(query?.trim()&&query.trim().length<161)ctx.storage.set('rl-search-recent',[query.trim(),...recent().filter(x=>x!==query.trim())].slice(0,5));}
   const personalKeys=['make','model','generation','year','engine','fuel_type','body_type','spec','language','duration','platform','level','license','transcript','format','content_format'];
   const hasValue=value=>value!==''&&value!==undefined&&value!==null&&value!=='all';
-  const imageUrl=value=>{try{const url=new URL(value);return url.protocol==='https:'?url.href:'';}catch{return '';}};
+  const imageUrl=value=>{try{const local=typeof value==='string'&&/^\.\/assets\/[\w./-]+$/.test(value)&&!value.split('/').includes('..');const url=new URL(value,local?import.meta.url:undefined);return url.protocol==='https:'||local?url.href:'';}catch{return '';}};
   const platformName=value=>({youtube:'YouTube',dailymotion:'Dailymotion',vimeo:'Vimeo',tiktok:'TikTok',instagram:'Instagram',facebook:'Facebook',twitch:'Twitch',bilibili:'Bilibili'})[value]||value||'';
   const request=params=>new URLSearchParams(Object.entries(params).filter(([,v])=>v!==''&&v!==undefined));
   const stateContext=()=>Object.fromEntries(Object.entries(ctx.getState()).filter(([k])=>!['page','sort'].includes(k)));
@@ -41,8 +41,9 @@ export function createDiscoveryUI(ctx) {
     root.innerHTML=`<div class="home-intro"><h2>${t('Explorez vos sujets','Explore your interests','Explora tus temas')}</h2><button type="button" class="discovery-catalog-link" data-browse-all>${t('Tout explorer','Explore everything','Explorar todo')} ↗</button></div>
       <div class="entry-grid">${entries.map(entry=>{
         const asset=visualAssets.find(item=>item.id===entry.id),src=imageUrl(asset?.url);
-        return `<button type="button" class="entry-card entry-${entry.category}" data-entry-category="${entry.category}"><span class="entry-visual">${src?`<img src="${e(src)}" alt="" width="640" height="360" loading="lazy" decoding="async">`:''}<span class="entry-symbol">${icon(categoryIcon[entry.category],{size:26})}</span></span><span class="entry-copy"><strong>${e(entry.label)}</strong><small>${e(entry.description)}</small><span class="entry-cta" aria-hidden="true">${icon('arrow-up-right',{size:18})}</span></span></button>`;
+        return `<button type="button" class="entry-card entry-${entry.category}" data-entry-category="${entry.category}"><span class="entry-visual">${src?`<img src="${e(src)}" alt="${e(asset?.alt||'')}" width="640" height="360" loading="lazy" decoding="async" style="object-position:${e(asset?.position||'50% 50%')}">`:''}</span><span class="entry-copy"><strong>${e(entry.label)}</strong><small>${e(entry.description)}</small><span class="entry-cta" aria-hidden="true">${icon('arrow-up-right',{size:18})}</span></span></button>`;
       }).join('')}</div>
+      <details class="discovery-photo-credits"><summary>${t('Crédits photos','Photo credits','Créditos de las fotos')}</summary>${visualAssets.map(asset=>`<p><a href="${e(imageUrl(asset.sourceUrl))}" target="_blank" rel="noopener noreferrer">${e(asset.credit)}</a> · <a href="${e(imageUrl(asset.licenseUrl))}" target="_blank" rel="noopener noreferrer">${e(asset.license)}</a></p>`).join('')}<p>${t('Photos d’illustration · cadrage adapté à l’écran.','Illustrative photos · display crop adapted to the screen.','Fotos ilustrativas · encuadre adaptado a la pantalla.')}</p></details>
       <div id="editorial-picks"></div>
       <details class="all-topics" ${allTopicsOpen?'open':''}><summary>${t('Tous les sujets','All topics','Todos los temas')}</summary>
         <div class="intent-list" role="group" aria-label="${t('Filtrer les sujets par objectif','Filter topics by goal','Filtrar temas por objetivo')}"><button type="button" class="intent-choice ${intent?'':'active'}" data-intent="" aria-pressed="${!intent}"><strong>${t('Tous les objectifs','All goals','Todos los objetivos')}</strong></button>${catalog.intents.map(item=>`<button type="button" class="intent-choice ${intent===item.id?'active':''}" data-intent="${e(item.id)}" aria-pressed="${intent===item.id}"><strong>${e(text(item.label))}</strong><small>${e(text(item.description))}</small></button>`).join('')}</div>
@@ -88,7 +89,7 @@ export function createDiscoveryUI(ctx) {
     try{
       const [data,visuals]=await Promise.all([
         window.getCatalogJson('/aide/api/discovery'),
-        fetch(new URL('./visual-assets.json',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
+        fetch(new URL('./visual-assets.json?v=photo-v15',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
       ]);
       catalog=data;visualAssets=Array.isArray(visuals?.assets)?visuals.assets:[];
       ctx.picks?.setVideos(catalog.shelves||[]);render();ctx.onPicksChange?.();
