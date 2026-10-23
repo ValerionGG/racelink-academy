@@ -380,9 +380,9 @@ main {margin-left:224px;min-height:calc(100dvh - 150px)}
 .rail-controls>span {font-size:12px;font-variant-numeric:tabular-nums;color:var(--muted);margin-right:8px}
 .rail-controls button {width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:white;color:var(--ink);transition:transform var(--motion-press) var(--ease-out),background-color var(--motion-press) var(--ease-out)}
 .rail-controls [data-rail-previous] svg {transform:rotate(180deg)}
-.rail-controls button:disabled {opacity:.35}
-.rail-controls button:not(:disabled):hover {background:#efeff1}
-.rail-controls button:not(:disabled):active {transform:scale(.96)}
+.rail-controls button[aria-disabled=true] {opacity:.35;cursor:default}
+.rail-controls button:not([aria-disabled=true]):hover {background:#efeff1}
+.rail-controls button:not([aria-disabled=true]):active {transform:scale(.96)}
 .entry-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:30px}
 .entry-card {position:relative;display:flex;flex-direction:column;min-height:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;color:var(--ink);text-align:left;box-shadow:0 2px 4px #00000003;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
 .entry-visual {position:relative;inset:auto;aspect-ratio:16/10;width:100%;height:auto;overflow:hidden;background:#27272b}

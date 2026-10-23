@@ -21,14 +21,19 @@ export function attachRailNavigation(rail, controls) {
   function update() {
     frame = 0;
     const {points, limit, index} = measure();
+    if(limit <= 2 && controls.contains(document.activeElement) && rail.getClientRects().length){
+      const item=rail.children[index];
+      (item?.matches('button,a[href]')?item:item?.querySelector('button,a[href]'))?.focus({preventScroll:true});
+    }
     controls.hidden = limit <= 2;
-    previous.disabled = rail.scrollLeft <= 2;
-    next.disabled = rail.scrollLeft >= limit - 2;
+    previous.setAttribute('aria-disabled',String(rail.scrollLeft <= 2));
+    next.setAttribute('aria-disabled',String(rail.scrollLeft >= limit - 2));
     position.textContent = `${index + 1} / ${points.length}`;
   }
   function schedule() { if (!frame) frame = requestAnimationFrame(update); }
   function move(direction) {
     const {points, limit, index} = measure();
+    if((direction < 0 && rail.scrollLeft <= 2)||(direction > 0 && rail.scrollLeft >= limit - 2))return;
     const target = Math.max(0, Math.min(points.length - 1, index + direction));
     rail.scrollTo({left: Math.min(limit, Math.max(0, points[target] || 0)),
       behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
