@@ -510,7 +510,7 @@ main {margin-left:224px;min-height:calc(100dvh - 150px)}
 #search-suggestions button {padding:14px 12px;border-radius:7px;min-height:57px;gap:12px}
 #search-suggestions button:hover,#search-suggestions button[aria-selected=true] {background:#fff0f2}
 .suggestion-copy {min-width:0;flex:1}
-#search-suggestions .suggestion-kind {display:block;margin:0 0 5px;border:0;padding:0;font:550 11px/1.4 var(--body);letter-spacing:0;text-transform:none;color:var(--red);background:none}
+#search-suggestions .suggestion-kind {display:block;margin:0 0 5px;border:0;padding:0;font:550 11px/1.4 var(--body);letter-spacing:0;text-transform:none;text-align:left;min-width:0;color:var(--red);background:none}
 #search-suggestions strong {font:650 14px/1.45 var(--body)}
 #search-suggestions small {font-size:12px;line-height:1.5;color:var(--muted)}
 .suggestion-kind {font-size:8px;color:var(--muted);letter-spacing:.3px;min-width:43px}
