@@ -152,7 +152,7 @@ export function createAutomotiveUI(ctx){
   async function load(){
     const [tax,guidance]=await Promise.allSettled([
       fetch('/racelink-academy/automotive-taxonomy.json').then(r=>r.ok?r.json():Promise.reject()),
-      fetch('/racelink-academy/vehicle-guides.json?v=visual-v17b').then(r=>r.ok?r.json():Promise.reject())
+      fetch('/racelink-academy/vehicle-guides.json?v=visual-v17c').then(r=>r.ok?r.json():Promise.reject())
     ]);
     if(tax.status==='fulfilled')taxonomy=tax.value;
     if(guidance.status==='fulfilled'){guides=[...(guidance.value.identification?[guidance.value.identification]:[]),...(guidance.value.guides||[])];manuals=guidance.value.manuals||[];ctx.picks?.setResources(guides.filter(g=>g.recommendation).map(g=>({kind:'guide',id:g.id,...g.recommendation})));}

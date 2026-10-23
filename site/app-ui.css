@@ -787,7 +787,7 @@ dialog::backdrop {background:#141c2db3;backdrop-filter:blur(3px)}
   .workshop-guide{padding:15px}.workshop-guide h3{font-size:15px}.workshop-guide p{font-size:13px}
 }
 @media(max-width:360px){
-  .guide-card h3{font-size:20px}.hero h1{font-size:32px}.hero-copy{padding-inline:16px}
+  .guide-card h3{font-size:20px}.hero.wrap{padding:0}.hero h1{font-size:32px}.hero-copy{padding-inline:16px}.hero .home-greeting{display:none}
   .guide-card-footer{align-items:flex-start}.guide-read{margin-left:0}.guide-card-footer .racelink-pick{min-height:28px}
 }
 
