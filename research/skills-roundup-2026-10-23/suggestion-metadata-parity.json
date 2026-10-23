@@ -1,0 +1,709 @@
+{
+  "status": "passed",
+  "real_catalog": "catalog.json",
+  "query_comparisons": 31,
+  "vehicle_option_comparisons": 4,
+  "discovery_comparisons": 24,
+  "resource_comparisons": 17,
+  "resource_timings": [
+    {
+      "params": {
+        "sort": "title"
+      },
+      "total": 36912,
+      "api_ms": 408.31
+    },
+    {
+      "params": {
+        "sort": "title",
+        "format": "video"
+      },
+      "total": 36901,
+      "api_ms": 411.58
+    },
+    {
+      "params": {
+        "sort": "title",
+        "format": "guide"
+      },
+      "total": 11,
+      "api_ms": 412.99
+    },
+    {
+      "params": {
+        "sort": "title",
+        "format": "image"
+      },
+      "total": 0,
+      "api_ms": 463.65
+    },
+    {
+      "params": {
+        "sort": "title",
+        "format": "guide",
+        "q": "vidange"
+      },
+      "total": 1,
+      "api_ms": 144.93
+    },
+    {
+      "params": {
+        "sort": "title",
+        "format": "guide",
+        "make": "Renault"
+      },
+      "total": 0,
+      "api_ms": 237.03
+    },
+    {
+      "params": {
+        "sort": "title",
+        "format": "guide",
+        "spec": "5W30"
+      },
+      "total": 0,
+      "api_ms": 5.57
+    },
+    {
+      "params": {
+        "sort": "title",
+        "content_format": "course"
+      },
+      "total": 9,
+      "api_ms": 20.22
+    },
+    {
+      "params": {
+        "sort": "title",
+        "platform": "instagram"
+      },
+      "total": 140,
+      "api_ms": 18.61
+    },
+    {
+      "params": {
+        "sort": "title",
+        "platform": "racelink"
+      },
+      "total": 11,
+      "api_ms": 7.58
+    },
+    {
+      "params": {
+        "sort": "title",
+        "page": "3",
+        "per_page": "5"
+      },
+      "total": 36912,
+      "api_ms": 425.06
+    },
+    {
+      "params": {
+        "sort": "title",
+        "page": "4",
+        "per_page": "5"
+      },
+      "total": 36912,
+      "api_ms": 409.47
+    },
+    {
+      "params": {
+        "sort": "title",
+        "format": "guide",
+        "q": "how to change oil"
+      },
+      "total": 1,
+      "api_ms": 149.64
+    },
+    {
+      "params": {
+        "sort": "title",
+        "q": "vidange Clio 3"
+      },
+      "total": 7,
+      "api_ms": 63.3
+    },
+    {
+      "params": {
+        "sort": "title",
+        "language": "fr",
+        "format": "all"
+      },
+      "total": 5033,
+      "api_ms": 276.73
+    },
+    {
+      "params": {
+        "sort": "title",
+        "language": "fr",
+        "platform": "instagram"
+      },
+      "total": 31,
+      "api_ms": 38.24
+    },
+    {
+      "params": {
+        "sort": "title",
+        "language": "en",
+        "format": "guide"
+      },
+      "total": 0,
+      "api_ms": 741.81
+    }
+  ],
+  "discovery_timings": [
+    {
+      "kind": "discovery",
+      "params": {},
+      "api_ms": 1723.81
+    },
+    {
+      "kind": "discovery",
+      "params": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "III"
+      },
+      "api_ms": 1911.42
+    },
+    {
+      "kind": "discovery",
+      "params": {
+        "spec": "5W30"
+      },
+      "api_ms": 1760.06
+    },
+    {
+      "kind": "suggestions",
+      "params": {},
+      "api_ms": 13.68
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "vidan"
+      },
+      "api_ms": 294.47
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "huile 5W30"
+      },
+      "api_ms": 412.09
+    },
+    {
+      "kind": "recommendations",
+      "params": {
+        "q": "unknown Clio 3"
+      },
+      "api_ms": 95.04
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "comment faire une vidan Clio 3"
+      },
+      "api_ms": 293.85
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "comment faire une vidnage Clio 3"
+      },
+      "api_ms": 109.35
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "how to oil cha"
+      },
+      "api_ms": 721.93
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "vidan Cliio 3"
+      },
+      "api_ms": 172.94
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "vidan Clio 3 1.8 dCi"
+      },
+      "api_ms": 301.95
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "huile 5W3O"
+      },
+      "api_ms": 373.66
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "huile aceaa C3"
+      },
+      "api_ms": 405.06
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "comment faire une vidan Clio 3 1.5 dCi 2008 avec 5W30 ?"
+      },
+      "api_ms": 328.14
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "vidnage",
+        "task": "wipers"
+      },
+      "api_ms": 127.81
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "vidange",
+        "format": "guide",
+        "platform": "racelink"
+      },
+      "api_ms": 158.9
+    },
+    {
+      "kind": "suggestions",
+      "params": {
+        "q": "vidange",
+        "format": "video",
+        "content_format": "tutorial"
+      },
+      "api_ms": 2315.65
+    },
+    {
+      "kind": "discovery",
+      "params": {
+        "format": "guide"
+      },
+      "api_ms": 1701.67
+    },
+    {
+      "kind": "recommendations",
+      "params": {
+        "q": "huile",
+        "format": "guide"
+      },
+      "api_ms": 93.72
+    },
+    {
+      "kind": "recommendations",
+      "params": {
+        "q": "essuie"
+      },
+      "api_ms": 98.36
+    },
+    {
+      "kind": "recommendations",
+      "params": {
+        "task": "oil_change"
+      },
+      "api_ms": 1067.12
+    },
+    {
+      "kind": "recommendations",
+      "params": {
+        "q": "unmatchedwords"
+      },
+      "api_ms": 117.13
+    },
+    {
+      "kind": "recommendations",
+      "params": {
+        "video_id": "youtube:5jl-zqZQ2qQ"
+      },
+      "api_ms": 157.69
+    }
+  ],
+  "queries": [
+    {
+      "params": {
+        "q": "comment faire une vidange Clio 3",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 7,
+      "api_ms": 42.22
+    },
+    {
+      "params": {
+        "q": "changer essuie-glaces Peugeot 308",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 9,
+      "api_ms": 35.47
+    },
+    {
+      "params": {
+        "q": "filtre habitacle Golf 5",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 9,
+      "api_ms": 66.65
+    },
+    {
+      "params": {
+        "q": "huile 5W30",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 5,
+      "api_ms": 35.26
+    },
+    {
+      "params": {
+        "q": "quel carburant Renault Clio",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 0,
+      "api_ms": 69.99
+    },
+    {
+      "params": {
+        "q": "BMW E85",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 0,
+      "api_ms": 155.89
+    },
+    {
+      "params": {
+        "q": "vidange Clio 3 ZX99notmentioned",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 0,
+      "api_ms": 28.52
+    },
+    {
+      "params": {
+        "q": "huile 5W30",
+        "spec": "5W40",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 0,
+      "api_ms": 26.29
+    },
+    {
+      "params": {
+        "make": "Peugeot",
+        "model": "308",
+        "task": "wipers",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 9,
+      "api_ms": 10.79
+    },
+    {
+      "params": {
+        "make": "Renault",
+        "model": "Clio",
+        "generation": "III",
+        "task": "oil_change",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 7,
+      "api_ms": 12.43
+    },
+    {
+      "params": {
+        "model": "Clio",
+        "generation": "IV",
+        "engine": "1.9 TDI",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 0,
+      "api_ms": 3.59
+    },
+    {
+      "params": {
+        "make": "Volkswagen",
+        "model": "Golf",
+        "generation": "IV",
+        "year": "2001",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 0,
+      "api_ms": 6.54
+    },
+    {
+      "params": {
+        "engine": "1.5 dCi",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 9,
+      "api_ms": 4.48
+    },
+    {
+      "params": {
+        "spec": "ACEA C3",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 1,
+      "api_ms": 3.21
+    },
+    {
+      "params": {
+        "spec": "5W3",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 0,
+      "api_ms": 3.05
+    },
+    {
+      "params": {
+        "task": "oil_change",
+        "language": "fr",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 238,
+      "api_ms": 304.72
+    },
+    {
+      "params": {
+        "system": "electrical",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 811,
+      "api_ms": 91.43
+    },
+    {
+      "params": {
+        "task": "wheel_change",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 20,
+      "api_ms": 5.48
+    },
+    {
+      "params": {
+        "body_type": "estate",
+        "fuel_type": "diesel",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 0,
+      "api_ms": 2.76
+    },
+    {
+      "params": {
+        "q": "télémétrie",
+        "domain": "motorsport",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 14,
+      "api_ms": 28.17
+    },
+    {
+      "params": {
+        "q": "freinage",
+        "content_format": "tutorial",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 19,
+      "api_ms": 30.5
+    },
+    {
+      "params": {
+        "content_format": "course",
+        "transcript": "available",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 7,
+      "api_ms": 10.62
+    },
+    {
+      "params": {
+        "content_format": "stream",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 3,
+      "api_ms": 2.92
+    },
+    {
+      "params": {
+        "q": "paccar",
+        "platform": "instagram",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 1,
+      "api_ms": 30.73
+    },
+    {
+      "params": {
+        "language": "fr",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 5022,
+      "api_ms": 267.74
+    },
+    {
+      "params": {
+        "language": "und",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 1873,
+      "api_ms": 116.96
+    },
+    {
+      "params": {
+        "language": "fr",
+        "q": "vidange",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 238,
+      "api_ms": 329.04
+    },
+    {
+      "params": {
+        "language": "fr",
+        "platform": "facebook",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 6,
+      "api_ms": 28.37
+    },
+    {
+      "params": {
+        "language": "fr",
+        "q": "vidange clio3",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 2,
+      "api_ms": 369.95
+    },
+    {
+      "params": {
+        "language": "fr",
+        "q": "vidange clio3 1.5 DCI",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 1,
+      "api_ms": 346.35
+    },
+    {
+      "params": {
+        "language": "fr",
+        "q": "vidange clio3 1.8 DCI",
+        "per_page": "100",
+        "sort": "title"
+      },
+      "total": 0,
+      "api_ms": 311.92
+    }
+  ],
+  "static_worker": {
+    "passed": 40,
+    "rows": 36901,
+    "setup_ms": 902.69,
+    "query_ms": [
+      30.95,
+      193.26,
+      11.16,
+      349.94,
+      68.47,
+      19.18,
+      20.57
+    ],
+    "discovery_timings": [
+      {
+        "kind": "discovery_cold",
+        "ms": 512.3
+      },
+      {
+        "kind": "discovery_warm",
+        "ms": 0.3
+      },
+      {
+        "kind": "suggestions_default",
+        "ms": 0.11
+      },
+      {
+        "kind": "suggestions_oil_spec",
+        "ms": 99.89
+      },
+      {
+        "kind": "recommendations_vehicle",
+        "ms": 1156.71
+      }
+    ],
+    "checks": [
+      "compressed transport decodes in Worker and safely falls back to canonical JSON",
+      "real export has unique IDs and canonical URLs",
+      "public metadata does not include original import internals",
+      "public comment questions are searchable evidence with no invented answer or transcript",
+      "pagination contains no repeated IDs",
+      "domain, language and category facets represent actual filtered references",
+      "video-language filters and evidence summaries distinguish unknown and estimated languages",
+      "open rights and transcript filter only select documented entries",
+      "accents yield identical literal search results",
+      "pedagogical question expansion is labeled and keeps unknown names",
+      "saved ID subset and duration sorting",
+      "invalid input fails without affecting the catalog",
+      "stats and metadata details are consistent",
+      "actual transcript text, timecodes, provenance and searchable words survive export",
+      "caption vehicle evidence survives worker filters and details without adding compatibility",
+      "compound Clio generations retain limited make inference and never manufacture engines",
+      "precise vehicle filters never combine separate applications or unknown fields",
+      "vehicle options remain hierarchical and ignore question, language and intervention",
+      "natural questions keep generation, engine and unknown constraints",
+      "oil reference matching is exact, normalized and never a vehicle compatibility claim",
+      "an unindexed generation or engine remains a structured restriction",
+      "resource kinds and pedagogical video formats are separate from source platforms",
+      "mixed pagination has no missing or duplicated guides or videos",
+      "general guides never acquire compatibility from cited examples or technical words",
+      "discovery counts are real and shelves exclude expired, disabled, unqualified or filtered videos",
+      "bounded suggestions use configured diverse defaults and retain exact oil references",
+      "video suggestions preserve source and language evidence without changing title ordering",
+      "real video suggestions expose exactly their catalog source metadata",
+      "recommendations preserve inferred vehicles and specs, diversify fallback and skip identical routes",
+      "predictions preserve complete questions and exact vehicle, engine, year and oil details",
+      "predictions disclose one topical typo and rank complete multi-token intent",
+      "technical standards are never completed or typo-corrected",
+      "OBD search keeps the narrower acronym within the diagnostic task",
+      "recognized recommendation topics are not padded with unrelated routes",
+      "real vehicle facets and exact application are derived from exported title mentions",
+      "real language evidence counts agree across API and Worker",
+      "real API and Worker search filters, interpretations and facets agree",
+      "real API and Worker hierarchical vehicle options agree",
+      "real discovery, suggestions and recommendations preserve API/Worker parity",
+      "unified real-resource counts, types, facets and page membership agree across engines"
+    ]
+  }
+}

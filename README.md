@@ -1,3 +1,9 @@
+## Recherche et découverte — skills-v18c
+
+[Ouvrir l’application](https://valeriongg.github.io/racelink-academy/?release=skills-v18c) · [Les douze ressources de design](research/skills-roundup-2026-10-23/README.md) · [Validation](research/skills-roundup-2026-10-23/VALIDATION.md)
+
+Langue visible dans la recherche mobile, suggestions sourcées et grandes cartes avec commandes. Catalogue et guides conservés.
+
 # RaceLink Academy — bibliothèque ouverte
 
 Version courante **visual-v17c**, commit [9b7dbfc](https://github.com/ValerionGG/racelink-academy/commit/9b7dbfcd6ca2924149220eac772e5f9e8fb5cc06), publiée. Grandes photos réelles, titres sous les images, une colonne mobile et grille adaptée à la largeur disponible. Accueil photographique avec recherche à la jonction de l’image. [Voir l’application](https://valeriongg.github.io/racelink-academy/?release=visual-v17c) · [Validation et limites](research/visual-direction-2026-10-23/VALIDATION.md) · [Skills comparés et ajoutés](research/visual-direction-2026-10-23/skills-research.md).

@@ -1,0 +1,168 @@
+{
+  "status": "published_verified",
+  "url": "https://valeriongg.github.io/racelink-academy/",
+  "french_url": "https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&format=video",
+  "repository": "https://github.com/ValerionGG/racelink-academy",
+  "commit": "9b7dbfcd6ca2924149220eac772e5f9e8fb5cc06",
+  "workflow": "https://github.com/ValerionGG/racelink-academy/actions/runs/39964526060",
+  "workflow_conclusion": "success",
+  "verified_at": "2026-10-23T13:56:33.509128+00:00",
+  "catalog_videos": 36901,
+  "guides": 11,
+  "french_videos": 5022,
+  "new_social_videos": 0,
+  "new_french_text_estimates": 0,
+  "platforms": {
+    "dailymotion": 42,
+    "facebook": 46,
+    "instagram": 140,
+    "tiktok": 166,
+    "twitch": 2,
+    "vimeo": 3,
+    "youtube": 36502
+  },
+  "catalog_sha256": "083bc7f7e05382f189319e7e8e1a1050302d92606f16a6e0cda74212d023b544",
+  "focus_domain_integrated": false,
+  "screenshots": [
+    "focus-academy/research/visual-direction-2026-10-23/desktop-home-final.png",
+    "focus-academy/research/visual-direction-2026-10-23/mobile-guides-final.png"
+  ],
+  "thousands_of_new_social_videos_achieved": false,
+  "acquisition_limits": [
+    "No accessible qualified bulk French automotive social export",
+    "TikHub preview requires account; coverage unmeasured",
+    "No Instagram extension connection",
+    "Exa quota exhausted; vidIQ credits insufficient"
+  ],
+  "social_fields": {
+    "structured_records": 352,
+    "skill": "social-content-structure",
+    "skill_version": "1.0.2",
+    "new_titles_reviewed": 7
+  },
+  "social_alternative": {
+    "tiktok_added": 7,
+    "instagram_added": 0,
+    "archived_index_titles": 6,
+    "creator_site_link_labels": 1,
+    "new_captions": 0,
+    "new_transcripts": 0,
+    "new_editorial_badges": 0
+  },
+  "previous_release": {
+    "commit": "5e60fab4c231976a15af0439c816cefc0dbce3d7",
+    "release": "guide-v16b",
+    "report": "focus-academy/research/visual-direction-2026-10-23/deployment-before-visual.json"
+  },
+  "release_scope": "Large photographic covers, redesigned photographic home, mobile spacing and responsive grid; catalogue unchanged",
+  "mobile_preview_url": "https://valeriongg.github.io/racelink-academy/preview-mobile.html",
+  "ui_redesign": {
+    "skills_repositories_compared": 6,
+    "product_references_compared": 10,
+    "main_skill": "Impeccable 4.7 Operate / Read",
+    "desktop_sidebar": true,
+    "mobile_navigation_destinations": 4,
+    "browser_observed_commit": "f39bfee6941ccd454b38d6f438f4c606a920e826",
+    "browser_observations": [
+      "Desktop 1280x720; public responsive frames 320/390/430/768; no horizontal overflow on home",
+      "Guide open/close restores focus",
+      "French vidange Clio 3 query returns two videos; YouTube filter preserves context"
+    ],
+    "final_visual_recheck": "Completed within documented scope; browser-checks.json distinguishes the observed versions",
+    "brand": "Black, white, silver and RaceLink red",
+    "fonts": [
+      "Onest",
+      "Orbitron"
+    ],
+    "guide_illustrations": 11
+  },
+  "release": "visual-v17c",
+  "photo_covers": {
+    "photographs": 12,
+    "guides": 11,
+    "home_entries": 3,
+    "bytes": 1450046,
+    "source_files_verified": 25,
+    "report": "focus-academy/research/photo-covers-2026-10-23/VALIDATION.md",
+    "browser": {
+      "checked_at": "2026-10-23T10:32:27.033136+00:00",
+      "commit": "ad0cc50227fce243d2100a5089ccf13f8fd6b8db",
+      "scope": "CUA public browser, desktop and responsive preview",
+      "observed": [
+        "Desktop home: three photographic entries loaded, decorative icon overlays removed.",
+        "Desktop library: first row of photographic guides visually inspected; all 11 titles, image alt text and credit controls present in accessibility tree.",
+        "Guide-only URL returns 11 resources; fuel guide opened from its photographic cover and closed, focus restored to that cover.",
+        "Mobile home in the existing 390px responsive frame visually inspected, photographs visible in the horizontal entry list."
+      ],
+      "screenshots": [
+        "desktop-home.png",
+        "mobile-home.png"
+      ],
+      "limitations": [
+        "Intermittent browser-tool timeouts prevented completion of scrolling and mobile guide interaction checks. Successful observations are listed separately; timed-out attempts are not passes.",
+        "No physical-phone test or full accessibility audit. All 12 source photographs were separately inspected as image files; only stated card positions were visually inspected in the page."
+      ]
+    }
+  },
+  "guides_url": "https://valeriongg.github.io/racelink-academy/?browse=1&format=guide&release=guide-v16b",
+  "official_guides": {
+    "guides": 11,
+    "new_manufacturer_reference_entries": 21,
+    "total_documentary_links": 45,
+    "videos_unchanged": true,
+    "report": "focus-academy/research/official-guides-2026-10-23/VALIDATION.md",
+    "browser": {
+      "checked_at": "2026-10-23T13:23:05.000801+00:00",
+      "final_code_commit": "5e60fab4c231976a15af0439c816cefc0dbce3d7",
+      "release": "guide-v16b",
+      "scope": "CUA public browser; responsive viewport and existing mobile preview. No physical-phone or exhaustive accessibility audit.",
+      "observed": [
+        "v16: mobile list and source section visually inspected at the existing 480px browser width; guides count 11, photographs loaded, search position static.",
+        "v16: 320px viewport, client width 305px, scrollWidth 305px. Source link opens the references heading and close restores its focus.",
+        "v16b: desktop viewport width 1280px, client width 1265px, scrollWidth 1265px; 11 guides, no duplicate format chip; photographic two-column grid visually inspected.",
+        "v16b: shared guide reader opened on desktop; title receives focus and method/reference columns are visible.",
+        "v16b: 390px viewport, client width 375px and height 844px, scrollWidth 375px; corrected vehicle context and compact cards visually inspected. First guide card height 249.95px.",
+        "v16b: mobile search opened with focus in input; vidange Clio 3 retained after submission and changing format/language; video+French returns 2 resources.",
+        "v16b: guide hint in search opens the oil-change guide and manufacturer references, then close restores hint focus and retains query, French language and result count.",
+        "Temporary viewport override reset; final guide library tab retained as a deliverable."
+      ],
+      "screenshots": {
+        "mobile-guides.png": "v16",
+        "mobile-sources.png": "v16",
+        "desktop-guides.png": "v16b",
+        "desktop-reader.png": "v16b",
+        "mobile-guides-final.png": "v16b"
+      },
+      "limitations": [
+        "Source links were verified in research; browser checks validate their presentation, not every external site session.",
+        "No physical phone test and no exhaustive WCAG audit.",
+        "Search suggestions for the exact query were absent while the Guides filter was selected; the interface correctly offered submission and preserved the selected format."
+      ]
+    }
+  },
+  "visual_design": {
+    "report": "focus-academy/research/visual-direction-2026-10-23/VALIDATION.md",
+    "flowith_model": "Claude Opus 5.5",
+    "flowith_use": "One completed textual counterproposal, adapted into local code",
+    "installed_skills": [
+      "taste-skill",
+      "ui-ux-pro-max"
+    ],
+    "visually_inspected_references": [
+      "MotionSite Driven Hero",
+      "MotionSite Hyperion V12",
+      "racelink-app.co"
+    ],
+    "responsive_widths": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "html_contract_tests": 14,
+    "static_export_tests": 6,
+    "navigation_tests": 16,
+    "navigation_test_scope": "V17/V17b; V17c CSS narrow-phone correction only",
+    "catalog_unchanged": true
+  }
+}

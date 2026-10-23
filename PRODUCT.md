@@ -1,6 +1,6 @@
 # RaceLink Academy
 
-Version courante **visual-v17c**, commit [9b7dbfc](https://github.com/ValerionGG/racelink-academy/commit/9b7dbfcd6ca2924149220eac772e5f9e8fb5cc06), publiée. Grandes photos réelles, titres sous les images, une colonne mobile et grille adaptée à la largeur disponible. Accueil photographique avec recherche à la jonction de l’image. [Voir l’application](https://valeriongg.github.io/racelink-academy/?release=visual-v17c) · [Validation et limites](research/visual-direction-2026-10-23/VALIDATION.md) · [Skills comparés et ajoutés](research/visual-direction-2026-10-23/skills-research.md).
+Version courante **skills-v18c**, publiée sur [GitHub Pages](https://valeriongg.github.io/racelink-academy/?release=skills-v18c). Grandes images conservées ; recherche mobile avec langue visible, suggestions sourcées, accès aux guides et commandes des rails. [Validation et portée](research/skills-roundup-2026-10-23/VALIDATION.md).
 
 ## Register
 
@@ -36,7 +36,7 @@ Claire, pratique, passionnée. La filiation avec le site officiel RaceLink réel
 
 ## Accessibility & Inclusion
 
-Conserver les contrôles HTML natifs, labels persistants, navigation au clavier, focus visible et alternative aux animations déjà présents. Français, anglais et espagnol pour l’interface ; langues de contenu séparées. La V17 doit encore être vérifiée sur son rendu réel : taille des images, recherche immédiatement accessible, grands titres, absence de débordement et retour du focus. Des parcours v14 ont été vérifiés via CUA sur desktop et dans un iframe mobile de 390 px ; [ce rapport historique](research/ui-redesign-2026-10-23/VALIDATION.md) ne valide pas la V17. Aucun audit WCAG exhaustif ni test sur appareil physique n’est revendiqué.
+Conserver les contrôles HTML natifs, labels persistants, navigation au clavier, focus visible et alternative aux animations déjà présents. Français, anglais et espagnol pour l’interface ; langues de contenu séparées. Les contrôles V18 du navigateur et leurs limites sont consignés dans research/skills-roundup-2026-10-23/VALIDATION.md.
 
 ## Guides et références constructeur — 23 octobre 2026
 

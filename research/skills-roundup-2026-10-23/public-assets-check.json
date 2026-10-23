@@ -1,0 +1,119 @@
+{
+  "checked_at": "2026-10-23T16:22:48.295456+00:00",
+  "code_commit": "e0ee2280f8af4bd84e10e3c246f2420b13588be8",
+  "status": "passed",
+  "scope": "HTTP source bytes and catalogue; rendering verified separately",
+  "files": [
+    {
+      "path": "index.html",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "95c111eafc66525521a1b78bba90a2a16ea1d1b1e8085686d96a8f6501d9ea84"
+    },
+    {
+      "path": "app-ui.css",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "309b331dedd28c8dfd7366f09e6c6718e7993b2470926e2024674a2c08514eea"
+    },
+    {
+      "path": "product-ui.css",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "0c664e8bfa1f19693018cb10fd19e8b4f1f34c01ed877c5aacd86ad4b6618edb"
+    },
+    {
+      "path": "app.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "bec87d9c73acf48e287ca3b1e5e6a28b411f2eae38a081b42b5abbcbc13358d3"
+    },
+    {
+      "path": "guide-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "471e8c82c12848543f391888367a2c4a91897e28226c43fedea1c82dab78f17e"
+    },
+    {
+      "path": "guide-sources.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "0e337d1796820a42cf47026b5ffa02715534c909e95a1be64bf7444fa70c7e17"
+    },
+    {
+      "path": "guide-art.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "bd23b11d23c48915931341ef77edef48872566926bb153813b0bcd59a2cf8d51"
+    },
+    {
+      "path": "automotive-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "190bb50acdd74d877fd90fbbc03e5a7cc9e427a9a46b4bd6f6fbf056df1dbe6d"
+    },
+    {
+      "path": "vehicle-guides.json",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "1cd0962b31e7d8c9923f2a2e96e401fb4c195e142acecc4dab6d87080d7712cb"
+    },
+    {
+      "path": "catalog/config.json",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "e1ab6d0e307b6437966acb11bb8f76eecf8d4e5b6a578b5e138bd303adc78d34"
+    },
+    {
+      "path": "photo-credits.html",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "f6573e75ca19db8557232a7985712d060a5e436d6521c75f2656ffd98e508bf4"
+    },
+    {
+      "path": "preview-mobile.html",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "d4b4daedeac09cf365bbef14b543888f7dccbb6e75457f423ec75d861e3f4c29"
+    },
+    {
+      "path": "mobile-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "34c235b4855ba97a67d4bbd0a7000563b859f6040e84c1314e5be01cf74c7739"
+    },
+    {
+      "path": "identity-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "351dd8217e5448272d2235a18e30101a35ca3f937fd525713120906ef0dcfa67"
+    },
+    {
+      "path": "discovery-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "e92371d7df93746f3f0f865fa35b03b6de647747e898802f39f6293b770a1a33"
+    },
+    {
+      "path": "rail-navigation.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "ecff6cdb089c78e266c359f90ac582e4a4219391c6eb6d8210562803a4abdfc4"
+    },
+    {
+      "path": "catalog-client.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "5e937badb823dbf8f7a14f8ebdfc24b2513a85173a249d8d73d49fd2487afd4f"
+    },
+    {
+      "path": "catalog-worker.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "7947ccb7852caacfb64432fa2ccb0f4123f992b22cb31d06882e816a137a312c"
+    }
+  ],
+  "catalog_sha256": "083bc7f7e05382f189319e7e8e1a1050302d92606f16a6e0cda74212d023b544",
+  "videos": 36901,
+  "guides": 11
+}

@@ -1,0 +1,167 @@
+{
+  "checked_at": "2026-10-23T16:23:52.542Z",
+  "final_release": "skills-v18c",
+  "interactions_release": "skills-v18b, repeated critical views in skills-v18c",
+  "environment": "Codex in-app browser, simulated viewport. No physical phone or full WCAG audit.",
+  "checks": [
+    {
+      "focus": "search",
+      "language": "fr",
+      "open": true,
+      "query": "vidange",
+      "scrollWidth": 390,
+      "suggestions": [
+        "Explorer un sujet\nvidange\nPréparer une vidange\n238 ressources\n→",
+        "Vidéo\nBoîte automatique : faut-il vraiment faire la vidange ? Huile à vie ou arnaque ?\nYouTube · français · GLB\n↗",
+        "Vidéo\nBVA vidange a vie /!\\ je vous montre sur une BVA 722.6 Mercedes SLK-350\nYouTube · français · estimé · Diag Tech Automobile\n↗",
+        "Vidéo\nChangement d'huile moteur pour la TOYOTA COROLLA hybride\nInstagram · français · estimé\n↗",
+        "Vidéo\nChanger l'huile moteur et le filtre à huile Audi A6 | Tutoriel HD\nYouTube · français · estimé · auto-doc.fr\n↗",
+        "Vidéo\nChanger l'huile moteur et le filtre à huile BMW 7 E38 TUTORIEL | AUTODOC\nYouTube · français · estimé · auto-doc.fr\n↗"
+      ],
+      "test": "French language within search",
+      "width": 390
+    },
+    {
+      "focus": "edit-search",
+      "searchOpen": false,
+      "test": "Video suggestion closes search then restores focus",
+      "videoOpen": false
+    },
+    {
+      "disabled": "false",
+      "focus": "Sujet suivant",
+      "position": "3 / 3",
+      "scroll": 498,
+      "test": "Rail last card keeps focus"
+    },
+    {
+      "focus": "Entretenir ma voitureEntretien et réparations",
+      "hidden": true,
+      "inRail": true,
+      "pageWidth": 1265,
+      "scrollWidth": 1265,
+      "test": "Resize returns focus to visible card"
+    },
+    {
+      "entryImages": [
+        {
+          "height": 193.953125,
+          "loaded": true,
+          "width": 310.328125
+        },
+        {
+          "height": 193.953125,
+          "loaded": true,
+          "width": 310.328125
+        },
+        {
+          "height": 193.953125,
+          "loaded": true,
+          "width": 310.34375
+        }
+      ],
+      "hiddenControls": [
+        true,
+        true
+      ],
+      "metadataFont": "12px",
+      "overflow": false,
+      "test": "Desktop photo layout",
+      "width": 1280
+    },
+    {
+      "count": "11 ressources trouvées",
+      "format": "Guides 11",
+      "guideCount": 11,
+      "test": "Direct guides access"
+    },
+    {
+      "focus": "guide-sources",
+      "links": [
+        {
+          "text": "Renault Clio 5 phase 1 — Réservoir carburant\n↗",
+          "url": "https://www.user-manual.renault.com/fr/chapitre1-faites-connaissance-avec-votre-v%C3%A9hicule/reservoir-carburant"
+        },
+        {
+          "text": "Renault Clio 5 phase 1 — Caractéristiques moteurs et types de carburant\n↗",
+          "url": "https://www.user-manual.renault.com/fr/chapitre6-caract%C3%A9ristiques-techniques/caracteristiques-moteurs"
+        },
+        {
+          "text": "",
+          "url": "https://www.user-manual.renault.com/fr/content/xfk/technical-specifications/information-about-vehicle/identification-moteur"
+        }
+      ],
+      "open": true,
+      "test": "Manufacturer references accessible"
+    },
+    {
+      "disabled": "true",
+      "focus": "Sujet suivant",
+      "limit": 509,
+      "position": "3 / 3",
+      "scroll": 509,
+      "test": "Rail settled at last card"
+    },
+    {
+      "focus": "SUMMARY",
+      "label": "Crédits photos",
+      "test": "Tab after last arrow"
+    },
+    {
+      "clientWidth": 320,
+      "dialogScroll": 320,
+      "dialogWidth": 320,
+      "language": "fr",
+      "query": "vidange Clio 3",
+      "scrollWidth": 320,
+      "test": "320px Spanish UI French video search",
+      "ui": "es",
+      "width": 320
+    },
+    {
+      "dialogOverflow": false,
+      "labelAlignment": "left",
+      "language": "fr",
+      "pageOverflow": false,
+      "query": "vidange Clio 3",
+      "test": "Final V18c 320px search",
+      "width": 320
+    },
+    {
+      "fonts": {
+        "detail": "12px",
+        "title": "15px",
+        "type": "11px"
+      },
+      "labels": [
+        "Explorer un sujet\nvidange\nPréparer une vidange\n238 ressources\n→",
+        "Vidéo\nBoîte automatique : faut-il vraiment faire la vidange ? Huile à vie ou arnaque ?\nYouTube · français · GLB\n↗",
+        "Vidéo\nBVA vidange a vie /!\\ je vous montre sur une BVA 722.6 Mercedes SLK-350\nYouTube · français · estimé · Diag Tech Automobile\n↗",
+        "Vidéo\nChangement d'huile moteur pour la TOYOTA COROLLA hybride\nInstagram · français · estimé\n↗",
+        "Vidéo\nChanger l'huile moteur et le filtre à huile Audi A6 | Tutoriel HD\nYouTube · français · estimé · auto-doc.fr\n↗",
+        "Vidéo\nChanger l'huile moteur et le filtre à huile BMW 7 E38 TUTORIEL | AUTODOC\nYouTube · français · estimé · auto-doc.fr\n↗"
+      ],
+      "language": "fr",
+      "open": true,
+      "query": "vidange",
+      "test": "Final V18c French search"
+    },
+    {
+      "buttonSize": [
+        {
+          "height": 44,
+          "width": 44
+        },
+        {
+          "height": 44,
+          "width": 44
+        }
+      ],
+      "overflow": false,
+      "photoWidth": 272.6875,
+      "position": "2 / 3",
+      "test": "Final V18c photographic rail",
+      "width": 390
+    }
+  ]
+}
