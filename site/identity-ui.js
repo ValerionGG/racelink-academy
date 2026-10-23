@@ -26,7 +26,7 @@ export function createIdentityUI({t, openSearch, getView, isBrowsing, getState =
       search: t('Rechercher','Search','Buscar'), menu: t('Menu','Menu','Menú'),
       heroEyebrow: t('À portée de main','Within reach','A tu alcance'),
       heroCaption: t('Comprendre votre voiture.','Understand your car.','Comprende tu coche.'),
-      heroAction: t('Les gestes qui font la différence','Small skills. A real difference.','Gestos que marcan la diferencia'),
+      heroAction: t('Explorer la mécanique','Explore mechanics','Explorar la mecánica'),
       heroNote: t('MÉCANIQUE · PILOTAGE · SIM RACING','MECHANICS · DRIVING · SIM RACING','MECÁNICA · PILOTAJE · SIM RACING')
     };
     const productLabels = {

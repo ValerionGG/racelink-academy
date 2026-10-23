@@ -1,5 +1,5 @@
-import {guidePhoto,guideTopic} from './guide-art.js?v=atelier-v19';
-import {createGuideSources,isManufacturerReference} from './guide-sources.js?v=atelier-v19';
+import {guidePhoto,guideTopic} from './guide-art.js?v=atelier-v19b';
+import {createGuideSources,isManufacturerReference} from './guide-sources.js?v=atelier-v19b';
 
 export function createGuideUI({escape:e,t,picks,safeUrl}) {
   let version=0;

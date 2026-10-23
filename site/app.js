@@ -1,11 +1,11 @@
 import {icon as glyph, categoryIcon} from './icons.js';
-import {createIdentityUI} from './identity-ui.js?v=atelier-v19';
+import {createIdentityUI} from './identity-ui.js?v=atelier-v19b';
 import {tracks} from './tracks.js';
-import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=atelier-v19';
-import {createDiscoveryUI} from './discovery-ui.js?v=atelier-v19';
+import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=atelier-v19b';
+import {createDiscoveryUI} from './discovery-ui.js?v=atelier-v19b';
 import {createRaceLinkPicks} from './racelink-picks.js';
-import {createMobileUI} from './mobile-ui.js?v=atelier-v19';
-import {createGuideUI} from './guide-ui.js?v=atelier-v19';
+import {createMobileUI} from './mobile-ui.js?v=atelier-v19b';
+import {createGuideUI} from './guide-ui.js?v=atelier-v19b';
 import {socialContentMarkup} from './social-content.js';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
@@ -143,7 +143,7 @@ function applyTranslations(){
   $('.language-shortcuts [data-content-language=""]').textContent=t('Toutes','All','Todos');
   $('#content-language-note').textContent=t('La langue peut être estimée à partir du titre et de la source.','Language may be estimated from the title and source.','El idioma puede estimarse a partir del título y la fuente.');
   $$('[data-i18n]').forEach(el=>{el.innerHTML=ui==='fr'?originalText[el.dataset.i18n]:dictionaries[ui]?.[el.dataset.i18n]||originalText[el.dataset.i18n];});
-  $('#search').placeholder=t('Un tuto, une question, un modèle…','A tutorial, a question, a car model…','Un tutorial, una pregunta, un modelo…');
+  $('#search').placeholder=t('Un sujet, un modèle…','A topic, a car model…','Un tema, un modelo…');
   $('#search').setAttribute('aria-label',t('Rechercher des tutoriels','Search tutorials','Buscar tutoriales'));
   $('#search-form button').setAttribute('aria-label',t('Lancer la recherche','Search','Buscar'));
   $('.results-toolbar label .sr-only').textContent=t('Trier les résultats','Sort results','Ordenar resultados');

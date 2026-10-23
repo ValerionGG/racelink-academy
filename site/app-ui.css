@@ -522,7 +522,7 @@ main {margin:0;min-height:calc(100dvh - 200px)}
 #search-suggestions strong {font:650 15px/1.45 var(--body)}
 #search-suggestions small {font-size:12px;line-height:1.65;color:var(--muted)}
 .search-helper {font-size:12px;color:var(--muted);background:#fff;line-height:1.7}
-.results-mode .hero,.results-mode .question-band,.results-mode #discovery-hub {display:none}
+.results-mode .hero.wrap,.results-mode .question-band,.results-mode #discovery-hub {display:none}
 
 /* Vehicle tools, native readers and source attribution. */
 .vehicle-hub {padding:22px;background:#f9f9fa;border:0;margin:0;border-radius:0 0 8px 8px;scroll-margin-top:90px}
