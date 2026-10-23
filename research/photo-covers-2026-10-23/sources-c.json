@@ -1,0 +1,34 @@
+[
+  {
+    "id": "driving",
+    "url": "./assets/photos/driving.jpg",
+    "alt": "Habitacle et volant d’une voiture de course.",
+    "position": "50% 49%",
+    "credit": "Dani / shotbydani",
+    "sourceUrl": "https://unsplash.com/photos/interior-view-of-a-racing-cars-cockpit-cYe2JL87W0Q",
+    "license": "Unsplash License",
+    "licenseUrl": "https://unsplash.com/license",
+    "file": "outputs/focus-academy/public/assets/photos/driving.jpg",
+    "width": 960,
+    "height": 1440,
+    "bytes": 225505,
+    "sha256": "b1d4e57edcbc0e46bac0322738d65ef2ff3f7d06915276e0c002587e89bb5a40",
+    "visual_review": "Reviewed with view_image; real cockpit / event simulators, natural color. Display crop verified separately in browser."
+  },
+  {
+    "id": "simracing",
+    "url": "./assets/photos/simracing.jpg",
+    "alt": "Pilotes sur des simulateurs au DTM eSports, Essen Motor Show 2024.",
+    "position": "50% 40%",
+    "credit": "Matti Blume",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:DTM_esports,_EMS_2024,_Essen_(P1031995).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+    "file": "outputs/focus-academy/public/assets/photos/simracing.jpg",
+    "width": 960,
+    "height": 640,
+    "bytes": 153946,
+    "sha256": "330a115f6d8615c704c022bd43f17e3393ef97e0c448c0d8b4cbfd3b586b644c",
+    "visual_review": "Reviewed with view_image; real cockpit / event simulators, natural color. Display crop verified separately in browser."
+  }
+]

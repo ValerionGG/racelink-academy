@@ -1,0 +1,19 @@
+{
+  "checked_at": "2026-10-23T10:32:27.033136+00:00",
+  "commit": "ad0cc50227fce243d2100a5089ccf13f8fd6b8db",
+  "scope": "CUA public browser, desktop and responsive preview",
+  "observed": [
+    "Desktop home: three photographic entries loaded, decorative icon overlays removed.",
+    "Desktop library: first row of photographic guides visually inspected; all 11 titles, image alt text and credit controls present in accessibility tree.",
+    "Guide-only URL returns 11 resources; fuel guide opened from its photographic cover and closed, focus restored to that cover.",
+    "Mobile home in the existing 390px responsive frame visually inspected, photographs visible in the horizontal entry list."
+  ],
+  "screenshots": [
+    "desktop-home.png",
+    "mobile-home.png"
+  ],
+  "limitations": [
+    "Intermittent browser-tool timeouts prevented completion of scrolling and mobile guide interaction checks. Successful observations are listed separately; timed-out attempts are not passes.",
+    "No physical-phone test or full accessibility audit. All 12 source photographs were separately inspected as image files; only stated card positions were visually inspected in the page."
+  ]
+}

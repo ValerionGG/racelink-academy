@@ -1,6 +1,6 @@
 # RaceLink Academy
 
-Version finale **v14c**, commit [f39bfee](https://github.com/ValerionGG/racelink-academy/commit/f39bfee), publiée et contrôlée. Les observations sont détaillées dans [VALIDATION.md](research/ui-redesign-2026-10-23/VALIDATION.md).
+Version courante **photo-v15**, commit [ad0cc50](https://github.com/ValerionGG/racelink-academy/commit/ad0cc50), publiée. Les couvertures des **11 guides** et les entrées de l’accueil utilisent **12 photographies réelles**. Titres sous les images, crédits accessibles, pictogrammes décoratifs retirés. [Voir la version](https://valeriongg.github.io/racelink-academy/?release=photo-v15) · [Validation et limites](research/photo-covers-2026-10-23/VALIDATION.md).
 
 ## Register
 
@@ -16,11 +16,11 @@ Trouver rapidement une ressource utile, comprendre sa source et ses limites, pui
 
 ## Brand Personality
 
-Claire, pratique, passionnée. V14 publiée le 23 octobre 2026, commit [d4cdda4](https://github.com/ValerionGG/racelink-academy/commit/d4cdda4) : filiation avec le site officiel RaceLink réellement inspecté, noir/rouge/blanc, corps Onest et courts accents Orbitron. Surfaces de lecture neutres, accueil noir compact avec recherche blanche, photos non teintées et légendes lisibles hors image. Onze couvertures de guides en SVG original noir/argent/rouge ; miniatures des vidéos conservées. Langage accessible avant vocabulaire technique. Les décisions courantes figurent dans [DESIGN.md](DESIGN.md), les contrôles réels et l’état de la retouche v14c dans [VALIDATION.md](research/ui-redesign-2026-10-23/VALIDATION.md).
+Claire, pratique, passionnée. V14 publiée le 23 octobre 2026, commit [d4cdda4](https://github.com/ValerionGG/racelink-academy/commit/d4cdda4) : filiation avec le site officiel RaceLink réellement inspecté, noir/rouge/blanc, corps Onest et courts accents Orbitron. Surfaces de lecture neutres, accueil noir compact avec recherche blanche, photos non teintées et légendes lisibles hors image. Depuis photo-v15, onze couvertures de guides photographiques avec crédits ; miniatures des vidéos conservées. Langage accessible avant vocabulaire technique. Les décisions courantes figurent dans [DESIGN.md](DESIGN.md), les contrôles réels et l’état de la retouche v14c dans [VALIDATION.md](research/ui-redesign-2026-10-23/VALIDATION.md).
 
 ## Anti-references
 
-La précédente version empilait objectifs, thèmes, sélections et formulaire avant les résultats. Éviter ce parcours signalé comme compliqué, les affiches vertes rejetées par l’utilisateur, les teintes générales qui masquent les images, les libellés ambigus, les compteurs décoratifs et les badges donnant une impression de validation technique. Les références Pinterest et MotionSite ne justifient pas de transformer la bibliothèque en page promotionnelle ou d’ajouter des animations permanentes.
+La précédente version empilait objectifs, thèmes, sélections et formulaire avant les résultats. Éviter ce parcours signalé comme compliqué, les affiches vertes et les grandes icônes sur fond uni rejetées par l’utilisateur, les teintes générales qui masquent les images, les libellés ambigus, les compteurs décoratifs et les badges donnant une impression de validation technique. Les références Pinterest et MotionSite ne justifient pas de transformer la bibliothèque en page promotionnelle ou d’ajouter des animations permanentes.
 
 ## Design Principles
 

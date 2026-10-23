@@ -1,0 +1,160 @@
+{
+  "checked_at": "2026-10-23T10:23:02.410091+00:00",
+  "code_commit": "ad0cc50227fce243d2100a5089ccf13f8fd6b8db",
+  "status": "passed",
+  "scope": "HTTP source bytes, no browser rendering",
+  "files": [
+    {
+      "path": "index.html",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "bd2a4f14db21650b913fc174aa5346c33ccc8043049fc2f67b989a56347e086e"
+    },
+    {
+      "path": "app-ui.css",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "4dad7767eafd6195a2956c913ef1d3feea8df41038e7ebf17a583e7a475545dc"
+    },
+    {
+      "path": "product-ui.css",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "61b293b649b877396205fc2ca148928fd6458ddef78060907b8192920b22a572"
+    },
+    {
+      "path": "app.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "b99b979aeb9cb40a777e53b58c136e3e1657713a8126bc116a71ed78ef49386f"
+    },
+    {
+      "path": "guide-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "8b031a1d2f548694dea080b5b6b6d79b6c8b5e60577d8d8629e9c28ef0b9befd"
+    },
+    {
+      "path": "guide-art.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "00ccf90120314e7330ea3aa034220ebcfa3375412c4eb15c8a35c9a2947b0294"
+    },
+    {
+      "path": "mobile-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "447d29d3a596472b28c41521999e03e7a5523299ca022b498f99eb5eefc7df78"
+    },
+    {
+      "path": "identity-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "fdae76a397b6a6b267a8206241537de58b85de9a874b9b267706dd64164e25a5"
+    },
+    {
+      "path": "discovery-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "bcd0322c8d89acbc5230102ac84ecb020dca580133da79e95e0d13a152ad9d19"
+    },
+    {
+      "path": "preview-mobile.html",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "a0056e343cf6bd41745a7d97bc4b323536a4757969ac9ad12166977a0f882a0b"
+    },
+    {
+      "path": "guide-photos.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "14cbfe92dc097e1e4a8fb9498e22a0969fb37748c6813d845e48c6200a913775"
+    },
+    {
+      "path": "visual-assets.json",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "3200e3518bbdf3ecff9671d3fb70c893eadc05c3435dc29c60224aa294151353"
+    },
+    {
+      "path": "photo-sources.json",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "90c6637d024cd0f9af7d8ccca9289b3d16acabaeb496cbd3798d237b14b28bc5"
+    },
+    {
+      "path": "assets/photos/battery.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "450475c9ba1334bfedec9a426efd5595f4fbb1447da7bffd7bea9637baaeae7b"
+    },
+    {
+      "path": "assets/photos/diagnostics.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "079f4355c5640f4191434dd7bc5fa30cd2c4e249859247199b0a0808232ab7e7"
+    },
+    {
+      "path": "assets/photos/driving.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "b1d4e57edcbc0e46bac0322738d65ef2ff3f7d06915276e0c002587e89bb5a40"
+    },
+    {
+      "path": "assets/photos/fuel.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "6d535d9c2c72ca49eca54ac51d11590800453a6f5bb3e6aee97d0c79c723a8be"
+    },
+    {
+      "path": "assets/photos/fuses.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "52524ed72ccf0a1fbef547ca8cbc14ed14577471c8e5af162b3a99f4b06d5132"
+    },
+    {
+      "path": "assets/photos/identification.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "a57ce5af994109188e83b527dd605eae77a40a9bf6d6a3e51756e9372d258fc3"
+    },
+    {
+      "path": "assets/photos/lighting.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "10b3fc1edbc898f05efa567aa39309b80927ddc178da1e0fb9b006109e01b474"
+    },
+    {
+      "path": "assets/photos/oil.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "9763f70c18d8070c05f405c3f92238dbe4e6516f5b6156369c5b93b3e83d1d97"
+    },
+    {
+      "path": "assets/photos/service.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "de63628db92cecb9382b3ebdcf3fe7d3ea424b988c6b4fbe4e2db4a9f8bd5fe4"
+    },
+    {
+      "path": "assets/photos/simracing.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "330a115f6d8615c704c022bd43f17e3393ef97e0c448c0d8b4cbfd3b586b644c"
+    },
+    {
+      "path": "assets/photos/wheel.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "c8b8ffc45875e9658cf9951d97858a19e4835b7a7a5a09fca2cab55c582f3afa"
+    },
+    {
+      "path": "assets/photos/wipers.jpg",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "e3aeaa70c861e3f80f965fc6a6d99555bd51504fbe44fb69ea75571f33eb30e7"
+    }
+  ],
+  "catalog_sha256": "05db8aca2806f1c4da81c3daa79f3cb5a3d335dd94c6395ce10b314867ab3b84",
+  "catalog_unchanged": true
+}

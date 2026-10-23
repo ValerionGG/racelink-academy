@@ -1,8 +1,8 @@
 # Interface RaceLink Academy
 
-Version finale **v14c**, commit [f39bfee](https://github.com/ValerionGG/racelink-academy/commit/f39bfee), publiée et contrôlée. Les observations sont détaillées dans [VALIDATION.md](research/ui-redesign-2026-10-23/VALIDATION.md).
+Version courante **photo-v15**, commit [ad0cc50](https://github.com/ValerionGG/racelink-academy/commit/ad0cc50), publiée. Les couvertures des **11 guides** et les entrées de l’accueil utilisent **12 photographies réelles**. Titres sous les images, crédits accessibles, pictogrammes décoratifs retirés. [Voir la version](https://valeriongg.github.io/racelink-academy/?release=photo-v15) · [Validation et limites](research/photo-covers-2026-10-23/VALIDATION.md).
 
-Référence visuelle canonique, **v14 publiée le 23 octobre 2026**, commit [d4cdda4](https://github.com/ValerionGG/racelink-academy/commit/d4cdda4). Elle remplace la direction Manrope et les affiches vertes après le retour utilisateur et l’inspection réelle de [racelink-app.co](https://racelink-app.co/). L’accueil et plusieurs parcours de la v14 ont été vérifiés via CUA ; leur périmètre précis figure dans [VALIDATION.md](research/ui-redesign-2026-10-23/VALIDATION.md). La retouche v14c de compacité mobile et des badges fait l’objet d’une validation séparée. Le contexte durable reste dans [PRODUCT.md](PRODUCT.md), les preuves et arbitrages dans [brand-direction.md](research/ui-redesign-2026-10-23/brand-direction.md) et [DECISIONS.md](research/ui-redesign-2026-10-23/DECISIONS.md).
+Fondation de marque antérieure, **v14 publiée le 23 octobre 2026**, commit [d4cdda4](https://github.com/ValerionGG/racelink-academy/commit/d4cdda4). Elle remplace la direction Manrope et les affiches vertes après le retour utilisateur et l’inspection réelle de [racelink-app.co](https://racelink-app.co/). L’accueil et plusieurs parcours de la v14 ont été vérifiés via CUA ; leur périmètre précis figure dans [VALIDATION.md](research/ui-redesign-2026-10-23/VALIDATION.md). La retouche v14c de compacité mobile et des badges fait l’objet d’une validation séparée. Le contexte durable reste dans [PRODUCT.md](PRODUCT.md), les preuves et arbitrages dans [brand-direction.md](research/ui-redesign-2026-10-23/brand-direction.md) et [DECISIONS.md](research/ui-redesign-2026-10-23/DECISIONS.md).
 
 ## Intention
 
@@ -47,7 +47,7 @@ Le site officiel utilise également noir, halo rouge, navigation arrondie et bou
 
 Les cartes vidéo montrent la miniature réelle consignée, un titre descriptif, l’auteur et la plateforme. Une miniature manquante reçoit un fond neutre. Les sélections affichent une durée uniquement connue, le statut de langue et la base du choix ; la raison, la preuve et la date de revue restent dépliables. Les badges de sélection sont sobres, sans dominante verte ni fausse certification.
 
-Les portes de découverte utilisent des images non teintées, accompagnées d’une légende hors image. Les onze guides disposent de couvertures SVG originales noir/argent/rouge, correspondant à leur sujet. Ces illustrations et couvertures ne deviennent jamais des miniatures de vidéos, ni des preuves de véhicule ou de compatibilité.
+Les portes de découverte et les onze guides utilisent des photographies réelles non teintées, accompagnées d’une légende hors image. Les crédits donnent l’auteur, la source et la licence. Ces couvertures ne deviennent jamais des miniatures de vidéos, ni des preuves de véhicule ou de compatibilité. Les grandes icônes décoratives sur fond uni sont exclues ; seuls les pictogrammes fonctionnels restent dans les contrôles.
 
 Sur téléphone, les résultats vidéo sont en une colonne : image à gauche, titre et informations à droite. Les guides disposent d’une carte propre. Sur ordinateur, les vidéos forment une grille et les filtres occupent une colonne contextuelle distincte de la sidebar de navigation.
 

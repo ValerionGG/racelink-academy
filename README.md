@@ -1,12 +1,12 @@
 # RaceLink Academy — bibliothèque ouverte
 
-Version finale **v14c**, commit [f39bfee](https://github.com/ValerionGG/racelink-academy/commit/f39bfee), publiée et contrôlée. Les observations sont détaillées dans [VALIDATION.md](research/ui-redesign-2026-10-23/VALIDATION.md).
+Version courante **photo-v15**, commit [ad0cc50](https://github.com/ValerionGG/racelink-academy/commit/ad0cc50), publiée. Les couvertures des **11 guides** et les entrées de l’accueil utilisent **12 photographies réelles**. Titres sous les images, crédits accessibles, pictogrammes décoratifs retirés. [Voir la version](https://valeriongg.github.io/racelink-academy/?release=photo-v15) · [Validation et limites](research/photo-covers-2026-10-23/VALIDATION.md).
 
 [Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/) · [Vidéos en français](https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&format=video)
 
 Bibliothèque de tutoriels autour du sport automobile, de la simulation et de l’entretien automobile, en complément de [Focus](https://focus.racelink-app.co/).
 
-## Nouvelle interface produit — 23 octobre 2026
+## Historique de la refonte produit — v14, 23 octobre 2026
 
 La **v14 est publiée** dans le commit [d4cdda4](https://github.com/ValerionGG/racelink-academy/commit/d4cdda4). Corps Onest, accents Orbitron, noir/rouge/blanc : la direction reprend le site officiel RaceLink, réellement inspecté. Accueil compact avec champ blanc, photos non teintées et légendes séparées, **11 couvertures de guides SVG originales**. Navigation permanente sur ordinateur, quatre destinations mobiles, recherche et critères véhicule à la demande.
 

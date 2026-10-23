@@ -1,0 +1,81 @@
+{
+  "status": "published_verified",
+  "url": "https://valeriongg.github.io/racelink-academy/",
+  "french_url": "https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&format=video",
+  "repository": "https://github.com/ValerionGG/racelink-academy",
+  "commit": "f39bfee6941ccd454b38d6f438f4c606a920e826",
+  "workflow": "https://github.com/ValerionGG/racelink-academy/actions/runs/39931846704",
+  "workflow_conclusion": "success",
+  "verified_at": "2026-10-23T09:29:27.224935+00:00",
+  "catalog_videos": 36901,
+  "guides": 11,
+  "french_videos": 5022,
+  "new_social_videos": 0,
+  "new_french_text_estimates": 0,
+  "platforms": {
+    "dailymotion": 42,
+    "facebook": 46,
+    "instagram": 140,
+    "tiktok": 166,
+    "twitch": 2,
+    "vimeo": 3,
+    "youtube": 36502
+  },
+  "catalog_sha256": "05db8aca2806f1c4da81c3daa79f3cb5a3d335dd94c6395ce10b314867ab3b84",
+  "focus_domain_integrated": false,
+  "screenshots": [
+    "focus-academy/research/ui-redesign-2026-10-23/brand-desktop.png",
+    "focus-academy/research/ui-redesign-2026-10-23/brand-mobile.png",
+    "focus-academy/research/ui-redesign-2026-10-23/brand-mobile-320.png",
+    "focus-academy/research/ui-redesign-2026-10-23/brand-guides.png"
+  ],
+  "thousands_of_new_social_videos_achieved": false,
+  "acquisition_limits": [
+    "No accessible qualified bulk French automotive social export",
+    "TikHub preview requires account; coverage unmeasured",
+    "No Instagram extension connection",
+    "Exa quota exhausted; vidIQ credits insufficient"
+  ],
+  "social_fields": {
+    "structured_records": 352,
+    "skill": "social-content-structure",
+    "skill_version": "1.0.2",
+    "new_titles_reviewed": 7
+  },
+  "social_alternative": {
+    "tiktok_added": 7,
+    "instagram_added": 0,
+    "archived_index_titles": 6,
+    "creator_site_link_labels": 1,
+    "new_captions": 0,
+    "new_transcripts": 0,
+    "new_editorial_badges": 0
+  },
+  "previous_release": {
+    "commit": "1fcc25ce448923551302cd7e877240715caf3859",
+    "catalog_videos": 36901,
+    "report": "focus-academy/research/ui-redesign-2026-10-23/deployment-before-product.json"
+  },
+  "release_scope": "RaceLink brand UI and guide illustrations; no catalog changes",
+  "mobile_preview_url": "https://valeriongg.github.io/racelink-academy/preview-mobile.html",
+  "ui_redesign": {
+    "skills_repositories_compared": 6,
+    "product_references_compared": 10,
+    "main_skill": "Impeccable 4.7 Operate / Read",
+    "desktop_sidebar": true,
+    "mobile_navigation_destinations": 4,
+    "browser_observed_commit": "f39bfee6941ccd454b38d6f438f4c606a920e826",
+    "browser_observations": [
+      "Desktop 1280x720; public responsive frames 320/390/430/768; no horizontal overflow on home",
+      "Guide open/close restores focus",
+      "French vidange Clio 3 query returns two videos; YouTube filter preserves context"
+    ],
+    "final_visual_recheck": "Completed within documented scope; browser-checks.json distinguishes the observed versions",
+    "brand": "Black, white, silver and RaceLink red",
+    "fonts": [
+      "Onest",
+      "Orbitron"
+    ],
+    "guide_illustrations": 11
+  }
+}
