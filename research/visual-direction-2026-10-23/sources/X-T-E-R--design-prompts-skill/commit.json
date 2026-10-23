@@ -1,0 +1,113 @@
+{
+  "sha": "4f81ca29289dd0e5105f9d1768bf98bbb18b592b",
+  "node_id": "C_kwDOSKUnVNoAKDRmODFjYTI5Mjg5ZGQwZTUxMDVmOWQxNzY4YmY5OGJiYjE4YjU5MmI",
+  "commit": {
+    "author": {
+      "name": "Nai Long 7th",
+      "email": "nailong@xter.org",
+      "date": "2026-04-23T08:08:54Z"
+    },
+    "committer": {
+      "name": "Nai Long 7th",
+      "email": "nailong@xter.org",
+      "date": "2026-04-23T08:08:54Z"
+    },
+    "message": "Add README language links and friendly link",
+    "tree": {
+      "sha": "d4b40f48ffd9340238cbad4356a75e4450105208",
+      "url": "https://api.github.com/repos/X-T-E-R/design-prompts-skill/git/trees/d4b40f48ffd9340238cbad4356a75e4450105208"
+    },
+    "url": "https://api.github.com/repos/X-T-E-R/design-prompts-skill/git/commits/4f81ca29289dd0e5105f9d1768bf98bbb18b592b",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/X-T-E-R/design-prompts-skill/commits/4f81ca29289dd0e5105f9d1768bf98bbb18b592b",
+  "html_url": "https://github.com/X-T-E-R/design-prompts-skill/commit/4f81ca29289dd0e5105f9d1768bf98bbb18b592b",
+  "comments_url": "https://api.github.com/repos/X-T-E-R/design-prompts-skill/commits/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/comments",
+  "author": {
+    "login": "X-T-E-R",
+    "id": 82741331,
+    "node_id": "MDQ6VXNlcjgyNzQxMzMx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/82741331?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/X-T-E-R",
+    "html_url": "https://github.com/X-T-E-R",
+    "followers_url": "https://api.github.com/users/X-T-E-R/followers",
+    "following_url": "https://api.github.com/users/X-T-E-R/following{/other_user}",
+    "gists_url": "https://api.github.com/users/X-T-E-R/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/X-T-E-R/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/X-T-E-R/subscriptions",
+    "organizations_url": "https://api.github.com/users/X-T-E-R/orgs",
+    "repos_url": "https://api.github.com/users/X-T-E-R/repos",
+    "events_url": "https://api.github.com/users/X-T-E-R/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/X-T-E-R/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "X-T-E-R",
+    "id": 82741331,
+    "node_id": "MDQ6VXNlcjgyNzQxMzMx",
+    "avatar_url": "https://avatars.githubusercontent.com/u/82741331?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/X-T-E-R",
+    "html_url": "https://github.com/X-T-E-R",
+    "followers_url": "https://api.github.com/users/X-T-E-R/followers",
+    "following_url": "https://api.github.com/users/X-T-E-R/following{/other_user}",
+    "gists_url": "https://api.github.com/users/X-T-E-R/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/X-T-E-R/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/X-T-E-R/subscriptions",
+    "organizations_url": "https://api.github.com/users/X-T-E-R/orgs",
+    "repos_url": "https://api.github.com/users/X-T-E-R/repos",
+    "events_url": "https://api.github.com/users/X-T-E-R/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/X-T-E-R/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "01b29b62988b6dfbef1d5d1f32a6e15ae3f778b5",
+      "url": "https://api.github.com/repos/X-T-E-R/design-prompts-skill/commits/01b29b62988b6dfbef1d5d1f32a6e15ae3f778b5",
+      "html_url": "https://github.com/X-T-E-R/design-prompts-skill/commit/01b29b62988b6dfbef1d5d1f32a6e15ae3f778b5"
+    }
+  ],
+  "stats": {
+    "total": 12,
+    "additions": 12,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "d58aeaeffe7c6aa31b70eb10c0488a468e8f8c28",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 0,
+      "changes": 6,
+      "blob_url": "https://github.com/X-T-E-R/design-prompts-skill/blob/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/README.md",
+      "raw_url": "https://github.com/X-T-E-R/design-prompts-skill/raw/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/README.md",
+      "contents_url": "https://api.github.com/repos/X-T-E-R/design-prompts-skill/contents/README.md?ref=4f81ca29289dd0e5105f9d1768bf98bbb18b592b",
+      "patch": "@@ -1,5 +1,7 @@\n # Frontend Design Prompts Skill\n \n+[\u7b80\u4f53\u4e2d\u6587](./README.zh-CN.md)\n+\n `frontend-design-prompts` is a Codex skill that packages the public theme descriptions and prompt texts from [designprompts.dev](https://www.designprompts.dev/) into a local, searchable skill.\n \n It is meant for one job: help an agent infer a suitable frontend visual direction, load the right prompt files, and turn them into implementation-ready design guidance.\n@@ -49,3 +51,7 @@ Read [SOURCE.md](./SOURCE.md) for the research notes, attribution details, and t\n As of 2026-04-23, I did not find an explicit open-source license, public source repository link, or reuse terms on the site homepage or shipped frontend bundle.\n \n Because of that, this repo should be treated as an attributed reference snapshot of publicly accessible material, not as a relicensed upstream work. If you want to redistribute it broadly or use it commercially, verify permission from the original author first.\n+\n+## Friendly Links\n+\n+- [linux.do](https://linux.do/)"
+    },
+    {
+      "sha": "7c0526783f89832899795b8bdeeba8bddbb057bd",
+      "filename": "README.zh-CN.md",
+      "status": "modified",
+      "additions": 6,
+      "deletions": 0,
+      "changes": 6,
+      "blob_url": "https://github.com/X-T-E-R/design-prompts-skill/blob/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/README.zh-CN.md",
+      "raw_url": "https://github.com/X-T-E-R/design-prompts-skill/raw/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/README.zh-CN.md",
+      "contents_url": "https://api.github.com/repos/X-T-E-R/design-prompts-skill/contents/README.zh-CN.md?ref=4f81ca29289dd0e5105f9d1768bf98bbb18b592b",
+      "patch": "@@ -1,5 +1,7 @@\n # Front\u7aef\u8bbe\u8ba1\u63d0\u793a\u8bcd Skill\n \n+[English](./README.md)\n+\n `frontend-design-prompts` \u662f\u4e00\u4e2a Codex skill\u3002\u5b83\u628a [designprompts.dev](https://www.designprompts.dev/) \u516c\u5f00\u7ad9\u70b9\u91cc\u7684\u4e3b\u9898\u4ecb\u7ecd\u548c\u63d0\u793a\u8bcd\u6574\u7406\u6210\u4e86\u672c\u5730\u53ef\u68c0\u7d22\u3001\u53ef\u590d\u7528\u7684 skill\u3002\n \n \u5b83\u4e3b\u8981\u89e3\u51b3\u4e00\u4ef6\u4e8b\uff1a\u8ba9 agent \u5148\u5224\u65ad\u8be5\u7528\u4ec0\u4e48\u524d\u7aef\u89c6\u89c9\u65b9\u5411\uff0c\u518d\u8bfb\u53d6\u5bf9\u5e94\u4e3b\u9898\u6587\u4ef6\uff0c\u628a\u5b83\u53d8\u6210\u53ef\u76f4\u63a5\u843d\u5730\u7684\u8bbe\u8ba1\u6307\u5bfc\u3002\n@@ -49,3 +51,7 @@ python scripts/sync_designprompts.py\n \u622a\u81f3 `2026-04-23`\uff0c\u6211\u6ca1\u6709\u5728\u7ad9\u70b9\u9996\u9875\u6216\u5df2\u53d1\u5e03\u524d\u7aef bundle \u4e2d\u67e5\u5230\u660e\u786e\u7684\u5f00\u6e90\u8bb8\u53ef\u8bc1\u3001\u516c\u5f00\u6e90\u7801\u4ed3\u5e93\u94fe\u63a5\uff0c\u6216\u53ef\u590d\u7528\u6761\u6b3e\u8bf4\u660e\u3002\n \n \u6240\u4ee5\u8fd9\u4e2a\u4ed3\u5e93\u5e94\u88ab\u89c6\u4e3a\u201c\u5e26\u6765\u6e90\u6807\u6ce8\u7684\u516c\u5f00\u8d44\u6599\u5f52\u6863/\u5f15\u7528\u201d\uff0c\u800c\u4e0d\u662f\u4e0a\u6e38\u6388\u6743\u540e\u91cd\u65b0\u53d1\u7248\u7684\u5b98\u65b9\u955c\u50cf\u3002\u5982\u679c\u8981\u505a\u66f4\u5927\u8303\u56f4\u5206\u53d1\u6216\u5546\u4e1a\u4f7f\u7528\uff0c\u5efa\u8bae\u5148\u8054\u7cfb\u539f\u4f5c\u8005\u786e\u8ba4\u6743\u9650\u3002\n+\n+## \u53cb\u94fe\n+\n+- [linux.do](https://linux.do/)"
+    }
+  ]
+}

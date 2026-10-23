@@ -1,0 +1,137 @@
+{
+  "sha": "d14efff8ed1faa4187f004f79926f428c8074ec7",
+  "node_id": "C_kwDOQfttO9oAKGQxNGVmZmY4ZWQxZmFhNDE4N2YwMDRmNzk5MjZmNDI4YzgwNzRlYzc",
+  "commit": {
+    "author": {
+      "name": "Matt Van Horn",
+      "email": "mvanhorn@users.noreply.github.com",
+      "date": "2026-10-23T10:06:30Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-10-23T10:06:30Z"
+    },
+    "message": "docs: replace disabled Discussion links and the 404 stack clone URL (#543)\n\nConduct reports now go only through the contact listed on uupm.cc.\nGeneral questions now go to the repository issues page, and the README\nremains the other place to look. The quickstart clones this repository\nand enters ui-ux-pro-max-skill/stack before the existing setup step. A\ncommunity-docs test checks those sections for the replacement\ndestinations, the absence of the dead Discussion and old clone URLs,\nenforcement staying off public issues and mailto links, and the setup\nscript being present.\n\nRefs #542\n\nCo-authored-by: Matt Van Horn <455140+mvanhorn@users.noreply.github.com>",
+    "tree": {
+      "sha": "01b4179793016930023f7b899067f7f2afbec815",
+      "url": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/git/trees/01b4179793016930023f7b899067f7f2afbec815"
+    },
+    "url": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/git/commits/d14efff8ed1faa4187f004f79926f428c8074ec7",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq2zGmCRC1aQ7uu5UhlAAANnEQAIfaD0cdfBaDlQ6uSwTD5516\nf7jH9YwoHnps/3zLcYYAf59iafWxf6NXP8Xsk8NP7wGsAWDr6bXg8h96bnjIKkBi\n+I5DiKl6Ulp0aUcPWu/EKPIs6dqqS6i05gfCGouVu+PGU0biqVaSlWJbT41OIEfT\nCO3XuLVRmBqyv88Nr0pvsm0kT7Gev33TmHd5hwT+KFmAjOK2mvLPpmGLooL0CKc5\nSMO92aqOeFdrggqcoAUIQ/RPh46P4lOJ74GYVe6H4k3eSVV1rebf4YZ5R/cac0O5\nUDREvOBKw3ehrxveNJLvr5wYFl2RQNWTb8kyfy3MTsZanDo/yUCF0+nwdFVPGiI9\nKgH3rSQHdF3me/oAh9PjQiXXI18SAq8CLWoIIHSn3aRlPbqRgTj7UePqkk227YI4\nqpLlcRbRmD5e59QcovOn+AFnlTdGTP532ctvcXQyDNI5PtX3lvIeUF4FrYq/u7qd\n0aQQiR7WnE/LJyZ3Ze7+DlHR/L9Zy++tEphHiTNZbPOh/fbQ1WtqZiLWung3Wcw2\nJLeyc5oefXYrw23uD2/Ph4WhgHa+xAgEPJNiD9aANUqoVJrGDHy+3q4JvR887gP8\nn7GptubbscsstJxyYo68YzPx5diULYtYh3Pixidhw7QFfVHmG7TckNBVAjeKQGvk\nrDizbnbb33+ERrYIvP65\n=+bXj\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 01b4179793016930023f7b899067f7f2afbec815\nparent 28327f2f214d31bbd7555ed0c012a5df6484ed96\nauthor Matt Van Horn <mvanhorn@users.noreply.github.com> 1792749990 -0700\ncommitter GitHub <noreply@github.com> 1792749990 +0700\n\ndocs: replace disabled Discussion links and the 404 stack clone URL (#543)\n\nConduct reports now go only through the contact listed on uupm.cc.\nGeneral questions now go to the repository issues page, and the README\nremains the other place to look. The quickstart clones this repository\nand enters ui-ux-pro-max-skill/stack before the existing setup step. A\ncommunity-docs test checks those sections for the replacement\ndestinations, the absence of the dead Discussion and old clone URLs,\nenforcement staying off public issues and mailto links, and the setup\nscript being present.\n\nRefs #542\n\nCo-authored-by: Matt Van Horn <455140+mvanhorn@users.noreply.github.com>",
+      "verified_at": "2026-10-23T10:06:31Z"
+    }
+  },
+  "url": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/commits/d14efff8ed1faa4187f004f79926f428c8074ec7",
+  "html_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/commit/d14efff8ed1faa4187f004f79926f428c8074ec7",
+  "comments_url": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/commits/d14efff8ed1faa4187f004f79926f428c8074ec7/comments",
+  "author": {
+    "login": "mvanhorn",
+    "id": 455140,
+    "node_id": "MDQ6VXNlcjQ1NTE0MA==",
+    "avatar_url": "https://avatars.githubusercontent.com/u/455140?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/mvanhorn",
+    "html_url": "https://github.com/mvanhorn",
+    "followers_url": "https://api.github.com/users/mvanhorn/followers",
+    "following_url": "https://api.github.com/users/mvanhorn/following{/other_user}",
+    "gists_url": "https://api.github.com/users/mvanhorn/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/mvanhorn/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/mvanhorn/subscriptions",
+    "organizations_url": "https://api.github.com/users/mvanhorn/orgs",
+    "repos_url": "https://api.github.com/users/mvanhorn/repos",
+    "events_url": "https://api.github.com/users/mvanhorn/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/mvanhorn/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "28327f2f214d31bbd7555ed0c012a5df6484ed96",
+      "url": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/commits/28327f2f214d31bbd7555ed0c012a5df6484ed96",
+      "html_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/commit/28327f2f214d31bbd7555ed0c012a5df6484ed96"
+    }
+  ],
+  "stats": {
+    "total": 72,
+    "additions": 68,
+    "deletions": 4
+  },
+  "files": [
+    {
+      "sha": "079823465d952a1d0b312b9a3b81754d312f5edc",
+      "filename": "CODE_OF_CONDUCT.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/CODE_OF_CONDUCT.md",
+      "raw_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/raw/d14efff8ed1faa4187f004f79926f428c8074ec7/CODE_OF_CONDUCT.md",
+      "contents_url": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/contents/CODE_OF_CONDUCT.md?ref=d14efff8ed1faa4187f004f79926f428c8074ec7",
+      "patch": "@@ -31,7 +31,7 @@ This Code of Conduct applies within all community spaces (issues, pull requests,\n \n ## Enforcement\n \n-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the maintainers by opening a [GitHub Discussion](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/discussions) marked private/moderation, or via the contact listed on [uupm.cc](https://www.uupm.cc). All complaints will be reviewed and investigated promptly and fairly.\n+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the maintainers via the contact listed on [uupm.cc](https://www.uupm.cc). All complaints will be reviewed and investigated promptly and fairly.\n \n ## Attribution\n "
+    },
+    {
+      "sha": "9cd43322bcc19d08bc8549e74f78ec9b75348200",
+      "filename": "CONTRIBUTING.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/CONTRIBUTING.md",
+      "raw_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/raw/d14efff8ed1faa4187f004f79926f428c8074ec7/CONTRIBUTING.md",
+      "contents_url": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/contents/CONTRIBUTING.md?ref=d14efff8ed1faa4187f004f79926f428c8074ec7",
+      "patch": "@@ -174,6 +174,6 @@ Harassment, spam, or low-effort contributions will be closed without review.\n \n ## Questions?\n \n-Open a [Discussion](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/discussions) or check the [README](README.md) first.\n+Open an [issue](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/issues) or check the [README](README.md) first.\n \n Happy contributing! 🚀"
+    },
+    {
+      "sha": "b6ecc06861c696ee5b1f9200e266d0341fc0171a",
+      "filename": "scripts/tests/test_community_docs.py",
+      "status": "added",
+      "additions": 64,
+      "deletions": 0,
+      "changes": 64,
+      "blob_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/scripts%2Ftests%2Ftest_community_docs.py",
+      "raw_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/raw/d14efff8ed1faa4187f004f79926f428c8074ec7/scripts%2Ftests%2Ftest_community_docs.py",
+      "contents_url": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/contents/scripts%2Ftests%2Ftest_community_docs.py?ref=d14efff8ed1faa4187f004f79926f428c8074ec7",
+      "patch": "@@ -0,0 +1,64 @@\n+\"\"\"Community docs must not point at disabled or missing destinations.\n+\n+Regression for #542. Discussions are disabled, so questions go to issues and\n+conduct reports stay on the uupm.cc contact. The stack quickstart clones this\n+repository and enters stack/ before ./scripts/setup.sh.\n+\"\"\"\n+\n+import re\n+import unittest\n+from pathlib import Path\n+\n+REPO = next(\n+    parent for parent in Path(__file__).resolve().parents\n+    if (parent / \"scripts\" / \"generate-catalog-summary.py\").is_file()\n+)\n+DISCUSSIONS_URL = \"https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/discussions\"\n+ISSUES_URL = \"https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/issues\"\n+STACK_CLONE = \"git clone https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git\"\n+STACK_CD = \"cd ui-ux-pro-max-skill/stack\"\n+\n+\n+def read_repo_text(relative_path):\n+    return (REPO / relative_path).read_text(encoding=\"utf-8\")\n+\n+\n+def section_until_next_heading(text, heading):\n+    \"\"\"Body under `heading`, up to the next `## ` heading.\n+\n+    A missing heading fails here. Returning an empty slice would let the\n+    negative checks (no /discussions, no old clone URL) pass vacuously.\n+    \"\"\"\n+    match = re.search(\n+        rf\"^## {re.escape(heading)}\\n(.*?)(?=^## |\\Z)\",\n+        text,\n+        re.MULTILINE | re.DOTALL,\n+    )\n+    if match is None:\n+        raise AssertionError(f\"missing heading: ## {heading}\")\n+    return match.group(1)\n+\n+\n+class CommunityDocsTest(unittest.TestCase):\n+    def test_questions_issues_conduct_contact_and_stack_clone(self):\n+        contributing = read_repo_text(\"CONTRIBUTING.md\")\n+        questions = section_until_next_heading(contributing, \"Questions?\")\n+        self.assertIn(ISSUES_URL, questions)\n+        self.assertIn(\"README.md\", questions)\n+        self.assertNotIn(DISCUSSIONS_URL, contributing)\n+\n+        conduct = read_repo_text(\"CODE_OF_CONDUCT.md\")\n+        enforcement = section_until_next_heading(conduct, \"Enforcement\")\n+        self.assertIn(\"https://www.uupm.cc\", enforcement)\n+        self.assertNotIn(\"/discussions\", enforcement)\n+        self.assertNotIn(\"/issues\", enforcement)\n+        self.assertNotIn(\"mailto:\", enforcement)\n+        self.assertNotIn(DISCUSSIONS_URL, conduct)\n+\n+        quickstart = section_until_next_heading(read_repo_text(\"stack/README.md\"), \"Quickstart\")\n+        self.assertIn(STACK_CLONE, quickstart)\n+        self.assertIn(STACK_CD, quickstart)\n+        self.assertLess(quickstart.index(STACK_CLONE), quickstart.index(STACK_CD))\n+        self.assertLess(quickstart.index(STACK_CD), quickstart.index(\"./scripts/setup.sh\"))\n+        self.assertNotIn(\"YMungerDev/claude-website-design-stack\", quickstart)\n+        self.assertTrue((REPO / \"stack\" / \"scripts\" / \"setup.sh\").is_file())"
+    },
+    {
+      "sha": "1c5ac9ee4e2ec5d96bdc8385759d0513e091b498",
+      "filename": "stack/README.md",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 2,
+      "changes": 4,
+      "blob_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/stack%2FREADME.md",
+      "raw_url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/raw/d14efff8ed1faa4187f004f79926f428c8074ec7/stack%2FREADME.md",
+      "contents_url": "https://api.github.com/repos/nextlevelbuilder/ui-ux-pro-max-skill/contents/stack%2FREADME.md?ref=d14efff8ed1faa4187f004f79926f428c8074ec7",
+      "patch": "@@ -23,8 +23,8 @@ design is missing: a **knowledge** layer, a **taste** layer, and a **visual feed\n \n ```bash\n # 1. Clone and enter\n-git clone https://github.com/YMungerDev/claude-website-design-stack\n-cd claude-website-design-stack\n+git clone https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git\n+cd ui-ux-pro-max-skill/stack\n \n # 2. Install the skills/plugins + Playwright browser\n ./scripts/setup.sh"
+    }
+  ]
+}

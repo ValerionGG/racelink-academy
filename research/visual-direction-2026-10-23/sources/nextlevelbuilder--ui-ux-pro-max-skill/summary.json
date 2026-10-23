@@ -1,0 +1,29 @@
+{
+  "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+  "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+  "stars": 139255,
+  "pushedAt": "2026-10-23T10:06:31Z",
+  "updatedAt": "2026-10-23T13:28:13Z",
+  "defaultBranch": "main",
+  "headSha": "d14efff8ed1faa4187f004f79926f428c8074ec7",
+  "headCommittedAt": "2026-10-23T10:06:30Z",
+  "archived": false,
+  "license": "MIT",
+  "checkedAt": "2026-10-23T13:29:56.472471+00:00",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/README.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\nextlevelbuilder--ui-ux-pro-max-skill\\README.md",
+      "bytes": 39932,
+      "sha256": "44f4cd60bdadc4aa271cde9154a1e65fde174e7e92141414b9cc75996fbbd298"
+    },
+    {
+      "path": ".claude/skills/ui-ux-pro-max/SKILL.md",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/.claude/skills/ui-ux-pro-max/SKILL.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\nextlevelbuilder--ui-ux-pro-max-skill\\.claude__skills__ui-ux-pro-max__SKILL.md",
+      "bytes": 15969,
+      "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9"
+    }
+  ]
+}

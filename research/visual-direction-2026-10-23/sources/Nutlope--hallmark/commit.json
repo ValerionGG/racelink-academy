@@ -1,0 +1,112 @@
+{
+  "sha": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+  "node_id": "C_kwDOSOQ9x9oAKDdlYzg2ODIyNWM2Y2FhMDQwNTU4YzMyMWVlMGZlZmEwZTczZjgzYTg",
+  "commit": {
+    "author": {
+      "name": "Youssef",
+      "email": "speedyoussef@gmail.com",
+      "date": "2026-10-22T17:20:30Z"
+    },
+    "committer": {
+      "name": "Youssef",
+      "email": "speedyoussef@gmail.com",
+      "date": "2026-10-22T17:20:30Z"
+    },
+    "message": "Site: the social card's pages sit higher, with room under them",
+    "tree": {
+      "sha": "9c337ca827537705f4c898ca6dc79cd0e9208d75",
+      "url": "https://api.github.com/repos/Nutlope/hallmark/git/trees/9c337ca827537705f4c898ca6dc79cd0e9208d75"
+    },
+    "url": "https://api.github.com/repos/Nutlope/hallmark/git/commits/7ec868225c6caa040558c321ee0fefa0e73f83a8",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/Nutlope/hallmark/commits/7ec868225c6caa040558c321ee0fefa0e73f83a8",
+  "html_url": "https://github.com/Nutlope/hallmark/commit/7ec868225c6caa040558c321ee0fefa0e73f83a8",
+  "comments_url": "https://api.github.com/repos/Nutlope/hallmark/commits/7ec868225c6caa040558c321ee0fefa0e73f83a8/comments",
+  "author": {
+    "login": "Luffixos",
+    "id": 154055839,
+    "node_id": "U_kgDOCS60nw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/154055839?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Luffixos",
+    "html_url": "https://github.com/Luffixos",
+    "followers_url": "https://api.github.com/users/Luffixos/followers",
+    "following_url": "https://api.github.com/users/Luffixos/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Luffixos/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Luffixos/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Luffixos/subscriptions",
+    "organizations_url": "https://api.github.com/users/Luffixos/orgs",
+    "repos_url": "https://api.github.com/users/Luffixos/repos",
+    "events_url": "https://api.github.com/users/Luffixos/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Luffixos/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "Luffixos",
+    "id": 154055839,
+    "node_id": "U_kgDOCS60nw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/154055839?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Luffixos",
+    "html_url": "https://github.com/Luffixos",
+    "followers_url": "https://api.github.com/users/Luffixos/followers",
+    "following_url": "https://api.github.com/users/Luffixos/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Luffixos/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Luffixos/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Luffixos/subscriptions",
+    "organizations_url": "https://api.github.com/users/Luffixos/orgs",
+    "repos_url": "https://api.github.com/users/Luffixos/repos",
+    "events_url": "https://api.github.com/users/Luffixos/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Luffixos/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "05245a614a103e9a1a104912b7a3974f79a38d45",
+      "url": "https://api.github.com/repos/Nutlope/hallmark/commits/05245a614a103e9a1a104912b7a3974f79a38d45",
+      "html_url": "https://github.com/Nutlope/hallmark/commit/05245a614a103e9a1a104912b7a3974f79a38d45"
+    }
+  ],
+  "stats": {
+    "total": 4,
+    "additions": 2,
+    "deletions": 2
+  },
+  "files": [
+    {
+      "sha": "106a0bb595aa9ce51ad82ad0e9c27204875e348e",
+      "filename": "site/OG-hallmark.png",
+      "status": "modified",
+      "additions": 0,
+      "deletions": 0,
+      "changes": 0,
+      "blob_url": "https://github.com/Nutlope/hallmark/blob/7ec868225c6caa040558c321ee0fefa0e73f83a8/site%2FOG-hallmark.png",
+      "raw_url": "https://github.com/Nutlope/hallmark/raw/7ec868225c6caa040558c321ee0fefa0e73f83a8/site%2FOG-hallmark.png",
+      "contents_url": "https://api.github.com/repos/Nutlope/hallmark/contents/site%2FOG-hallmark.png?ref=7ec868225c6caa040558c321ee0fefa0e73f83a8"
+    },
+    {
+      "sha": "d6b97d2164c5e6cbd92504bd10d456fbd43eab2b",
+      "filename": "site/index.html",
+      "status": "modified",
+      "additions": 2,
+      "deletions": 2,
+      "changes": 4,
+      "blob_url": "https://github.com/Nutlope/hallmark/blob/7ec868225c6caa040558c321ee0fefa0e73f83a8/site%2Findex.html",
+      "raw_url": "https://github.com/Nutlope/hallmark/raw/7ec868225c6caa040558c321ee0fefa0e73f83a8/site%2Findex.html",
+      "contents_url": "https://api.github.com/repos/Nutlope/hallmark/contents/site%2Findex.html?ref=7ec868225c6caa040558c321ee0fefa0e73f83a8",
+      "patch": "@@ -10,12 +10,12 @@\n   <meta property=\"og:url\" content=\"https://www.usehallmark.com/\">\n   <meta property=\"og:title\" content=\"Hallmark, design taste for coding agents\">\n   <meta property=\"og:description\" content=\"A design skill for Claude Code, Codex and OpenCode that ends AI slop.\">\n-  <meta property=\"og:image\" content=\"https://www.usehallmark.com/OG-hallmark.png?v=20261022\">\n+  <meta property=\"og:image\" content=\"https://www.usehallmark.com/OG-hallmark.png?v=20261022-2\">\n   <meta name=\"twitter:card\" content=\"summary_large_image\">\n   <meta property=\"og:image:width\" content=\"1200\">\n   <meta property=\"og:image:height\" content=\"630\">\n   <meta property=\"og:image:alt\" content=\"Hallmark: the design skill that ends AI slop, over three theme pages\">\n-  <meta name=\"twitter:image\" content=\"https://www.usehallmark.com/OG-hallmark.png?v=20261022\">\n+  <meta name=\"twitter:image\" content=\"https://www.usehallmark.com/OG-hallmark.png?v=20261022-2\">\n   <link rel=\"icon\" href=\"favicon.ico\" sizes=\"32x32\">\n   <link rel=\"icon\" type=\"image/svg+xml\" href=\"favicon.svg\">\n   <link rel=\"apple-touch-icon\" href=\"apple-touch-icon.png\">"
+    }
+  ]
+}

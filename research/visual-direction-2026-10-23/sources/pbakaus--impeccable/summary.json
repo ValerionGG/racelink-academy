@@ -1,0 +1,36 @@
+{
+  "repo": "pbakaus/impeccable",
+  "url": "https://github.com/pbakaus/impeccable",
+  "stars": 85277,
+  "pushedAt": "2026-10-23T11:56:12Z",
+  "updatedAt": "2026-10-23T13:28:24Z",
+  "defaultBranch": "main",
+  "headSha": "5cb95eea9c96479f57afe0732a45470d30183326",
+  "headCommittedAt": "2026-10-23T00:49:46Z",
+  "archived": false,
+  "license": "Apache-2.0",
+  "checkedAt": "2026-10-23T13:29:56.306118+00:00",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/README.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\pbakaus--impeccable\\README.md",
+      "bytes": 30214,
+      "sha256": "2cd828772f12fc196c8f2f4a9b5abbfd82e05a55b7944c47e4e85a57f39d0355"
+    },
+    {
+      "path": ".agents/skills/impeccable/SKILL.md",
+      "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/.agents/skills/impeccable/SKILL.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\pbakaus--impeccable\\.agents__skills__impeccable__SKILL.md",
+      "bytes": 11659,
+      "sha256": "88e9a46a91b6ddd1059f03f578bd0f9bbe6d212d6a395124379b9bb5c97c5cf2"
+    },
+    {
+      "path": ".agents/skills/impeccable/reference/mode-operate.md",
+      "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/.agents/skills/impeccable/reference/mode-operate.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\pbakaus--impeccable\\.agents__skills__impeccable__reference__mode-operate.md",
+      "bytes": 4716,
+      "sha256": "7a52dd7a94ee75f6ae89542c86a1b6e1d306812b16e0d9dbf12d4acad44d148b"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # RaceLink Academy — bibliothèque ouverte
 
-Version courante **guide-v16b**, commit [5e60fab](https://github.com/ValerionGG/racelink-academy/commit/5e60fab4c231976a15af0439c816cefc0dbce3d7), publiée. Cartes de guides photographiques compactes, recherche mobile sans seconde couche fixe, lecteur partagé et **21 nouvelles références constructeur** réparties dans les **11 guides**. Modèles, périodes, sections et limites documentés. [Voir les guides](https://valeriongg.github.io/racelink-academy/?browse=1&format=guide&release=guide-v16b) · [Validation et limites](research/official-guides-2026-10-23/VALIDATION.md).
+Version courante **visual-v17c**, commit [9b7dbfc](https://github.com/ValerionGG/racelink-academy/commit/9b7dbfcd6ca2924149220eac772e5f9e8fb5cc06), publiée. Grandes photos réelles, titres sous les images, une colonne mobile et grille adaptée à la largeur disponible. Accueil photographique avec recherche à la jonction de l’image. [Voir l’application](https://valeriongg.github.io/racelink-academy/?release=visual-v17c) · [Validation et limites](research/visual-direction-2026-10-23/VALIDATION.md) · [Skills comparés et ajoutés](research/visual-direction-2026-10-23/skills-research.md).
 
 [Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/) · [Vidéos en français](https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&format=video)
 

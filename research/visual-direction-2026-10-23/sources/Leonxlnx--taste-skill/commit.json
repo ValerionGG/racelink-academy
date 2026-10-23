@@ -1,0 +1,154 @@
+{
+  "sha": "6010f91a9935f1c167dfc500fb1a475681892e6b",
+  "node_id": "C_kwDORUQ5b9oAKDYwMTBmOTFhOTkzNWYxYzE2N2RmYzUwMGZiMWE0NzU2ODE4OTJlNmI",
+  "commit": {
+    "author": {
+      "name": "Leon Lin",
+      "email": "lexn.lin8@gmail.com",
+      "date": "2026-10-20T18:38:06Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2026-10-20T18:38:06Z"
+    },
+    "message": "Merge pull request #159 from Leonxlnx/fix/profile-sweep-owner-pid\n\nProfile sweep with an owner file: remove only profiles whose run and Chrome are gone",
+    "tree": {
+      "sha": "5292f40ad8aacaba9eeb0557b6ea2dcd934c54a7",
+      "url": "https://api.github.com/repos/Leonxlnx/taste-skill/git/trees/5292f40ad8aacaba9eeb0557b6ea2dcd934c54a7"
+    },
+    "url": "https://api.github.com/repos/Leonxlnx/taste-skill/git/commits/6010f91a9935f1c167dfc500fb1a475681892e6b",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsFcBAABCAAQBQJq17UOCRC1aQ7uu5UhlAAAhu8QAHBPLY0+g9FMUR7711qPq547\nPmDYRklWp0f/SFxxtu6+YOCmNxP/R1eb7NoLIqcZF4O1CbMlksBI3ub9ypwsqN9P\n+bW+oDnC1AEyPbqxq4pik5jOs+MJHvu23lkBSPyOJMFS1saplm9WjR4zmaGxTsRe\nsKiu/iCLD/9QR7kqtmjjhkK7WZXUM6bBGIZmqFJePtfuFUA/PUD42fPC7wVRiIO+\nSePNZLYsROkp3vs5zwoVWay/pgR+7A1in1DTcOJYa24jMf33iG/aIG1ML3ClCbnc\nq1d409CN3aUnMvluasLM6c2K6j5NETXIqSpRjVD6sCXZXotg8/LiOeZNeZMK47mX\nlupsUyqa77Zydh6i3eb+eBjuQfv+dSlFC8DYv6mFI7e/my2cDP42svk1h+qhTg18\nRaxxUnLDLECMjqolMYcH3wOVgszA/FIy5opPHYcziQ4fG+pnqdJX8JSsl9X95gw0\n1METxZ38o1VbjpYsOWLqx0IW3WOG/38eCbuKFlVreeBjOymkI8XsV+lvipcVH9+1\nc88UpCDjElBqlZmGIYZgj9ivalyqphYLHuJqTGgqjJHhTjQyjws15ZNuGCLz1V2g\nYIr5TLFjHwheLHYOUAXkYInKmDFVJ58prgbpoaQMP5qNBkBPFOkqDmvaDAzr60Ao\nb6iXCS3qTcXZnn3Qx5J+\n=Ga6a\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 5292f40ad8aacaba9eeb0557b6ea2dcd934c54a7\nparent 588d11adcac1713519e8a38f8517601e93fb6251\nparent 99c1877abedc943436241a1e9d1a1a9825c152dd\nauthor Leon Lin <lexn.lin8@gmail.com> 1792521486 +0200\ncommitter GitHub <noreply@github.com> 1792521486 +0200\n\nMerge pull request #159 from Leonxlnx/fix/profile-sweep-owner-pid\n\nProfile sweep with an owner file: remove only profiles whose run and Chrome are gone",
+      "verified_at": "2026-10-20T18:38:07Z"
+    }
+  },
+  "url": "https://api.github.com/repos/Leonxlnx/taste-skill/commits/6010f91a9935f1c167dfc500fb1a475681892e6b",
+  "html_url": "https://github.com/Leonxlnx/taste-skill/commit/6010f91a9935f1c167dfc500fb1a475681892e6b",
+  "comments_url": "https://api.github.com/repos/Leonxlnx/taste-skill/commits/6010f91a9935f1c167dfc500fb1a475681892e6b/comments",
+  "author": {
+    "login": "Leonxlnx",
+    "id": 219127460,
+    "node_id": "U_kgDODQ-epA",
+    "avatar_url": "https://avatars.githubusercontent.com/u/219127460?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/Leonxlnx",
+    "html_url": "https://github.com/Leonxlnx",
+    "followers_url": "https://api.github.com/users/Leonxlnx/followers",
+    "following_url": "https://api.github.com/users/Leonxlnx/following{/other_user}",
+    "gists_url": "https://api.github.com/users/Leonxlnx/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/Leonxlnx/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/Leonxlnx/subscriptions",
+    "organizations_url": "https://api.github.com/users/Leonxlnx/orgs",
+    "repos_url": "https://api.github.com/users/Leonxlnx/repos",
+    "events_url": "https://api.github.com/users/Leonxlnx/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/Leonxlnx/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "588d11adcac1713519e8a38f8517601e93fb6251",
+      "url": "https://api.github.com/repos/Leonxlnx/taste-skill/commits/588d11adcac1713519e8a38f8517601e93fb6251",
+      "html_url": "https://github.com/Leonxlnx/taste-skill/commit/588d11adcac1713519e8a38f8517601e93fb6251"
+    },
+    {
+      "sha": "99c1877abedc943436241a1e9d1a1a9825c152dd",
+      "url": "https://api.github.com/repos/Leonxlnx/taste-skill/commits/99c1877abedc943436241a1e9d1a1a9825c152dd",
+      "html_url": "https://github.com/Leonxlnx/taste-skill/commit/99c1877abedc943436241a1e9d1a1a9825c152dd"
+    }
+  ],
+  "stats": {
+    "total": 105,
+    "additions": 89,
+    "deletions": 16
+  },
+  "files": [
+    {
+      "sha": "5e8a3248eb760671e91912486fa7c0cc11c7d6cf",
+      "filename": ".claude-plugin/marketplace.json",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/.claude-plugin%2Fmarketplace.json",
+      "raw_url": "https://github.com/Leonxlnx/taste-skill/raw/6010f91a9935f1c167dfc500fb1a475681892e6b/.claude-plugin%2Fmarketplace.json",
+      "contents_url": "https://api.github.com/repos/Leonxlnx/taste-skill/contents/.claude-plugin%2Fmarketplace.json?ref=6010f91a9935f1c167dfc500fb1a475681892e6b",
+      "patch": "@@ -9,7 +9,7 @@\n     {\n       \"name\": \"taste-skill\",\n       \"description\": \"tasteskill v2: art direction for websites, product pages, dashboards and app screens, with a library of researched directions, real pictures from open collections and a real-browser inspector.\",\n-      \"version\": \"2.1.3\",\n+      \"version\": \"2.1.4\",\n       \"source\": \"./\",\n       \"skills\": [\"./skills/taste-skill\"],\n       \"author\": {"
+    },
+    {
+      "sha": "0445fcb2460f64466a0c75b2850fc439c2eabf54",
+      "filename": ".codex-plugin/plugin.json",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/.codex-plugin%2Fplugin.json",
+      "raw_url": "https://github.com/Leonxlnx/taste-skill/raw/6010f91a9935f1c167dfc500fb1a475681892e6b/.codex-plugin%2Fplugin.json",
+      "contents_url": "https://api.github.com/repos/Leonxlnx/taste-skill/contents/.codex-plugin%2Fplugin.json?ref=6010f91a9935f1c167dfc500fb1a475681892e6b",
+      "patch": "@@ -1,6 +1,6 @@\n {\n   \"name\": \"taste-skill\",\n-  \"version\": \"2.1.3\",\n+  \"version\": \"2.1.4\",\n   \"description\": \"tasteskill v2: art direction for websites, product pages, dashboards and app screens, checked in a real browser.\",\n   \"author\": {\n     \"name\": \"leonxlnx\","
+    },
+    {
+      "sha": "b3e5c4490755993ba6b4cdaf5d8317724bc519b5",
+      "filename": "CHANGELOG.md",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 0,
+      "changes": 5,
+      "blob_url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/CHANGELOG.md",
+      "raw_url": "https://github.com/Leonxlnx/taste-skill/raw/6010f91a9935f1c167dfc500fb1a475681892e6b/CHANGELOG.md",
+      "contents_url": "https://api.github.com/repos/Leonxlnx/taste-skill/contents/CHANGELOG.md?ref=6010f91a9935f1c167dfc500fb1a475681892e6b",
+      "patch": "@@ -4,6 +4,11 @@ All notable changes to taste-skill live here. The repo follows SemVer-ish discip\n \n ---\n \n+## 2.1.4 - 2026-10-20\n+\n+- **Fix: one inspector run could delete the browser profile of another run that was still going** ([#157](https://github.com/Leonxlnx/taste-skill/issues/157), fixed in [#158](https://github.com/Leonxlnx/taste-skill/pull/158) by @t4sh). On macOS and Linux Chrome keeps no `lockfile`, so the sweep added in 2.1.0 judged a profile unused by its age alone, and a second run started during a long one could pull that run's profile away. #158 removed the sweep and added a regression test.\n+- **Leftover profiles are cleaned up again, safely.** Every profile now carries `taste-skill-owner.json` with the machine and the process IDs of the run and its Chrome. A later run removes a profile left by a killed run only when that file names this machine and neither process is alive; a profile without the file is never touched. Profiles left by earlier versions are not removed automatically: delete the `ad-chrome-*` folders in your temp folder (or in `TASTE_SKILL_TMP`) by hand.\n+\n ## 2.1.3 - 2026-10-19\n \n One repo, one skill. Nothing in `design-taste-frontend` changed."
+    },
+    {
+      "sha": "03ef99c144923d0905ffc6222189bc8901836f4a",
+      "filename": "skills/taste-skill/scripts/lib/cdp.mjs",
+      "status": "modified",
+      "additions": 34,
+      "deletions": 3,
+      "changes": 37,
+      "blob_url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/skills%2Ftaste-skill%2Fscripts%2Flib%2Fcdp.mjs",
+      "raw_url": "https://github.com/Leonxlnx/taste-skill/raw/6010f91a9935f1c167dfc500fb1a475681892e6b/skills%2Ftaste-skill%2Fscripts%2Flib%2Fcdp.mjs",
+      "contents_url": "https://api.github.com/repos/Leonxlnx/taste-skill/contents/skills%2Ftaste-skill%2Fscripts%2Flib%2Fcdp.mjs?ref=6010f91a9935f1c167dfc500fb1a475681892e6b",
+      "patch": "@@ -2,8 +2,8 @@\n // Drives an installed Chrome / Edge / Chromium in headless mode over Node's built-in WebSocket.\n // Requires Node 22+. No npm install.\n import { spawn, spawnSync } from 'node:child_process';\n-import { existsSync, mkdtempSync, rmSync, writeFileSync } from 'node:fs';\n-import { tmpdir } from 'node:os';\n+import { existsSync, mkdtempSync, rmSync, writeFileSync, readFileSync, readdirSync } from 'node:fs';\n+import { tmpdir, hostname } from 'node:os';\n import { join } from 'node:path';\n \n const sleep = (ms) => new Promise((r) => setTimeout(r, ms));\n@@ -37,6 +37,30 @@ export function findChrome() {\n   return null;\n }\n \n+// Each profile carries an owner file naming the machine and the two processes that use it (the run and\n+// its Chrome). A later run removes a profile left by a killed run only when that file names this machine\n+// and neither process is alive. A profile without one (made before 2.1.4, or by another tool) is never touched.\n+const OWNER = 'taste-skill-owner.json';\n+\n+function alive(pid) {\n+  if (!Number.isInteger(pid) || pid <= 0) return false;\n+  try { process.kill(pid, 0); return true; } catch (e) { return e.code === 'EPERM'; }\n+}\n+\n+export function sweepProfiles(base) {\n+  let names;\n+  try { names = readdirSync(base); } catch { return; }\n+  for (const name of names) {\n+    if (!name.startsWith('ad-chrome-')) continue;\n+    const p = join(base, name);\n+    try {\n+      const o = JSON.parse(readFileSync(join(p, OWNER), 'utf8'));\n+      if (o.host !== hostname() || !Number.isInteger(o.pid) || alive(o.pid) || alive(o.chrome)) continue;\n+      rmSync(p, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 });\n+    } catch {}\n+  }\n+}\n+\n export class Browser {\n   static async launch({ width = 1440, height = 900, extraArgs = [] } = {}) {\n     if (typeof WebSocket === 'undefined') {\n@@ -46,9 +70,15 @@ export class Browser {\n     if (!exe) {\n       throw new Error('No Chrome/Edge/Chromium found. Install one or set CHROME_PATH to its executable.');\n     }\n-    // Own only this run's profile: age and opening a lockfile do not prove another profile is unused.\n+    // A throwaway profile per run, its cache capped (each run starts cold anyway), removed on exit. It is\n+    // claimed with an owner file before Chrome starts, so another run's sweep can tell when it was abandoned.\n     const base = process.env.TASTE_SKILL_TMP || tmpdir();\n+    sweepProfiles(base);\n     const dir = mkdtempSync(join(base, 'ad-chrome-'));\n+    const claim = (chrome) => {\n+      try { writeFileSync(join(dir, OWNER), JSON.stringify({ host: hostname(), pid: process.pid, chrome })); } catch {}\n+    };\n+    claim();\n     // On exit Chrome still holds the profile's files: stop it first, then remove the folder.\n     let pid = 0;\n     const drop = () => {\n@@ -68,6 +98,7 @@ export class Browser {\n     ];\n     const proc = spawn(exe, args, { stdio: ['ignore', 'ignore', 'pipe'] });\n     pid = proc.pid;\n+    claim(pid);\n     const wsUrl = await new Promise((resolve, reject) => {\n       let buf = '';\n       const t = setTimeout(() => reject(new Error('Chrome did not start within 20s')), 20000);"
+    },
+    {
+      "sha": "caa65e0204321d745bebb0a738367bd7335e81ad",
+      "filename": "tests/profile-cleanup.mjs",
+      "status": "modified",
+      "additions": 48,
+      "deletions": 11,
+      "changes": 59,
+      "blob_url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/tests%2Fprofile-cleanup.mjs",
+      "raw_url": "https://github.com/Leonxlnx/taste-skill/raw/6010f91a9935f1c167dfc500fb1a475681892e6b/tests%2Fprofile-cleanup.mjs",
+      "contents_url": "https://api.github.com/repos/Leonxlnx/taste-skill/contents/tests%2Fprofile-cleanup.mjs?ref=6010f91a9935f1c167dfc500fb1a475681892e6b",
+      "patch": "@@ -1,11 +1,22 @@\n import assert from 'node:assert/strict';\n-import { closeSync, existsSync, mkdirSync, mkdtempSync, openSync, rmSync, utimesSync, writeFileSync } from 'node:fs';\n-import { tmpdir } from 'node:os';\n+import { closeSync, existsSync, mkdirSync, mkdtempSync, openSync, readFileSync, rmSync, utimesSync, writeFileSync } from 'node:fs';\n+import { hostname, tmpdir } from 'node:os';\n import { join } from 'node:path';\n import { spawnSync } from 'node:child_process';\n import { fileURLToPath } from 'node:url';\n import { test } from 'node:test';\n \n+const OWNER = 'taste-skill-owner.json';\n+// A pid that is certainly gone: a child that has already exited.\n+const deadPid = () => spawnSync(process.execPath, ['-e', '']).pid;\n+const profile = (base, name, owner) => {\n+  const p = join(base, name);\n+  mkdirSync(p);\n+  writeFileSync(join(p, 'sentinel'), 'preserve');\n+  if (owner !== undefined) writeFileSync(join(p, OWNER), typeof owner === 'string' ? owner : JSON.stringify(owner));\n+  return p;\n+};\n+\n // Run in a child so Browser.launch()'s exit/signal handlers cannot leak into the test runner.\n if (process.argv[2] === '--fixture') {\n   const { Browser } = await import('../skills/taste-skill/scripts/lib/cdp.mjs');\n@@ -18,23 +29,24 @@ if (process.argv[2] === '--fixture') {\n     close() {}\n   };\n   const base = process.env.TASTE_SKILL_TMP;\n-  const profiles = ['ad-chrome-open-lock', 'ad-chrome-no-lock'].map(name => join(base, name));\n+  const profiles = ['ad-chrome-open-lock', 'ad-chrome-no-lock'].map(name => profile(base, name));\n+  const gone = deadPid();\n+  const abandoned = profile(base, 'ad-chrome-abandoned', { host: hostname(), pid: gone, chrome: gone });\n   let lock;\n   let browser;\n   try {\n-    for (const profile of profiles) {\n-      mkdirSync(profile);\n-      writeFileSync(join(profile, 'sentinel'), 'preserve');\n-    }\n     lock = openSync(join(profiles[0], 'lockfile'), 'w+');\n-    for (const profile of profiles) {\n+    for (const p of [...profiles, abandoned]) {\n       const old = new Date(Date.now() - 10 * 60 * 1000);\n-      utimesSync(profile, old, old);\n+      utimesSync(p, old, old);\n     }\n     browser = await Browser.launch();\n-    for (const profile of profiles) {\n-      assert.ok(existsSync(join(profile, 'sentinel')), 'launch deleted another profile');\n+    for (const p of profiles) {\n+      assert.ok(existsSync(join(p, 'sentinel')), 'launch deleted another profile');\n     }\n+    assert.equal(existsSync(abandoned), false, 'launch kept a profile whose owners are gone');\n+    const owner = JSON.parse(readFileSync(join(browser.dir, OWNER), 'utf8'));\n+    assert.deepEqual(owner, { host: hostname(), pid: process.pid, chrome: browser.proc.pid }, 'launch did not claim its profile');\n   } finally {\n     if (browser) await browser.close();\n     if (lock !== undefined) closeSync(lock);\n@@ -60,4 +72,29 @@ if (process.argv[2] === '--fixture') {\n       rmSync(base, { recursive: true, force: true });\n     }\n   });\n+\n+  test('sweep removes a profile only when its owner file says both processes are gone', async () => {\n+    const { sweepProfiles } = await import('../skills/taste-skill/scripts/lib/cdp.mjs');\n+    const base = mkdtempSync(join(tmpdir(), 'taste-sweep-test-'));\n+    try {\n+      const gone = deadPid();\n+      const here = hostname();\n+      const abandoned = profile(base, 'ad-chrome-abandoned', { host: here, pid: gone, chrome: gone });\n+      const kept = [\n+        profile(base, 'ad-chrome-run-alive', { host: here, pid: process.pid, chrome: gone }),\n+        profile(base, 'ad-chrome-chrome-alive', { host: here, pid: gone, chrome: process.pid }),\n+        profile(base, 'ad-chrome-other-machine', { host: `${here}-elsewhere`, pid: gone, chrome: gone }),\n+        profile(base, 'ad-chrome-no-owner'),\n+        profile(base, 'ad-chrome-torn-owner', '{\"host\":'),\n+        profile(base, 'ad-chrome-bad-pid', { host: here, pid: 'x', chrome: gone }),\n+        profile(base, 'not-a-profile', { host: here, pid: gone, chrome: gone }),\n+      ];\n+      sweepProfiles(base);\n+      assert.equal(existsSync(abandoned), false, 'sweep kept a profile whose owners are gone');\n+      for (const p of kept) assert.ok(existsSync(join(p, 'sentinel')), `sweep removed ${p}`);\n+      sweepProfiles(join(base, 'missing')); // a missing base is not an error\n+    } finally {\n+      rmSync(base, { recursive: true, force: true });\n+    }\n+  });\n }"
+    }
+  ]
+}

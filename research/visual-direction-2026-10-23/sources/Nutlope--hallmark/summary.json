@@ -1,0 +1,32 @@
+{
+  "repo": "Nutlope/hallmark",
+  "url": "https://github.com/Nutlope/hallmark",
+  "stars": 31083,
+  "pushedAt": "2026-10-22T17:20:32Z",
+  "updatedAt": "2026-10-23T13:26:54Z",
+  "defaultBranch": "main",
+  "headSha": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+  "headCommittedAt": "2026-10-22T17:20:30Z",
+  "archived": false,
+  "license": "MIT",
+  "checkedAt": "2026-10-23T13:30:01.479964+00:00",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/Nutlope/hallmark/blob/7ec868225c6caa040558c321ee0fefa0e73f83a8/README.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Nutlope--hallmark\\README.md",
+      "bytes": 8121,
+      "sha256": "50cf444c6b902b8070b3cd9ca32670055e9dcc469c2374cdf566eb9ab3f5448c"
+    },
+    {
+      "path": "skills/hallmark/SKILL.md",
+      "url": "https://github.com/Nutlope/hallmark/blob/7ec868225c6caa040558c321ee0fefa0e73f83a8/skills/hallmark/SKILL.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Nutlope--hallmark\\skills__hallmark__SKILL.md",
+      "bytes": 18239,
+      "sha256": "25a1ff92d925b2389e8409f42fb8ad7e033fceca8b5d1f07ed4ca4c28da53dc3"
+    }
+  ],
+  "skillPaths": [
+    "skills/hallmark/SKILL.md"
+  ]
+}

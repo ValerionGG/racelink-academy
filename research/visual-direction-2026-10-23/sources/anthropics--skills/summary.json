@@ -1,0 +1,36 @@
+{
+  "repo": "anthropics/skills",
+  "url": "https://github.com/anthropics/skills",
+  "stars": 183188,
+  "pushedAt": "2026-10-09T18:45:52Z",
+  "updatedAt": "2026-10-23T13:04:03Z",
+  "defaultBranch": "main",
+  "headSha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+  "headCommittedAt": "2026-10-09T18:45:49Z",
+  "archived": false,
+  "license": null,
+  "checkedAt": "2026-10-23T13:30:01.358583+00:00",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/README.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\anthropics--skills\\README.md",
+      "bytes": 5552,
+      "sha256": "2fb9c4cc026366ea6e21c60cb23c908a4d27c62071819cc06beffaac102d0694"
+    },
+    {
+      "path": "skills/frontend-design/SKILL.md",
+      "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/SKILL.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\anthropics--skills\\skills__frontend-design__SKILL.md",
+      "bytes": 9390,
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+    },
+    {
+      "path": "skills/frontend-design/LICENSE.txt",
+      "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/LICENSE.txt",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\anthropics--skills\\skills__frontend-design__LICENSE.txt",
+      "bytes": 10174,
+      "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+    }
+  ]
+}

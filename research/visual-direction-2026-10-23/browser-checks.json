@@ -1,0 +1,209 @@
+{
+  "release": "visual-v17c",
+  "commit": "9b7dbfcd6ca2924149220eac772e5f9e8fb5cc06",
+  "checkedAt": "2026-10-23T13:53:45.848Z",
+  "scope": "CUA public browser responsive viewport; no physical device or exhaustive accessibility audit",
+  "checks": [
+    {
+      "client": 305,
+      "photo": {
+        "bottom": 353,
+        "height": 285,
+        "left": 0,
+        "right": 305,
+        "top": 68,
+        "width": 305,
+        "x": 0,
+        "y": 68
+      },
+      "screen": "home-fr-320",
+      "scroll": 305,
+      "search": {
+        "bottom": 382,
+        "height": 56,
+        "left": 16,
+        "right": 289,
+        "top": 326,
+        "width": 273,
+        "x": 16,
+        "y": 326
+      },
+      "width": 320
+    },
+    {
+      "client": 305,
+      "screen": "home-en-320",
+      "scroll": 305,
+      "search": {
+        "bottom": 382,
+        "height": 56,
+        "left": 16,
+        "right": 289,
+        "top": 326,
+        "width": 273,
+        "x": 16,
+        "y": 326
+      },
+      "title": {
+        "bottom": 254.625,
+        "height": 69.09375,
+        "left": 16,
+        "right": 289,
+        "top": 185.53125,
+        "width": 273,
+        "x": 16,
+        "y": 185.53125
+      }
+    },
+    {
+      "client": 305,
+      "screen": "home-es-320",
+      "scroll": 305,
+      "search": {
+        "bottom": 382,
+        "height": 56,
+        "left": 16,
+        "right": 289,
+        "top": 326,
+        "width": 273,
+        "x": 16,
+        "y": 326
+      },
+      "title": {
+        "bottom": 254.625,
+        "height": 69.09375,
+        "left": 16,
+        "right": 289,
+        "top": 185.53125,
+        "width": 273,
+        "x": 16,
+        "y": 185.53125
+      }
+    },
+    {
+      "screen": "search-320",
+      "suggestions": "SUJET\nvidange\nPréparer une vidange\n931 ressources\n↗\nGUIDE\nPréparer une vidange et contrôler le niveau\nGuide RaceLink · Sources citées\n↗\nVIDÉO\n\"Oil Change\" and \"Maintenance\" Service Messages: How to Clear and Configure Them\n↗\nVIDÉO\n2012 Toyota Camry LE: How to Change the Engine Oil\n↗\nVIDÉO\n2018 Ford Fusion Hybrid: how to change the oil\n↗\nVIDÉO\n2020 Subaru WRX: step-by-step oil change\n↗",
+      "expanded": "true"
+    },
+    {
+      "client": 1265,
+      "height": 900,
+      "images": [
+        {
+          "loaded": true,
+          "width": 310.328125
+        },
+        {
+          "loaded": true,
+          "width": 310.328125
+        },
+        {
+          "loaded": true,
+          "width": 310.34375
+        }
+      ],
+      "screen": "home-desktop",
+      "scroll": 1265,
+      "searchBottom": 475,
+      "width": 1280
+    },
+    {
+      "cards": [
+        {
+          "imageWidth": 375.5,
+          "titleSize": "21px",
+          "width": 375.5
+        },
+        {
+          "imageWidth": 375.5,
+          "titleSize": "21px",
+          "width": 375.5
+        }
+      ],
+      "client": 1265,
+      "columns": "375.5px 375.5px",
+      "count": "11 ressources trouvées",
+      "height": 900,
+      "screen": "guides-desktop",
+      "scroll": 1265,
+      "width": 1280
+    },
+    {
+      "client": 753,
+      "columns": "344px",
+      "photoWidth": 344,
+      "screen": "guides-tablet",
+      "scroll": 753,
+      "width": 768
+    },
+    {
+      "client": 375,
+      "count": "11 ressources trouvées",
+      "filterLabel": "Filtres",
+      "photos": [
+        {
+          "height": 188.4375,
+          "loaded": true,
+          "width": 335
+        },
+        {
+          "height": 188.4375,
+          "loaded": true,
+          "width": 335
+        },
+        {
+          "height": 188.4375,
+          "loaded": true,
+          "width": 335
+        },
+        {
+          "height": 188.4375,
+          "loaded": true,
+          "width": 335
+        },
+        {
+          "height": 188.4375,
+          "loaded": true,
+          "width": 335
+        },
+        {
+          "height": 188.4375,
+          "loaded": true,
+          "width": 335
+        },
+        {
+          "height": 188.4375,
+          "loaded": true,
+          "width": 335
+        },
+        {
+          "height": 188.4375,
+          "loaded": true,
+          "width": 335
+        },
+        {
+          "height": 188.4375,
+          "loaded": true,
+          "width": 335
+        },
+        {
+          "height": 188.4375,
+          "loaded": false,
+          "width": 335
+        },
+        {
+          "height": 188.4375,
+          "loaded": false,
+          "width": 335
+        }
+      ],
+      "screen": "guides-mobile-final",
+      "scroll": 375,
+      "width": 390
+    }
+  ],
+  "earlierV17bInteractions": [
+    "French vidange Clio 3 query returned 2 source videos at 320px, real cover width273px",
+    "Guide references button opened model-scoped Renault sources, close restored focus to that button"
+  ]
+}

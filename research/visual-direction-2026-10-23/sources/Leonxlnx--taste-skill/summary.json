@@ -1,0 +1,43 @@
+{
+  "repo": "Leonxlnx/taste-skill",
+  "url": "https://github.com/Leonxlnx/taste-skill",
+  "stars": 101426,
+  "pushedAt": "2026-10-20T22:04:30Z",
+  "updatedAt": "2026-10-23T13:27:13Z",
+  "defaultBranch": "main",
+  "headSha": "6010f91a9935f1c167dfc500fb1a475681892e6b",
+  "headCommittedAt": "2026-10-20T18:38:06Z",
+  "archived": false,
+  "license": "MIT",
+  "checkedAt": "2026-10-23T13:29:56.614080+00:00",
+  "files": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/README.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Leonxlnx--taste-skill\\README.md",
+      "bytes": 15088,
+      "sha256": "a3e3735d1bd37553801bc09918804f93b8f0a98448f3cb58001332832bb89357"
+    },
+    {
+      "path": "skills/taste-skill/SKILL.md",
+      "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/skills/taste-skill/SKILL.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Leonxlnx--taste-skill\\skills__taste-skill__SKILL.md",
+      "bytes": 38458,
+      "sha256": "d955dae4ba8ab2d994f4bb06b4bf412a1d9875433a8597939c391f4bae91dd7a"
+    },
+    {
+      "path": "skills/taste-skill/references/imagery.md",
+      "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/skills/taste-skill/references/imagery.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Leonxlnx--taste-skill\\skills__taste-skill__references__imagery.md",
+      "bytes": 51025,
+      "sha256": "518def6b2c643b295e13e66b09b66f2e3fc1421d3cf6c7dbb1dc749097ad2ad9"
+    },
+    {
+      "path": "skills/taste-skill/references/app-screens.md",
+      "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/skills/taste-skill/references/app-screens.md",
+      "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Leonxlnx--taste-skill\\skills__taste-skill__references__app-screens.md",
+      "bytes": 85358,
+      "sha256": "55e937ec30de605b53a11310b446f328a3ce7403de24fff008920a00be1a5ed4"
+    }
+  ]
+}

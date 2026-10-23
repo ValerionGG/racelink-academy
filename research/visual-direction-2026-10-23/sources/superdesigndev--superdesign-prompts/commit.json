@@ -1,0 +1,101 @@
+{
+  "sha": "6c60906945208df5aa2187f19f8ddfe9b2948aa0",
+  "node_id": "C_kwDOTRmLFNoAKDZjNjA5MDY5NDUyMDhkZjVhYTIxODdmMTlmOGRkZmU5YjI5NDhhYTA",
+  "commit": {
+    "author": {
+      "name": "github-actions[bot]",
+      "email": "github-actions[bot]@users.noreply.github.com",
+      "date": "2026-08-03T09:50:31Z"
+    },
+    "committer": {
+      "name": "github-actions[bot]",
+      "email": "github-actions[bot]@users.noreply.github.com",
+      "date": "2026-08-03T09:50:31Z"
+    },
+    "message": "chore: auto-sync README (2026-08-03)",
+    "tree": {
+      "sha": "0a9d02f56eb7a48a5a36ba0cece5ac01f4276140",
+      "url": "https://api.github.com/repos/superdesigndev/superdesign-prompts/git/trees/0a9d02f56eb7a48a5a36ba0cece5ac01f4276140"
+    },
+    "url": "https://api.github.com/repos/superdesigndev/superdesign-prompts/git/commits/6c60906945208df5aa2187f19f8ddfe9b2948aa0",
+    "comment_count": 0,
+    "verification": {
+      "verified": false,
+      "reason": "unsigned",
+      "signature": null,
+      "payload": null,
+      "verified_at": null
+    }
+  },
+  "url": "https://api.github.com/repos/superdesigndev/superdesign-prompts/commits/6c60906945208df5aa2187f19f8ddfe9b2948aa0",
+  "html_url": "https://github.com/superdesigndev/superdesign-prompts/commit/6c60906945208df5aa2187f19f8ddfe9b2948aa0",
+  "comments_url": "https://api.github.com/repos/superdesigndev/superdesign-prompts/commits/6c60906945208df5aa2187f19f8ddfe9b2948aa0/comments",
+  "author": {
+    "login": "github-actions[bot]",
+    "id": 41898282,
+    "node_id": "MDM6Qm90NDE4OTgyODI=",
+    "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+    "html_url": "https://github.com/apps/github-actions",
+    "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+    "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+    "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+    "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+    "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+    "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+    "type": "Bot",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "github-actions[bot]",
+    "id": 41898282,
+    "node_id": "MDM6Qm90NDE4OTgyODI=",
+    "avatar_url": "https://avatars.githubusercontent.com/in/15368?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/github-actions%5Bbot%5D",
+    "html_url": "https://github.com/apps/github-actions",
+    "followers_url": "https://api.github.com/users/github-actions%5Bbot%5D/followers",
+    "following_url": "https://api.github.com/users/github-actions%5Bbot%5D/following{/other_user}",
+    "gists_url": "https://api.github.com/users/github-actions%5Bbot%5D/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/github-actions%5Bbot%5D/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/github-actions%5Bbot%5D/subscriptions",
+    "organizations_url": "https://api.github.com/users/github-actions%5Bbot%5D/orgs",
+    "repos_url": "https://api.github.com/users/github-actions%5Bbot%5D/repos",
+    "events_url": "https://api.github.com/users/github-actions%5Bbot%5D/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/github-actions%5Bbot%5D/received_events",
+    "type": "Bot",
+    "user_view_type": "public",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "6d02a5c373a7bec3225791d183590bcc58e38d07",
+      "url": "https://api.github.com/repos/superdesigndev/superdesign-prompts/commits/6d02a5c373a7bec3225791d183590bcc58e38d07",
+      "html_url": "https://github.com/superdesigndev/superdesign-prompts/commit/6d02a5c373a7bec3225791d183590bcc58e38d07"
+    }
+  ],
+  "stats": {
+    "total": 2,
+    "additions": 1,
+    "deletions": 1
+  },
+  "files": [
+    {
+      "sha": "aa7192d096fcc5330b635a1327abc306989f4b86",
+      "filename": "README.md",
+      "status": "modified",
+      "additions": 1,
+      "deletions": 1,
+      "changes": 2,
+      "blob_url": "https://github.com/superdesigndev/superdesign-prompts/blob/6c60906945208df5aa2187f19f8ddfe9b2948aa0/README.md",
+      "raw_url": "https://github.com/superdesigndev/superdesign-prompts/raw/6c60906945208df5aa2187f19f8ddfe9b2948aa0/README.md",
+      "contents_url": "https://api.github.com/repos/superdesigndev/superdesign-prompts/contents/README.md?ref=6c60906945208df5aa2187f19f8ddfe9b2948aa0",
+      "patch": "@@ -2,7 +2,7 @@\n \n > Coding agents write great code and generic interfaces: default shadcn, same fonts, no taste. This is a library of **design prompts — each a full design spec with a live preview and real usage data** — that give your agent design direction so the UI it ships actually looks designed. Powered by [Superdesign](https://superdesign.dev/library?utm_source=github&utm_medium=prompt-repo&utm_campaign=prompt-library).\n \n-![prompts](https://img.shields.io/badge/prompts-140-blue) ![backed by](https://img.shields.io/badge/backed%20by-1.7M%2B%20real%20runs-brightgreen) ![for](https://img.shields.io/badge/for-Claude%20Code%20%2B%20Cursor-black) ![last synced](https://img.shields.io/badge/last%20synced-2026--07--27-informational) ![license](https://img.shields.io/badge/code-MIT-informational)\n+![prompts](https://img.shields.io/badge/prompts-140-blue) ![backed by](https://img.shields.io/badge/backed%20by-1.7M%2B%20real%20runs-brightgreen) ![for](https://img.shields.io/badge/for-Claude%20Code%20%2B%20Cursor-black) ![last synced](https://img.shields.io/badge/last%20synced-2026--08--03-informational) ![license](https://img.shields.io/badge/code-MIT-informational)\n \n <div align=\"center\">\n <!-- STATS:START -->"
+    }
+  ]
+}

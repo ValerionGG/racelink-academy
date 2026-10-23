@@ -1,0 +1,301 @@
+[
+  {
+    "repo": "pbakaus/impeccable",
+    "url": "https://github.com/pbakaus/impeccable",
+    "stars": 85277,
+    "pushedAt": "2026-10-23T11:56:12Z",
+    "updatedAt": "2026-10-23T13:28:24Z",
+    "defaultBranch": "main",
+    "headSha": "5cb95eea9c96479f57afe0732a45470d30183326",
+    "headCommittedAt": "2026-10-23T00:49:46Z",
+    "archived": false,
+    "license": "Apache-2.0",
+    "checkedAt": "2026-10-23T13:29:56.306118+00:00",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/README.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\pbakaus--impeccable\\README.md",
+        "bytes": 30214,
+        "sha256": "2cd828772f12fc196c8f2f4a9b5abbfd82e05a55b7944c47e4e85a57f39d0355"
+      },
+      {
+        "path": ".agents/skills/impeccable/SKILL.md",
+        "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/.agents/skills/impeccable/SKILL.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\pbakaus--impeccable\\.agents__skills__impeccable__SKILL.md",
+        "bytes": 11659,
+        "sha256": "88e9a46a91b6ddd1059f03f578bd0f9bbe6d212d6a395124379b9bb5c97c5cf2"
+      },
+      {
+        "path": ".agents/skills/impeccable/reference/mode-operate.md",
+        "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/.agents/skills/impeccable/reference/mode-operate.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\pbakaus--impeccable\\.agents__skills__impeccable__reference__mode-operate.md",
+        "bytes": 4716,
+        "sha256": "7a52dd7a94ee75f6ae89542c86a1b6e1d306812b16e0d9dbf12d4acad44d148b"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/pbakaus/impeccable/blob/5cb95eea9c96479f57afe0732a45470d30183326/LICENSE",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\pbakaus--impeccable\\LICENSE",
+        "bytes": 10766,
+        "sha256": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812"
+      }
+    ]
+  },
+  {
+    "repo": "nextlevelbuilder/ui-ux-pro-max-skill",
+    "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+    "stars": 139255,
+    "pushedAt": "2026-10-23T10:06:31Z",
+    "updatedAt": "2026-10-23T13:28:13Z",
+    "defaultBranch": "main",
+    "headSha": "d14efff8ed1faa4187f004f79926f428c8074ec7",
+    "headCommittedAt": "2026-10-23T10:06:30Z",
+    "archived": false,
+    "license": "MIT",
+    "checkedAt": "2026-10-23T13:29:56.472471+00:00",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/README.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\nextlevelbuilder--ui-ux-pro-max-skill\\README.md",
+        "bytes": 39932,
+        "sha256": "44f4cd60bdadc4aa271cde9154a1e65fde174e7e92141414b9cc75996fbbd298"
+      },
+      {
+        "path": ".claude/skills/ui-ux-pro-max/SKILL.md",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/.claude/skills/ui-ux-pro-max/SKILL.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\nextlevelbuilder--ui-ux-pro-max-skill\\.claude__skills__ui-ux-pro-max__SKILL.md",
+        "bytes": 15969,
+        "sha256": "ea087c341bfb5b23195c7302027268ede86da802554c18a5c4896a6017b439f9"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill/blob/d14efff8ed1faa4187f004f79926f428c8074ec7/LICENSE",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\nextlevelbuilder--ui-ux-pro-max-skill\\LICENSE",
+        "bytes": 1075,
+        "sha256": "738f69dfa83db5c347c678fb9d90e560877059f0de93a327c39001bff92dc014"
+      }
+    ]
+  },
+  {
+    "repo": "Leonxlnx/taste-skill",
+    "url": "https://github.com/Leonxlnx/taste-skill",
+    "stars": 101426,
+    "pushedAt": "2026-10-20T22:04:30Z",
+    "updatedAt": "2026-10-23T13:27:13Z",
+    "defaultBranch": "main",
+    "headSha": "6010f91a9935f1c167dfc500fb1a475681892e6b",
+    "headCommittedAt": "2026-10-20T18:38:06Z",
+    "archived": false,
+    "license": "MIT",
+    "checkedAt": "2026-10-23T13:29:56.614080+00:00",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/README.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Leonxlnx--taste-skill\\README.md",
+        "bytes": 15088,
+        "sha256": "a3e3735d1bd37553801bc09918804f93b8f0a98448f3cb58001332832bb89357"
+      },
+      {
+        "path": "skills/taste-skill/SKILL.md",
+        "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/skills/taste-skill/SKILL.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Leonxlnx--taste-skill\\skills__taste-skill__SKILL.md",
+        "bytes": 38458,
+        "sha256": "d955dae4ba8ab2d994f4bb06b4bf412a1d9875433a8597939c391f4bae91dd7a"
+      },
+      {
+        "path": "skills/taste-skill/references/imagery.md",
+        "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/skills/taste-skill/references/imagery.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Leonxlnx--taste-skill\\skills__taste-skill__references__imagery.md",
+        "bytes": 51025,
+        "sha256": "518def6b2c643b295e13e66b09b66f2e3fc1421d3cf6c7dbb1dc749097ad2ad9"
+      },
+      {
+        "path": "skills/taste-skill/references/app-screens.md",
+        "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/skills/taste-skill/references/app-screens.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Leonxlnx--taste-skill\\skills__taste-skill__references__app-screens.md",
+        "bytes": 85358,
+        "sha256": "55e937ec30de605b53a11310b446f328a3ce7403de24fff008920a00be1a5ed4"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/Leonxlnx/taste-skill/blob/6010f91a9935f1c167dfc500fb1a475681892e6b/LICENSE",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Leonxlnx--taste-skill\\LICENSE",
+        "bytes": 1065,
+        "sha256": "4575a543ab88dad12ccea7d97e563d0bce5b448b06072e65d3264497dad326df"
+      }
+    ]
+  },
+  {
+    "repo": "anthropics/skills",
+    "url": "https://github.com/anthropics/skills",
+    "stars": 183188,
+    "pushedAt": "2026-10-09T18:45:52Z",
+    "updatedAt": "2026-10-23T13:04:03Z",
+    "defaultBranch": "main",
+    "headSha": "dbd4588f9e1033efb41dad4bef2f7947c8993d44",
+    "headCommittedAt": "2026-10-09T18:45:49Z",
+    "archived": false,
+    "license": null,
+    "checkedAt": "2026-10-23T13:30:01.358583+00:00",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/README.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\anthropics--skills\\README.md",
+        "bytes": 5552,
+        "sha256": "2fb9c4cc026366ea6e21c60cb23c908a4d27c62071819cc06beffaac102d0694"
+      },
+      {
+        "path": "skills/frontend-design/SKILL.md",
+        "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/SKILL.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\anthropics--skills\\skills__frontend-design__SKILL.md",
+        "bytes": 9390,
+        "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3"
+      },
+      {
+        "path": "skills/frontend-design/LICENSE.txt",
+        "url": "https://github.com/anthropics/skills/blob/dbd4588f9e1033efb41dad4bef2f7947c8993d44/skills/frontend-design/LICENSE.txt",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\anthropics--skills\\skills__frontend-design__LICENSE.txt",
+        "bytes": 10174,
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594"
+      }
+    ]
+  },
+  {
+    "repo": "Nutlope/hallmark",
+    "url": "https://github.com/Nutlope/hallmark",
+    "stars": 31083,
+    "pushedAt": "2026-10-22T17:20:32Z",
+    "updatedAt": "2026-10-23T13:26:54Z",
+    "defaultBranch": "main",
+    "headSha": "7ec868225c6caa040558c321ee0fefa0e73f83a8",
+    "headCommittedAt": "2026-10-22T17:20:30Z",
+    "archived": false,
+    "license": "MIT",
+    "checkedAt": "2026-10-23T13:30:01.479964+00:00",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/Nutlope/hallmark/blob/7ec868225c6caa040558c321ee0fefa0e73f83a8/README.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Nutlope--hallmark\\README.md",
+        "bytes": 8121,
+        "sha256": "50cf444c6b902b8070b3cd9ca32670055e9dcc469c2374cdf566eb9ab3f5448c"
+      },
+      {
+        "path": "skills/hallmark/SKILL.md",
+        "url": "https://github.com/Nutlope/hallmark/blob/7ec868225c6caa040558c321ee0fefa0e73f83a8/skills/hallmark/SKILL.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Nutlope--hallmark\\skills__hallmark__SKILL.md",
+        "bytes": 18239,
+        "sha256": "25a1ff92d925b2389e8409f42fb8ad7e033fceca8b5d1f07ed4ca4c28da53dc3"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/Nutlope/hallmark/blob/7ec868225c6caa040558c321ee0fefa0e73f83a8/LICENSE",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\Nutlope--hallmark\\LICENSE",
+        "bytes": 1078,
+        "sha256": "06088a8b94598626f27612dea42300154bf7be967c85d9d3eee4490cb056af7d"
+      }
+    ],
+    "skillPaths": [
+      "skills/hallmark/SKILL.md"
+    ]
+  },
+  {
+    "repo": "superdesigndev/superdesign-prompts",
+    "url": "https://github.com/superdesigndev/superdesign-prompts",
+    "stars": 32,
+    "pushedAt": "2026-08-03T09:50:31Z",
+    "updatedAt": "2026-10-22T13:58:52Z",
+    "defaultBranch": "main",
+    "headSha": "6c60906945208df5aa2187f19f8ddfe9b2948aa0",
+    "headCommittedAt": "2026-08-03T09:50:31Z",
+    "archived": false,
+    "license": "MIT",
+    "checkedAt": "2026-10-23T13:30:05.176835+00:00",
+    "files": [
+      {
+        "path": "README.md",
+        "url": "https://github.com/superdesigndev/superdesign-prompts/blob/6c60906945208df5aa2187f19f8ddfe9b2948aa0/README.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\superdesigndev--superdesign-prompts\\README.md",
+        "bytes": 21729,
+        "sha256": "f618d0aa95f26ec4efd4c2e100fd3caefcf83c9bcfc32342e36d562e9c1e1daa"
+      },
+      {
+        "path": "page-types/ai-chat/SKILL.md",
+        "url": "https://github.com/superdesigndev/superdesign-prompts/blob/6c60906945208df5aa2187f19f8ddfe9b2948aa0/page-types/ai-chat/SKILL.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\superdesigndev--superdesign-prompts\\page-types__ai-chat__SKILL.md",
+        "bytes": 1228,
+        "sha256": "4ddac23e1e1d4bac78597439899ade81000575f041c3ae3f972b4c7e5c137307"
+      },
+      {
+        "path": "LICENSE",
+        "url": "https://github.com/superdesigndev/superdesign-prompts/blob/6c60906945208df5aa2187f19f8ddfe9b2948aa0/LICENSE",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\superdesigndev--superdesign-prompts\\LICENSE",
+        "bytes": 1068,
+        "sha256": "4f1f4bef8eee1bb98cce6323b189298973f28d0c07af5676280323156150d488"
+      },
+      {
+        "path": "LICENSE-DATA",
+        "url": "https://github.com/superdesigndev/superdesign-prompts/blob/6c60906945208df5aa2187f19f8ddfe9b2948aa0/LICENSE-DATA",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\superdesigndev--superdesign-prompts\\LICENSE-DATA",
+        "bytes": 1351,
+        "sha256": "47056fe1d476491ab32025852b40fcdab65df0044d3662d541c653c374ea955b"
+      }
+    ],
+    "skillPaths": [
+      "page-types/ai-chat/SKILL.md",
+      "page-types/auth-login/SKILL.md",
+      "page-types/blog-editorial/SKILL.md",
+      "page-types/calendar/SKILL.md",
+      "page-types/components/SKILL.md",
+      "page-types/dashboards/SKILL.md",
+      "page-types/e-commerce/SKILL.md",
+      "page-types/email-newsletter/SKILL.md",
+      "page-types/forms-contact/SKILL.md",
+      "page-types/landing-pages/SKILL.md",
+      "page-types/mobile-apps/SKILL.md",
+      "page-types/onboarding/SKILL.md",
+      "page-types/portfolios/SKILL.md",
+      "page-types/pricing-pages/SKILL.md",
+      "page-types/waitlist-coming-soon/SKILL.md"
+    ]
+  },
+  {
+    "repo": "X-T-E-R/design-prompts-skill",
+    "url": "https://github.com/X-T-E-R/design-prompts-skill",
+    "stars": 3,
+    "headSha": "4f81ca29289dd0e5105f9d1768bf98bbb18b592b",
+    "headCommittedAt": "2026-04-23T08:08:54Z",
+    "pushedAt": "2026-04-23T08:09:04Z",
+    "updatedAt": "2026-06-07T06:10:28Z",
+    "license": null,
+    "archived": false,
+    "checkedAt": "2026-10-23T13:31:08.969330+00:00",
+    "files": [
+      {
+        "path": "SKILL.md",
+        "url": "https://github.com/X-T-E-R/design-prompts-skill/blob/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/SKILL.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\X-T-E-R--design-prompts-skill\\SKILL.md",
+        "bytes": 3253,
+        "sha256": "d09ad4e1a1584e6baa0a0e1baa88bc3276e3bde8ad0efbf1a78a67d5b747e5c5"
+      },
+      {
+        "path": "README.md",
+        "url": "https://github.com/X-T-E-R/design-prompts-skill/blob/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/README.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\X-T-E-R--design-prompts-skill\\README.md",
+        "bytes": 2570,
+        "sha256": "606911decd77369061e4c8fb5dc0d86ddb617159ae98e434a93e657ad5441b06"
+      },
+      {
+        "path": "SOURCE.md",
+        "url": "https://github.com/X-T-E-R/design-prompts-skill/blob/4f81ca29289dd0e5105f9d1768bf98bbb18b592b/SOURCE.md",
+        "local": "outputs\\focus-academy\\research\\visual-direction-2026-10-23\\sources\\X-T-E-R--design-prompts-skill\\SOURCE.md",
+        "bytes": 2530,
+        "sha256": "4e3773ca8184678ce2b9c6ba02214bd54bab5ac880f90508411306e575e27081"
+      }
+    ]
+  }
+]
