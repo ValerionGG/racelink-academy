@@ -1,0 +1,45 @@
+{
+  "release": "themes-v22",
+  "commit": "99859870e3fa785367d0112d99cebbe32c893324",
+  "verified_at": "2026-10-23T20:12:01.445439+00:00",
+  "report": "focus-academy/research/themes-v22/VALIDATION.md",
+  "browser_report": "focus-academy/research/themes-v22/browser-checks.json",
+  "offline_assertions": 109,
+  "theme_assertions": 36,
+  "unique_offline_assertions": 145,
+  "offline_failures": 0,
+  "browser_scenarios": 14,
+  "browser_widths": [
+    320,
+    390,
+    768,
+    1280,
+    1440
+  ],
+  "http_assets": 19,
+  "catalog_unchanged": true,
+  "catalog_equivalence": {
+    "educational_data_identical": true,
+    "only_json_difference": "generated_at",
+    "only_config_difference": "catalog_sha256",
+    "local_generated_at": "2026-10-23T13:09:58+00:00",
+    "published_generated_at": "2026-10-23T13:10:12+00:00",
+    "gzip_matches_own_json": true
+  },
+  "photographs_unchanged": 12,
+  "scope": "Verified source/exports and report-backed simulated browser viewports. No physical-device or exhaustive accessibility certification.",
+  "workflow": {
+    "conclusion": "success",
+    "databaseId": 40016757865,
+    "headSha": "99859870e3fa785367d0112d99cebbe32c893324",
+    "status": "completed",
+    "url": "https://github.com/ValerionGG/racelink-academy/actions/runs/40016757865",
+    "workflowName": "Publish RaceLink Academy"
+  },
+  "package_required_reports": [
+    "VALIDATION.md",
+    "assets-baseline.json"
+  ],
+  "package_created": false,
+  "historical_reports_rewritten": false
+}

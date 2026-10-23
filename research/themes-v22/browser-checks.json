@@ -1,0 +1,122 @@
+{
+  "release": "themes-v22",
+  "status": "passed",
+  "code_commit": "99859870e3fa785367d0112d99cebbe32c893324",
+  "checked_at": "2026-10-23T20:10:03.588Z",
+  "widths": [
+    320,
+    390,
+    768,
+    1280,
+    1440
+  ],
+  "checks": [
+    {
+      "name": "Mobile 390 — light palette and header fit",
+      "status": "passed",
+      "width": 390,
+      "theme": "light",
+      "code_commit": "a7b2632182162dd0fbeca52bb491a3753046dc8c"
+    },
+    {
+      "name": "Dark theme survives reload",
+      "status": "passed",
+      "width": 390,
+      "theme": "dark",
+      "code_commit": "a7b2632182162dd0fbeca52bb491a3753046dc8c"
+    },
+    {
+      "name": "Search suggestions and French results retain query across theme switch",
+      "status": "passed",
+      "width": 390,
+      "theme": "both",
+      "query": "vidange clio 3",
+      "results": 2,
+      "code_commit": "a7b2632182162dd0fbeca52bb491a3753046dc8c"
+    },
+    {
+      "name": "Filters light/dark and light video reader use correct surfaces",
+      "status": "passed",
+      "width": 390,
+      "theme": "both",
+      "code_commit": "a7b2632182162dd0fbeca52bb491a3753046dc8c"
+    },
+    {
+      "name": "Theme switch retains scroll position and real photographic cards",
+      "status": "passed",
+      "width": 390,
+      "theme": "both",
+      "scrollY": 668,
+      "code_commit": "a7b2632182162dd0fbeca52bb491a3753046dc8c"
+    },
+    {
+      "name": "Light guide reader, sticky plan and official references are readable",
+      "status": "passed",
+      "width": 390,
+      "theme": "light",
+      "code_commit": "a7b2632182162dd0fbeca52bb491a3753046dc8c"
+    },
+    {
+      "name": "Desktop home and menu in light/dark, photographic paths retain white overlay text",
+      "status": "passed",
+      "width": 1280,
+      "theme": "both",
+      "code_commit": "a7b2632182162dd0fbeca52bb491a3753046dc8c"
+    },
+    {
+      "name": "Final release — header fits at 320 px; theme buttons are 44 × 44 px",
+      "status": "passed",
+      "width": 320,
+      "theme": "light",
+      "code_commit": "99859870e3fa785367d0112d99cebbe32c893324"
+    },
+    {
+      "name": "Final release — theme activation via keyboard has visible focus and aria-pressed state",
+      "status": "passed",
+      "width": 320,
+      "theme": "dark",
+      "code_commit": "99859870e3fa785367d0112d99cebbe32c893324"
+    },
+    {
+      "name": "Final release — English/Spanish theme labels and light vehicle form",
+      "status": "passed",
+      "width": 390,
+      "theme": "light",
+      "code_commit": "99859870e3fa785367d0112d99cebbe32c893324"
+    },
+    {
+      "name": "Final release — desktop 1440 header exposes both labels without overlap; vehicle form dark",
+      "status": "passed",
+      "width": 1440,
+      "theme": "dark",
+      "code_commit": "99859870e3fa785367d0112d99cebbe32c893324"
+    },
+    {
+      "name": "Final release — FAQ dark, saved view light and tablet 768 remain readable without overflow",
+      "status": "passed",
+      "width": 768,
+      "theme": "both",
+      "code_commit": "99859870e3fa785367d0112d99cebbe32c893324"
+    },
+    {
+      "name": "Final release — light preference and browser toolbar color survive reload",
+      "status": "passed",
+      "width": 390,
+      "theme": "light",
+      "code_commit": "99859870e3fa785367d0112d99cebbe32c893324"
+    },
+    {
+      "name": "Final release — guide preview cards and secondary vehicle control in light",
+      "status": "passed",
+      "width": 390,
+      "theme": "light",
+      "code_commit": "99859870e3fa785367d0112d99cebbe32c893324"
+    }
+  ],
+  "limits": [
+    "Responsive browser viewports, not physical-device tests.",
+    "Earlier scenarios identify a7b2632; final touch-target, theme, export and layout checks identify9985987.",
+    "No automatic playback, no new collection, no external manufacturer procedure revalidation.",
+    "No exhaustive WCAG audit."
+  ]
+}

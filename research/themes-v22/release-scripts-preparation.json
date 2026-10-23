@@ -1,0 +1,66 @@
+{
+  "release": "themes-v22",
+  "checked_at": "2026-10-23T20:02:14.645429+00:00",
+  "status": "prepared",
+  "scripts": {
+    "run-contracts.py": {
+      "syntax": "passed",
+      "sha256": "a98051a700c073e8c3b2cf41d1a51f12caa7f7f5b713b79c19ef0c89bfd8c2cd"
+    },
+    "sync.py": {
+      "syntax": "passed",
+      "sha256": "1b2a0787278c559faa21bf17334a0b5690da067939e5a28aa15edbfd5a23e14b"
+    },
+    "verify-public.py": {
+      "syntax": "passed",
+      "sha256": "1acab815b8ec89dad768a1be42912cd5c6df832cfda9ca2e153148974702dc75"
+    },
+    "package-delivery.py": {
+      "syntax": "passed",
+      "sha256": "78c2edd7d3e5fa2d217de76dfaba7f3f7bfbf7bd6de084abf5b8bec541cac34d"
+    }
+  },
+  "theme_tests": 36,
+  "executed": [
+    "node --check outputs/focus-academy/public/theme.js",
+    "node work/themes-v22/test-theme.mjs"
+  ],
+  "not_executed": [
+    "build",
+    "sync",
+    "HTTP verification",
+    "package",
+    "Git"
+  ],
+  "photo_baseline_identical_to_v21": true,
+  "followup": {
+    "export_tests": 6,
+    "aggregate_passed": 145,
+    "aggregate_failed": 0,
+    "cleanup_retries": [],
+    "only_rerun": [
+      "export",
+      "summary"
+    ],
+    "production_export": false
+  },
+  "latest_followup": {
+    "html_tests": 14,
+    "export_tests": 6,
+    "aggregate_passed": 145,
+    "aggregate_failed": 0,
+    "only_rerun": [
+      "html",
+      "export",
+      "summary"
+    ],
+    "stylesheet_contract": {
+      "source_href": "/aide/app-ui.css?v=themes-v22&rev=2",
+      "release": "themes-v22",
+      "revision": "2",
+      "comparison": "Exact exported href including closing quote; only deployment prefix transformed"
+    },
+    "cleanup_retries": [],
+    "production_export": false
+  }
+}

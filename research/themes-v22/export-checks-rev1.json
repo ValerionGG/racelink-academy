@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-10-23T20:03:14.199101+00:00",
+  "status": "passed",
+  "passed": 6,
+  "failed": 0,
+  "tests_run": 6,
+  "output": "test_caption_vehicle_status_and_evidence_survive_public_export (tests_export_static_v22.StaticExportTests.test_caption_vehicle_status_and_evidence_survive_public_export) ... ok\ntest_default_aide_export_remains_nested (tests_export_static_v22.StaticExportTests.test_default_aide_export_remains_nested) ... ok\ntest_gzip_is_lossless_and_cache_key_matches_actual_catalog (tests_export_static_v22.StaticExportTests.test_gzip_is_lossless_and_cache_key_matches_actual_catalog) ... ok\ntest_pages_flat_layout_and_public_prefix (tests_export_static_v22.StaticExportTests.test_pages_flat_layout_and_public_prefix) ... ok\ntest_prefix_rejects_traversal_and_html_injection (tests_export_static_v22.StaticExportTests.test_prefix_rejects_traversal_and_html_injection) ... ok\ntest_social_public_fields_survive_api_and_export_without_private_metadata (tests_export_static_v22.StaticExportTests.test_social_public_fields_survive_api_and_export_without_private_metadata) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.778s\n\nOK\n",
+  "in_memory_test_adaptations": [
+    {
+      "line": 34,
+      "from": "href=\"/racelink-academy/app-ui.css?v=workshop-v20\"",
+      "to": "href=\"/racelink-academy/app-ui.css?v=themes-v22&amp;rev=1\""
+    },
+    {
+      "line": 40,
+      "from": "fetch('/racelink-academy/vehicle-guides.json?v=workshop-v20')",
+      "to": "fetch('/racelink-academy/vehicle-guides.json?v=themes-v22')"
+    },
+    {
+      "line": 48,
+      "from": "href=\"/aide/app-ui.css?v=workshop-v20\"",
+      "to": "href=\"/aide/app-ui.css?v=themes-v22&amp;rev=1\""
+    }
+  ],
+  "cleanup_policy": "Bounded retry of WinError 145 only in the verified temporary test root; all other errors propagate.",
+  "cleanup_retries": [],
+  "scope": "Temporary fixture SQLite only. No production DB changes or production export.",
+  "source_sha256": {
+    "tests_export_static.py": "443dd1fb3c16131291a23f0398e0a5ca23afcb83be0fa5743558d160bb7b778d",
+    "scripts/export_static.py": "d990ce9be1368e7dd6f7899e96f5c97f9b8fd85043893baa650c11b410254054",
+    "public/index.html": "8ae59b57498872aba8c9f39a36e81a8ade81edd077c70997db7ea04ea59c13a2",
+    "public/app.js": "69d2b3732b4d6b2e4eca367e5b478110e9fd76d1ddca0ed78dbe9a44441d28d3",
+    "public/automotive-ui.js": "cb9e77866b48f49e7a540568edce067bd70c4f669d9095d5d4c22876611f08c3"
+  },
+  "release": "themes-v22",
+  "runner": "work/themes-v22/run-contracts.py",
+  "reused_test_source": "outputs/focus-academy/tests_export_static.py",
+  "command_from_workspace": "python work/themes-v22/run-contracts.py export"
+}

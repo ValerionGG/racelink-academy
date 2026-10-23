@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-10-23T20:01:38.349Z",
+  "release": "themes-v22",
+  "command": "node work/redesign-v20/test-search-filters.mjs",
+  "status": "passed",
+  "passed": 13,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Clear criteria preserves committed question, format and sort while clearing all other filters",
+      "status": "passed"
+    },
+    {
+      "name": "Delegated platform buttons preserve question/vehicle/format and reset pagination",
+      "status": "passed"
+    },
+    {
+      "name": "Platform facets render matching pressed state, counts, and selected zero-result source",
+      "status": "passed"
+    },
+    {
+      "name": "Facet refresh restores the equivalent platform/category button only inside the open drawer",
+      "status": "passed"
+    },
+    {
+      "name": "Desktop filter drawer moves original controls, survives breakpoint, and restores focus",
+      "status": "passed"
+    },
+    {
+      "name": "Filter badge excludes question, format, language and vehicle context",
+      "status": "passed"
+    },
+    {
+      "name": "Suggestion request keeps whole question, exact spec, vehicle and selected source/format",
+      "status": "passed"
+    },
+    {
+      "name": "Keyword completion/correction are escaped and keyboard selection preserves precise context",
+      "status": "passed"
+    },
+    {
+      "name": "Video suggestion exposes source, estimated language and escaped author before opening exact ID",
+      "status": "passed"
+    },
+    {
+      "name": "Unknown video language is never rendered as French by default",
+      "status": "passed"
+    },
+    {
+      "name": "Show results suggestion action submits the original form and remembers the exact draft",
+      "status": "passed"
+    },
+    {
+      "name": "A slower stale suggestion response cannot replace the newer query suggestions",
+      "status": "passed"
+    },
+    {
+      "name": "Suggestion group and source-language labels follow EN/ES UI independently of content language",
+      "status": "passed"
+    }
+  ],
+  "scope": {
+    "browser": false,
+    "network": false,
+    "application_modified": false,
+    "executed": "Production app setFilter/renderFacets, reset-filter and delegated click handlers extracted without modification; real mobile/discovery modules.",
+    "doubles": "Minimal DOM/events; rendering/load/network callbacks controlled; no full app bootstrap or API engine execution.",
+    "limits": "Does not establish layout, native browser focus trapping, computed accessibility or real network results."
+  },
+  "source_sha256": {
+    "public/app.js": "69d2b3732b4d6b2e4eca367e5b478110e9fd76d1ddca0ed78dbe9a44441d28d3",
+    "public/mobile-ui.js": "5fc15b29fd2f11461bd53649c6125c397956379e78d8231d1a128e95dc1f25f5",
+    "public/discovery-ui.js": "20c12e1dd99d2f5bb01f28cd3cf83b1aaa0c0a11a9b02bbbf6afe748474deadf"
+  },
+  "runner": "work/themes-v22/run-contracts.py",
+  "reused_test_source": "C:\\Users\\Nad\\Documents\\Codex\\2026-10-20\\a-x20\\work\\redesign-v20\\test-search-filters.mjs",
+  "command_from_workspace": "python work/themes-v22/run-contracts.py search-filters",
+  "in_memory_test_adaptations": []
+}

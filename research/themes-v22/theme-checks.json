@@ -1,0 +1,165 @@
+{
+  "release": "themes-v22",
+  "generated_at": "2026-10-23T20:01:39.864Z",
+  "status": "passed",
+  "passed": 36,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "Synchronous light preference before DOMContentLoaded and without controls",
+      "status": "passed"
+    },
+    {
+      "name": "Synchronous system dark preference before DOMContentLoaded",
+      "status": "passed"
+    },
+    {
+      "name": "Valid saved light overrides a dark operating system",
+      "status": "passed"
+    },
+    {
+      "name": "Valid saved dark overrides a light operating system",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid stored value follows system and is not used in DOM",
+      "status": "passed"
+    },
+    {
+      "name": "System changes apply in both directions until an explicit choice",
+      "status": "passed"
+    },
+    {
+      "name": "Explicit choice persists across a new page instance",
+      "status": "passed"
+    },
+    {
+      "name": "A choice matching the system still stops automatic switching",
+      "status": "passed"
+    },
+    {
+      "name": "Stored explicit choice ignores subsequent system changes",
+      "status": "passed"
+    },
+    {
+      "name": "Missing matchMedia safely defaults to light",
+      "status": "passed"
+    },
+    {
+      "name": "Throwing matchMedia safely defaults to light",
+      "status": "passed"
+    },
+    {
+      "name": "Legacy matchMedia addListener remains functional",
+      "status": "passed"
+    },
+    {
+      "name": "Storage access exception does not block system or explicit choice",
+      "status": "passed"
+    },
+    {
+      "name": "Storage read exception falls back to system",
+      "status": "passed"
+    },
+    {
+      "name": "Storage write exception preserves the explicit choice in memory",
+      "status": "passed"
+    },
+    {
+      "name": "Initial buttons report exactly the effective selection",
+      "status": "passed"
+    },
+    {
+      "name": "Click from nested icon selects without replacing the icon",
+      "status": "passed"
+    },
+    {
+      "name": "Invalid and disabled controls cannot change preference",
+      "status": "passed"
+    },
+    {
+      "name": "French labels and group are accessible",
+      "status": "passed"
+    },
+    {
+      "name": "English labels include accessible title and group",
+      "status": "passed"
+    },
+    {
+      "name": "Spanish labels preserve chosen theme and preference",
+      "status": "passed"
+    },
+    {
+      "name": "Unknown interface locale falls back to French",
+      "status": "passed"
+    },
+    {
+      "name": "html.lang observation updates labels without app import",
+      "status": "passed"
+    },
+    {
+      "name": "Controls parsed after synchronous script are initialized at DOM ready",
+      "status": "passed"
+    },
+    {
+      "name": "Dynamically inserted controls receive current state and locale",
+      "status": "passed"
+    },
+    {
+      "name": "Ordinary catalogue DOM mutations do not touch theme labels",
+      "status": "passed"
+    },
+    {
+      "name": "Cross-tab explicit change updates state without a write loop",
+      "status": "passed"
+    },
+    {
+      "name": "Cross-tab deletion resumes system preference and future changes",
+      "status": "passed"
+    },
+    {
+      "name": "Cross-tab localStorage clear resumes automatic preference",
+      "status": "passed"
+    },
+    {
+      "name": "Unrelated key and foreign storage do not override selection",
+      "status": "passed"
+    },
+    {
+      "name": "Theme event contains effective theme and choice source",
+      "status": "passed"
+    },
+    {
+      "name": "Repeated script does not duplicate handlers or reset preference",
+      "status": "passed"
+    },
+    {
+      "name": "Theme-color is light before DOMContentLoaded",
+      "status": "passed"
+    },
+    {
+      "name": "Theme-color follows system, explicit choice and cross-tab changes",
+      "status": "passed"
+    },
+    {
+      "name": "Missing theme-color meta does not block selection",
+      "status": "passed"
+    },
+    {
+      "name": "Theme-color parsed later in head is synchronized at DOM ready",
+      "status": "passed"
+    }
+  ],
+  "source": "outputs/focus-academy/public/theme.js",
+  "source_sha256": "cfdce63a386789cf225e1120bafa39571376c8b11a00fb00a664ae0d29e4bb27",
+  "command": "node work/themes-v22/test-theme.mjs",
+  "scope": {
+    "browser": false,
+    "network": false,
+    "dom": "Isolated event and DOM doubles; no visual claim"
+  },
+  "runner": "work/themes-v22/run-contracts.py",
+  "reused_test_source": "C:\\Users\\Nad\\Documents\\Codex\\2026-10-20\\a-x20\\work\\themes-v22\\test-theme.mjs",
+  "command_from_workspace": "python work/themes-v22/run-contracts.py theme",
+  "in_memory_test_adaptations": []
+}

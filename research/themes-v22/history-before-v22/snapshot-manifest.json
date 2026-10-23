@@ -1,0 +1,25 @@
+{
+  "scope": "Original bytes before V22 documentation replacement. Relative links retain their original document base.",
+  "files": [
+    {
+      "path": "PRODUCT.md",
+      "bytes": 7666,
+      "sha256": "634b5e7605e6338848d71ea5ba1d9fa9c311de0d0c5dd6eeed5f29a7093e406e"
+    },
+    {
+      "path": "DESIGN.md",
+      "bytes": 11886,
+      "sha256": "8b905b8ccc5de87ed783232f6ea1df010dcb6e7bab28d4ecee03e45469b1e8ae"
+    },
+    {
+      "path": "README-app.md",
+      "bytes": 21621,
+      "sha256": "b3c69ac79bccce5f91a86586dcb6c7f73d9570ab3c307138e11819c83a73254d"
+    },
+    {
+      "path": "README-git.md",
+      "bytes": 7043,
+      "sha256": "8e05db4bef87dddb51ad4ee9f77604360a4e046561ae5f26a9b5640fa5e6b8ff"
+    }
+  ]
+}
