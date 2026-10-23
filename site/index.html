@@ -9,15 +9,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=skills-v18c">
-  <script src="/racelink-academy/catalog-client.js?v=skills-v18c" defer></script>
-  <script type="module" src="/racelink-academy/app.js?v=skills-v18c"></script>
+  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=atelier-v19">
+  <script src="/racelink-academy/catalog-client.js?v=atelier-v19" defer></script>
+  <script type="module" src="/racelink-academy/app.js?v=atelier-v19"></script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
   <header class="header">
     <a href="/racelink-academy/" class="brand" aria-label="RaceLink Academy, accueil"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M9 27V9h9a6 6 0 0 1 0 12h-3l8 6M24 9v12h5" stroke="currentColor" stroke-width="3.3" stroke-linejoin="round"/><path d="M6 31h12" stroke="currentColor" stroke-width="2"/></svg></span><span><strong>RACELINK<span class="brand-academy"> ACADEMY</span></strong><small data-i18n="brandSub">Votre bibliothèque automobile</small></span></a>
-    <span class="app-context" data-product-text="context">Votre espace pour apprendre</span>
+    <nav class="desktop-nav" aria-label="Navigation principale">
+      <button class="nav-item active" data-view="explore"><span data-icon="home"></span><span data-i18n="explore">Accueil</span></button>
+      <button class="nav-item" data-browse-all data-library-nav><span data-icon="library"></span><span data-identity-text="library">Bibliothèque</span></button>
+      <button class="nav-item" data-view="paths"><span data-icon="route"></span><span data-i18n="paths">Parcours</span></button>
+      <button class="nav-item" data-view="saved"><span data-icon="bookmark"></span><span data-i18n="saved">Enregistrés</span></button>
+    </nav>
     <div class="header-right"><button class="header-search" data-open-search><span data-icon="search"></span><span data-product-text="search">Rechercher</span><kbd>/</kbd></button>
       <label class="interface-language"><span id="interface-language-label">Site</span><select id="ui-language" aria-label="Langue de l’interface"><option value="fr">FR</option><option value="en">EN</option><option value="es">ES</option></select></label>
       <button class="saved-button" data-view="saved"><span data-icon="bookmark"></span><span data-i18n="saved">Enregistrés</span><b id="saved-count">0</b></button>
@@ -26,12 +31,7 @@
     </div>
   </header>
   <aside class="app-sidebar" aria-label="Espace d’apprentissage">
-    <nav class="desktop-nav" aria-label="Navigation principale">
-      <button class="nav-item active" data-view="explore"><span data-icon="home"></span><span data-i18n="explore">Accueil</span></button>
-      <button class="nav-item" data-browse-all data-library-nav><span data-icon="library"></span><span data-identity-text="library">Bibliothèque</span></button>
-      <button class="nav-item" data-view="paths"><span data-icon="route"></span><span data-i18n="paths">Parcours</span></button>
-      <button class="nav-item" data-view="saved"><span data-icon="bookmark"></span><span data-i18n="saved">Enregistrés</span></button>
-    </nav>
+
     <div class="sidebar-section"><span class="sidebar-label" data-product-text="topics">Vos sujets</span><nav aria-label="Sujets">
       <button data-entry-category="mechanics"><span data-icon="wrench"></span><span data-product-text="mechanics">Mécanique</span></button>
       <button data-entry-category="driving"><span data-icon="steering"></span><span data-product-text="driving">Pilotage</span></button>
@@ -46,16 +46,10 @@
       <div class="hero wrap">
         <div class="hero-copy">
           <p class="home-greeting" data-product-text="greeting">Un peu de curiosité. Beaucoup à découvrir.</p>
-          <h1 data-i18n="headline">Comprendre.<br><span>Passer à la pratique.</span></h1>
-          <p class="hero-description" data-i18n="intro">Mécanique, pilotage, simulation. Le savoir se partage.</p>
+          <h1 data-i18n="headline">La passion.<br><span>Le savoir-faire.</span></h1>
+          <p class="hero-description" data-i18n="intro">Entretenir, piloter, progresser. Des vidéos et des guides pour apprendre les bons gestes.</p>
 
         </div>
-        <button type="button" class="academy-scene" data-entry-category="mechanics" aria-label="Explorer la mécanique">
-          <img src="./assets/photos/service.jpg" alt="" width="640" height="720" fetchpriority="high" decoding="async">
-          <span class="scene-shade" aria-hidden="true"></span>
-          <span class="scene-top"><span class="scene-index">RaceLink Academy</span></span>
-          <span class="scene-copy"><small data-identity-text="heroEyebrow">À portée de main</small><strong data-identity-text="heroCaption">Comprendre votre voiture.</strong><span class="scene-action"><span data-identity-text="heroAction">Explorer la mécanique</span><span data-icon="arrow-up-right"></span></span></span>
-        </button>
         <div class="hero-search">
           <div class="search-shell"><form id="search-form" class="search-box" role="search">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
@@ -64,6 +58,12 @@
           </form><div class="home-language-picker"><label for="home-language">Langue des vidéos</label><select id="home-language"><option value="">Toutes les langues</option><option value="fr">Français</option></select><button type="button" id="french-videos" data-content-language="fr">Vidéos en français <span aria-hidden="true">→</span></button></div><div id="search-suggestions" role="listbox" aria-label="Suggestions de recherche" hidden></div><p id="suggestion-status" class="sr-only" role="status"></p></div>
           <div class="suggestions"><span data-i18n="try">À explorer</span><button data-query="vidange">Faire une vidange</button><button data-query="freinage">Mieux freiner</button><button data-query="sim racing">Régler mon simulateur</button><a href="#vehicle-hub" class="workshop-jump">Mon véhicule & entretien ↘</a></div>
         </div>
+        <button type="button" class="academy-scene" data-entry-category="mechanics" aria-label="Explorer la mécanique">
+          <img src="./assets/photos/oil.jpg" alt="" width="960" height="640" fetchpriority="high" decoding="async">
+          <span class="scene-shade" aria-hidden="true"></span>
+          <span class="scene-top"><span class="scene-index">RaceLink Academy</span></span>
+          <span class="scene-copy"><small data-identity-text="heroEyebrow">À portée de main</small><strong data-identity-text="heroCaption">Comprendre votre voiture.</strong><span class="scene-action"><span data-identity-text="heroAction">Explorer la mécanique</span><span data-icon="arrow-up-right"></span></span></span>
+        </button>
       </div>
       <div class="catalog-meta wrap" aria-label="À propos de la bibliothèque"><span><i aria-hidden="true"></i><strong id="catalog-total">…</strong> <span data-i18n="references">vidéos référencées</span></span><span id="language-total">…</span><span id="scope-totals" data-i18n="accessNote">Sources publiques · Auteurs crédités · Accès direct</span><a href="#method" id="method-link" data-i18n="method">Notre méthode ↗</a></div>
       <section id="discovery-hub" class="discovery-hub wrap" aria-label="Explorer par objectif"></section>

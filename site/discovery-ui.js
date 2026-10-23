@@ -1,5 +1,5 @@
 import {icon} from './icons.js';
-import {attachRailNavigation} from './rail-navigation.js?v=skills-v18c';
+import {attachRailNavigation} from './rail-navigation.js?v=atelier-v19';
 export function createDiscoveryUI(ctx) {
   const {escape:e,t}=ctx;
   const $=s=>document.querySelector(s);
@@ -45,12 +45,12 @@ export function createDiscoveryUI(ctx) {
       {id:'simracing',category:'simracing',label:t('Régler mon simulateur','Set up my simulator','Ajustar mi simulador'),description:t('Réglages et technique','Setup and technique','Ajustes y técnica')}
     ];
     root.innerHTML=`<div class="home-intro"><h2>${t('Explorez vos sujets','Explore your interests','Explora tus temas')}</h2><button type="button" class="discovery-catalog-link" data-browse-all>${t('Tout explorer','Explore everything','Explorar todo')} ↗</button></div>
-      <div class="home-resource-links"><button type="button" data-browse-guides>${t('Guides pratiques','Practical guides','Guías prácticas')} <span aria-hidden="true">→</span></button><span>${t('Avec les références constructeur','With manufacturer references','Con referencias del fabricante')}</span></div>
       <div class="entry-grid" id="interest-rail">${entries.map(entry=>{
         const asset=visualAssets.find(item=>item.id===entry.id),src=imageUrl(asset?.url);
         return `<button type="button" class="entry-card entry-${entry.category}" data-entry-category="${entry.category}"><span class="entry-visual">${src?`<img src="${e(src)}" alt="${e(asset?.alt||'')}" width="640" height="360" loading="lazy" decoding="async" style="object-position:${e(asset?.position||'50% 50%')}">`:''}</span><span class="entry-copy"><strong>${e(entry.label)}</strong><small>${e(entry.description)}</small><span class="entry-cta" aria-hidden="true">${icon('arrow-up-right',{size:18})}</span></span></button>`;
       }).join('')}</div>${railControls('interest-rail',t('Sujet précédent','Previous topic','Tema anterior'),t('Sujet suivant','Next topic','Tema siguiente'))}
       <details class="discovery-photo-credits"><summary>${t('Crédits photos','Photo credits','Créditos de las fotos')}</summary>${visualAssets.map(asset=>`<p><a href="${e(imageUrl(asset.sourceUrl))}" target="_blank" rel="noopener noreferrer">${e(asset.credit)}</a> · <a href="${e(imageUrl(asset.licenseUrl))}" target="_blank" rel="noopener noreferrer">${e(asset.license)}</a></p>`).join('')}<p>${t('Photos d’illustration · cadrage adapté à l’écran.','Illustrative photos · display crop adapted to the screen.','Fotos ilustrativas · encuadre adaptado a la pantalla.')}</p></details>
+      <section class="guides-feature" aria-label="${t('Guides pratiques RaceLink','RaceLink practical guides','Guías prácticas RaceLink')}"><img src="${e(new URL('./assets/photos/wheel.jpg',import.meta.url).href)}" alt="" width="960" height="640" loading="lazy" decoding="async"><div class="guides-feature-copy"><h3>${t('Les bons gestes. Les bonnes sources.','Practical skills. Original sources.','Buenos gestos. Fuentes originales.')}</h3><p>${t('Vidange, roues, huile, essuie-glaces… Des guides pour comprendre, avec les notices constructeur pour aller plus loin.','Oil changes, wheels, wipers… Guides to understand the basics, with manufacturer manuals to go further.','Aceite, ruedas, limpiaparabrisas… Guías para comprender, con manuales del fabricante para ir más allá.')}</p><button type="button" data-browse-guides>${t('Découvrir les guides','Explore the guides','Descubrir las guías')} <span aria-hidden="true">↗</span></button></div></section>
       <div id="editorial-picks"></div>
       <details class="all-topics" ${allTopicsOpen?'open':''}><summary>${t('Tous les sujets','All topics','Todos los temas')}</summary>
         <div class="intent-list" role="group" aria-label="${t('Filtrer les sujets par objectif','Filter topics by goal','Filtrar temas por objetivo')}"><button type="button" class="intent-choice ${intent?'':'active'}" data-intent="" aria-pressed="${!intent}"><strong>${t('Tous les objectifs','All goals','Todos los objetivos')}</strong></button>${catalog.intents.map(item=>`<button type="button" class="intent-choice ${intent===item.id?'active':''}" data-intent="${e(item.id)}" aria-pressed="${intent===item.id}"><strong>${e(text(item.label))}</strong><small>${e(text(item.description))}</small></button>`).join('')}</div>
@@ -99,7 +99,7 @@ export function createDiscoveryUI(ctx) {
     try{
       const [data,visuals]=await Promise.all([
         window.getCatalogJson('/aide/api/discovery'),
-        fetch(new URL('./visual-assets.json?v=skills-v18c',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
+        fetch(new URL('./visual-assets.json?v=atelier-v19',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
       ]);
       catalog=data;visualAssets=Array.isArray(visuals?.assets)?visuals.assets:[];
       ctx.picks?.setVideos(catalog.shelves||[]);render();ctx.onPicksChange?.();

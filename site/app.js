@@ -1,11 +1,11 @@
 import {icon as glyph, categoryIcon} from './icons.js';
-import {createIdentityUI} from './identity-ui.js?v=skills-v18c';
+import {createIdentityUI} from './identity-ui.js?v=atelier-v19';
 import {tracks} from './tracks.js';
-import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=skills-v18c';
-import {createDiscoveryUI} from './discovery-ui.js?v=skills-v18c';
+import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=atelier-v19';
+import {createDiscoveryUI} from './discovery-ui.js?v=atelier-v19';
 import {createRaceLinkPicks} from './racelink-picks.js';
-import {createMobileUI} from './mobile-ui.js?v=skills-v18c';
-import {createGuideUI} from './guide-ui.js?v=skills-v18c';
+import {createMobileUI} from './mobile-ui.js?v=atelier-v19';
+import {createGuideUI} from './guide-ui.js?v=atelier-v19';
 import {socialContentMarkup} from './social-content.js';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
@@ -20,8 +20,8 @@ const dictionaries = {
 };
 Object.assign(dictionaries.en,{explore:'Home',openLibrary:'YOUR NEXT STEP STARTS HERE',headline:'A question?<br><span>Find out how.</span>',intro:'Maintain your car, improve on track or in a simulator.<br>Videos and guides to put knowledge into practice.',catalogTitle:'Find your answer.',discipline:'TOPIC',language:'LANGUAGE'});
 Object.assign(dictionaries.es,{explore:'Inicio',openLibrary:'TU PRÓXIMO PASO EMPIEZA AQUÍ',headline:'¿Una pregunta?<br><span>Descubre cómo.</span>',intro:'Cuida tu coche, mejora en pista o en simulación.<br>Vídeos y guías para pasar a la práctica.',catalogTitle:'Encuentra tu respuesta.',discipline:'TEMA',language:'IDIOMA'});
-Object.assign(dictionaries.en,{brandSub:'Your automotive library',saved:'Saved',headline:'Understand.<br><span>Put it into practice.</span>',intro:'Mechanics, driving, simulation. Knowledge is for sharing.',catalogTitle:'The library',discipline:'Topic',level:'Level',platform:'Platform',duration:'Duration'});
-Object.assign(dictionaries.es,{brandSub:'Tu biblioteca del automóvil',saved:'Guardados',headline:'Comprender.<br><span>Pasar a la práctica.</span>',intro:'Mecánica, pilotaje, simulación. El conocimiento se comparte.',catalogTitle:'La biblioteca',discipline:'Tema',level:'Nivel',platform:'Plataforma',duration:'Duración'});
+Object.assign(dictionaries.en,{brandSub:'Your automotive library',saved:'Saved',headline:'The passion.<br><span>The know-how.</span>',intro:'Maintain, drive, improve. Videos and guides to turn curiosity into skills.',catalogTitle:'The library',discipline:'Topic',level:'Level',platform:'Platform',duration:'Duration'});
+Object.assign(dictionaries.es,{brandSub:'Tu biblioteca del automóvil',saved:'Guardados',headline:'La pasión.<br><span>El saber hacer.</span>',intro:'Cuidar, pilotar, progresar. Vídeos y guías para aprender a hacerlo bien.',catalogTitle:'La biblioteca',discipline:'Tema',level:'Nivel',platform:'Plataforma',duration:'Duración'});
 const originalText = Object.fromEntries($$('[data-i18n]').map(el => [el.dataset.i18n,el.innerHTML]));
 const t = (fr,en,es) => ui === 'en' ? en : ui === 'es' ? es : fr;
 const categories = [
