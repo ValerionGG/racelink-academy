@@ -2,7 +2,7 @@ import {icon, categoryIcon} from './icons.js';
 
 // Navigation is a native dialog: focus containment, Escape and focus return
 // remain provided by the browser. Links reuse the existing catalog actions.
-export function createIdentityUI({t, openSearch, getView, isBrowsing}) {
+export function createIdentityUI({t, openSearch, getView, isBrowsing, getState = () => ({})}) {
   const $ = selector => document.querySelector(selector);
   const categories = [
     ['mechanics','Mécanique','Mechanics','Mecánica','Entretien & réparations','Maintenance & repairs','Mantenimiento y reparaciones'],
@@ -24,12 +24,31 @@ export function createIdentityUI({t, openSearch, getView, isBrowsing}) {
     const labels = {
       browse: t('Explorer','Explore','Explorar'), library: t('Bibliothèque','Library','Biblioteca'),
       search: t('Rechercher','Search','Buscar'), menu: t('Menu','Menu','Menú'),
-      heroEyebrow: t('APPRENDRE. COMPRENDRE. PRATIQUER.','LEARN. UNDERSTAND. PRACTISE.','APRENDE. COMPRENDE. PRACTICA.'),
-      heroCaption: t('Le savoir prend le volant.','Knowledge takes the wheel.','El saber toma el volante.'),
-      heroAction: t('Entrer dans l’atelier','Enter the workshop','Entrar en el taller'),
+      heroEyebrow: t('À portée de main','Within reach','A tu alcance'),
+      heroCaption: t('Comprendre votre voiture.','Understand your car.','Comprende tu coche.'),
+      heroAction: t('Explorer la mécanique','Explore mechanics','Explorar la mecánica'),
       heroNote: t('MÉCANIQUE · PILOTAGE · SIM RACING','MECHANICS · DRIVING · SIM RACING','MECÁNICA · PILOTAJE · SIM RACING')
     };
+    const productLabels = {
+      context: t('Votre espace pour apprendre','Your learning space','Tu espacio para aprender'),
+      search: labels.search,
+      topics: t('Vos sujets','Your topics','Tus temas'),
+      mechanics: t('Mécanique','Mechanics','Mecánica'),
+      driving: t('Pilotage','Driving','Pilotaje'),
+      allTopics: t('Tous les sujets','All topics','Todos los temas'),
+      myCar: t('Mon véhicule','My vehicle','Mi vehículo'),
+      carHint: t('Des tutos plus précis','More relevant tutorials','Tutoriales más precisos'),
+      greeting: t('Un peu de curiosité. Beaucoup à découvrir.','A little curiosity. Plenty to discover.','Un poco de curiosidad. Mucho por descubrir.')
+    };
     document.querySelectorAll('[data-identity-text]').forEach(el => {el.textContent = labels[el.dataset.identityText] || '';});
+    document.querySelectorAll('[data-product-text]').forEach(el => {
+      if(productLabels[el.dataset.productText]!==undefined)el.textContent=productLabels[el.dataset.productText];
+    });
+    // The main hero question and introduction remain owned by app translations.
+    $('.app-sidebar')?.setAttribute('aria-label',t('Espace d’apprentissage','Learning space','Espacio de aprendizaje'));
+    $('.desktop-nav')?.setAttribute('aria-label',t('Navigation principale','Main navigation','Navegación principal'));
+    $('.sidebar-section nav')?.setAttribute('aria-label',t('Sujets','Topics','Temas'));
+    $('.mobile-nav')?.setAttribute('aria-label',t('Navigation mobile','Mobile navigation','Navegación móvil'));
     $('.academy-scene')?.setAttribute('aria-label',t('Explorer la mécanique','Explore mechanics','Explorar la mecánica'));
     triggers.forEach(el => el.setAttribute('aria-label',t('Explorer tous les sujets','Explore all topics','Explorar todos los temas')));
     dialog.innerHTML = `<header class="navigation-heading"><div><p class="eyebrow">RACELINK / ACADEMY</p><h2 id="navigation-title">${t('Votre prochaine découverte.','Your next discovery.','Tu próximo descubrimiento.')}</h2></div><button type="button" class="icon-button" data-close-navigation aria-label="${t('Fermer le menu','Close menu','Cerrar el menú')}">${icon('close')}</button></header>
@@ -38,14 +57,21 @@ export function createIdentityUI({t, openSearch, getView, isBrowsing}) {
     hydrate();sync();
   }
   function sync() {
-    const view = getView(), results = view === 'explore' && isBrowsing();
-    document.querySelectorAll('.desktop-nav [data-view="explore"],.mobile-nav [data-view="explore"]').forEach(el=>{
-      el.classList.toggle('active',view==='explore'&&!results);
-      if(view==='explore'&&!results)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');
+    const view = getView(), results = view === 'explore' && isBrowsing(), category = getState().category;
+    function markCurrent(el, active, value = 'page') {
+      el.classList.toggle('active', active);
+      if(active)el.setAttribute('aria-current',value);else el.removeAttribute('aria-current');
+    }
+    // View links can live in the sidebar, header, mobile bar or topic dialog.
+    // Home and the filtered library share a view, but are distinct destinations.
+    document.querySelectorAll('[data-view]').forEach(el=>{
+      markCurrent(el,el.dataset.view===view&&(view!=='explore'||!results));
     });
-    document.querySelectorAll('[data-library-nav],.mobile-nav [data-open-search]').forEach(el=>{
-      el.classList.toggle('active',results);
-      if(results)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');
+    document.querySelectorAll('[data-library-nav],[data-browse-all],.mobile-nav [data-open-search]').forEach(el=>{
+      markCurrent(el,results);
+    });
+    document.querySelectorAll('[data-entry-category]').forEach(el=>{
+      markCurrent(el,results&&el.dataset.entryCategory===category,'true');
     });
   }
   triggers.forEach(el=>el.addEventListener('click',()=>{
@@ -59,11 +85,12 @@ export function createIdentityUI({t, openSearch, getView, isBrowsing}) {
     if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}
   });
   document.addEventListener('click',event=>{
-    const action=event.target.closest('[data-open-search],[data-entry-category],[data-browse-all],[data-view]');
+    const action=event.target.closest('[data-open-search],[data-open-vehicle],[data-entry-category],[data-browse-all],[data-view]');
     if(!action)return;
     const fromMenu=dialog.contains(action);
     if(fromMenu)dialog.close();
     if(action.hasAttribute('data-open-search'))openSearch();
+    if(action.hasAttribute('data-open-vehicle'))document.dispatchEvent(new Event('rl:open-vehicle'));
     requestAnimationFrame(()=>{
       sync();
       if(fromMenu&&(action.hasAttribute('data-entry-category')||action.hasAttribute('data-browse-all'))){

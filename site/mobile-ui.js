@@ -36,12 +36,19 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore}) {
   }
   function openSearch(){
     if(resourceDialog?.open||filterDialog.open)return;
+    const input=$('#search');
+    const draft={value:input.value,start:input.selectionStart,end:input.selectionEnd,direction:input.selectionDirection};
     suppressSearchFocus=false;
+    // Opening search is navigation, not a new query: preserve draft text and
+    // selection even if the view callback synchronizes committed filter state.
     onExplore();
+    input.value=draft.value;
+    restoreSearch();
     if(mobile.matches){
       if(!searchDialog.open){$('.mobile-search-body').append(shell);searchDialog.showModal();lock();}
-      $('#search').focus({preventScroll:true});
-    }else{$('#search').scrollIntoView({block:'center',behavior:'smooth'});$('#search').focus({preventScroll:true});}
+    }else{input.scrollIntoView({block:'center',behavior:'smooth'});}
+    input.focus({preventScroll:true});
+    if(draft.start!==null&&draft.end!==null)input.setSelectionRange(draft.start,draft.end,draft.direction||'none');
   }
   function openFilters(){
     if(!mobile.matches)return;
