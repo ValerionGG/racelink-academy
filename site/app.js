@@ -1,11 +1,11 @@
 import {icon as glyph, categoryIcon} from './icons.js';
-import {createIdentityUI} from './identity-ui.js?v=visual-v17c';
+import {createIdentityUI} from './identity-ui.js?v=skills-v18';
 import {tracks} from './tracks.js';
-import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=visual-v17c';
-import {createDiscoveryUI} from './discovery-ui.js?v=visual-v17c';
+import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=skills-v18';
+import {createDiscoveryUI} from './discovery-ui.js?v=skills-v18';
 import {createRaceLinkPicks} from './racelink-picks.js';
-import {createMobileUI} from './mobile-ui.js?v=visual-v17c';
-import {createGuideUI} from './guide-ui.js?v=visual-v17c';
+import {createMobileUI} from './mobile-ui.js?v=skills-v18';
+import {createGuideUI} from './guide-ui.js?v=skills-v18';
 import {socialContentMarkup} from './social-content.js';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
@@ -259,6 +259,12 @@ function chooseContentLanguage(value,videoOnly=false){
   state.q=$('#search').value.trim();
   if(videoOnly)state.format='video';
   discoveryUI.closeSuggestions();
+  if($('#search-dialog')?.open){
+    setFilter('language',value);
+    $('#search').focus({preventScroll:true});
+    discoveryUI.refreshSuggestions();
+    return;
+  }
   document.dispatchEvent(new Event('rl:search-chosen'));
   setFilter('language',value);const heading=$('#catalog-heading');
   if(fromHome){heading.tabIndex=-1;heading.focus({preventScroll:true});}

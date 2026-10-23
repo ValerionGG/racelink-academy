@@ -1301,15 +1301,18 @@ def normalize_guides(payload):
             continue
         seen.add(guide["id"])
         original = {**guide, "sources": sources}
+        card_summary = guide.get("cardSummary")
+        description = (card_summary.strip() if isinstance(card_summary, str) and card_summary.strip()
+                       else guide.get("intro", guide.get("summary", "")))
         result.append({"id": guide["id"], "resource_type": "guide", "title": str(guide["title"]),
-            "description": str(guide.get("intro", guide.get("summary", ""))), "creator": "RaceLink",
+            "description": str(description), "creator": "RaceLink",
             "language": guide.get("language", payload.get("language", "fr")), "platform": "racelink",
             "category": "mechanics", "level": "unknown", "domain_scope": "automotive_adjacent",
             "content_format": "written_guide", "pedagogical_format": "guide", "format_status": "authored_guide",
             "license": "unknown", "has_transcript": False, "duration_seconds": None,
             "review_status": "authored_guide", "verification_scope": "editorial_guide_with_cited_sources",
             "scope": "general_method_not_vehicle_compatibility", "compatibility_verified": False,
-            "sources": sources, "guide": original, "task": guide.get("task"),
+            "sources": sources, "source_count": len(sources), "guide": original, "task": guide.get("task"),
             "verified_at": guide.get("verifiedAt", payload.get("updatedAt")),
             "automotive": {"vehicles": [], "tasks": [guide["task"]] if guide.get("task") else [],
                            "systems": [], "specifications": [], "status": "not_applicable"}})
@@ -1690,6 +1693,8 @@ def suggestions(db_path, params, *, config=None, public_path=PUBLIC):
     if query and len(items) < 6:
         result = search(db_path, {**context, "q": query, "per_page": str(6 - len(items)), "sort": "title"})
         items.extend({"type": "video", "id": item["id"], "video_id": item["id"], "label": item["title"],
+                      **{key: item[key] for key in (
+                          "creator", "platform", "language", "language_status", "language_confidence")},
                       "query": query, "filters": context, "reason": {
                           "fr": "Titre présent dans le catalogue, correspondant à la recherche et aux filtres.",
                           "en": "Existing catalog title matching the search and filters.",

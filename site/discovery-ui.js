@@ -1,10 +1,15 @@
 import {icon} from './icons.js';
+import {attachRailNavigation} from './rail-navigation.js?v=skills-v18';
 export function createDiscoveryUI(ctx) {
   const {escape:e,t}=ctx;
   const $=s=>document.querySelector(s);
   const text=value=>typeof value==='object'&&value ? value[ctx.getUi()]||value.fr||value.en||'' : String(value||'');
   let catalog=null,visualAssets=[],intent='',latestResults=null,searchVersion=0,recommendVersion=0,timer;
   let suggestions=[],active=-1,contextTopics=[];
+  let detachEntries=()=>{},detachPicks=()=>{};
+  function railControls(id,previous,next) {
+    return `<nav class="rail-controls" data-rail-controls="${id}" aria-label="${e(t('Parcourir les cartes','Browse cards','Explorar tarjetas'))}" hidden><span data-rail-position></span><button type="button" data-rail-previous aria-controls="${id}" aria-label="${e(previous)}">${icon('arrow-right',{size:18})}</button><button type="button" data-rail-next aria-controls="${id}" aria-label="${e(next)}">${icon('arrow-right',{size:18})}</button></nav>`;
+  }
   $('.search-shell').insertAdjacentHTML('beforeend','<div id="search-helper" class="search-helper" hidden></div>');
   const recent=()=>{const items=ctx.storage.get('rl-search-recent',[]);return Array.isArray(items)?items.filter(x=>typeof x==='string'&&x.length<161).slice(0,5):[];};
   function remember(query){if(query?.trim()&&query.trim().length<161)ctx.storage.set('rl-search-recent',[query.trim(),...recent().filter(x=>x!==query.trim())].slice(0,5));}
@@ -29,6 +34,7 @@ export function createDiscoveryUI(ctx) {
   }
   function render() {
     const root=$('#discovery-hub');
+    detachEntries();detachPicks();
     if(!catalog){root.innerHTML='';return;}
     const allTopicsOpen=root.querySelector('.all-topics')?.open||false;
     const activeTopics=catalog.topics.filter(x=>x.count>0);
@@ -39,10 +45,11 @@ export function createDiscoveryUI(ctx) {
       {id:'simracing',category:'simracing',label:t('Régler mon simulateur','Set up my simulator','Ajustar mi simulador'),description:t('Réglages et technique','Setup and technique','Ajustes y técnica')}
     ];
     root.innerHTML=`<div class="home-intro"><h2>${t('Explorez vos sujets','Explore your interests','Explora tus temas')}</h2><button type="button" class="discovery-catalog-link" data-browse-all>${t('Tout explorer','Explore everything','Explorar todo')} ↗</button></div>
-      <div class="entry-grid">${entries.map(entry=>{
+      <div class="home-resource-links"><button type="button" data-browse-guides>${t('Guides pratiques','Practical guides','Guías prácticas')} <span aria-hidden="true">→</span></button><span>${t('Avec les références constructeur','With manufacturer references','Con referencias del fabricante')}</span></div>
+      <div class="entry-grid" id="interest-rail">${entries.map(entry=>{
         const asset=visualAssets.find(item=>item.id===entry.id),src=imageUrl(asset?.url);
         return `<button type="button" class="entry-card entry-${entry.category}" data-entry-category="${entry.category}"><span class="entry-visual">${src?`<img src="${e(src)}" alt="${e(asset?.alt||'')}" width="640" height="360" loading="lazy" decoding="async" style="object-position:${e(asset?.position||'50% 50%')}">`:''}</span><span class="entry-copy"><strong>${e(entry.label)}</strong><small>${e(entry.description)}</small><span class="entry-cta" aria-hidden="true">${icon('arrow-up-right',{size:18})}</span></span></button>`;
-      }).join('')}</div>
+      }).join('')}</div>${railControls('interest-rail',t('Sujet précédent','Previous topic','Tema anterior'),t('Sujet suivant','Next topic','Tema siguiente'))}
       <details class="discovery-photo-credits"><summary>${t('Crédits photos','Photo credits','Créditos de las fotos')}</summary>${visualAssets.map(asset=>`<p><a href="${e(imageUrl(asset.sourceUrl))}" target="_blank" rel="noopener noreferrer">${e(asset.credit)}</a> · <a href="${e(imageUrl(asset.licenseUrl))}" target="_blank" rel="noopener noreferrer">${e(asset.license)}</a></p>`).join('')}<p>${t('Photos d’illustration · cadrage adapté à l’écran.','Illustrative photos · display crop adapted to the screen.','Fotos ilustrativas · encuadre adaptado a la pantalla.')}</p></details>
       <div id="editorial-picks"></div>
       <details class="all-topics" ${allTopicsOpen?'open':''}><summary>${t('Tous les sujets','All topics','Todos los temas')}</summary>
@@ -50,6 +57,7 @@ export function createDiscoveryUI(ctx) {
         <div class="topic-grid">${picked.map(x=>topicButton(x)).join('')}</div><p class="discovery-scope">${t('Les sujets conservent votre véhicule, votre langue et vos autres filtres. Les nombres affichés portent sur le catalogue entier.','Topics keep your vehicle, language and other filters. Counts cover the whole catalog.','Los temas conservan vehículo, idioma y otros filtros. Los recuentos abarcan todo el catálogo.')}</p>
       </details>`;
     renderShelves();
+    detachEntries=attachRailNavigation($('#interest-rail'),root.querySelector('[data-rail-controls="interest-rail"]'));
     root.querySelectorAll('.entry-card img').forEach(img=>img.addEventListener('error',()=>{img.hidden=true;},{once:true}));
     root.querySelectorAll('[data-intent]').forEach(button=>button.addEventListener('click',()=>{
       intent=button.dataset.intent;render();
@@ -57,6 +65,7 @@ export function createDiscoveryUI(ctx) {
     }));
   }
   function renderShelves() {
+    detachPicks();
     const root=$('#editorial-picks');
     if(!root||!catalog)return;
     const shelves=(catalog.shelves||[]).filter(s=>s.items?.length);
@@ -66,14 +75,15 @@ export function createDiscoveryUI(ctx) {
     if(!featured.length){root.innerHTML=`<div class="language-empty-picks">${t('Explorez les ressources dans la langue choisie.','Explore resources in your chosen language.','Explora recursos en el idioma elegido.')}<button type="button" data-browse-all>${t('Voir le catalogue','Browse the catalog','Ver el catálogo')} →</button></div>`;return;}
     const hidden=ctx.storage.get('rl-library-hide-picks',false);
     root.innerHTML=`<div class="editorial-heading"><h3>${t('La sélection RaceLink','RaceLink picks','La selección RaceLink')}</h3><button type="button" id="toggle-editorial" aria-expanded="${!hidden}" aria-controls="editorial-rails" aria-label="${hidden?t('Afficher la sélection RaceLink','Show RaceLink picks','Mostrar la selección RaceLink'):t('Masquer la sélection RaceLink','Hide RaceLink picks','Ocultar la selección RaceLink')}">${hidden?t('Afficher','Show','Mostrar'):t('Masquer','Hide','Ocultar')}</button></div>
-      <div id="editorial-rails" ${hidden?'hidden':''}><div class="featured-grid">${featured.map(({item,shelf:s})=>{
+      <div id="editorial-rails" ${hidden?'hidden':''}><div class="featured-grid" id="selection-rail">${featured.map(({item,shelf:s})=>{
         const v=item.video||item;
         const id=v.id||item.video_id||item.videoId,src=imageUrl(v.thumbnail_url||v.thumbnailUrl),duration=durationLabel(v.duration_seconds??v.durationSeconds);
         const reason=text(item.reason||item.rationale),note=text(item.evidence?.note||item.evidence)||t('Sélection sur le titre, la source et les métadonnées disponibles.','Selected using title, source and available metadata.','Selección basada en título, fuente y metadatos.');
         const basis=item.evidence?.basis==='authorized_transcript'?t('Transcription consultée','Transcript reviewed','Transcripción consultada'):item.evidence?.basis==='public_video_metadata'?t('Choix sur métadonnées','Metadata-based pick','Selección por metadatos'):'';
         const reviewed=dateLabel(item.reviewedAt||item.reviewed_at||s.reviewedAt||s.reviewed_at);
         return `<article class="editorial-video"><button class="editorial-preview" data-video="${e(id)}" type="button" aria-label="${e(t('Ouvrir : ','Open: ','Abrir: ')+v.title)}"><span class="editorial-image">${src?`<img src="${e(src)}" alt="" width="480" height="270" loading="lazy" decoding="async" referrerpolicy="no-referrer">`:`<span class="thumb-fallback">${e(platformName(v.platform))}</span>`}<span class="thumb-play" aria-hidden="true">${icon('play',{size:20})}</span>${duration?`<span class="thumb-duration" aria-label="${e(t('Durée : ','Duration: ','Duración: ')+duration)}">${e(duration)}</span>`:''}</span><strong dir="auto">${e(v.title)}</strong></button>${ctx.picks?.badge('video',id,{compact:true})||''}<small class="editorial-creator" dir="auto">${e(v.creator||t('Auteur non renseigné','Creator not provided','Autor no indicado'))}</small><small class="editorial-source">${e(platformName(v.platform))} · ${e(videoLanguage(v))}</small>${basis?`<small class="editorial-basis">${e(basis)}</small>`:''}<details><summary>${t('Pourquoi ce choix ?','Why this pick?','¿Por qué esta selección?')}</summary>${reason?`<p>${e(reason)}</p>`:''}${note!==reason?`<p>${e(note)}</p>`:''}${reviewed!=='—'?`<small>${t('Revue :','Reviewed:','Revisión:')} ${e(reviewed)}</small>`:''}</details></article>`;
-      }).join('')}</div><details class="curation-policy"><summary>${t('Comment ces ressources sont choisies','How these resources are chosen','Cómo se eligen estos recursos')}</summary><p>${t('Sélections explicites, raisons documentées et date de révision. Les entrées expirées ou désactivées sont retirées. Une sélection sur métadonnées ne vaut pas visionnage complet ni validation technique.','Explicit picks, documented reasons and review dates. Expired or disabled entries are removed. Metadata selection is not a full viewing or technical validation.','Selecciones explícitas, motivos documentados y fechas de revisión. Las entradas caducadas o desactivadas se retiran. La selección por metadatos no equivale a revisión completa o validación técnica.')}</p></details></div>`;
+      }).join('')}</div>${railControls('selection-rail',t('Vidéo précédente de la sélection','Previous selected video','Vídeo seleccionado anterior'),t('Vidéo suivante de la sélection','Next selected video','Siguiente vídeo seleccionado'))}<details class="curation-policy"><summary>${t('Comment ces ressources sont choisies','How these resources are chosen','Cómo se eligen estos recursos')}</summary><p>${t('Sélections explicites, raisons documentées et date de révision. Les entrées expirées ou désactivées sont retirées. Une sélection sur métadonnées ne vaut pas visionnage complet ni validation technique.','Explicit picks, documented reasons and review dates. Expired or disabled entries are removed. Metadata selection is not a full viewing or technical validation.','Selecciones explícitas, motivos documentados y fechas de revisión. Las entradas caducadas o desactivadas se retiran. La selección por metadatos no equivale a revisión completa o validación técnica.')}</p></details></div>`;
+    detachPicks=attachRailNavigation($('#selection-rail'),root.querySelector('[data-rail-controls="selection-rail"]'));
     root.querySelectorAll('.editorial-image img').forEach(img=>img.addEventListener('error',()=>{img.hidden=true;img.parentElement.insertAdjacentHTML('afterbegin',`<span class="thumb-fallback">${t('Aperçu indisponible','Preview unavailable','Vista previa no disponible')}</span>`);},{once:true}));
     $('#toggle-editorial').addEventListener('click',()=>{ctx.storage.set('rl-library-hide-picks',!hidden);renderShelves();$('#toggle-editorial').focus();});
   }
@@ -89,7 +99,7 @@ export function createDiscoveryUI(ctx) {
     try{
       const [data,visuals]=await Promise.all([
         window.getCatalogJson('/aide/api/discovery'),
-        fetch(new URL('./visual-assets.json?v=visual-v17c',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
+        fetch(new URL('./visual-assets.json?v=skills-v18',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
       ]);
       catalog=data;visualAssets=Array.isArray(visuals?.assets)?visuals.assets:[];
       ctx.picks?.setVideos(catalog.shelves||[]);render();ctx.onPicksChange?.();
@@ -107,11 +117,12 @@ export function createDiscoveryUI(ctx) {
     if (typeof item.count === 'number') return `${count(item.count)} ${t('ressources','resources','recursos')}`;
     if (item.type === 'guide') return t('Guide RaceLink · Sources citées','RaceLink guide · Sources included','Guía RaceLink · Fuentes citadas');
     if (item.type === 'history') return t('Reprendre cette recherche','Resume this search','Retomar esta búsqueda');
+    if (item.type === 'video') return [platformName(item.platform),videoLanguage(item),item.creator].filter(Boolean).join(' · ');
     return '';
   }
   function renderSuggestions() {
     const root=$('#search-suggestions');
-    root.innerHTML=suggestions.map((item,i)=>`<button type="button" role="option" tabindex="-1" id="suggestion-${i}" data-suggestion="${i}" aria-selected="${active===i}"><span class="suggestion-kind">${item.type==='history'?t('RÉCENT','RECENT','RECIENTE'):item.type==='video'?t('VIDÉO','VIDEO','VÍDEO'):item.type==='guide'?t('GUIDE','GUIDE','GUÍA'):t('SUJET','TOPIC','TEMA')}</span><span><strong dir="auto">${e((item.match_basis==='editorial_default'?'':item.completion)||text(item.label))}</strong>${item.completion&&item.match_basis!=='editorial_default'?`<small>${e(text(item.label))}</small>`:''}${item.correction?`<small class="suggestion-correction">${e(item.corrections?.length ? t('Proposition : ','Suggestion: ','Propuesta: ')+item.corrections.map(c=>`${c.from} → ${c.to}`).join(' · ') : text(item.correction))}</small>`:''}${suggestionDetail(item)?`<small>${e(suggestionDetail(item))}</small>`:''}</span><b aria-hidden="true">↗</b></button>`).join('');
+    root.innerHTML=suggestions.map((item,i)=>`<button type="button" role="option" tabindex="-1" id="suggestion-${i}" data-suggestion="${i}" aria-selected="${active===i}"><span class="suggestion-copy"><span class="suggestion-kind">${item.type==='history'?t('Recherche récente','Recent search','Búsqueda reciente'):item.type==='video'?t('Vidéo','Video','Vídeo'):item.type==='guide'?t('Guide pratique','Practical guide','Guía práctica'):t('Explorer un sujet','Explore a topic','Explorar un tema')}</span><strong dir="auto">${e((item.match_basis==='editorial_default'?'':item.completion)||text(item.label))}</strong>${item.completion&&item.match_basis!=='editorial_default'?`<small>${e(text(item.label))}</small>`:''}${item.correction?`<small class="suggestion-correction">${e(item.corrections?.length ? t('Proposition : ','Suggestion: ','Propuesta: ')+item.corrections.map(c=>`${c.from} → ${c.to}`).join(' · ') : text(item.correction))}</small>`:''}${suggestionDetail(item)?`<small>${e(suggestionDetail(item))}</small>`:''}</span><b aria-hidden="true">${item.type==='video'?'↗':'→'}</b></button>`).join('');
     root.hidden=!suggestions.length;$('#search').setAttribute('aria-expanded',String(suggestions.length>0));
     if(active>=0)$('#search').setAttribute('aria-activedescendant',`suggestion-${active}`);else $('#search').removeAttribute('aria-activedescendant');
     $('#suggestion-status').textContent=suggestions.length?`${suggestions.length} ${t('suggestions disponibles. Flèches pour parcourir, Entrée pour choisir.','suggestions available. Use arrows to navigate and Enter to choose.','sugerencias. Usa las flechas y pulsa Intro para elegir.')}`:'';
@@ -160,6 +171,7 @@ export function createDiscoveryUI(ctx) {
   document.addEventListener('click',event=>{
     const entry=event.target.closest('[data-entry-category]');if(entry){closeSuggestions();ctx.applySearch({...ctx.getState(),category:entry.dataset.entryCategory,page:1});return;}
     if(event.target.closest('[data-browse-all]')){closeSuggestions();ctx.applySearch({});return;}
+    if(event.target.closest('[data-browse-guides]')){closeSuggestions();ctx.applySearch({format:'guide'});return;}
     if(event.target.closest('[data-clear-recent]')){ctx.storage.set('rl-search-recent',[]);$('#search').focus();suggest();return;}
     const topic=event.target.closest('[data-discovery-topic]');if(topic){chooseTopic(topic.dataset.discoveryTopic,topic.hasAttribute('data-topic-context')?contextTopics.find(x=>x.id===topic.dataset.discoveryTopic):undefined);return;}
     const option=event.target.closest('[data-suggestion]');if(option){chooseSuggestion(Number(option.dataset.suggestion));return;}
@@ -181,5 +193,5 @@ export function createDiscoveryUI(ctx) {
   $('#search-suggestions').addEventListener('mousedown',event=>event.preventDefault());
   $('#search-form').addEventListener('submit',()=>{remember($('#search').value);closeSuggestions();});
   document.addEventListener('rl:close-suggestions',closeSuggestions);
-  return {load,render,recommendations,closeSuggestions,beginSearch(){++recommendVersion;$('#context-discovery').hidden=true;},refresh(){render();if(latestResults)recommendations(latestResults);}};
+  return {load,render,recommendations,closeSuggestions,refreshSuggestions(){clearTimeout(timer);suggest();},beginSearch(){++recommendVersion;$('#context-discovery').hidden=true;},refresh(){render();if(latestResults)recommendations(latestResults);}};
 }

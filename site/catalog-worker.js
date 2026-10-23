@@ -743,6 +743,8 @@ export function suggestCatalog(catalog, params = {}, config = catalog.discovery)
   if (query && items.length < 6) {
     const result = searchCatalog(catalog, {...context, q: query, per_page: String(6 - items.length), sort: "title"});
     items.push(...result.items.map(item => ({type: "video", id: item.id, video_id: item.id, label: item.title, query,
+      creator: item.creator ?? "", platform: item.platform, language: item.language,
+      language_status: item.language_status ?? "", language_confidence: item.language_confidence,
       filters: context, reason: {fr: "Titre présent dans le catalogue, correspondant à la recherche et aux filtres.",
         en: "Existing catalog title matching the search and filters.",
         es: "Título existente que coincide con la búsqueda y los filtros."}})));
