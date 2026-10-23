@@ -47,6 +47,7 @@ export function createIdentityUI({t, openSearch, getView, isBrowsing, getState =
     // The main hero question and introduction remain owned by app translations.
     $('.app-sidebar')?.setAttribute('aria-label',t('Espace d’apprentissage','Learning space','Espacio de aprendizaje'));
     $('.desktop-nav')?.setAttribute('aria-label',t('Navigation principale','Main navigation','Navegación principal'));
+    $('.header-search')?.setAttribute('aria-label',labels.search);
     $('.sidebar-section nav')?.setAttribute('aria-label',t('Sujets','Topics','Temas'));
     $('.mobile-nav')?.setAttribute('aria-label',t('Navigation mobile','Mobile navigation','Navegación móvil'));
     $('.academy-scene')?.setAttribute('aria-label',t('Explorer la mécanique','Explore mechanics','Explorar la mecánica'));

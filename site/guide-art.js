@@ -1,4 +1,4 @@
-import {GUIDE_PHOTOS} from './guide-photos.js?v=atelier-v19b';
+import {GUIDE_PHOTOS} from './guide-photos.js?v=atelier-v19c';
 
 // Topic labels and photo selection stay independent of a guide's canonical title.
 const topics = Object.freeze({
