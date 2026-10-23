@@ -1,11 +1,11 @@
 import {icon as glyph, categoryIcon} from './icons.js';
-import {createIdentityUI} from './identity-ui.js?v=guide-v16';
+import {createIdentityUI} from './identity-ui.js?v=guide-v16b';
 import {tracks} from './tracks.js';
-import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=guide-v16';
-import {createDiscoveryUI} from './discovery-ui.js?v=guide-v16';
+import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=guide-v16b';
+import {createDiscoveryUI} from './discovery-ui.js?v=guide-v16b';
 import {createRaceLinkPicks} from './racelink-picks.js';
-import {createMobileUI} from './mobile-ui.js?v=guide-v16';
-import {createGuideUI} from './guide-ui.js?v=guide-v16';
+import {createMobileUI} from './mobile-ui.js?v=guide-v16b';
+import {createGuideUI} from './guide-ui.js?v=guide-v16b';
 import {socialContentMarkup} from './social-content.js';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
@@ -248,7 +248,7 @@ async function loadVideos(){
   }finally{if(version===requestVersion){grid.setAttribute('aria-busy','false');grid.inert=false;mobileUI.update();}}
 }
 function renderActiveFilters(){
-  $('#active-filters').innerHTML=Object.entries(state).filter(([key,val])=>val&&!['sort','page'].includes(key)&&!(key==='format'&&val==='all')).map(([key,value])=>{
+  $('#active-filters').innerHTML=Object.entries(state).filter(([key,val])=>val&&!['sort','page','format'].includes(key)).map(([key,value])=>{
     const label=[...vehicleKeys,'task','system','spec'].includes(key)?automotiveUI.filterLabel(key,value):key==='format'?(value==='guide'?t('Guides','Guides','Guías'):t('Vidéos','Videos','Vídeos')):key==='content_format'?$('#content_format').selectedOptions[0]?.textContent: key==='category'?catName(value):key==='domain'?(value==='motorsport'?'Motorsport':t('Auto & compétences complémentaires','Automotive & related skills','Automóvil y competencias complementarias')):key==='level'?levelName(value):key==='language'?langName(value):key==='platform'?platformName(value):key==='transcript'?t('Transcription','Transcript','Transcripción'):key==='license'?t('Licence libre','Open license','Licencia libre'):value;
     return `<button data-remove="${key}" aria-label="${escape(t('Retirer le filtre ','Remove filter ','Quitar filtro ')+label)}">${escape(label)} ×</button>`;
   }).join('');

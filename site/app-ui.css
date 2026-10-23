@@ -789,4 +789,11 @@ dialog::backdrop {background:#141c2db3;backdrop-filter:blur(3px)}
 
 .guide-other-sources>summary{font-size:13px;min-height:44px;line-height:1.6;padding:10px 0;cursor:pointer}.guide-other-sources .official-source{margin-top:14px}
 
+@media(max-width:760px){
+ .vehicle-disclosure>summary{flex-wrap:nowrap}
+ .vehicle-disclosure>summary>span:first-child{flex:0 1 auto;min-width:0;font:600 12px/1.5 var(--body)}
+ .vehicle-disclosure>summary>span:nth-child(2){order:0;min-width:0;max-width:none;flex:1;font:400 11px/1.5 var(--body)}
+ .vehicle-disclosure>summary>b{flex:0 0 auto;margin-left:auto;order:0}
+}
+
 }
