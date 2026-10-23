@@ -38,7 +38,7 @@ export function createIdentityUI({t, openSearch, getView, isBrowsing, getState =
       allTopics: t('Tous les sujets','All topics','Todos los temas'),
       myCar: t('Mon véhicule','My vehicle','Mi vehículo'),
       carHint: t('Des tutos plus précis','More relevant tutorials','Tutoriales más precisos'),
-      greeting: t('Un peu de curiosité. Beaucoup à découvrir.','A little curiosity. Plenty to discover.','Un poco de curiosidad. Mucho por descubrir.')
+      greeting: t('LA PASSION S’APPREND.','PASSION IS SOMETHING YOU LEARN.','LA PASIÓN SE APRENDE.')
     };
     document.querySelectorAll('[data-identity-text]').forEach(el => {el.textContent = labels[el.dataset.identityText] || '';});
     document.querySelectorAll('[data-product-text]').forEach(el => {

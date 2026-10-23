@@ -9,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=guide-v16b">
+  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=visual-v17">
   <script src="/racelink-academy/catalog-client.js" defer></script>
-  <script type="module" src="/racelink-academy/app.js?v=guide-v16b"></script>
+  <script type="module" src="/racelink-academy/app.js?v=visual-v17"></script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
@@ -46,14 +46,9 @@
       <div class="hero wrap">
         <div class="hero-copy">
           <p class="home-greeting" data-product-text="greeting">Un peu de curiosité. Beaucoup à découvrir.</p>
-          <h1 data-i18n="headline">Qu’allez-vous apprendre aujourd’hui ?</h1>
-          <p class="hero-description" data-i18n="intro">Le bon geste, la bonne technique, à votre rythme.</p>
-          <div class="search-shell"><form id="search-form" class="search-box" role="search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
-            <input id="search" name="q" type="search" role="combobox" aria-autocomplete="list" aria-controls="search-suggestions" aria-expanded="false" aria-label="Rechercher des tutoriels" placeholder="Un tuto, une question, un modèle…" autocomplete="off">
-            <kbd>/</kbd><button type="submit" aria-label="Lancer la recherche"><span data-icon="arrow-right"></span></button>
-          </form><div id="search-suggestions" role="listbox" aria-label="Suggestions de recherche" hidden></div><p id="suggestion-status" class="sr-only" role="status"></p><div class="home-language-picker"><label for="home-language">Langue des vidéos</label><select id="home-language"><option value="">Toutes les langues</option><option value="fr">Français</option></select><button type="button" id="french-videos" data-content-language="fr">Vidéos en français <span aria-hidden="true">→</span></button></div></div>
-          <div class="suggestions"><span data-i18n="try">À explorer</span><button data-query="vidange">Faire une vidange</button><button data-query="freinage">Mieux freiner</button><button data-query="sim racing">Régler mon simulateur</button><a href="#vehicle-hub" class="workshop-jump">Mon véhicule & entretien ↘</a></div>
+          <h1 data-i18n="headline">Comprendre.<br><span>Passer à la pratique.</span></h1>
+          <p class="hero-description" data-i18n="intro">Mécanique, pilotage, simulation. Le savoir se partage.</p>
+
         </div>
         <button type="button" class="academy-scene" data-entry-category="mechanics" aria-label="Explorer la mécanique">
           <img src="./assets/photos/service.jpg" alt="" width="640" height="720" fetchpriority="high" decoding="async">
@@ -61,6 +56,14 @@
           <span class="scene-top"><span class="scene-index">RaceLink Academy</span></span>
           <span class="scene-copy"><small data-identity-text="heroEyebrow">À portée de main</small><strong data-identity-text="heroCaption">Comprendre votre voiture.</strong><span class="scene-action"><span data-identity-text="heroAction">Explorer la mécanique</span><span data-icon="arrow-up-right"></span></span></span>
         </button>
+        <div class="hero-search">
+          <div class="search-shell"><form id="search-form" class="search-box" role="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+            <input id="search" name="q" type="search" role="combobox" aria-autocomplete="list" aria-controls="search-suggestions" aria-expanded="false" aria-label="Rechercher des tutoriels" placeholder="Un tuto, une question, un modèle…" autocomplete="off">
+            <kbd>/</kbd><button type="submit" aria-label="Lancer la recherche"><span data-icon="arrow-right"></span></button>
+          </form><div id="search-suggestions" role="listbox" aria-label="Suggestions de recherche" hidden></div><p id="suggestion-status" class="sr-only" role="status"></p><div class="home-language-picker"><label for="home-language">Langue des vidéos</label><select id="home-language"><option value="">Toutes les langues</option><option value="fr">Français</option></select><button type="button" id="french-videos" data-content-language="fr">Vidéos en français <span aria-hidden="true">→</span></button></div></div>
+          <div class="suggestions"><span data-i18n="try">À explorer</span><button data-query="vidange">Faire une vidange</button><button data-query="freinage">Mieux freiner</button><button data-query="sim racing">Régler mon simulateur</button><a href="#vehicle-hub" class="workshop-jump">Mon véhicule & entretien ↘</a></div>
+        </div>
       </div>
       <div class="catalog-meta wrap" aria-label="À propos de la bibliothèque"><span><i aria-hidden="true"></i><strong id="catalog-total">…</strong> <span data-i18n="references">vidéos référencées</span></span><span id="language-total">…</span><span id="scope-totals" data-i18n="accessNote">Sources publiques · Auteurs crédités · Accès direct</span><a href="#method" id="method-link" data-i18n="method">Notre méthode ↗</a></div>
       <section id="discovery-hub" class="discovery-hub wrap" aria-label="Explorer par objectif"></section>
