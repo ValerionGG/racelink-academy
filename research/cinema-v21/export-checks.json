@@ -1,0 +1,37 @@
+{
+  "generated_at": "2026-10-23T19:24:08.255771+00:00",
+  "status": "passed",
+  "passed": 6,
+  "failed": 0,
+  "tests_run": 6,
+  "output": "test_caption_vehicle_status_and_evidence_survive_public_export (tests_export_static_v21.StaticExportTests.test_caption_vehicle_status_and_evidence_survive_public_export) ... ok\ntest_default_aide_export_remains_nested (tests_export_static_v21.StaticExportTests.test_default_aide_export_remains_nested) ... ok\ntest_gzip_is_lossless_and_cache_key_matches_actual_catalog (tests_export_static_v21.StaticExportTests.test_gzip_is_lossless_and_cache_key_matches_actual_catalog) ... ok\ntest_pages_flat_layout_and_public_prefix (tests_export_static_v21.StaticExportTests.test_pages_flat_layout_and_public_prefix) ... ok\ntest_prefix_rejects_traversal_and_html_injection (tests_export_static_v21.StaticExportTests.test_prefix_rejects_traversal_and_html_injection) ... ok\ntest_social_public_fields_survive_api_and_export_without_private_metadata (tests_export_static_v21.StaticExportTests.test_social_public_fields_survive_api_and_export_without_private_metadata) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.747s\n\nOK\n",
+  "in_memory_test_adaptations": [
+    {
+      "line": 34,
+      "from": "workshop-v20",
+      "to": "cinema-v21"
+    },
+    {
+      "line": 40,
+      "from": "workshop-v20",
+      "to": "cinema-v21"
+    },
+    {
+      "line": 48,
+      "from": "workshop-v20",
+      "to": "cinema-v21"
+    }
+  ],
+  "scope": "Temporary fixture SQLite only. No production DB changes or production export.",
+  "source_sha256": {
+    "tests_export_static.py": "443dd1fb3c16131291a23f0398e0a5ca23afcb83be0fa5743558d160bb7b778d",
+    "scripts/export_static.py": "d990ce9be1368e7dd6f7899e96f5c97f9b8fd85043893baa650c11b410254054",
+    "public/index.html": "b4b4e1f1bb8d63f8f498e5258dff3f242ff69324b51e4b99c8841eaa45d95853",
+    "public/app.js": "7f50fa0c48cfd3f35ba19c55095c2ff078ae285ad79ba02218f49bc5639bbd7b",
+    "public/automotive-ui.js": "3613b82fe93515984a72c9afe3b379c4420f0002bd6d8e82c5914e20f1da3e51"
+  },
+  "release": "cinema-v21",
+  "runner": "work/redesign-v21/run-contracts.py",
+  "reused_test_source": "outputs/focus-academy/tests_export_static.py",
+  "command_from_workspace": "python work/redesign-v21/run-contracts.py export"
+}

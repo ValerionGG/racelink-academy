@@ -1,0 +1,47 @@
+{
+  "generated_at": "2026-10-23T19:24:09.807Z",
+  "status": "passed",
+  "passed": 7,
+  "results": [
+    {
+      "name": "existing reader IDs/actions remain unique and heading precedes the real preview",
+      "status": "passed"
+    },
+    {
+      "name": "all three locales have usable primary actions, tabs, save state and progressive provenance",
+      "status": "passed"
+    },
+    {
+      "name": "a platform without embedding uses its real external URL and no fake player",
+      "status": "passed"
+    },
+    {
+      "name": "source fields are escaped and unsafe URL schemes never enter href/src",
+      "status": "passed"
+    },
+    {
+      "name": "unknown creator, language confidence and transcript availability stay honest",
+      "status": "passed"
+    },
+    {
+      "name": "overview preserves source questions, cited vehicles, social evidence and provenance basis",
+      "status": "passed"
+    },
+    {
+      "name": "rendering is pure and tolerates absent optional description/points",
+      "status": "passed"
+    }
+  ],
+  "module_sha256": "162b52ce8df480708a6a030c02cd2e733a11b501e011c45d5328a13191206641",
+  "scope": {
+    "browser": false,
+    "network": false,
+    "database": false,
+    "pure_markup_contracts": true
+  },
+  "release": "cinema-v21",
+  "runner": "work/redesign-v21/run-contracts.py",
+  "reused_test_source": "C:\\Users\\Nad\\Documents\\Codex\\2026-10-20\\a-x20\\work\\redesign-v20\\test-resource-detail.mjs",
+  "command_from_workspace": "python work/redesign-v21/run-contracts.py detail",
+  "in_memory_test_adaptations": []
+}

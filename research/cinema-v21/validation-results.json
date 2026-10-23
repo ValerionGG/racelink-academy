@@ -1,0 +1,58 @@
+{
+  "release": "cinema-v21",
+  "generated_at": "2026-10-23T19:38:21.231587+00:00",
+  "status": "passed",
+  "suites": [
+    {
+      "suite": "navigation",
+      "report": "navigation-checks.json",
+      "passed": 17,
+      "failed": 0,
+      "status": "passed"
+    },
+    {
+      "suite": "html",
+      "report": "html-contract-checks.json",
+      "passed": 14,
+      "failed": 0,
+      "status": "passed"
+    },
+    {
+      "suite": "export",
+      "report": "export-checks.json",
+      "passed": 6,
+      "failed": 0,
+      "status": "passed"
+    },
+    {
+      "suite": "search-filters",
+      "report": "search-filter-checks.json",
+      "passed": 13,
+      "failed": 0,
+      "status": "passed"
+    },
+    {
+      "suite": "cards",
+      "report": "card-checks.json",
+      "passed": 52,
+      "failed": 0,
+      "status": "passed"
+    },
+    {
+      "suite": "detail",
+      "report": "detail-checks.json",
+      "passed": 7,
+      "failed": 0,
+      "status": "passed"
+    }
+  ],
+  "passed": 109,
+  "failed": 0,
+  "scope": {
+    "browser": false,
+    "network": false,
+    "production_export": false,
+    "production_catalog_mutation": false,
+    "limitations": "DOM doubles, markup and fixture export checks only; no rendered layout, device or screen-reader claim."
+  }
+}

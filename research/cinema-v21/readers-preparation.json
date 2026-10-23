@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "scope": "Fragment only: balanced delimiters/strings, no URLs or white-background literal; exact palette contrast calculation. Not a browser or complete CSS syntax validation.",
+  "file": "work/redesign-v21/readers.css",
+  "sha256": "354104b6de063f2173504725ce8aeea97ea4e0ff83b57f441b358370d11f6e8e",
+  "bytes": 25757,
+  "contrast": {
+    "text_on_surface": 16.72,
+    "muted_on_surface": 8.42,
+    "text_on_accent": 4.17
+  },
+  "accent_note": "Accent-filled primary actions use 700 weight at 20px (large text); small links remain light and underlined.",
+  "browser_tested": false
+}

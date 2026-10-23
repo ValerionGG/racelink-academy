@@ -1,0 +1,107 @@
+{
+  "generated_at": "2026-10-23T19:32:29.692Z",
+  "runtime": "v24.16.0",
+  "command": "node tests_navigation.mjs",
+  "status": "passed",
+  "passed": 17,
+  "failed": 0,
+  "results": [
+    {
+      "name": "syntax: app/mobile/identity/discovery",
+      "status": "passed"
+    },
+    {
+      "name": "active navigation: home, library category, FAQ and saved",
+      "status": "passed"
+    },
+    {
+      "name": "sidebar vehicle action closes menu before dispatch",
+      "status": "passed"
+    },
+    {
+      "name": "search from another view preserves exact filters and draft (desktop)",
+      "status": "passed"
+    },
+    {
+      "name": "search from another view preserves exact filters and draft (mobile)",
+      "status": "passed"
+    },
+    {
+      "name": "resource close cannot reopen search; subsequent explicit search still works",
+      "status": "passed"
+    },
+    {
+      "name": "an older queued close event does not close a newly reopened search",
+      "status": "passed"
+    },
+    {
+      "name": "Escape/cancel restores search controls and leaves the sheet lock cleared",
+      "status": "passed"
+    },
+    {
+      "name": "mobile to desktop resize closes sheets and moves the original search node",
+      "status": "passed"
+    },
+    {
+      "name": "filter sheet returns the same controls and vehicle focus",
+      "status": "passed"
+    },
+    {
+      "name": "UI language event leaves content language and vehicle filters intact",
+      "status": "passed"
+    },
+    {
+      "name": "content language event retains UI language, typed query and specification",
+      "status": "passed"
+    },
+    {
+      "name": "home language picker selects video format without changing UI locale",
+      "status": "passed"
+    },
+    {
+      "name": "language can refine suggestions without closing mobile search or losing draft/vehicle",
+      "status": "passed"
+    },
+    {
+      "name": "URL restore and serialize preserve independent ui/language and exact vehicle fields",
+      "status": "passed"
+    },
+    {
+      "name": "submit from saved switches to Explore and keeps precise filters",
+      "status": "passed"
+    },
+    {
+      "name": "all current product labels have FR/EN/ES text; sidebar EN/ES are localized",
+      "status": "passed"
+    }
+  ],
+  "source_sha256": {
+    "public/app.js": "b9954a4d6684bfd1533c7dc10eb1c2b694696a595d01267b4756a4bfd053a1ad",
+    "public/mobile-ui.js": "5fc15b29fd2f11461bd53649c6125c397956379e78d8231d1a128e95dc1f25f5",
+    "public/identity-ui.js": "39917dff7e858f929e354c03e0265b49b39a4d221a4b7e09c6aae041965f801f",
+    "public/index.html": "35be85937cc6efec80353f42e0533b60e5588023c5ca2cd71876b2199b0adf36"
+  },
+  "scope": {
+    "browser_used": false,
+    "visual_test": false,
+    "network_used": false,
+    "application_modified": false,
+    "executed": "Real mobile/identity modules; production app language/submit listeners and syncUrl/restoreUrl/chooseContentLanguage extracted unchanged.",
+    "test_doubles": "Minimal DOM nodes/events, controlled dialog focus/close queue; app renderer/loadVideos/setFilter/changeView callbacks stubbed in app handler tests.",
+    "limits": [
+      "No browser layout, CSS rendering, native dialog conformance, touch keyboard or screen reader validation.",
+      "The full app bootstrap, API requests and view rendering are not executed.",
+      "Language handler tests isolate callbacks; they do not prove every renderer is side-effect free."
+    ]
+  },
+  "release": "cinema-v21",
+  "runner": "work/redesign-v21/run-contracts.py",
+  "reused_test_source": "C:\\Users\\Nad\\Documents\\Codex\\2026-10-20\\a-x20\\outputs\\focus-academy\\tests_navigation.mjs",
+  "command_from_workspace": "python work/redesign-v21/run-contracts.py navigation",
+  "in_memory_test_adaptations": [
+    {
+      "from": "8 V20 product labels including greeting",
+      "to": "7 exact V21 product labels; greeting removed with old hero"
+    }
+  ]
+}

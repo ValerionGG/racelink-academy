@@ -1,0 +1,161 @@
+{
+  "release": "cinema-v21",
+  "status": "passed",
+  "checked_at": "2026-10-23T19:41:02.665Z",
+  "code_commit": "065ab48e77faf6f6b1116c0d13f24d3b2b80b9b1",
+  "scope": "CUA in-app browser. Initial scenarios on7fbdbe6; identified final checks on8d7f78a and065ab48. CSS and text refinements; no physical-device audit or external video playback validation.",
+  "widths": [
+    320,
+    390,
+    768,
+    1280,
+    1440
+  ],
+  "checks": [
+    {
+      "name": "desktop-home",
+      "width": 1440,
+      "pass": true
+    },
+    {
+      "name": "guide-photo-plan-manufacturer-sources",
+      "width": 1440,
+      "pass": true,
+      "note": "Guide huile et deux liens constructeur observés; provenance et modèle présents."
+    },
+    {
+      "name": "mobile-home",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "mobile-contextual-suggestions",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "mobile-search-language-and-query-preserved",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "filters-320",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "video-reader-320",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "video-tabs-desktop",
+      "width": 1440,
+      "pass": true,
+      "note": "Texte absent explicitement annoncé; notes accessibles; aucune nouvelle note créée."
+    },
+    {
+      "name": "english-home-390",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "spanish-home-320",
+      "width": 320,
+      "pass": true
+    },
+    {
+      "name": "vehicle-dependent-filters",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "paths-navigation",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "mobile-topic-menu",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "faq-view",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "saved-view",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "tablet-home-no-horizontal-overflow",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "tablet-two-column-results",
+      "width": 768,
+      "pass": true
+    },
+    {
+      "name": "desktop-three-column-guides",
+      "width": 1280,
+      "pass": true
+    },
+    {
+      "name": "final-mobile-adaptive-hero",
+      "width": 390,
+      "pass": true,
+      "commit": "8d7f78a"
+    },
+    {
+      "name": "final-vehicle-contrast-heading",
+      "width": 390,
+      "pass": true,
+      "commit": "8d7f78a"
+    },
+    {
+      "name": "guide-escape-focus-return",
+      "width": 390,
+      "pass": true
+    },
+    {
+      "name": "final-home-390-language-shortcut",
+      "width": 390,
+      "commit": "065ab48",
+      "pass": true
+    },
+    {
+      "name": "final-result-tabs-and-hidden-hero",
+      "width": 390,
+      "commit": "065ab48",
+      "pass": true
+    },
+    {
+      "name": "final-french-clio-search",
+      "width": 390,
+      "commit": "065ab48",
+      "pass": true
+    },
+    {
+      "name": "final-adaptive-english-home",
+      "width": 390,
+      "commit": "065ab48",
+      "pass": true
+    },
+    {
+      "name": "final-adaptive-spanish-home",
+      "width": 320,
+      "commit": "065ab48",
+      "pass": true
+    },
+    {
+      "name": "native-guide-rail-next",
+      "width": 390,
+      "commit": "065ab48",
+      "pass": true
+    }
+  ]
+}

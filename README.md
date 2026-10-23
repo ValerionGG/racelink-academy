@@ -1,10 +1,10 @@
-# Refonte recherche et consultation — workshop-v20
+# Refonte Cinéma V21
 
-[Voir la nouvelle recherche](https://valeriongg.github.io/racelink-academy/?release=workshop-v20&browse=1&q=vidange+Clio+3&language=fr&format=video) · [Captures et validation](research/product-redesign-v20/VALIDATION.md) · [Décisions](research/product-redesign-v20/DECISIONS.md) · [Design](DESIGN.md)
+[Voir la nouvelle interface](https://valeriongg.github.io/racelink-academy/?release=cinema-v21&build=065ab48) · [Captures et validation](research/cinema-v21/VALIDATION.md) · [Références et prompt](research/cinema-v21/prompt-research.md) · [Design](DESIGN.md)
 
-Recherche compacte, suggestions regroupées, filtres partagés sur mobile et ordinateur, grandes pré-fiches lisibles et nouveaux lecteurs vidéo/guide. Les guides séparent prérequis, méthode RaceLink et notices constructeur pour les modèles concernés. Le catalogue et l'accueil photographique sont conservés.
+Accueil photographique plein cadre, grandes affiches de guides, collections réelles, résultats et lecteurs sombres, navigation et filtres mobiles repensés. La recherche conserve question, langue et contexte véhicule.
 
-[Commit publié](https://github.com/ValerionGG/racelink-academy/commit/17ea9abab52b9028b5863db61e6537dd939a3be7) : 109 contrôles techniques, 17 fichiers HTTP et catalogue vérifiés, rendu observé à 320/390/768/1280 pixels. Portée et limites dans le rapport. Aucun nouveau contenu collecté pendant cette refonte.
+[Commit publié](https://github.com/ValerionGG/racelink-academy/commit/065ab48e77faf6f6b1116c0d13f24d3b2b80b9b1) : 129 contrats hors navigateur, 18 fichiers publics comparés et 27 scénarios responsive. Voir la portée exacte dans le rapport. Catalogue inchangé : 36 901 vidéos et 11 guides.
 
 # RaceLink Academy — bibliothèque ouverte
 

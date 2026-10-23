@@ -1,0 +1,227 @@
+{
+  "checked_at": "2026-10-23T19:23:00.046Z",
+  "scope": "Offline pure-markup contract and source integration. No DOM layout, browser, network or database test.",
+  "files": {
+    "public/resource-card.js": "12233a77f492bee43378ecba7a901ceca54ecddaa792b6b236bc73b6a61637b0",
+    "public/app.js": "7f50fa0c48cfd3f35ba19c55095c2ff078ae285ad79ba02218f49bc5639bbd7b"
+  },
+  "helpers": "escape, langName, languageLabel, estimatedLanguage, fmtDuration and safeUrl loaded from the actual app source into an isolated VM",
+  "trusted_slots": [
+    "glyph",
+    "badge",
+    "automotiveMarkup"
+  ],
+  "total": 52,
+  "passed": 52,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "resource surface and source title remain explicit",
+      "status": "passed"
+    },
+    {
+      "name": "title markup is escaped in heading and accessible name",
+      "status": "passed"
+    },
+    {
+      "name": "media identifiers cannot break open/save attributes",
+      "status": "passed"
+    },
+    {
+      "name": "creator markup is escaped",
+      "status": "passed"
+    },
+    {
+      "name": "source description markup is escaped",
+      "status": "passed"
+    },
+    {
+      "name": "category/platform/language formatter output is escaped",
+      "status": "passed"
+    },
+    {
+      "name": "duration formatter output is escaped",
+      "status": "passed"
+    },
+    {
+      "name": "missing creator  is named as unknown",
+      "status": "passed"
+    },
+    {
+      "name": "missing creator null is named as unknown",
+      "status": "passed"
+    },
+    {
+      "name": "missing creator undefined is named as unknown",
+      "status": "passed"
+    },
+    {
+      "name": "whitespace-only creator is named as unknown",
+      "status": "passed"
+    },
+    {
+      "name": "unknown language  remains unconfirmed",
+      "status": "passed"
+    },
+    {
+      "name": "unknown language null remains unconfirmed",
+      "status": "passed"
+    },
+    {
+      "name": "unknown language undefined remains unconfirmed",
+      "status": "passed"
+    },
+    {
+      "name": "unknown language und remains unconfirmed",
+      "status": "passed"
+    },
+    {
+      "name": "language status estimated_from_channel is shown as estimated",
+      "status": "passed"
+    },
+    {
+      "name": "language status inferred_from_indexed_source_text is shown as estimated",
+      "status": "passed"
+    },
+    {
+      "name": "language status inferred_from_public_metadata is shown as estimated",
+      "status": "passed"
+    },
+    {
+      "name": "confidence estimated is shown even when status is absent",
+      "status": "passed"
+    },
+    {
+      "name": "declared platform language is not labeled as estimated",
+      "status": "passed"
+    },
+    {
+      "name": "interface labels localize to fr",
+      "status": "passed"
+    },
+    {
+      "name": "interface labels localize to en",
+      "status": "passed"
+    },
+    {
+      "name": "interface labels localize to es",
+      "status": "passed"
+    },
+    {
+      "name": "thumbnail URL policy: javascript:alert(1)",
+      "status": "passed"
+    },
+    {
+      "name": "thumbnail URL policy: data:image/svg+xml,<svg onload=alert(1)>",
+      "status": "passed"
+    },
+    {
+      "name": "thumbnail URL policy: file:///C:/private/file.jpg",
+      "status": "passed"
+    },
+    {
+      "name": "thumbnail URL policy: http://images.example.test/photo.jpg",
+      "status": "passed"
+    },
+    {
+      "name": "thumbnail URL policy: http://localhost/photo.jpg",
+      "status": "passed"
+    },
+    {
+      "name": "thumbnail URL policy: //images.example.test/photo.jpg",
+      "status": "passed"
+    },
+    {
+      "name": "thumbnail URL policy: not a URL",
+      "status": "passed"
+    },
+    {
+      "name": "thumbnail URL policy: (empty)",
+      "status": "passed"
+    },
+    {
+      "name": "thumbnail URL policy: https://images.example.test/photo.jpg",
+      "status": "passed"
+    },
+    {
+      "name": "thumbnail URL policy: https://images.example.test/photo.jpg?signature=a%2Bb&expires=123",
+      "status": "passed"
+    },
+    {
+      "name": "signed thumbnail query survives and escapes its ampersand",
+      "status": "passed"
+    },
+    {
+      "name": "bookmark state true retains action and pressed state",
+      "status": "passed"
+    },
+    {
+      "name": "bookmark state false retains action and pressed state",
+      "status": "passed"
+    },
+    {
+      "name": "editorial description type editorial_summary has editorial attribution",
+      "status": "passed"
+    },
+    {
+      "name": "editorial description type existing_editorial_description has editorial attribution",
+      "status": "passed"
+    },
+    {
+      "name": "source description type source_caption_without_social_tokens does not claim editorial authorship",
+      "status": "passed"
+    },
+    {
+      "name": "source description type source_indexed_title does not claim editorial authorship",
+      "status": "passed"
+    },
+    {
+      "name": "source description type undefined does not claim editorial authorship",
+      "status": "passed"
+    },
+    {
+      "name": "URLs and hashtags are excluded only from card excerpt",
+      "status": "passed"
+    },
+    {
+      "name": "long excerpt remains bounded while source input is unchanged",
+      "status": "passed"
+    },
+    {
+      "name": "empty description has no fabricated summary",
+      "status": "passed"
+    },
+    {
+      "name": "transcript availability uses the explicit index flag",
+      "status": "passed"
+    },
+    {
+      "name": "reported source captions do not become a stored transcript",
+      "status": "passed"
+    },
+    {
+      "name": "unavailable transcript does not promise subtitles",
+      "status": "passed"
+    },
+    {
+      "name": "no embed or autoplay is emitted by card markup",
+      "status": "passed"
+    },
+    {
+      "name": "trusted application badges and automotive markup are explicit slots",
+      "status": "passed"
+    },
+    {
+      "name": "without a supplied badge the card claims no RaceLink endorsement",
+      "status": "passed"
+    },
+    {
+      "name": "app passes boolean save state and vetted application slots",
+      "status": "passed"
+    },
+    {
+      "name": "detail integration preserves explicit title focus and the shared tab panel",
+      "status": "passed"
+    }
+  ]
+}

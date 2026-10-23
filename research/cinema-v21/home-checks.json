@@ -1,0 +1,91 @@
+{
+  "checkedAt": "2026-10-23T19:17:09.875Z",
+  "release": "cinema-v21",
+  "suite": "cinema-home isolated markup contracts",
+  "sourceSha256": "e4b4d81412c5de0f4b02d9a27b0e3fedb23712b3b0856648580c459f1214950a",
+  "passed": 20,
+  "failed": 0,
+  "tests": [
+    {
+      "name": "real catalogue: six distinct guide photographs and three universes",
+      "passed": true
+    },
+    {
+      "name": "canonical guide titles, summaries and publishers remain source data",
+      "passed": true
+    },
+    {
+      "name": "original video IDs and thumbnails are used",
+      "passed": true
+    },
+    {
+      "name": "content language is independent of UI language and reacts on render",
+      "passed": true
+    },
+    {
+      "name": "language variant fr-FR belongs to French filter",
+      "passed": true
+    },
+    {
+      "name": "expiry, disabled selections and future review are excluded",
+      "passed": true
+    },
+    {
+      "name": "disabled shelf cannot expose active child picks",
+      "passed": true
+    },
+    {
+      "name": "unresolved, mismatched and unqualified records are not fabricated",
+      "passed": true
+    },
+    {
+      "name": "duplicate video identity appears once",
+      "passed": true
+    },
+    {
+      "name": "titles, creators, reasons and evidence are escaped",
+      "passed": true
+    },
+    {
+      "name": "unsafe thumbnail URLs are rejected; signed HTTPS is preserved",
+      "passed": true
+    },
+    {
+      "name": "unsafe credit URLs and CSS positions cannot inject markup",
+      "passed": true
+    },
+    {
+      "name": "unknown creator and estimated language are explicit",
+      "passed": true
+    },
+    {
+      "name": "metadata and transcript review bases remain distinct",
+      "passed": true
+    },
+    {
+      "name": "licensed photographs retain authors, source and license links",
+      "passed": true
+    },
+    {
+      "name": "missing language selection yields honest empty state",
+      "passed": true
+    },
+    {
+      "name": "three independent data sources degrade independently",
+      "passed": true
+    },
+    {
+      "name": "total load failure leaves legacy fallback available",
+      "passed": true
+    },
+    {
+      "name": "load is cached, render makes no requests, source data stays unchanged",
+      "passed": true
+    },
+    {
+      "name": "destroy blocks pending load and clears markup",
+      "passed": true
+    }
+  ],
+  "scope": "Offline native module import, real catalogue fixture from read-only SQLite and local guides/photos, mocked fetch and host element. No browser, network, database mutation, layout measurement, rail interaction or production navigation test."
+}
