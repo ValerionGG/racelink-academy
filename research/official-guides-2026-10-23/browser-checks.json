@@ -1,0 +1,28 @@
+{
+  "checked_at": "2026-10-23T13:23:05.000801+00:00",
+  "final_code_commit": "5e60fab4c231976a15af0439c816cefc0dbce3d7",
+  "release": "guide-v16b",
+  "scope": "CUA public browser; responsive viewport and existing mobile preview. No physical-phone or exhaustive accessibility audit.",
+  "observed": [
+    "v16: mobile list and source section visually inspected at the existing 480px browser width; guides count 11, photographs loaded, search position static.",
+    "v16: 320px viewport, client width 305px, scrollWidth 305px. Source link opens the references heading and close restores its focus.",
+    "v16b: desktop viewport width 1280px, client width 1265px, scrollWidth 1265px; 11 guides, no duplicate format chip; photographic two-column grid visually inspected.",
+    "v16b: shared guide reader opened on desktop; title receives focus and method/reference columns are visible.",
+    "v16b: 390px viewport, client width 375px and height 844px, scrollWidth 375px; corrected vehicle context and compact cards visually inspected. First guide card height 249.95px.",
+    "v16b: mobile search opened with focus in input; vidange Clio 3 retained after submission and changing format/language; video+French returns 2 resources.",
+    "v16b: guide hint in search opens the oil-change guide and manufacturer references, then close restores hint focus and retains query, French language and result count.",
+    "Temporary viewport override reset; final guide library tab retained as a deliverable."
+  ],
+  "screenshots": {
+    "mobile-guides.png": "v16",
+    "mobile-sources.png": "v16",
+    "desktop-guides.png": "v16b",
+    "desktop-reader.png": "v16b",
+    "mobile-guides-final.png": "v16b"
+  },
+  "limitations": [
+    "Source links were verified in research; browser checks validate their presentation, not every external site session.",
+    "No physical phone test and no exhaustive WCAG audit.",
+    "Search suggestions for the exact query were absent while the Guides filter was selected; the interface correctly offered submission and preserved the selected format."
+  ]
+}

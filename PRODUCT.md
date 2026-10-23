@@ -35,3 +35,9 @@ La précédente version empilait objectifs, thèmes, sélections et formulaire a
 ## Accessibility & Inclusion
 
 Conserver les contrôles HTML natifs, labels persistants, navigation au clavier, focus visible et alternative aux animations déjà présents. Français, anglais et espagnol pour l’interface ; langues de contenu séparées. Des parcours v14 ont été vérifiés via CUA sur desktop et dans un iframe mobile de 390 px ; consulter [le rapport](research/ui-redesign-2026-10-23/VALIDATION.md) pour leur périmètre. Ne pas généraliser ces essais à toutes les tailles ou à la retouche suivante. Aucun audit WCAG exhaustif ni test sur appareil physique n’est revendiqué.
+
+## Guides et références constructeur — 23 octobre 2026
+
+Sur mobile, conserver un seul en-tête fixe : la recherche en contexte reste dans le flux et la navigation basse permet de la rouvrir. Les guides se parcourent en cartes compactes à photographie réelle ; aucune affiche à pictogramme ne remplace la photo. Le format actif n’a pas besoin d’une seconde pastille de filtre.
+
+Un lecteur commun dessert la bibliothèque et les repères véhicule. Séparer les étapes générales RaceLink des références constructeur : modèle, moteur lorsque connu, période/édition, marché, section, date de consultation et limites. Ne jamais déduire une compatibilité du seul intitulé d’un guide. Les liens de notices directes restent accessibles depuis les cartes ; les portails et autres références documentaires sont secondaires.

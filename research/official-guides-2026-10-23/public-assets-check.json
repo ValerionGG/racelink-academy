@@ -1,0 +1,83 @@
+{
+  "checked_at": "2026-10-23T13:17:26.338804+00:00",
+  "code_commit": "5e60fab4c231976a15af0439c816cefc0dbce3d7",
+  "status": "passed",
+  "scope": "HTTP source bytes and catalogue; rendering verified separately",
+  "files": [
+    {
+      "path": "index.html",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "ef67a6a5fbb161396864e4012ed40ba79cef487dfcbfc66388092c5368bcd548"
+    },
+    {
+      "path": "app-ui.css",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "c2964c5af36d9222fae11487057c2c2d94022ec10e04e21ae56193fbcfda4fe8"
+    },
+    {
+      "path": "product-ui.css",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "e3c40d408ead918faaadc22a79f6c773d6dec1682517aeff5983148bac9b166a"
+    },
+    {
+      "path": "app.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "0d55387fc15e93eb603eec40e7808896e403ad67b8d24b870304a396d2aa5de6"
+    },
+    {
+      "path": "guide-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "80b21bbd29095ce65196f65d796e1d8fc3e3d7a47c0837b41a54a2cb78177efb"
+    },
+    {
+      "path": "guide-sources.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "0e337d1796820a42cf47026b5ffa02715534c909e95a1be64bf7444fa70c7e17"
+    },
+    {
+      "path": "guide-art.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "7f66356721ff8e0f8416ae953ab6031fc294b0ef504e67dc9123b30e924529b8"
+    },
+    {
+      "path": "automotive-ui.js",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "dd4dcf77ba8fe6f7c9b2a73f52b03a5c97109ff256ed342a27317cadaa6185ae"
+    },
+    {
+      "path": "vehicle-guides.json",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "1cd0962b31e7d8c9923f2a2e96e401fb4c195e142acecc4dab6d87080d7712cb"
+    },
+    {
+      "path": "catalog/config.json",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "e1ab6d0e307b6437966acb11bb8f76eecf8d4e5b6a578b5e138bd303adc78d34"
+    },
+    {
+      "path": "photo-credits.html",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "f6573e75ca19db8557232a7985712d060a5e436d6521c75f2656ffd98e508bf4"
+    },
+    {
+      "path": "preview-mobile.html",
+      "http": 200,
+      "matches_repository": true,
+      "sha256": "0833e331dd2b888da2d5dd226a06876ae1624a8ffd2d7cf8ac183947957f97fa"
+    }
+  ],
+  "catalog_sha256": "083bc7f7e05382f189319e7e8e1a1050302d92606f16a6e0cda74212d023b544",
+  "videos": 36901,
+  "guides": 11
+}

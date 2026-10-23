@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-10-23T13:11:05.622585+00:00",
+  "checked_at": "2026-10-23T13:15:34.777571+00:00",
   "scope": "Static HTMLParser/source checks; no browser, network, application JS execution or database access",
   "status": "passed",
   "tests_run": 14,
@@ -29,10 +29,10 @@
     ],
     "local_scripts": [
       "/aide/catalog-client.js",
-      "/aide/app.js?v=guide-v16"
+      "/aide/app.js?v=guide-v16b"
     ],
     "local_stylesheets": [
-      "/aide/app-ui.css?v=guide-v16"
+      "/aide/app-ui.css?v=guide-v16b"
     ]
   },
   "limitations": [
@@ -45,32 +45,32 @@
   "files": [
     {
       "path": "public/index.html",
-      "sha256": "4b6319e55f8006b89aff59479904992417cec0815ab2c9efab37ac87e76ea698"
+      "sha256": "ed0171fbc3fd767f33675a31e185b0ed62f783e87f23c58b100878421d0f84ce"
     },
     {
       "path": "public/app.js",
-      "sha256": "38974f60bf31abede469fbd33c2e2dca83452d07fb67b70431eb71781faf4cc1"
+      "sha256": "c855f8a7b43c829173cc7e8af04baed87515d775445c4044f8b00d5330d94e48"
     },
     {
       "path": "public/app-ui.css",
-      "sha256": "8c0f44e0c477c607266a2a83b2bca5806043024edf18e8aa12871694dbd89cdf"
+      "sha256": "0f85085a62f47d9cf6bbb7afe2a8500f69b5a2403f32fb7a310e4251806f0e7e"
     },
     {
       "path": "public/product-ui.css",
-      "sha256": "5ad7b6d0712a4f035913ed72722c8a05b2e756a654de160fcaa5a217863a80df"
+      "sha256": "7e5ba99bf417c521df57a5bee17fb583ea5b7a6eb34ae8f330b2be3a7284e003"
     },
     {
       "path": "public/guide-ui.js",
-      "sha256": "8d9557f1a738f000ba7e978cfe39406a7f440ac3d821865f8f6fc12b671f919a"
+      "sha256": "0cff9c45441999229db062b98c4482578a27283dd8ea5074a5ce05e7f681497c"
     },
     {
       "path": "public/guide-art.js",
-      "sha256": "dd0549bcde05b534fe36d828b49c5a29c5032498d5df08a2f1fdd69ed4c35f46"
+      "sha256": "27b2b48b57eae1f188e9996be5c2fa80e95adf5e42236f7887e046cafd3add15"
     },
     {
       "path": "tests_ui_html.py",
       "sha256": "fc8e1e7286dc1e0fa2b5b763f01e99c9f60f22adbc94bf8f02ba9515cae76164"
     }
   ],
-  "test_output": "test_aria_references_have_static_or_declared_runtime_target (__main__.HTMLContract.test_aria_references_have_static_or_declared_runtime_target) ... ok\ntest_context_options_have_real_start_tags (__main__.HTMLContract.test_context_options_have_real_start_tags) ... ok\ntest_explicit_labels_resolve (__main__.HTMLContract.test_explicit_labels_resolve) ... ok\ntest_form_controls_have_label_relationship (__main__.HTMLContract.test_form_controls_have_label_relationship) ... ok\ntest_four_main_views (__main__.HTMLContract.test_four_main_views) ... ok\ntest_ids_are_unique (__main__.HTMLContract.test_ids_are_unique) ... ok\ntest_layered_bundle_matches_current_sources (__main__.HTMLContract.test_layered_bundle_matches_current_sources) ... ok\ntest_local_script_stylesheet_files_exist (__main__.HTMLContract.test_local_script_stylesheet_files_exist) ... ok\ntest_markup_structure_and_duplicate_attributes (__main__.HTMLContract.test_markup_structure_and_duplicate_attributes) ... ok\ntest_modified_module_cache_markers_match_entry (__main__.HTMLContract.test_modified_module_cache_markers_match_entry) ... ok\ntest_module_imports_exist_recursively (__main__.HTMLContract.test_module_imports_exist_recursively) ... ok\ntest_native_dialog_and_search_contract (__main__.HTMLContract.test_native_dialog_and_search_contract) ... ok\ntest_navigation_values_match_views (__main__.HTMLContract.test_navigation_values_match_views) ... ok\ntest_static_images_declare_alt (__main__.HTMLContract.test_static_images_declare_alt) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.048s\n\nOK\n"
+  "test_output": "test_aria_references_have_static_or_declared_runtime_target (__main__.HTMLContract.test_aria_references_have_static_or_declared_runtime_target) ... ok\ntest_context_options_have_real_start_tags (__main__.HTMLContract.test_context_options_have_real_start_tags) ... ok\ntest_explicit_labels_resolve (__main__.HTMLContract.test_explicit_labels_resolve) ... ok\ntest_form_controls_have_label_relationship (__main__.HTMLContract.test_form_controls_have_label_relationship) ... ok\ntest_four_main_views (__main__.HTMLContract.test_four_main_views) ... ok\ntest_ids_are_unique (__main__.HTMLContract.test_ids_are_unique) ... ok\ntest_layered_bundle_matches_current_sources (__main__.HTMLContract.test_layered_bundle_matches_current_sources) ... ok\ntest_local_script_stylesheet_files_exist (__main__.HTMLContract.test_local_script_stylesheet_files_exist) ... ok\ntest_markup_structure_and_duplicate_attributes (__main__.HTMLContract.test_markup_structure_and_duplicate_attributes) ... ok\ntest_modified_module_cache_markers_match_entry (__main__.HTMLContract.test_modified_module_cache_markers_match_entry) ... ok\ntest_module_imports_exist_recursively (__main__.HTMLContract.test_module_imports_exist_recursively) ... ok\ntest_native_dialog_and_search_contract (__main__.HTMLContract.test_native_dialog_and_search_contract) ... ok\ntest_navigation_values_match_views (__main__.HTMLContract.test_navigation_values_match_views) ... ok\ntest_static_images_declare_alt (__main__.HTMLContract.test_static_images_declare_alt) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.035s\n\nOK\n"
 }
