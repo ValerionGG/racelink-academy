@@ -424,3 +424,10 @@ dialog::backdrop {background:#141c2db3;backdrop-filter:blur(3px)}
  .suggestions{margin-top:10px;flex-wrap:nowrap;overflow-x:auto;max-width:100%;scrollbar-width:none;padding-bottom:2px;scroll-snap-type:x proximity}
  .suggestions button{flex-shrink:0;scroll-snap-align:start}
 }
+@media(max-width:360px){
+ .hero h1{font-size:25px}
+ .home-language-picker{grid-template-columns:1fr}
+ .home-language-picker label{display:block}
+ .home-language-picker select{max-width:none}
+ .home-language-picker button{display:none}
+}
