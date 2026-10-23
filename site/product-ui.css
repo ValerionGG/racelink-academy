@@ -126,7 +126,7 @@ main {margin-left:224px;min-height:calc(100dvh - 150px)}
 .editorial-video details {font-size:10px;color:var(--muted);margin-top:5px;border:0;padding:0}
 .editorial-video summary {min-height:34px;padding:7px 0;font-size:10px;cursor:pointer}
 .editorial-video details p {font-size:11px;line-height:1.6}
-.editorial-video .racelink-pick {color:#7e1828;border-color:#eed9de;background:#fff2f4;border-radius:5px;font-size:10px;line-height:1.4;gap:5px;padding:4px 7px}
+.editorial-video .racelink-pick {margin:8px 0 3px}
 .curation-policy {margin-top:20px;border-top:1px solid var(--line);padding-top:10px;font-size:11px;color:var(--muted)}
 .curation-policy summary {padding:8px 0;min-height:38px;cursor:pointer}
 .all-topics {margin-top:25px;border:1px solid var(--line);border-radius:12px;background:white;padding:0 20px}
@@ -218,7 +218,7 @@ main {margin-left:224px;min-height:calc(100dvh - 150px)}
 .card-tags .category {background:#ededf0;color:#505158}
 .card-vehicle {font-size:10px;margin-top:8px;padding-top:7px;border-top:1px solid var(--line);color:var(--muted);line-height:1.5}
 .card-vehicle span {font-size:9px;margin-top:3px}
-.racelink-pick {color:#365b45;border-color:#ccdfd2;background:#eaf4ed;border-radius:5px;font-size:10px;line-height:1.4;gap:5px;padding:4px 7px}
+.racelink-pick {color:#7e1828;border-color:#eed9de;background:#fff2f4;border-radius:5px;font-size:10px;line-height:1.4;gap:5px;padding:4px 7px}
 .racelink-pick-mark {background:var(--red);color:white;border-radius:4px;font:750 9px var(--body);height:18px;width:18px}
 .racelink-pick--overlay {left:8px;bottom:8px;max-width:calc(100% - 75px);font-size:9px}
 .is-racelink-pick>.thumbnail {outline:none}
@@ -365,6 +365,7 @@ dialog::backdrop {background:#141c2db3;backdrop-filter:blur(3px)}
 .guide-cover[data-guide-topic="oil_spec"] .guide-cover-label>span,.guide-cover[data-guide-topic="fuel_choice"] .guide-cover-label>span,.guide-cover[data-guide-topic="wipers"] .guide-cover-label>span,.guide-cover[data-guide-topic="diagnostics"] .guide-cover-label>span{color:#65656d}
 .guide-card .card-heading{margin-top:13px;padding-right:0}.guide-card .card-excerpt{font-size:12px;line-height:1.65}.guide-read{font-size:12px;min-height:44px;color:var(--red);text-decoration:none;display:inline-flex;align-items:center;gap:8px}
 .tag.transcript{background:#ededf0;color:#505158}.racelink-pick-note,.vehicle-guide-grid details.racelink-pick-note{color:var(--muted)}
+.guide-scope{background:#f0f0f2;border-left:3px solid var(--red);color:var(--ink)}.guide-lead{color:var(--muted)}
 @media(hover:hover){.entry-card:hover{transform:translateY(-3px);border-color:#bdbdc5;box-shadow:0 8px 20px #0000000a}.entry-card:hover .entry-visual img{transform:scale(1.035)}.entry-card:hover .entry-cta{transform:translate(2px,-2px)}.guide-cover:hover .guide-art-icon{transform:scale(1.04)}.path-card:hover{border-color:#888892}}
 @media(min-width:1600px) {.hero{grid-template-columns:minmax(0,1fr) 340px}.hero h1{font-size:38px;max-width:700px}.academy-scene{height:280px}.catalog-layout{grid-template-columns:180px minmax(0,1fr)}}
 @media(max-width:1100px) and (min-width:761px) {
@@ -418,6 +419,8 @@ dialog::backdrop {background:#141c2db3;backdrop-filter:blur(3px)}
  .home-language-picker{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:5px 10px}
  .home-language-picker label{grid-column:1/-1;font-size:11px}
  .home-language-picker select{width:100%;max-width:none;font-size:12px}
- .home-language-picker button{margin:0;padding:9px 12px;background:#fff0f2;border-radius:8px;color:#a81c30}
- .hero .workshop-jump{display:none}.suggestions{margin-top:10px}
+ .home-language-picker button{grid-column:2;margin:0;padding:9px 10px;background:#fff0f2;border-radius:8px;color:#a81c30}
+ .hero .workshop-jump{display:none}.hero-description{max-width:none}
+ .suggestions{margin-top:10px;flex-wrap:nowrap;overflow-x:auto;max-width:100%;scrollbar-width:none;padding-bottom:2px;scroll-snap-type:x proximity}
+ .suggestions button{flex-shrink:0;scroll-snap-align:start}
 }
