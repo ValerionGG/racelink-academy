@@ -1,0 +1,94 @@
+{
+  "generated_at": "2026-10-23T17:48:09.778095+00:00",
+  "release": "workshop-v20",
+  "status": "passed",
+  "passed": 109,
+  "failed": 0,
+  "suites": [
+    {
+      "suite": "navigation",
+      "report": "navigation-checks.json",
+      "command_from_workspace": "python work/redesign-v20/run-contracts.py navigation",
+      "passed": 17,
+      "failed": 0,
+      "status": "passed"
+    },
+    {
+      "suite": "html_build",
+      "report": "html-contract-checks.json",
+      "command_from_workspace": "python work/redesign-v20/run-contracts.py html",
+      "passed": 14,
+      "failed": 0,
+      "status": "passed"
+    },
+    {
+      "suite": "export",
+      "report": "export-checks.json",
+      "command_from_workspace": "python work/redesign-v20/run-contracts.py export",
+      "passed": 6,
+      "failed": 0,
+      "status": "passed"
+    },
+    {
+      "suite": "search_filters",
+      "report": "search-filter-checks.json",
+      "command_from_workspace": "node work/redesign-v20/test-search-filters.mjs",
+      "passed": 13,
+      "failed": 0,
+      "status": "passed"
+    },
+    {
+      "suite": "cards",
+      "report": "card-checks.json",
+      "command_from_workspace": "node work/redesign-v20/test-resource-card.mjs",
+      "passed": 52,
+      "failed": 0,
+      "status": "passed"
+    },
+    {
+      "suite": "detail",
+      "report": "detail-checks.json",
+      "command_from_workspace": "node work/redesign-v20/test-resource-detail.mjs",
+      "passed": 7,
+      "failed": 0,
+      "status": "passed"
+    }
+  ],
+  "test_adjustments": [
+    "Only three explicit export cache expectations changed from atelier-v19d to workshop-v20.",
+    "Existing 17 navigation and 14 HTML/build requirements unchanged.",
+    "New DOM doubles cover the universal filter drawer and equivalent-button focus restoration."
+  ],
+  "scope": {
+    "browser_used": false,
+    "network_used": false,
+    "production_database_changed": false,
+    "application_changed_by_validator": false,
+    "published_by_validator": false,
+    "export_database": "Temporary test fixture only",
+    "export_timing": "Navigation 17 and export 6 were rerun on the final 5a48d1f source with catalog-heading tabindex. HTML/build, new behavior and card/detail contracts passed before that sole tabindex change; their individual reports retain their original hashes.",
+    "limits": [
+      "Controlled DOM/events and pure-markup tests do not establish rendered layout, touch behavior, native dialog focus trapping or computed accessibility.",
+      "Full app bootstrap and real search API results are outside these tests.",
+      "Existing historical reports are preserved; wrapper redirects suite report writes to the V20 directory."
+    ]
+  },
+  "fixes_reported": [
+    {
+      "issue": "Whitespace-only creator left an empty author line in cards.",
+      "status": "Fixed by root using trim; card suite now passes 52/52."
+    }
+  ],
+  "source_sha256": {
+    "public/app.js": "f96354d394cc4f79561e9c5fc836a45438dde4b317802103e4c7c702129357a1",
+    "public/index.html": "07a10b1a0f2be4eb0141eb7e476ebdb53c533a10c1b0f7662ac1f8f38e9af656",
+    "public/product-ui.css": "efb3345e9846eb1d15004f883b83f0179bc71e8b7930be1ad42802ef1cefc981",
+    "public/app-ui.css": "b383b0250be3ebba8634f4d0aa552feab273e45738e469713c99d1a06c2ff6ab",
+    "public/mobile-ui.js": "9595dc29a986d7efd84c4a4cfffa985689f8c111204fd33a645f170bc6ec12a1",
+    "public/discovery-ui.js": "2378034b12da07ae5dbc858a37da9d3695f2253e3e7476f78df482309bac7a79",
+    "public/resource-card.js": "12233a77f492bee43378ecba7a901ceca54ecddaa792b6b236bc73b6a61637b0",
+    "public/resource-detail.js": "162b52ce8df480708a6a030c02cd2e733a11b501e011c45d5328a13191206641",
+    "public/guide-ui.js": "644a2f5e86d45e9760ee180f66787d15f8f7c8aa8afcba3a05ce3d812742bb2b",
+    "tests_export_static.py": "443dd1fb3c16131291a23f0398e0a5ca23afcb83be0fa5743558d160bb7b778d"
+  }
+}

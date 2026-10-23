@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-10-23T17:39:58.161Z",
+  "release": "workshop-v20",
+  "command": "node work/redesign-v20/test-search-filters.mjs",
+  "status": "passed",
+  "passed": 13,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Clear criteria preserves committed question, format and sort while clearing all other filters",
+      "status": "passed"
+    },
+    {
+      "name": "Delegated platform buttons preserve question/vehicle/format and reset pagination",
+      "status": "passed"
+    },
+    {
+      "name": "Platform facets render matching pressed state, counts, and selected zero-result source",
+      "status": "passed"
+    },
+    {
+      "name": "Facet refresh restores the equivalent platform/category button only inside the open drawer",
+      "status": "passed"
+    },
+    {
+      "name": "Desktop filter drawer moves original controls, survives breakpoint, and restores focus",
+      "status": "passed"
+    },
+    {
+      "name": "Filter badge excludes question, format, language and vehicle context",
+      "status": "passed"
+    },
+    {
+      "name": "Suggestion request keeps whole question, exact spec, vehicle and selected source/format",
+      "status": "passed"
+    },
+    {
+      "name": "Keyword completion/correction are escaped and keyboard selection preserves precise context",
+      "status": "passed"
+    },
+    {
+      "name": "Video suggestion exposes source, estimated language and escaped author before opening exact ID",
+      "status": "passed"
+    },
+    {
+      "name": "Unknown video language is never rendered as French by default",
+      "status": "passed"
+    },
+    {
+      "name": "Show results suggestion action submits the original form and remembers the exact draft",
+      "status": "passed"
+    },
+    {
+      "name": "A slower stale suggestion response cannot replace the newer query suggestions",
+      "status": "passed"
+    },
+    {
+      "name": "Suggestion group and source-language labels follow EN/ES UI independently of content language",
+      "status": "passed"
+    }
+  ],
+  "scope": {
+    "browser": false,
+    "network": false,
+    "application_modified": false,
+    "executed": "Production app setFilter/renderFacets, reset-filter and delegated click handlers extracted without modification; real mobile/discovery modules.",
+    "doubles": "Minimal DOM/events; rendering/load/network callbacks controlled; no full app bootstrap or API engine execution.",
+    "limits": "Does not establish layout, native browser focus trapping, computed accessibility or real network results."
+  },
+  "source_sha256": {
+    "public/app.js": "f96354d394cc4f79561e9c5fc836a45438dde4b317802103e4c7c702129357a1",
+    "public/mobile-ui.js": "9595dc29a986d7efd84c4a4cfffa985689f8c111204fd33a645f170bc6ec12a1",
+    "public/discovery-ui.js": "2378034b12da07ae5dbc858a37da9d3695f2253e3e7476f78df482309bac7a79"
+  }
+}

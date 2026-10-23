@@ -1,0 +1,42 @@
+{
+  "generated_at": "2026-10-23T17:40:20.984Z",
+  "status": "passed",
+  "passed": 7,
+  "results": [
+    {
+      "name": "existing reader IDs/actions remain unique and heading precedes the real preview",
+      "status": "passed"
+    },
+    {
+      "name": "all three locales have usable primary actions, tabs, save state and progressive provenance",
+      "status": "passed"
+    },
+    {
+      "name": "a platform without embedding uses its real external URL and no fake player",
+      "status": "passed"
+    },
+    {
+      "name": "source fields are escaped and unsafe URL schemes never enter href/src",
+      "status": "passed"
+    },
+    {
+      "name": "unknown creator, language confidence and transcript availability stay honest",
+      "status": "passed"
+    },
+    {
+      "name": "overview preserves source questions, cited vehicles, social evidence and provenance basis",
+      "status": "passed"
+    },
+    {
+      "name": "rendering is pure and tolerates absent optional description/points",
+      "status": "passed"
+    }
+  ],
+  "module_sha256": "162b52ce8df480708a6a030c02cd2e733a11b501e011c45d5328a13191206641",
+  "scope": {
+    "browser": false,
+    "network": false,
+    "database": false,
+    "pure_markup_contracts": true
+  }
+}

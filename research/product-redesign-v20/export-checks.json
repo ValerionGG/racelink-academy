@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-10-23T17:42:54.976031+00:00",
+  "release": "workshop-v20",
+  "command": "python work/redesign-v20/run-contracts.py export",
+  "status": "passed",
+  "passed": 6,
+  "failed": 0,
+  "tests_run": 6,
+  "output": "test_caption_vehicle_status_and_evidence_survive_public_export (tests_export_static.StaticExportTests.test_caption_vehicle_status_and_evidence_survive_public_export) ... ok\ntest_default_aide_export_remains_nested (tests_export_static.StaticExportTests.test_default_aide_export_remains_nested) ... ok\ntest_gzip_is_lossless_and_cache_key_matches_actual_catalog (tests_export_static.StaticExportTests.test_gzip_is_lossless_and_cache_key_matches_actual_catalog) ... ok\ntest_pages_flat_layout_and_public_prefix (tests_export_static.StaticExportTests.test_pages_flat_layout_and_public_prefix) ... ok\ntest_prefix_rejects_traversal_and_html_injection (tests_export_static.StaticExportTests.test_prefix_rejects_traversal_and_html_injection) ... ok\ntest_social_public_fields_survive_api_and_export_without_private_metadata (tests_export_static.StaticExportTests.test_social_public_fields_survive_api_and_export_without_private_metadata) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.836s\n\nOK\n",
+  "scope": "Temporary fixture database only; no production database mutation or production export.",
+  "source_sha256": {
+    "tests_export_static.py": "443dd1fb3c16131291a23f0398e0a5ca23afcb83be0fa5743558d160bb7b778d",
+    "scripts/export_static.py": "d990ce9be1368e7dd6f7899e96f5c97f9b8fd85043893baa650c11b410254054",
+    "public/index.html": "afe0aa4e08a8facc53664873113dca66373c4aee4935fb8de452d1db7f8e1119",
+    "public/app.js": "f96354d394cc4f79561e9c5fc836a45438dde4b317802103e4c7c702129357a1",
+    "public/automotive-ui.js": "2573152f5ed33678ead7601e43feb5d3bc2fd0654f0e69813d9eebb8aa37a00d"
+  }
+}

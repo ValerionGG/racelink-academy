@@ -1,11 +1,12 @@
 ---
 version: alpha
 name: RaceLink Academy
-description: V19d published and verified within the documented browser and source-check scope.
+description: V20 published and checked; interaction checks and final CSS verification retain their respective scopes.
 colors:
   primary: "#bb1830"
   brand: "#ff2330"
   canvas: "#f5f5f4"
+  results-canvas: "#f0f1f3"
   surface: "#ffffff"
   on-surface: "#17181a"
   muted: "#5e6065"
@@ -45,20 +46,24 @@ typography:
     letterSpacing: -1.3px
   video-title:
     fontFamily: "Onest, system-ui, sans-serif"
-    fontSize: 22px
-    fontWeight: 650
-    lineHeight: 1.35
-    letterSpacing: -0.55px
-  guide-title:
-    fontFamily: "Onest, system-ui, sans-serif"
-    fontSize: 23px
+    fontSize: 24px
     fontWeight: 650
     lineHeight: 1.3
-    letterSpacing: -0.4px
+    letterSpacing: -0.5px
+  guide-title:
+    fontFamily: "Onest, system-ui, sans-serif"
+    fontSize: 25px
+    fontWeight: 650
+    lineHeight: 1.3
+    letterSpacing: -0.55px
 rounded:
   surface: 12px
-  resource-photo: 10px
-  search: 9px
+  resource-photo: 0px
+  resource-surface: 16px
+  video-surface-mobile: 12px
+  guide-reader-photo: 10px
+  guide-reader-photo-mobile: 8px
+  search: 12px
   compact-control: 6px
   guide-control: 9px
   brand-mark: 9px
@@ -67,10 +72,12 @@ spacing:
   desktop-page-inline: 48px
   mobile-page-inline: 20px
   compact-page-inline: 16px
+  catalog-compact-page-inline: 12px
   hero-columns: 52px
   resource-columns: 28px
-  resource-rows: 40px
-  guide-reader-columns: 36px
+  resource-rows: 28px
+  resource-gap-mobile: 22px
+  guide-reader-columns: 40px
 components:
   masthead:
     height: 80px
@@ -82,17 +89,17 @@ components:
     rounded: "{rounded.resource-photo}"
     aspectRatio: "16 / 9"
   topic-photo:
-    rounded: "{rounded.resource-photo}"
+    rounded: "{rounded.guide-reader-photo}"
     aspectRatio: "4 / 3"
   hero-photo-mobile:
-    rounded: "{rounded.resource-photo}"
+    rounded: "{rounded.guide-reader-photo}"
     aspectRatio: "16 / 10"
   guide-reader-photo:
-    height: 280px
-    rounded: "{rounded.resource-photo}"
+    aspectRatio: "4 / 3"
+    rounded: "{rounded.guide-reader-photo}"
   guide-reader-photo-mobile:
-    aspectRatio: "16 / 9"
-    rounded: "{rounded.resource-photo}"
+    aspectRatio: "16 / 10"
+    rounded: "{rounded.guide-reader-photo-mobile}"
   focus-ring:
     color: "{colors.primary}"
     outlineWidth: 3px
@@ -107,124 +114,131 @@ components:
     transitionDuration: 400ms
     transitionTimingFunction: "cubic-bezier(.23,1,.32,1)"
   guide-photo-motion:
-    transitionDuration: 300ms
+    transition: none
+  video-photo-motion:
+    transitionDuration: 200ms
     transitionTimingFunction: ease
+  video-reader-motion:
+    transitionDuration: 160ms
+    transitionTimingFunction: ease
+  filter-panel:
+    width: 580px
+    rounded: 0px
+  video-reader:
+    maxWidth: 1240px
+  guide-reader:
+    maxWidth: 1180px
   reduced-motion:
     animation: none
     transition: none
     scrollBehavior: auto
 ---
 
-# Interface RaceLink Academy — Atelier V19d
+# Interface RaceLink Academy — Workshop V20
 
-**Version `atelier-v19d` publiée et vérifiée, 23 octobre 2026.** [Ouvrir RaceLink Academy](https://valeriongg.github.io/racelink-academy/?release=atelier-v19d). Commit de code [`850e57869e9ad9219c054000c8e7b46718835a25`](https://github.com/ValerionGG/racelink-academy/commit/850e57869e9ad9219c054000c8e7b46718835a25), [workflow de publication 39993178520 réussi](https://github.com/ValerionGG/racelink-academy/actions/runs/39993178520). La [validation détaillée](research/graphic-redesign-v19/VALIDATION.md) distingue les observations V19, V19b, V19c et V19d et leurs limites.
+**Version `workshop-v20` publiée et vérifiée, 23 octobre 2026.** [Ouvrir RaceLink Academy](https://valeriongg.github.io/racelink-academy/?release=workshop-v20). Référence finale publiée : [`17ea9abab52b9028b5863db61e6537dd939a3be7`](https://github.com/ValerionGG/racelink-academy/commit/17ea9abab52b9028b5863db61e6537dd939a3be7), [workflow 39997940444](https://github.com/ValerionGG/racelink-academy/actions/runs/39997940444). Les interactions ont été contrôlées sur [`5a48d1f`](https://github.com/ValerionGG/racelink-academy/commit/5a48d1fc2eebd0728079b79666e276f00ae43043) ; le contrôle HTTP et les deux finitions CSS ont été vérifiés sur `17ea9ab` : fond blanc des sujets associés et libellé « Ma voiture » complet à 320 px. [Validation détaillée](research/product-redesign-v20/VALIDATION.md).
 
-Les neuf sections suivent le workflow [Reference Design Contract](https://github.com/nexu-io/open-design/blob/e03d5c23f308c39f4de7c057568df66c29a84385/skills/reference-design-contract/SKILL.md). Le frontmatter reprend les valeurs réellement déclarées dans `public/product-ui.css`, selon la syntaxe alpha Google DESIGN.md ; les propriétés de composant additionnelles sont des extensions permises, sans succès du lint officiel revendiqué. [Contrat préparatoire V19](research/graphic-redesign-v19/design-contract.md) · [Handoff et inventaire](research/graphic-redesign-v19/implementation-handoff.md) · [Contexte produit](PRODUCT.md).
+Cette itération refond **la recherche, les filtres, les cartes et les lecteurs**. L'accueil photographique V19 est conservé. [Décisions et portée V20](research/product-redesign-v20/DECISIONS.md) · [Contexte produit](PRODUCT.md). Les neuf sections documentaires restent celles de Reference Design Contract ; le frontmatter suit le format alpha Google DESIGN.md et les valeurs du code, sans lint officiel revendiqué.
 
 ## 1. Visual Theme & Atmosphere
 
-Une bibliothèque automobile photographique, claire et pratique. Le nouvel accueil juxtapose une zone de lecture/recherche à gauche et un gros plan mécanique réel à droite. Le header noir horizontal et le rouge d'action ancrent la marque ; le papier clair accueille les titres et les informations utiles. Les photos donnent de la présence au geste, les titres expliquent la ressource.
+Une bibliothèque de travail qui aide à comparer avant d'ouvrir. Les résultats reposent sur un fond gris clair, des cartes blanches à grandes photos, un contexte de recherche compact et des lecteurs organisés autour du sujet et de la source.
 
-V19 recompose V18 : **aucune sidebar fixe** ; navigation principale dans le header, barre de sujets horizontale secondaire dans le flux. Le catalogue et les lecteurs conservent les fonctions existantes. La recherche, la langue du contenu et les précisions du véhicule priment sur les éléments promotionnels.
+La hiérarchie change à l'intérieur du produit : plus de colonne permanente de filtres, moins de rangées explicatives avant la première ressource, un aperçu attribué sur la carte et des détails de preuve accessibles progressivement. La marque noir/blanc/rouge, l'accueil `oil.jpg`, les portes photographiques, le bandeau guides `wheel.jpg` et les parcours en lignes sont hérités de V19, sans nouvelle refonte de ces surfaces.
 
 ## 2. Color
 
-| Rôle réel | Valeur V19 | Usage |
+| Rôle | Valeur effective | Usage |
 |---|---|---|
-| Papier | `#f5f5f4` | Fond principal |
-| Surface | `#ffffff` | Recherche, contrôles et lecteurs |
+| Accueil | `#f5f5f4` | Papier conservé |
+| Résultats | `#f0f1f3` | Fond du mode résultats V20 |
+| Surface | `#ffffff` | Cartes, filtres et lecteurs |
 | Encre | `#17181a` | Texte principal |
-| Secondaire | `#5e6065` | Sources, aides et descriptions |
-| Séparation | `#dedfdf` | Filets et bordures |
-| Action | `#bb1830` | Actions, liens actifs et focus |
-| Marque | `#ff2330` | Repère de marque et trait de navigation |
-| Action légère | `#fff0f2` | États sélectionnés |
-| Surface neutre secondaire | `#ececed` | Fond secondaire |
-| Header et bandeau guide | `#111214` | Zones sombres |
-| Secondaire sur sombre | `#b4b5b8` | Repères secondaires |
+| Secondaire | `#5e6065` | Aides et provenance |
+| Séparation de base | `#dedfdf` | Filets |
+| Action | `#bb1830` | Liens, actions principales et focus |
+| Marque | `#ff2330` | Repère de marque |
+| Action légère | `#fff0f2` | Sélection et enregistrement |
+| Header | `#111214` | Navigation conservée |
 
-Ces valeurs effectives remplacent les propositions initiales `#121314` et `#c82038` du contrat préparatoire. Les rapports conservent la trace de cette proposition ; la présente charte décrit la source courante.
+Les composants V20 emploient aussi des bordures grises locales, notamment `#d8dbe1` pour la carte vidéo et `#c8cacf` pour les contrôles. La carte guide conserve la séparation de base. Ne pas transformer les mentions de véhicule en couleur de succès : une citation n'est pas une compatibilité.
 
-Contrastes calculés à partir des valeurs, sans audit du rendu : encre/papier **16,29:1**, secondaire/papier **5,77:1**, blanc/action **6,39:1**, action/papier **5,86:1**, blanc/header **18,74:1**. Blanc/rouge de marque reste **3,79:1** : ne pas y placer du petit texte blanc. Les images ne reçoivent pas de teinte rouge ou verte globale.
+Contrastes calculés sur les tokens de base : encre/papier 16,29:1, secondaire/papier 5,77:1 et blanc/action 6,39:1. Blanc/rouge de marque reste 3,79:1 : éviter le petit texte blanc sur ce rouge. Ces calculs ne constituent pas un audit complet des nouveaux composants.
 
 ## 3. Typography
 
-**Onest** porte lecture, titres et commandes ; **Orbitron** est réservé à la marque. `index.html` charge Onest 400/500/600/700/800 et Orbitron 600/700/800 via Google Fonts avec `display=swap`. Aucun fichier de fonte local n'est livré dans `public/assets` ; le repli Onest → système → sans-serif doit rester utilisable. Les graisses indiquées ci-dessous sont celles du CSS, pas des mesures de police rendue.
+Onest porte titres, texte et commandes ; Orbitron reste limité à la marque. Google Fonts fournit Onest 400/500/600/700/800 et Orbitron 600/700/800 avec `display=swap`, sans nouvelle fonte locale. Repli système conservé.
 
-| Élément | Source V19 |
-|---|---|
-| Corps de base | 15 px / 1,6 |
-| Titre d'accueil | 62 px / 1,04 ; graisse 650 |
-| Accueil entre 761 et 1100 px | 48 px |
-| Accueil jusqu'à 760 px | 43 px / 1,05 |
-| Accueil jusqu'à 360 px | 37 px / 1,05 |
-| Accueil à partir de 1600 px | 72 px |
-| Titre de vidéo | 22 px / 1,35 ; 20 px dans la rupture tablette, 21 px jusqu'à 360 px |
-| Titre de guide | 23 px / 1,3 ; 21 px jusqu'à 360 px |
-| Titre du lecteur guide | 40 px desktop ; 31 px mobile |
-| Suggestions mobiles | Type 12 px, titre 16 px, complément 13 px |
+| Élément V20 | Desktop | Mobile ≤760 px |
+|---|---|---|
+| Titre de carte vidéo | 24 px / 1,3 | 21 px / 1,35 ; 20 px ≤360 |
+| Titre de carte guide | 25 px / 1,3 | 24 px ; 23 px ≤360 |
+| Aperçu vidéo | 14 px / 1,65 | 13 px / 1,65 |
+| Aperçu guide | 15 px / 1,65 | 15 px |
+| Titre de fiche vidéo | 32 px / 1,22 | 25 px / 1,3 ; 23 px ≤360 |
+| Titre de lecteur guide | 36 px / 1,18 | 31 px / 1,2 ; 28 px ≤360 |
+| Texte de lecture vidéo | 15 px / 1,8 | 15 px |
+| Méthode du guide | 16 px / 1,75 | 16 px |
 
-Les titres des cartes gardent le geste, le sujet et les précisions établies. Les observations couvrent notamment l'accueil français final, l'anglais sur tablette V19c et l'espagnol à 320 px V19b ; elles ne constituent pas une revue exhaustive de tous les titres et langues. Le texte agrandi et le zoom système n'ont pas été testés. Certains badges de la source restent à 10–11 px : ne pas les décrire tous comme des badges de 12–13 px ni déduire un audit de lisibilité exhaustif.
+Le titre d'accueil hérité reste à 62 px desktop, 43 px mobile et 37 px compact. Certains libellés secondaires de cartes sont encore à 10–12 px ; ne pas affirmer une lisibilité universelle sans contrôle. Les contenus longs, l'agrandissement du texte et toutes les variantes linguistiques ne sont pas validés par la seule lecture du CSS.
 
 ## 4. Spacing & Grid
 
-Le conteneur principal a un maximum de **1440 px**, avec 48 px de marge intérieure desktop, 30 px entre 761 et 1100 px, 20 px mobile et 16 px jusqu'à 360 px. Le contenu ne réserve plus de largeur à une sidebar de navigation.
+Le catalogue utilise un maximum de **1380 px**, contre 1440 px pour les surfaces générales. La grille de résultats, y compris lorsqu'elle ne contient que des guides, prévoit **deux colonnes desktop**, sans filtre latéral, puis **une colonne à 760 px et moins**. Écart desktop de 28 px, mobile de 22 px. Les captures V20 montrent les grandes cartes sur ordinateur et mobile ; elles ne couvrent pas toutes les combinaisons de contenu et de largeur.
 
-Le catalogue conserve des **filtres latéraux de 205 px**, séparés des résultats par 36 px. La grille vidéo emploie `auto-fill` avec minimum 340 px et espacements de 28 px horizontal / 40 px vertical. La grille ne contenant que des guides utilise un minimum de 330 px. À 1280 px, le calcul CSS donne deux colonnes généreuses ; le nombre de colonnes dépend de l'espace après filtres et marges. Entre 761 et 1100 px, filtres 170 px, écart 26 px et minimum vidéo 270 px. À 760 px et moins, filtres dans le dialogue et résultats en une colonne avec écart de 36 px.
+Les cartes vidéo ont une bordure et un rayon de 16 px, réduit à 12 px sur mobile ; les cartes guides gardent 16 px. La grande couverture 16:9 occupe la largeur du cadre. Le corps vidéo a 20 px verticaux / 22 px latéraux desktop, puis 16 px mobile ; celui du guide a 20 px, puis 18 px latéraux mobile.
 
-Les catégories et sélections ont trois colonnes desktop ; les sélections passent à deux dans la rupture tablette. Sur mobile, les catégories restent en rail à environ 88 % de largeur par carte, les sélections à 92 %, avec commandes natives. Jusqu'à 360 px, les deux rails utilisent 92 %. Les captures et mesures publiées couvrent les écrans décrits dans la validation, sans vérifier toutes les combinaisons de contenu et de largeur.
+Le panneau de filtres occupe au maximum 580 px à droite sur ordinateur, toute la largeur sur téléphone. Il contient l'unique exemplaire des contrôles, déplacé dans un dialogue natif. Les lecteurs vidéo et guide ont respectivement un maximum de 1240 et 1180 px ; ils deviennent plein écran sur mobile.
 
 ## 5. Layout & Composition
 
-**Navigation.** Header noir sticky de **80 px desktop / 70 px mobile**. Accueil, Bibliothèque, Parcours et Enregistrés sont dans sa navigation principale sur ordinateur. La classe historique `.app-sidebar` désigne désormais une **barre de sujets horizontale statique de 60 px**, avec véhicule et aide ; ce n'est plus une colonne fixe. Elle disparaît jusqu'à 760 px. Sur téléphone, la barre basse conserve Accueil / Rechercher / Parcours / Enregistrés et la zone de sécurité du système.
+**Recherche.** Le formulaire unique passe de l'accueil à l'emplacement des résultats desktop ou à la feuille mobile. Le contexte visible associe langue, voiture et bouton Filtres. La langue du contenu demeure distincte de la langue de l'interface. La voiture s'ouvre à la demande dans son panneau ; sa valeur courte reste dans le contrôle.
 
-**Accueil.** Colonnes `1fr / 1.05fr`, écart de 52 px : titre et recherche à gauche, `assets/photos/oil.jpg` à droite. La photo montre un versement d'huile, sans prouver une spécification de lubrifiant. Son minimum desktop est 440 px de haut ; elle garde une action blanche en bas pour explorer la mécanique. Le titre et le texte d'introduction restent hors photo. Sur mobile, ordre DOM et visuel : texte → recherche/langue → photographie. **Le hero mobile implémenté est en 16:10**, tandis que les ressources restent en 16:9 ; cela remplace le ratio proposé dans le brief.
+**Filtres.** Aucune sidebar permanente. Le même panneau sert aux deux tailles d'écran, dans cet ordre : niveau/durée/type de vidéo, plateformes, sujets repliés, puis contexte/transcription/licence dans le groupe avancé. Les changements sont immédiats ; « Voir N résultats » ferme le panneau, sans prétendre appliquer un brouillon. Le compteur dépend de la dernière réponse terminée ; chargement et indisponibilité ont leurs états propres.
 
-**Découverte.** Trois portes photographiques en **4:3**, légendes sous les images. Puis un bandeau sombre « Les bons gestes. Les bonnes sources. » associe **`wheel.jpg`** à un accès direct aux guides : image de roue réelle et texte côte à côte sur desktop, empilés sur mobile. La sélection éditoriale et les autres sujets suivent, sans fausses notes ni compteurs décoratifs.
+**Résultats.** Formats Tout/Vidéos/Guides, total, tri et critères supplémentaires précèdent les cartes. Question et langue ne sont plus répétées en puces. L'interprétation et le guide conseillé sont regroupés dans « Comprendre ces résultats », repliable ; un conflit entre véhicule cité et sélection ouvre cet élément et affiche l'avertissement. Le comportement de recherche élargie ne doit pas être confondu avec une garantie de pertinence.
 
-**Catalogue.** Le mode résultats masque hero et découverte. Recherche modifiable, langue, véhicule, formats et critères actifs précèdent les grandes cartes. Les filtres latéraux appartiennent au catalogue seulement. Sur mobile, recherche et filtres sont des commandes dans le flux, sans deuxième couche fixe au-dessus des résultats.
+**Accueil et navigation.** L'accueil, le header noir 80/70 px et les parcours en lignes V19 sont conservés. La classe historique `.app-sidebar` reste une barre de sujets horizontale dans le flux ; elle n'est pas une sidebar fixe. L'objectif V20 est d'améliorer le trajet question → comparaison → lecture, pas de présenter un nouvel écran promotionnel.
 
 ## 6. Components
 
-**Cartes.** Couvertures vidéo et guide 16:9, rayon final de 10 px, titre en dessous ; auteurs, plateforme et langue disponible restent lisibles. Aperçu manquant explicite. Une photo de guide ne remplace jamais la miniature d'une vidéo. Le badge « Proposé par RaceLink » renvoie à une raison et une preuve ; il ne signifie ni visionnage intégral ni validation technique.
+**Carte vidéo.** Grande miniature réelle, durée si renseignée, sujet et langue, titre, aperçu, contexte automobile disponible, auteur/plateforme et accès à la fiche. `resource-card.js` extrait au plus environ 220 caractères de la description existante, retire les URL/hashtags de cet aperçu et l'attribue : « Aperçu éditorial » pour les types éditoriaux, « Dans le descriptif » autrement. Une description absente ne produit pas de résumé inventé. La langue estimée reste marquée ; miniature absente, auteur inconnu et disponibilité de transcription ont des états explicites. Enregistrer est une action distincte.
 
-**Recherche mobile.** Un seul formulaire est déplacé dans le dialogue natif ; aucun identifiant dupliqué. Champ et sélecteur de langue à 16 px, fermeture 44 px, suggestions séparant format, titre et provenance. Changer la langue doit conserver saisie et critères, actualiser les suggestions et garder la feuille ouverte. La langue de l'interface demeure indépendante. Les guides restent accessibles directement et dans leur onglet.
+**Carte guide.** Même présence photographique, type/sujet et contenu français annoncés, titre canonique et résumé existant. La première référence constructeur est nommée et ouvrable depuis la carte ; un second accès rejoint l'ensemble des sources et leur portée. Les badges reposent sur la sélection réelle, jamais sur la seule mise en forme.
 
-**Lecteur guide.** Les onze guides partagent un dialogue natif, avec **photo réelle entre titre et introduction** : hauteur 280 px desktop, cadre 16:9 mobile. Méthode RaceLink, informations à réunir et sources constructeur restent séparées. Les 21 références constructeur précisent leur véhicule, édition/période, section, date et limites. L'accès depuis une carte peut rejoindre directement les sources. Les autres portails et références sont secondaires, identifiés comme tels.
+**Fiche vidéo.** Titre et auteur au-dessus du contenu, enregistrement et copie du lien à proximité. Desktop : média à gauche, lecture à droite. Sous 1000 px : une colonne. **Sur mobile, l'ordre effectif est titre/auteur → média et repères → contenu**, différent de la proposition initiale qui plaçait l'aperçu avant le média. La lecture intégrée se charge seulement sur action quand elle est disponible ; sinon l'action ouvre la plateforme source. Durée, langue, niveau indicatif et présence du texte restent explicites. Onglets Contenu / Transcription / Mes notes ; les sections véhicule, questions et source/droits/méthode sont repliables. L'onglet Transcription reste présent même sans texte et décrit cette absence.
 
-**Parcours V19d.** Les huit entrées deviennent des lignes éditoriales séparées par des filets, sans blocs d'icônes visibles ni fonds de carte. Sur ordinateur, chaque ligne aligne titre, description et action « Découvrir le parcours » ; le titre mesure 27 px, la description 15 px et l'action conserve une hauteur minimale de 44 px. Sur mobile, ces trois éléments s'empilent, avec titre de 25 px et description de 14 px. Le bouton natif occupe toujours toute la ligne ; le pictogramme historique reste dans le DOM mais son conteneur est masqué. L'accès aux quatre étapes et au suivi personnel reste inchangé, sans certification.
-
-**Lecteurs et vues secondaires.** Les vidéos, parcours, enregistrés, véhicule et FAQ utilisent le même système clair. La FAQ conserve sa recherche et ses accordéons natifs. Les dialogues deviennent plein écran sur mobile. Les sources, légendes, extraits indexés, résumés et transcriptions gardent leur nom et leur niveau de preuve.
+**Lecteur guide.** En-tête partagé entre titre/synthèse et photo 4:3 desktop, empilé avec photo 16:10 mobile. Plan latéral desktop, plan dans le flux mobile. Prérequis et informations à réunir précèdent la méthode ; les notices constructeur forment une section distincte. Les textes de portée, limites, dates, autres portails et crédits restent consultables. Onze guides et vingt et une références constructeur sont conservés, sans nouvelle procédure. La navigation est FR/EN/ES ; le contenu documentaire français reste identifié par `lang="fr"` et une mention visible.
 
 ## 7. Motion & Interaction
 
-Valeurs déclarées : pression des flèches 150 ms, courbe `cubic-bezier(.23,1,.32,1)` ; couleurs des boutons 180 ms. Le hero et les catégories ont une transition photo de 400 ms, les couvertures de guides 300 ms. Sur périphérique avec survol, le zoom atteint **1,025**, sans déplacement de la carte. Ces valeurs effectives remplacent les durées seulement proposées dans les contrats antérieurs.
+Les interactions emploient les commandes natives existantes. Les états de recherche, filtres, sauvegarde et dialogue appartiennent toujours à l'application ; les nouveaux modules de carte/fiche rendent leur présentation. Les titres, descriptions, métadonnées et liens sont échappés ou filtrés ; seuls les fragments de l'application explicitement prévus sont acceptés comme HTML.
 
-Sous `prefers-reduced-motion`, animations et transitions non essentielles disparaissent ; le rail choisit un défilement instantané. Pas d'autoplay, parallaxe, défilement détourné ou cascade retardant les résultats. Les commandes de rail gardent le focus à leur limite avec `aria-disabled` ; leur disparition responsive doit rendre le focus à une carte visible.
+Transitions vidéo : carte 180 ms, photo 200 ms avec zoom 1,025 au survol ; lecteur 160 ms. La nouvelle photo de guide n'a pas de zoom. Les règles de mouvement réduit suppriment les transitions non essentielles ; leur comportement avec un réglage OS réel reste à tester.
 
-Focus : contour rouge de 3 px, décalage de 4 px. Conserver contrôles natifs, labels, clavier, retour du focus et contexte de recherche. Le raccourci de recherche ne doit pas interférer avec un dialogue ouvert. Les contrôles effectués incluent les suggestions au clavier sur V19/V19b et le focus du lecteur et des sources de guide sur V19c ; ils ne couvrent pas toutes les interactions au clavier.
+Focus de base : contour rouge 3 px, décalage 4 px. Le plan guide déplace le focus vers un titre de section ; les dialogues conservent leurs identifiants et actions existants. Les retours entre recherche, filtres et lecteur doivent préserver les critères et éviter la réouverture involontaire de la recherche. La validation de ces enchaînements est séparée de la syntaxe.
 
 ## 8. Voice & Brand
 
-Un ton précis et accueillant : nommer un geste, une question ou un sujet, sans fausse promesse. Une mention de véhicule n'est pas une compatibilité ; une estimation de langue n'est pas une langue déclarée par la plateforme. Une méthode générale RaceLink n'est pas une procédure constructeur certifiée.
+Nommer le sujet et la matière disponible sans promettre visionnage, certification ou compatibilité. Une description source n'est pas une synthèse du visionnage ; une transcription absente ne devient pas disponible parce qu'une fiche est bien présentée. Les mentions de langue, niveau et véhicule gardent leur degré de certitude.
 
-Les douze photographies locales et leurs conditions figurent dans [le manifeste](public/photo-sources.json) et [les crédits](public/photo-credits.html). Les images Pexels, Unsplash, CC BY, CC BY-SA et domaine public conservent chacune leurs conditions ; leur licence n'est pas celle du code. Les photos d'illustration ne prouvent ni véhicule compatible ni procédure sûre. Le numéro de la photo d'identification Audi a été modifié par son auteur.
+Les douze photographies locales, auteurs et licences restent dans [le manifeste](public/photo-sources.json) et [les crédits](public/photo-credits.html) : Pexels, Unsplash, CC BY, CC BY-SA ou domaine public selon l'image. La photo n'est pas une preuve technique ; le VIN illustré a été modifié par son auteur. Aucune nouvelle image ou collecte n'est revendiquée pour cette refonte.
 
-La filiation RaceLink/MotionSite vient des **inspections V17 historiques**, documentées dans [les références](research/visual-direction-2026-10-23/design-contract.md). La consultation Flowith avec Claude Opus 5.5 appartient également à V17 : [preuve et limites](research/visual-direction-2026-10-23/flowith-opus-5-5.md). Aucune nouvelle visite de ces références ni génération n'est revendiquée pour V19. Les [douze ressources de design V18](research/skills-roundup-2026-10-23/README.md) apportent méthodes et contrôle ; leurs conventions ne remplacent pas le brief.
+RaceLink/MotionSite et Flowith/Claude Opus 5.5 restent des [références historiques V17](research/visual-direction-2026-10-23/design-contract.md), avec [portée documentée](research/visual-direction-2026-10-23/flowith-opus-5-5.md). Impeccable, registre produit, guide la V20 ; les rôles effectifs des ressources et les écarts au benchmark sont consignés dans [DECISIONS.md](research/product-redesign-v20/DECISIONS.md).
 
 ## 9. Anti-patterns
 
-Exclure petites vignettes latérales sur mobile, affiches à pictogrammes, teinte uniforme des photographies, longs titres Orbitron, introduction promotionnelle avant la recherche, effets GPU sur le contenu et validation technique implicite. Ne pas réintroduire la sidebar fixe ou trois petites colonnes à 1280 px avec les filtres actuels.
+Ne pas remettre une colonne de filtres permanente, une seconde modale avant la fiche, des résumés inventés, des affiches à pictogrammes ou des badges de compatibilité. Ne pas réduire les photos pour compenser des contrôles redondants.
 
-`public/product-ui.css` reste la source visuelle ; `scripts/build_ui.py` génère `app-ui.css` en couches legacy puis product. Ne pas corriger le bundle à la main ni empiler de nouvelles feuilles. Préserver les priorités de visibilité des vues, des dialogues et du mode résultats.
+`public/product-ui.css` reste la source visuelle unique, compilée par `scripts/build_ui.py` dans le bundle à couches. Les fragments de travail V20 sont des matériaux d'intégration, pas des feuilles à charger en parallèle. Préserver les règles de visibilité des vues, des dialogues et du mode résultats.
 
-**État : V19d publiée et vérifiée dans le périmètre documenté.** Les [observations navigateur](research/graphic-redesign-v19/browser-checks.json) et le [contrôle des fichiers publics](research/graphic-redesign-v19/public-assets-check.json) complètent la [validation](research/graphic-redesign-v19/VALIDATION.md).
+**État : V20 publiée au commit final `17ea9ab`, avec des vérifications ciblées documentées.** La [validation](research/product-redesign-v20/VALIDATION.md) distingue les différentes preuves :
 
-- **V19/V19b :** recherche en français, suggestions au clavier, filtre YouTube et correction du hero dans les résultats mobiles.
-- **V19c :** guides photographiques, accès aux sources et focus, parcours en lignes sur ordinateur et mobile, accueil anglais sur tablette. Ces cas n'ont pas tous été rejoués sur V19d.
-- **V19d :** accueil français à 390 et 1280 px ; menu à 320 px repositionné à l'origine `(0, 0)` ; onglets sans débordement interne avec `clientWidth = scrollWidth = 273 px`.
-- **Contrôles automatisés :** 14 tests HTML et 6 tests d'export sur V19d ; 17 tests de navigation sur V19c. Les 15 fichiers publics contrôlés répondent HTTP 200 et correspondent aux octets du dépôt.
+- [109 contrôles locaux réussis](research/product-redesign-v20/validation-results.json), selon les sources et dates consignées : navigation, HTML, export, recherche/filtres, cartes et lecteur. Les 14 contrôles HTML/bundle ont été relancés sur le CSS final. Ils ne sont pas des tests de rendu.
+- [17 fichiers publics contrôlés](research/product-redesign-v20/public-assets-check.json), HTTP 200 et octets conformes au dépôt au commit final `17ea9ab` ; [catalogue inchangé](research/product-redesign-v20/catalogue-integrity.json).
+- [Parcours navigateur public](research/product-redesign-v20/browser-checks.json) à 320/390/768/1280 px : filtres et focus de plateforme, suggestions avec flèches/Entrée, réinitialisation conservant question et format, fiche vidéo et retour du focus, guide et navigation vers les notices.
+- [Contrelecture indépendante de 13 captures](research/product-redesign-v20/visual-review.md), distincte de ces essais fonctionnels. Elle n'a pas identifié de correctif visuel nécessaire dans les états examinés.
 
-Les tailles mobiles sont des fenêtres émulées, pas des appareils physiques. Aucun test de texte agrandi ou de zoom système, de réglage OS de mouvement réduit, de lecteur d'écran ni audit WCAG exhaustif n'a été réalisé. Toutes les pages et tailles n'ont pas été rejouées sur V19d, dont le correctif final porte sur deux règles CSS et les marqueurs de cache. Les liens constructeur avaient été vérifiés lors de la recherche de sources ; leur contenu externe n'a pas été revérifié pendant cette passe UI.
+Le [rapport navigateur](research/product-redesign-v20/browser-checks.json) consigne 18 scénarios, en distinguant les interactions sur `5a48d1f` des deux finitions CSS contrôlées sur `17ea9ab` ; les parcours complets ne sont pas déclarés rejoués sur ce dernier commit. Aucun téléphone physique, texte agrandi/zoom système, réglage OS de mouvement réduit, lecteur d'écran ou audit WCAG exhaustif n'a été testé. Les sources externes constructeur n'ont pas été revérifiées pendant cette passe UI.
 
-Historique séparé : [V14](research/ui-redesign-2026-10-23/VALIDATION.md), [photos V15](research/photo-covers-2026-10-23/VALIDATION.md), [guides V16](research/official-guides-2026-10-23/VALIDATION.md), [V17](research/visual-direction-2026-10-23/VALIDATION.md), [V18](research/skills-roundup-2026-10-23/VALIDATION.md). Ces preuves ne valident pas automatiquement la nouvelle composition.
+Historique séparé : [V19d](research/graphic-redesign-v19/VALIDATION.md), [V18](research/skills-roundup-2026-10-23/README.md), [guides V16](research/official-guides-2026-10-23/VALIDATION.md), [photos V15](research/photo-covers-2026-10-23/VALIDATION.md). La validation d'une version précédente ne remplace pas celle des nouvelles surfaces.

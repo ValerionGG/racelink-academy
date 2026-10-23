@@ -1,0 +1,10 @@
+{
+  "generated_at": "2026-10-23T17:43:34.295134+00:00",
+  "status": "passed",
+  "passed": 4,
+  "failed": 0,
+  "actual_source_static_preflight": "passed",
+  "archive_created": false,
+  "script_sha256": "582d06c2a8cdd2b65692b4a0d6f70be727d19b3679c8eede612e8d4606199594",
+  "scope": "Extracted pure preflight function only; four tests use temporary fixtures; final preflight reads current source/static files. Archive script body is never executed."
+}

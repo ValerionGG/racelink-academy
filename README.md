@@ -1,8 +1,10 @@
-# Refonte graphique — atelier-v19d
+# Refonte recherche et consultation — workshop-v20
 
-[Ouvrir l'application](https://valeriongg.github.io/racelink-academy/?release=atelier-v19d) · [Validation et captures](research/graphic-redesign-v19/VALIDATION.md) · [Design](DESIGN.md) · [Douze ressources étudiées](research/skills-roundup-2026-10-23/README.md)
+[Voir la nouvelle recherche](https://valeriongg.github.io/racelink-academy/?release=workshop-v20&browse=1&q=vidange+Clio+3&language=fr&format=video) · [Captures et validation](research/product-redesign-v20/VALIDATION.md) · [Décisions](research/product-redesign-v20/DECISIONS.md) · [Design](DESIGN.md)
 
-Accueil éditorial à grande photographie, navigation horizontale, recherche mobile prioritaire, grandes couvertures et lecteurs de guides photographiques. Les parcours sont organisés en lignes claires. Identité RaceLink noire/blanche/rouge, catalogue et sources conservés. [Commit publié](https://github.com/ValerionGG/racelink-academy/commit/850e57869e9ad9219c054000c8e7b46718835a25).
+Recherche compacte, suggestions regroupées, filtres partagés sur mobile et ordinateur, grandes pré-fiches lisibles et nouveaux lecteurs vidéo/guide. Les guides séparent prérequis, méthode RaceLink et notices constructeur pour les modèles concernés. Le catalogue et l'accueil photographique sont conservés.
+
+[Commit publié](https://github.com/ValerionGG/racelink-academy/commit/17ea9abab52b9028b5863db61e6537dd939a3be7) : 109 contrôles techniques, 17 fichiers HTTP et catalogue vérifiés, rendu observé à 320/390/768/1280 pixels. Portée et limites dans le rapport. Aucun nouveau contenu collecté pendant cette refonte.
 
 # RaceLink Academy — bibliothèque ouverte
 

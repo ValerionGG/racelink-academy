@@ -1,0 +1,109 @@
+{
+  "checkedAt": "2026-10-23T17:48:36.229Z",
+  "release": "workshop-v20",
+  "codeCommit": "17ea9abab52b9028b5863db61e6537dd939a3be7",
+  "status": "passed",
+  "scope": "CUA public GitHub Pages, responsive browser viewport. Interaction checks on 5a48d1f; final CSS corrections and new stylesheet URL verified on17ea9ab. No physical-device or complete accessibility certification.",
+  "checks": [
+    {
+      "name": "mobile-search",
+      "width": 390,
+      "overflow": false,
+      "firstResultTop": 406.75
+    },
+    {
+      "name": "mobile-platform-filter",
+      "focus": "YouTube2",
+      "checked": "true",
+      "count": "Voir 2 résultats →"
+    },
+    {
+      "name": "detail-mobile",
+      "imageLoaded": true,
+      "transcriptEmptyState": "Le texte n’est pas encore disponible.\n\nAucune transcription réutilisable n’est enregistrée pour cette vidéo. Des sous-titres peuvent être proposés directement par son auteur ou dans le lecteur de la plateforme.\n\nVérifier les sous-titres à la source ↗\n\nUn résumé n’est jamais présenté comme une transcription.",
+      "overflow": false
+    },
+    {
+      "name": "suggestions-keyboard",
+      "arrowDownTarget": "suggestion-0",
+      "query": "vidange"
+    },
+    {
+      "name": "reset-filters",
+      "preservedQuery": "vidange",
+      "preservedFormat": "video",
+      "resultCount": "Voir 932 résultats →"
+    },
+    {
+      "name": "guide-mobile",
+      "sourceNavigationFocus": "guide-sources",
+      "sourceLinks": 4,
+      "overflow": false
+    },
+    {
+      "name": "guide-grid-desktop",
+      "columns": "570.5px 570.5px",
+      "overflow": false
+    },
+    {
+      "name": "desktop-detail",
+      "overflow": false
+    },
+    {
+      "name": "detail-return-focus",
+      "focusedText": "Comment remplacer filtre à huile et huile moteur sur RENAULT CLIO 3 [TUTORIEL AUTODOC]"
+    },
+    {
+      "name": "desktop-filter-panel",
+      "width": 580,
+      "overflow": false
+    },
+    {
+      "name": "narrow-search",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "narrow-filter",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "narrow-detail",
+      "width": 320,
+      "overflow": false
+    },
+    {
+      "name": "tablet-search",
+      "width": 768,
+      "overflow": false
+    },
+    {
+      "name": "close-vehicle-panel",
+      "open": false,
+      "focusedId": "catalog-heading"
+    },
+    {
+      "name": "english-labels",
+      "heading": "Find the right tutorial",
+      "filters": "Filters"
+    },
+    {
+      "name": "spanish-labels",
+      "heading": "Encuentra el tutorial adecuado",
+      "filters": "Filtros"
+    },
+    {
+      "name": "final-narrow-vehicle-label",
+      "commit": "17ea9ab",
+      "caption": "Ma voiture",
+      "labelFits": true,
+      "stylesheet": "/racelink-academy/app-ui.css?v=workshop-v20&rev=2",
+      "relatedSurface": "rgb(255, 255, 255)"
+    }
+  ],
+  "limitations": [
+    "No external video playback or third-party cookies accepted in this review.",
+    "Original content availability is not guaranteed by UI tests."
+  ]
+}
