@@ -1,9 +1,9 @@
-import {createCinemaHome} from './cinema-home.js?v=themes-v22';
+import {createCinemaHome} from './cinema-home.js?v=collection-v23';
 import {icon as glyph, categoryIcon} from './icons.js';
 import {createIdentityUI} from './identity-ui.js?v=themes-v22';
 import {tracks} from './tracks.js';
 import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=themes-v22';
-import {createDiscoveryUI} from './discovery-ui.js?v=themes-v22';
+import {createDiscoveryUI} from './discovery-ui.js?v=collection-v23';
 import {createRaceLinkPicks} from './racelink-picks.js';
 import {createMobileUI} from './mobile-ui.js?v=themes-v22&rev=2';
 import {createGuideUI} from './guide-ui.js?v=themes-v22';
@@ -41,7 +41,7 @@ const categories = [
 ];
 const catName = value => {const c = categories.find(c => c[0] === value);return c ? t(c[2],c[3],c[4]) : value;};
 const levelName = value => ({beginner:t('Débutant','Beginner','Principiante'),intermediate:t('Intermédiaire','Intermediate','Intermedio'),advanced:t('Avancé / Pro','Advanced / Pro','Avanzado / Pro'),all:t('Tous niveaux','All levels','Todos los niveles'),unknown:t('À qualifier','To review','Por revisar')})[value] || value;
-const platformName = value => ({youtube:'YouTube',dailymotion:'Dailymotion',vimeo:'Vimeo',tiktok:'TikTok',instagram:'Instagram',facebook:'Facebook',twitch:'Twitch',bilibili:'Bilibili',racelink:'RaceLink'})[value] || value;
+const platformName = value => ({youtube:'YouTube',dailymotion:'Dailymotion',vimeo:'Vimeo',tiktok:'TikTok',instagram:'Instagram',facebook:'Facebook',twitch:'Twitch',bilibili:'Bilibili',racelink:'RaceLink',other:ui==='en'?'Other sources':ui==='es'?'Otras fuentes':'Autres sources'})[value] || value;
 const licenseName = value => value==='creative-commons'?'Creative Commons · CC BY':value==='public-domain'?t('Domaine public','Public domain','Dominio público'):value==='permission'?t('Autorisation de l’auteur','Creator permission','Permiso del autor'):t('Non confirmée','Unconfirmed','Sin confirmar');
 function readingSegments(raw){
   const groups=[];
@@ -219,7 +219,7 @@ function renderFacets(){
     return `<button class="category-button ${state.category===id?'active':''}" data-category="${id}" aria-pressed="${state.category===id}"><span class="cat-icon" aria-hidden="true">${glyph(categoryIcon[id]||'library',{size:20})}</span>${escape(name)}<span class="cat-count">${count??'—'}</span></button>`;
   }).join('');
   renderLanguages();
-  const platforms=['youtube','dailymotion','vimeo','tiktok','instagram','facebook','twitch','bilibili','racelink'].filter(v=>v===state.platform||(facets.platform||[]).some(f=>f.value===v&&f.count>0));
+  const platforms=['youtube','dailymotion','vimeo','tiktok','instagram','facebook','twitch','bilibili','racelink','other'].filter(v=>v===state.platform||(facets.platform||[]).some(f=>f.value===v&&f.count>0));
   $('#platform').innerHTML=`<option value="">${t('Toutes les plateformes','All platforms','Todas las plataformas')}</option>${platforms.map(value=>`<option value="${value}">${platformName(value)} (${(facets.platform||[]).find(f=>f.value===value)?.count||0})</option>`).join('')}`;
   $('#platform').value=state.platform;
   $('#platform-choices').innerHTML=[['',t('Toutes','All','Todas')],...platforms.map(value=>[value,platformName(value)])].map(([value,label])=>`<button type="button" data-platform-choice="${escape(value)}" aria-pressed="${state.platform===value}">${escape(label)}${value?`<span>${Number((facets.platform||[]).find(f=>f.value===value)?.count||0).toLocaleString(ui)}</span>`:''}</button>`).join('');

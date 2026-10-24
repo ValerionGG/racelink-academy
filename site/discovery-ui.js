@@ -16,7 +16,7 @@ export function createDiscoveryUI(ctx) {
   const personalKeys=['make','model','generation','year','engine','fuel_type','body_type','spec','language','duration','platform','level','license','transcript','format','content_format'];
   const hasValue=value=>value!==''&&value!==undefined&&value!==null&&value!=='all';
   const imageUrl=value=>{try{const local=typeof value==='string'&&/^\.\/assets\/[\w./-]+$/.test(value)&&!value.split('/').includes('..');const url=new URL(value,local?import.meta.url:undefined);return url.protocol==='https:'||local?url.href:'';}catch{return '';}};
-  const platformName=value=>({youtube:'YouTube',dailymotion:'Dailymotion',vimeo:'Vimeo',tiktok:'TikTok',instagram:'Instagram',facebook:'Facebook',twitch:'Twitch',bilibili:'Bilibili'})[value]||value||'';
+  const platformName=value=>({youtube:'YouTube',dailymotion:'Dailymotion',vimeo:'Vimeo',tiktok:'TikTok',instagram:'Instagram',facebook:'Facebook',twitch:'Twitch',bilibili:'Bilibili',other:t('Autres sources','Other sources','Otras fuentes')})[value]||value||'';
   const request=params=>new URLSearchParams(Object.entries(params).filter(([,v])=>v!==''&&v!==undefined));
   const stateContext=()=>Object.fromEntries(Object.entries(ctx.getState()).filter(([k])=>!['page','sort'].includes(k)));
   const count=n=>Number(n||0).toLocaleString(ctx.getUi());
