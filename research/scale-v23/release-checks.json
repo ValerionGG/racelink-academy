@@ -1,0 +1,1696 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-24T07:48:55.360451+00:00",
+  "scope": "offline exported artifacts and exact approved metadata",
+  "network_requests": 0,
+  "database_opened": false,
+  "catalog_sha256": "642fc65dbdb8699459324372d0569e6b5ea4518e2b0676ed48897b9f8ef83323",
+  "checks": [
+    {
+      "name": "baseline_snapshot_matches_summary",
+      "passed": true
+    },
+    {
+      "name": "local_gzip_exact_json",
+      "passed": true
+    },
+    {
+      "name": "local_config_hash",
+      "passed": true
+    },
+    {
+      "name": "local_manifest_exists",
+      "passed": true
+    },
+    {
+      "name": "local_manifest_hash_counts",
+      "passed": true
+    },
+    {
+      "name": "git_gzip_exact_json",
+      "passed": true
+    },
+    {
+      "name": "git_config_hash",
+      "passed": true
+    },
+    {
+      "name": "git_manifest_exists",
+      "passed": true
+    },
+    {
+      "name": "git_manifest_hash_counts",
+      "passed": true
+    },
+    {
+      "name": "local_git_catalog_bytes_identical",
+      "passed": true
+    },
+    {
+      "name": "local_git_gzip_bytes_identical",
+      "passed": true
+    },
+    {
+      "name": "local_git_config_identical",
+      "passed": true
+    },
+    {
+      "name": "unique_ids",
+      "passed": true
+    },
+    {
+      "name": "canonical_public_urls",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "name": "unique_canonical_urls",
+      "passed": true
+    },
+    {
+      "name": "unique_media_identities",
+      "passed": true
+    },
+    {
+      "name": "approved_records_unique",
+      "passed": true
+    },
+    {
+      "name": "approved_records_are_new",
+      "passed": true,
+      "existing_ids": []
+    },
+    {
+      "name": "baseline_ids_preserved",
+      "passed": true,
+      "removed_ids": []
+    },
+    {
+      "name": "new_ids_exactly_approved",
+      "passed": true,
+      "unexpected": [],
+      "missing": []
+    },
+    {
+      "name": "baseline_plus_real_new_total",
+      "passed": true,
+      "baseline": 36901,
+      "approved_new": 430,
+      "actual": 37331
+    },
+    {
+      "name": "existing_public_records_unchanged",
+      "passed": true,
+      "changed_ids": []
+    },
+    {
+      "name": "guide_content_unchanged",
+      "passed": true
+    },
+    {
+      "name": "stats_total",
+      "passed": true
+    },
+    {
+      "name": "stats_platforms",
+      "passed": true
+    },
+    {
+      "name": "stats_languages",
+      "passed": true
+    },
+    {
+      "name": "approved_automotive_projection_and_taxonomy",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "name": "vehicle_evidence_present_in_source_text",
+      "passed": true,
+      "findings": []
+    },
+    {
+      "name": "obvious_secret_or_local_path_patterns_absent_in_new_public_fields",
+      "passed": true,
+      "findings": []
+    }
+  ],
+  "passed": 29,
+  "total": 29,
+  "videos": 37331,
+  "baseline_videos": 36901,
+  "new_videos": 430,
+  "platforms": {
+    "dailymotion": 319,
+    "facebook": 46,
+    "instagram": 203,
+    "other": 14,
+    "tiktok": 242,
+    "twitch": 2,
+    "vimeo": 3,
+    "youtube": 36502
+  },
+  "languages": {
+    "fr": 5216,
+    "en": 13100,
+    "tr": 3,
+    "ru": 6,
+    "zh": 13,
+    "ar": 7,
+    "ta": 1,
+    "es": 4565,
+    "de": 4018,
+    "und": 1987,
+    "fa": 1,
+    "pt": 4206,
+    "id": 2,
+    "it": 298,
+    "cs": 1,
+    "pl": 3759,
+    "ja": 96,
+    "ko": 52
+  },
+  "expected_files": [
+    {
+      "name": "publication-approved.json",
+      "sha256": "186c7aca5ef279beea8030be7feb5ce6e9f8fb5c4acbda89498c565215a8859d",
+      "records": 430
+    }
+  ],
+  "new_vehicle_applications": [
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Audi",
+        "model": "A3",
+        "year_from": 2007,
+        "year_to": 2007
+      },
+      "video_ids": [
+        "tiktok:7586834968559586582"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Audi",
+        "model": "A4",
+        "year_from": 2019,
+        "year_to": 2019
+      },
+      "video_ids": [
+        "dailymotion:x8pbjxm"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Audi",
+        "model": "A6",
+        "year_from": 2009,
+        "year_to": 2009
+      },
+      "video_ids": [
+        "dailymotion:x8pebet"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Audi",
+        "model": "A6",
+        "year_from": 2017,
+        "year_to": 2017
+      },
+      "video_ids": [
+        "instagram:DEvCgBPRkXQ"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "BMW",
+        "model": "",
+        "year_from": 2014,
+        "year_to": 2014
+      },
+      "video_ids": [
+        "instagram:C8DhmsBumEk"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "BMW",
+        "model": "318i",
+        "year_from": 1999,
+        "year_to": 2005
+      },
+      "video_ids": [
+        "dailymotion:x3cydw4"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "BMW",
+        "model": "320i",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "instagram:C2ZMEPKBn4h"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "BMW",
+        "model": "325i",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2t2jp2"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "BMW",
+        "model": "X1",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "instagram:DCK1JwasTx8"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "BMW",
+        "model": "X5",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "tiktok:7470392213718060294"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "BMW",
+        "model": "X7",
+        "year_from": 2026,
+        "year_to": 2026
+      },
+      "video_ids": [
+        "tiktok:7567726581532085534"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Buick",
+        "model": "LaCrosse",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2s11f6"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Cadillac",
+        "model": "DeVille",
+        "year_from": 1994,
+        "year_to": 1994
+      },
+      "video_ids": [
+        "dailymotion:x2to0ad"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Cadillac",
+        "model": "SRX",
+        "year_from": 2016,
+        "year_to": 2016
+      },
+      "video_ids": [
+        "tiktok:7255022155631725870"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Chevrolet",
+        "model": "",
+        "year_from": 2012,
+        "year_to": 2012
+      },
+      "video_ids": [
+        "dailymotion:x7pt90w"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Chevrolet",
+        "model": "Malibu",
+        "year_from": 2017,
+        "year_to": 2017
+      },
+      "video_ids": [
+        "tiktok:7260893647535607086"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Chevrolet",
+        "model": "Traverse",
+        "year_from": 2019,
+        "year_to": 2019
+      },
+      "video_ids": [
+        "tiktok:7303002552759586091"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Chrysler",
+        "model": "200",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2qiknb"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Chrysler",
+        "model": "PT Cruiser",
+        "year_from": 2006,
+        "year_to": 2006
+      },
+      "video_ids": [
+        "dailymotion:x7oqz8p"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Chrysler",
+        "model": "PT Cruiser",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2w14rc",
+        "dailymotion:x2wz5w6"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Citroën",
+        "model": "C5",
+        "year_from": 2001,
+        "year_to": 2004
+      },
+      "video_ids": [
+        "dailymotion:xidsy3"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Honda",
+        "model": "Accord",
+        "year_from": 2012,
+        "year_to": 2016
+      },
+      "video_ids": [
+        "dailymotion:x58lovh"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Honda",
+        "model": "CR-V",
+        "year_from": 2012,
+        "year_to": 2016
+      },
+      "video_ids": [
+        "tiktok:7339582861135088926"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Honda",
+        "model": "Civic",
+        "year_from": 2023,
+        "year_to": 2023
+      },
+      "video_ids": [
+        "tiktok:7176488590426311978"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Hyundai",
+        "model": "Sonata",
+        "year_from": 2006,
+        "year_to": 2006
+      },
+      "video_ids": [
+        "dailymotion:x5ltgax"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Hyundai",
+        "model": "Sonata",
+        "year_from": 2009,
+        "year_to": 2009
+      },
+      "video_ids": [
+        "tiktok:7409316537670143262"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Jaguar",
+        "model": "X-Type",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x58lr3r",
+        "dailymotion:x5kd2gl"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Jaguar",
+        "model": "XF",
+        "year_from": 2009,
+        "year_to": 2009
+      },
+      "video_ids": [
+        "instagram:C36ot1txdkR"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Jeep",
+        "model": "Cherokee",
+        "year_from": 2014,
+        "year_to": 2021
+      },
+      "video_ids": [
+        "tiktok:7263954715145243947"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Jeep",
+        "model": "Cherokee",
+        "year_from": 2016,
+        "year_to": 2016
+      },
+      "video_ids": [
+        "tiktok:7356778260522339627"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Jeep",
+        "model": "Patriot",
+        "year_from": 2012,
+        "year_to": 2012
+      },
+      "video_ids": [
+        "dailymotion:x7pop5v"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Kia",
+        "model": "Optima",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "instagram:C3o9CLdreMp"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Mazda",
+        "model": "6",
+        "year_from": 2007,
+        "year_to": 2007
+      },
+      "video_ids": [
+        "dailymotion:x6kcxwo"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Mazda",
+        "model": "CX-7",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2qauq3",
+        "dailymotion:x2r3hm5",
+        "dailymotion:x2r406h"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Mazda",
+        "model": "Protege",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x439jfn",
+        "dailymotion:x6orphe"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Mercedes-Benz",
+        "model": "",
+        "year_from": 2003,
+        "year_to": 2003
+      },
+      "video_ids": [
+        "dailymotion:x76jq9g"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Mercedes-Benz",
+        "model": "",
+        "year_from": 2019,
+        "year_to": 2019
+      },
+      "video_ids": [
+        "tiktok:7401721983483841822"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Mercedes-Benz",
+        "model": "Vito",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "peertube:edc74f4f-b56c-4afe-aace-e56ef0524b4b"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Mini",
+        "model": "Cooper",
+        "year_from": 2013,
+        "year_to": 2013
+      },
+      "video_ids": [
+        "tiktok:7267351959064038699"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Mitsubishi",
+        "model": "Colt",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "tiktok:7226758843114540289"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Nissan",
+        "model": "Rogue",
+        "year_from": 2014,
+        "year_to": 2017
+      },
+      "video_ids": [
+        "instagram:DE7f0Jhx1np"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Opel",
+        "model": "Meriva",
+        "year_from": 2007,
+        "year_to": 2007
+      },
+      "video_ids": [
+        "dailymotion:x8pkebl"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Peugeot",
+        "model": "309",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:xu6xr6",
+        "dailymotion:xyud46",
+        "dailymotion:xzgs01"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Saab",
+        "model": "9-5",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2sb0jw"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Smart",
+        "model": "Fortwo",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:xv2ftn"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Subaru",
+        "model": "Impreza",
+        "year_from": 2015,
+        "year_to": 2015
+      },
+      "video_ids": [
+        "tiktok:7164695552268176686"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Toyota",
+        "model": "Camry",
+        "year_from": 2007,
+        "year_to": 2017
+      },
+      "video_ids": [
+        "dailymotion:x6gbf76"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Toyota",
+        "model": "Camry",
+        "year_from": 2015,
+        "year_to": 2015
+      },
+      "video_ids": [
+        "tiktok:7638099684019457294"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Toyota",
+        "model": "Prius",
+        "year_from": 2008,
+        "year_to": 2008
+      },
+      "video_ids": [
+        "tiktok:7184639267849768238"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Toyota",
+        "model": "RAV4",
+        "year_from": 2005,
+        "year_to": 2005
+      },
+      "video_ids": [
+        "dailymotion:x58qqgk"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Volkswagen",
+        "model": "Golf",
+        "year_from": 2017,
+        "year_to": 2017
+      },
+      "video_ids": [
+        "tiktok:7310294015293787434"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "E430",
+        "make": "Mercedes-Benz",
+        "model": "",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "tiktok:7062234486934850862"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "E65",
+        "make": "BMW",
+        "model": "",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x58qrxl"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "F39",
+        "make": "BMW",
+        "model": "X2",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x9pr3cy"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "III",
+        "make": "Renault",
+        "model": "Master",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x97153e"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "SW",
+        "make": "Ford",
+        "model": "Focus",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2qigkz"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "V",
+        "make": "Volkswagen",
+        "model": "Jetta",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x58qrtg"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "W163",
+        "make": "Mercedes-Benz",
+        "model": "",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2n04lc"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "",
+        "generation": "W639",
+        "make": "Mercedes-Benz",
+        "model": "Viano",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "peertube:edc74f4f-b56c-4afe-aace-e56ef0524b4b"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "diesel",
+        "generation": "",
+        "make": "Peugeot",
+        "model": "207",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x761kst"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "diesel",
+        "generation": "",
+        "make": "Peugeot",
+        "model": "307",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2ydfc3"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "",
+        "fuel_type": "diesel",
+        "generation": "F48",
+        "make": "BMW",
+        "model": "X1",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x9pr3cy"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "1.3",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Fiat",
+        "model": "Grande Punto",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x3qxva5"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "1.4",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Honda",
+        "model": "Civic",
+        "year_from": 2012,
+        "year_to": 2012
+      },
+      "video_ids": [
+        "dailymotion:x8pgwnt"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "1.5 DCI",
+        "fuel_type": "diesel",
+        "generation": "",
+        "make": "Renault",
+        "model": "Kangoo",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2s1flg"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "1.5L",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Chevrolet",
+        "model": "Malibu",
+        "year_from": 2018,
+        "year_to": 2018
+      },
+      "video_ids": [
+        "tiktok:7612854721174326558"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "1.9",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Citroën",
+        "model": "",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2u96z9"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "1.9",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Renault",
+        "model": "",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:xa0ou3q"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "1.9",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Volkswagen",
+        "model": "Golf",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x5ltgb5"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "2.0 TDI",
+        "fuel_type": "",
+        "generation": "B8",
+        "make": "Audi",
+        "model": "A4",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x39acas"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "2.0",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Dodge",
+        "model": "Caliber",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x6huv2q"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "2.0TDI",
+        "fuel_type": "",
+        "generation": "C6",
+        "make": "Audi",
+        "model": "A6",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x6dci1d"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "2.4",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Chrysler",
+        "model": "PT Cruiser",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x2wz5w6"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "2.5",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Volkswagen",
+        "model": "",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x66mhuw"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "2.5",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Volkswagen",
+        "model": "Beetle",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x66mhuw"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "",
+        "engine": "2.5L",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Volkswagen",
+        "model": "Jetta",
+        "year_from": 2005,
+        "year_to": 2010
+      },
+      "video_ids": [
+        "dailymotion:x2oaf43"
+      ]
+    },
+    {
+      "vehicle": {
+        "body_type": "estate",
+        "engine": "2.0 HDI",
+        "fuel_type": "",
+        "generation": "",
+        "make": "Peugeot",
+        "model": "206",
+        "year_from": null,
+        "year_to": null
+      },
+      "video_ids": [
+        "dailymotion:x3r0fhm"
+      ]
+    }
+  ],
+  "new_task_ids": [],
+  "tasks_referenced_by_new_videos": {
+    "shock_absorbers": [
+      "dailymotion:x108l3l",
+      "dailymotion:xju7aq",
+      "instagram:DU-lED4ir-0"
+    ],
+    "brake_drums": [
+      "dailymotion:x1jmj2r",
+      "dailymotion:x1jnk59",
+      "dailymotion:x1jnv2z",
+      "dailymotion:x32632y",
+      "dailymotion:xzgs01"
+    ],
+    "brake_pads": [
+      "dailymotion:x1jpy34",
+      "dailymotion:x1jqay0",
+      "dailymotion:x1jqn4g",
+      "dailymotion:x2qigkz",
+      "dailymotion:x2ta6jc",
+      "dailymotion:x2w14rc",
+      "dailymotion:x35g9nh",
+      "dailymotion:x3f9bwu",
+      "dailymotion:x58lpv9",
+      "dailymotion:x58mgut",
+      "dailymotion:x5v8he4",
+      "dailymotion:x66pmm5",
+      "dailymotion:x682spt",
+      "dailymotion:x6fwopg",
+      "dailymotion:x6kcxwo",
+      "dailymotion:x6ku9zn",
+      "dailymotion:x6orphe",
+      "dailymotion:x6s9ojz",
+      "dailymotion:x6s9uoc",
+      "dailymotion:x703occ",
+      "dailymotion:x7pop5v",
+      "dailymotion:x7y7vsl",
+      "dailymotion:x8mx4xd",
+      "dailymotion:x8pbjnu",
+      "dailymotion:x8pbjxm",
+      "dailymotion:x97153e",
+      "dailymotion:x9m6tec",
+      "dailymotion:xbr2nr",
+      "dailymotion:xh5sos",
+      "dailymotion:xsn5bm",
+      "dailymotion:xu6xr6"
+    ],
+    "tires": [
+      "dailymotion:x1lk7ww",
+      "dailymotion:x7si7rb",
+      "dailymotion:xnm6m5",
+      "instagram:DN8RgjODbpq",
+      "instagram:DO84tEsiOhf",
+      "peertube:32c87118-abfb-4486-83d5-5741a8801a13"
+    ],
+    "transmission": [
+      "dailymotion:x2cw2jr",
+      "dailymotion:x2cw2mw",
+      "dailymotion:x2wl5is",
+      "dailymotion:x35xk6j",
+      "dailymotion:x3hwt8",
+      "dailymotion:x3hxx3",
+      "dailymotion:x5ltfrr",
+      "dailymotion:x7ts71",
+      "instagram:DCnc6tnyM1I",
+      "tiktok:7170272075700161798",
+      "tiktok:7170343705294015749",
+      "tiktok:7303002552759586091",
+      "tiktok:7334438186770369794",
+      "tiktok:7631460490107030804"
+    ],
+    "lighting": [
+      "dailymotion:x2n02zl",
+      "dailymotion:x2r3hm5",
+      "dailymotion:x2r406h",
+      "dailymotion:x2thbk2",
+      "dailymotion:x30qwh3",
+      "dailymotion:x3cycb1",
+      "dailymotion:x439jfn",
+      "dailymotion:x58lq01",
+      "dailymotion:x58ncii",
+      "dailymotion:x58qqr9",
+      "dailymotion:x58qrtg",
+      "dailymotion:x5kd27m",
+      "dailymotion:x5krcqu",
+      "instagram:DGAkRsXIHUA",
+      "tiktok:7133563451930086698",
+      "tiktok:7252395877715807534",
+      "tiktok:7307876302097337630",
+      "tiktok:7638099684019457294"
+    ],
+    "air_filter": [
+      "dailymotion:x2n04lc",
+      "dailymotion:x2n0640",
+      "dailymotion:x2qauq3",
+      "dailymotion:x2qiknb",
+      "dailymotion:x2qikx2",
+      "dailymotion:x2qptqu",
+      "dailymotion:x2s11f6",
+      "dailymotion:x2t2jp2",
+      "dailymotion:x3qxva5",
+      "dailymotion:x58lovh",
+      "dailymotion:x58lqrg",
+      "dailymotion:x58qqgk",
+      "dailymotion:x5s56x5",
+      "dailymotion:x6ipwld",
+      "dailymotion:x9pr3cy",
+      "dailymotion:xdlm98",
+      "instagram:C2StmaJpaJV",
+      "instagram:C3o9CLdreMp",
+      "instagram:DAiRcfkMaro",
+      "instagram:DHhKIN2R8IO",
+      "tiktok:7176488590426311978",
+      "tiktok:7255022155631725870",
+      "tiktok:7260893647535607086",
+      "tiktok:7263954715145243947",
+      "tiktok:7271834319746813185",
+      "tiktok:7409316537670143262",
+      "tiktok:7470392213718060294",
+      "tiktok:7586834968559586582",
+      "tiktok:7615948797092334870"
+    ],
+    "cabin_filter": [
+      "dailymotion:x2n04lc",
+      "dailymotion:x2qauq3",
+      "dailymotion:x31yxdw",
+      "dailymotion:x8g12h3",
+      "dailymotion:xidsy3",
+      "instagram:DE7f0Jhx1np",
+      "instagram:DIjDpR7C178",
+      "tiktok:7162423518838230277",
+      "tiktok:7230974192122957098",
+      "tiktok:7409316537670143262"
+    ],
+    "brake_caliper": [
+      "dailymotion:x2o06m1",
+      "dailymotion:x2to0ad",
+      "dailymotion:xyud46"
+    ],
+    "oil_change": [
+      "dailymotion:x2oaf43",
+      "dailymotion:x2r1j3g",
+      "dailymotion:x2wz5w6",
+      "dailymotion:x5kybvu",
+      "dailymotion:x5qycj5",
+      "dailymotion:x5qygbq",
+      "dailymotion:x5qypra",
+      "dailymotion:x5v8ib1",
+      "dailymotion:x66mhuw",
+      "dailymotion:x6cqrp9",
+      "dailymotion:x6huv2q",
+      "dailymotion:x76jq9g",
+      "dailymotion:x7t4gso",
+      "dailymotion:xidfg",
+      "dailymotion:xl8il6",
+      "instagram:DCCQ3njs7Pq",
+      "instagram:DU-H4qegdg4",
+      "instagram:DUY-UIsChAf",
+      "instagram:DZCh8BYt0Xt",
+      "instagram:DZw09pcEr7h",
+      "instagram:DebeQB3ql3_",
+      "peertube:4cba1a01-23d9-4de5-ac6d-427425eb393c",
+      "peertube:641036f9-3708-46c6-b3ac-7d82f737074e",
+      "tiktok:7062234486934850862",
+      "tiktok:7164695552268176686",
+      "tiktok:7177979371054222638",
+      "tiktok:7192690889029094702",
+      "tiktok:7356778260522339627",
+      "tiktok:7401721983483841822",
+      "tiktok:7476718196129631534",
+      "tiktok:7504380440657054998",
+      "tiktok:7508084215947218198"
+    ],
+    "oil_filter": [
+      "dailymotion:x2oaf43",
+      "dailymotion:x6dci1d",
+      "dailymotion:x6ips3m",
+      "dailymotion:x7t4gso",
+      "dailymotion:x8pboew",
+      "tiktok:7042056373265304879",
+      "tiktok:7221704738633501995",
+      "tiktok:7243894771884887342",
+      "tiktok:7508084215947218198"
+    ],
+    "glow_plugs": [
+      "dailymotion:x2r18vc",
+      "dailymotion:x2u96z9"
+    ],
+    "fuel_filter": [
+      "dailymotion:x2s1flg",
+      "dailymotion:x2ydfc3",
+      "dailymotion:x36splv",
+      "dailymotion:x5kd2gl",
+      "dailymotion:x63jb6n",
+      "dailymotion:x6ifjog",
+      "dailymotion:x761kst",
+      "dailymotion:xtfcmr",
+      "instagram:C5kKzO-L-Z5",
+      "tiktok:6885175145632124161"
+    ],
+    "wipers": [
+      "dailymotion:x35s8zh",
+      "dailymotion:x6few43",
+      "dailymotion:x7si977",
+      "dailymotion:x8pi1zu",
+      "dailymotion:x8umt1",
+      "instagram:Cuj0m2sMXD8",
+      "instagram:DFn5DV5MhFB",
+      "instagram:DFn5Ui0sQaz",
+      "instagram:DQBuG8KiJ7d",
+      "instagram:DXGt5CZj3J3",
+      "tiktok:7312491095575842054",
+      "tiktok:7327747673270947118",
+      "tiktok:7330420579637415210",
+      "tiktok:7423823102896770336",
+      "tiktok:7533517074686168328"
+    ],
+    "belts": [
+      "dailymotion:x54yon9",
+      "dailymotion:x5ltgb5",
+      "dailymotion:x686jts",
+      "dailymotion:x92383c",
+      "instagram:C2ZMEPKBn4h",
+      "instagram:DCK1JwasTx8",
+      "peertube:0681358f-1222-4c4f-a5b2-e7e98f7aa697",
+      "tiktok:7348512094209330464",
+      "tiktok:7591544635462274318"
+    ],
+    "spark_plugs": [
+      "dailymotion:x58lr3r",
+      "dailymotion:x5qs54n",
+      "dailymotion:x6ipwld",
+      "dailymotion:x8pbl3x",
+      "dailymotion:xf9836"
+    ],
+    "battery": [
+      "dailymotion:x5kfueg",
+      "dailymotion:x5ltgax",
+      "dailymotion:x5viuve",
+      "dailymotion:x74wgdj",
+      "dailymotion:x8jfx7m",
+      "dailymotion:x8madil",
+      "dailymotion:x8pbkiu",
+      "dailymotion:x8pebet",
+      "dailymotion:x8s2tds",
+      "dailymotion:x9f7da6",
+      "dailymotion:x9f7deu",
+      "dailymotion:xbaxou2",
+      "dailymotion:xs93sz",
+      "dailymotion:xsbecs",
+      "dailymotion:xzrztw",
+      "instagram:C29-yxiBlGw",
+      "instagram:DEks_-dtRvE",
+      "instagram:DEvCgBPRkXQ",
+      "instagram:DHBidkFNz5m",
+      "peertube:5a7098bd-d14a-45fa-8025-89ab57fa09bd",
+      "peertube:a34b6564-8225-4f6e-83ad-1cb9f126114c",
+      "tiktok:7267351959064038699",
+      "tiktok:7339582861135088926",
+      "tiktok:7353215753023163681",
+      "tiktok:7628226889928183048"
+    ],
+    "body_hardware": [
+      "dailymotion:x5qyn57"
+    ],
+    "wheel_change": [
+      "dailymotion:x5s83x2"
+    ],
+    "sensors": [
+      "dailymotion:x5v54fd",
+      "dailymotion:x5v598z",
+      "dailymotion:x5v5am1",
+      "dailymotion:x8pbr14",
+      "dailymotion:x8pkebl"
+    ],
+    "cooling": [
+      "dailymotion:x686jts",
+      "dailymotion:x8pbr14",
+      "dailymotion:x8pkebl",
+      "instagram:C29-yxiBlGw",
+      "instagram:C8WDWZwC-sp",
+      "instagram:DDCIejCvuZd",
+      "tiktok:7276937542325374250",
+      "tiktok:7610843141305830678",
+      "tiktok:7612854721174326558"
+    ],
+    "equipment_controls": [
+      "dailymotion:x6au287"
+    ],
+    "fuses": [
+      "dailymotion:x6gvx8s",
+      "dailymotion:x8hkyqk",
+      "dailymotion:x8rhkhd",
+      "instagram:C0t44i3Mo-7"
+    ],
+    "brake_discs": [
+      "dailymotion:x6iptqt",
+      "dailymotion:x6ipuby",
+      "dailymotion:x9m6tec",
+      "dailymotion:xh5sos",
+      "instagram:C6_dczqN-7Y",
+      "peertube:ab619561-108e-41d1-b6bd-ab1c8f5d3405"
+    ],
+    "suspension_springs": [
+      "dailymotion:x6uwvf9"
+    ],
+    "stabilizer_links": [
+      "dailymotion:x7xjr4x"
+    ],
+    "oil_spec": [
+      "dailymotion:x8f8e58",
+      "dailymotion:x8f8z8i",
+      "instagram:C9z0dk3OsGZ"
+    ],
+    "brake_fluid": [
+      "dailymotion:x8pefmo"
+    ],
+    "diagnostics": [
+      "dailymotion:x8pkebl",
+      "instagram:C0PhmucMWKO",
+      "instagram:C29-yxiBlGw",
+      "instagram:C36ot1txdkR",
+      "instagram:DB61vxkOwi8",
+      "instagram:DRlxYDeiVqI",
+      "instagram:DU-lED4ir-0",
+      "instagram:DbAA9taBiAu",
+      "tiktok:6935134139700104453",
+      "tiktok:7226758843114540289",
+      "tiktok:7540877783879142687"
+    ],
+    "vehicle_menus": [
+      "instagram:CrDMXVVrS6y",
+      "instagram:DJu6CYpSuRi",
+      "tiktok:7592631112606731533"
+    ],
+    "key_battery": [
+      "tiktok:6988879312271281414",
+      "tiktok:7293969527539240235",
+      "tiktok:7318629189093952810"
+    ],
+    "wheel_bearing": [
+      "tiktok:7101053686046133510",
+      "tiktok:7440309542631607595"
+    ],
+    "service_reset": [
+      "tiktok:7310294015293787434"
+    ]
+  },
+  "warnings": [
+    "The bounded field/pattern scan cannot prove the absence of every secret. No secret store or environment variable was read.",
+    "Vehicle/task checks prove approved metadata survives in real catalog records, not manufacturer compatibility or video correctness. No media or audio was reviewed."
+  ]
+}

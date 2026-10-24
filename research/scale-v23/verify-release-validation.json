@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checked_at": "2026-10-24T07:39:26.076056+00:00",
+  "tests": 13,
+  "command": "python work/scale-v23/test_verify_release.py",
+  "baseline_smoke_checks": 29,
+  "baseline_smoke_scope": "Single existing artifact supplied twice; not final local/Git parity.",
+  "final_release_validation": "pending final export and publication-approved.json",
+  "network_requests": 0,
+  "database_opened": false,
+  "files": {
+    "verify_release.py": "346b9125f692d6ea39191a8f5058d7e65b87e20c50ae412ff94125968dff2dd3",
+    "test_verify_release.py": "8083286060f3428fdd2b3b7a22646e95c65fb323770a3e83d1af2163fd971b31",
+    "baseline-identities.json": "e332364d509c28322d867731c55b1aff473d17a65bfded3bb9b9ddd1e9956c98",
+    "verify-release-baseline-smoke.json": "d6768bbed52caf82516d8dcfa4a2ca5a106b9b972e79830eeb0448de1338d292",
+    "open-platforms-review.json": "c4e79852c5679d80bf6378239979027483c59615471817e5f8612b79f02b843f"
+  }
+}

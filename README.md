@@ -1,15 +1,18 @@
-# RaceLink Academy — Clair et Sombre V22
+# RaceLink Academy — Catalogue V23
 
-**Version `themes-v22` publiée ; contrôles ciblés documentés.** [Ouvrir](https://valeriongg.github.io/racelink-academy/?release=themes-v22&build=9985987) · [Validation et limites](research/themes-v22/VALIDATION.md).
+[Voir la bibliothèque](https://valeriongg.github.io/racelink-academy/?release=collection-v23) · [Bilan de collecte](research/scale-v23/results.json) · [Comparatif outils et coûts](research/scale-v23/benchmark.md)
 
-Bibliothèque automobile et sport mécanique : 36,901 vidéos référencées et 11 guides, catalogue inchangé. Clair/Sombre couvre accueil, recherche, grandes cartes, menus, filtres, véhicule et lecteurs. Les photographies et miniatures gardent leurs couleurs. Le choix est mémorisé ; sans choix, le système est suivi.
+**37,331 références vidéo et 11 guides.** Cette mise à jour ajoute 430 références réelles après dédoublonnage et revue des titres/métadonnées. Les modes clair et sombre V22 sont conservés. Les sources PeerTube se retrouvent avec le filtre « Autres sources ».
 
-Recherche par question, langue et véhicule ; sources, descriptions et transcriptions disponibles restent attribuées. Les métadonnées ne prouvent ni visionnage ni compatibilité. GitHub Pages reste distinct du domaine Focus.
+Les publications ne sont pas toutes visionnées : leur qualité technique, leur audio et la compatibilité véhicule ne sont pas certifiés. Une langue déclarée par une plateforme ou estimée depuis un titre est identifiée comme telle. Aucune nouvelle transcription ni licence libre n'a été inventée.
 
-[Produit](PRODUCT.md) · [Design](DESIGN.md) · [Validation V22](research/themes-v22/VALIDATION.md) · [Historique cinéma](research/cinema-v21/VALIDATION.md).
+Le collecteur sait préparer plus de 100 000 lignes avec reprise, mais **100 000 vidéos nouvelles n'ont pas été acquises**. Le bilan sépare données découvertes, candidats et ajouts. Le pilote Apify de 1 000 publications maximum est préparé, non exécuté ; compte et plafond de dépense restent nécessaires.
 
-109 contrats applicatifs et 36 tests de thème, 14 observations/scénarios navigateur, 19 fichiers publics comparés. Les rapports précisent la portée ; les viewports sont simulés et aucun audit d’accessibilité complet n’est revendiqué.
+## Outils livrés
 
-## Publication et outils
+- [Préparation de gros lots](collector/SCALE_INGEST.md) : stockage SQLite temporaire, conflits entre variantes, reprise, revue séparée.
+- [Collecteur Dailymotion](collector/OPEN-COLLECTOR.md) : métadonnées publiques, limites, cache, pause après refus ou limitation.
+- [Pilote TikTok/Instagram](collector/collection/apify-french-pilot-v23/plan.json) : 14 lots, maximum cumulé 5 $, sans médias ni transcription.
+- [Accès requis et alternatives](research/scale-v23/access-required.json).
 
-`site/` est l’export statique déployé par GitHub Actions. Le catalogue compressé possède un repli JSON. La consultation ne nécessite pas de compte. Les outils d’acquisition existants restent dans [collector](collector/README.md) ; ils n’ont pas été exécutés pour cette refonte. [README précédent archivé](research/themes-v22/history-before-v22/README-git.md).
+GitHub Pages est un aperçu indépendant du domaine Focus. `site/` contient l'export statique ; `collector/` contient les outils. [Validation V22 du design](research/themes-v22/VALIDATION.md).

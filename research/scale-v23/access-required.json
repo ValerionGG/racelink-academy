@@ -1,0 +1,179 @@
+{
+  "checked_at": "2026-10-24",
+  "scope": "Documentation and access audit only; no purchase, account creation, credential read, media download or import",
+  "routes": [
+    {
+      "priority": 1,
+      "id": "existing_creator_metadata",
+      "platforms": [
+        "youtube",
+        "dailymotion"
+      ],
+      "state": "available_bounded_collection",
+      "observed": "Agent Reach doctor identifies yt-dlp; parallel Dailymotion legacy GET collection succeeds without authentication.",
+      "required_now": [
+        "Known educational creator or playlist IDs",
+        "Existing canonical-ID deduplication",
+        "Immutable source metadata and conservative qualification"
+      ],
+      "required_for_official_youtube_api": [
+        "One Google Cloud project with YouTube Data API enabled",
+        "One securely configured API key",
+        "Refresh/deletion schedule and API policy review"
+      ],
+      "not_required": [
+        "Multiple social accounts",
+        "Paid scraper",
+        "Media download"
+      ],
+      "quota_evidence": "https://developers.google.com/youtube/data/determine_quota_cost",
+      "current_probe_caveat": "Dailymotion v2 profile endpoint returned 401 once; legacy /videos success is a separate observed route. No fallback was attempted after the v2 probe."
+    },
+    {
+      "priority": 1,
+      "id": "exa_discovery",
+      "platforms": [
+        "instagram",
+        "tiktok",
+        "facebook",
+        "youtube",
+        "vimeo",
+        "dailymotion"
+      ],
+      "state": "parent_observed_operational",
+      "observed": "Root reported a successful current MCP query and an active bounded 96-query collection. The older 429 is historical, not current.",
+      "required_now": [
+        "Canonical URLs",
+        "Index-title provenance",
+        "Deduplication across queries",
+        "No composite index excerpt treated as native caption or audio evidence"
+      ],
+      "pricing_source": "https://exa.ai/pricing",
+      "billing_caveat": "Public API prices are not proof of the connected MCP account balance or billing conditions."
+    },
+    {
+      "priority": 2,
+      "id": "apify_targeted_pilot",
+      "platforms": [
+        "tiktok",
+        "instagram"
+      ],
+      "state": "awaiting_user_connection_and_budget",
+      "observed": "Root saw the sign-in screen; no APIFY_TOKEN environment variable present. Only public Actor metadata was fetched here.",
+      "required": [
+        "One user-connected Apify account",
+        "Verified actual balance and pricing tier",
+        "Explicit budget for the specific pilot",
+        "Permitted source list and permitted downstream metadata use",
+        "Run-level maxTotalChargeUsd and Actor-specific result cap"
+      ],
+      "proposed_pilot": {
+        "jobs": 14,
+        "max_results_total": 1000,
+        "max_spend_usd_total": 5,
+        "by_platform": {
+          "tiktok": {
+            "jobs": 10,
+            "max_results_total": 600,
+            "caps_per_job": [
+              60,
+              60,
+              60,
+              60,
+              60,
+              60,
+              60,
+              60,
+              60,
+              60
+            ]
+          },
+          "instagram": {
+            "jobs": 4,
+            "max_results_total": 400,
+            "caps_per_job": [
+              100,
+              100,
+              100,
+              100
+            ]
+          }
+        },
+        "media_download": false,
+        "transcription": false,
+        "automatic_top_up": false,
+        "status": "prepared_not_executed",
+        "basis": "Aligned public copy with the actual 14-job plan; original access audit retained unchanged."
+      },
+      "exclusions": [
+        "Unresolved restricted URLs",
+        "Account/cookie rotation",
+        "Automatic retries through a different provider after access denial",
+        "Private posts",
+        "Comments and follower datasets"
+      ],
+      "pricing_proof": "proofs/apify-public-prices.json"
+    },
+    {
+      "priority": 3,
+      "id": "creator_exports_and_official_oauth",
+      "platforms": [
+        "tiktok",
+        "instagram",
+        "facebook",
+        "vimeo"
+      ],
+      "state": "pipeline_available_sources_and_authorizations_needed",
+      "required": [
+        "Creator-provided metadata export with a source manifest and reuse terms, or an approved official app",
+        "Creator OAuth for TikTok Display video.list and relevant Meta account scopes",
+        "Vimeo app public-scope token for public metadata",
+        "Platform-specific cursor checkpoint and deletion handling"
+      ],
+      "existing_pipeline": "outputs/focus-academy/scripts/public_export.py",
+      "scope_caveat": "Authorizing one creator does not authorize retrieval of all creators. Do not infer transcript rights from permission to list metadata."
+    }
+  ],
+  "alternatives_not_activated": [
+    {
+      "id": "tikhub",
+      "missing": [
+        "Account",
+        "API key",
+        "Funded balance or endpoint-eligible free credit",
+        "Endpoint-specific price and yield validation",
+        "Downstream use authorization"
+      ],
+      "reason": "Per-request price is not per-useful-video price; no demonstrated advantage over the single proposed Apify pilot."
+    },
+    {
+      "id": "bright_data",
+      "missing": [
+        "Filtered sample with automotive/French evidence",
+        "Dataset contract and downstream reuse terms",
+        "Account and paid order authorization"
+      ],
+      "reason": "Public generic sample previously audited had no admissible automotive tutorial; global record count is not niche coverage."
+    },
+    {
+      "id": "tiktok_research",
+      "reason": "Commercial project ineligible under current official FAQ; not a proposed workaround."
+    },
+    {
+      "id": "mediacrawler",
+      "reason": "Non-Commercial Learning License 1.1 excludes large-scale crawling and requires written authorization for commercial use; principal platforms are not the requested western social catalogue."
+    },
+    {
+      "id": "vidiq",
+      "reason": "4 credits available; IG profile reels and social outlier searches cost5 per call. Reels tool capped12 with no pagination, so not the bulk route even after recharge."
+    }
+  ],
+  "evidence_rules": {
+    "indexed_title": "Candidate subject evidence only; preserve exact original and source.",
+    "native_caption": "Evidence of caption text, not proof of spoken language or technical correctness.",
+    "transcript": "Requires genuine obtained subtitle/transcript, source, access basis and automatic/manual status.",
+    "language": "Separate metadata text language estimate from audio language; no inference from creator region, query language or hashtag alone.",
+    "rights": "Software license and provider access do not license third-party video or verbatim captions.",
+    "counts": "Keep raw, unique, new, accepted, editorially reviewed, French-text and transcript counts separate."
+  }
+}

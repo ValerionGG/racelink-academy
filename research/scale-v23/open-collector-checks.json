@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-24T07:40:21.328920+00:00",
+  "tests": 15,
+  "passed": 15,
+  "failed": 0,
+  "network_requests": 0,
+  "tests_use_fake_http": true,
+  "preview_output_not_created": true,
+  "collector_sha256": "d8d0acb5df80f804c7f7946d4a5c8c3199295b312f0a523ed4a6f68bae140729",
+  "final_v3_unchanged": true,
+  "database_modified": false,
+  "media_downloaded": false
+}

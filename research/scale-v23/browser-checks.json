@@ -1,0 +1,17 @@
+{
+  "release": "collection-v23",
+  "status": "passed",
+  "code_commit": "ba40beb78c3eeec5baadd59026ee3c74dfecfa3f",
+  "scope": "Live GitHub Pages, desktop browser. Metadata/search interactions only; no third-party media playback or new mobile audit.",
+  "observations": [
+    {"scenario": "French TikTok filter", "result": "27 results; estimated-language label visible"},
+    {"scenario": "Other sources filter", "result": "14 PeerTube references, Autres sources label and related topics visible"},
+    {"scenario": "All platforms in filter dialog", "result": "YouTube 36502, Dailymotion 319, Vimeo 3, TikTok 242, Instagram 203, Facebook 46, Twitch 2, Other 14, RaceLink guides 11"},
+    {"scenario": "Dailymotion plus French plus vidange", "result": "10 results; task suggestion and source thumbnails displayed"},
+    {"scenario": "Light/dark switch", "result": "Both rendered; dark selection persisted across navigation"},
+    {"scenario": "French TikTok plus Citroën C1", "result": "One newly imported reference 7615948797092334870; vehicle mention visible"},
+    {"scenario": "New Citroën C1 detail", "result": "Clean title, canonical TikTok author link, estimated French, unknown duration/level, no transcript correctly disclosed"}
+  ],
+  "screenshots": ["browser/platform-counts-light.png", "browser/dailymotion-search-light.png", "browser/dailymotion-search-dark.png", "browser/new-citroen-tiktok-detail.png"],
+  "limitations": ["Some indexed social records have no usable thumbnail, caption or creator display name.", "Links and metadata are indexed references, not proof that every video remains playable.", "No new audio language or technical procedure verification."]
+}

@@ -1,0 +1,111 @@
+{
+  "checked_at": "2026-10-24T07:15:59.882271+00:00",
+  "repositories": [
+    {
+      "full_name": "yt-dlp/yt-dlp",
+      "html_url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "stargazers_count": 201149,
+      "pushed_at": "2026-10-23T15:18:53Z",
+      "archived": false,
+      "default_branch": "master",
+      "license": {
+        "key": "unlicense",
+        "name": "The Unlicense",
+        "spdx_id": "Unlicense",
+        "url": "https://api.github.com/licenses/unlicense",
+        "node_id": "MDc6TGljZW5zZTE1"
+      }
+    },
+    {
+      "full_name": "instaloader/instaloader",
+      "html_url": "https://github.com/instaloader/instaloader",
+      "description": "Download pictures (or videos) along with their captions and other metadata from Instagram.",
+      "stargazers_count": 13662,
+      "pushed_at": "2026-10-23T21:46:48Z",
+      "archived": false,
+      "default_branch": "master",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    },
+    {
+      "full_name": "NanmiCoder/MediaCrawler",
+      "html_url": "https://github.com/NanmiCoder/MediaCrawler",
+      "description": "小红书笔记 | 评论爬虫、抖音视频 | 评论爬虫、快手视频 | 评论爬虫、B 站视频 ｜ 评论爬虫、微博帖子 ｜ 评论爬虫、百度贴吧帖子 ｜ 百度贴吧评论回复爬虫  | 知乎问答文章｜评论爬虫",
+      "stargazers_count": 67961,
+      "pushed_at": "2026-10-15T04:53:41Z",
+      "archived": false,
+      "default_branch": "main",
+      "license": {
+        "key": "other",
+        "name": "Other",
+        "spdx_id": "NOASSERTION",
+        "url": null,
+        "node_id": "MDc6TGljZW5zZTA="
+      }
+    },
+    {
+      "full_name": "TikHub/TikHub-API-Python-SDK",
+      "html_url": "https://github.com/TikHub/TikHub-API-Python-SDK",
+      "description": "High-performance asynchronous Douyin(抖音) TikTok Xiaohongshu(小红书) Kuaishou(快手) Weibo(微博) Instagram YouTube(油管) Twitter(X) Captcha Solver(验证码解决器) Temp Mail(临时邮箱) API(接口).",
+      "stargazers_count": 923,
+      "pushed_at": "2026-10-03T06:40:44Z",
+      "archived": false,
+      "default_branch": "main",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      }
+    },
+    {
+      "full_name": "apify/apify-client-python",
+      "html_url": "https://github.com/apify/apify-client-python",
+      "description": "Apify API client for Python—Programmatically run Actors, manage and stream data from storages (datasets, key-value stores, request queues), schedule and monitor runs, and access the full Apify platform API. Sync and async interfaces with automatic retries and pagination.",
+      "stargazers_count": 104,
+      "pushed_at": "2026-10-23T18:05:39Z",
+      "archived": false,
+      "default_branch": "master",
+      "license": {
+        "key": "apache-2.0",
+        "name": "Apache License 2.0",
+        "spdx_id": "Apache-2.0",
+        "url": "https://api.github.com/licenses/apache-2.0",
+        "node_id": "MDc6TGljZW5zZTI="
+      }
+    },
+    {
+      "full_name": "luminati-io/Instagram-Reels-dataset-samples",
+      "html_url": "https://github.com/luminati-io/Instagram-Reels-dataset-samples",
+      "description": "Explore Instagram Reels data via Bright Data API for social media insights.",
+      "stargazers_count": 0,
+      "pushed_at": "2026-01-15T13:11:11Z",
+      "archived": false,
+      "default_branch": "main",
+      "license": null
+    },
+    {
+      "full_name": "Panniantong/Agent-Reach",
+      "html_url": "https://github.com/Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "stargazers_count": 101418,
+      "pushed_at": "2026-10-23T06:44:33Z",
+      "archived": false,
+      "default_branch": "main",
+      "license": {
+        "key": "mit",
+        "name": "MIT License",
+        "spdx_id": "MIT",
+        "url": "https://api.github.com/licenses/mit",
+        "node_id": "MDc6TGljZW5zZTEz"
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "created_at": "2026-10-24T07:25:33.551131+00:00",
+  "status": "passed",
+  "new_stage_tests": 23,
+  "existing_regressions_passed": 97,
+  "existing_regression_command": "python -m unittest tests_bulk_ingest tests_social_metadata tests_public_export -q",
+  "new_test_command": "python work/scale-v23/test_scale_ingest.py",
+  "scope": {
+    "network_requests": 0,
+    "production_catalog_opened": false,
+    "production_database_modified": false,
+    "temporary_test_databases_only": true,
+    "new_real_videos": 0
+  },
+  "files": {
+    "outputs/focus-academy/scripts/scale_ingest.py": "3397e81cb786f1917831dce274344ab859253e5a7ee7842948657373de5a2427",
+    "work/scale-v23/test_scale_ingest.py": "d6e5c697cfc11777a72516a6f08706de00c65c54702ad71f0183aa12f422ff50",
+    "work/scale-v23/benchmark_scale.py": "f6592843566caa910c566428e4551465a3bcdb41f97cb42c818a87d7a7633660",
+    "work/scale-v23/README.md": "0f068ca26d67dd6679d31820b7c57779804e2040fd1cd6bea369773ce330a502",
+    "work/scale-v23/STAGING.md": "8745bd56a6bfa80d1fb32ec554eeb01b5115d6627b4ba22110f1f0d2b710b232",
+    "work/scale-v23/BACKEND-AUDIT.md": "7fe942a07fc970588cae5e6c389aa3fc54f27d2c58f2bdea777ddee23e6ea38c",
+    "work/scale-v23/benchmark-results.json": "b07809999b8bf672cef5186bd7fd439327c98add253321cbb51c7d48cb82f172"
+  },
+  "updated_at": "2026-10-24T07:53:09.202832+00:00",
+  "benchmark": {
+    "synthetic_only": true,
+    "new_real_videos": 0,
+    "production_catalog_opened": false,
+    "network_requests": 0,
+    "unique_synthetic_identities": 100200,
+    "source_rows": 100301,
+    "duplicate_variants": 101,
+    "stage_runs_rows": [
+      25000,
+      25000,
+      25000,
+      25000,
+      301
+    ],
+    "batches": 101,
+    "stage_seconds": 80.76,
+    "prepare_seconds": 35.142,
+    "elapsed_seconds": 116.343,
+    "peak_working_set_bytes": 66764800,
+    "stage_bytes": 416903168,
+    "prepared_bytes": 327386016,
+    "script_sha256": "bef40c950aebed5b1a175ca6227f3e06342123f99214b0b643fca2e6918a219f",
+    "limits": "One machine; synthetic short metadata, not video acquisition or pedagogical qualification.",
+    "status": "passed"
+  },
+  "help_smoke": {
+    "command": "python outputs/focus-academy/scripts/scale_ingest.py --help",
+    "exit_code": 0
+  },
+  "version": "1.0.2",
+  "independent_review_fix": "Persistent stage invalidation when source hash changes, including JSON/Unicode/line-size failures before normal end-of-read. Restoration cannot rehabilitate committed rows.",
+  "benchmark_scope": "Measured on version 1.0.1, preserved original script hash; not rerun after the 1.0.2 error-path correction.",
+  "campaign_preparation_version": "1.0.1",
+  "delivered_engine_version": "1.0.2"
+}

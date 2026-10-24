@@ -1,0 +1,518 @@
+{
+  "created_at": "2026-10-24T07:54:15.187105+00:00",
+  "policy": "Local absolute paths redacted in copies only; original hashes retained.",
+  "files": [
+    {
+      "source": "work/scale-v23/README.md",
+      "public_copy": "outputs/focus-academy/research/scale-v23/SCALE_INGEST.md",
+      "source_sha256": "0f068ca26d67dd6679d31820b7c57779804e2040fd1cd6bea369773ce330a502",
+      "public_sha256": "0f068ca26d67dd6679d31820b7c57779804e2040fd1cd6bea369773ce330a502",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/OPEN-COLLECTOR.md",
+      "public_copy": "outputs/focus-academy/research/scale-v23/OPEN-COLLECTOR.md",
+      "source_sha256": "9f0fed7ba7f6bc4c8dc6883eeb7ec60317c22472950c9f1c386518bcae3fb3ce",
+      "public_sha256": "9f0fed7ba7f6bc4c8dc6883eeb7ec60317c22472950c9f1c386518bcae3fb3ce",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/BACKEND-AUDIT.md",
+      "public_copy": "outputs/focus-academy/research/scale-v23/BACKEND-AUDIT.md",
+      "source_sha256": "7fe942a07fc970588cae5e6c389aa3fc54f27d2c58f2bdea777ddee23e6ea38c",
+      "public_sha256": "64005a4b55913d793c339b755d4d59bb79716f9e95159ea854736dd9fc5495ef",
+      "local_paths_redacted": true,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/validation-results.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/validation-results.json",
+      "source_sha256": "c766a2b7c53011f56278637fc8df358b065121640b856db4646d59bfb661a75c",
+      "public_sha256": "c766a2b7c53011f56278637fc8df358b065121640b856db4646d59bfb661a75c",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/benchmark-results.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/benchmark-results.json",
+      "source_sha256": "b07809999b8bf672cef5186bd7fd439327c98add253321cbb51c7d48cb82f172",
+      "public_sha256": "b07809999b8bf672cef5186bd7fd439327c98add253321cbb51c7d48cb82f172",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/open-collector-checks.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/open-collector-checks.json",
+      "source_sha256": "5192dfa9e1fe7212be9c039f6df070efce248feb9e004804f9e4cdcb69d76cfd",
+      "public_sha256": "5192dfa9e1fe7212be9c039f6df070efce248feb9e004804f9e4cdcb69d76cfd",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/release-checks.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/release-checks.json",
+      "source_sha256": "55a592b83bb7d6d8f8b97e8131ec96040dd5021b1b631ca5ef039b2315a4af15",
+      "public_sha256": "55a592b83bb7d6d8f8b97e8131ec96040dd5021b1b631ca5ef039b2315a4af15",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/verify-release-validation.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/verify-release-validation.json",
+      "source_sha256": "b8d404f5ecac31c1b207048069aef0940aab7fc9203e06f1000c5fc2d0d4c8ec",
+      "public_sha256": "b8d404f5ecac31c1b207048069aef0940aab7fc9203e06f1000c5fc2d0d4c8ec",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/stage-revision-comparison.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/stage-revision-comparison.json",
+      "source_sha256": "f59c1a3635d049085668e7df870b0027538b94ef6bbb33be9f7d33c335c586ac",
+      "public_sha256": "f59c1a3635d049085668e7df870b0027538b94ef6bbb33be9f7d33c335c586ac",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/benchmark.md",
+      "public_copy": "outputs/focus-academy/research/scale-v23/benchmark.md",
+      "source_sha256": "878202ea8f8b6e4740703a14f500573126f90424b8e9df10b35e0b5c35029bf1",
+      "public_sha256": "878202ea8f8b6e4740703a14f500573126f90424b8e9df10b35e0b5c35029bf1",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/access-required.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/access-required.json",
+      "source_sha256": "5aaa64cb412d2279c2d022bc984f2e2b5f1b3b379bd884dcc5bc96e150ed87fe",
+      "public_sha256": "381ba2b74e71dd492354d34da55d09ab56837ad0bae504f65cfd3bba817bd8be",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": true
+    },
+    {
+      "source": "work/scale-v23/research/social-final-review-notes.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/social-final-review-notes.json",
+      "source_sha256": "eed232725ace9e13dc7052ce98d3c2f2d6f2878047059f77244ac2ac0204a21a",
+      "public_sha256": "1e39451b367736015c183e4b5cf5630b85c40de87138db6cd82da13cc30e09db",
+      "local_paths_redacted": true,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/proof-manifest.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/proof-manifest.json",
+      "source_sha256": "5a86bd96395e4f2d7a62943eb5deaa2773d53fd227f730b4e788d41d56c1a2e8",
+      "public_sha256": "5a86bd96395e4f2d7a62943eb5deaa2773d53fd227f730b4e788d41d56c1a2e8",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/social-editorial-approved/report.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/social-editorial-approved.json",
+      "source_sha256": "d6bef62c64dc65bec662b28387828b3e121b68ec51f31bf9fc297ff839e0f1ae",
+      "public_sha256": "d6bef62c64dc65bec662b28387828b3e121b68ec51f31bf9fc297ff839e0f1ae",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/social-import-result.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/social-import-result.json",
+      "source_sha256": "f1203e0d0a1fc794a92598b9bec1c4e0bdcb0b2422f05b43a006a58e423b5d61",
+      "public_sha256": "f1203e0d0a1fc794a92598b9bec1c4e0bdcb0b2422f05b43a006a58e423b5d61",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/release-metadata-corrections/report.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/release-metadata-corrections.json",
+      "source_sha256": "7e63370fef3037fbbdf65af703061408dc03bc512a31f23b0f70af44524fff3a",
+      "public_sha256": "7e63370fef3037fbbdf65af703061408dc03bc512a31f23b0f70af44524fff3a",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/proofs/apify-public-prices.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/proofs/apify-public-prices.json",
+      "source_sha256": "af998387c3d5f77302668ecdd859666b8e2e426fd850dc623a6d4e873db4f8f0",
+      "public_sha256": "af998387c3d5f77302668ecdd859666b8e2e426fd850dc623a6d4e873db4f8f0",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/proofs/dailymotion-public-access.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/proofs/dailymotion-public-access.json",
+      "source_sha256": "9b7b08d77088874a73b26e1ed8f985ec7b50a372d1623250fc2bf9a8ad3995b9",
+      "public_sha256": "9b7b08d77088874a73b26e1ed8f985ec7b50a372d1623250fc2bf9a8ad3995b9",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/proofs/github-repositories.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/proofs/github-repositories.json",
+      "source_sha256": "2e123cd22d64e266643cb4d99aa859d0bf672805417bdeb785908f71be402e7e",
+      "public_sha256": "2e123cd22d64e266643cb4d99aa859d0bf672805417bdeb785908f71be402e7e",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/proofs/luminati-io--Instagram-Reels-dataset-samples--license.txt",
+      "public_copy": "outputs/focus-academy/research/scale-v23/proofs/luminati-io--Instagram-Reels-dataset-samples--license.txt",
+      "source_sha256": "541d8e541b2fd4ee541e2ab99c434f491b933d781c09a7034e9aa82a62950a7e",
+      "public_sha256": "541d8e541b2fd4ee541e2ab99c434f491b933d781c09a7034e9aa82a62950a7e",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/proofs/luminati-io--Instagram-Reels-dataset-samples--readme.txt",
+      "public_copy": "outputs/focus-academy/research/scale-v23/proofs/luminati-io--Instagram-Reels-dataset-samples--readme.txt",
+      "source_sha256": "4090ad35fb8f594bf411c376ec3c271ecfd01164765e0005d0f75a018829a8a4",
+      "public_sha256": "4090ad35fb8f594bf411c376ec3c271ecfd01164765e0005d0f75a018829a8a4",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/proofs/NanmiCoder--MediaCrawler--license.txt",
+      "public_copy": "outputs/focus-academy/research/scale-v23/proofs/NanmiCoder--MediaCrawler--license.txt",
+      "source_sha256": "9a2eed2fd5410cc59cfceae5d965c2a13d36907caa8bc6316d71e67391bbd5aa",
+      "public_sha256": "9a2eed2fd5410cc59cfceae5d965c2a13d36907caa8bc6316d71e67391bbd5aa",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/proofs/NanmiCoder--MediaCrawler--readme.txt",
+      "public_copy": "outputs/focus-academy/research/scale-v23/proofs/NanmiCoder--MediaCrawler--readme.txt",
+      "source_sha256": "3c1168c24bdd9b9c0897acc87429d385d1d690367fecbfea29d7ebea95f6e9b4",
+      "public_sha256": "3c1168c24bdd9b9c0897acc87429d385d1d690367fecbfea29d7ebea95f6e9b4",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/proofs/TikHub--TikHub-API-Python-SDK--license.txt",
+      "public_copy": "outputs/focus-academy/research/scale-v23/proofs/TikHub--TikHub-API-Python-SDK--license.txt",
+      "source_sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+      "public_sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/research/proofs/TikHub--TikHub-API-Python-SDK--readme.txt",
+      "public_copy": "outputs/focus-academy/research/scale-v23/proofs/TikHub--TikHub-API-Python-SDK--readme.txt",
+      "source_sha256": "e86d0da0ad05d51a07e3a69a1a811fbc53335cda40d9e8b002b64fe56af68595",
+      "public_sha256": "e86d0da0ad05d51a07e3a69a1a811fbc53335cda40d9e8b002b64fe56af68595",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/open-platforms/final-v3/REPORT.md",
+      "public_copy": "outputs/focus-academy/research/scale-v23/OPEN-PLATFORMS.md",
+      "source_sha256": "29fff19d2a169d3b8c46f700589470fdc62bf3e9497379e845c9f919527b63af",
+      "public_sha256": "29fff19d2a169d3b8c46f700589470fdc62bf3e9497379e845c9f919527b63af",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/open-platforms/final-v3/manifest.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/open-platforms-manifest.json",
+      "source_sha256": "5a5b9360a05354ba10f60efe3c126fafebe3673c4869cf454ebb2a4d144b0f25",
+      "public_sha256": "5a5b9360a05354ba10f60efe3c126fafebe3673c4869cf454ebb2a4d144b0f25",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/social-discovery-plan.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/social-discovery-plan.json",
+      "source_sha256": "bbdac7673154d3325b87fd3870776e073887466751d1e2d75090f403702aed60",
+      "public_sha256": "bbdac7673154d3325b87fd3870776e073887466751d1e2d75090f403702aed60",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/social-discovery/report.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/social-discovery-report.json",
+      "source_sha256": "1add71f501797bf76e18a404c4c728ad0f02d5325047c3f769fba6dc44867fd8",
+      "public_sha256": "1add71f501797bf76e18a404c4c728ad0f02d5325047c3f769fba6dc44867fd8",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/social-final-v2-review/report.json",
+      "public_copy": "outputs/focus-academy/research/scale-v23/social-qualification.json",
+      "source_sha256": "733a9e0c0eca912c1c54cb93c17f57c7cd64314d7e419264e44a6afa537be268",
+      "public_sha256": "733a9e0c0eca912c1c54cb93c17f57c7cd64314d7e419264e44a6afa537be268",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/plan.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/plan.json",
+      "source_sha256": "862fee77575d93b0cbe17a73d51fc9e576d592b8e77d9afb2766e22652492dd4",
+      "public_sha256": "862fee77575d93b0cbe17a73d51fc9e576d592b8e77d9afb2766e22652492dd4",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/plan.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/plan.json",
+      "source_sha256": "862fee77575d93b0cbe17a73d51fc9e576d592b8e77d9afb2766e22652492dd4",
+      "public_sha256": "862fee77575d93b0cbe17a73d51fc9e576d592b8e77d9afb2766e22652492dd4",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-01.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-tiktok-01.json",
+      "source_sha256": "797260569e59d2ab74cd52ae724880c6b707b97ca195693560cf52901f605804",
+      "public_sha256": "797260569e59d2ab74cd52ae724880c6b707b97ca195693560cf52901f605804",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-01.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-tiktok-01.json",
+      "source_sha256": "797260569e59d2ab74cd52ae724880c6b707b97ca195693560cf52901f605804",
+      "public_sha256": "797260569e59d2ab74cd52ae724880c6b707b97ca195693560cf52901f605804",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-02.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-tiktok-02.json",
+      "source_sha256": "ac67e0d7fd98b680f61a97f343f53869fbce73ce6c385dbae192e6a89ae98260",
+      "public_sha256": "ac67e0d7fd98b680f61a97f343f53869fbce73ce6c385dbae192e6a89ae98260",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-02.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-tiktok-02.json",
+      "source_sha256": "ac67e0d7fd98b680f61a97f343f53869fbce73ce6c385dbae192e6a89ae98260",
+      "public_sha256": "ac67e0d7fd98b680f61a97f343f53869fbce73ce6c385dbae192e6a89ae98260",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-03.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-tiktok-03.json",
+      "source_sha256": "2f296aff37ca48d26f059cbdf0001277966085bc5879a39bd3674dbd92158b93",
+      "public_sha256": "2f296aff37ca48d26f059cbdf0001277966085bc5879a39bd3674dbd92158b93",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-03.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-tiktok-03.json",
+      "source_sha256": "2f296aff37ca48d26f059cbdf0001277966085bc5879a39bd3674dbd92158b93",
+      "public_sha256": "2f296aff37ca48d26f059cbdf0001277966085bc5879a39bd3674dbd92158b93",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-04.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-tiktok-04.json",
+      "source_sha256": "d2c304d30783afb72c31da33204bab1c3773f588470c3977b62f696b8669fdb3",
+      "public_sha256": "d2c304d30783afb72c31da33204bab1c3773f588470c3977b62f696b8669fdb3",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-04.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-tiktok-04.json",
+      "source_sha256": "d2c304d30783afb72c31da33204bab1c3773f588470c3977b62f696b8669fdb3",
+      "public_sha256": "d2c304d30783afb72c31da33204bab1c3773f588470c3977b62f696b8669fdb3",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-05.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-tiktok-05.json",
+      "source_sha256": "e1fb3a3cee1f63a39709ea1e0f43b92c4727e7598a9c2b956fd6730644444403",
+      "public_sha256": "e1fb3a3cee1f63a39709ea1e0f43b92c4727e7598a9c2b956fd6730644444403",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-05.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-tiktok-05.json",
+      "source_sha256": "e1fb3a3cee1f63a39709ea1e0f43b92c4727e7598a9c2b956fd6730644444403",
+      "public_sha256": "e1fb3a3cee1f63a39709ea1e0f43b92c4727e7598a9c2b956fd6730644444403",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-06.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-tiktok-06.json",
+      "source_sha256": "d0ce0a2b08a597296d322e042e911e038c13f49bc705494c1392ade37b4bc88b",
+      "public_sha256": "d0ce0a2b08a597296d322e042e911e038c13f49bc705494c1392ade37b4bc88b",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-06.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-tiktok-06.json",
+      "source_sha256": "d0ce0a2b08a597296d322e042e911e038c13f49bc705494c1392ade37b4bc88b",
+      "public_sha256": "d0ce0a2b08a597296d322e042e911e038c13f49bc705494c1392ade37b4bc88b",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-07.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-tiktok-07.json",
+      "source_sha256": "874c092c0bffaf3d9164b7119c61dd143ef54df2eb9f605b3b5bcfe1372232b1",
+      "public_sha256": "874c092c0bffaf3d9164b7119c61dd143ef54df2eb9f605b3b5bcfe1372232b1",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-07.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-tiktok-07.json",
+      "source_sha256": "874c092c0bffaf3d9164b7119c61dd143ef54df2eb9f605b3b5bcfe1372232b1",
+      "public_sha256": "874c092c0bffaf3d9164b7119c61dd143ef54df2eb9f605b3b5bcfe1372232b1",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-08.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-tiktok-08.json",
+      "source_sha256": "a0272d56e74ec165de37b488eb0a5edde449154e3fe1f8a3f39a2d469098fe4f",
+      "public_sha256": "a0272d56e74ec165de37b488eb0a5edde449154e3fe1f8a3f39a2d469098fe4f",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-08.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-tiktok-08.json",
+      "source_sha256": "a0272d56e74ec165de37b488eb0a5edde449154e3fe1f8a3f39a2d469098fe4f",
+      "public_sha256": "a0272d56e74ec165de37b488eb0a5edde449154e3fe1f8a3f39a2d469098fe4f",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-09.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-tiktok-09.json",
+      "source_sha256": "d01919444355b58ecb4a6bc561bb0fb72708f8e4173958911c35356f4b8c658b",
+      "public_sha256": "d01919444355b58ecb4a6bc561bb0fb72708f8e4173958911c35356f4b8c658b",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-09.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-tiktok-09.json",
+      "source_sha256": "d01919444355b58ecb4a6bc561bb0fb72708f8e4173958911c35356f4b8c658b",
+      "public_sha256": "d01919444355b58ecb4a6bc561bb0fb72708f8e4173958911c35356f4b8c658b",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-10.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-tiktok-10.json",
+      "source_sha256": "9eead2589a92709a80f00b00b070137895c1d4bb4e24fb78701195f544e1a160",
+      "public_sha256": "9eead2589a92709a80f00b00b070137895c1d4bb4e24fb78701195f544e1a160",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-tiktok-10.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-tiktok-10.json",
+      "source_sha256": "9eead2589a92709a80f00b00b070137895c1d4bb4e24fb78701195f544e1a160",
+      "public_sha256": "9eead2589a92709a80f00b00b070137895c1d4bb4e24fb78701195f544e1a160",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-instagram-01.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-instagram-01.json",
+      "source_sha256": "bcf1c2da98943ef7a3b83ef1082ff9b49656c6d1c2846d76087e155043c23669",
+      "public_sha256": "bcf1c2da98943ef7a3b83ef1082ff9b49656c6d1c2846d76087e155043c23669",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-instagram-01.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-instagram-01.json",
+      "source_sha256": "bcf1c2da98943ef7a3b83ef1082ff9b49656c6d1c2846d76087e155043c23669",
+      "public_sha256": "bcf1c2da98943ef7a3b83ef1082ff9b49656c6d1c2846d76087e155043c23669",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-instagram-02.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-instagram-02.json",
+      "source_sha256": "b88bec887717f20040fadc1637f3ae64abbe0d181562b83fd10fbc0a5fbe98d7",
+      "public_sha256": "b88bec887717f20040fadc1637f3ae64abbe0d181562b83fd10fbc0a5fbe98d7",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-instagram-02.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-instagram-02.json",
+      "source_sha256": "b88bec887717f20040fadc1637f3ae64abbe0d181562b83fd10fbc0a5fbe98d7",
+      "public_sha256": "b88bec887717f20040fadc1637f3ae64abbe0d181562b83fd10fbc0a5fbe98d7",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-instagram-03.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-instagram-03.json",
+      "source_sha256": "c80362f85dbec6966de05a9f7c0111843c33b8abe34de4cadb0cff5d8d0a69d0",
+      "public_sha256": "c80362f85dbec6966de05a9f7c0111843c33b8abe34de4cadb0cff5d8d0a69d0",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-instagram-03.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-instagram-03.json",
+      "source_sha256": "c80362f85dbec6966de05a9f7c0111843c33b8abe34de4cadb0cff5d8d0a69d0",
+      "public_sha256": "c80362f85dbec6966de05a9f7c0111843c33b8abe34de4cadb0cff5d8d0a69d0",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-instagram-04.json",
+      "public_copy": "outputs/focus-academy/collection/apify-french-pilot-v23/inputs/fr-instagram-04.json",
+      "source_sha256": "22cf0c2ec40383235cfb175301a66ebbdeb2e4522fad0569cb8fd424f4c630dc",
+      "public_sha256": "22cf0c2ec40383235cfb175301a66ebbdeb2e4522fad0569cb8fd424f4c630dc",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/apify-french-pilot/inputs/fr-instagram-04.json",
+      "public_copy": "work/racelink-academy-git/collector/collection/apify-french-pilot-v23/inputs/fr-instagram-04.json",
+      "source_sha256": "22cf0c2ec40383235cfb175301a66ebbdeb2e4522fad0569cb8fd424f4c630dc",
+      "public_sha256": "22cf0c2ec40383235cfb175301a66ebbdeb2e4522fad0569cb8fd424f4c630dc",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/README.md",
+      "public_copy": "work/racelink-academy-git/collector/SCALE_INGEST.md",
+      "source_sha256": "0f068ca26d67dd6679d31820b7c57779804e2040fd1cd6bea369773ce330a502",
+      "public_sha256": "0f068ca26d67dd6679d31820b7c57779804e2040fd1cd6bea369773ce330a502",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/OPEN-COLLECTOR.md",
+      "public_copy": "work/racelink-academy-git/collector/OPEN-COLLECTOR.md",
+      "source_sha256": "9f0fed7ba7f6bc4c8dc6883eeb7ec60317c22472950c9f1c386518bcae3fb3ce",
+      "public_sha256": "9f0fed7ba7f6bc4c8dc6883eeb7ec60317c22472950c9f1c386518bcae3fb3ce",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/README.md",
+      "public_copy": "outputs/focus-academy/scripts/SCALE_INGEST.md",
+      "source_sha256": "0f068ca26d67dd6679d31820b7c57779804e2040fd1cd6bea369773ce330a502",
+      "public_sha256": "0f068ca26d67dd6679d31820b7c57779804e2040fd1cd6bea369773ce330a502",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    },
+    {
+      "source": "work/scale-v23/OPEN-COLLECTOR.md",
+      "public_copy": "outputs/focus-academy/scripts/OPEN-COLLECTOR.md",
+      "source_sha256": "9f0fed7ba7f6bc4c8dc6883eeb7ec60317c22472950c9f1c386518bcae3fb3ce",
+      "public_sha256": "9f0fed7ba7f6bc4c8dc6883eeb7ec60317c22472950c9f1c386518bcae3fb3ce",
+      "local_paths_redacted": false,
+      "publication_metadata_aligned": false
+    }
+  ]
+}

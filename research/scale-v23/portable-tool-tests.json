@@ -1,0 +1,33 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "package": "application",
+      "test": "test_scale_ingest.py",
+      "exit_code": 0,
+      "tests": 23,
+      "output": "----------------------------------------------------------------------\nRan 23 tests in 2.052s\n\nOK\n"
+    },
+    {
+      "package": "application",
+      "test": "test_collect_dailymotion.py",
+      "exit_code": 0,
+      "tests": 15,
+      "output": "----------------------------------------------------------------------\nRan 15 tests in 0.309s\n\nOK\n"
+    },
+    {
+      "package": "collector",
+      "test": "test_scale_ingest.py",
+      "exit_code": 0,
+      "tests": 23,
+      "output": "----------------------------------------------------------------------\nRan 23 tests in 1.767s\n\nOK\n"
+    },
+    {
+      "package": "collector",
+      "test": "test_collect_dailymotion.py",
+      "exit_code": 0,
+      "tests": 15,
+      "output": "----------------------------------------------------------------------\nRan 15 tests in 0.214s\n\nOK\n"
+    }
+  ]
+}

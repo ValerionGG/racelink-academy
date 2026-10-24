@@ -1,0 +1,32 @@
+{
+  "release": "collection-v23",
+  "videos": 37331,
+  "new_references": 430,
+  "before": 36901,
+  "by_platform": {
+    "dailymotion": 277,
+    "other": 14,
+    "instagram": 63,
+    "tiktok": 76
+  },
+  "by_language": {
+    "fr": 194,
+    "en": 107,
+    "ru": 4,
+    "tr": 2,
+    "zh": 1,
+    "es": 1,
+    "ar": 5,
+    "ta": 1,
+    "de": 1,
+    "und": 114
+  },
+  "new_transcripts": 0,
+  "new_audio_verified": 0,
+  "public_metadata_discovered": 15315,
+  "social_index_occurrences": 2763,
+  "open_api_occurrences": 16524,
+  "synthetic_records_published": 0,
+  "catalog_sha256": "642fc65dbdb8699459324372d0569e6b5ea4518e2b0676ed48897b9f8ef83323",
+  "review_scope": "Titles, source metadata and provenance; no full-video or technical procedure validation."
+}

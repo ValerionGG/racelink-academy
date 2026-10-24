@@ -1,0 +1,685 @@
+{
+  "accepted_sha256": "6798877617aa4272791762439460e4ac1ce2c547073862e9316852928500421a",
+  "review_sha256": "eed232725ace9e13dc7052ce98d3c2f2d6f2878047059f77244ac2ac0204a21a",
+  "accepted": 139,
+  "excluded": {
+    "exclude": 30,
+    "quarantine": 52,
+    "already_present": 59
+  },
+  "by_platform": {
+    "instagram": 63,
+    "tiktok": 76
+  },
+  "by_language": {
+    "und": 112,
+    "fr": 27
+  },
+  "changes": [
+    {
+      "id": "instagram:C0PhmucMWKO",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:C0t44i3Mo-7",
+      "changes": [
+        "title",
+        "text_language"
+      ]
+    },
+    {
+      "id": "instagram:C17ogNQI-sV",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:C29-yxiBlGw",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:C2StmaJpaJV",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:C2ZMEPKBn4h",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:C36ot1txdkR",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:C3o9CLdreMp",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:C5kKzO-L-Z5",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:C6_dczqN-7Y",
+      "changes": [
+        "title",
+        "domain_scope"
+      ]
+    },
+    {
+      "id": "instagram:C8DhmsBumEk",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:C8WDWZwC-sp",
+      "changes": []
+    },
+    {
+      "id": "instagram:C9z0dk3OsGZ",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:CrDMXVVrS6y",
+      "changes": []
+    },
+    {
+      "id": "instagram:Crx5LJIvE-H",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:Cuj0m2sMXD8",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DAiRcfkMaro",
+      "changes": []
+    },
+    {
+      "id": "instagram:DB61vxkOwi8",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DCCQ3njs7Pq",
+      "changes": []
+    },
+    {
+      "id": "instagram:DCK1JwasTx8",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DCnc6tnyM1I",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DDCIejCvuZd",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DE7f0Jhx1np",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DEgOXKqIKgL",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DEks_-dtRvE",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DEvCgBPRkXQ",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DFaf7k6Cdge",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DFn5DV5MhFB",
+      "changes": []
+    },
+    {
+      "id": "instagram:DFn5Ui0sQaz",
+      "changes": []
+    },
+    {
+      "id": "instagram:DFodOUzpQDi",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DG7wfg1pGra",
+      "changes": [
+        "title",
+        "category"
+      ]
+    },
+    {
+      "id": "instagram:DGAkRsXIHUA",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DGCcJNZtZYz",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DGD5u0lo22U",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DGOlW87ia5m",
+      "changes": [
+        "title",
+        "category"
+      ]
+    },
+    {
+      "id": "instagram:DHA9QQHKddv",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DHBidkFNz5m",
+      "changes": []
+    },
+    {
+      "id": "instagram:DHOGvNWoFxx",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DHRcLo7pUDp",
+      "changes": [
+        "title",
+        "category"
+      ]
+    },
+    {
+      "id": "instagram:DHZFSGkxqcu",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DHhKIN2R8IO",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DIGi7L0tTqa",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DIR6zb8sRGk",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DIjDpR7C178",
+      "changes": []
+    },
+    {
+      "id": "instagram:DJMrxGPtGHc",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DJu6CYpSuRi",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "instagram:DN8RgjODbpq",
+      "changes": []
+    },
+    {
+      "id": "instagram:DO84tEsiOhf",
+      "changes": [
+        "text_language"
+      ]
+    },
+    {
+      "id": "instagram:DQBuG8KiJ7d",
+      "changes": []
+    },
+    {
+      "id": "instagram:DRlxYDeiVqI",
+      "changes": []
+    },
+    {
+      "id": "instagram:DTDx2xEjIZ2",
+      "changes": [
+        "text_language"
+      ]
+    },
+    {
+      "id": "instagram:DTc7NYIiHjM",
+      "changes": [
+        "text_language"
+      ]
+    },
+    {
+      "id": "instagram:DU-H4qegdg4",
+      "changes": []
+    },
+    {
+      "id": "instagram:DU-lED4ir-0",
+      "changes": []
+    },
+    {
+      "id": "instagram:DUY-UIsChAf",
+      "changes": []
+    },
+    {
+      "id": "instagram:DXGt5CZj3J3",
+      "changes": []
+    },
+    {
+      "id": "instagram:DZCh8BYt0Xt",
+      "changes": []
+    },
+    {
+      "id": "instagram:DZw09pcEr7h",
+      "changes": []
+    },
+    {
+      "id": "instagram:Dacl6ByNHdK",
+      "changes": []
+    },
+    {
+      "id": "instagram:DbAA9taBiAu",
+      "changes": [
+        "title",
+        "text_language"
+      ]
+    },
+    {
+      "id": "instagram:DbOIE-xM1L4",
+      "changes": [
+        "text_language"
+      ]
+    },
+    {
+      "id": "instagram:Dc5o7yelcYG",
+      "changes": []
+    },
+    {
+      "id": "instagram:DebeQB3ql3_",
+      "changes": [
+        "text_language"
+      ]
+    },
+    {
+      "id": "tiktok:6885175145632124161",
+      "changes": []
+    },
+    {
+      "id": "tiktok:6932050066161159429",
+      "changes": []
+    },
+    {
+      "id": "tiktok:6935134139700104453",
+      "changes": []
+    },
+    {
+      "id": "tiktok:6988879312271281414",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7042056373265304879",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7062234486934850862",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7101053686046133510",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7133563451930086698",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7162423518838230277",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7164695552268176686",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7170272075700161798",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7170343705294015749",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7176488590426311978",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7177979371054222638",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7184639267849768238",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7192690889029094702",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7193713763495759131",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7202631296672107819",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7221704738633501995",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7221882033109503278",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7226758843114540289",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7230974192122957098",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7243894771884887342",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "tiktok:7252395877715807534",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7255022155631725870",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7260893647535607086",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7263954715145243947",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7267351959064038699",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7271834319746813185",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7276937542325374250",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7293969527539240235",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7303002552759586091",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7307876302097337630",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7310294015293787434",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7312491095575842054",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7318629189093952810",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7327747673270947118",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "tiktok:7330420579637415210",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "tiktok:7334438186770369794",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7336710567526255914",
+      "changes": [
+        "category",
+        "domain_scope"
+      ]
+    },
+    {
+      "id": "tiktok:7339582861135088926",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7348512094209330464",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7353215753023163681",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7356778260522339627",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7401721983483841822",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7409316537670143262",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7423823102896770336",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7433843719851314464",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7436466391290613024",
+      "changes": [
+        "title",
+        "category"
+      ]
+    },
+    {
+      "id": "tiktok:7440309542631607595",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7443860249682988310",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7446336685568281878",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7470392213718060294",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7476718196129631534",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7504380440657054998",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7508084215947218198",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7533517074686168328",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7540877783879142687",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7548847103938776338",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7549319507525913912",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7567726581532085534",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7586834968559586582",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7591544635462274318",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7592631112606731533",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7610843141305830678",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7612854721174326558",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7614205626146917655",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7615948797092334870",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7617524615644024078",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7628226889928183048",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7631406557061778706",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7631460490107030804",
+      "changes": [
+        "title"
+      ]
+    },
+    {
+      "id": "tiktok:7638099684019457294",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7641409879315434783",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7649460049856777494",
+      "changes": []
+    },
+    {
+      "id": "tiktok:7649536935614008589",
+      "changes": []
+    }
+  ],
+  "scope": "New indexed links only; no media/audio/technical validation, no existing record updates."
+}

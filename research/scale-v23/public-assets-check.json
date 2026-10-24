@@ -1,0 +1,53 @@
+{
+  "release": "collection-v23",
+  "status": "passed",
+  "code_commit": "ba40beb78c3eeec5baadd59026ee3c74dfecfa3f",
+  "checked_at": "2026-10-24T07:50:47.495374+00:00",
+  "assets": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "0b28b5edefc6c371212a4668ea8b5d5dd55a7492eab34b3ac5400983ab8bf20b"
+    },
+    {
+      "path": "app.js",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "d231d0a8b25076ef06c58fa4de0087bc931f7afeb3a68579e84d713206a692dd"
+    },
+    {
+      "path": "cinema-home.js",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "8834dcfb54610ed1ce27e63ea92ba6bb70c1a2df52714bdfd42b857a5eb77ef8"
+    },
+    {
+      "path": "discovery-ui.js",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "f790d874047bb4c245d9cf0284bd307ea98b492766e91b5a1c305fb094dc4e0a"
+    },
+    {
+      "path": "theme.js",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "cfdce63a386789cf225e1120bafa39571376c8b11a00fb00a664ae0d29e4bb27"
+    },
+    {
+      "path": "catalog/config.json",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "303c5ca79991c4ddf7012d3e39779e599fcfaf7cd1f47ac63fd492d8380ca926"
+    },
+    {
+      "path": "catalog/catalog.json.gz",
+      "status": 200,
+      "matches_local": true,
+      "sha256": "f62adac222a9bfbf227ae5b7f9357d893db588f13bcb72994b379c62fb009f99"
+    }
+  ],
+  "videos": 37331,
+  "catalog_sha256": "642fc65dbdb8699459324372d0569e6b5ea4518e2b0676ed48897b9f8ef83323",
+  "url": "https://valeriongg.github.io/racelink-academy/?release=collection-v23&build=ba40beb"
+}

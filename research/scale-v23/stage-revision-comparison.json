@@ -1,0 +1,20 @@
+[
+  {
+    "batch": "batch-000000",
+    "old_sha256": "6112676cd845d483763ccdd5a37fc3daf95e6bb1cf057683e6e7362af32cbf7a",
+    "new_sha256": "f94b7ec67c1b64f649c422fd5e670ddd841b8d1153df65396e2dae14de0922e7",
+    "changed_fields": {
+      "collected_at": 100
+    },
+    "content_and_provenance_identical": true
+  },
+  {
+    "batch": "batch-000001",
+    "old_sha256": "50262967a01493000de16dea172645d84d574813bfd06f6f16bc1ad4ac8d6074",
+    "new_sha256": "99085c780012685ef8223e0876980a16f0ad3845c84a0971bba13d7cabb7ab13",
+    "changed_fields": {
+      "collected_at": 180
+    },
+    "content_and_provenance_identical": true
+  }
+]

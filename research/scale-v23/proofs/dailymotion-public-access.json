@@ -1,0 +1,8 @@
+{
+  "url": "https://api.dailymotion.com/v2/profiles/xiy/videos?page=1&page_size=1&fields=title%2Cvideo_id",
+  "purpose": "One documented public endpoint access probe; no imported content",
+  "checked_at": "2026-10-24T07:18:57.897510+00:00",
+  "status": 401,
+  "stop": true,
+  "error": "HTTP Error 401: Unauthorized"
+}

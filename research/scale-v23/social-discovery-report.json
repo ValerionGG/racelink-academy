@@ -1,0 +1,1559 @@
+{
+  "mode": "execute",
+  "jobs": 96,
+  "requested_records_bound": 4800,
+  "max_jobs_this_run": 96,
+  "plan_sha256": "aa71b6efcdfe6659e9d87dd3b4267716a4e9e23e023fb1855cecac1a3cd1c867",
+  "database_modified": false,
+  "cookies_used": false,
+  "media_downloaded": false,
+  "actor_started": false,
+  "completed_at": "2026-10-24T07:32:05+00:00",
+  "yt_dlp_version": null,
+  "jobs_attempted_this_run": 96,
+  "completed_jobs": 96,
+  "pending_jobs": 0,
+  "source_records": 2763,
+  "unique_records": 1822,
+  "duplicate_records": 941,
+  "records_sha256": "901566ca321b431fdb060b998e37d000604ea8a20925ea968631bba963d659cb",
+  "results": [
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "tutoriel vidange huile moteur Renault Clio",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 44,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "tutoriel vidange huile moteur Renault Clio",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 25,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "comment remplacer filtre huile Peugeot 208",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 43,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "comment remplacer filtre huile Peugeot 208",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 23,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer essuie glaces voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 39,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer essuie glaces voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 18,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer roue crevaison cric voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 41,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer roue crevaison cric voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 20,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "pression pneus voyant TPMS réinitialiser voiture",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 40,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "pression pneus voyant TPMS réinitialiser voiture",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 11,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer batterie voiture ordre débrancher bornes",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 43,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer batterie voiture ordre débrancher bornes",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 15,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "tester alternateur batterie multimètre voiture",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 43,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "tester alternateur batterie multimètre voiture",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 19,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "remplacer ampoule phare Renault Clio tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 36,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "remplacer ampoule phare Renault Clio tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 16,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer fusible voiture emplacement boîte fusibles",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 33,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer fusible voiture emplacement boîte fusibles",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 10,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "lire code défaut OBD diagnostic voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 37,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "lire code défaut OBD diagnostic voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 22,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "purger liquide refroidissement moteur tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 44,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "purger liquide refroidissement moteur tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 15,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "remplacer filtre habitacle climatisation voiture",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 43,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "remplacer filtre habitacle climatisation voiture",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 13,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "remplacer filtre air moteur voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 44,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "remplacer filtre air moteur voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 21,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer plaquettes frein Peugeot 308 tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 42,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer plaquettes frein Peugeot 308 tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 25,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer disques frein Renault Megane tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 40,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer disques frein Renault Megane tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 10,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "remplacer amortisseur roulement roue tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 40,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "remplacer amortisseur roulement roue tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 21,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer courroie distribution voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 39,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "changer courroie distribution voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 18,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "tester injecteur bobine bougie voiture diagnostic",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 38,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "tester injecteur bobine bougie voiture diagnostic",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 22,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "huile moteur norme constructeur viscosité comprendre",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 44,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "huile moteur norme constructeur viscosité comprendre",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 27,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "essence E5 E10 SP95 SP98 choisir voiture explication",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 42,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "essence E5 E10 SP95 SP98 choisir voiture explication",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 31,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "Android Auto CarPlay connexion voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 42,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "Android Auto CarPlay connexion voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 8,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "désactiver bip aide conduite réglages voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 41,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "désactiver bip aide conduite réglages voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 6,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "démarrer avec câbles batterie voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 41,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "démarrer avec câbles batterie voiture tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 16,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "rétroviseur dégivrage désembuage voiture comment",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 37,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "rétroviseur dégivrage désembuage voiture comment",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 16,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "charger voiture électrique borne Type 2 CCS tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "empty_or_unrecognized_results",
+      "records": 0,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "charger voiture électrique borne Type 2 CCS tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 18,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "diagnostic fuite huile moteur comment trouver",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 45,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "diagnostic fuite huile moteur comment trouver",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 26,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "vidange boîte vitesses Volkswagen Golf tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 47,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "vidange boîte vitesses Volkswagen Golf tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 18,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "remplacer balais essuie glace Citroën C3 tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 40,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "remplacer balais essuie glace Citroën C3 tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 17,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "freinage dégressif trajectoire circuit tutoriel pilotage",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 41,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "freinage dégressif trajectoire circuit tutoriel pilotage",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 21,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "réglage volant force feedback Assetto Corsa tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 43,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "réglage volant force feedback Assetto Corsa tutoriel",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 14,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "télémétrie pilotage analyse freinage tutoriel français",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 42,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "télémétrie pilotage analyse freinage tutoriel français",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 26,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "entretien moto tension chaîne tutoriel français",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 40,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "entretien moto tension chaîne tutoriel français",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "FR"
+      },
+      "status": "ok",
+      "records": 21,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "how to replace car cabin filter tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "US"
+      },
+      "status": "ok",
+      "records": 43,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "how to replace car cabin filter tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "US"
+      },
+      "status": "ok",
+      "records": 22,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "how to diagnose car electrical fault multimeter",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "GB"
+      },
+      "status": "ok",
+      "records": 42,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "how to diagnose car electrical fault multimeter",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "GB"
+      },
+      "status": "ok",
+      "records": 17,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "cómo cambiar aceite motor coche tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "ES"
+      },
+      "status": "ok",
+      "records": 42,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "cómo cambiar aceite motor coche tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "ES"
+      },
+      "status": "ok",
+      "records": 17,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "cómo cambiar pastillas freno automóvil tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "MX"
+      },
+      "status": "ok",
+      "records": 45,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "cómo cambiar pastillas freno automóvil tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "MX"
+      },
+      "status": "ok",
+      "records": 16,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "como trocar filtro óleo carro tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "PT"
+      },
+      "status": "ok",
+      "records": 44,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "como trocar filtro óleo carro tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "PT"
+      },
+      "status": "ok",
+      "records": 18,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "como testar bateria alternador carro tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "BR"
+      },
+      "status": "ok",
+      "records": 41,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "como testar bateria alternador carro tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "BR"
+      },
+      "status": "ok",
+      "records": 18,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "Ölwechsel Auto Anleitung",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "DE"
+      },
+      "status": "ok",
+      "records": 32,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "Ölwechsel Auto Anleitung",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "DE"
+      },
+      "status": "ok",
+      "records": 18,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "come sostituire filtro abitacolo auto tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "IT"
+      },
+      "status": "ok",
+      "records": 43,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "come sostituire filtro abitacolo auto tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "IT"
+      },
+      "status": "ok",
+      "records": 15,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "jak wymienić wycieraczki samochodowe poradnik",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "PL"
+      },
+      "status": "ok",
+      "records": 31,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "jak wymienić wycieraczki samochodowe poradnik",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "PL"
+      },
+      "status": "ok",
+      "records": 22,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "طريقة تغيير زيت محرك السيارة شرح",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "MA"
+      },
+      "status": "ok",
+      "records": 43,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "طريقة تغيير زيت محرك السيارة شرح",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "MA"
+      },
+      "status": "ok",
+      "records": 20,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "araba yağ değişimi nasıl yapılır",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "TR"
+      },
+      "status": "ok",
+      "records": 42,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "araba yağ değişimi nasıl yapılır",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "TR"
+      },
+      "status": "ok",
+      "records": 20,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "車 エンジンオイル 交換 方法 解説",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "JP"
+      },
+      "status": "ok",
+      "records": 41,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "車 エンジンオイル 交換 方法 解説",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "JP"
+      },
+      "status": "ok",
+      "records": 16,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "자동차 엔진오일 교환 방법",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "KR"
+      },
+      "status": "empty_or_unrecognized_results",
+      "records": 0,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "자동차 엔진오일 교환 방법",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "KR"
+      },
+      "status": "empty_or_unrecognized_results",
+      "records": 0,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "कार इंजन ऑयल कैसे बदलें",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "IN"
+      },
+      "status": "ok",
+      "records": 44,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "कार इंजन ऑयल कैसे बदलें",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "IN"
+      },
+      "status": "ok",
+      "records": 21,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "cara mengganti oli mesin mobil tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "ID"
+      },
+      "status": "ok",
+      "records": 45,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "cara mengganti oli mesin mobil tutorial",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "ID"
+      },
+      "status": "ok",
+      "records": 23,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "auto ruitenwissers vervangen uitleg",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "instagram.com"
+        ],
+        "include_text": [],
+        "user_location": "NL"
+      },
+      "status": "ok",
+      "records": 41,
+      "error": null
+    },
+    {
+      "job": {
+        "kind": "exa_search_advanced",
+        "value": "auto ruitenwissers vervangen uitleg",
+        "limit": 50,
+        "platform": "web_index",
+        "include_domains": [
+          "tiktok.com"
+        ],
+        "include_text": [],
+        "user_location": "NL"
+      },
+      "status": "ok",
+      "records": 18,
+      "error": null
+    }
+  ],
+  "qualification": "Metadata candidates only. Run bulk_ingest prepare; no record was imported."
+}

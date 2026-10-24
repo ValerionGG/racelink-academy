@@ -1,0 +1,8 @@
+{
+  "new_records_corrected": 22,
+  "full_source_evidence": 15,
+  "indexed_thumbnails_omitted": 8,
+  "baseline_records_changed": 0,
+  "reason": "Preserve the exact cited title rather than a discontiguous hashtag-cleaned excerpt; omit indexed thumbnail URLs with credential-named query parameters.",
+  "sha256": "bd883af1a45a998a696e8708198f1e1822dcbb8b601614e3178baab1d8a0a4c8"
+}

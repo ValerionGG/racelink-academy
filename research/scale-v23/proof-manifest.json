@@ -1,0 +1,50 @@
+{
+  "checked_at": "2026-10-24",
+  "files": [
+    {
+      "path": "proofs/apify-public-prices.json",
+      "bytes": 190959,
+      "sha256": "af998387c3d5f77302668ecdd859666b8e2e426fd850dc623a6d4e873db4f8f0"
+    },
+    {
+      "path": "proofs/dailymotion-public-access.json",
+      "bytes": 324,
+      "sha256": "9b7b08d77088874a73b26e1ed8f985ec7b50a372d1623250fc2bf9a8ad3995b9"
+    },
+    {
+      "path": "proofs/github-repositories.json",
+      "bytes": 4543,
+      "sha256": "2e123cd22d64e266643cb4d99aa859d0bf672805417bdeb785908f71be402e7e"
+    },
+    {
+      "path": "proofs/luminati-io--Instagram-Reels-dataset-samples--license.txt",
+      "bytes": 45,
+      "sha256": "541d8e541b2fd4ee541e2ab99c434f491b933d781c09a7034e9aa82a62950a7e"
+    },
+    {
+      "path": "proofs/luminati-io--Instagram-Reels-dataset-samples--readme.txt",
+      "bytes": 3975,
+      "sha256": "4090ad35fb8f594bf411c376ec3c271ecfd01164765e0005d0f75a018829a8a4"
+    },
+    {
+      "path": "proofs/NanmiCoder--MediaCrawler--license.txt",
+      "bytes": 4833,
+      "sha256": "9a2eed2fd5410cc59cfceae5d965c2a13d36907caa8bc6316d71e67391bbd5aa"
+    },
+    {
+      "path": "proofs/NanmiCoder--MediaCrawler--readme.txt",
+      "bytes": 24928,
+      "sha256": "3c1168c24bdd9b9c0897acc87429d385d1d690367fecbfea29d7ebea95f6e9b4"
+    },
+    {
+      "path": "proofs/TikHub--TikHub-API-Python-SDK--license.txt",
+      "bytes": 11558,
+      "sha256": "1eb85fc97224598dad1852b5d6483bbcf0aa8608790dcc657a5a2a761ae9c8c6"
+    },
+    {
+      "path": "proofs/TikHub--TikHub-API-Python-SDK--readme.txt",
+      "bytes": 8910,
+      "sha256": "e86d0da0ad05d51a07e3a69a1a811fbc53335cda40d9e8b002b64fe56af68595"
+    }
+  ]
+}
