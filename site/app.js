@@ -1,9 +1,9 @@
-import {createCinemaHome} from './cinema-home.js?v=collection-v23';
+import {createCinemaHome} from './cinema-home.js?v=collection-v24';
 import {icon as glyph, categoryIcon} from './icons.js';
 import {createIdentityUI} from './identity-ui.js?v=themes-v22';
 import {tracks} from './tracks.js';
 import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=themes-v22';
-import {createDiscoveryUI} from './discovery-ui.js?v=collection-v23';
+import {createDiscoveryUI} from './discovery-ui.js?v=collection-v24';
 import {createRaceLinkPicks} from './racelink-picks.js';
 import {createMobileUI} from './mobile-ui.js?v=themes-v22&rev=2';
 import {createGuideUI} from './guide-ui.js?v=themes-v22';

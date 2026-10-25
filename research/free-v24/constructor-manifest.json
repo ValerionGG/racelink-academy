@@ -1,0 +1,33 @@
+{
+  "created_at": "2026-10-25T13:40:45.597530+00:00",
+  "baseline_video_count": 37331,
+  "publisher_pages": 42,
+  "embedded_occurrences": 942,
+  "unique_video_ids": 540,
+  "existing": 1,
+  "quarantine": 9,
+  "new_candidates": 530,
+  "platforms": {
+    "youtube": 530
+  },
+  "publishers": {
+    "Dacia": 128,
+    "Renault": 402
+  },
+  "languages": {
+    "fr": 530
+  },
+  "category_counts": {
+    "engineering": 479,
+    "mechanics": 51
+  },
+  "with_vehicle_mentions": 528,
+  "with_task_mentions": 500,
+  "new_candidates_sha256": "54881e24650088865ab80a051edb398b1abdfb4d95ceb8315c9aed1095728066",
+  "validated_with": "server.normalize_item",
+  "media_downloads": 0,
+  "native_playback_checks": 0,
+  "transcripts_added": 0,
+  "paid_requests": 0,
+  "catalogue_mutations": 0
+}

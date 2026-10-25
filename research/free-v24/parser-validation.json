@@ -1,0 +1,25 @@
+{
+  "checked_at": "2026-10-25T13:34:32.690377+00:00",
+  "collector_version": "1.0.1",
+  "command": "python -B -m unittest scripts.test_local_collect -v",
+  "working_directory": "outputs/focus-academy",
+  "tests": {
+    "passed": 28,
+    "failed": 0,
+    "network": "mocked; no live collection"
+  },
+  "new_regressions": [
+    "JSON results inside MCP content[].text with and without notices",
+    "Equivalent root/structuredContent/text results without duplicate rows",
+    "Malformed or unknown JSON ignored",
+    "Canonical permalink filtering and request result bound retained"
+  ],
+  "files": {
+    "scripts\\local_collect.py": "bc84e5f216170df5f360bbdc9f0ff9f72a08e794c53b2ff728a41f955338ded4",
+    "scripts\\test_local_collect.py": "ccadb15d0532bee6ab63d487ee5dce33f31cc256185e2920b0938e83abb4b116"
+  },
+  "catalog_changed": false,
+  "git_changed": false,
+  "installed_packages": false,
+  "notes": "VERSION changes cache keys. Historical cache files remain unchanged; use a fresh output snapshot for the fixed collector."
+}

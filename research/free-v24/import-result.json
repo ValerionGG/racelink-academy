@@ -1,0 +1,12 @@
+{
+  "mode": "execute",
+  "new_records": 565,
+  "baseline": 37331,
+  "expected_total": 37896,
+  "import": {
+    "inserted": 565,
+    "updated": 0,
+    "rejected": 0,
+    "errors": []
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "candidates": 530,
+  "already_with_thumbnail": 153,
+  "added_from_archived_html": 374,
+  "unresolved": [],
+  "network_requests": 3,
+  "derived_urls": 3,
+  "sha256": "0c695b9a479ba464bde8d541a833ff2d5a83d008ca61a6ed901e5bc8cb56d8a4",
+  "original_candidates_sha256": "54881e24650088865ab80a051edb398b1abdfb4d95ceb8315c9aed1095728066",
+  "patch_records": 377
+}

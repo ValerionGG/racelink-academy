@@ -1,0 +1,18 @@
+{
+  "source_sha256": "54881e24650088865ab80a051edb398b1abdfb4d95ceb8315c9aed1095728066",
+  "candidate_count": 530,
+  "precise_field_errors": [],
+  "confirmed_corrections": [
+    "seven false estate values cleared",
+    "false FE generation cleared",
+    "seat electricity no longer treated as fuel",
+    "camera360 visible block titles used",
+    "inflation/pressure contradiction quarantined"
+  ],
+  "title_basis_values": [
+    "cleaned_publisher_video_image_label",
+    "publisher_visible_title_with_paired_model_label"
+  ],
+  "audio_verified_count": 0,
+  "scope": "Independent offline explicit metadata/evidence checks only; no playback or technical instruction certification."
+}

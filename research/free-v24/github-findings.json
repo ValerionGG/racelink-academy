@@ -1,0 +1,27 @@
+[
+  {
+    "repo": "brightdata/instagram-scraper",
+    "source": "https://github.com/brightdata/instagram-scraper/blob/main/README.md",
+    "sha": "6edd919ab0d68bc72511ca473c66fbfd57543317"
+  },
+  {
+    "repo": "exa-labs/exa-mcp-server",
+    "source": "https://github.com/exa-labs/exa-mcp-server/blob/main/src/tools/webSearchAdvanced.ts",
+    "sha": "1f96d251bd5bd46864bc3ca9e98941a990fbf02a"
+  },
+  {
+    "repo": "kevinzg/facebook-scraper",
+    "source": "https://github.com/kevinzg/facebook-scraper/blob/master/README.md",
+    "sha": "ebc42b70d3d6d321f7ce51eb6cf64659d2942a37"
+  },
+  {
+    "repo": "pablouser1/ProxiTok",
+    "source": "https://github.com/pablouser1/ProxiTok/blob/master/README.md",
+    "sha": "02217242d3c7e7d55d5d0dbf1cb51cfb73c30226"
+  },
+  {
+    "repo": "drawrowfly/tiktok-scraper",
+    "source": "https://github.com/drawrowfly/tiktok-scraper/blob/master/README.md",
+    "sha": "dd858f1bf4a5d26b27ead791efedd01f95ba4fee"
+  }
+]
