@@ -1,0 +1,390 @@
+{
+  "status": "published_verified",
+  "url": "https://valeriongg.github.io/racelink-academy/?release=collection-v24&build=0eb21c0",
+  "french_url": "https://valeriongg.github.io/racelink-academy/?browse=1&language=fr&format=video",
+  "repository": "https://github.com/ValerionGG/racelink-academy",
+  "commit": "0eb21c008f90db030527d928919f555510b43997",
+  "workflow": "https://github.com/ValerionGG/racelink-academy/actions/runs/40200091878",
+  "workflow_conclusion": "success",
+  "verified_at": "2026-10-25T14:02:24.427155+00:00",
+  "catalog_videos": 37896,
+  "guides": 11,
+  "french_videos": 5758,
+  "new_social_videos": 35,
+  "new_french_text_estimates": 542,
+  "platforms": {
+    "dailymotion": 319,
+    "facebook": 46,
+    "instagram": 221,
+    "other": 14,
+    "tiktok": 259,
+    "twitch": 2,
+    "vimeo": 3,
+    "youtube": 37032
+  },
+  "catalog_sha256": "8cf65b7ccb946b97f2e047fd94bf514fee255ce945ac3696b097b3153ed2ec71",
+  "focus_domain_integrated": false,
+  "screenshots": [
+    "focus-academy/research/free-v24/browser/dacia-cards-light.png",
+    "focus-academy/research/free-v24/browser/dacia-official-dark.png",
+    "focus-academy/research/free-v24/browser/dacia-search-light.png",
+    "focus-academy/research/free-v24/browser/instagram-sandero-light.png"
+  ],
+  "thousands_of_new_social_videos_achieved": false,
+  "acquisition_limits": [
+    "No accessible qualified bulk French automotive social export",
+    "TikHub preview requires account; coverage unmeasured",
+    "No Instagram extension connection",
+    "Exa quota exhausted; vidIQ credits insufficient"
+  ],
+  "social_fields": {
+    "structured_records": 352,
+    "skill": "social-content-structure",
+    "skill_version": "1.0.2",
+    "new_titles_reviewed": 7
+  },
+  "social_alternative": {
+    "tiktok_added": 7,
+    "instagram_added": 0,
+    "archived_index_titles": 6,
+    "creator_site_link_labels": 1,
+    "new_captions": 0,
+    "new_transcripts": 0,
+    "new_editorial_badges": 0
+  },
+  "previous_release": {
+    "release": "cinema-v21",
+    "commit": "065ab48e77faf6f6b1116c0d13f24d3b2b80b9b1",
+    "report": "focus-academy/research/themes-v22/deployment-before-v22.json"
+  },
+  "release_scope": "Light and dark themes across the photographic product; catalogue and existing media preserved",
+  "mobile_preview_url": "https://valeriongg.github.io/racelink-academy/preview-mobile.html",
+  "ui_redesign": {
+    "desktop_sidebar": false,
+    "mobile_navigation_destinations": 4,
+    "browser_observed_commit": "17ea9abab52b9028b5863db61e6537dd939a3be7",
+    "report": "focus-academy/research/product-redesign-v20/browser-checks.json",
+    "brand": "Black, white and RaceLink red",
+    "fonts": [
+      "Onest",
+      "Orbitron"
+    ]
+  },
+  "release": "collection-v24",
+  "photo_covers": {
+    "photographs": 12,
+    "guides": 11,
+    "home_entries": 3,
+    "bytes": 1450046,
+    "source_files_verified": 25,
+    "report": "focus-academy/research/photo-covers-2026-10-23/VALIDATION.md",
+    "browser": {
+      "checked_at": "2026-10-23T10:32:27.033136+00:00",
+      "commit": "ad0cc50227fce243d2100a5089ccf13f8fd6b8db",
+      "scope": "CUA public browser, desktop and responsive preview",
+      "observed": [
+        "Desktop home: three photographic entries loaded, decorative icon overlays removed.",
+        "Desktop library: first row of photographic guides visually inspected; all 11 titles, image alt text and credit controls present in accessibility tree.",
+        "Guide-only URL returns 11 resources; fuel guide opened from its photographic cover and closed, focus restored to that cover.",
+        "Mobile home in the existing 390px responsive frame visually inspected, photographs visible in the horizontal entry list."
+      ],
+      "screenshots": [
+        "desktop-home.png",
+        "mobile-home.png"
+      ],
+      "limitations": [
+        "Intermittent browser-tool timeouts prevented completion of scrolling and mobile guide interaction checks. Successful observations are listed separately; timed-out attempts are not passes.",
+        "No physical-phone test or full accessibility audit. All 12 source photographs were separately inspected as image files; only stated card positions were visually inspected in the page."
+      ]
+    }
+  },
+  "guides_url": "https://valeriongg.github.io/racelink-academy/?browse=1&format=guide&release=atelier-v19d",
+  "official_guides": {
+    "guides": 11,
+    "new_manufacturer_reference_entries": 21,
+    "total_documentary_links": 45,
+    "videos_unchanged": true,
+    "report": "focus-academy/research/official-guides-2026-10-23/VALIDATION.md",
+    "browser": {
+      "checked_at": "2026-10-23T13:23:05.000801+00:00",
+      "final_code_commit": "5e60fab4c231976a15af0439c816cefc0dbce3d7",
+      "release": "guide-v16b",
+      "scope": "CUA public browser; responsive viewport and existing mobile preview. No physical-phone or exhaustive accessibility audit.",
+      "observed": [
+        "v16: mobile list and source section visually inspected at the existing 480px browser width; guides count 11, photographs loaded, search position static.",
+        "v16: 320px viewport, client width 305px, scrollWidth 305px. Source link opens the references heading and close restores its focus.",
+        "v16b: desktop viewport width 1280px, client width 1265px, scrollWidth 1265px; 11 guides, no duplicate format chip; photographic two-column grid visually inspected.",
+        "v16b: shared guide reader opened on desktop; title receives focus and method/reference columns are visible.",
+        "v16b: 390px viewport, client width 375px and height 844px, scrollWidth 375px; corrected vehicle context and compact cards visually inspected. First guide card height 249.95px.",
+        "v16b: mobile search opened with focus in input; vidange Clio 3 retained after submission and changing format/language; video+French returns 2 resources.",
+        "v16b: guide hint in search opens the oil-change guide and manufacturer references, then close restores hint focus and retains query, French language and result count.",
+        "Temporary viewport override reset; final guide library tab retained as a deliverable."
+      ],
+      "screenshots": {
+        "mobile-guides.png": "v16",
+        "mobile-sources.png": "v16",
+        "desktop-guides.png": "v16b",
+        "desktop-reader.png": "v16b",
+        "mobile-guides-final.png": "v16b"
+      },
+      "limitations": [
+        "Source links were verified in research; browser checks validate their presentation, not every external site session.",
+        "No physical phone test and no exhaustive WCAG audit.",
+        "Search suggestions for the exact query were absent while the Guides filter was selected; the interface correctly offered submission and preserved the selected format."
+      ]
+    }
+  },
+  "visual_design": {
+    "report": "focus-academy/research/visual-direction-2026-10-23/VALIDATION.md",
+    "flowith_model": "Claude Opus 5.5",
+    "flowith_use": "One completed textual counterproposal, adapted into local code",
+    "installed_skills": [
+      "taste-skill",
+      "ui-ux-pro-max"
+    ],
+    "visually_inspected_references": [
+      "MotionSite Driven Hero",
+      "MotionSite Hyperion V12",
+      "racelink-app.co"
+    ],
+    "responsive_widths": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "html_contract_tests": 14,
+    "static_export_tests": 6,
+    "navigation_tests": 16,
+    "navigation_test_scope": "V17/V17b; V17c CSS narrow-phone correction only",
+    "catalog_unchanged": true
+  },
+  "skills_roundup": {
+    "resources_reviewed": 12,
+    "new_skills": [
+      "hallmark",
+      "find-animation-opportunities",
+      "gsap-performance",
+      "reference-design-contract"
+    ],
+    "report": "focus-academy/research/skills-roundup-2026-10-23/README.md",
+    "new_frontend_libraries": 0
+  },
+  "graphic_redesign": {
+    "release": "atelier-v19d",
+    "commit": "850e57869e9ad9219c054000c8e7b46718835a25",
+    "verified_at": "2026-10-23T17:15:18.864323+00:00",
+    "report": "focus-academy/research/graphic-redesign-v19/VALIDATION.md",
+    "desktop_sidebar": false,
+    "real_photographs": 12,
+    "navigation_tests": 17,
+    "navigation_scope": "V19c; V19d only two CSS corrections and cache markers",
+    "html_contract_tests": 14,
+    "export_tests": 6,
+    "http_assets": 15,
+    "browser_widths": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "browser_report": "focus-academy/research/graphic-redesign-v19/browser-checks.json",
+    "catalog_unchanged": true,
+    "new_frontend_dependencies": 0
+  },
+  "product_redesign": {
+    "release": "workshop-v20",
+    "commit": "17ea9abab52b9028b5863db61e6537dd939a3be7",
+    "verified_at": "2026-10-23T17:49:41.488221+00:00",
+    "report": "focus-academy/research/product-redesign-v20/VALIDATION.md",
+    "browser_report": "focus-academy/research/product-redesign-v20/browser-checks.json",
+    "offline_assertions": 109,
+    "offline_failures": 0,
+    "http_assets": 17,
+    "browser_scenarios": 18,
+    "browser_widths": [
+      320,
+      390,
+      768,
+      1280
+    ],
+    "catalog_unchanged": true,
+    "new_frontend_dependencies": 0,
+    "first_mobile_result_y": 406.75,
+    "changes": [
+      "Compact search and vehicle/language controls",
+      "Grouped responsive filter dialog",
+      "New resource previews with metadata provenance",
+      "Photo-first video reading workspace",
+      "Guides with prerequisites, method and model-scoped manufacturer references"
+    ],
+    "skills_applied": [
+      "impeccable",
+      "frontend-design"
+    ],
+    "scope": "Interaction checks on5a48d1f; final two CSS corrections verified on17ea9ab. No physical-device or full accessibility certification."
+  },
+  "cinema_redesign": {
+    "release": "cinema-v21",
+    "commit": "065ab48e77faf6f6b1116c0d13f24d3b2b80b9b1",
+    "verified_at": "2026-10-23T19:41:10.992081+00:00",
+    "report": "focus-academy/research/cinema-v21/VALIDATION.md",
+    "browser_report": "focus-academy/research/cinema-v21/browser-checks.json",
+    "offline_assertions": 109,
+    "home_assertions": 20,
+    "offline_failures": 0,
+    "http_assets": 18,
+    "browser_scenarios": 27,
+    "browser_widths": [
+      320,
+      390,
+      768,
+      1280,
+      1440
+    ],
+    "catalog_unchanged": true,
+    "new_frontend_dependencies": 0,
+    "changes": [
+      "Full-width photographic home and display typography",
+      "Six portrait guide posters, three photographic topics, real editorial video collection",
+      "Dark search results and grouped responsive filters",
+      "Large video and guide reading surfaces with source references",
+      "Responsive vehicle form and visible language choice"
+    ],
+    "skills_applied": [
+      "frontend-design",
+      "design-inspiration",
+      "agent-reach"
+    ],
+    "github_design_sources": [
+      "Anthropic frontend-design",
+      "Impeccable",
+      "UI UX Pro Max",
+      "Taste Skill",
+      "baseline-ui"
+    ],
+    "scope": "Browser scenarios across7fbdbe6/8d7f78a; final modified surfaces and HTTP assets checked on065ab48. Emulated viewports, no physical-device or complete accessibility audit."
+  },
+  "themes_redesign": {
+    "release": "themes-v22",
+    "commit": "99859870e3fa785367d0112d99cebbe32c893324",
+    "verified_at": "2026-10-23T20:12:01.445439+00:00",
+    "report": "focus-academy/research/themes-v22/VALIDATION.md",
+    "browser_report": "focus-academy/research/themes-v22/browser-checks.json",
+    "offline_assertions": 109,
+    "theme_assertions": 36,
+    "unique_offline_assertions": 145,
+    "offline_failures": 0,
+    "browser_scenarios": 14,
+    "browser_widths": [
+      320,
+      390,
+      768,
+      1280,
+      1440
+    ],
+    "http_assets": 19,
+    "catalog_unchanged": true,
+    "catalog_equivalence": {
+      "educational_data_identical": true,
+      "only_json_difference": "generated_at",
+      "only_config_difference": "catalog_sha256",
+      "local_generated_at": "2026-10-23T13:09:58+00:00",
+      "published_generated_at": "2026-10-23T13:10:12+00:00",
+      "gzip_matches_own_json": true
+    },
+    "photographs_unchanged": 12,
+    "scope": "Verified source/exports and report-backed simulated browser viewports. No physical-device or exhaustive accessibility certification."
+  },
+  "new_french_platform_declared": 0,
+  "collection_v23": {
+    "added": 430,
+    "social_new": 139,
+    "dailymotion_new": 277,
+    "peertube_new": 14,
+    "new_transcripts": 0,
+    "discovered_unique_ids": 15315,
+    "offline_checks": 29,
+    "http_assets": 7,
+    "browser_report": "focus-academy/research/scale-v23/browser-checks.json",
+    "paid_pilot_executed": false,
+    "apify_connection_and_budget_pending": true,
+    "hundreds_of_thousands_acquired": false
+  },
+  "apify_pilot_current": {
+    "authorization": "free_credits_only",
+    "max_out_of_pocket_usd": 0,
+    "connection_verified": false,
+    "free_credit_verified": false,
+    "runs_started": 0,
+    "plan": "focus-academy/collection/apify-free-credits-pilot/plan.json"
+  },
+  "collection_v24": {
+    "release": "collection-v24",
+    "baseline_videos": 37331,
+    "total_videos": 37896,
+    "new_references": 565,
+    "new_constructor_references": 530,
+    "new_social_references": 35,
+    "new_by_platform": {
+      "youtube": 530,
+      "tiktok": 17,
+      "instagram": 18
+    },
+    "new_by_language": {
+      "fr": 542,
+      "en": 23
+    },
+    "total_by_platform": {
+      "dailymotion": 319,
+      "facebook": 46,
+      "instagram": 221,
+      "other": 14,
+      "tiktok": 259,
+      "twitch": 2,
+      "vimeo": 3,
+      "youtube": 37032
+    },
+    "total_by_language": {
+      "fr": 5758,
+      "en": 13123,
+      "tr": 3,
+      "ru": 6,
+      "zh": 13,
+      "ar": 7,
+      "ta": 1,
+      "es": 4565,
+      "de": 4018,
+      "und": 1987,
+      "fa": 1,
+      "pt": 4206,
+      "id": 2,
+      "it": 298,
+      "cs": 1,
+      "pl": 3759,
+      "ja": 96,
+      "ko": 52
+    },
+    "language_note": "New languages are estimated from publisher or indexed title text, not verified audio.",
+    "publisher_pages": 42,
+    "publisher_source_relations_checked": 928,
+    "social_search_jobs": 48,
+    "social_index_occurrences": 1193,
+    "social_index_unique_identities": 1095,
+    "social_metadata_candidates": 115,
+    "new_transcripts": 0,
+    "video_audio_downloads": 0,
+    "thumbnail_probe_requests": 3,
+    "paid_requests": 0,
+    "apify_runs": 0,
+    "spending_usd": 0,
+    "out_of_pocket_limit_usd": 0,
+    "dataset_rows_audited": 950656,
+    "dataset_distinct_videos": 6258,
+    "dataset_imports": 0,
+    "hundreds_of_thousands_acquired": false,
+    "catalog_sha256": "8cf65b7ccb946b97f2e047fd94bf514fee255ce945ac3696b097b3153ed2ec71",
+    "checks_passed": 29,
+    "checks_total": 29
+  }
+}

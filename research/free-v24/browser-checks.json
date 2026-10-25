@@ -1,0 +1,30 @@
+{
+  "release": "collection-v24",
+  "status": "passed",
+  "code_commit": "0eb21c008f90db030527d928919f555510b43997",
+  "checked_date": "2026-10-25",
+  "method": "CUA browser inspection of the deployed GitHub Pages website",
+  "observations": [
+    "The library displays 37,896 videos and 11 guides.",
+    "The new Dacia Bigster liquid-level tutorial opens via its video deep link.",
+    "Its vehicle disclosure identifies Dacia Bigster without inventing engine or year.",
+    "Its source disclosure links to https://www.dacia.fr/tutoriels-video-bigster-suv/essential.html.",
+    "Its YouTube thumbnail is loaded: naturalWidth 480, complete true; the real engine-bay image is visually present.",
+    "Searching Dacia Bigster returns 33 resources; selecting French preserves these 33 results and appears in the URL.",
+    "The first result cards show their source images, distinct titles, Dacia publisher and Dacia Bigster vehicle metadata.",
+    "The existing dark and light theme controls were exercised; dark detail and light search/card screenshots were saved.",
+    "The new Instagram DWEIoTMAnsg record opens with title Remettre à zéro la vidange sur Dacia Sandero, Dacia Sandero vehicle metadata and the correct Instagram reel link."
+  ],
+  "limitations": [
+    "Native video playback and audio language were not verified; new language labels explicitly show an estimate.",
+    "The Instagram sample has no available preview, description or author; the interface explicitly discloses missing metadata.",
+    "No new transcripts were added; the detail view correctly states that none is recorded.",
+    "This release changes collection data and the collector, not the existing V22 layout."
+  ],
+  "screenshots": [
+    "browser/dacia-official-dark.png",
+    "browser/dacia-search-light.png",
+    "browser/dacia-cards-light.png",
+    "browser/instagram-sandero-light.png"
+  ]
+}
