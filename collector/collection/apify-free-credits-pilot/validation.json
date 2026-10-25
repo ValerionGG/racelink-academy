@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "tests": 12,
+  "new_regressions": 2,
+  "scope": "Free-credit preview and launch gate, with mocked environment/network; no live run.",
+  "launcher_sha256": "bba93628b26991dde9abbce4f0022c622453faf356f3483dccecaaa744973f25",
+  "runs_started": 0
+}

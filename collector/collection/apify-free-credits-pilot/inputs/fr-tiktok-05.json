@@ -1,0 +1,23 @@
+{
+  "shouldDownloadVideos": false,
+  "shouldDownloadCovers": false,
+  "shouldDownloadSlideshowImages": false,
+  "shouldDownloadAvatars": false,
+  "shouldDownloadMusicCovers": false,
+  "downloadSubtitlesOptions": "NEVER_DOWNLOAD_SUBTITLES",
+  "aiVideoDescription": false,
+  "aiVideoSummary": false,
+  "commentsPerPost": 0,
+  "maxFollowersPerProfile": 0,
+  "maxFollowingPerProfile": 0,
+  "scrapeRelatedVideos": false,
+  "scrapeAdditionalAuthorMeta": false,
+  "profiles": [
+    "code.simplifie"
+  ],
+  "resultsPerPage": 60,
+  "profileScrapeSections": [
+    "videos"
+  ],
+  "profileSorting": "latest"
+}

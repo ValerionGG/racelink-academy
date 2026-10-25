@@ -1,0 +1,283 @@
+{
+  "version": 1,
+  "prepared_at": "2026-10-24",
+  "status": "awaiting_verified_free_credit",
+  "pilot": {
+    "jobs": 14,
+    "maximum_target": 1000,
+    "maximum_sum_of_run_caps_usd": 5
+  },
+  "caveats": [
+    "Target is raw posts, not a guaranteed number of available or useful new tutorials.",
+    "French source metadata is a targeting cue, not proof that every post or audio is French.",
+    "No subscription, automatic top-up, media download, transcripts, comments or follower lists.",
+    "Do not launch all batches until the initial creator sample has been qualified.",
+    "User authorizes existing free credits only. The original 5 USD sum of run caps is not authorization to charge a payment method or spend purchased credits. No run can start until actual free credits are verified."
+  ],
+  "jobs": [
+    {
+      "id": "fr-tiktok-01",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-01.json",
+      "input_sha256": "797260569e59d2ab74cd52ae724880c6b707b97ca195693560cf52901f605804",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.3
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@opermis7/video/7055739157754285318",
+        "title": "Faire le plein d’essence : les étapes à la station",
+        "language_status": "inferred_from_source_text"
+      }
+    },
+    {
+      "id": "fr-tiktok-02",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-02.json",
+      "input_sha256": "ac67e0d7fd98b680f61a97f343f53869fbce73ce6c385dbae192e6a89ae98260",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.3
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@wurthfrance/video/7067479768614161670",
+        "title": "Réparation des joints de culasse",
+        "language_status": "estimated_from_archived_index_title"
+      }
+    },
+    {
+      "id": "fr-tiktok-03",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-03.json",
+      "input_sha256": "2f296aff37ca48d26f059cbdf0001277966085bc5879a39bd3674dbd92158b93",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.3
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@lemoniteurlyonnais/video/7195927782185028869",
+        "title": "Feu tricolore : comprendre les règles de priorité",
+        "language_status": "estimated_from_source_caption"
+      }
+    },
+    {
+      "id": "fr-tiktok-04",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-04.json",
+      "input_sha256": "d2c304d30783afb72c31da33204bab1c3773f588470c3977b62f696b8669fdb3",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.3
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@diagnosticauto/video/7240359104357633306",
+        "title": "Comment tester un fusible de voiture avec un multimètre",
+        "language_status": "inferred_from_indexed_source_text"
+      }
+    },
+    {
+      "id": "fr-tiktok-05",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-05.json",
+      "input_sha256": "e1fb3a3cee1f63a39709ea1e0f43b92c4727e7598a9c2b956fd6730644444403",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.3
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@code.simplifie/video/7307255539833113889",
+        "title": "Que signifient les voyants du tableau de bord ?",
+        "language_status": "inferred_from_source_text"
+      }
+    },
+    {
+      "id": "fr-tiktok-06",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-06.json",
+      "input_sha256": "d0ce0a2b08a597296d322e042e911e038c13f49bc705494c1392ade37b4bc88b",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.3
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@maclede12/video/7341410668551097633",
+        "title": "Comment redémarrer une voiture avec des câbles",
+        "language_status": "inferred_from_indexed_source_text"
+      }
+    },
+    {
+      "id": "fr-tiktok-07",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-07.json",
+      "input_sha256": "874c092c0bffaf3d9164b7119c61dd143ef54df2eb9f605b3b5bcfe1372232b1",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.3
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@vsm.cfa/video/7346621972895337761",
+        "title": "Où trouver la pression recommandée pour les pneus de son véhicule ?",
+        "language_status": "inferred_from_source_text"
+      }
+    },
+    {
+      "id": "fr-tiktok-08",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-08.json",
+      "input_sha256": "a0272d56e74ec165de37b488eb0a5edde449154e3fe1f8a3f39a2d469098fe4f",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.3
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@garage.amt42/video/7354341632034082081",
+        "title": "Trop de liquide de refroidissement : quelles causes ?",
+        "language_status": "inferred_from_indexed_source_text"
+      }
+    },
+    {
+      "id": "fr-tiktok-09",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-09.json",
+      "input_sha256": "d01919444355b58ecb4a6bc561bb0fb72708f8e4173958911c35356f4b8c658b",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.3
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@astucesautomobiles/video/7377481183908695342",
+        "title": "Comment utiliser la climatisation de votre voiture",
+        "language_status": "inferred_from_indexed_source_text"
+      }
+    },
+    {
+      "id": "fr-tiktok-10",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-10.json",
+      "input_sha256": "9eead2589a92709a80f00b00b070137895c1d4bb4e24fb78701195f544e1a160",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.3
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@reparationsfaciles/video/7440078341551574305",
+        "title": "Turbo diesel : comprendre le blocage de la géométrie variable",
+        "language_status": "inferred_from_source_text"
+      }
+    },
+    {
+      "id": "fr-instagram-01",
+      "actor": "apify/instagram-reel-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-instagram-01.json",
+      "input_sha256": "bcf1c2da98943ef7a3b83ef1082ff9b49656c6d1c2846d76087e155043c23669",
+      "result_upper_target": 100,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.5
+        }
+      },
+      "seed_evidence": {
+        "basis": "observed_profile_in_previous_collection",
+        "source": "collection/social-acquisition/plan.json"
+      }
+    },
+    {
+      "id": "fr-instagram-02",
+      "actor": "apify/instagram-reel-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-instagram-02.json",
+      "input_sha256": "b88bec887717f20040fadc1637f3ae64abbe0d181562b83fd10fbc0a5fbe98d7",
+      "result_upper_target": 100,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.5
+        }
+      },
+      "seed_evidence": {
+        "basis": "observed_profile_in_previous_collection",
+        "source": "collection/social-acquisition/plan.json"
+      }
+    },
+    {
+      "id": "fr-instagram-03",
+      "actor": "apify/instagram-reel-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-instagram-03.json",
+      "input_sha256": "c80362f85dbec6966de05a9f7c0111843c33b8abe34de4cadb0cff5d8d0a69d0",
+      "result_upper_target": 100,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.5
+        }
+      },
+      "seed_evidence": {
+        "basis": "observed_profile_in_previous_collection",
+        "source": "collection/social-acquisition/plan.json",
+        "language": "not_established"
+      }
+    },
+    {
+      "id": "fr-instagram-04",
+      "actor": "apify/instagram-reel-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-instagram-04.json",
+      "input_sha256": "22cf0c2ec40383235cfb175301a66ebbdeb2e4522fad0569cb8fd424f4c630dc",
+      "result_upper_target": 100,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.5
+        }
+      },
+      "seed_evidence": {
+        "basis": "observed_public_index_permalink",
+        "url": "https://www.instagram.com/atelier_mecanique_tlemcen/reel/DF3XohqJko5/",
+        "title": "Changement d’huile moteur pour la TOYOTA COROLLA hybride"
+      }
+    }
+  ],
+  "source_plan": "apify-french-pilot-v23/plan.json",
+  "spending_policy": {
+    "mode": "free_credits_only",
+    "user_authorization": "Uniquement les crédits gratuits disponibles",
+    "max_out_of_pocket_usd": 0,
+    "paid_balance_allowed": false,
+    "subscriptions_allowed": false,
+    "top_up_allowed": false,
+    "free_credit_remaining_usd": null,
+    "account_plan_verified": false,
+    "billing_verified_at": null,
+    "launch_gate": "Verify free credit origin and remaining balance in the connected account, bound each run within the remaining free allowance, run sequentially and recheck the actual consumption.",
+    "no_automatic_api_launch": true
+  }
+}
