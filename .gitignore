@@ -5,3 +5,5 @@
 *.sqlite3-*
 __pycache__/
 .DS_Store
+/collector/collection/runtime/
+**/private-raw/

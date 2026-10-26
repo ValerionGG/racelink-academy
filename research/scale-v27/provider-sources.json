@@ -1,0 +1,226 @@
+{
+  "checked_at": "2026-10-26",
+  "status": "public_documentation_research_only",
+  "network_authenticated_calls": 0,
+  "accounts_created": 0,
+  "money_spent_usd": 0,
+  "sources": [
+    {
+      "id": "brightdata_free",
+      "url": "https://docs.brightdata.com/general/account/billing-and-pricing/free-tier",
+      "supports": "5 000 crédits mensuels partagés, sans carte, arrêt sans fonds",
+      "type": "primary"
+    },
+    {
+      "id": "brightdata_social",
+      "url": "https://brightdata.com/products/web-scraper/social-media-scrape",
+      "supports": "Catalogue social inclus dans offre 5 000/mois",
+      "type": "primary"
+    },
+    {
+      "id": "brightdata_tiktok",
+      "url": "https://docs.brightdata.com/scrapers/tiktok.com.json",
+      "supports": "Schémas de collecte TikTok",
+      "type": "primary"
+    },
+    {
+      "id": "brightdata_instagram",
+      "url": "https://docs.brightdata.com/scrapers/instagram.com.json",
+      "supports": "Schémas de collecte Instagram",
+      "type": "primary"
+    },
+    {
+      "id": "brightdata_async",
+      "url": "https://docs.brightdata.com/api-reference/rest-api/scraper/asynchronous-requests",
+      "supports": "POST unique trigger, limites résultat",
+      "type": "primary"
+    },
+    {
+      "id": "brightdata_progress",
+      "url": "https://docs.brightdata.com/products/scrapers/scrapers-library/async-requests",
+      "supports": "Suivi snapshot et téléchargement",
+      "type": "primary"
+    },
+    {
+      "id": "ensemble_pricing",
+      "url": "https://ensembledata.com/pricing",
+      "supports": "50 unités quotidiennes en essai",
+      "type": "primary"
+    },
+    {
+      "id": "ensemble_trial",
+      "url": "https://ensembledata.com/tiktok-api",
+      "supports": "Essai 7 jours sans carte",
+      "type": "primary"
+    },
+    {
+      "id": "ensemble_schema",
+      "url": "https://ensembledata.com/apis/openapi.json",
+      "supports": "Coûts et pagination endpoint par endpoint",
+      "type": "primary"
+    },
+    {
+      "id": "scrapecreators_pricing",
+      "url": "https://scrapecreators.com/",
+      "supports": "100 crédits initiaux sans carte, bonus conditionnels",
+      "type": "primary"
+    },
+    {
+      "id": "scrapecreators_terms",
+      "url": "https://scrapecreators.com/terms",
+      "supports": "Prépayé, auto-recharge optionnelle",
+      "type": "primary"
+    },
+    {
+      "id": "scrapecreators_tiktok",
+      "url": "https://docs.scrapecreators.com/v3/tiktok/profile/videos/",
+      "supports": "1 crédit/page, max_cursor",
+      "type": "primary"
+    },
+    {
+      "id": "scrapecreators_instagram_posts",
+      "url": "https://docs.scrapecreators.com/v2/instagram/user/posts/",
+      "supports": "Légendes disponibles, next_max_id",
+      "type": "primary"
+    },
+    {
+      "id": "scrapecreators_instagram_reels",
+      "url": "https://docs.scrapecreators.com/v1/instagram/user/reels/",
+      "supports": "Pas de légende dans endpoint reels",
+      "type": "primary"
+    },
+    {
+      "id": "scrapecreators_openapi",
+      "url": "https://docs.scrapecreators.com/openapi.json",
+      "supports": "Contrat actuel fait foi sur ancien skill",
+      "type": "primary"
+    },
+    {
+      "id": "scrapecreators_skill",
+      "url": "https://github.com/ScrapeCreators/social-media-research-skills/blob/main/skills/scrapecreators-api/SKILL.md",
+      "supports": "Skill officiel consulté sans installation",
+      "type": "primary"
+    },
+    {
+      "id": "sociavault_pricing",
+      "url": "https://sociavault.com/pricing",
+      "supports": "50 crédits initiaux sans carte",
+      "type": "primary"
+    },
+    {
+      "id": "sociavault_terms",
+      "url": "https://sociavault.com/terms",
+      "supports": "Conditions consultées, aucun droit multi-essai établi",
+      "type": "primary"
+    },
+    {
+      "id": "sociavault_tiktok",
+      "url": "https://docs.sociavault.com/api-reference/tiktok/videos",
+      "supports": "API listes TikTok",
+      "type": "primary"
+    },
+    {
+      "id": "sociavault_instagram",
+      "url": "https://docs.sociavault.com/api-reference/instagram/reels",
+      "supports": "API reels Instagram",
+      "type": "primary"
+    },
+    {
+      "id": "tiktok_api",
+      "url": "https://github.com/davidteather/TikTok-Api",
+      "supports": "Code et exigences session du dépôt",
+      "type": "primary"
+    },
+    {
+      "id": "tiktok_api_issue",
+      "url": "https://github.com/davidteather/TikTok-Api/issues/1311",
+      "supports": "Réponses utilisateur vides signalées",
+      "type": "primary"
+    },
+    {
+      "id": "instaloader",
+      "url": "https://github.com/instaloader/instaloader",
+      "supports": "Dépôt entretenu",
+      "type": "primary"
+    },
+    {
+      "id": "legacy_tiktok",
+      "url": "https://github.com/drawrowfly/tiktok-scraper",
+      "supports": "Dernier push 2023 malgré étoiles",
+      "type": "primary"
+    },
+    {
+      "id": "agent_reach_update",
+      "url": "https://raw.githubusercontent.com/Panniantong/agent-reach/main/docs/update.md",
+      "supports": "Mise à jour disponible non lancée",
+      "type": "primary"
+    }
+  ],
+  "files": [
+    {
+      "path": "provider-docs/brightdata-async-guide.txt",
+      "sha256": "6765c5e86529175e1a5e0657d04490820643cc53c30c1bbca3ac9ba34b702054",
+      "bytes": 14430
+    },
+    {
+      "path": "provider-docs/brightdata-async.txt",
+      "sha256": "45edae4f68c147e4b5178bedf6ab49180df64026bf5f7f5ddc2f41be7074d93b",
+      "bytes": 18327
+    },
+    {
+      "path": "provider-docs/brightdata-free-tier.txt",
+      "sha256": "ce1b4bfa4d4e90044a3a813a0caff974283750b81fa9c16303452f22208c486a",
+      "bytes": 8841
+    },
+    {
+      "path": "provider-docs/brightdata-index.txt",
+      "sha256": "6eebabce5484c33d19175eb7717fcd35174736ebfca39f8c6c9e29ca8c5245c6",
+      "bytes": 17161
+    },
+    {
+      "path": "provider-docs/brightdata-instagram.json",
+      "sha256": "227afc7299ab0061dbf8300e0ff698aff0c472f962c362be9d8baf9ace8b67ae",
+      "bytes": 20730
+    },
+    {
+      "path": "provider-docs/brightdata-tiktok.json",
+      "sha256": "3a560ba5eb36cf94821773cde9f1ef180d3b96011209ad6627d142e2ec7c3436",
+      "bytes": 42351
+    },
+    {
+      "path": "provider-docs/ensemble-docs.txt",
+      "sha256": "6068aa626235f855127b36a875c95bdcaf2d60f62bbd178180ad550018e2e211",
+      "bytes": 9777485
+    },
+    {
+      "path": "provider-docs/ensemble-openapi.json",
+      "sha256": "291178ea1358ffd5f480b3e945be9b43b6005a6d0b59d72088cf95bfaee5a211",
+      "bytes": 1481848
+    },
+    {
+      "path": "provider-docs/ensemble-pricing.txt",
+      "sha256": "745ce425c9a4779ae070bf5d8297801216b433c33b98cf580769bd7dbc9d1c54",
+      "bytes": 128396
+    },
+    {
+      "path": "provider-docs/instaloader-readme.txt",
+      "sha256": "00be69a15a2c13a29dcbbeeb043bda7ea40aea327fd5194f3ef67008eec28a0c",
+      "bytes": 5502
+    },
+    {
+      "path": "provider-docs/scrapecreators-openapi.json",
+      "sha256": "5e27ef42d88fdfd2c8fd898cc00a3be02743772e59165887e4f75919ee57bba7",
+      "bytes": 838830
+    },
+    {
+      "path": "provider-docs/scrapecreators-skill.txt",
+      "sha256": "016154fe955fe3a41e83e8e00af82adf2ba34e47eeadf6f121b43f2ccacea418",
+      "bytes": 16054
+    },
+    {
+      "path": "provider-docs/tiktok-api-readme.txt",
+      "sha256": "fb0a51790a3a3901f006553ac920330df600b3057f3170d2641d5d548cda5670",
+      "bytes": 8912
+    }
+  ]
+}

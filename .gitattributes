@@ -6,3 +6,8 @@
 /collector/scripts/browser_social_capture.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /collector/tests_social_queue.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /collector/tests_browser_social_capture.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+/collector/scripts/profile_campaign.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/collector/scripts/scrapecreators_collect.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/collector/scripts/test_profile_campaign.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/collector/scripts/test_scrapecreators_collect.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

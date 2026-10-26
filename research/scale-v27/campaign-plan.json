@@ -1,0 +1,398 @@
+{
+  "version": 1,
+  "prepared_at": "2026-10-26",
+  "status": "NOT_EXECUTED",
+  "provider": "brightdata",
+  "not_a_launcher": true,
+  "account_verified": false,
+  "api_key_configured": false,
+  "network_calls": 0,
+  "out_of_pocket_usd": 0,
+  "budget": {
+    "documented_monthly_allowance": 5000,
+    "verified_remaining": null,
+    "free_only": true,
+    "allow_deposited_funds": false,
+    "allow_auto_recharge": false,
+    "allow_subscription": false,
+    "shared_product_pool": true,
+    "max_initial_results": 100,
+    "max_campaign_results": 4000,
+    "reserved_pool_margin": 1000,
+    "reserve_before_single_start": true,
+    "unknown_submission_blocks_new_start": true,
+    "fresh_balance_check_before_every_job": true,
+    "no_account_rotation": true
+  },
+  "dataset_ids": {
+    "instagram_reels": "gd_lyclm20il4r5helnj",
+    "tiktok_posts": "gd_lu702nij2f790tmv9h"
+  },
+  "stages": [
+    {
+      "id": "pilot",
+      "status": "NOT_EXECUTED",
+      "handles": [
+        "francoisgbrnr",
+        "maclede12"
+      ],
+      "max_results": 100,
+      "gate": "Live account verified: free quota, zero deposited funds, recharge off; maximum 50 results per profile"
+    },
+    {
+      "id": "qualification",
+      "status": "NOT_EXECUTED",
+      "handles": [
+        "glb_evan",
+        "lamecaniquepourlesfilles",
+        "hafidboulemanediagnosticsautos",
+        "kounhany"
+      ],
+      "max_results": 250,
+      "gate": "Pilot reviewed, exact-ID dedup and quota reconciled. GLB historical date/known-ID exclusion must be verified."
+    },
+    {
+      "id": "deepen_qualified",
+      "status": "NOT_EXECUTED",
+      "max_results": 1000,
+      "max_per_job": 250,
+      "gate": "Only measured >=30% new educational retention, >=60% French caption prose, <=20% duplicate identities, no unresolved restriction; live quota >=job cap+margin"
+    },
+    {
+      "id": "optional_scale",
+      "status": "NOT_EXECUTED",
+      "max_results": 2650,
+      "max_per_job": 250,
+      "gate": "Same conditions checked before each job. Existing qualified profiles only. A new evidenced profile first uses <=50 results within this cap; quota is a ceiling, not a target to exhaust."
+    }
+  ],
+  "profiles": [
+    {
+      "platform": "instagram",
+      "handle": "francoisgbrnr",
+      "profile_url": "https://www.instagram.com/francoisgbrnr/",
+      "profile_url_basis": "Existing V25 registry URL",
+      "evidence": [
+        {
+          "source_url": "https://gbrnr.com/liens/",
+          "evidence_level": "official_site_outbound_link_read_2026_10_21",
+          "creator": "Garage Bagnoles & Rock’n Roll / François Claire"
+        }
+      ],
+      "known_french_evidence_count": 1,
+      "french_basis": "Caption/catalogue evidence, not audio",
+      "max_results": 50,
+      "stage": "pilot",
+      "status": "NOT_EXECUTED",
+      "exact_handle_catalog_ids": [
+        "instagram:C6Yye2-o4oL"
+      ]
+    },
+    {
+      "platform": "instagram",
+      "handle": "maclede12",
+      "profile_url": "https://www.instagram.com/maclede12/",
+      "profile_url_basis": "Existing V25 registry URL",
+      "evidence": [
+        {
+          "source_url": "https://maclede12.fr/fr/",
+          "evidence_level": "official_site_outbound_link_read_2026_10_21",
+          "creator": "Ma Clé de 12"
+        }
+      ],
+      "known_french_evidence_count": 1,
+      "french_basis": "Caption/catalogue evidence, not audio",
+      "max_results": 50,
+      "stage": "pilot",
+      "status": "NOT_EXECUTED",
+      "exact_handle_catalog_ids": [],
+      "cross_platform_note": "TikTok V26 retained 53/60; this does not establish Instagram yield."
+    },
+    {
+      "platform": "instagram",
+      "handle": "glb_evan",
+      "profile_url": "https://www.instagram.com/glb_evan/",
+      "profile_url_basis": "Canonical profile from 171 native ownerUsername observations, profile itself not independently opened",
+      "evidence": [
+        {
+          "source_file": "work/apify-v26/raw/instagram-glb.json",
+          "sha256": "a1de0375489280d6f10ba8e667bebfb453e64afe4b9d895baba8a2277b0354cf",
+          "ownerUsername": "glb_evan",
+          "owner_rows": 171,
+          "other_collaborator_rows": 9,
+          "post_url": "https://www.instagram.com/p/DezTzw1lW8o/"
+        }
+      ],
+      "known_french_evidence_count": 74,
+      "french_basis": "Caption/catalogue evidence, not audio",
+      "max_results": 100,
+      "stage": "qualification",
+      "status": "NOT_EXECUTED",
+      "exact_handle_catalog_ids": [
+        "instagram:De1PaO0khZi",
+        "instagram:De6f4eDEfLe",
+        "instagram:Dej3IOPjwAv",
+        "instagram:Deq8OV3FSt7",
+        "instagram:DehSMvbAbGf",
+        "instagram:DeW_Iq4CCCl",
+        "instagram:DeZj6WMkQ0g",
+        "instagram:DeeETXDlK-D",
+        "instagram:DeTxB9tAbw9",
+        "instagram:DeY6qpTjjuE",
+        "instagram:DecIu2_glO7",
+        "instagram:DeR1ct6AbEP",
+        "instagram:DeHiZXUCOVS",
+        "instagram:DePQugSgehp",
+        "instagram:DeCYsmckdIx",
+        "instagram:DeEUYXOCjJP",
+        "instagram:DeBvk_gnajd",
+        "instagram:DeG5HowEUSP",
+        "instagram:Dd_z8whAM13",
+        "instagram:DeE9hJ3j1Au",
+        "instagram:DeRMQb9kfFX",
+        "instagram:Dd03rMpiHZ6",
+        "instagram:Dd6BKU7DOp7",
+        "instagram:DdySuTEjA61",
+        "instagram:Ddla4-ljSYl",
+        "instagram:DdtJJpXDSES",
+        "instagram:DdqkTjOibLA",
+        "instagram:DdeVsywCvxo",
+        "instagram:Ddbw011nREq",
+        "instagram:DdbIdkEkVoH",
+        "instagram:DdYiyYtEWeB",
+        "instagram:DdLqy51j6b5",
+        "instagram:DdD8dGNDgYd",
+        "instagram:DdJvP1lDN4h",
+        "instagram:DdCAzjFgRLV",
+        "instagram:DdGhyYfD-yA",
+        "instagram:Dc3EfrAlMKo",
+        "instagram:Dc8OEY-Ate3",
+        "instagram:Dc83MqOjfFx",
+        "instagram:DcqMa-bDBm-",
+        "instagram:Dcq1w2ngWjN",
+        "instagram:Dc0fs0DHHg3",
+        "instagram:Dcf5RuyCUFn",
+        "instagram:DcavvkIjGcA",
+        "instagram:DclC7RbArFp",
+        "instagram:DcjHSYclXBe",
+        "instagram:DcdUdmUj3FM",
+        "instagram:DcVmNy5FfF0",
+        "instagram:DcQcfWYDYN4",
+        "instagram:DcYK7RdkaQ0",
+        "instagram:DcGJWMUjIuo",
+        "instagram:DcIvdbDDVjF",
+        "instagram:DcGylztEuqc",
+        "instagram:DcN3vfDChbo",
+        "instagram:Db6Q4oaktKa",
+        "instagram:Db72IJyDH0s",
+        "instagram:Db-bBZ-FNg2",
+        "instagram:Db_EL2vCep8",
+        "instagram:DcBAkSuDRIa",
+        "instagram:DbyMNKqEYvZ",
+        "instagram:Db0HvTdEb6Y",
+        "instagram:Dbu-NvklHno",
+        "instagram:Dbvna1dDERq",
+        "instagram:Db3t0gYj6JW",
+        "instagram:DbtDKp0AESL",
+        "instagram:DbivXj4ieJ9",
+        "instagram:DbsZZH3CPry",
+        "instagram:DbkrCl9DjOw",
+        "instagram:Dbqd5EUiJna",
+        "instagram:DbnPyOSD0cN",
+        "instagram:DbbBDdPD3hf",
+        "instagram:Dbdlxp4kWdA",
+        "instagram:DbaX0f7CiXq",
+        "instagram:DbgKm7plNH0"
+      ],
+      "v26_yield": {
+        "raw": 180,
+        "retained": 74,
+        "new_inserted": 74,
+        "decisions": {
+          "hold": 71,
+          "retain": 74,
+          "exclude": 35
+        },
+        "review_file": "instagram-glb-review.json",
+        "review_sha256": "fc6860e1e444e8749c86334e6eb27be931627fea00b463acc798e5ca3fab49a0"
+      },
+      "historical_window": {
+        "strictly_before_utc": "2026-07-29T00:00:00Z",
+        "reason": "180 recent V26 publications already reviewed",
+        "provider_date_format_must_be_verified": true,
+        "skip_if_date_and_known_id_exclusion_unavailable": true,
+        "other_author_collaborations_require_separate_review": true
+      }
+    },
+    {
+      "platform": "instagram",
+      "handle": "lamecaniquepourlesfilles",
+      "profile_url": "https://www.instagram.com/lamecaniquepourlesfilles/",
+      "profile_url_basis": "Existing V25 registry URL",
+      "evidence": [
+        {
+          "source_url": "https://www.protection-des-mains.com/mecanique-pour-les-filles-bons-conseils/",
+          "evidence_level": "creator_first_person_interview_with_outbound_link_indexed_2026_10_21",
+          "creator": "La Mécanique pour les Filles / Mecagirl"
+        }
+      ],
+      "known_french_evidence_count": 1,
+      "french_basis": "Caption/catalogue evidence, not audio",
+      "max_results": 50,
+      "stage": "qualification",
+      "status": "NOT_EXECUTED",
+      "exact_handle_catalog_ids": []
+    },
+    {
+      "platform": "instagram",
+      "handle": "hafidboulemanediagnosticsautos",
+      "profile_url": "https://www.instagram.com/hafidboulemanediagnosticsautos/",
+      "profile_url_basis": "Existing V25 registry URL",
+      "evidence": [
+        {
+          "source_url": "https://www.instagram.com/reel/DV6G5OUAsDr/",
+          "evidence_level": "archived_primary_post_author_link_2026_10_20",
+          "creator": "AGUEROUANI / Hafid Boulemane Diagnostics Autos"
+        }
+      ],
+      "known_french_evidence_count": 1,
+      "french_basis": "Caption/catalogue evidence, not audio",
+      "max_results": 50,
+      "stage": "qualification",
+      "status": "NOT_EXECUTED",
+      "exact_handle_catalog_ids": []
+    },
+    {
+      "platform": "instagram",
+      "handle": "kounhany",
+      "profile_url": "https://www.instagram.com/kounhany/",
+      "profile_url_basis": "Existing V25 registry URL",
+      "evidence": [
+        {
+          "source_url": "https://www.instagram.com/reel/C5b0Jvop4mk/",
+          "evidence_level": "archived_primary_post_author_link_2026_10_20",
+          "creator": "Kounhany"
+        }
+      ],
+      "known_french_evidence_count": 1,
+      "french_basis": "Caption/catalogue evidence, not audio",
+      "max_results": 50,
+      "stage": "qualification",
+      "status": "NOT_EXECUTED",
+      "exact_handle_catalog_ids": [
+        "instagram:C5b0Jvop4mk"
+      ]
+    }
+  ],
+  "deprioritized": [
+    {
+      "platform": "instagram",
+      "handle": "norautofr",
+      "reason": "17 retained/100 and 67 excluded: excessive promotional yield",
+      "review": {
+        "raw": 100,
+        "retained": 17,
+        "new_inserted": 17,
+        "decisions": {
+          "hold": 16,
+          "exclude": 67,
+          "retain": 17
+        },
+        "review_file": "instagram-review.json",
+        "review_sha256": "e72b533f0c5ee5b5c281c1754b5eaa676530754945877e192704f62d05c9ebf5"
+      }
+    },
+    {
+      "platform": "tiktok",
+      "handle": "garage.amt42",
+      "reason": "0 retained/120 and 116 insufficient captions: no extension",
+      "review": {
+        "raw": 120,
+        "retained": 0,
+        "new_inserted": 0,
+        "decisions": {
+          "hold": 116,
+          "exclude": 4
+        },
+        "review_file": "garage-review.json",
+        "review_sha256": "2fabd3348b3fe85280a3183997c36617271f5ee89c1b8d09de3a513b1d53cdbf"
+      }
+    },
+    {
+      "platform": "tiktok",
+      "handle": "diagnosticauto",
+      "reason": "9 retained/120: low caption usefulness",
+      "review": {
+        "raw": 120,
+        "retained": 9,
+        "new_inserted": 9,
+        "decisions": {
+          "exclude": 42,
+          "retain": 9,
+          "hold": 69
+        },
+        "review_file": "diagnostic-review.json",
+        "review_sha256": "d37642a393affd7fac556c2cbc3acf25b0672e27ec881b70057dfb009bc519c2"
+      }
+    },
+    {
+      "platform": "instagram",
+      "handle": "autoradioboutique",
+      "reason": "Commercial source without bulk tutorial qualification"
+    },
+    {
+      "platform": "instagram",
+      "handle": "mongrossisteauto",
+      "reason": "Commercial source without bulk tutorial qualification"
+    },
+    {
+      "platform": "instagram",
+      "handle": "hugoproofficiel",
+      "reason": "Registry evidence is podcast description, no qualified tutorial yield"
+    }
+  ],
+  "dedup": {
+    "file": "campaign-dedup.json",
+    "sha256": "dfc58914f09f25c5d349c4d2f8b46ef3b4ac26138c943f51dfd9e525b96f854f",
+    "counts": {
+      "v26_unique": 981,
+      "v26_in_catalog": 302,
+      "v26_already_reviewed_but_not_published": 679,
+      "published_social_ids": 780,
+      "union_do_not_reacquire": 1459
+    },
+    "expected_new_videos": null,
+    "capacity_not_novelty_estimate": true,
+    "refresh_catalog_before_each_run": true,
+    "held_and_excluded_v26_ids_remain_excluded_from_reacquisition_without_new_evidence": true
+  },
+  "review_rules": [
+    "All candidates remain quarantined before full caption review",
+    "No vehicle or engine fitment inferred",
+    "FR inferred from prose only, never certified audio",
+    "No transcript invented",
+    "No media download",
+    "Reject private, story, slideshow and pure promotion",
+    "Title, description and hashtags separate",
+    "Only new retained IDs can enter signed approval"
+  ],
+  "evidence_files": [
+    {
+      "path": "work/scale-v25/creator-registry.json",
+      "sha256": "e6c6ce1091a3bf89cf8debdce34bb8ba2cf1147639f292eef315ebdeb6fb9692"
+    },
+    {
+      "path": "work/apify-v26/review-validation.json",
+      "sha256": "f41229d73b5e4b7979eef56400f258db8eab1e82472d9a094c354c30837ebec1"
+    },
+    {
+      "path": "work/apify-v26/results.json",
+      "sha256": "1b1f51660068d89bfa2252e4cb5deb09174b5899b2ea3271c8da1ba9d424e536"
+    },
+    {
+      "path": "work/scale-v27/provider-contracts.json",
+      "sha256": "975b69aeb4dd10540fbcbe550224dd4a76be4548819ccde12ce5899e4f4d0f22"
+    }
+  ],
+  "api_generation_gate": "This is not executable input. Use current Console-generated example to verify discover_by, date syntax, posts_to_not_include representation, custom_output_fields, limit_per_input and limit_multiple_results."
+}

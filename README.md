@@ -1,15 +1,11 @@
-# RaceLink Academy — Catalogue V26
+# RaceLink Academy
 
-[Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/?release=collection-v26) · [Bilan vérifiable](research/apify-v26/README.md)
+[Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/?release=collection-v27) · [Bilan V27](research/scale-v27/README.md)
 
-38,196 références vidéo et 11 guides. Cette version ajoute 300 références après revue des métadonnées.
+38199 références vidéo et 11 guides. Cette version ajoute trois références TikTok françaises et prépare une collecte paginée reprenable. La collecte massive attend encore des accès fournisseurs fonctionnels.
 
-981 lignes brutes ont été observées via Apify ; 3.331 USD de crédits utilisés selon la Console. Seuls les crédits gratuits ont été autorisés. Les résultats bruts et les ajouts utiles sont comptés séparément.
-
-Titres, descriptions, hashtags et indices de véhicule restent distincts. Les langues sont inférées du texte lorsque l’audio n’est pas établi ; une procédure ou licence libre n’est pas présumée.
-
-- [Collecteur et contrôles gratuits](collector/collection/free-social-v25/README.md)
-- [Recherche Agent Reach/Exa](collector/LOCAL_COLLECT.md)
+- [Campagnes de collecte](collector/PROFILE_CAMPAIGNS.md)
+- [Fournisseurs et sources vérifiées](research/scale-v27/providers.md)
 - [Traitement de gros lots](collector/SCALE_INGEST.md)
 
-GitHub Pages est un aperçu indépendant de Focus. Les modes clair et sombre sont conservés. `site/` contient le site statique et `collector/` les outils.
+GitHub Pages est un aperçu indépendant de Focus. Les langues déduites des légendes ne certifient pas l’audio. Une référence publique ne garantit ni licence libre ni procédure constructeur.

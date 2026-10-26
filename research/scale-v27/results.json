@@ -1,0 +1,74 @@
+{
+  "release": "collection-v27",
+  "prepared_at": "2026-10-26T12:48:51.146396+00:00",
+  "baseline_videos": 38196,
+  "total_videos": 38199,
+  "new_references": 3,
+  "updated_existing_references": 0,
+  "removed_references": 0,
+  "new_by_platform": {
+    "tiktok": 3
+  },
+  "new_by_language": {
+    "fr": 3
+  },
+  "total_by_platform": {
+    "dailymotion": 319,
+    "facebook": 46,
+    "instagram": 312,
+    "other": 14,
+    "tiktok": 471,
+    "twitch": 2,
+    "vimeo": 3,
+    "youtube": 37032
+  },
+  "total_by_language": {
+    "ar": 7,
+    "cs": 1,
+    "de": 4018,
+    "en": 13123,
+    "es": 4565,
+    "fa": 1,
+    "fr": 6061,
+    "id": 2,
+    "it": 298,
+    "ja": 96,
+    "ko": 52,
+    "pl": 3759,
+    "pt": 4206,
+    "ru": 6,
+    "ta": 1,
+    "tr": 3,
+    "und": 1987,
+    "zh": 13
+  },
+  "new_source_caption_fields": 3,
+  "new_transcripts": 0,
+  "new_references_with_thumbnail_url": 3,
+  "new_language_statuses": {
+    "inferred_from_source_caption_text": 3
+  },
+  "new_verification_scopes": {
+    "public_creator_embed_metadata_not_watched": 3
+  },
+  "catalog_sha256": "1110f3d978d689efb770c0d643a63ed4ada73dedb9df1e6aa07db1c9f1473f8d",
+  "videos": 38199,
+  "guides": 11,
+  "acquisition": {
+    "provider": "TikTok public creator embed",
+    "execution_channel": "public_http",
+    "raw_results_observed": 32,
+    "request_count": 6,
+    "successful_responses": 3,
+    "http_503_responses": 3,
+    "free_credits_consumed": 0,
+    "out_of_pocket_usd": 0,
+    "route_status": "paused_after_repeated_503",
+    "accounts_ready_for_collection": 0,
+    "note": "Only public metadata was retrieved; provider account registration is still pending."
+  },
+  "method": "Exact ID and row comparison between read-only baseline backup and current database; reviewed static export checked against current IDs and fields.",
+  "language_note": "Language labels refer to metadata or caption inference unless a source explicitly establishes more; no audio certification is implied.",
+  "rights_note": "Public availability and provider metadata do not establish a free video licence or certify a mechanical procedure.",
+  "publication_scope": "Aggregate counts and costs only; no account identifier, run/dataset ID, raw export, UI ledger or account screenshot."
+}
