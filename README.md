@@ -12,3 +12,5 @@ Navigation latérale, recherche au premier plan, cartes et fiches restructurées
 GitHub Pages est un aperçu indépendant de Focus. Les langues déduites des légendes ne certifient pas l’audio. Une référence publique ne garantit ni licence libre ni procédure constructeur.
 
 [Validation UI V30](research/studio-v30/VALIDATION.md) · [Références de design](site/design-sources.md) · [Aperçu mobile](https://valeriongg.github.io/racelink-academy/preview-mobile.html?release=studio-v30)
+
+[API complémentaires étudiées](collector/PUBLIC-APIS.md) · [Référentiel véhicule officiel](collector/VEHICLE-REFERENCE.md)

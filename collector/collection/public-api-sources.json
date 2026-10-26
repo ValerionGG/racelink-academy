@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "reviewed_on": "2026-10-26",
+  "discovered_from": "https://github.com/public-apis/public-apis",
+  "directory_commit": "82e763edc4919e2cb13ce8c8c57a33bc73ff4caf",
+  "purpose": "Reviewed source routing; not a job plan or an import approval.",
+  "out_of_pocket_limit_usd": 0,
+  "providers": [
+    {
+      "id": "dailymotion",
+      "role": "video_discovery",
+      "status": "existing_collector",
+      "auth": "public_metadata",
+      "tool": "scripts/collect_dailymotion.py",
+      "documentation": "https://developers.dailymotion.com/v0/reference/perform-an-api-call",
+      "next_action": "Use new bounded queries with existing checkpoints and review.",
+      "limitations": [
+        "Legacy API migration must be monitored.",
+        "Language is platform metadata, not verified audio."
+      ]
+    },
+    {
+      "id": "nhtsa_vpic",
+      "role": "vehicle_identity_reference",
+      "status": "consultation_only",
+      "auth": "none",
+      "tool": "scripts/vehicle_reference.py",
+      "documentation": "https://vpic.nhtsa.dot.gov/api/",
+      "scope_documentation": "https://vpic.nhtsa.dot.gov/api/home/index/faq",
+      "next_action": "Consult one make and model year with explicit US scope; no catalogue overwrite.",
+      "limitations": [
+        "US-market registration scope; incomplete French-market coverage.",
+        "Not an official maintenance procedure or proof of repair compatibility."
+      ]
+    },
+    {
+      "id": "bluesky_search",
+      "role": "external_link_discovery",
+      "status": "paused_access_denied",
+      "auth": "not_configured",
+      "documentation": "https://bsky.network/docs/api-directory/",
+      "observed_http_status": 403,
+      "next_action": "Keep paused; review documented access before any new call.",
+      "limitations": [
+        "A post linking a video is not its native caption.",
+        "No URL or pagination bypass."
+      ]
+    },
+    {
+      "id": "tiktok_official",
+      "role": "authorized_creator_videos_or_known_url_metadata",
+      "status": "requires_application_and_creator_authorization",
+      "auth": "oauth_for_display_api",
+      "documentation": "https://developers.tiktok.com/docs/en/display-api-get-started",
+      "next_action": "Use Display API only for creators authorizing the app; oEmbed only for known URLs.",
+      "limitations": [
+        "Does not grant unrestricted TikTok search.",
+        "Existing authorized accounts do not replace application scope approval."
+      ]
+    },
+    {
+      "id": "monocrawl",
+      "role": "social_video_discovery",
+      "status": "candidate_not_configured",
+      "auth": "api_key",
+      "documentation": "https://www.monocrawl.com/docs/platforms/tiktok",
+      "pricing_source": "https://www.monocrawl.com/pricing",
+      "advertised_initial_free_credits": 150,
+      "observed_account_balance": null,
+      "next_action": "Check actual free account balance and endpoint costs before a bounded pilot.",
+      "limitations": [
+        "README and current pricing disagree; use current pricing and observed balance.",
+        "Do not import sandbox/sample payloads.",
+        "No paid fallback, purchase, auto-recharge or duplicate account to extend quota."
+      ]
+    }
+  ]
+}
