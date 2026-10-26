@@ -1,0 +1,86 @@
+{
+  "release": "collection-v29",
+  "prepared_at": "2026-10-26T15:32:52.562234+00:00",
+  "baseline_videos": 38590,
+  "total_videos": 39182,
+  "videos": 39182,
+  "guides": 11,
+  "new_references": 592,
+  "updated_existing_references": 0,
+  "removed_references": 0,
+  "new_by_platform": {
+    "dailymotion": 26,
+    "vimeo": 14,
+    "youtube": 552
+  },
+  "new_by_language": {
+    "en": 191,
+    "fr": 367,
+    "und": 34
+  },
+  "total_by_platform": {
+    "dailymotion": 345,
+    "facebook": 46,
+    "instagram": 312,
+    "other": 14,
+    "tiktok": 862,
+    "twitch": 2,
+    "vimeo": 17,
+    "youtube": 37584
+  },
+  "total_by_language": {
+    "ar": 7,
+    "cs": 1,
+    "de": 4018,
+    "en": 13316,
+    "es": 4565,
+    "fa": 1,
+    "fr": 6817,
+    "id": 2,
+    "it": 298,
+    "ja": 96,
+    "ko": 52,
+    "pl": 3759,
+    "pt": 4206,
+    "ru": 6,
+    "ta": 1,
+    "tr": 3,
+    "und": 2021,
+    "zh": 13
+  },
+  "new_native_metadata_records": 592,
+  "new_nonempty_source_descriptions": 582,
+  "new_description_bases": {
+    "source_caption_excerpt_without_channel_footer": 26,
+    "source_description_useful_paragraph_excerpt_without_commercial_footer": 14,
+    "source_listing_excerpt_without_social_tokens": 552
+  },
+  "new_transcripts": 0,
+  "new_references_with_thumbnail_url": 592,
+  "new_language_statuses": {
+    "platform_metadata": 26,
+    "inferred_from_source_title_and_description": 14,
+    "inferred_from_public_listing_text": 518,
+    "unknown_mixed_or_translated_listing_text": 18,
+    "unknown_audio_language": 16
+  },
+  "new_verification_scopes": {
+    "public_listing_metadata": 578,
+    "public_official_oembed_metadata_not_watched": 14
+  },
+  "catalog_sha256": "554157a12e6affbc45c8f19b568bd28fcf4b75604df76fd57b33bc240cc51b02",
+  "acquisition": {
+    "provider": "Public platform metadata",
+    "execution_channel": "public_metadata",
+    "raw_results_observed": 5330,
+    "distinct_posts_observed": 5150,
+    "free_credits_consumed": 0,
+    "out_of_pocket_usd": 0,
+    "metadata_only": true,
+    "route_status": "completed"
+  },
+  "method": "Exact ID and unchanged-row comparison against a read-only pre-import backup; every addition matches a sealed root approval and the public export.",
+  "language_note": "Language labels inferred from captions do not certify the spoken audio.",
+  "rights_note": "Public availability does not establish a free video licence or validate a mechanical procedure.",
+  "publication_scope": "Reviewed aggregate counts and costs only; no account identifier, job ID, raw export, UI ledger, credentials or account screenshot."
+}
