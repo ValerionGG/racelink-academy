@@ -1,0 +1,71 @@
+{
+  "checked_at": "2026-10-26T09:12:12.837349+00:00",
+  "delivery": "social-automation-v25",
+  "website_release": "collection-v24",
+  "catalogue_videos": 37896,
+  "catalogue_sha256": "8cf65b7ccb946b97f2e047fd94bf514fee255ce945ac3696b097b3153ed2ec71",
+  "catalogue_changed_this_delivery": false,
+  "new_imported_videos": 0,
+  "new_native_captions": 0,
+  "new_transcripts": 0,
+  "hundreds_of_thousands_acquired": false,
+  "spending_policy": "existing_free_credits_only",
+  "out_of_pocket_usd": 0,
+  "authenticated_apify_requests": 0,
+  "apify_runs_started": 0,
+  "apify_account_and_free_balance_verified": false,
+  "budget_probe_result": {
+    "status": "blocked",
+    "reason": "APIFY_TOKEN_not_configured",
+    "network_called": false
+  },
+  "distributed_package_tests": {
+    "passed": 126,
+    "failed": 0,
+    "queue_transport_browser": 82,
+    "provider_launcher": 44,
+    "network": false,
+    "production_catalogue_modified": false
+  },
+  "discovery_executed": {
+    "queries": 200,
+    "source_variants": 4693,
+    "distinct_identities": 280,
+    "duplicate_identity_variants": 4413,
+    "automatic_candidates": 70,
+    "new_candidates_reviewed": 38,
+    "retained_for_future_import": 16,
+    "held": 16,
+    "excluded": 6,
+    "new_french_candidates_retained": 0,
+    "retained_text_language": "English inferred from indexed title; audio unverified"
+  },
+  "native_browser_observations": {
+    "browser": "in-app browser",
+    "apify": "Waiting for user login on GitHub OAuth",
+    "tiktok": "Public profile visible; video grid and search returned server error",
+    "instagram": "12 public grid links; post details and further grid require login",
+    "instagram_grid_items": 12,
+    "complete_captions": 0
+  },
+  "mcp": {
+    "vidiq_credits_available": 4,
+    "lowest_relevant_social_tool_cost": 5,
+    "social_calls_made": 0,
+    "agent_reach_instagram_backend": null
+  },
+  "automation": {
+    "id": "racelink-academy-collecte-et-classement",
+    "name": "RaceLink Academy — collecte et classement",
+    "kind": "heartbeat",
+    "status": "ACTIVE",
+    "cadence": "daily",
+    "first_run_observed": false,
+    "native_collection_ready": false,
+    "spending_policy": "existing_free_credits_only",
+    "max_out_of_pocket_usd": 0,
+    "confirmed_by": "automation_update create"
+  },
+  "next_execution": "Native profile pilot after a usable connection and live free-credit verification; no repeated exhausted Exa campaign.",
+  "provider_runtime_must_remain_local": true
+}

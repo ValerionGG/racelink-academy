@@ -25,3 +25,13 @@ Voir [CREATOR_SITES.md](CREATOR_SITES.md) pour les modes hors ligne/en ligne, le
 python scripts/creator_site_collect.py --help
 python -m unittest discover -s tests -p test_creator_site_collect.py -v
 ```
+
+## Collecte sociale automatisée V25
+
+La chaîne [SOCIAL_AUTOMATION.md](SOCIAL_AUTOMATION.md) relie trois entrées :
+
+- [File de découverte persistante](SOCIAL_QUEUE.md) : quotas, reprise et déduplication des résultats d’index.
+- [Collecte Apify sur crédits gratuits](collection/free-social-v25/README.md) : lots par créateur, vérification du plan Free à chaque lancement et exports paginés. Ce sous-paquet demande Python 3.10+ et `jsonschema`.
+- [Captures de publications visibles dans le navigateur](BROWSER_SOCIAL_CAPTURE.md) : séparation des légendes, titres, hashtags et textes alternatifs.
+
+Les comptes ne sont pas connectés par l’installation. Les tests locaux ne prouvent pas le rendement réel d’Apify. Le catalogue publié reste V24 ; aucun nouveau volume social n’est annoncé par cette livraison d’outils. Aucun secret ni état d’authentification n’est fourni.

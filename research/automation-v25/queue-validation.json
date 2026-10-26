@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-10-26T08:47:17.898221+00:00",
+  "queue_version": "1.0.1",
+  "collector_version": "1.0.2",
+  "tests": {
+    "command": "python -B -m unittest tests_social_queue scripts.test_local_collect -v",
+    "working_directory": "outputs/focus-academy",
+    "passed": 58,
+    "failed": 0,
+    "queue_tests": 28,
+    "collector_tests": 30,
+    "network": false,
+    "production_catalog_modified": false,
+    "real_synthetic_child_shutdown": [
+      "KeyboardInterrupt",
+      "SystemExit"
+    ]
+  },
+  "independent_review": {
+    "reviewer": "sources_video",
+    "queue_quota_snapshot_blocker_found": false,
+    "inherited_transport_issue": "Reproduced, then fixed after active collection finished; new child-process tests pass.",
+    "stop_and_rebind": "Covered by local integration tests; independent review not yet completed."
+  },
+  "patch_application": "transport-patch-applied.json",
+  "initial_production_run": {
+    "requests": 200,
+    "source_variants": 4693,
+    "unique_identities": 280,
+    "duplicate_identity_variants": 4413,
+    "collector_version_used": "1.0.1",
+    "collection_executed_by": "parent task",
+    "candidate_publication": false
+  },
+  "files": [
+    {
+      "path": "outputs/focus-academy/scripts/social_queue.py",
+      "sha256": "3e14977f779f15ff07654dcc8d77e25e5d94397a626e07e64e44d3113f99c9d7"
+    },
+    {
+      "path": "outputs/focus-academy/tests_social_queue.py",
+      "sha256": "ceb7f736ce02ae77732f43874103a3ae2d9b5e785aafbbccf151740a5200e213"
+    },
+    {
+      "path": "outputs/focus-academy/scripts/local_collect.py",
+      "sha256": "0a8c3fa6e2bd78f8915c36c3eecfafc28a4ee537e7f16c2bdb1b27ca12f51e54"
+    },
+    {
+      "path": "outputs/focus-academy/scripts/test_local_collect.py",
+      "sha256": "20e45387aa77004b8a6f694ff67c2b94f36c56c3f274a37bf38e72a716668365"
+    },
+    {
+      "path": "work/social-automation-2026-10-26/README.md",
+      "sha256": "f40dfce77732fbcbaf8472e8b756f7457553889683b370b84795d66b88e12903"
+    }
+  ]
+}

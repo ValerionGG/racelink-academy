@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "required": [
+    "username"
+  ],
+  "properties": {
+    "username": {
+      "title": "🎞️ Instagram username, profile URL, ID, reel URL or audio URL",
+      "type": "array",
+      "description": "Add Instagram usernames, profile URLs, IDs, or direct reel URLs. Each item will be processed individually.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "resultsLimit": {
+      "title": "💯 Maximum reels per profile",
+      "minimum": 1,
+      "type": "integer",
+      "description": "Set how many reels should be scraped per profile or URL. For example, if set to 5, the scraper will extract up to 5 reels from each profile. This setting is ignored when scraping direct reel URLs."
+    },
+    "onlyPostsNewerThan": {
+      "title": "📅 Scrape reels newer than",
+      "pattern": "^(\\d{4})-(0[1-9]|1[0-2])-(0[1-9]|[12]\\d|3[01])(T[0-2]\\d:[0-5]\\d(:[0-5]\\d)?(\\.\\d+)?Z?)?$|^(\\d+)\\s*(minute|hour|day|week|month|year)s?$",
+      "type": "string",
+      "description": "Scrape reels from the provided date up to the present. For audio URLs this filter is ignored. Supported formats include `YYYY-MM-DD`, full ISO timestamps (e.g. `2025-09-23T10:02:01`), or relative time such as `1 day`, `2 weeks`, or `3 months`. All times are evaluated in UTC."
+    },
+    "skipPinnedPosts": {
+      "title": "📌 Skip pinned reels",
+      "type": "boolean",
+      "description": "Enable this option if you want to exclude pinned reels from the overall results.",
+      "default": false
+    },
+    "skipTrialReels": {
+      "title": "🎬 Skip trial reels",
+      "type": "boolean",
+      "description": "If enabled, the feed will be scraped without trial reels: an Instagram feature creators use to test a video with non-followers before sharing it with their existing audience. <a href='https://creators.instagram.com/blog/instagram-trial-reels' target='_blank' rel='noopener'>Learn more</a>.",
+      "default": false
+    },
+    "includeSharesCount": {
+      "title": "$ Include shares count",
+      "type": "boolean",
+      "description": "Extract the number of shares for each reel. Available for paying users only. Upgrade to the <a href='https://console.apify.com/billing/subscription' target='_blank' rel='noopener'>Starter plan</a> to unlock it.",
+      "default": false
+    },
+    "includeTranscript": {
+      "title": "$ Include transcript",
+      "type": "boolean",
+      "description": "Extract a text transcript of the reel audio for content analysis. This <a href='https://apify.com/apify/instagram-reel-scraper/pricing' target='_blank' rel='noopener'>add-on feature</a> is charged per minute of audio.",
+      "default": false
+    },
+    "includeDownloadedVideo": {
+      "title": "$ Include downloaded video",
+      "type": "boolean",
+      "description": "Download the reel video and store a local copy before Instagram links expire. This <a href='https://apify.com/apify/instagram-reel-scraper/pricing' target='_blank' rel='noopener'>add-on feature</a> is charged per 1 MB downloaded.",
+      "default": false
+    }
+  }
+}

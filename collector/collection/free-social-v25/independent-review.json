@@ -1,0 +1,269 @@
+{
+  "reviewed_at": "2026-10-26T09:07:56.563580+00:00",
+  "scope": "Independent offline launcher and PUBLIC_EXPORT compatibility review; no authenticated or other network request",
+  "checks": [
+    {
+      "case": "public tutorial",
+      "passed": true,
+      "expected": "candidate",
+      "actual": []
+    },
+    {
+      "case": "isPrivate=True",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Private or access-restricted record"
+    },
+    {
+      "case": "isPrivate=1",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Private or access-restricted record"
+    },
+    {
+      "case": "isPrivate='yes'",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Private or access-restricted record"
+    },
+    {
+      "case": "private=True",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Private or access-restricted record"
+    },
+    {
+      "case": "private=1",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Private or access-restricted record"
+    },
+    {
+      "case": "private='yes'",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Private or access-restricted record"
+    },
+    {
+      "case": "is_private=True",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Private or access-restricted record"
+    },
+    {
+      "case": "is_private=1",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Private or access-restricted record"
+    },
+    {
+      "case": "is_private='yes'",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Private or access-restricted record"
+    },
+    {
+      "case": "isPhoto=True",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Source explicitly declares non-video media; permalink cannot override it"
+    },
+    {
+      "case": "isPhoto=1",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Source explicitly declares non-video media; permalink cannot override it"
+    },
+    {
+      "case": "isPhoto='yes'",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Source explicitly declares non-video media; permalink cannot override it"
+    },
+    {
+      "case": "isSlideshow=True",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Source explicitly declares non-video media; permalink cannot override it"
+    },
+    {
+      "case": "isSlideshow=1",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Source explicitly declares non-video media; permalink cannot override it"
+    },
+    {
+      "case": "isSlideshow='yes'",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Source explicitly declares non-video media; permalink cannot override it"
+    },
+    {
+      "case": "is_video=False",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Source explicitly declares non-video media; permalink cannot override it"
+    },
+    {
+      "case": "is_video=0",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Source explicitly declares non-video media; permalink cannot override it"
+    },
+    {
+      "case": "is_video='no'",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Source explicitly declares non-video media; permalink cannot override it"
+    },
+    {
+      "case": "isSponsored=True",
+      "passed": true,
+      "expected": "quarantine",
+      "actual": [
+        "promotional_or_sponsored_metadata"
+      ]
+    },
+    {
+      "case": "isSponsored=1",
+      "passed": true,
+      "expected": "quarantine",
+      "actual": [
+        "promotional_or_sponsored_metadata"
+      ]
+    },
+    {
+      "case": "isSponsored='true'",
+      "passed": true,
+      "expected": "quarantine",
+      "actual": [
+        "promotional_or_sponsored_metadata"
+      ]
+    },
+    {
+      "case": "isAd=True",
+      "passed": true,
+      "expected": "quarantine",
+      "actual": [
+        "promotional_or_sponsored_metadata"
+      ]
+    },
+    {
+      "case": "isAd=1",
+      "passed": true,
+      "expected": "quarantine",
+      "actual": [
+        "promotional_or_sponsored_metadata"
+      ]
+    },
+    {
+      "case": "isAd='true'",
+      "passed": true,
+      "expected": "quarantine",
+      "actual": [
+        "promotional_or_sponsored_metadata"
+      ]
+    },
+    {
+      "case": "isAIGC=True",
+      "passed": true,
+      "expected": "quarantine",
+      "actual": [
+        "source_declares_ai_generated_content_review_required"
+      ]
+    },
+    {
+      "case": "isAIGC=1",
+      "passed": true,
+      "expected": "quarantine",
+      "actual": [
+        "source_declares_ai_generated_content_review_required"
+      ]
+    },
+    {
+      "case": "isAIGC='true'",
+      "passed": true,
+      "expected": "quarantine",
+      "actual": [
+        "source_declares_ai_generated_content_review_required"
+      ]
+    },
+    {
+      "case": "isStory=True",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Not an evidenced video; images and mixed carousels are not imported"
+    },
+    {
+      "case": "isStory=1",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Not an evidenced video; images and mixed carousels are not imported"
+    },
+    {
+      "case": "isStory='true'",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Not an evidenced video; images and mixed carousels are not imported"
+    },
+    {
+      "case": "is_story=True",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Not an evidenced video; images and mixed carousels are not imported"
+    },
+    {
+      "case": "is_story=1",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Not an evidenced video; images and mixed carousels are not imported"
+    },
+    {
+      "case": "is_story='true'",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Not an evidenced video; images and mixed carousels are not imported"
+    },
+    {
+      "case": "source Story media type",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Not an evidenced video; images and mixed carousels are not imported"
+    },
+    {
+      "case": "unknown flag",
+      "passed": true,
+      "expected": "reject",
+      "actual": "PilotError: Unknown source restriction flag encoding; review required before export"
+    },
+    {
+      "case": "restriction wins alias conflict",
+      "passed": true,
+      "expected": "reject",
+      "actual": "ValidationError: Private or access-restricted record"
+    },
+    {
+      "case": "discard unrelated secrets/comments/profile/media fields",
+      "passed": true,
+      "expected": "omitted",
+      "actual": "allowlisted projection"
+    }
+  ],
+  "passed": 38,
+  "total": 38,
+  "sha256": {
+    "work\\scale-v25\\provider-research\\launch_free_pilot.py": "527e80c7d081323ad5f50aa0d519f7d5871da87c5c98a97249bf9060ceeb25fb",
+    "work\\scale-v25\\provider-research\\verify_apify_free_credits.py": "d3e8d6b2075ebd819c456c82bd73afdf03496d9215bc7b9b6d604a8840a50b9d",
+    "outputs\\focus-academy\\scripts\\public_export.py": "891d45e4bb1f6c11aa3e69b54f71a5d938e4e375f9eb38779703121e0fddf871"
+  },
+  "findings_closed": [
+    "Restriction booleans preserve numeric/text encodings and reject unknown values.",
+    "Story alias reaches PUBLIC_EXPORT and is rejected."
+  ],
+  "financial_resume_secrets_review": "No further concrete defect found: Free-plan guard, 0.50 USD server cap, persistent budget reservations, durable receipt before sole POST, unknown outcome blocks resubmission, GET-only resume, projected account outputs.",
+  "limits": [
+    "No live authenticated account or Actor run tested.",
+    "Local receipts and lock do not serialize another independent tool/account user.",
+    "This review does not establish tutorial relevance, public availability or reuse rights of future results."
+  ]
+}

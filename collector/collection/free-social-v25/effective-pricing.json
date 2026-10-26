@@ -1,0 +1,186 @@
+[
+  {
+    "actor": "clockworks~tiktok-scraper",
+    "id": "GdWCkxBtKWOsKjdch",
+    "pricing_started": "2026-08-18T07:19:07.761Z",
+    "pricing_model": "PAY_PER_EVENT",
+    "minimum_run_cap": 0.5,
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 0,
+      "memoryMbytes": 4096
+    },
+    "build": {
+      "latest": {
+        "buildId": "O7b58rnGZYU3P0DX4",
+        "finishedAt": "2026-10-20T17:21:54.595Z",
+        "buildNumberInt": 620,
+        "buildNumber": "0.0.620"
+      }
+    },
+    "events": {
+      "result": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.0037
+        },
+        "single_event": false,
+        "description": "Cost per result returned."
+      },
+      "filter-applied": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.0013
+        },
+        "single_event": false,
+        "description": "Extra cost when date filtering is used."
+      },
+      "popularity-filter-applied": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.0013
+        },
+        "single_event": false,
+        "description": "Extra cost when filtering by popularity is used."
+      },
+      "follower-dataset-item": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.004
+        },
+        "single_event": false,
+        "description": "Extra cost per follower / following profile returned."
+      },
+      "mobile-filter-sorting-applied": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.0013
+        },
+        "single_event": false,
+        "description": "Extra cost for scraping the sorted videos."
+      },
+      "video-download": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.0013
+        },
+        "single_event": false,
+        "description": "Extra cost when downloading video is enabled."
+      },
+      "comment-dataset-item": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.00125
+        },
+        "single_event": false,
+        "description": "Extra cost per comment returned."
+      },
+      "scrape-as-in-country": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.0013
+        },
+        "single_event": false,
+        "description": "Extra cost for scraping as if in a specific country."
+      },
+      "transcription-minute": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.048
+        },
+        "single_event": false,
+        "description": "Extra cost charged per started minute per video."
+      },
+      "ai-video-description": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.0013
+        },
+        "single_event": false,
+        "description": "Extra cost for timestamped AI description of a video per second."
+      },
+      "ai-video-summary": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.0013
+        },
+        "single_event": false,
+        "description": "Extra cost for AI summary of a video per second."
+      },
+      "actor-start": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.001
+        },
+        "single_event": true,
+        "description": "Flat fee for starting an Actor run."
+      }
+    },
+    "chargeForPlatformUsage": null,
+    "pricing_keys": [
+      "minimalMaxTotalChargeUsd",
+      "pricingModel",
+      "isPriceChangeNotificationSuppressed",
+      "pricingPerEvent",
+      "createdAt",
+      "startedAt",
+      "apifyMarginPercentage",
+      "notifiedAboutChangeAt"
+    ]
+  },
+  {
+    "actor": "apify~instagram-reel-scraper",
+    "id": "xMc5Ga1oCONPmWJIa",
+    "pricing_started": "2026-03-11T14:56:04.494Z",
+    "pricing_model": "PAY_PER_EVENT",
+    "minimum_run_cap": 0.0073,
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 20000,
+      "memoryMbytes": 1024
+    },
+    "build": {
+      "latest": {
+        "buildId": "vKdGZO7GHSTdoyDfG",
+        "finishedAt": "2026-10-22T08:37:36.463Z",
+        "buildNumberInt": 618,
+        "buildNumber": "0.0.618"
+      }
+    },
+    "events": {
+      "reel": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.0026
+        },
+        "single_event": false,
+        "description": "Each reel written to the dataset."
+      },
+      "actor-start": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.001
+        },
+        "single_event": true,
+        "description": "Flat charge for starting an Actor run."
+      },
+      "shares-count": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.007
+        },
+        "single_event": false,
+        "description": "Extra cost per reel scraped with a shares count."
+      },
+      "transcript": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.048
+        },
+        "single_event": false,
+        "description": "Charged per started minute per reel."
+      },
+      "video-download": {
+        "price_free_usd": {
+          "tieredEventPriceUsd": 0.02
+        },
+        "single_event": false,
+        "description": "Charged per started 1 MB downloaded per reel."
+      }
+    },
+    "chargeForPlatformUsage": null,
+    "pricing_keys": [
+      "minimalMaxTotalChargeUsd",
+      "pricingModel",
+      "isPriceChangeNotificationSuppressed",
+      "pricingPerEvent",
+      "createdAt",
+      "startedAt",
+      "apifyMarginPercentage"
+    ]
+  }
+]

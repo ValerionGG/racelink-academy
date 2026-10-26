@@ -1,0 +1,67 @@
+{
+  "type": "object",
+  "properties": {
+    "startUrls": {
+      "title": "Start URLs",
+      "type": "array",
+      "description": "Paste the TikTok URLs, and get the results immediately. User URLs are supported.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "usernames": {
+      "title": "TikTok Usernames",
+      "type": "array",
+      "description": "Usernames of TikTok users. Paste the usernames and get the results immediately. Please remove @ sign before paste.",
+      "items": {
+        "type": "string"
+      }
+    },
+    "until": {
+      "title": "Scrape Until",
+      "type": "string",
+      "description": "Returns posts newer than this date."
+    },
+    "since": {
+      "title": "Scrape Since",
+      "type": "string",
+      "description": "Returns posts older than this date."
+    },
+    "maxItems": {
+      "title": "Maximum number of items on output",
+      "type": "integer",
+      "description": "Maximum number of items that you want as output."
+    },
+    "customMapFunction": {
+      "title": "Custom map function",
+      "type": "string",
+      "description": "Function that takes each of the objects as argument and returns data that will be mapped by the function itself. This function is not intended for filtering, please don't use it for filtering purposes or you will get banned automatically."
+    },
+    "outputConnector": {
+      "title": "Send results to Notion, Todoist, … (optional)",
+      "type": "string",
+      "description": "Pick an MCP connector you authorized in Console → Settings → API & Integrations → MCP connectors (e.g. Notion, Todoist — any service whose MCP server offers non-destructive write tools works best-effort). The scraped results are written through your own connector — the Actor never sees your third-party credentials. Only non-destructive write tools are used; it can never delete or overwrite your existing data."
+    },
+    "deliverTarget": {
+      "title": "Destination target",
+      "type": "string",
+      "description": "Where to write into the connector — paste the URL or ID. Notion example: https://www.notion.so/My-Posts-24f8a1b2c3d44e5f8a9b0c1d2e3f4a5b. Leave empty for services that need no target (e.g. Todoist Inbox, Slack). For Notion, share the page or database with your connector first (Notion's ••• → Connections menu), and point at a PAGE for structured columns (the Actor builds the database for you) — an empty database receives only the title (the rest of each record goes to the row's body)."
+    },
+    "deliverMode": {
+      "title": "Write mode",
+      "enum": [
+        "perPost",
+        "summary"
+      ],
+      "type": "string",
+      "description": "perPost writes one record per scraped item; summary writes a single roll-up for the run.",
+      "default": "perPost"
+    },
+    "deliverMaxItems": {
+      "title": "Max records to deliver — perPost only (optional)",
+      "minimum": 1,
+      "type": "integer",
+      "description": "Cap on how many records perPost mode writes to the connector; ignored in summary mode. Leave empty to deliver everything scraped."
+    }
+  }
+}

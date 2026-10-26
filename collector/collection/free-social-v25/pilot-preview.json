@@ -1,0 +1,86 @@
+{
+  "mode": "offline_preview",
+  "network_called": false,
+  "credential_read": false,
+  "execution_guard_enabled": true,
+  "maximum_charge_per_run_usd": 0.5,
+  "reserve_usd": 0.25,
+  "batches": [
+    {
+      "id": "fr-tiktok-06",
+      "actor": "clockworks/tiktok-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-tiktok-06.json",
+      "input_sha256": "d0ce0a2b08a597296d322e042e911e038c13f49bc705494c1392ade37b4bc88b",
+      "result_upper_target": 60,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.5
+        }
+      },
+      "seed_evidence": {
+        "url": "https://tiktok.com/@maclede12/video/7341410668551097633",
+        "title": "Comment redémarrer une voiture avec des câbles",
+        "language_status": "inferred_from_indexed_source_text"
+      },
+      "input_rechecked_at": "2026-10-26",
+      "reviewed_build": "0.0.620",
+      "schema_evidence": "../clockworks~tiktok-scraper-input-schema.json",
+      "price_evidence": "../effective-pricing.json",
+      "input": {
+        "shouldDownloadVideos": false,
+        "shouldDownloadCovers": false,
+        "shouldDownloadSlideshowImages": false,
+        "shouldDownloadAvatars": false,
+        "shouldDownloadMusicCovers": false,
+        "downloadSubtitlesOptions": "NEVER_DOWNLOAD_SUBTITLES",
+        "aiVideoDescription": false,
+        "aiVideoSummary": false,
+        "commentsPerPost": 0,
+        "maxFollowersPerProfile": 0,
+        "maxFollowingPerProfile": 0,
+        "scrapeRelatedVideos": false,
+        "scrapeAdditionalAuthorMeta": false,
+        "profiles": [
+          "maclede12"
+        ],
+        "resultsPerPage": 60,
+        "profileScrapeSections": [
+          "videos"
+        ],
+        "profileSorting": "latest"
+      }
+    },
+    {
+      "id": "fr-instagram-01",
+      "actor": "apify/instagram-reel-scraper",
+      "stage": "pilot",
+      "input_file": "inputs/fr-instagram-01.json",
+      "input_sha256": "bcf1c2da98943ef7a3b83ef1082ff9b49656c6d1c2846d76087e155043c23669",
+      "result_upper_target": 100,
+      "request": {
+        "query": {
+          "maxTotalChargeUsd": 0.5
+        }
+      },
+      "seed_evidence": {
+        "basis": "observed_profile_in_previous_collection",
+        "source": "collection/social-acquisition/plan.json"
+      },
+      "input_rechecked_at": "2026-10-26",
+      "reviewed_build": "0.0.618",
+      "schema_evidence": "../apify~instagram-reel-scraper-input-schema.json",
+      "price_evidence": "../effective-pricing.json",
+      "input": {
+        "username": [
+          "norautofr"
+        ],
+        "resultsLimit": 100,
+        "includeSharesCount": false,
+        "includeTranscript": false,
+        "includeDownloadedVideo": false
+      }
+    }
+  ],
+  "next_action": "Only --execute can request starts, after live Free-plan/budget/provider checks."
+}

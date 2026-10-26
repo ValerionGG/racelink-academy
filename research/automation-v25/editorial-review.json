@@ -1,0 +1,906 @@
+{
+  "version": 1,
+  "reviewed_at": "2026-10-26T08:58:37.044279+00:00",
+  "snapshot": {
+    "path": "work/scale-v25/creator-review/review/batch-000000/accepted.json",
+    "sha256": "9adac5fdd35ff11a6944a351d55e305d15d61f965ab5790d57b70b248a568069",
+    "records": 70
+  },
+  "derived_scope": {
+    "path": "work/scale-v25/research/backend-creator-review-input.json",
+    "sha256": "7ccbf3b6568fd931e21b827eef0a9b78979b20eaa0c3b35bf445efd1522da93f",
+    "new_ids": 38,
+    "existing_ids_not_reviewed": 32
+  },
+  "prior_reviews": [
+    {
+      "path": "work/scale-v23/research/social-final-review-notes.json",
+      "sha256": "eed232725ace9e13dc7052ce98d3c2f2d6f2878047059f77244ac2ac0204a21a"
+    },
+    {
+      "path": "work/free-v24/research/social-review.json",
+      "sha256": "461f7c6efb44fd6bfca1d2b88e7129192fd3fd0170c04be5d4cb3ef4dfafc959"
+    }
+  ],
+  "counts": {
+    "retain": 16,
+    "hold": 16,
+    "exclude": 6
+  },
+  "retained_by_platform": {
+    "instagram": 4,
+    "tiktok": 12
+  },
+  "retained_text_language": {
+    "en": 16,
+    "fr": 0
+  },
+  "prior_restrictions_preserved": 8,
+  "scope_notes": [
+    "All 38 source titles and source record hashes were checked against the accepted snapshot.",
+    "Index titles are discovery evidence, not verified native captions or proof of viewing.",
+    "retain means editorial eligibility as a metadata candidate, not automatic publication or technical endorsement.",
+    "No Exa composite body, query text, hashtags or creator name used to invent vehicle applicability.",
+    "No new technical compatibility, transcript, open license or audio language confirmation.",
+    "Small incremental result only; not a response to the requested acquisition volume.",
+    "No network, catalog mutation or import performed for this review."
+  ],
+  "decisions": [
+    {
+      "id": "instagram:C0-ZnRUNtTh",
+      "snapshot_position_1_based": 1,
+      "url": "https://instagram.com/reel/C0-ZnRUNtTh",
+      "decision": "retain",
+      "reason": "Procédure explicitement annoncée : ajout de fluide de transmission sans jauge, véhicule et année écrits dans le titre.",
+      "display_title_in_snapshot": "No Dipstick-How To Add Transmission Fluid To A 2016 Chevy Colorado",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "4ed13405da474b5282268befefa5efba01465df3b01bd58a852bf8e01d432d04",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "No Dipstick-How To Add Transmission Fluid To A 2016 Chevy Colorado",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "No Dipstick-How To Add Transmission Fluid To A 2016 Chevy Colorado",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "instagram:C3qYa08IZOY",
+      "snapshot_position_1_based": 3,
+      "url": "https://instagram.com/reel/C3qYa08IZOY",
+      "decision": "hold",
+      "reason": "Intervention évoquée au passé et titre tronqué après Land ; aucune méthode ni véhicule complet établis.",
+      "display_title_in_snapshot": "Vidange de Boite Automatique bien mérité pour ce gros Land ...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "0efde812465aa5951d773e657a5c82bf3b8d4554b58718542403f9d162da5344",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:C_uOItuMTFo",
+      "snapshot_position_1_based": 9,
+      "url": "https://instagram.com/reel/C_uOItuMTFo",
+      "decision": "exclude",
+      "reason": "Annonce de prestations mobiles SAME DAY SERVICE / WE COME TO YOU ; aucune démarche pédagogique explicite.",
+      "display_title_in_snapshot": "JAE Mobile Mechanic on Instagram: \"2020 Land rover brake replacement and Mercedes bens brakes and rotors",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "fd9a85619eb1ab9220de0abd6842cc10f5cfbaa17b2513b42b1e350972b99368",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:CtRLoABLiEQ",
+      "snapshot_position_1_based": 10,
+      "url": "https://instagram.com/reel/CtRLoABLiEQ",
+      "decision": "retain",
+      "reason": "Démonstration précisément titrée : installation de pompe à eau entraînée par chaîne, Infiniti G35 2008 écrit en prose. Le déroulé reste non vérifié.",
+      "display_title_in_snapshot": "Chain driven water “coolant” pump installation.",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "8ff6487608609a5384d1bd3fd3f824aeb6ef1688a3c8043ef738820b41f2c62f",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "Chain driven water “coolant” pump installation — 2008 infiniti g35",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "Chain driven water “coolant” pump installation — 2008 infiniti g35",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "instagram:CwWqujdvTue",
+      "snapshot_position_1_based": 11,
+      "url": "https://instagram.com/reel/CwWqujdvTue",
+      "decision": "hold",
+      "reason": "Annonce OUT NOW et renvoi Watch the full video here : rien ne prouve que ce Reel contient le tutoriel complet annoncé ailleurs.",
+      "display_title_in_snapshot": "Full in depth Ford PowerShift DCT clutch replacement video OUT NOW!",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "1810e0ec696aec0259b0e7d806cf2bfb7af7c094d4c1e5abbcbeebb28e094323",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DAThwvruIza",
+      "snapshot_position_1_based": 12,
+      "url": "https://instagram.com/reel/DAThwvruIza",
+      "decision": "exclude",
+      "reason": "Exclusion V24 maintenue : promotion des prestations de Point S, sans geste pédagogique précisé.",
+      "display_title_in_snapshot": "Chez Point S Villemaire Pneus et Mécanique, on s’occupe de votre voiture en assurant bien sûr son entretien, mais saviez-vous que nous...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "db5288849f6ded9f3d7b632b4de4930a442cf613e6f874338503b48b424424b3",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": {
+        "source": "work\\free-v24\\research\\social-review.json",
+        "decision": "exclude",
+        "reason": "Exclusion antérieure conservée : promotion de prestations du garage."
+      },
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DC4z-5GSLuv",
+      "snapshot_position_1_based": 13,
+      "url": "https://instagram.com/reel/DC4z-5GSLuv",
+      "decision": "retain",
+      "reason": "Action pédagogique explicite How to bleed your power steering ; aucun modèle ou protocole universel ajouté.",
+      "display_title_in_snapshot": "How to bleed your power steering✅",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "a1bc2ef59e43fcf1c8f5cec981a7b9c178f10151142531bdd919b8973e40910c",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "How to bleed your power steering",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "How to bleed your power steering",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "instagram:DFBwgcgyv_w",
+      "snapshot_position_1_based": 16,
+      "url": "https://instagram.com/reel/DFBwgcgyv_w",
+      "decision": "hold",
+      "reason": "Annonce de réparation terminée et remplacement nominal ; les hashtags ne prouvent ni une application véhicule ni des explications.",
+      "display_title_in_snapshot": "Power Steering Pump Fixed & serpentine belt replacement 😁🧑🏽‍🔧",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "e4ee197775ff08f59d25a3bd24210249db5407d1e269f936e09e658e07510ed7",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DFizSVQO0fA",
+      "snapshot_position_1_based": 17,
+      "url": "https://instagram.com/reel/DFizSVQO0fA",
+      "decision": "exclude",
+      "reason": "Exclusion V24 maintenue : récit de problèmes/réparation et plainte, sans méthode explicitée.",
+      "display_title_in_snapshot": "Renault DZ : trop de problème sur les clio 5 IV machi affaire réparation boite à vitesse en Algérie garagiste repair car machi normal même...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "b40678407b0c4f79813a58d8d46eeaf5f74a53e0c313939a431fed434b809a8e",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": {
+        "source": "work\\free-v24\\research\\social-review.json",
+        "decision": "exclude",
+        "reason": "Exclusion antérieure conservée : récit/complainte de réparation, sans apprentissage explicite."
+      },
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DG6CFlrNRgQ",
+      "snapshot_position_1_based": 18,
+      "url": "https://instagram.com/reel/DG6CFlrNRgQ",
+      "decision": "hold",
+      "reason": "Effacement du témoin moteur annoncé sans diagnostic ni conditions. Ne pas assimiler à une remise à zéro du compteur entretien.",
+      "display_title_in_snapshot": "How to remove the car engine check light?",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "c484ea8881e870896640c992fbeda41c3ca3871c846acdac9fa5e5d8fe1a35c1",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DI0Im1oSD8q",
+      "snapshot_position_1_based": 20,
+      "url": "https://instagram.com/reel/DI0Im1oSD8q",
+      "decision": "exclude",
+      "reason": "Programme promotionnel avec achat de pneus et remises ; les conseils annoncés restent génériques, sans geste documenté dans le titre.",
+      "display_title_in_snapshot": "Bridgestone Australia on Instagram: \"Keeping your tyres in good nick doesn’t have to be tough work. Our expert mechanic Matt has some tips that’ll make all the difference 🔧 As part of our Bridgestone Benefits program, we’ll help maximise the life and performance of your tyres with tyre checks, puncture repairs, as well as exclusive discounts and offers. You’ll automatically qualify when you purchase two or more Bridgestone, Firestone, or Supercat tyres from a Bridgestone Sele",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "bd5b70413b3f36585d1666023afb97a6b017b255733ac7f256cbde50100f257f",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DIgK4WNM9bx",
+      "snapshot_position_1_based": 21,
+      "url": "https://instagram.com/reel/DIgK4WNM9bx",
+      "decision": "exclude",
+      "reason": "Exclusion V23 maintenue : servomoteur CNC/automatisation industrielle avec achat proposé, aucune application automobile établie.",
+      "display_title_in_snapshot": "Tibor Ma on Instagram: \"🔧 Mitsubishi HF104S Servo Motor Bearing Replacement | Step-by-Step Repair",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "fc23fb1263cb769cb31b70ebb8f8b9f345f1e6e8989f3972be14954930384331",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": {
+        "source": "work\\scale-v23\\research\\social-final-review-notes.json",
+        "decision": "exclude",
+        "reason": "Moteur servo Mitsubishi HF104S pour CNC et automatisation industrielle, avec proposition d’achat ; la marque ne prouve aucune application automobile."
+      },
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DJAlD20zXiz",
+      "snapshot_position_1_based": 22,
+      "url": "https://instagram.com/reel/DJAlD20zXiz",
+      "decision": "retain",
+      "reason": "Titre explicite sur le repérage d’une fuite de liquide de refroidissement et le raisonnement lors de la visite chez un mécanicien.",
+      "display_title_in_snapshot": "How to spot a coolant leak and how to use deductive reasoning when visiting a mechanic.",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "78710afcd0740d4f99c21364bad7413400ea31e835820fbdde081b3160763b18",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "How to spot a coolant leak and how to use deductive reasoning when visiting a mechanic.",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "How to spot a coolant leak and how to use deductive reasoning when visiting a mechanic.",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "instagram:DKt9BAQO9uh",
+      "snapshot_position_1_based": 24,
+      "url": "https://instagram.com/reel/DKt9BAQO9uh",
+      "decision": "exclude",
+      "reason": "Exclusion V23 maintenue : changement de pneu sans cric avec bouteille PET et pompe, levage improvisé non documenté à ne pas recommander.",
+      "display_title_in_snapshot": "Como trocar um pneu sem macaco, utilizando uma garrafa pet e um bomba de encher pneu!",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "24f648f39dcec11854b984cc5c8bd90c268e253c0d750f1a8fbe9fdf06726489",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": {
+        "source": "work\\scale-v23\\research\\social-final-review-notes.json",
+        "decision": "exclude",
+        "reason": "Le titre propose de changer un pneu sans cric avec une bouteille PET et une pompe ; méthode de levage manifestement impropre à recommander."
+      },
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DWBpwrKgklb",
+      "snapshot_position_1_based": 25,
+      "url": "https://instagram.com/reel/DWBpwrKgklb",
+      "decision": "hold",
+      "reason": "Symptôme et modèle annoncés, mais la phrase s’interrompt avant l’action ou la méthode.",
+      "display_title_in_snapshot": "Si le voyant vidange reste affiché sur votre Fiat Tipo, vous ...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "bbdc4de139fd5139a0c40a11e2828ba6e078faef916b193f4b6f8a97f34bf2c5",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DWPHhOpFBNS",
+      "snapshot_position_1_based": 26,
+      "url": "https://instagram.com/reel/DWPHhOpFBNS",
+      "decision": "hold",
+      "reason": "Décision V24 maintenue : voyant vidange et Captur 2 seulement, sans méthode explicitée.",
+      "display_title_in_snapshot": "Le voyant vidange reste allumé sur votre Renault Captur 2 ...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "19d1771ed92ade501e92f0961ab21efa22ced043058fa2c52c13b86a5a826241",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": {
+        "source": "work\\free-v24\\research\\social-review.json",
+        "decision": "hold",
+        "reason": "Symptôme de voyant seulement ; aucune méthode explicitée."
+      },
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DWeqW3RAvAR",
+      "snapshot_position_1_based": 27,
+      "url": "https://instagram.com/reel/DWeqW3RAvAR",
+      "decision": "hold",
+      "reason": "Accroche interrogative tronquée, application incomplète Renault ou… ; la démonstration n’est pas établie.",
+      "display_title_in_snapshot": "Vous voulez démonter un injecteur sur une Renault ou ...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "7bc22f722da8265ba9022ed4061c9654eccbc4564448f2254dd5ca2d292d1fe0",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DWgXV_LAtYk",
+      "snapshot_position_1_based": 28,
+      "url": "https://instagram.com/reel/DWgXV_LAtYk",
+      "decision": "hold",
+      "reason": "Explication annoncée mais coupée à Cela signifie ; aucune conclusion technique à reconstituer.",
+      "display_title_in_snapshot": "Le voyant FAP est allumé sur votre véhicule ? Cela signifie ...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "79860ffce6d344a16f997a1db8a5fc2a29024d288204579ecd290f7924285533",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DYowWwQxv-G",
+      "snapshot_position_1_based": 29,
+      "url": "https://instagram.com/reel/DYowWwQxv-G",
+      "decision": "hold",
+      "reason": "Accroche tronquée de remplacement de freins ; contexte voiture et démarche effective non établis.",
+      "display_title_in_snapshot": "Remplacer ses disques et plaquettes de frein n'a jamais été ...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "af601193f58f22f3b3eb59c3119869e37005b82d4e52d64511f6ce33ce8ec091",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "instagram:DaBQV8dNy5P",
+      "snapshot_position_1_based": 30,
+      "url": "https://instagram.com/reel/DaBQV8dNy5P",
+      "decision": "hold",
+      "reason": "Quarantaine V23 maintenue : accroche vidange interrompue avant l’action expliquée.",
+      "display_title_in_snapshot": "Tu as toujours rêvé faire la vidange sur ta voiture mais tu n ...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "29195dcb8fe1dbb7bde3cf8b5d8b696f249a429b60f1b5ebb136bea5eb586ad2",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": {
+        "source": "work\\scale-v23\\research\\social-final-review-notes.json",
+        "decision": "quarantine",
+        "reason": "Accroche de vidange interrompue avant l’action expliquée ; sujet établi, valeur pédagogique encore insuffisante."
+      },
+      "publication_performed": false
+    },
+    {
+      "id": "tiktok:6944875302984224006",
+      "snapshot_position_1_based": 31,
+      "url": "https://tiktok.com/@chrysgaines/video/6944875302984224006",
+      "decision": "retain",
+      "reason": "Tutoriel DIY explicitement titré sur le changement du liquide de frein dans une voiture.",
+      "display_title_in_snapshot": "How to Change Brake Fluid in a Car the Easy Way (DIY)",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "46d21ca12b28cf25650e8e18cdfb0c35819ae2a29c5b2a42659da3ed6883a55d",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "How to Change Brake Fluid in a Car the Easy Way (DIY)",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "How to Change Brake Fluid in a Car the Easy Way (DIY)",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:6945264318850141446",
+      "snapshot_position_1_based": 32,
+      "url": "https://tiktok.com/@chrysgaines/video/6945264318850141446",
+      "decision": "retain",
+      "reason": "Conseils de maintenance explicitement annoncés pour le liquide de frein d’une Mini Cooper.",
+      "display_title_in_snapshot": "Brake Fluid Change: Mini Cooper Maintenance Tips",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "1cc84de7b099458f2a2f76ab6c3c2cd32eb42e5a856644b31603a0ebf1e5d610",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "Brake Fluid Change: Mini Cooper Maintenance Tips",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "Brake Fluid Change: Mini Cooper Maintenance Tips",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7054936632281304366",
+      "snapshot_position_1_based": 34,
+      "url": "https://tiktok.com/@humblemechanic/video/7054936632281304366",
+      "decision": "retain",
+      "reason": "Guide de remplacement du filtre à carburant VW TDI explicitement annoncé ; aucune motorisation chiffrée ajoutée.",
+      "display_title_in_snapshot": "TDI Fuel Filter Replacement: Easy VW Maintenance Guide",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "6dd13b05535db468a923c3f504841145a9372fc075f6cd3f04f006939ff28f55",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "TDI Fuel Filter Replacement: Easy VW Maintenance Guide",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "TDI Fuel Filter Replacement: Easy VW Maintenance Guide",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7058359214581779759",
+      "snapshot_position_1_based": 35,
+      "url": "https://tiktok.com/@problemsolved/video/7058359214581779759",
+      "decision": "retain",
+      "reason": "Action complète How to reset your oil change alert avant les hashtags tronqués ; compteur entretien, pas effacement de défaut moteur.",
+      "display_title_in_snapshot": "how to reset your oil change alert ...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "2e6bfea84134b15f19d1585a570511c5b7407e05b829158dab4825431feffd06",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "how to reset your oil change alert",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "how to reset your oil change alert",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7166251571121114410",
+      "snapshot_position_1_based": 38,
+      "url": "https://tiktok.com/@boosted_sloweg/video/7166251571121114410",
+      "decision": "retain",
+      "reason": "Remise à zéro huile/entretien explicitement décrite dans le titre pour Audi Q5 2015.",
+      "display_title_in_snapshot": "How to Reset Oil & Service Light on a 2015 Audi Q5",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "eacda3a8489c932bed7953165d45f2eae231120de0c9f7a507406ae330374019",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "How to Reset Oil & Service Light on a 2015 Audi Q5",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "How to Reset Oil & Service Light on a 2015 Audi Q5",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7166549733371104518",
+      "snapshot_position_1_based": 39,
+      "url": "https://tiktok.com/@dingueriesdunordofficiel/video/7166549733371104518",
+      "decision": "hold",
+      "reason": "Quarantaine V23 maintenue : titre nominal de remplacement du pulseur 307SW ; aucune preuve nouvelle directe ne lève la revue antérieure.",
+      "display_title_in_snapshot": "Remplacement du pulseur d'air sur Peugeot 307SW",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "93e8a13381c625d0fb61f606fa07ba421d4055e1a26055874b2f78572114ba36",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": {
+        "source": "work\\scale-v23\\research\\social-final-review-notes.json",
+        "decision": "quarantine",
+        "reason": "Remplacement précis du pulseur307SW : candidat plausible, mais titre nominal seul sans promesse de méthode. Français textuel clair, à conserver en file de revue."
+      },
+      "publication_performed": false
+    },
+    {
+      "id": "tiktok:7171937751309323522",
+      "snapshot_position_1_based": 40,
+      "url": "https://tiktok.com/@mechanicalmentor/video/7171937751309323522",
+      "decision": "hold",
+      "reason": "Décision V24 maintenue : nouvelle occurrence indexée seulement, sans preuve directe levant la restriction antérieure d’accès/authentification.",
+      "display_title_in_snapshot": "Peugeot 308 Battery Replacement Guide",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "347e48a40fc751c436f7bf52209c6ed000f80f6eec112ea5cf3f1df23b0a0041",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": {
+        "source": "work\\free-v24\\research\\social-review.json",
+        "decision": "hold",
+        "reason": "Quarantaine antérieure conservée : la nouvelle occurrence indexée ne lève pas la limitation antérieure d’accès/authentification ni ne fournit une preuve directe supplémentaire."
+      },
+      "publication_performed": false
+    },
+    {
+      "id": "tiktok:7196081009077620010",
+      "snapshot_position_1_based": 42,
+      "url": "https://tiktok.com/@personalmechanics/video/7196081009077620010",
+      "decision": "retain",
+      "reason": "Step-by-Step explicite pour le remplacement du filtre à air Nissan Altima 2020.",
+      "display_title_in_snapshot": "2020 Nissan Altima Air Filter Replacement Step-by-Step",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "e4e43e47b3a9dafd3ef3a37813f36fd68ff3054c831f887f8fc52c32336a3260",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "2020 Nissan Altima Air Filter Replacement Step-by-Step",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "2020 Nissan Altima Air Filter Replacement Step-by-Step",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7244762182041210155",
+      "snapshot_position_1_based": 45,
+      "url": "https://tiktok.com/@carls_garage/video/7244762182041210155",
+      "decision": "retain",
+      "reason": "How to change explicite et objet complet avant le hashtag coupé : cache-culbuteurs Ford F150 2011 3.5L turbo EcoBoost.",
+      "display_title_in_snapshot": "How to change valve covers 2011 Ford F150 3.5L turbo EcoBoost ... | F150 Ford",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "afe4ea77324fb00bd5e6088b161cebedb0b5ee29103f28df3ae77ff308c73769",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "How to change valve covers 2011 Ford F150 3.5L turbo EcoBoost",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "How to change valve covers 2011 Ford F150 3.5L turbo EcoBoost",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7292466790003707179",
+      "snapshot_position_1_based": 47,
+      "url": "https://tiktok.com/@fobbattery/video/7292466790003707179",
+      "decision": "hold",
+      "reason": "Titre coupé au milieu d’une plage d’années ouverte (2001 ; ne pas compléter ni supprimer cette limite de portée technique.",
+      "display_title_in_snapshot": "Buick Rendezvous Key Fob Battery Replacement (2001",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "65959fc8e8c89b85e38fd5372e8b3256c3bc239a837c1a35cf04842d67ec06b2",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "tiktok:7301519488300715307",
+      "snapshot_position_1_based": 48,
+      "url": "https://tiktok.com/@fobbattery/video/7301519488300715307",
+      "decision": "retain",
+      "reason": "Geste précisément titré : remplacement de pile de clé Dodge Durango, plage 2011–2013 explicitement écrite.",
+      "display_title_in_snapshot": "Dodge Durango Key Fob Battery Replacement (2011–2013)",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "c20cf3aa54e305db34beb92282d994636fb221fb81024b0b4b5a51265d1ffc74",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "Dodge Durango Key Fob Battery Replacement (2011–2013)",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "Dodge Durango Key Fob Battery Replacement (2011–2013)",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7314925861805772074",
+      "snapshot_position_1_based": 49,
+      "url": "https://tiktok.com/@fobbattery/video/7314925861805772074",
+      "decision": "retain",
+      "reason": "Geste et plage d’années complets avant les points de suspension : pile de clé Ram 1500, 2010–2019.",
+      "display_title_in_snapshot": "Ram 1500 Key Fob Battery Replacement (2010 - 2019) ...",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "ecbac6704f77b4d545c13e8870e7ef76eb4672da39ed525853af538cf2e9a7ff",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "Ram 1500 Key Fob Battery Replacement (2010 - 2019)",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "Ram 1500 Key Fob Battery Replacement (2010 - 2019)",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7355546522550832416",
+      "snapshot_position_1_based": 55,
+      "url": "https://tiktok.com/@red_mechanic1/video/7355546522550832416",
+      "decision": "retain",
+      "reason": "Remplacement de roulement précisément titré, modèles L200 et Outlander écrits ; cela ne prouve pas une procédure commune ni une compatibilité universelle.",
+      "display_title_in_snapshot": "Mitsubishi Wheel Bearing Replacement | L200 & Outlander",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "45f903a4243d71f88cb45fa9fe0f8d39d1faa30d948b24f5ccea6234b97f4521",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "Mitsubishi Wheel Bearing Replacement | L200 & Outlander",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "Mitsubishi Wheel Bearing Replacement | L200 & Outlander",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7385270084278816043",
+      "snapshot_position_1_based": 57,
+      "url": "https://tiktok.com/@ovet_reynoso/video/7385270084278816043",
+      "decision": "hold",
+      "reason": "Geste pédagogique annoncé, mais partenariat AutoZone explicite. Revue de la séquence utile nécessaire avant qualification, sans effacer le signal commercial.",
+      "display_title_in_snapshot": "This is how to change ignition coils! 🥳👍🏼",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "897e8aa8ecbba351ce0e5d8b1ad7f58dbfe156c58914f8340babc98f996b904e",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "tiktok:7441132761634573599",
+      "snapshot_position_1_based": 59,
+      "url": "https://tiktok.com/@attaautotechnician/video/7441132761634573599",
+      "decision": "hold",
+      "reason": "Libellé GMC Tahoe signalé incohérent ; conserver hors publication jusqu’à confirmation native du véhicule, sans corriger la marque par supposition.",
+      "display_title_in_snapshot": "GMC Tahoe Engine Oil Pump Replacement Guide",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "6367414bd4cf009da889bb4ecd3afb54e7a2bcdf2364886f3b692209dab2ea9e",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    },
+    {
+      "id": "tiktok:7525183864730373398",
+      "snapshot_position_1_based": 62,
+      "url": "https://tiktok.com/@carfixeasy/video/7525183864730373398",
+      "decision": "retain",
+      "reason": "Guide de recherche de panne moteur Citroen explicitement annoncé ; aucune cause, motorisation ou réparation déduite.",
+      "display_title_in_snapshot": "Citroen Engine Failure: Troubleshooting Guide",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "749688b0114300f7604e76ac9eb5d0b233cd56763dbe95191251ceac43afd2e1",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "Citroen Engine Failure: Troubleshooting Guide",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "Citroen Engine Failure: Troubleshooting Guide",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7661875812664167710",
+      "snapshot_position_1_based": 69,
+      "url": "https://tiktok.com/@dayoffdiy/video/7661875812664167710",
+      "decision": "retain",
+      "reason": "Walkthrough de remplacement de moteur BMW N54 explicitement annoncé ; la durée 3-Hour reste une annonce du titre, pas une durée mesurée.",
+      "display_title_in_snapshot": "BMW N54 Engine Replacement – Full 3-Hour Walkthrough",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "07c1e16f03d1cdca9d344034c4511bde740aa0572164e41fd70b107c2424a17c",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false,
+      "suggested_title": "BMW N54 Engine Replacement – Full 3-Hour Walkthrough",
+      "title_basis": "source_cleanup",
+      "suggested_language": "en",
+      "language_status": "inferred_from_indexed_source_text",
+      "language_evidence": "BMW N54 Engine Replacement – Full 3-Hour Walkthrough",
+      "qualification": "candidate_metadata_only"
+    },
+    {
+      "id": "tiktok:7672470643438275870",
+      "snapshot_position_1_based": 70,
+      "url": "https://tiktok.com/@humblemechanic/video/7672470643438275870",
+      "decision": "hold",
+      "reason": "Comparaison d’embouts et de prix, sans procédure, montage ou explication technique explicitement annoncés.",
+      "display_title_in_snapshot": "Audi exhaust tips: Tipless vs fake tips vs $1400 real tips",
+      "evidence": {
+        "basis": "provenance.source_index_title",
+        "source_record_sha256": "a673af2dd8b80cd0f77e84e6002ee8beff52d0d23758c498f571c31a3d1ebd91",
+        "scope": "indexed_search_metadata",
+        "video_viewed": false,
+        "audio_language_verified": false,
+        "composite_description_used": false
+      },
+      "prior_decision": null,
+      "publication_performed": false
+    }
+  ],
+  "retain_ids": [
+    "instagram:C0-ZnRUNtTh",
+    "instagram:CtRLoABLiEQ",
+    "instagram:DC4z-5GSLuv",
+    "instagram:DJAlD20zXiz",
+    "tiktok:6944875302984224006",
+    "tiktok:6945264318850141446",
+    "tiktok:7054936632281304366",
+    "tiktok:7058359214581779759",
+    "tiktok:7166251571121114410",
+    "tiktok:7196081009077620010",
+    "tiktok:7244762182041210155",
+    "tiktok:7301519488300715307",
+    "tiktok:7314925861805772074",
+    "tiktok:7355546522550832416",
+    "tiktok:7525183864730373398",
+    "tiktok:7661875812664167710"
+  ],
+  "hold_ids": [
+    "instagram:C3qYa08IZOY",
+    "instagram:CwWqujdvTue",
+    "instagram:DFBwgcgyv_w",
+    "instagram:DG6CFlrNRgQ",
+    "instagram:DWBpwrKgklb",
+    "instagram:DWPHhOpFBNS",
+    "instagram:DWeqW3RAvAR",
+    "instagram:DWgXV_LAtYk",
+    "instagram:DYowWwQxv-G",
+    "instagram:DaBQV8dNy5P",
+    "tiktok:7166549733371104518",
+    "tiktok:7171937751309323522",
+    "tiktok:7292466790003707179",
+    "tiktok:7385270084278816043",
+    "tiktok:7441132761634573599",
+    "tiktok:7672470643438275870"
+  ],
+  "exclude_ids": [
+    "instagram:C_uOItuMTFo",
+    "instagram:DAThwvruIza",
+    "instagram:DFizSVQO0fA",
+    "instagram:DI0Im1oSD8q",
+    "instagram:DIgK4WNM9bx",
+    "instagram:DKt9BAQO9uh"
+  ]
+}

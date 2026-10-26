@@ -1,0 +1,75 @@
+{
+  "data": {
+    "id": "woVLyadFOPBH5uILr",
+    "name": "instagram-posts",
+    "username": "data-slayer",
+    "isPublic": true,
+    "isDeprecated": false,
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "taggedBuilds": {
+      "latest": {
+        "buildId": "ue0PfGSJ5M4QBdzpS",
+        "finishedAt": "2026-10-07T13:05:20.258Z",
+        "buildNumberInt": 10000023,
+        "buildNumber": "1.0.23"
+      }
+    },
+    "pricingInfos": [
+      {
+        "minimalMaxTotalChargeUsd": null,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": false,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "apify-actor-start": {
+              "eventTitle": "Actor Start",
+              "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+              "isOneTimeEvent": true,
+              "eventPriceUsd": 0.002
+            },
+            "apify-default-dataset-item": {
+              "eventTitle": "result",
+              "eventDescription": "Single result in the default dataset.",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0025
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.00217
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.00183
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0015
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0015
+                }
+              },
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "startedAt": "2025-12-15T07:46:01.935Z",
+        "createdAt": "2025-12-15T07:46:02.441Z",
+        "apifyMarginPercentage": 0.2
+      }
+    ],
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 3600,
+      "memoryMbytes": 1024
+    },
+    "notice": "NONE",
+    "readmeSummary": "## Instagram Profile Posts & Reels Scraper\n\nA scraper for Instagram profiles that retrieves full post and Reel records without login, cookies, or browser automation by reading Instagram's posts endpoint and following the pagination cursor; it produces one structured record per post (107 fields per post, plus a 24-field creator profile) containing engagement metrics, media metadata, full caption text with parsed hashtags and mentions, tagged accounts and collaborators, carousel slide media and per-resolution media URLs, video URLs and thumbnails, media type and counts, and timestamps in epoch and ISO 8601—data shaped like Instagram's native post payload for programmatic analysis of posts, Reels, media, captions, creators, and engagement.\n\n## Use cases\n\n- Content performance analysis: compare likes, comments, and shares across photos, carousels, and Reels.  \n- Competitor benchmarking: pull a competitor's feed to study captions, hashtags, posting times, and engagement.  \n- Creator vetting for sponsorships: review recent posts to assess engagement consistency and posting cadence.  \n- Content calendar research: map posting times and preferred formats to plan publishing schedules.  \n- Hashtag and mention mining: extract hashtags and @mentions from high-performing posts to identify reach drivers.  \n- Archive and monitoring: build a rolling history of a profile's posts for reporting, trend tracking, or brand-safety review.  \n- Export a creator's full post history for analysis.  \n- Track a brand's posting cadence over time.  \n- Analyze an influencer's content mix (photos vs. carousels vs. Reels).  \n- Archive a creator's posts prior to a rebrand.  \n- Study a competitor's Reel strategy and play counts.  \n- Monitor a rival's launch content and campaign activity.  \n- Build a swipe file from top creators' posts.  \n- Audit a brand's engagement over time and construct content calendars from competitors."
+  },
+  "_evidence": {
+    "retrieved_anonymously": true,
+    "account_data": false,
+    "projection": "Only public actor identity, pricing, build and notice fields; deploymentKey and unrelated creator data omitted."
+  }
+}

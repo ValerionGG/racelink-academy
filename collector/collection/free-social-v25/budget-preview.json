@@ -1,0 +1,12 @@
+{
+  "mode": "offline_preview",
+  "read_only": true,
+  "credential_read": false,
+  "network_called": false,
+  "endpoints": {
+    "account": "https://api.apify.com/v2/users/me",
+    "limits": "https://api.apify.com/v2/users/me/limits",
+    "usage": "https://api.apify.com/v2/users/me/usage/monthly"
+  },
+  "execution_guard_enabled": true
+}

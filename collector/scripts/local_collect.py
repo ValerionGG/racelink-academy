@@ -24,7 +24,7 @@ sys.path.insert(0, str(BASE))
 from scripts.bulk_ingest import (atomic_json, digest, file_digest, identity, project_source, short)
 from server import ValidationError, utcnow
 
-VERSION = "1.0.1"
+VERSION = "1.0.2"
 EXA_KINDS = {"exa_search", "exa_search_advanced"}
 KINDS = {"video", "youtube_search", "youtube_channel", *EXA_KINDS}
 MAX_PROCESS_BYTES = 32 * 1024 * 1024
@@ -150,26 +150,32 @@ def process(command, timeout=45):
                     cwd=directory, env=env, shell=False, creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0))
             except OSError:
                 return {"returncode": -1, "stdout": "", "stderr": "Required executable is unavailable", "status": "dependency_unavailable"}
-            deadline = time.monotonic() + timeout
-            status = None
-            while child.poll() is None:
-                if time.monotonic() > deadline:
-                    status = "timeout"
-                elif os.fstat(out.fileno()).st_size + os.fstat(err.fileno()).st_size > MAX_PROCESS_BYTES:
+            try:
+                deadline = time.monotonic() + timeout
+                status = None
+                while child.poll() is None:
+                    if time.monotonic() > deadline:
+                        status = "timeout"
+                    elif os.fstat(out.fileno()).st_size + os.fstat(err.fileno()).st_size > MAX_PROCESS_BYTES:
+                        status = "output_limit"
+                    if status:
+                        stop_process(child)
+                        break
+                    time.sleep(.05)
+                if os.fstat(out.fileno()).st_size + os.fstat(err.fileno()).st_size > MAX_PROCESS_BYTES:
                     status = "output_limit"
                 if status:
+                    return {"returncode": child.returncode, "stdout": "", "stderr": status, "status": status}
+                out.seek(0)
+                err.seek(0)
+                return {"returncode": child.returncode,
+                    "stdout": out.read(MAX_PROCESS_BYTES).decode("utf-8", errors="replace"),
+                    "stderr": err.read(16384).decode("utf-8", errors="replace")}
+            finally:
+                # Ctrl+C/SystemExit must not leave a child active after the caller
+                # releases its queue lock. Also covers exceptions while reading output.
+                if child.poll() is None:
                     stop_process(child)
-                    break
-                time.sleep(.05)
-            if os.fstat(out.fileno()).st_size + os.fstat(err.fileno()).st_size > MAX_PROCESS_BYTES:
-                status = "output_limit"
-            if status:
-                return {"returncode": child.returncode, "stdout": "", "stderr": status, "status": status}
-            out.seek(0)
-            err.seek(0)
-            return {"returncode": child.returncode,
-                "stdout": out.read(MAX_PROCESS_BYTES).decode("utf-8", errors="replace"),
-                "stderr": err.read(16384).decode("utf-8", errors="replace")}
 
 
 def error_status(stderr):

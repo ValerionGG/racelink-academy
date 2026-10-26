@@ -1,0 +1,18 @@
+{
+  "checked_at": "2026-10-26",
+  "validation": "offline_and_mock_only",
+  "tests_passed": 44,
+  "test_command": "python -B -X utf8 -m unittest discover -s . -p 'test_*.py' -v",
+  "input_schemas_validated": 14,
+  "preview_commands_passed": 2,
+  "authenticated_requests": 0,
+  "real_actor_runs": 0,
+  "credits_spent": 0,
+  "database_modified": false,
+  "remaining_external_requirement": "Explicit APIFY_TOKEN and a live verified eligible Free plan; no account data was inspected.",
+  "independent_export_integration_checks_passed": 22,
+  "independent_export_integration_report": "work/scale-v25/research/apify-export-integration-checks.json",
+  "independent_restriction_compatibility_checks_passed": 38,
+  "independent_restriction_review_report": "independent-review.json",
+  "independent_restriction_review_script": "work/scale-v25/research/provider-independent-review-checks.py"
+}

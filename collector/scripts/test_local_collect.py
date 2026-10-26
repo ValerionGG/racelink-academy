@@ -3,6 +3,8 @@ from pathlib import Path
 import json
 import os
 import tempfile
+import subprocess
+import sys
 import unittest
 from unittest.mock import patch
 
@@ -143,6 +145,35 @@ class PlanTests(unittest.TestCase):
         self.assertEqual(command[1:],["/PID","123456789","/T","/F"])
         self.assertFalse(terminate.call_args.kwargs["shell"])
         self.assertEqual(calls,["kill",("wait",5)])
+
+
+class ShutdownTests(unittest.TestCase):
+    """Real local child, no network: interruption must finish the child before unlock."""
+    def check_interruption(self, exception):
+        children = []
+        original = subprocess.Popen
+        def track(*args, **kwargs):
+            child = original(*args, **kwargs)
+            children.append(child)
+            return child
+        alive = False
+        try:
+            with self.assertRaises(exception):
+                with patch("scripts.local_collect.subprocess.Popen", side_effect=track), \
+                     patch("scripts.local_collect.time.sleep", side_effect=exception("synthetic interruption")):
+                    process([sys.executable, "-c", "import time; time.sleep(30)"], timeout=5)
+            self.assertTrue(children)
+            alive = children[0].poll() is None
+        finally:
+            if children and children[0].poll() is None:
+                stop_process(children[0])
+        self.assertFalse(alive, "Transport returned while its own child was still alive")
+
+    def test_keyboard_interrupt_terminates_real_owned_child_and_preserves_exception(self):
+        self.check_interruption(KeyboardInterrupt)
+
+    def test_system_exit_terminates_real_owned_child_and_preserves_exception(self):
+        self.check_interruption(SystemExit)
 
 
 class MappingTests(unittest.TestCase):

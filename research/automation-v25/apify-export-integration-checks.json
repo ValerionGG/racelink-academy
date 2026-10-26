@@ -1,0 +1,103 @@
+{
+  "checks": [
+    {
+      "name": "tiktok: one mocked dataset GET",
+      "passed": true
+    },
+    {
+      "name": "tiktok: bounded hashed manifest loads",
+      "passed": true
+    },
+    {
+      "name": "tiktok: candidate survives actual adapter",
+      "passed": true
+    },
+    {
+      "name": "tiktok: author survives actual adapter",
+      "passed": true
+    },
+    {
+      "name": "tiktok: duration survives actual adapter",
+      "passed": true
+    },
+    {
+      "name": "tiktok: native caption preserved",
+      "passed": true
+    },
+    {
+      "name": "tiktok: source and audio uncertainty preserved",
+      "passed": true
+    },
+    {
+      "name": "tiktok: original public thumbnail metadata survives",
+      "passed": true
+    },
+    {
+      "name": "tiktok: author/duration also survive direct adapter",
+      "passed": true
+    },
+    {
+      "name": "tiktok: missing page refused before request",
+      "passed": true
+    },
+    {
+      "name": "tiktok: changed page refused",
+      "passed": true
+    },
+    {
+      "name": "instagram: one mocked dataset GET",
+      "passed": true
+    },
+    {
+      "name": "instagram: bounded hashed manifest loads",
+      "passed": true
+    },
+    {
+      "name": "instagram: candidate survives actual adapter",
+      "passed": true
+    },
+    {
+      "name": "instagram: author survives actual adapter",
+      "passed": true
+    },
+    {
+      "name": "instagram: duration survives actual adapter",
+      "passed": true
+    },
+    {
+      "name": "instagram: native caption preserved",
+      "passed": true
+    },
+    {
+      "name": "instagram: source and audio uncertainty preserved",
+      "passed": true
+    },
+    {
+      "name": "instagram: original public thumbnail metadata survives",
+      "passed": true
+    },
+    {
+      "name": "instagram: author/duration also survive direct adapter",
+      "passed": true
+    },
+    {
+      "name": "instagram: missing page refused before request",
+      "passed": true
+    },
+    {
+      "name": "instagram: changed page refused",
+      "passed": true
+    }
+  ],
+  "passed": 22,
+  "failed": 0,
+  "network": false,
+  "database_modified": false,
+  "fixtures": "synthetic_only",
+  "files": {
+    "work/scale-v25/provider-research/launch_free_pilot.py": "8a68d0074f082844897b2cf2fc731858b710b1f98eda7ec2012b681b69798de5",
+    "work/scale-v25/provider-research/verify_apify_free_credits.py": "d3e8d6b2075ebd819c456c82bd73afdf03496d9215bc7b9b6d604a8840a50b9d",
+    "outputs/focus-academy/scripts/public_export.py": "891d45e4bb1f6c11aa3e69b54f71a5d938e4e375f9eb38779703121e0fddf871",
+    "outputs/focus-academy/scripts/bulk_ingest.py": "014af8cd15db65adccd44a968899c6f5879ead0670f87f69732dc5a3ccedbec5"
+  }
+}

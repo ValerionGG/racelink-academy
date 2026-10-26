@@ -1,0 +1,102 @@
+[
+  {
+    "actor": "apidojo~tiktok-profile-scraper",
+    "pricing": {
+      "pricingModel": "PAY_PER_EVENT",
+      "createdAt": "2026-02-16T15:05:29.262Z",
+      "startedAt": "2026-02-16T15:05:29.262Z",
+      "apifyMarginPercentage": 0.2,
+      "isPriceChangeNotificationSuppressed": true,
+      "reasonForChange": "Migration from Pay Per Result to Pay Per Event with apify-default-dataset-item event",
+      "pricingPerEvent": {
+        "actorChargeEvents": {
+          "apify-default-dataset-item": {
+            "eventTitle": "post",
+            "eventDescription": "Single post in the default dataset.",
+            "isPrimaryEvent": true,
+            "eventPriceUsd": 0.0003
+          }
+        }
+      },
+      "forceContainsSignificantPriceChange": false
+    },
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 0,
+      "memoryMbytes": 256
+    },
+    "notice": "NONE",
+    "permission": "LIMITED_PERMISSIONS",
+    "builds": {
+      "latest": {
+        "buildId": "lusEeYxbpdtl1ZgXc",
+        "finishedAt": "2026-10-26T02:01:46.162Z",
+        "buildNumberInt": 913,
+        "buildNumber": "0.0.913"
+      }
+    },
+    "readmeSummary": "## TikTok Profile Scraper\n\nA TikTok profile scraping Actor that extracts comprehensive profile and post-level intelligence: public account metadata (bio text, verification status, follower/following counts), complete content history with per-post engagement metrics and timestamps, video technical specifications and direct media URLs, audio/song metadata, hashtags and collaboration information. Technical capabilities include batch processing of multiple profiles with automatic pagination, date-range filtering for temporal selection, support for custom data transformations, high-throughput extraction at scale, and structured export-ready datasets (JSON/CSV/Excel) for downstream analysis, modeling, and integration.\n\n## Use cases\n\n- Influencer discovery, vetting, and performance tracking for marketing campaigns  \n- Talent scouting and creator recruitment with historical portfolio and growth metrics  \n- Competitive intelligence and benchmarking of brand or competitor TikTok accounts  \n- Lead generation and prospect research by extracting bio contact links and business details  \n- Social media content research and audience analysis via complete video histories and engagement patterns  \n- Brand safety and PR vetting through full-content reviews and collaboration histories  \n- Data science and analytics: building training datasets, time-series follower/engagement models, and influencer scoring  \n- E-commerce and UGC discovery: finding creators who promote products or act as sellers  \n- Academic and social media research for longitudinal studies of creator behavior and platform dynamics"
+  },
+  {
+    "actor": "data-slayer~instagram-posts",
+    "pricing": {
+      "minimalMaxTotalChargeUsd": null,
+      "pricingModel": "PAY_PER_EVENT",
+      "isPriceChangeNotificationSuppressed": false,
+      "pricingPerEvent": {
+        "actorChargeEvents": {
+          "apify-actor-start": {
+            "eventTitle": "Actor Start",
+            "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+            "isOneTimeEvent": true,
+            "eventPriceUsd": 0.002
+          },
+          "apify-default-dataset-item": {
+            "eventTitle": "result",
+            "eventDescription": "Single result in the default dataset.",
+            "eventTieredPricingUsd": {
+              "FREE": {
+                "tieredEventPriceUsd": 0.0025
+              },
+              "BRONZE": {
+                "tieredEventPriceUsd": 0.00217
+              },
+              "SILVER": {
+                "tieredEventPriceUsd": 0.00183
+              },
+              "GOLD": {
+                "tieredEventPriceUsd": 0.0015
+              },
+              "PLATINUM": {
+                "tieredEventPriceUsd": 0.0015
+              },
+              "DIAMOND": {
+                "tieredEventPriceUsd": 0.0015
+              }
+            },
+            "isPrimaryEvent": true
+          }
+        }
+      },
+      "startedAt": "2025-12-15T07:46:01.935Z",
+      "createdAt": "2025-12-15T07:46:02.441Z",
+      "apifyMarginPercentage": 0.2
+    },
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 3600,
+      "memoryMbytes": 1024
+    },
+    "notice": "NONE",
+    "permission": "LIMITED_PERMISSIONS",
+    "builds": {
+      "latest": {
+        "buildId": "ue0PfGSJ5M4QBdzpS",
+        "finishedAt": "2026-10-07T13:05:20.258Z",
+        "buildNumberInt": 10000023,
+        "buildNumber": "1.0.23"
+      }
+    },
+    "readmeSummary": "## Instagram Profile Posts & Reels Scraper\n\nA scraper for Instagram profiles that retrieves full post and Reel records without login, cookies, or browser automation by reading Instagram's posts endpoint and following the pagination cursor; it produces one structured record per post (107 fields per post, plus a 24-field creator profile) containing engagement metrics, media metadata, full caption text with parsed hashtags and mentions, tagged accounts and collaborators, carousel slide media and per-resolution media URLs, video URLs and thumbnails, media type and counts, and timestamps in epoch and ISO 8601—data shaped like Instagram's native post payload for programmatic analysis of posts, Reels, media, captions, creators, and engagement.\n\n## Use cases\n\n- Content performance analysis: compare likes, comments, and shares across photos, carousels, and Reels.  \n- Competitor benchmarking: pull a competitor's feed to study captions, hashtags, posting times, and engagement.  \n- Creator vetting for sponsorships: review recent posts to assess engagement consistency and posting cadence.  \n- Content calendar research: map posting times and preferred formats to plan publishing schedules.  \n- Hashtag and mention mining: extract hashtags and @mentions from high-performing posts to identify reach drivers.  \n- Archive and monitoring: build a rolling history of a profile's posts for reporting, trend tracking, or brand-safety review.  \n- Export a creator's full post history for analysis.  \n- Track a brand's posting cadence over time.  \n- Analyze an influencer's content mix (photos vs. carousels vs. Reels).  \n- Archive a creator's posts prior to a rebrand.  \n- Study a competitor's Reel strategy and play counts.  \n- Monitor a rival's launch content and campaign activity.  \n- Build a swipe file from top creators' posts.  \n- Audit a brand's engagement over time and construct content calendars from competitors."
+  }
+]

@@ -1,0 +1,91 @@
+{
+  "checked_at": "2026-10-26",
+  "network_called": false,
+  "input_count": 14,
+  "checks": [
+    {
+      "batch": "fr-tiktok-01",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-tiktok-02",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-tiktok-03",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-tiktok-04",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-tiktok-05",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-tiktok-06",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-tiktok-07",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-tiktok-08",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-tiktok-09",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-tiktok-10",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-instagram-01",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-instagram-02",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-instagram-03",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    },
+    {
+      "batch": "fr-instagram-04",
+      "schema_valid": true,
+      "hash_valid": true,
+      "cap_usd": 0.5
+    }
+  ]
+}

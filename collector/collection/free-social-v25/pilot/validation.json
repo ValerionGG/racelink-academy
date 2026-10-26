@@ -1,0 +1,90 @@
+{
+  "checked_at": "2026-10-26T08:33:38.296110+00:00",
+  "network_calls": 0,
+  "jobs": [
+    {
+      "batch": "fr-tiktok-01",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-tiktok-02",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-tiktok-03",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-tiktok-04",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-tiktok-05",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-tiktok-06",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-tiktok-07",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-tiktok-08",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-tiktok-09",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-tiktok-10",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-instagram-01",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-instagram-02",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-instagram-03",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    },
+    {
+      "batch": "fr-instagram-04",
+      "preview_valid": true,
+      "cap_usd": 0.5,
+      "execution_blocked": true
+    }
+  ]
+}

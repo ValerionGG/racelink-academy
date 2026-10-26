@@ -1,0 +1,931 @@
+{
+  "data": {
+    "id": "xMc5Ga1oCONPmWJIa",
+    "name": "instagram-reel-scraper",
+    "username": "apify",
+    "isPublic": true,
+    "isDeprecated": false,
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "taggedBuilds": {
+      "latest": {
+        "buildId": "vKdGZO7GHSTdoyDfG",
+        "finishedAt": "2026-10-22T08:37:36.463Z",
+        "buildNumberInt": 618,
+        "buildNumber": "0.0.618"
+      }
+    },
+    "pricingInfos": [
+      {
+        "pricingModel": "PRICE_PER_DATASET_ITEM",
+        "pricePerUnitUsd": 0.0023,
+        "unitName": "reel",
+        "startedAt": "2024-05-28T00:00:00.000Z",
+        "createdAt": "2024-05-13T09:42:36.188Z",
+        "apifyMarginPercentage": 0.2,
+        "notifiedAboutFutureChangeAt": "2024-05-13T09:43:00.122Z",
+        "notifiedAboutChangeAt": "2024-05-28T00:06:22.020Z"
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.0073,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "startedAt": "2025-08-25T00:00:00.000Z",
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat charge for starting an Actor run.",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001
+                }
+              },
+              "isOneTimeEvent": true
+            },
+            "reel": {
+              "eventTitle": "Reel",
+              "eventDescription": "Each reel written to the dataset.",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0026
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0023
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0018
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0013
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0008
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0004
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "shares-count": {
+              "eventTitle": "Add-on: Shares count",
+              "eventDescription": "Extra cost per reel scraped with a shares count.",
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.002
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2025-08-20T08:57:05.372Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.0073,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat charge for starting an Actor run.",
+              "isOneTimeEvent": true,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001
+                }
+              }
+            },
+            "reel": {
+              "eventTitle": "Reel",
+              "eventDescription": "Each reel written to the dataset.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0026
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0023
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0018
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0013
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0008
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0004
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "shares-count": {
+              "eventTitle": "Add-on: Shares count",
+              "eventDescription": "Extra cost per reel scraped with a shares count.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.002
+                }
+              }
+            },
+            "transcript": {
+              "eventTitle": "Add-on: Transcript",
+              "eventDescription": "Charged per started minute per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.048
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.041
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.034
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.027
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.016
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.01
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2025-12-08T13:23:30.935Z",
+        "startedAt": "2025-12-08T13:23:30.935Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.0073,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat charge for starting an Actor run.",
+              "isOneTimeEvent": true,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001
+                }
+              }
+            },
+            "reel": {
+              "eventTitle": "Reel",
+              "eventDescription": "Each reel written to the dataset.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0026
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0023
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0018
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0013
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0008
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0004
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "shares-count": {
+              "eventTitle": "Add-on: Shares count",
+              "eventDescription": "Extra cost per reel scraped with a shares count.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.002
+                }
+              }
+            },
+            "transcript": {
+              "eventTitle": "Add-on: Transcript",
+              "eventDescription": "Charged per started minute per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.048
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.041
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.034
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.027
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.016
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.01
+                }
+              }
+            },
+            "video-download": {
+              "eventTitle": "Add-on: Video download",
+              "eventDescription": "Charged per started 1 MB downloaded per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.02
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.015
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.012
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.01
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.01
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.007
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2025-12-11T07:24:39.963Z",
+        "startedAt": "2025-12-11T07:24:39.963Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.0073,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat charge for starting an Actor run.",
+              "isOneTimeEvent": true,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001
+                }
+              }
+            },
+            "reel": {
+              "eventTitle": "Reel",
+              "eventDescription": "Each reel written to the dataset.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0026
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0023
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0018
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0013
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0008
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0004
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "shares-count": {
+              "eventTitle": "Add-on: Shares count",
+              "eventDescription": "Extra cost per reel scraped with a shares count.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.002
+                }
+              }
+            },
+            "transcript": {
+              "eventTitle": "Add-on: Transcript",
+              "eventDescription": "Charged per started minute per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.048
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.041
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.034
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.027
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.016
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.01
+                }
+              }
+            },
+            "video-download": {
+              "eventTitle": "Add-on: Video download",
+              "eventDescription": "Charged per started 1 MB downloaded per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.02
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.015
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.012
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.01
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0085
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.007
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2025-12-11T07:32:56.291Z",
+        "startedAt": "2025-12-11T07:32:56.291Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.0073,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat charge for starting an Actor run.",
+              "isOneTimeEvent": true,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.002
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001
+                }
+              }
+            },
+            "reel": {
+              "eventTitle": "Reel",
+              "eventDescription": "Each reel written to the dataset.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0026
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0023
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0018
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0013
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0008
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0004
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "shares-count": {
+              "eventTitle": "Add-on: Shares count",
+              "eventDescription": "Extra cost per reel scraped with a shares count.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.002
+                }
+              }
+            },
+            "transcript": {
+              "eventTitle": "Add-on: Transcript",
+              "eventDescription": "Charged per started minute per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.048
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.041
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.034
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.027
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.016
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.01
+                }
+              }
+            },
+            "video-download": {
+              "eventTitle": "Add-on: Video download",
+              "eventDescription": "Charged per started 1 MB downloaded per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.02
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.015
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.012
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.01
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0085
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.007
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2026-02-20T12:30:11.107Z",
+        "startedAt": "2026-02-20T12:30:11.107Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.0073,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "reel": {
+              "eventTitle": "Reel",
+              "eventDescription": "Each reel written to the dataset.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0026
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0023
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0018
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.0013
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0008
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0004
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat charge for starting an Actor run.",
+              "isOneTimeEvent": true,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001
+                }
+              }
+            },
+            "shares-count": {
+              "eventTitle": "Add-on: Shares count",
+              "eventDescription": "Extra cost per reel scraped with a shares count.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.002
+                }
+              }
+            },
+            "transcript": {
+              "eventTitle": "Add-on: Transcript",
+              "eventDescription": "Charged per started minute per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.048
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.041
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.034
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.027
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.016
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.01
+                }
+              }
+            },
+            "video-download": {
+              "eventTitle": "Add-on: Video download",
+              "eventDescription": "Charged per started 1 MB downloaded per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.02
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.015
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.012
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.01
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0085
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.007
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2026-03-03T16:05:57.124Z",
+        "startedAt": "2026-03-03T16:05:57.124Z",
+        "apifyMarginPercentage": 0.2
+      },
+      {
+        "minimalMaxTotalChargeUsd": 0.0073,
+        "pricingModel": "PAY_PER_EVENT",
+        "isPriceChangeNotificationSuppressed": true,
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "reel": {
+              "eventTitle": "Reel",
+              "eventDescription": "Each reel written to the dataset.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.0026
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.0023
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.0014
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0008
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.0004
+                }
+              },
+              "isPrimaryEvent": true
+            },
+            "actor-start": {
+              "eventTitle": "Actor start",
+              "eventDescription": "Flat charge for starting an Actor run.",
+              "isOneTimeEvent": true,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.001
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.001
+                }
+              }
+            },
+            "shares-count": {
+              "eventTitle": "Add-on: Shares count",
+              "eventDescription": "Extra cost per reel scraped with a shares count.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.007
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.006
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.005
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.004
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.003
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.002
+                }
+              }
+            },
+            "transcript": {
+              "eventTitle": "Add-on: Transcript",
+              "eventDescription": "Charged per started minute per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.048
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.041
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.034
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.027
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.016
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.01
+                }
+              }
+            },
+            "video-download": {
+              "eventTitle": "Add-on: Video download",
+              "eventDescription": "Charged per started 1 MB downloaded per reel.",
+              "isOneTimeEvent": false,
+              "eventTieredPricingUsd": {
+                "FREE": {
+                  "tieredEventPriceUsd": 0.02
+                },
+                "BRONZE": {
+                  "tieredEventPriceUsd": 0.015
+                },
+                "SILVER": {
+                  "tieredEventPriceUsd": 0.012
+                },
+                "GOLD": {
+                  "tieredEventPriceUsd": 0.01
+                },
+                "PLATINUM": {
+                  "tieredEventPriceUsd": 0.0085
+                },
+                "DIAMOND": {
+                  "tieredEventPriceUsd": 0.007
+                }
+              }
+            }
+          }
+        },
+        "createdAt": "2026-03-11T14:56:04.494Z",
+        "startedAt": "2026-03-11T14:56:04.494Z",
+        "apifyMarginPercentage": 0.2
+      }
+    ],
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 20000,
+      "memoryMbytes": 1024
+    },
+    "notice": "NONE",
+    "readmeSummary": "## Instagram Reel Scraper\n\nInstagram Reel Scraper scrapes Instagram Reels pages to extract rich, reel-level data beyond what the Instagram API returns, producing structured metadata and media details for short-form videos. It captures engagement metrics (likes, shares, comments, views, play counts, timestamps), content metadata (captions, transcripts, hashtags, mentions, tagged users, pinned status, paid partnership and sponsor/co-author info, location), media assets (downloadable video URLs, original video and audio URLs, images/thumbnails, media dimensions, video duration), and recent comment activity (latest comments with replies, likes and timestamps). The Actor supports bulk processing of profiles or reel URLs, date-range filtering and pre-filtering options (including skipping pinned reels), and can include or exclude trial reels; outputs are oriented toward analytics, trend analysis and content-level inspection.\n\n## Use cases\n\n- Influencer research and influencer collaboration analysis  \n- Campaign tracking and paid partnership auditing  \n- Competition monitoring and short-form video performance benchmarking  \n- Content auditing, media archiving and downloading reel assets  \n- Popular reels discovery and hashtag-based reels research  \n- Tracking reel metrics over time for performance monitoring  \n- Identifying trends, mentions and tagged collaborators from hashtags/mentions/tagged users"
+  },
+  "_evidence": {
+    "retrieved_anonymously": true,
+    "account_data": false,
+    "projection": "Only public actor identity, pricing, build and notice fields; deploymentKey and unrelated creator data omitted."
+  }
+}

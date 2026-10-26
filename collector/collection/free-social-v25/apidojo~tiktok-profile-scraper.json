@@ -1,0 +1,71 @@
+{
+  "data": {
+    "id": "ssOXktOBaQQiYfhc4",
+    "name": "tiktok-profile-scraper",
+    "username": "apidojo",
+    "isPublic": true,
+    "isDeprecated": false,
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "taggedBuilds": {
+      "latest": {
+        "buildId": "lusEeYxbpdtl1ZgXc",
+        "finishedAt": "2026-10-26T02:01:46.162Z",
+        "buildNumberInt": 913,
+        "buildNumber": "0.0.913"
+      }
+    },
+    "pricingInfos": [
+      {
+        "pricingModel": "PRICE_PER_DATASET_ITEM",
+        "pricePerUnitUsd": 0.0001,
+        "unitName": "post",
+        "createdAt": "2023-12-13T20:03:50.145Z",
+        "startedAt": "2023-12-13T20:03:50.145Z",
+        "apifyMarginPercentage": 0.2,
+        "notifiedAboutChangeAt": "2023-12-13T21:06:21.469Z"
+      },
+      {
+        "pricingModel": "PRICE_PER_DATASET_ITEM",
+        "reasonForChange": "Unfortunately we need to increase the price a bit due to the increased costs of scraping and to make the actor sustainable for everyone.",
+        "startedAt": "2024-08-31T20:32:57.514Z",
+        "pricePerUnitUsd": 0.0003,
+        "unitName": "post",
+        "createdAt": "2024-08-17T20:33:02.979Z",
+        "apifyMarginPercentage": 0.2,
+        "notifiedAboutFutureChangeAt": "2024-08-17T20:33:23.583Z",
+        "notifiedAboutChangeAt": "2024-08-31T22:09:17.086Z"
+      },
+      {
+        "pricingModel": "PAY_PER_EVENT",
+        "createdAt": "2026-02-16T15:05:29.262Z",
+        "startedAt": "2026-02-16T15:05:29.262Z",
+        "apifyMarginPercentage": 0.2,
+        "isPriceChangeNotificationSuppressed": true,
+        "reasonForChange": "Migration from Pay Per Result to Pay Per Event with apify-default-dataset-item event",
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "apify-default-dataset-item": {
+              "eventTitle": "post",
+              "eventDescription": "Single post in the default dataset.",
+              "isPrimaryEvent": true,
+              "eventPriceUsd": 0.0003
+            }
+          }
+        },
+        "forceContainsSignificantPriceChange": false
+      }
+    ],
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 0,
+      "memoryMbytes": 256
+    },
+    "notice": "NONE",
+    "readmeSummary": "## TikTok Profile Scraper\n\nA TikTok profile scraping Actor that extracts comprehensive profile and post-level intelligence: public account metadata (bio text, verification status, follower/following counts), complete content history with per-post engagement metrics and timestamps, video technical specifications and direct media URLs, audio/song metadata, hashtags and collaboration information. Technical capabilities include batch processing of multiple profiles with automatic pagination, date-range filtering for temporal selection, support for custom data transformations, high-throughput extraction at scale, and structured export-ready datasets (JSON/CSV/Excel) for downstream analysis, modeling, and integration.\n\n## Use cases\n\n- Influencer discovery, vetting, and performance tracking for marketing campaigns  \n- Talent scouting and creator recruitment with historical portfolio and growth metrics  \n- Competitive intelligence and benchmarking of brand or competitor TikTok accounts  \n- Lead generation and prospect research by extracting bio contact links and business details  \n- Social media content research and audience analysis via complete video histories and engagement patterns  \n- Brand safety and PR vetting through full-content reviews and collaboration histories  \n- Data science and analytics: building training datasets, time-series follower/engagement models, and influencer scoring  \n- E-commerce and UGC discovery: finding creators who promote products or act as sellers  \n- Academic and social media research for longitudinal studies of creator behavior and platform dynamics"
+  },
+  "_evidence": {
+    "retrieved_anonymously": true,
+    "account_data": false,
+    "projection": "Only public actor identity, pricing, build and notice fields; deploymentKey and unrelated creator data omitted."
+  }
+}
