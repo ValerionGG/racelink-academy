@@ -47,3 +47,9 @@ Le registre machine [collection/public-api-sources.json](collection/public-api-s
 ## Contrôle du nouvel outil
 
 Le 26 octobre 2026, `vehicle_reference.py` a reçu 79 entrées pour Honda, année-modèle 2024, en un GET HTTP 200. Toutes catégories de véhicules confondues, pas uniquement des voitures. Les 14 tests hors réseau passent. Les réponses brutes restent privées ; rien n’a été importé dans le catalogue vidéo ni dans les filtres.
+
+## Suite V32 : adaptateur Monocrawl
+
+Le [collecteur borné](scripts/MONOCRAWL-COLLECTOR.md) est maintenant livré avec 42 tests hors réseau. Il prépare les recherches TikTok et Instagram, réserve leur plafond avant appel et sépare les réponses brutes des candidats à relire. Le MCP officiel est privilégié. Un résultat ou un coût incertain suspend la campagne ; aucune nouvelle tentative automatique ne consomme le crédit à l'aveugle.
+
+L'outil est prêt mais le compte n'est pas connecté : aucun solde gratuit n'a été observé, aucun appel authentifié n'a été exécuté et aucun ajout TikTok/Instagram ne provient de ce connecteur. Les exemples et tests ne sont jamais des vidéos acquises.

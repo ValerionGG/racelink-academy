@@ -1,0 +1,42 @@
+{
+  "release": "collection-v32",
+  "checked_at": "2026-10-26T19:06:49.127201+00:00",
+  "change": "Escape preserves the query; it dismisses suggestions first, then the mobile search dialog.",
+  "automated": {
+    "search_escape_regressions": 9,
+    "existing_navigation_checks": 17,
+    "failed": 0
+  },
+  "browser": {
+    "tool": "CUA",
+    "local_static_export": true,
+    "desktop_viewport": "default",
+    "mobile_viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "query": "alternateur",
+    "language": "fr",
+    "format": "video",
+    "initial_results": 49,
+    "desktop_two_escape_presses_preserve_query": true,
+    "mobile_escape_closes_dialog_preserves_query_and_returns_focus": true,
+    "mobile_filter_draft_applied": {
+      "platform": "tiktok",
+      "results": 3
+    },
+    "light_and_dark_inspected": true,
+    "horizontal_overflow_observed": false
+  },
+  "source_sha256": {
+    "app.js": "ac799a24e8077bbcba43896c8f8b8d7a530781910c9facc3faba9b6e823d308f",
+    "index.html": "747a501318705b142e8017d09ced628496f42bdc13751bf47df0c40e23a8ab0c",
+    "discovery-ui.js": "c40a13cf3105baa2f82aae6514936ccf270293ab65fb5c19b228b08b3c453f72",
+    "mobile-ui.js": "3b347a3d17d86c17bb404aa66c828e62d6e68734e8c5776cd1fbd6e2738895cc"
+  },
+  "limits": [
+    "Targeted browser interaction checks, not a complete accessibility audit.",
+    "The mobile viewport is emulated; no physical-device keyboard test.",
+    "Missing social thumbnails remain explicitly labelled; no replacement video images invented."
+  ]
+}

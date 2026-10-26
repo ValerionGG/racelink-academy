@@ -100,6 +100,7 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore,filterSt
   $('#show-filter-results').addEventListener('click',()=>{filterStudio?.applyDraft();filterFocus=$('#catalog-heading');filterFocus.tabIndex=-1;filterDialog.close();$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
   $('#mobile-vehicle').addEventListener('click',()=>{filterStudio?.applyDraft();filterFocus=$('#vehicle-make');$('#vehicle-disclosure').open=true;filterDialog.close();$('#vehicle-disclosure').scrollIntoView({behavior:'smooth'});});
   document.addEventListener('rl:search-chosen',closeSearch);
+  document.addEventListener('rl:search-dismiss',closeSearch);
   for(const dialog of [searchDialog,filterDialog])dialog.addEventListener('click',event=>{
     if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom){if(dialog===searchDialog)closeSearch();else dialog.close();}}
   });

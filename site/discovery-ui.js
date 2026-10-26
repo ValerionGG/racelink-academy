@@ -185,7 +185,16 @@ export function createDiscoveryUI(ctx) {
   $('#search').addEventListener('input',()=>{closeSuggestions();timer=setTimeout(suggest,180);});
   $('#search').addEventListener('focus',()=>{clearTimeout(timer);timer=setTimeout(suggest,100);});
   $('#search').addEventListener('keydown',event=>{
-    if(event.key==='Escape'){if(suggestions.length){event.preventDefault();event.stopPropagation();}closeSuggestions();return;}
+    if(event.key==='Escape'){
+      // A search input can clear itself on Escape without an input event,
+      // leaving the displayed query out of sync with the committed results.
+      event.preventDefault();
+      const hadSuggestions=suggestions.length>0;
+      if(hadSuggestions)event.stopPropagation();
+      closeSuggestions();
+      if(!hadSuggestions)document.dispatchEvent(new Event('rl:search-dismiss'));
+      return;
+    }
     if(!suggestions.length)return;
     if(['ArrowDown','ArrowUp'].includes(event.key)){
       event.preventDefault();active=active<0?(event.key==='ArrowDown'?0:suggestions.length-1):(active+(event.key==='ArrowDown'?1:-1)+suggestions.length)%suggestions.length;renderSuggestions();

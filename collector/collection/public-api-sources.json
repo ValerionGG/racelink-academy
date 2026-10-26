@@ -61,13 +61,15 @@
     {
       "id": "monocrawl",
       "role": "social_video_discovery",
-      "status": "candidate_not_configured",
+      "status": "adapter_ready_not_connected",
       "auth": "api_key",
+      "tool": "scripts/monocrawl_collect.py",
+      "guide": "scripts/MONOCRAWL-COLLECTOR.md",
       "documentation": "https://www.monocrawl.com/docs/platforms/tiktok",
       "pricing_source": "https://www.monocrawl.com/pricing",
       "advertised_initial_free_credits": 150,
       "observed_account_balance": null,
-      "next_action": "Check actual free account balance and endpoint costs before a bounded pilot.",
+      "next_action": "Complete the approved official connection flow, check actual free balance and endpoint costs, then reserve a bounded MCP pilot. No live provider call has been made.",
       "limitations": [
         "README and current pricing disagree; use current pricing and observed balance.",
         "Do not import sandbox/sample payloads.",

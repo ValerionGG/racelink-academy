@@ -1,0 +1,83 @@
+{
+  "release": "collection-v32",
+  "prepared_at": "2026-10-26T19:04:47.891675+00:00",
+  "baseline_videos": 39469,
+  "total_videos": 39751,
+  "videos": 39751,
+  "guides": 11,
+  "new_references": 282,
+  "updated_existing_references": 0,
+  "removed_references": 0,
+  "new_by_platform": {
+    "youtube": 282
+  },
+  "new_by_language": {
+    "en": 97,
+    "fr": 170,
+    "pt": 1,
+    "und": 14
+  },
+  "total_by_platform": {
+    "dailymotion": 345,
+    "facebook": 46,
+    "instagram": 312,
+    "other": 14,
+    "tiktok": 862,
+    "twitch": 2,
+    "vimeo": 17,
+    "youtube": 38153
+  },
+  "total_by_language": {
+    "ar": 7,
+    "cs": 1,
+    "de": 4018,
+    "en": 13498,
+    "es": 4565,
+    "fa": 1,
+    "fr": 7184,
+    "id": 2,
+    "it": 298,
+    "ja": 96,
+    "ko": 52,
+    "pl": 3759,
+    "pt": 4207,
+    "ru": 6,
+    "ta": 1,
+    "tr": 3,
+    "und": 2040,
+    "zh": 13
+  },
+  "new_native_metadata_records": 282,
+  "new_nonempty_source_descriptions": 280,
+  "new_description_bases": {
+    "source_listing_excerpt_without_social_tokens": 282
+  },
+  "new_transcripts": 0,
+  "new_references_with_thumbnail_url": 282,
+  "new_language_statuses": {
+    "inferred_from_public_listing_text": 268,
+    "mixed_public_listing_text": 14
+  },
+  "new_verification_scopes": {
+    "public_listing_metadata": 282
+  },
+  "catalog_sha256": "7e4708b5400eb8f3d59353a4308c40e72e71b965f7fe2de65493581c03c74039",
+  "acquisition": {
+    "provider": "Public platform metadata",
+    "execution_channel": "public_metadata",
+    "raw_results_observed": 486,
+    "distinct_posts_observed": 481,
+    "successful_jobs": 8,
+    "failed_jobs": 0,
+    "free_credits_consumed": 0,
+    "out_of_pocket_usd": 0,
+    "metadata_only": true,
+    "route_status": "completed"
+  },
+  "interface_summary": "Recherche corrigée : Échap ferme les suggestions sans effacer les mots recherchés. Interface Studio claire et sombre conservée ; nouveau connecteur Monocrawl pour les prochaines collectes.",
+  "visual_browser_check": "See ui-checks.json for the limited browser checks performed on this release.",
+  "method": "Exact ID and unchanged-row comparison against a read-only pre-import backup; every addition matches a sealed metadata approval and the public export.",
+  "language_note": "Language labels inferred from captions do not certify the spoken audio.",
+  "rights_note": "Public availability does not establish a free video licence or validate a mechanical procedure.",
+  "publication_scope": "Reviewed aggregate counts and costs only; no account identifier, job ID, raw export, UI ledger, credentials or account screenshot."
+}
