@@ -1,7 +1,7 @@
 {
   "checked_at": "2026-10-26",
   "validation": "offline_and_mock_only",
-  "tests_passed": 44,
+  "tests_passed": 50,
   "test_command": "python -B -X utf8 -m unittest discover -s . -p 'test_*.py' -v",
   "input_schemas_validated": 14,
   "preview_commands_passed": 2,
@@ -9,10 +9,37 @@
   "real_actor_runs": 0,
   "credits_spent": 0,
   "database_modified": false,
-  "remaining_external_requirement": "Explicit APIFY_TOKEN and a live verified eligible Free plan; no account data was inspected.",
+  "remaining_external_requirement": "CLI execution requires an explicitly configured APIFY_TOKEN and current eligible Free-plan verification. Browser login does not configure it. Reconcile Console runs before any new CLI start.",
   "independent_export_integration_checks_passed": 22,
   "independent_export_integration_report": "work/scale-v25/research/apify-export-integration-checks.json",
   "independent_restriction_compatibility_checks_passed": 38,
   "independent_restriction_review_report": "independent-review.json",
-  "independent_restriction_review_script": "work/scale-v25/research/provider-independent-review-checks.py"
+  "independent_restriction_review_script": "work/scale-v25/research/provider-independent-review-checks.py",
+  "validation_scope": "Package preparation and field-selection/private-account corrections only; not a statement about Console activity performed separately by the operator.",
+  "historical_independent_reviews": "The 22 integration and 38 restriction checks apply to the hashes in their original reports, before this correction; those reports were preserved.",
+  "correction": {
+    "description": "Request top-level authorMeta/videoMeta, then locally project approved leaves; preserve nested/flattened privateAccount as isPrivate.",
+    "official_contract": "https://docs.apify.com/storage/dataset",
+    "new_unit_tests": 3,
+    "old_fields_request_fails_new_regression": true,
+    "actual_public_export_private_account_checks_passed": 8,
+    "authenticated_requests": 0,
+    "actor_starts": 0,
+    "runtime_modified": false,
+    "launcher_sha256": "6ad7ccaf65113b9540798836d7c8e2826765d56978424bd49cfb172f35173f22",
+    "tests_sha256": "988652e5b1f3ef68989d7a01ce46287a8c307391eaeb524e7191f1725b39f637"
+  },
+  "ui_reconciliation_flag": {
+    "name": "UI_RUNS_UNRECONCILED",
+    "new_unit_tests": 3,
+    "new_starts_blocked_before_token_network_runtime": true,
+    "rechecked_before_post": true,
+    "offline_preview_allowed": true,
+    "existing_receipt_get_resume_allowed": true,
+    "flag_contents_read": false,
+    "external_ledger_scanned": false,
+    "real_flag_created_by_this_agent": false
+  },
+  "current_launcher_sha256": "4399eb67c54fab76c1c7ee808ca278e6deb79ae8d627e09abd0348fb12a37576",
+  "current_tests_sha256": "7d7b3a24883bbdf9ad47f5a736c8301db0ac9a039c99e5ced8249f62d7eb1206"
 }

@@ -28,6 +28,10 @@ class PilotTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.state = Path(self.temp.name)
+        self.ui_flag = self.state / 'UI_RUNS_UNRECONCILED'
+        self.flag_patch = patch.object(pilot, 'UI_RECONCILIATION_FLAG', self.ui_flag)
+        self.flag_patch.start()
+        self.addCleanup(self.flag_patch.stop)
         self.plan, self.jobs = pilot.selected_jobs(pilot.PLAN)
         self.job = self.jobs[0]
         self.actor_id = pilot.load(pilot.HERE / (self.job['actor'].replace('/', '~') + '.json'))['data']['id']
@@ -48,6 +52,7 @@ class PilotTests(unittest.TestCase):
                 time.sleep(.05 * (attempt + 1))
 
     def test_preview_no_network_no_credentials_no_state(self):
+        self.ui_flag.touch()  # Offline preview remains available while UI runs are unresolved.
         def get_env(key, default=None):
             self.assertIn(key, {'LANGUAGE', 'LC_ALL', 'LC_MESSAGES', 'LANG'})
             return default
@@ -65,6 +70,44 @@ class PilotTests(unittest.TestCase):
             self.assertEqual(2, pilot.main(['--execute']))
         api.assert_not_called()
         self.assertFalse((self.state / 'absent').exists())
+
+    def test_ui_flag_blocks_execute_before_token_network_or_runtime(self):
+        self.ui_flag.write_text('contents must not be read', encoding='utf-8')
+        def get_env(key, default=None):
+            self.assertNotEqual('APIFY_TOKEN', key)
+            return default
+        with patch.object(pilot.os.environ, 'get', side_effect=get_env), \
+             patch.object(pilot, 'api_json') as api, patch.object(pilot.budget, 'fetch_projected') as fetch, \
+             patch.object(pilot, 'STATE', self.state / 'absent'), \
+             contextlib.redirect_stdout(io.StringIO()) as output:
+            self.assertEqual(2, pilot.main(['--execute']))
+        self.assertIn('UI_RUNS_UNRECONCILED', output.getvalue())
+        api.assert_not_called()
+        fetch.assert_not_called()
+        self.assertFalse((self.state / 'absent').exists())
+
+    def test_ui_flag_blocks_direct_new_launch_without_receipt(self):
+        self.ui_flag.touch()
+        with patch.object(pilot, 'api_json') as api, patch.object(pilot, 'public_actor_review') as provider, \
+             patch.object(pilot, 'budget_before_start') as check, \
+             self.assertRaisesRegex(pilot.PilotError, 'UI_RUNS_UNRECONCILED'):
+            pilot.launch_one(self.job, 'test-only', self.state)
+        api.assert_not_called()
+        provider.assert_not_called()
+        check.assert_not_called()
+        self.assertFalse((self.state / (self.job['id'] + '.json')).exists())
+
+    def test_ui_flag_created_during_budget_read_blocks_post_and_receipt(self):
+        def mark_ui(token, state_dir):
+            self.ui_flag.touch()
+            return budget_report()
+        with patch.object(pilot, 'public_actor_review', return_value=self.provider), \
+             patch.object(pilot, 'budget_before_start', side_effect=mark_ui), \
+             patch.object(pilot, 'api_json') as api, \
+             self.assertRaisesRegex(pilot.PilotError, 'UI_RUNS_UNRECONCILED'):
+            pilot.launch_one(self.job, 'test-only', self.state)
+        api.assert_not_called()
+        self.assertFalse((self.state / (self.job['id'] + '.json')).exists())
 
     def test_input_hash_modification_blocks(self):
         directory = self.state / 'plan'
@@ -157,6 +200,42 @@ class PilotTests(unittest.TestCase):
         self.assertNotIn('tracking', raw)
         self.assertIn('Vidange moteur #auto', raw)
 
+    def test_dataset_top_level_selection_preserves_nested_metadata_and_filters_profiles(self):
+        # Simulate the provider contract: nested `fields` selectors are ignored.
+        # Returning unfiltered fixtures would conceal a broken dataset request.
+        source = {'id': '7100000000000000001', 'text': 'Vidange moteur #auto',
+            'webVideoUrl': 'https://www.tiktok.com/@mechanic/video/7100000000000000001',
+            'authorMeta': {'name': 'mechanic', 'privateAccount': True, 'email': 'PROFILE_CONTACT@example.org',
+                           'bio': 'PROFILE_BIO', 'avatar': 'PROFILE_AVATAR'},
+            'videoMeta': {'duration': 38,
+                'coverUrl': 'https://p16-sign.tiktokcdn-us.com/image.jpg',
+                'playAddr': 'https://example.org/PRIVATE_MEDIA.mp4'},
+            'comments': ['UNREQUESTED_COMMENT']}
+        state = {'batch': self.job['id'], 'actor': self.job['actor'], 'platform': 'tiktok',
+            'run_id': 'RunId1234567890123', 'dataset_id': 'Dataset1234567890',
+            'result_upper_target': 60, 'run_status': 'SUCCEEDED'}
+        def provider_select(path, token=None, method='GET', body=None):
+            self.assertEqual('GET', method)
+            selected = parse_qs(urlsplit(pilot.API + path).query)['fields'][0].split(',')
+            return [{key: value for key, value in source.items() if key in selected}]
+        receipt = self.state / (self.job['id'] + '.json')
+        with patch.object(pilot, 'api_json', side_effect=provider_select) as api:
+            result = pilot.export_dataset(state, receipt, 'test-only', self.state)
+        self.assertEqual(1, api.call_count)
+        self.assertEqual(1, result['exported_count'])
+        page = pilot.load(next((self.state / 'review').rglob('page-*.json')))
+        row = page['items'][0]
+        self.assertEqual('mechanic', row['creator'])
+        self.assertEqual(38, row['duration_seconds'])
+        self.assertEqual(source['videoMeta']['coverUrl'], row['thumbnail_url'])
+        self.assertIs(row['isPrivate'], True)
+        saved = json.dumps(page)
+        for excluded in ('PROFILE_CONTACT', 'PROFILE_BIO', 'PROFILE_AVATAR',
+                         'PRIVATE_MEDIA', 'UNREQUESTED_COMMENT'):
+            self.assertNotIn(excluded, saved)
+        self.assertNotIn('authorMeta', row)
+        self.assertNotIn('videoMeta', row)
+
     def test_uncertain_start_never_reposts(self):
         with patch.object(pilot, 'public_actor_review', return_value=self.provider), \
              patch.object(pilot, 'budget_before_start', return_value=budget_report()), \
@@ -177,6 +256,7 @@ class PilotTests(unittest.TestCase):
             result = pilot.launch_one(self.job, 'test-only', self.state, polls=1, interval=0)
         self.assertEqual('poll_window_finished_resume_required', result['status'])
         self.assertEqual(2, api.call_count)
+        self.ui_flag.touch()  # Existing receipt resumes remain GET-only even during UI reconciliation.
         calls = []
         def resume_api(path, token=None, method='GET', body=None):
             calls.append(method)
@@ -362,6 +442,32 @@ class PilotTests(unittest.TestCase):
                     self.assertIs(row[expected], True)
                     if expected == 'isPhoto':
                         self.assertIs(row['is_video'], False)
+
+    def test_private_author_account_is_preserved_and_restrictive_alias_wins(self):
+        for value in (True, 1, 'true', 'yes'):
+            for source in ({'authorMeta': {'privateAccount': value}},
+                           {'authorMeta.privateAccount': value}):
+                with self.subTest(source=source):
+                    row = pilot.safe_post_metadata({'isPrivate': False, **source}, 'tiktok')
+                    self.assertIs(row['isPrivate'], True)
+                    self.assertNotIn('authorMeta', row)
+                    self.assertNotIn('authorMeta.privateAccount', row)
+        for value in (False, 0, 'false', 'no'):
+            row = pilot.safe_post_metadata({'authorMeta': {'privateAccount': value}}, 'tiktok')
+            self.assertIs(row['isPrivate'], False)
+            row = pilot.safe_post_metadata({'isPrivate': True,
+                'authorMeta': {'privateAccount': value}}, 'tiktok')
+            self.assertIs(row['isPrivate'], True)
+        row = pilot.safe_post_metadata({'authorMeta.privateAccount': True,
+            'authorMeta': {'privateAccount': False}}, 'tiktok')
+        self.assertIs(row['isPrivate'], True)
+
+    def test_unknown_private_author_account_encoding_is_rejected(self):
+        for value in ('maybe', 2, -1, [], {}, ' '):
+            for source in ({'authorMeta': {'privateAccount': value}},
+                           {'authorMeta.privateAccount': value}):
+                with self.subTest(source=source), self.assertRaises(pilot.PilotError):
+                    pilot.safe_post_metadata(source, 'tiktok')
 
     def test_unknown_restriction_encoding_is_not_dropped(self):
         for field in ('isVideo', 'isPrivate', 'isSponsored', 'isStory', 'isSlideshow', 'isAIGC'):

@@ -24,6 +24,7 @@ import verify_apify_free_credits as budget
 HERE = Path(__file__).resolve().parent
 PLAN = HERE / 'pilot' / 'plan.json'
 STATE = HERE / 'pilot' / 'runtime'
+UI_RECONCILIATION_FLAG = HERE / 'UI_RUNS_UNRECONCILED'
 API = 'https://api.apify.com/v2/'
 CAP = Decimal('0.50')
 MAX_BYTES = 4 * 1024 * 1024
@@ -40,10 +41,14 @@ ACTORS = {
         'price': Decimal('0.0026'), 'memory': 1024,
         'false': ['includeSharesCount', 'includeTranscript', 'includeDownloadedVideo'], 'zero': []},
 }
+# Apify's dataset `fields` selects top-level keys only; nested paths are ignored.
+# These two objects stay in memory and safe_post_metadata persists only approved
+# leaves (public creator handle, duration and image URL), never full profiles.
+# Contract: https://docs.apify.com/storage/dataset
 DATASET_FIELDS = ('id,text,caption,title,url,webVideoUrl,shortCode,timestamp,createTimeISO,'
-    'createTime,hashtags,videoDuration,videoMeta.duration,authorMeta.name,ownerUsername,'
+    'createTime,hashtags,videoDuration,videoMeta,authorMeta,ownerUsername,'
     'diggCount,shareCount,commentCount,playCount,videoViewCount,videoPlayCount,likesCount,commentsCount,'
-    'displayUrl,thumbnailUrl,thumbnail,videoMeta.coverUrl,videoMeta.cover,cover,type,isVideo,isSlideshow,isPhoto,'
+    'displayUrl,thumbnailUrl,thumbnail,cover,type,isVideo,isSlideshow,isPhoto,'
     'isSponsored,isAd,paidPartnership,isPaidPartnership,isPrivate,private,is_private,availability,'
     'is_video,is_photo,is_slideshow,isStory,is_story,isAIGC,isAiGenerated,is_aigc,is_ai_generated')
 
@@ -54,6 +59,13 @@ class PilotError(Exception):
 
 def now():
     return dt.datetime.now(dt.timezone.utc)
+
+
+def require_ui_runs_reconciled():
+    # Explicit local operator flag: never inspect browser state or external ledgers.
+    # Its contents are unnecessary and may contain private operator annotations.
+    if UI_RECONCILIATION_FLAG.exists() or UI_RECONCILIATION_FLAG.is_symlink():
+        raise PilotError('UI runs are not reconciled; new starts are blocked by UI_RUNS_UNRECONCILED')
 
 
 def encoded(value):
@@ -420,13 +432,16 @@ def safe_post_metadata(row, platform):
             result.update(thumbnail_url=thumbnail, thumbnail=thumbnail, thumbnail_source_field=key,
                           thumbnail_status='provider_public_image_url_may_expire_not_downloaded')
             break
-    groups = {'isPrivate': ('isPrivate', 'private', 'is_private'),
+    groups = {'isPrivate': ('isPrivate', 'private', 'is_private', 'authorMeta.privateAccount'),
               'isSponsored': ('isSponsored', 'isAd', 'paidPartnership', 'isPaidPartnership'),
               'isPhoto': ('isPhoto', 'is_photo', 'isSlideshow', 'is_slideshow'),
               'isStory': ('isStory', 'is_story'),
               'is_aigc': ('isAIGC', 'isAiGenerated', 'is_aigc', 'is_ai_generated')}
     for destination, keys in groups.items():
         values = [metadata_flag(row[key]) for key in keys if key in row]
+        author = row.get('authorMeta')
+        if destination == 'isPrivate' and isinstance(author, dict) and 'privateAccount' in author:
+            values.append(metadata_flag(author['privateAccount']))
         values = [value for value in values if value is not None]
         if values:
             result[destination] = any(values)  # A restrictive declaration wins a contradictory one.
@@ -576,9 +591,11 @@ def launch_one(job, token, state_dir=STATE, resume=False, polls=12, interval=10)
         return finish_or_wait(state, receipt_path, token, state_dir, polls, interval)
     if resume:
         raise PilotError('No receipt exists to resume; --resume never starts a run')
+    require_ui_runs_reconciled()
     provider = public_actor_review(job)
     # This is the last network check before POST: fresh Free plan + idle account.
     report = budget_before_start(token, state_dir)
+    require_ui_runs_reconciled()  # Recheck if the UI operator flagged activity during live reads.
     query = urllib.parse.urlencode({'maxTotalChargeUsd': '0.50', 'timeout': 600,
         'memory': ACTORS[job['actor']]['memory'], 'restartOnError': 'false', 'build': job['reviewed_build']})
     state = {'batch': job['id'], 'actor': job['actor'], 'platform': ACTORS[job['actor']]['platform'],
@@ -622,6 +639,8 @@ def main(argv=None):
                 'reserve_usd': .25, 'batches': [{key: value for key, value in job.items() if key != 'body'} for job in jobs],
                 'next_action': 'Only --execute can request starts, after live Free-plan/budget/provider checks.'}, indent=2))
             return 0
+        if not args.resume:
+            require_ui_runs_reconciled()  # Before credential access, network and runtime writes.
         token = os.environ.get('APIFY_TOKEN', '').strip()
         if not token:
             raise PilotError('APIFY_TOKEN not configured; no network or run requested')

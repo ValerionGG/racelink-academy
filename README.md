@@ -1,18 +1,15 @@
-# RaceLink Academy — Catalogue V24
+# RaceLink Academy — Catalogue V26
 
-[Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/?release=collection-v24) · [Bilan vérifiable](research/free-v24/README.md)
+[Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/?release=collection-v26) · [Bilan vérifiable](research/apify-v26/README.md)
 
-**37,896 références vidéo et 11 guides.** Cette version ajoute 565 références : 530 tutoriels Renault/Dacia depuis leurs pages officielles et 35 TikTok/Instagram retenus après revue des métadonnées. Les modes clair et sombre sont conservés.
+38,196 références vidéo et 11 guides. Cette version ajoute 300 références après revue des métadonnées.
 
-Titres, descriptions, hashtags, modèles et sujets restent distincts. Les liens constructeur sont consultables dans « Source, droits et méthode ». Les langues nouvelles sont estimées depuis les textes ; aucun audio ni procédure technique n'a été certifié. Aucune nouvelle transcription ou licence libre n'est inventée.
+981 lignes brutes ont été observées via Apify ; 3.331 USD de crédits utilisés selon la Console. Seuls les crédits gratuits ont été autorisés. Les résultats bruts et les ajouts utiles sont comptés séparément.
 
-**Zéro dépense réelle.** Le pilote Apify n'a pas été lancé. Les centaines de milliers de vidéos demandées ne sont pas encore acquises : le bilan distingue lignes brutes, doublons et ajouts utiles.
+Titres, descriptions, hashtags et indices de véhicule restent distincts. Les langues sont inférées du texte lorsque l’audio n’est pas établi ; une procédure ou licence libre n’est pas présumée.
 
-- [Collecteur Agent Reach/Exa corrigé et plan français](collector/LOCAL_COLLECT.md)
-- [Préparation de gros lots](collector/SCALE_INGEST.md)
-- [Collecteur Dailymotion](collector/OPEN-COLLECTOR.md)
-- [Outils GitHub et limites actuelles](research/free-v24/FREE-ROUTES.md)
-- [Audit réel des datasets TikTok](research/free-v24/DATASETS.md)
-- [Pilote Apify limité aux crédits gratuits vérifiés](collector/collection/apify-free-credits-pilot/plan.json)
+- [Collecteur et contrôles gratuits](collector/collection/free-social-v25/README.md)
+- [Recherche Agent Reach/Exa](collector/LOCAL_COLLECT.md)
+- [Traitement de gros lots](collector/SCALE_INGEST.md)
 
-GitHub Pages est un aperçu indépendant de Focus. `site/` contient l'export statique et `collector/` les outils.
+GitHub Pages est un aperçu indépendant de Focus. Les modes clair et sombre sont conservés. `site/` contient le site statique et `collector/` les outils.

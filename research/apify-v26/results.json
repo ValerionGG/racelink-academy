@@ -1,0 +1,80 @@
+{
+  "release": "collection-v26",
+  "prepared_at": "2026-10-26T11:26:20.674474+00:00",
+  "baseline_videos": 37896,
+  "total_videos": 38196,
+  "new_references": 300,
+  "updated_existing_references": 0,
+  "removed_references": 0,
+  "new_by_platform": {
+    "instagram": 91,
+    "tiktok": 209
+  },
+  "new_by_language": {
+    "fr": 300
+  },
+  "total_by_platform": {
+    "dailymotion": 319,
+    "facebook": 46,
+    "instagram": 312,
+    "other": 14,
+    "tiktok": 468,
+    "twitch": 2,
+    "vimeo": 3,
+    "youtube": 37032
+  },
+  "total_by_language": {
+    "ar": 7,
+    "cs": 1,
+    "de": 4018,
+    "en": 13123,
+    "es": 4565,
+    "fa": 1,
+    "fr": 6058,
+    "id": 2,
+    "it": 298,
+    "ja": 96,
+    "ko": 52,
+    "pl": 3759,
+    "pt": 4206,
+    "ru": 6,
+    "ta": 1,
+    "tr": 3,
+    "und": 1987,
+    "zh": 13
+  },
+  "new_source_caption_fields": 300,
+  "new_transcripts": 0,
+  "new_references_with_thumbnail_url": 300,
+  "new_language_statuses": {
+    "inferred_from_source_caption_text": 300
+  },
+  "new_verification_scopes": {
+    "exported_metadata_not_independently_verified": 300
+  },
+  "catalog_sha256": "031d7084d13de5a790c282230f31a3d44123df23bfca05e421a35fd98c7c8c74",
+  "videos": 38196,
+  "guides": 11,
+  "acquisition": {
+    "provider": "Apify",
+    "execution_channel": "console_ui",
+    "run_count": 9,
+    "runs_by_platform": {
+      "tiktok": 7,
+      "instagram": 2
+    },
+    "runs_by_status": {
+      "SUCCEEDED": 9
+    },
+    "raw_results_observed": 981,
+    "credits_usage_observed_usd": 3.331,
+    "reserved_caps_usd": 4.5,
+    "additional_reserve_usd": 0.25,
+    "out_of_pocket_authorized_usd": 0,
+    "cost_evidence": "Operator-observed run charges in Console; aggregate only, not an independent billing audit."
+  },
+  "method": "Exact ID and row comparison between read-only baseline backup and current database; reviewed static export checked against current IDs and fields.",
+  "language_note": "Language labels refer to metadata or caption inference unless a source explicitly establishes more; no audio certification is implied.",
+  "rights_note": "Public availability and provider metadata do not establish a free video licence or certify a mechanical procedure.",
+  "publication_scope": "Aggregate counts and costs only; no account identifier, run/dataset ID, raw export, UI ledger or account screenshot."
+}

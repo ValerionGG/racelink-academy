@@ -40,6 +40,8 @@ Il n'existe aucune modification de forfait, abonnement, recharge, limite globale
 
 Le verrou local sérialise les commandes de ce paquet ; il ne peut pas empêcher un humain ou un autre outil de démarrer un run ailleurs après la lecture du budget. Le contrôle des runs actifs est donc renouvelé juste avant chaque POST, et le plafond serveur ainsi que le blocage du dépassement du plan Free restent nécessaires. Les API utilisées donnent une estimation prudente des crédits de plan restants, pas un relevé séparant chaque crédit gratuit d'un portefeuille acheté.
 
+Si des runs ont été lancés depuis la Console et ne sont pas rapprochés, l'opérateur pose un fichier vide `UI_RUNS_UNRECONCILED` à côté du launcher. Toute nouvelle exécution s'arrête alors avant lecture du jeton, réseau ou écriture du runtime ; la garde est répétée avant soumission. Aperçu et reprise GET d'un reçu existant restent disponibles. Le launcher ne lit pas de ledger externe et ne supprime jamais le marqueur. Celui-ci doit être présent dans chaque copie exécutable concernée jusqu'au rapprochement des réservations, et rester hors distribution. Voir [la procédure UI](UI-OPERATIONS.md).
+
 Avec 5 USD encore intacts, la réservation conservatrice autorise au plus **neuf plafonds de 0,50 USD dans le cycle**, même si les coûts finaux sont inférieurs. Les 14 lots du plan ne constituent donc pas une autorisation de dépenser 7 USD. Ne pas effacer les reçus pour libérer artificiellement des crédits.
 
 ## Suivi, reprise et revue
@@ -56,7 +58,11 @@ Une reprise demande exactement un lot. Si le POST est incertain ou si le reçu n
 
 Les datasets sont lus par pages de 50, avec un plafond total égal à la cible du lot. Les pages conservent le texte source utile et ses hashtags, IDs, liens de publications, compte auteur public et compteurs ; elles excluent les URLs de fichiers vidéo, commentaires, biographies et objets de profil. Les contacts e-mail et numéros français trouvés dans un texte sont masqués. Le texte source peut donc être signalé comme tronqué ou expurgé, sans être présenté comme une copie intégrale. Chaque page porte provenance, offset, hash et portée `public_post_metadata_for_review`.
 
+Le paramètre API `fields` ne sélectionne que des clés de premier niveau : les chemins imbriqués sont ignorés. Le collecteur demande donc `authorMeta` et `videoMeta`, traite ces objets uniquement en mémoire puis conserve les seules feuilles autorisées : compte auteur public, durée et miniature. Aucun objet de profil complet, contact, biographie ou lien de fichier vidéo n'est écrit. Le correctif est couvert par une simulation du véritable contrat de sélection, et non par une réponse brute ignorant les champs demandés. Voir la [documentation du dataset](https://docs.apify.com/storage/dataset) et [l'aide-mémoire Console](UI-OPERATIONS.md).
+
 Les déclarations de contenu privé, réservé aux abonnés, sponsorisé, photo/carrousel, story ou généré par IA sont conservées pour la revue. Les encodages booléens 0/1 et texte true/false/yes/no sont normalisés strictement ; une valeur inconnue bloque l’export au lieu de devenir une vidéo publique par défaut.
+
+Le statut de compte privé `authorMeta.privateAccount`, imbriqué ou aplati, est également transmis dans `isPrivate`. Une déclaration privée prévaut sur un alias contradictoire ; aucun autre détail du profil n'est conservé pour cette vérification. Huit contrôles supplémentaires via le véritable adaptateur PUBLIC_EXPORT confirment la mise à l'écart de ces publications.
 
 Les miniatures publiquement fournies par l'Actor sont conservées comme **URLs d'images**, sans téléchargement : HTTPS, domaines CDN des plateformes, absence de credentials, exclusion des formats vidéo. Les signatures publiques d'image nécessaires à l'affichage sont conservées et peuvent expirer. Les champs `displayUrl`, `thumbnailUrl`, `thumbnail`, `cover`, `videoMeta.coverUrl` et `videoMeta.cover` sont examinés. Une miniature absente ou expirée doit garder l'état prévu par l'interface, sans inventer une image de la vidéo.
 
@@ -139,8 +145,10 @@ Le MCP officiel peut utiliser OAuth à `https://mcp.apify.com`. Aucun MCP Apify 
 python -B -X utf8 -m unittest discover -s . -p 'test_*.py' -v
 ```
 
-44 tests hors ligne couvrent notamment la projection des secrets, compte payant, budget insuffisant, run concurrent, schéma/prix/build modifiés, hash changé, seul POST autorisé, reçu avant POST, issue inconnue, reprise GET seule, pagination reprise, pages manquantes ou modifiées, compatibilité du manifeste, miniatures publiques, arrêt sur échec ou résultat vide, verrou local et réservations persistantes. Les 14 entrées sont également validées contre les schémas publics sauvegardés.
+50 tests hors ligne couvrent notamment la projection des secrets, compte payant, budget insuffisant, run concurrent, schéma/prix/build modifiés, hash changé, seul POST autorisé, reçu avant POST, issue inconnue, reprise GET seule, pagination reprise, pages manquantes ou modifiées, compatibilité du manifeste, miniatures publiques, sélection API des champs de premier niveau, arrêt sur échec ou résultat vide, verrou local et réservations persistantes. Les 14 entrées sont également validées contre les schémas publics sauvegardés.
 
 Deux revues indépendantes ont également validé 22 contrôles de compatibilité complète des exports et 38 cas de restrictions via le véritable adaptateur PUBLIC_EXPORT. Le rapport de la seconde est fourni dans `independent-review.json` ; son script de reproduction dépend de l’application et reste dans `work/scale-v25/research/provider-independent-review-checks.py`, hors du paquet autonome.
+
+Ces deux revues sont historiques et portent sur les hashes consignés dans leurs rapports. Elles n'avaient pas simulé la sélection de champs effectuée par le fournisseur. Les correctifs ultérieurs des champs de premier niveau et du statut privé du compte auteur sont validés par les 47 tests, dont trois nouvelles régressions ; les rapports indépendants ne sont pas réécrits comme s'ils avaient revu ce correctif.
 
 Le manifeste `artifact-sha256.json` permet de contrôler les fichiers distribués. Les fiches sauvegardées sont des projections de réponses anonymes publiques, sans `deploymentKey` ni données inutiles. Ne distribuer ni `pilot/runtime/`, ni jeton, ni fichier `.env`. Le paquet doit être copié entier pour conserver les chemins relatifs de ses fixtures et entrées.
