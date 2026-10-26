@@ -1,0 +1,77 @@
+{
+  "release": "collection-v28",
+  "prepared_at": "2026-10-26T14:47:40.198394+00:00",
+  "baseline_videos": 38199,
+  "total_videos": 38590,
+  "videos": 38590,
+  "guides": 11,
+  "new_references": 391,
+  "updated_existing_references": 0,
+  "removed_references": 0,
+  "new_by_platform": {
+    "tiktok": 391
+  },
+  "new_by_language": {
+    "en": 2,
+    "fr": 389
+  },
+  "total_by_platform": {
+    "dailymotion": 319,
+    "facebook": 46,
+    "instagram": 312,
+    "other": 14,
+    "tiktok": 862,
+    "twitch": 2,
+    "vimeo": 3,
+    "youtube": 37032
+  },
+  "total_by_language": {
+    "ar": 7,
+    "cs": 1,
+    "de": 4018,
+    "en": 13125,
+    "es": 4565,
+    "fa": 1,
+    "fr": 6450,
+    "id": 2,
+    "it": 298,
+    "ja": 96,
+    "ko": 52,
+    "pl": 3759,
+    "pt": 4206,
+    "ru": 6,
+    "ta": 1,
+    "tr": 3,
+    "und": 1987,
+    "zh": 13
+  },
+  "new_source_caption_fields": 391,
+  "new_transcripts": 0,
+  "new_references_with_thumbnail_url": 0,
+  "new_language_statuses": {
+    "inferred_from_source_caption_text": 391
+  },
+  "new_verification_scopes": {
+    "exported_metadata_not_independently_verified": 391
+  },
+  "catalog_sha256": "3eca1d3c0a1931eda77f797916c2c704abaa19375b147f9ad7aa77223159f7b7",
+  "acquisition": {
+    "provider": "Bright Data",
+    "execution_channel": "console_ui",
+    "raw_results_observed": 663,
+    "distinct_posts_observed": 663,
+    "successful_jobs": 5,
+    "failed_jobs": 2,
+    "request_count": 8,
+    "free_credits_consumed": 663,
+    "free_credits_remaining": 4337,
+    "out_of_pocket_usd": 0,
+    "metadata_only": true,
+    "route_status": "completed",
+    "accounts_ready_for_collection": 1
+  },
+  "method": "Exact ID and unchanged-row comparison against a read-only pre-import backup; every addition matches a sealed root approval and the public export.",
+  "language_note": "Language labels inferred from captions do not certify the spoken audio.",
+  "rights_note": "Public availability does not establish a free video licence or validate a mechanical procedure.",
+  "publication_scope": "Reviewed aggregate counts and costs only; no account identifier, job ID, raw export, UI ledger, credentials or account screenshot."
+}

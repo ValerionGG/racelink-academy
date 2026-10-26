@@ -21,7 +21,7 @@ import re
 import unicodedata
 from collections.abc import Mapping
 
-VERSION = "1.0.2"
+VERSION = "1.0.4"
 MAX_EXTRACTED_TITLE = 180
 TEXT_FIELDS = ("title", "description", "caption", "text", "desc", "sourceDescription",
                "source_title", "original_title", "indexed_title", "source_caption")
@@ -57,8 +57,25 @@ def _clean_spacing(value):
     return re.sub(r"\n{3,}", "\n\n", value).strip()
 
 
-def _split_tokens(value):
-    """Remove only evidenced social tokens; do not treat C#, #12 or fragments as tags."""
+def _numeric_hashtag_cluster(value, start, end, protected):
+    """A literal numeric tag can belong to a neighboring hashtag-only cluster."""
+    if re.match(r"\s*[/–-]\s*\d", value[end:]):
+        return False  # A numbered reference such as #126 / 365 remains prose.
+    before = re.search(r"[#＃](\w+)\s+$", value[:start])
+    after = re.match(r"\s+[#＃](\w+)", value[end:])
+    for match, offset in ((before,0),(after,end)):
+        if not match:
+            continue
+        marker_start = offset + match.start() if match is before else offset + match[0].index("＃" if "＃" in match[0] else "#")
+        if protected[marker_start]:
+            continue
+        if any(unicodedata.category(char).startswith("L") for char in match[1]):
+            return True
+    return False
+
+
+def _split_tokens(value, numeric_hashtags=frozenset()):
+    """Remove evidenced tokens; numeric tags require native hashtag evidence."""
     # Decode display prose only. Query strings/signatures retain their source bytes.
     pieces, cursor = [], 0
     for match in LINK_RE.finditer(value):
@@ -100,8 +117,12 @@ def _split_tokens(value):
                 end -= 1
         body = value[i+1:end]
         has_letter = any(unicodedata.category(c).startswith("L") for c in body)
-        # A token made only of numbers/underscores is a numbered reference, not a hashtag.
-        valid = bool(body) and (marker == "@" or has_letter)
+        # Numeric vehicle hashtags such as #5008 are valid when a native hashtag
+        # field attests them. Untyped references (#126 / 365), addresses and
+        # underscore-only strings must not become inferred hashtags.
+        valid = bool(body) and (marker == "@" or has_letter or
+            (body.isdecimal() and (_key(body) in numeric_hashtags or
+                _numeric_hashtag_cluster(value,i,end,protected))))
         if valid:
             (mentions if marker == "@" else hashtags).append(value[i:end])
             spans.append((i,end))
@@ -244,9 +265,12 @@ def normalize_social_metadata(record, title_override=None):
         raw_title,title_field = (distinct_caption,distinct_caption_field) if distinct_caption else (caption,caption_field)
     if not raw_title and caption and not editorial_description:
         raw_title,title_field = caption,caption_field
-    title_clean,title_tokens = _split_tokens(raw_title)
-    description,description_tokens = _split_tokens(caption)
-    _,caption_tokens = _split_tokens(distinct_caption)
+    supplied_hashtags = merged.get("hashtags")
+    numeric_hashtags = {_key(value.lstrip("#＃")) for value in supplied_hashtags
+        if isinstance(value,str) and value.lstrip("#＃").isdecimal()} if isinstance(supplied_hashtags,list) else set()
+    title_clean,title_tokens = _split_tokens(raw_title,numeric_hashtags)
+    description,description_tokens = _split_tokens(caption,numeric_hashtags)
+    _,caption_tokens = _split_tokens(distinct_caption,numeric_hashtags)
     token_fields = list(dict.fromkeys(f for f in (title_field,caption_field,distinct_caption_field) if f))
     if title_from_caption:
         title,title_basis = _caption_title(title_clean)
@@ -281,6 +305,8 @@ def normalize_social_metadata(record, title_override=None):
         for value in supplied:
             if not isinstance(value,str) or not value:
                 continue
+            if kind == "hashtags" and value.isdecimal():
+                value = "#" + value
             if kind == "links":
                 valid = bool(LINK_RE.fullmatch(value))
             else:
@@ -288,7 +314,8 @@ def normalize_social_metadata(record, title_override=None):
                 body = value[1:]
                 valid = (value[0] in marker and bool(body)
                     and all(_word(c) or (kind == "mentions" and c == ".") for c in body)
-                    and any(unicodedata.category(c).startswith("L") for c in body))
+                    and (any(unicodedata.category(c).startswith("L") for c in body)
+                        or (kind == "hashtags" and body.isdecimal())))
             if valid:
                 accepted.append(value)
         result[kind] = _dedupe(result[kind]+accepted,kind)

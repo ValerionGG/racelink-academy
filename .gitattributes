@@ -11,3 +11,15 @@
 /collector/scripts/scrapecreators_collect.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /collector/scripts/test_profile_campaign.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 /collector/scripts/test_scrapecreators_collect.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+/collector/scripts/brightdata_collect.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/collector/scripts/brightdata_export.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/collector/scripts/test_brightdata_collect.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/collector/scripts/test_brightdata_export.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+/collector/BRIGHTDATA-COLLECTOR.md -text
+
+/collector/scripts/social_metadata.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+/collector/tests_social_metadata.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+/skills/social-content-structure/scripts/social_metadata.py -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
