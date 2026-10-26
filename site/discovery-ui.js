@@ -1,5 +1,5 @@
 import {icon} from './icons.js';
-import {attachRailNavigation} from './rail-navigation.js?v=themes-v22';
+import {attachRailNavigation} from './rail-navigation.js?v=studio-v30';
 export function createDiscoveryUI(ctx) {
   const {escape:e,t}=ctx;
   const $=s=>document.querySelector(s);
@@ -99,7 +99,7 @@ export function createDiscoveryUI(ctx) {
     try{
       const [data,visuals]=await Promise.all([
         window.getCatalogJson('/aide/api/discovery'),
-        fetch(new URL('./visual-assets.json?v=themes-v22',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
+        fetch(new URL('./visual-assets.json?v=studio-v30',import.meta.url)).then(response=>response.ok?response.json():null).catch(()=>null)
       ]);
       catalog=data;visualAssets=Array.isArray(visuals?.assets)?visuals.assets:[];
       ctx.picks?.setVideos(catalog.shelves||[]);render();ctx.onPicksChange?.();

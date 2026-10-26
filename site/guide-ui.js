@@ -1,5 +1,5 @@
-import {guidePhoto,guideTopic} from './guide-art.js?v=themes-v22';
-import {createGuideSources,isManufacturerReference} from './guide-sources.js?v=themes-v22';
+import {guidePhoto,guideTopic} from './guide-art.js?v=studio-v30';
+import {createGuideSources,isManufacturerReference} from './guide-sources.js?v=studio-v30';
 
 export function createGuideUI({escape:e,t,picks,safeUrl}) {
   let version=0;
@@ -22,17 +22,14 @@ export function createGuideUI({escape:e,t,picks,safeUrl}) {
   }
   function card(resource){
     const topic=guideTopic(resource,{t}),photo=guidePhoto(resource),src=photoSource(photo?.src),g=resource.guide||resource;
-    const id=resource.id||g.id,title=resource.title||g.title||'',references=official(g.sources||resource.sources),first=references[0];
-    const preview=g.cardSummary||resource.description||g.intro||'';
-    return `<article class="video-card guide-card guide-card-v20">
-      <button class="guide-cover" data-guide="${e(id)}" data-guide-topic="${e(topic.key)}" aria-label="${e(t('Lire : ','Read: ','Leer: ')+title)}">${src?`<img class="guide-photo" src="${e(src)}" alt="${e(photo.alt||'')}" lang="fr" width="640" height="360" loading="lazy" decoding="async" style="object-position:${e(photoPosition(photo.position))}">`:`<span class="guide-photo-unavailable">${t('Illustration indisponible','Image unavailable','Imagen no disponible')}</span>`}</button>
+    const id=resource.id||g.id,title=resource.title||g.title||'',references=official(g.sources||resource.sources);
+    return `<article class="video-card guide-card guide-card-v30">
+      <h3 class="guide-card-target"><button class="guide-open" data-guide="${e(id)}" data-guide-topic="${e(topic.key)}"><span class="guide-cover">${src?`<img class="guide-photo" src="${e(src)}" alt="" width="640" height="360" loading="lazy" decoding="async" style="object-position:${e(photoPosition(photo.position))}">`:`<span class="guide-photo-unavailable">${t('Illustration indisponible','Image unavailable','Imagen no disponible')}</span>`}</span><span class="guide-card-title" lang="fr">${e(title)}</span></button></h3>
       <div class="guide-card-body">
         <div class="guide-card-labels"><p class="guide-card-kind">${t('Guide pratique','Practical guide','Guía práctica')}<span aria-hidden="true"> / </span><span>${e(topic.label)}</span></p><span class="guide-language" aria-label="${t('Contenu en français','Content in French','Contenido en francés')}">FR</span></div>
-        <h3><button class="title-button" data-guide="${e(id)}" lang="fr">${e(title)}</button></h3>
-        ${preview?`<p class="card-excerpt" lang="fr">${e(preview)}</p>`:''}
-        ${first?`<div class="guide-card-source"><span class="guide-card-source-label">${t('Exemple de référence','Example reference','Ejemplo de referencia')} · ${e(first.publisher||'Source')}</span><a href="${e(safeUrl(first.url))}" target="_blank" rel="noopener noreferrer" lang="fr">${e(first.title)} <span aria-hidden="true">↗</span></a><button class="guide-reference-count" data-guide="${e(id)}" data-guide-section="sources">${t('Voir les sources et leur portée','View sources and scope','Ver fuentes y alcance')}<span>${references.length} ${referenceLabel(references.length)}</span></button></div>`:''}
+        ${references.length?`<button class="guide-reference-count" data-guide="${e(id)}" data-guide-section="sources">${references.length} ${referenceLabel(references.length)} <span aria-hidden="true">↗</span></button>`:''}
+        ${picks.badge('guide',id,{compact:true})}
       </div>
-      <div class="guide-card-footer">${picks.badge('guide',id,{compact:true})}<button class="guide-read" data-guide="${e(id)}">${t('Lire le guide','Read guide','Leer guía')} <span aria-hidden="true">→</span></button></div>
     </article>`;
   }
   function jump(section){

@@ -1,5 +1,5 @@
 // The same search and filter controls are reused in native mobile dialogs.
-export function createMobileUI({t,getState,getTotal,isLoading,onExplore}) {
+export function createMobileUI({t,getState,getTotal,isLoading,onExplore,filterStudio}) {
   const $=s=>document.querySelector(s);
   const mobile=matchMedia('(max-width:760px)');
   const shell=$('.search-shell'),filters=$('#filters');
@@ -51,12 +51,15 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore}) {
     if(draft.start!==null&&draft.end!==null)input.setSelectionRange(draft.start,draft.end,draft.direction||'none');
   }
   function openFilters(){
+    if(filterDialog.open)return;
+    if(mobile.matches)filterStudio?.beginDraft();
     $('.mobile-filter-body').append(filters);
     filterDialog.showModal();$('#mobile-filters').setAttribute('aria-expanded','true');lock();update();
   }
   function restoreSearch(){if(!searchDialog.open){const slot=!mobile.matches&&document.body.classList.contains('results-mode')?$('#results-search-desktop'):null;if(slot){if(shell.parentElement!==slot)slot.append(shell);}else if(searchAnchor.nextSibling!==shell)searchAnchor.after(shell);}}
   function update(){
     restoreSearch();
+    filterStudio?.update();
     const state=getState(),total=getTotal();
     $('#mobile-search-title').textContent=t('Rechercher un tuto','Find a tutorial','Buscar un tutorial');
     $('#mobile-filter-title').textContent=t('Affiner les résultats','Refine results','Afinar resultados');
@@ -67,6 +70,11 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore}) {
     $('#mobile-vehicle').textContent=t('Préciser ma voiture ↗','Specify my car ↗','Precisar mi coche ↗');
     $('#show-filter-results').textContent=total===null?(isLoading()?t('Recherche en cours…','Searching…','Buscando…'):t('Catalogue indisponible','Catalog unavailable','Catálogo no disponible')):`${t('Voir','Show','Ver')} ${Number(total).toLocaleString(document.documentElement.lang)} ${total===1?t('résultat','result','resultado'):t('résultats','results','resultados')} →`;
     $('#show-filter-results').disabled=total===null;
+    if(filterStudio?.hasPendingChanges()){
+      $('#show-filter-results').textContent=t('Appliquer les filtres','Apply filters','Aplicar filtros');
+      $('#show-filter-results').disabled=false;
+      $('#mobile-vehicle').textContent=t('Appliquer et préciser ma voiture ↗','Apply and specify my car ↗','Aplicar y precisar mi coche ↗');
+    }
     document.querySelectorAll('[data-sheet-close]').forEach(b=>b.setAttribute('aria-label',t('Fermer','Close','Cerrar')));
   }
   $('#edit-search').addEventListener('click',openSearch);
@@ -87,10 +95,10 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore}) {
     if(resourceDialog.open||!suppressSearchFocus)return;
     restoreSearch();focusAfterSearch();suppressSearchFocus=false;
   });
-  filterDialog.addEventListener('close',()=>{filterAnchor.after(filters);$('#mobile-filters').setAttribute('aria-expanded','false');lock();(filterFocus||$('#mobile-filters')).focus({preventScroll:true});filterFocus=null;});
+  filterDialog.addEventListener('close',()=>{if(filterDialog.open)return;filterStudio?.cancelDraft();filterAnchor.after(filters);$('#mobile-filters').setAttribute('aria-expanded','false');lock();(filterFocus||$('#mobile-filters')).focus({preventScroll:true});filterFocus=null;});
   document.querySelectorAll('[data-sheet-close]').forEach(b=>b.addEventListener('click',()=>b.dataset.sheetClose==='search'?closeSearch():filterDialog.close()));
-  $('#show-filter-results').addEventListener('click',()=>{filterFocus=$('#catalog-heading');filterFocus.tabIndex=-1;filterDialog.close();$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
-  $('#mobile-vehicle').addEventListener('click',()=>{filterFocus=$('#vehicle-make');$('#vehicle-disclosure').open=true;filterDialog.close();$('#vehicle-disclosure').scrollIntoView({behavior:'smooth'});});
+  $('#show-filter-results').addEventListener('click',()=>{filterStudio?.applyDraft();filterFocus=$('#catalog-heading');filterFocus.tabIndex=-1;filterDialog.close();$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
+  $('#mobile-vehicle').addEventListener('click',()=>{filterStudio?.applyDraft();filterFocus=$('#vehicle-make');$('#vehicle-disclosure').open=true;filterDialog.close();$('#vehicle-disclosure').scrollIntoView({behavior:'smooth'});});
   document.addEventListener('rl:search-chosen',closeSearch);
   for(const dialog of [searchDialog,filterDialog])dialog.addEventListener('click',event=>{
     if(event.target===dialog){const rect=dialog.getBoundingClientRect();if(event.clientX<rect.left||event.clientX>rect.right||event.clientY<rect.top||event.clientY>rect.bottom){if(dialog===searchDialog)closeSearch();else dialog.close();}}

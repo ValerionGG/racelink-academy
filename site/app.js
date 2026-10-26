@@ -1,15 +1,16 @@
-import {createCinemaHome} from './cinema-home.js?v=collection-v24';
+import {createCinemaHome} from './cinema-home.js?v=studio-v30';
 import {icon as glyph, categoryIcon} from './icons.js';
-import {createIdentityUI} from './identity-ui.js?v=themes-v22';
+import {createIdentityUI} from './identity-ui.js?v=studio-v30';
 import {tracks} from './tracks.js';
-import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=themes-v22';
-import {createDiscoveryUI} from './discovery-ui.js?v=collection-v24';
+import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=studio-v30';
+import {createDiscoveryUI} from './discovery-ui.js?v=studio-v30';
 import {createRaceLinkPicks} from './racelink-picks.js';
-import {createMobileUI} from './mobile-ui.js?v=themes-v22&rev=2';
-import {createGuideUI} from './guide-ui.js?v=themes-v22';
+import {createMobileUI} from './mobile-ui.js?v=studio-v30';
+import {createFilterStudio} from './filter-studio.js?v=studio-v30';
+import {createGuideUI} from './guide-ui.js?v=studio-v30';
 import {socialContentMarkup} from './social-content.js';
-import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=themes-v22';
-import {resourceCard} from './resource-card.js?v=themes-v22';
+import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=studio-v30';
+import {resourceCard} from './resource-card.js?v=studio-v30';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -21,12 +22,8 @@ const dictionaries = {
   en: {brandSub:'KNOWLEDGE MAKES THE DIFFERENCE.',explore:'Explore',paths:'Learning paths',help:'Help & FAQ',saved:'My collection',academy:'Masterclasses ↗',openLibrary:'THE OPEN MOTORSPORT LIBRARY',headline:'ONE QUESTION.<br>ONE INSIGHT.<br><span>ONE LAP AHEAD.</span>',intro:'From your first braking point to professional precision.<br>Paddock knowledge, brought together for you.',try:'Explore',startHere:'START HERE',pathLabel:'LEARNING PATH · DRIVING',featureTitle:'YOUR NEXT CORNER<br>STARTS HERE.',featureCta:'Explore the fundamentals',references:'videos indexed',accessNote:'Public sources · Credited creators · Direct access',method:'Our approach ↗',findAnswer:'THE RIGHT KNOWLEDGE, AT THE RIGHT TIME',catalogTitle:'Find your own racing line.',filters:'Filters',refine:'Refine your search',reset:'Clear',discipline:'DISCIPLINE',level:'LEVEL',language:'VIDEO LANGUAGE',platform:'PLATFORM',duration:'AVAILABLE TIME',withTranscript:'With transcript',freeLicense:'Confirmed open license',filterNote:'Every step forward starts with a good question.',catalogDisclosure:'Listings are based on public metadata. Teaching quality, language and level still need confirmation for videos marked “To review”.',notAlone:'LOOKING FOR A STARTING POINT?',helpTitle:'Learning starts<br>with asking questions.',faqQuick1:'How do I read a transcript?',faqQuick2:'What if the video is in another language?',faqQuick3:'Explore all help topics',footer:'Share the passion. Share the knowledge.'},
   es: {brandSub:'EL SABER MARCA LA DIFERENCIA.',explore:'Explorar',paths:'Itinerarios',help:'Ayuda y FAQ',saved:'Mi selección',academy:'Clases magistrales ↗',openLibrary:'LA BIBLIOTECA ABIERTA DEL AUTOMOVILISMO',headline:'UNA PREGUNTA.<br>UNA NUEVA IDEA.<br><span>UNA VUELTA POR DELANTE.</span>',intro:'De la primera frenada a la precisión profesional.<br>El conocimiento del paddock, reunido para ti.',try:'Explora',startHere:'EMPIEZA AQUÍ',pathLabel:'ITINERARIO · PILOTAJE',featureTitle:'TU PRÓXIMA CURVA<br>EMPIEZA AQUÍ.',featureCta:'Explora los fundamentos',references:'vídeos referenciados',accessNote:'Fuentes públicas · Autores acreditados · Acceso directo',method:'Nuestro método ↗',findAnswer:'EL CONOCIMIENTO QUE NECESITAS',catalogTitle:'Encuentra tu propia trazada.',filters:'Filtros',refine:'Afinar la búsqueda',reset:'Borrar',discipline:'DISCIPLINA',level:'NIVEL',language:'IDIOMA DEL VÍDEO',platform:'PLATAFORMA',duration:'TIEMPO DISPONIBLE',withTranscript:'Con transcripción',freeLicense:'Licencia libre confirmada',filterNote:'Cada avance empieza con una buena pregunta.',catalogDisclosure:'Las referencias se basan en metadatos públicos. La calidad didáctica, el idioma y el nivel requieren confirmación en los vídeos marcados «Por revisar».',notAlone:'¿BUSCAS UN PUNTO DE PARTIDA?',helpTitle:'Aprender empieza<br>haciendo preguntas.',faqQuick1:'¿Cómo leer una transcripción?',faqQuick2:'¿Y si el vídeo está en otro idioma?',faqQuick3:'Ver toda la ayuda',footer:'La pasión se comparte. El conocimiento también.'}
 };
-Object.assign(dictionaries.en,{explore:'Home',openLibrary:'YOUR NEXT STEP STARTS HERE',headline:'A question?<br><span>Find out how.</span>',intro:'Maintain your car, improve on track or in a simulator. <br>Videos and guides to put knowledge into practice.',catalogTitle:'Find your answer.',discipline:'TOPIC',language:'LANGUAGE'});
-Object.assign(dictionaries.es,{explore:'Inicio',openLibrary:'TU PRÓXIMO PASO EMPIEZA AQUÍ',headline:'¿Una pregunta?<br><span>Descubre cómo.</span>',intro:'Cuida tu coche, mejora en pista o en simulación. <br>Vídeos y guías para pasar a la práctica.',catalogTitle:'Encuentra tu respuesta.',discipline:'TEMA',language:'IDIOMA'});
-Object.assign(dictionaries.en,{brandSub:'Your automotive library',saved:'Saved',headline:'The passion.<br><span>The know-how.</span>',intro:'Maintain, drive, improve. Videos and guides to turn curiosity into skills.',catalogTitle:'Find the right tutorial',discipline:'Topic',level:'Level',platform:'Platform',duration:'Duration'});
-Object.assign(dictionaries.es,{brandSub:'Tu biblioteca del automóvil',saved:'Guardados',headline:'La pasión.<br><span>El saber hacer.</span>',intro:'Cuidar, pilotar, progresar. Vídeos y guías para aprender a hacerlo bien.',catalogTitle:'Encuentra el tutorial adecuado',discipline:'Tema',level:'Nivel',platform:'Plataforma',duration:'Duración'});
-Object.assign(dictionaries.en,{headline:'CARS.<br><span>LEARN BY DOING.</span>',intro:'From your first service to your next corner. <br>Videos and guides to put knowledge into practice.',catalogTitle:'Find your next discovery.'});
-Object.assign(dictionaries.es,{headline:'EL AUTOMÓVIL.<br><span>SE APRENDE.</span>',intro:'Del primer mantenimiento a la próxima curva. <br>Vídeos y guías para pasar a la práctica.',catalogTitle:'Tu próximo descubrimiento.'});
+Object.assign(dictionaries.en,{brandSub:'Your automotive library',explore:'Home',saved:'Saved',headline:'What will you learn today?',intro:'An everyday task, a technical question, your next step forward.',catalogTitle:'Find the right tutorial',discipline:'Topic',level:'Level',platform:'Platform',duration:'Duration',language:'Language'});
+Object.assign(dictionaries.es,{brandSub:'Tu biblioteca del automóvil',explore:'Inicio',saved:'Guardados',headline:'¿Qué vas a aprender hoy?',intro:'Una tarea cotidiana, una pregunta técnica, tu próximo paso.',catalogTitle:'Encuentra el tutorial adecuado',discipline:'Tema',level:'Nivel',platform:'Plataforma',duration:'Duración',language:'Idioma'});
 const originalText = Object.fromEntries($$('[data-i18n]').map(el => [el.dataset.i18n,el.innerHTML]));
 const t = (fr,en,es) => ui === 'en' ? en : ui === 'es' ? es : fr;
 const categories = [
@@ -101,11 +98,16 @@ const discoveryUI=createDiscoveryUI({
 });
 const cinemaHome=createCinemaHome({root:$('#cinema-home'),escape,t,getUi:()=>ui,getState:()=>state,langName,picks:raceLinkPicks,getJson:url=>window.getCatalogJson(url)});
 function translateCinema(){
-  const labels={heroLabel:t('LE SAVOIR SE TRANSMET.','KNOWLEDGE IS MEANT TO BE SHARED.','EL SABER SE COMPARTE.'),explore:t('Explorer les tutos','Explore tutorials','Explorar tutoriales'),vehicle:t('Pour ma voiture','For my car','Para mi coche'),featured:t('LE GUIDE À DÉCOUVRIR','A GUIDE TO EXPLORE','UNA GUÍA POR DESCUBRIR'),featuredTitle:t('Avant votre première vidange.','Before your first oil change.','Antes de tu primer cambio de aceite.'),featuredAction:t('Préparer l’intervention →','Prepare the task →','Preparar la intervención →'),heroCaption:t('MÉCANIQUE · PILOTAGE · SIM RACING','MECHANICS · DRIVING · SIM RACING','MECÁNICA · PILOTAJE · SIM RACING'),finderEyebrow:t('VOTRE PROCHAINE DÉCOUVERTE','YOUR NEXT DISCOVERY','TU PRÓXIMO DESCUBRIMIENTO'),finderTitle:t('Qu’avez-vous envie d’apprendre ?','What would you like to learn?','¿Qué te gustaría aprender?')};
+  const labels={featured:t('Le guide à découvrir','A guide to explore','Una guía por descubrir'),featuredTitle:t('Avant votre première vidange.','Before your first oil change.','Antes de tu primer cambio de aceite.'),featuredAction:t('Ouvrir le guide →','Open the guide →','Abrir la guía →'),finderTitle:t('Rechercher dans la bibliothèque','Search the library','Buscar en la biblioteca'),garageLabel:t('Un tuto pour votre voiture','A tutorial for your car','Un tutorial para tu coche'),garageDescription:t('Précisez le modèle, le moteur et l’intervention pour affiner votre recherche.','Choose the model, engine and task to narrow your search.','Indica el modelo, motor e intervención para afinar tu búsqueda.'),garageAction:t('Choisir mon véhicule','Choose my vehicle','Elegir mi vehículo'),oil:t('Huile moteur','Engine oil','Aceite de motor'),tires:t('Pneus & roues','Tires & wheels','Neumáticos y ruedas'),warning:t('Voyants','Warning lights','Testigos')};
   $$('[data-cinema-copy]').forEach(el=>{el.textContent=labels[el.dataset.cinemaCopy]||'';});
   cinemaHome.render();
 }
-const mobileUI=createMobileUI({t,getState:()=>state,getTotal:()=>lastTotal,isLoading:()=>$('#video-grid').getAttribute('aria-busy')==='true',onExplore:()=>{if(view!=='explore')changeView('explore');}});
+const filterStudio=createFilterStudio({root:$('#filters'),t,getState:()=>state,onDraftChange:()=>mobileUI.update(),onApply(patch){
+  browsing=true;state={...state,...patch,page:1};syncControls();syncUrl();
+  if(vehicleKeys.some(key=>Object.hasOwn(patch,key)))automotiveUI.loadOptions();
+  loadVideos();
+}});
+const mobileUI=createMobileUI({t,filterStudio,getState:()=>state,getTotal:()=>lastTotal,isLoading:()=>$('#video-grid').getAttribute('aria-busy')==='true',onExplore:()=>{if(view!=='explore')changeView('explore');}});
 
 function showToast(message){$('#toast').textContent=message;$('#toast').classList.add('visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('#toast').classList.remove('visible'),3000);}
 const identityUI=createIdentityUI({t,openSearch:()=>mobileUI.openSearch(),getView:()=>view,isBrowsing:()=>browsing,getState:()=>state});
@@ -209,6 +211,7 @@ function renderLanguages(){
   $('#french-videos').innerHTML=`${t('Vidéos en français','Videos in French','Vídeos en francés')}${frenchCount===undefined?'':` <small>${Number(frenchCount).toLocaleString(ui)}</small>`} <span aria-hidden="true">→</span>`;
 }
 function renderFacets(){
+  const restoreFilterFocus=filterStudio.captureFocus();
   const previousFocus=document.activeElement;
   const focusChoice=previousFocus?.hasAttribute('data-platform-choice')?['platformChoice',previousFocus.dataset.platformChoice]:previousFocus?.hasAttribute('data-category')?['category',previousFocus.dataset.category]:null;
   identityUI.sync();
@@ -228,6 +231,7 @@ function renderFacets(){
   $('#content_format').value=state.content_format;
   if(focusChoice&&$('#filters-dialog')?.open){const selector=focusChoice[0]==='platformChoice'?'[data-platform-choice]':'[data-category]';$$(selector).find(button=>button.dataset[focusChoice[0]]===focusChoice[1])?.focus({preventScroll:true});}
   $$('#format-tabs button').forEach(button=>{const v=button.dataset.format,label=v==='all'?t('Tout','All','Todo'):v==='video'?t('Vidéos','Videos','Vídeos'):t('Guides','Guides','Guías');const n=v==='all'?(facets.format||[]).reduce((sum,x)=>sum+x.count,0):(facets.format||[]).find(f=>f.value===v)?.count;button.innerHTML=`${glyph(v==='video'?'play':v==='guide'?'library':'filter',{size:18})}${label}${n===undefined?'':` <span>${Number(n).toLocaleString(ui)}</span>`}`;});
+  filterStudio.update();restoreFilterFocus();
 }
 function cardMarkup(video){
   if(video.resource_type==='guide')return guideUI.card(video);

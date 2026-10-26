@@ -1,0 +1,188 @@
+{
+  "release": "studio-v30",
+  "checked_at": "2026-10-26T18:00:02.698334+00:00",
+  "status": "passed",
+  "tests": {
+    "resource_components_and_guide_cards": 58,
+    "navigation": 17,
+    "home_collections": 20,
+    "theme": 36,
+    "filter_drafts": 14,
+    "official_sources": 10,
+    "social_content": 7,
+    "editorial_picks": 6,
+    "html_contract": 14
+  },
+  "total_checks": 182,
+  "javascript_modules_syntax_checked": 21,
+  "source_sha256": {
+    "app-ui.css": "02f897b5b42a7275e98e307ae2e6e95b12fd1d93f648ef98d090bfee5f6ae133",
+    "app.js": "8afb50c1747a1866a55c521ec508651aa5a9dec3605b3972534dfc759a38238c",
+    "automotive-ui.js": "994eefbfe076ab95fe60574961ad5050f02111ec063343230e196981b28c22bd",
+    "catalog-client.js": "b4e2e4019a40b6b481d2c9e08420dcdf8065774419dbf7fe77bab06b5b564326",
+    "catalog-worker.js": "7887f1b5b00c39126a6d24361473a4806b1e2ba98c0d85011f8d4e4ee4b60e6e",
+    "cinema-home.js": "d313f189c6ed4ae09e9254a41bfb0c2f05f824a74052d27c18f2742c2ee75214",
+    "discovery-ui.js": "a6a43a0cc4ba0db13afac6e109a02871b63de4b9245cd6d9f0172e1fb3c46df4",
+    "discovery.css": "77123fe2d83b1425478d2543cb673bf4211d39b44a71615bcaf9d35e59036e0d",
+    "experience.css": "4facd4c7601ff0b4fdb22ff56ee668f893a25206625bb989728f1e1939974760",
+    "filter-studio.js": "81fb3900afd7d62ac644b06b73a31b358b63260f1098740cc6b551bfefb4f129",
+    "guide-art.js": "86fe40e9226d4cd5adf5ede801356c92705bc551afc28335043487b2c8a421eb",
+    "guide-photos.js": "32eb70b4a4a6b55e1bdfaf7af339a570dedc915f2fbe446f2d208e539c8dd1ca",
+    "guide-sources.js": "0ba7f84f41256a6a8cfd2c9ceedc6c26976e7d72ecc12ca5e9fa6192d535f7c6",
+    "guide-ui.js": "8a86459c1d75e4db507eed548e157f3ea8df189102bb2b3a9fd141b009452c26",
+    "icons.js": "a2b635e13a10a6b06b0a2c8bf98200664a5d2cbfa2e168472a456ae788abc6ef",
+    "identity-icons.html": "d86f00b36dc14eb0d35c39b1249a131765073ae461aa00c9ab5faeb2c5e58ce7",
+    "identity-ui.js": "39917dff7e858f929e354c03e0265b49b39a4d221a4b7e09c6aae041965f801f",
+    "index.html": "8f0c76b09bbe9940a61bc4268bc9c35ca0a92bc722fa54053cd06522b3bcfc97",
+    "mobile-ui.js": "5ee21751ff94ceeae2af7199de86f16c55292df04bf70c11e4828657e38fc53a",
+    "photo-credits.html": "ae9a747711947c94eb78f0a57cc793a1f70d7e69e63d773fca03fa605cfe4a24",
+    "preview-mobile.html": "094499c6f84b2367a81f49d9c08fc84e3d3c833ae557b3f64a0073e7661aa140",
+    "product-ui.css": "115cbd0225aca5734243e28ff27cd050c975a34d460cac964bb01d8ea84598ef",
+    "racelink-picks.js": "433747109bf22b9edb00e8c370c99ead5321c0fc84012e3ec4ca0fc552e5a862",
+    "rail-navigation.js": "5e45bfa0ab111f242e230a5cb4a6d57cf16b6821f5b9b2be676c5691d04de535",
+    "refinements.css": "5e3aad55ec074784425f63e0622c7f035794b48883191cee73c1f2f5dd94e863",
+    "resource-card.js": "6c2072b919b8a9d67d7d75d65ccb0fd986b07db6a9acc3b35b93bbe277f4487c",
+    "resource-detail.js": "9d08076a9df719d339627bc32d0a7afcaacc19b3fa7c057c440f3bb941e1e7cc",
+    "resource-ui.css": "d4862c050e3b566464790d718d2862e713400ea1e412664933d316ab9bada7c6",
+    "social-content.js": "95570169343ad3c1dd3d7a3e4991179db29864954d96ed178d46c8a8c3a5c714",
+    "studio-ui.css": "830686997f86f5167434e5f4887633fe04e694a162d7c5c573e174ad3c0626a5",
+    "styles.css": "26dfcf24683f84ebd9ffe60ce6b7714c979a3592b9b92c7f12e8e217ddf3790a",
+    "theme.js": "cfdce63a386789cf225e1120bafa39571376c8b11a00fb00a664ae0d29e4bb27",
+    "tracks.js": "9febecc7dd419c0a5ac18053c62eb36820ab0e5a8cab90058cb4edc861e06fd1"
+  },
+  "scope": "Offline function/module checks with DOM doubles, source/HTML contracts and real guide fixtures. No browser visual validation. Separately: real exported Worker functional routes and isolated Node loading diagnostics; no browser performance claim.",
+  "visual_review": {
+    "status": "unavailable",
+    "reason": "The integrated browser did not attach to the preview; no V30 viewport or screenshot was inspected."
+  },
+  "functional_worker": {
+    "status": "passed",
+    "checked_at": "2026-10-26T17:50:49.388Z",
+    "method": "Actual exported ES-module Worker and its self.onmessage routes. Only local static files allowed by the fetch mock; no browser, network or DB import.",
+    "catalog_videos": 39469,
+    "new_approved_records_verified": 287,
+    "catalog_sha256": "a64b43518092fc366674eb7cdcbe3e581c410697f84a2e982236d21c48f01cee",
+    "worker_sha256": "7887f1b5b00c39126a6d24361473a4806b1e2ba98c0d85011f8d4e4ee4b60e6e",
+    "targeted_french_searches": [
+      {
+        "query": {
+          "q": "filtre habitacle Clio 4",
+          "task": "cabin_filter",
+          "make": "Renault",
+          "model": "Clio",
+          "generation": "IV",
+          "platform": "youtube",
+          "language": "fr"
+        },
+        "total": 1,
+        "new_ids": [
+          "youtube:ybU5EMv_SY4"
+        ]
+      },
+      {
+        "query": {
+          "q": "bougies Clio 3",
+          "task": "spark_plugs",
+          "make": "Renault",
+          "model": "Clio",
+          "generation": "III",
+          "engine": "1.4 16V",
+          "platform": "youtube",
+          "language": "fr"
+        },
+        "total": 1,
+        "new_ids": [
+          "youtube:txFHBMEqMYw"
+        ]
+      },
+      {
+        "query": {
+          "q": "ampoules Peugeot 206",
+          "task": "lighting",
+          "make": "Peugeot",
+          "model": "206",
+          "platform": "youtube",
+          "language": "fr"
+        },
+        "total": 2,
+        "new_ids": [
+          "youtube:ptEl85rm2mY",
+          "youtube:i-OJryMo2VI"
+        ]
+      },
+      {
+        "query": {
+          "q": "courroie Peugeot 207",
+          "task": "belts",
+          "make": "Peugeot",
+          "model": "207",
+          "engine": "1.6 HDI",
+          "platform": "youtube",
+          "language": "fr"
+        },
+        "total": 1,
+        "new_ids": [
+          "youtube:fIHRnX_W-cI"
+        ]
+      }
+    ],
+    "pagination": {
+      "query": {
+        "format": "video",
+        "platform": "youtube",
+        "language": "fr",
+        "task": "belts",
+        "make": "Peugeot",
+        "sort": "title",
+        "per_page": "3"
+      },
+      "pages": 3,
+      "total": 9,
+      "new_ids": [
+        "youtube:cvqdEs0MrYk",
+        "youtube:fIHRnX_W-cI",
+        "youtube:ACp7-fSz4us",
+        "youtube:O-9sWMJpO-Q",
+        "youtube:N8wlqv9JEuM",
+        "youtube:EBt27RBbSvs"
+      ],
+      "duplicates": 0
+    },
+    "incompatible_filter_cases": 4,
+    "incompatible_filter_results": 0,
+    "detail_routes_verified": 4,
+    "title_description_language_tasks_vehicle_evidence_preserved": true,
+    "new_transcripts_invented": false,
+    "reported_separately_from_182_ui_checks": true
+  },
+  "performance_diagnostic": {
+    "status": "node_stream_path_delay_observed_browser_not_measured",
+    "environment": "Node.js v24.16.0 on Windows; local files, no network",
+    "isolated_runs_no_catalogue_preload": {
+      "gzip": {
+        "load_ms": 65800,
+        "index_ms": 2181
+      },
+      "plain": {
+        "load_ms": 1079,
+        "index_ms": 1796
+      },
+      "response-stream": {
+        "load_ms": 20660,
+        "index_ms": 3198
+      }
+    },
+    "native_zlib_diagnostic_only": {
+      "native_zlib_decompress": 280,
+      "utf8_decode": 119,
+      "json_parse": 757,
+      "prepareCatalog_complete": 2173
+    },
+    "minimal_start_rss_mb": 59.9,
+    "preloaded_verifier_before_worker_rss_mb": 344.6,
+    "conclusion": "In these Node runs the large delay occurs in the gzip Web Streams/DecompressionStream loading path, not indexing. Duplicate verifier data increases memory but is not sufficient to explain the delay. Single-run alternatives are diagnostic, not a validated browser optimization.",
+    "browser_performance_measured": false,
+    "production_engine_changed": false,
+    "native_zlib_shipped": false
+  }
+}

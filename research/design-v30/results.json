@@ -1,0 +1,82 @@
+{
+  "release": "studio-v30",
+  "prepared_at": "2026-10-26T17:45:15.087834+00:00",
+  "baseline_videos": 39182,
+  "total_videos": 39469,
+  "videos": 39469,
+  "guides": 11,
+  "new_references": 287,
+  "updated_existing_references": 0,
+  "removed_references": 0,
+  "new_by_platform": {
+    "youtube": 287
+  },
+  "new_by_language": {
+    "en": 85,
+    "fr": 197,
+    "und": 5
+  },
+  "total_by_platform": {
+    "dailymotion": 345,
+    "facebook": 46,
+    "instagram": 312,
+    "other": 14,
+    "tiktok": 862,
+    "twitch": 2,
+    "vimeo": 17,
+    "youtube": 37871
+  },
+  "total_by_language": {
+    "ar": 7,
+    "cs": 1,
+    "de": 4018,
+    "en": 13401,
+    "es": 4565,
+    "fa": 1,
+    "fr": 7014,
+    "id": 2,
+    "it": 298,
+    "ja": 96,
+    "ko": 52,
+    "pl": 3759,
+    "pt": 4206,
+    "ru": 6,
+    "ta": 1,
+    "tr": 3,
+    "und": 2026,
+    "zh": 13
+  },
+  "new_native_metadata_records": 287,
+  "new_nonempty_source_descriptions": 282,
+  "new_description_bases": {
+    "source_listing_excerpt_without_social_tokens": 287
+  },
+  "new_transcripts": 0,
+  "new_references_with_thumbnail_url": 287,
+  "new_language_statuses": {
+    "inferred_from_public_listing_text": 282,
+    "mixed_public_listing_text": 5
+  },
+  "new_verification_scopes": {
+    "public_listing_metadata": 287
+  },
+  "catalog_sha256": "a64b43518092fc366674eb7cdcbe3e581c410697f84a2e982236d21c48f01cee",
+  "acquisition": {
+    "provider": "Public platform metadata",
+    "execution_channel": "public_metadata",
+    "raw_results_observed": 600,
+    "distinct_posts_observed": 589,
+    "successful_jobs": 8,
+    "failed_jobs": 0,
+    "free_credits_consumed": 0,
+    "out_of_pocket_usd": 0,
+    "metadata_only": true,
+    "route_status": "completed"
+  },
+  "interface_summary": "Navigation latérale, recherche au premier plan, cartes et fiches restructurées, thèmes clair et sombre, filtres préparés avant application.",
+  "visual_browser_check": "not_verified",
+  "method": "Exact ID and unchanged-row comparison against a read-only pre-import backup; every addition matches a sealed metadata approval and the public export.",
+  "language_note": "Language labels inferred from captions do not certify the spoken audio.",
+  "rights_note": "Public availability does not establish a free video licence or validate a mechanical procedure.",
+  "publication_scope": "Reviewed aggregate counts and costs only; no account identifier, job ID, raw export, UI ledger, credentials or account screenshot."
+}
