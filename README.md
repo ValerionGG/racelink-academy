@@ -1,10 +1,10 @@
 # RaceLink Academy
 
-[Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/?release=collection-v32) · [Bilan V32](research/collection-v32/README.md)
+[Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/?release=collection-v33) · [Bilan V33](research/collection-v33/README.md)
 
-39,751 références vidéo et 11 guides. Cette version ajoute 282 références vidéo examinées (282 youtube).
+39,845 références vidéo et 11 guides. Cette version ajoute 94 références vidéo examinées (94 youtube).
 
-Recherche corrigée : Échap ferme les suggestions sans effacer les mots recherchés. Interface Studio claire et sombre conservée ; nouveau connecteur Monocrawl pour les prochaines collectes.
+Interface Studio claire et sombre conservée, avec ses filtres préparés avant application et sa correction de recherche Échap. Cette version enrichit le catalogue sans modifier son interface.
 
 - [Campagnes de collecte](collector/PROFILE_CAMPAIGNS.md)
 - [Connecteur Monocrawl](collector/scripts/MONOCRAWL-COLLECTOR.md)
