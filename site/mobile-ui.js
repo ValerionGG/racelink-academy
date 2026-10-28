@@ -12,8 +12,9 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore,filterSt
     </dialog>
     <dialog id="filters-dialog" class="filters-dialog" aria-labelledby="mobile-filter-title">
       <header class="sheet-heading"><h2 id="mobile-filter-title"></h2><button type="button" data-sheet-close="filters" aria-label="Fermer">×</button></header>
+      <div class="filter-sheet-vehicle"><button type="button" id="mobile-vehicle"></button></div>
       <div class="mobile-filter-body"></div>
-      <footer class="sheet-footer"><button type="button" id="mobile-vehicle"></button><button type="button" id="show-filter-results"></button></footer>
+      <footer class="sheet-footer"><button type="button" id="cancel-filter-draft"></button><button type="button" id="show-filter-results"></button></footer>
     </dialog>`);
   const searchDialog=$('#search-dialog'),filterDialog=$('#filters-dialog'),resourceDialog=$('#video-dialog');
   let filterFocus=null,suppressSearchFocus=false;
@@ -52,7 +53,8 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore,filterSt
   }
   function openFilters(){
     if(filterDialog.open)return;
-    if(mobile.matches)filterStudio?.beginDraft();
+    // Every overlay stages changes, including the tablet layout (761–1000px).
+    filterStudio?.beginDraft();
     $('.mobile-filter-body').append(filters);
     filterDialog.showModal();$('#mobile-filters').setAttribute('aria-expanded','true');lock();update();
   }
@@ -65,13 +67,16 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore,filterSt
     $('#mobile-filter-title').textContent=t('Affiner les résultats','Refine results','Afinar resultados');
     $('.mobile-search-help').textContent=t('Essayez « vidange Clio 3 », « huile 5W-30 » ou « freinage dégressif ». Ajoutez votre modèle pour préciser les résultats.','Try “oil change Clio 3”, “oil 5W-30” or “trail braking”. Add your model to refine the results.','Prueba « cambio aceite Clio 3 », « aceite 5W-30 » o « trail braking ». Añade tu modelo para afinar los resultados.');
     $('#edit-search-label').textContent=state.q||t('Rechercher un tuto, une question…','Search a tutorial, a question…','Busca un tutorial, una pregunta…');
-    const number=Object.entries(state).filter(([k,v])=>v&&!['q','page','sort','format','language','make','model','generation','engine','year','fuel_type','body_type'].includes(k)).length;
+    const number=Object.entries(state).filter(([k,v])=>v&&!['q','page','sort'].includes(k)&&!(k==='format'&&v==='all')).length;
     $('#mobile-filters').innerHTML=`${t('Filtres','Filters','Filtros')}${number?` <b>${number}</b>`:''}`;
-    $('#mobile-vehicle').textContent=t('Préciser ma voiture ↗','Specify my car ↗','Precisar mi coche ↗');
+    const vehicle=[state.make,state.model].filter(Boolean).join(' ');
+    $('#mobile-vehicle').textContent=vehicle?`${t('Véhicule : ','Vehicle: ','Vehículo: ')}${vehicle} ↗`:t('Ajouter mon véhicule ↗','Add my vehicle ↗','Añadir mi vehículo ↗');
+    $('#cancel-filter-draft').textContent=t('Annuler','Cancel','Cancelar');
     $('#show-filter-results').textContent=total===null?(isLoading()?t('Recherche en cours…','Searching…','Buscando…'):t('Catalogue indisponible','Catalog unavailable','Catálogo no disponible')):`${t('Voir','Show','Ver')} ${Number(total).toLocaleString(document.documentElement.lang)} ${total===1?t('résultat','result','resultado'):t('résultats','results','resultados')} →`;
     $('#show-filter-results').disabled=total===null;
     if(filterStudio?.hasPendingChanges()){
-      $('#show-filter-results').textContent=t('Appliquer les filtres','Apply filters','Aplicar filtros');
+      const criteria=filterStudio.activeCount?.()||0;
+      $('#show-filter-results').textContent=criteria?`${t('Appliquer','Apply','Aplicar')} · ${criteria} ${criteria===1?t('critère','criterion','criterio'):t('critères','criteria','criterios')}`:t('Appliquer les filtres','Apply filters','Aplicar filtros');
       $('#show-filter-results').disabled=false;
       $('#mobile-vehicle').textContent=t('Appliquer et préciser ma voiture ↗','Apply and specify my car ↗','Aplicar y precisar mi coche ↗');
     }
@@ -80,6 +85,7 @@ export function createMobileUI({t,getState,getTotal,isLoading,onExplore,filterSt
   $('#edit-search').addEventListener('click',openSearch);
   $('#search').addEventListener('focus',()=>{if(mobile.matches&&!suppressSearchFocus&&!resourceDialog?.open&&!filterDialog.open&&!searchDialog.open&&!searchDialog.contains($('#search')))openSearch();});
   $('#mobile-filters').addEventListener('click',openFilters);
+  $('#cancel-filter-draft').addEventListener('click',()=>filterDialog.close());
   searchDialog.addEventListener('cancel',()=>{suppressSearchFocus=true;});
   searchDialog.addEventListener('close',()=>{
     // A new explicit open may precede an older queued close event.

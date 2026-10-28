@@ -75,6 +75,46 @@
         "Do not import sandbox/sample payloads.",
         "No paid fallback, purchase, auto-recharge or duplicate account to extend quota."
       ]
+    },
+    {
+      "id": "peertube",
+      "role": "public_educational_video_metadata",
+      "status": "collector_live_pilot_reviewed",
+      "auth": "none",
+      "checked_on": "2026-10-28",
+      "tool": "scripts/peertube_collect.py",
+      "guide": "scripts/PEERTUBE-COLLECTOR.md",
+      "documentation": "https://docs.joinpeertube.org/api-rest-reference.html",
+      "discovered_from": "https://github.com/Chocobozzz/PeerTube",
+      "observed_http_metadata_requests": 8,
+      "pilot_raw_rows": 95,
+      "pilot_distinct_identities": 89,
+      "pilot_new_approved": 1,
+      "next_action": "Use fresh reviewed educational channels; do not replay V34 checkpoints.",
+      "limitations": [
+        "Search index coverage is partial and broad queries are noisy.",
+        "Thirteen useful identities were already in the catalogue; never count them as new.",
+        "Platform-declared language and license are not independently verified audio or rights."
+      ]
+    },
+    {
+      "id": "firecrawl",
+      "role": "public_page_information_extraction",
+      "status": "anonymous_single_page_pilot_passed_not_connected",
+      "checked_on": "2026-10-28",
+      "auth": "documented_anonymous_first_scrape_test_only",
+      "documentation": "https://docs.firecrawl.dev/introduction",
+      "observed_http_status": 200,
+      "reported_demo_credits_used": 1,
+      "observed_account_balance": null,
+      "plugin_installed": false,
+      "next_action": "Check authorized account balance and caps before an authenticated campaign.",
+      "limitations": [
+        "The documentation extraction added no video.",
+        "No TikTok/Instagram access or high-volume free quota was demonstrated.",
+        "No payment, subscription or duplicate account; retain uncertain calls."
+      ]
     }
-  ]
+  ],
+  "updated_on": "2026-10-28"
 }

@@ -39,7 +39,7 @@ const taskPhrases = {
   fuel_filter: ["filtre a carburant", "filtre a gasoil", "fuel filter", "filtro de combustible"],
   wipers: ["essuie glaces", "essuie glace", "wipers", "wiper", "limpiaparabrisas"],
   wheel_change: ["changer une roue", "changer la roue", "changement de roue", "wheel change", "change wheel", "cambiar rueda"],
-  key_battery: ["pile de cle", "pile cle", "key battery", "key fob battery", "pila llave"],
+  key_battery: ["pile de cle", "pile cle", "pile de la cle", "pile de ma cle", "pile de carte", "pile de la carte", "pile telecommande", "pile de telecommande", "key battery", "key fob battery", "pila llave"],
   battery: ["batterie", "battery", "bateria"],
   brake_pads: ["plaquettes de frein", "plaquettes frein", "brake pads", "pastillas de freno"],
   brake_discs: ["disques de frein", "disques frein", "brake discs", "brake rotors", "discos de freno"],
@@ -251,14 +251,22 @@ export function inferAutomotive(catalog, q, params = {}) {
   let scope = applications.filter(item => !result.vehicle.make || item.make === result.vehicle.make);
   let modelMentions = [];
   const compactRemaining = wordsOf(remaining).join("");
-  for (const model of [...new Set(scope.map(item => item.model).filter(Boolean))].sort((a, b) => b.length - a.length)) {
+  // Case variants in imported evidence name one model, not competing mentions.
+  const models = [...new Map([...new Set(scope.map(item => item.model).filter(Boolean))].sort().reverse()
+    .map(model => [normalize(model), model])).values()].sort((a, b) => b.length - a.length);
+  for (const model of models) {
     if (!compactRemaining.includes(wordsOf(model).join(""))) continue;
     if (/^\d+$/.test(model) && !(result.vehicle.make || param(params, "make"))) continue;
-    const rows = scope.filter(item => item.model === model), combined = [];
+    const rows = scope.filter(item => normalize(item.model) === normalize(model)), combined = [];
+    const indexedGenerations = [...new Set(rows.map(item => item.generation).filter(Boolean))];
     for (const generation of new Set(rows.map(item => item.generation).filter(Boolean))) {
       for (const alias of [generation, romanGenerations[normalize(generation)]].filter(Boolean)) {
         const phrase = model + " " + alias;
-        if (new RegExp(phrasePattern(phrase).source + "(?![.,]\\d)", "u").test(remaining)) combined.push({generation, phrase});
+        if (new RegExp(phrasePattern(phrase).source + "(?![.,]\\d)", "u").test(remaining)) {
+          const roman = Object.entries(romanGenerations).find(([, number]) => number === generation)?.[0];
+          const canonical = roman && indexedGenerations.find(value => normalize(value) === roman);
+          combined.push({generation: canonical || generation, phrase});
+        }
       }
     }
     if (combined.length) {
@@ -283,7 +291,7 @@ export function inferAutomotive(catalog, q, params = {}) {
     result.vehicle.model = model;
     if (generation) result.vehicle.generation = generation;
     phrases.forEach(consume);
-    scope = scope.filter(item => item.model === model);
+    scope = scope.filter(item => normalize(item.model) === normalize(model));
     const modelMakes = [...new Set(scope.map(item => item.make).filter(Boolean))];
     if (modelMakes.length === 1 && !result.vehicle.make) result.vehicle.make = modelMakes[0];
   } else if (param(params, "model")) scope = scope.filter(item => normalize(item.model) === normalize(param(params, "model")));
@@ -432,7 +440,10 @@ export function searchCatalog(catalog, params = {}, options = {}) {
     search_mode: searchMode, expanded_topics: expandedTopics, engine: "static-prefix",
     inferred_vehicle: interpretation.vehicle, inferred_task: interpretation.task, inferred_spec: interpretation.spec,
     interpreted_fields: {vehicle: interpretation.vehicle, task: interpretation.task, spec: interpretation.spec},
-    interpretation_conflicts: interpretation.conflicts, query_residual: residual};
+    interpretation_conflicts: interpretation.conflicts, query_residual: residual,
+    search_assistance: !results.length && !options.noAssistance
+      ? queryAssistance(catalog, {...Object.fromEntries(params instanceof URLSearchParams ? params : Object.entries(params)), format: resourceFormat === "all" ? "video" : resourceFormat})
+      : {suggestions: [], policy: "explicit_opt_in_filters_preserved"}};
 }
 
 export function catalogStats(catalog) {
@@ -509,7 +520,7 @@ export function searchResources(catalog, params = {}, options = {}) {
   const guides = matchingGuides(catalog, params, interpretation);
   const page = numberParam(params, "page", 1, 1000000), size = numberParam(params, "per_page", 24, 100);
   const start = (page - 1) * size, offset = kind === "all" ? Math.max(0, start - guides.length) : start;
-  const videos = searchCatalog(catalog, videoParams, {countOnly: options.countOnly, offset});
+  const videos = searchCatalog(catalog, videoParams, {countOnly: options.countOnly, offset, noAssistance: true});
   const total = (["all", "video"].includes(kind) ? videos.total : 0) + (["all", "guide"].includes(kind) ? guides.length : 0);
   if (options.countOnly) return {total};
   const items = ["all", "guide"].includes(kind) ? guides.slice(start, start + size) : [];
@@ -531,7 +542,9 @@ export function searchResources(catalog, params = {}, options = {}) {
   facets.format = [{value: "video", count: videos.total}, {value: "guide", count: guides.length}, {value: "image", count: 0}];
   return {...videos, items, total, pages: Math.ceil(total / size), facets, format: kind,
     total_videos: videos.total, total_guides: guides.length, total_images: 0,
-    ordering: "guides_first_then_videos", compatibility_verified: false};
+    ordering: "guides_first_then_videos", compatibility_verified: false,
+    search_assistance: !total && !options.noAssistance ? queryAssistance(catalog, params)
+      : {suggestions: [], policy: "explicit_opt_in_filters_preserved"}};
 }
 
 export function guideDetail(catalog, id) {
@@ -691,6 +704,68 @@ function topicScore(topic, query) {
   return topicPrediction(topic, query)?.score || 0;
 }
 
+// A recovery is a proposal, never a replacement of the submitted query or filters.
+// The shared vocabulary describes search topics, not the cause of a vehicle fault.
+export function queryAssistance(catalog, params = {}, config = catalog.discovery, includeTopics = true) {
+  const query = param(params, "q").trim();
+  const result = {suggestions: [], policy: "explicit_opt_in_filters_preserved"};
+  if (query.length < 3 || query.length > 300) return result;
+  const interpretation = inferAutomotive(catalog, query, params);
+  if (interpretation.conflicts.length) return result;
+  const context = discoveryContext(params);
+  for (const [key, value] of Object.entries(interpretation.vehicle)) if (!(key in context)) context[key] = String(value);
+  for (const key of ["task", "spec"]) if (interpretation[key] && !context[key]) context[key] = interpretation[key];
+  const tokens = [...query.matchAll(/[\p{L}\p{N}]+/gu)];
+  const words = tokens.map(token => normalize(token[0])), candidates = [];
+  for (const rule of (config.queryAssistance || []).slice(0, 30)) {
+    if (!rule || !Array.isArray(rule.aliases) || typeof rule.query !== "string") continue;
+    const aliases = rule.aliases.filter(alias => typeof alias === "string").slice(0, 50)
+      .map(alias => wordsOf(alias)).sort((a, b) => b.length - a.length);
+    let match;
+    for (const alias of aliases) {
+      const start = words.findIndex((_, index) => alias.length && alias.every((word, offset) => words[index + offset] === word));
+      if (start >= 0) { match = {start: tokens[start].index, end: tokens[start + alias.length - 1].index + tokens[start + alias.length - 1][0].length}; break; }
+    }
+    if (!match) continue;
+    const completion = query.slice(0, match.start) + rule.query + query.slice(match.end);
+    if (normalize(completion) === normalize(query)) continue;
+    candidates.push({type: "query", id: "help-" + rule.id, label: rule.label || rule.query,
+      query: completion, completion, filters: {...context}, match_basis: rule.kind === "typo" ? "topic_typo" : "symptom_vocabulary",
+      corrections: [{from: query.slice(match.start, match.end), to: rule.query, kind: rule.kind === "typo" ? "typo" : "symptom"}],
+      reason: rule.reason || {fr: "Explorer ce sujet avec les mêmes filtres. Ce n’est pas un diagnostic.",
+        en: "Explore this topic with the same filters. This is not a diagnosis.",
+        es: "Explorar este tema con los mismos filtros. No es un diagnóstico."}});
+  }
+  if (includeTopics) {
+    const ranked = (config.topics || []).slice(0, 100).flatMap(topic => {
+      if (!topic || topic.enabled === false) return [];
+      const filters = mergeTopicContext(topic, context), prediction = filters && topicPrediction(topic, query, context);
+      return prediction ? [{topic, filters, ...prediction}] : [];
+    }).sort((a, b) => b.score - a.score);
+    for (const {topic, filters, variants} of ranked) for (const variant of variants) {
+      if (!variant.corrections.length) continue;
+      candidates.push({type: "query", id: "help-topic-" + topic.id, label: topic.label || topic.id,
+        query: variant.completion, filters, ...variant, reason: {
+          fr: "Correction proposée pour les mots du sujet ; vos filtres restent appliqués.",
+          en: "Suggested topic-word correction; your filters stay applied.",
+          es: "Corrección propuesta del tema; se mantienen los filtros."}});
+    }
+  }
+  const seen = new Set();
+  // Count at most eight complete candidates; neither an unbounded fuzzy search nor relaxed filters.
+  for (const candidate of candidates.slice(0, 8)) {
+    if (candidate.query.length > 300) continue;
+    const key = JSON.stringify([candidate.query, candidate.filters]);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    const count = discoveryCount(catalog, {...candidate.filters, q: candidate.query});
+    if (!count) continue;
+    result.suggestions.push({...candidate, count});
+    if (result.suggestions.length >= 3) break;
+  }
+  return result;
+}
+
 export function suggestCatalog(catalog, params = {}, config = catalog.discovery) {
   const query = param(params, "q").trim();
   if (query.length > 300) throw new Error("Recherche limitée à 300 caractères");
@@ -712,7 +787,7 @@ export function suggestCatalog(catalog, params = {}, config = catalog.discovery)
   const editorialOrder = entry => !query && defaults.includes(entry.topic.id)
     ? defaults.indexOf(entry.topic.id) : defaults.length + entry.index;
   ranked.sort((a, b) => b.score - a.score || editorialOrder(a) - editorialOrder(b) || a.index - b.index);
-  const items = [];
+  const items = queryAssistance(catalog, params, config, false).suggestions.slice(0, 2);
   for (const {topic, filters, variants} of ranked) {
     for (const prediction of variants) {
       const completion = prediction.completion;
@@ -733,7 +808,7 @@ export function suggestCatalog(catalog, params = {}, config = catalog.discovery)
     if (items.length >= (query ? 3 : 5)) break;
   }
   if (query && items.length < 6 && ["all", "guide"].includes(context.format || "all")) {
-    const found = searchResources(catalog, {...context, format: "guide", q: query, per_page: String(6 - items.length)});
+    const found = searchResources(catalog, {...context, format: "guide", q: query, per_page: String(6 - items.length)}, {noAssistance: true});
     items.push(...found.items.map(guide => ({type: "guide", resource_type: "guide", id: guide.id,
       label: guide.title, query, filters: context, reason: {
         fr: "Guide RaceLink avec sources citées, correspondant à la recherche.",
@@ -741,7 +816,7 @@ export function suggestCatalog(catalog, params = {}, config = catalog.discovery)
         es: "Guía RaceLink con fuentes citadas que coincide con la búsqueda."}})));
   }
   if (query && items.length < 6) {
-    const result = searchCatalog(catalog, {...context, q: query, per_page: String(6 - items.length), sort: "title"});
+    const result = searchCatalog(catalog, {...context, q: query, per_page: String(6 - items.length), sort: "title"}, {noAssistance: true});
     items.push(...result.items.map(item => ({type: "video", id: item.id, video_id: item.id, label: item.title, query,
       creator: item.creator ?? "", platform: item.platform, language: item.language,
       language_status: item.language_status ?? "", language_confidence: item.language_confidence,

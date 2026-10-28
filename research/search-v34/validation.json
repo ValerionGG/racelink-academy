@@ -1,0 +1,573 @@
+{
+  "status": "passed",
+  "rows": 39845,
+  "queries_checked": 16,
+  "catalog_sha256": "6fb0bcb950b1e36d03e4c2d4a6d48f6501040ba00f1f3624ea4e5132c1752c4c",
+  "environment": "Node.js on local Windows workstation; no phone or browser performance claim",
+  "engine_versions": {
+    "node": "v24.16.0"
+  },
+  "comparison": [
+    {
+      "query": "vidange Clio 4",
+      "before": {
+        "total": 1,
+        "vehicle": {},
+        "task": "oil_change"
+      },
+      "after": {
+        "total": 2,
+        "vehicle": {
+          "model": "Clio",
+          "generation": "IV",
+          "make": "Renault"
+        },
+        "task": "oil_change"
+      }
+    },
+    {
+      "query": "vidange Clio 3",
+      "before": {
+        "total": 2,
+        "vehicle": {},
+        "task": "oil_change"
+      },
+      "after": {
+        "total": 2,
+        "vehicle": {
+          "model": "Clio",
+          "generation": "III",
+          "make": "Renault"
+        },
+        "task": "oil_change"
+      }
+    },
+    {
+      "query": "pile de ma clé Clio 5",
+      "before": {
+        "total": 0,
+        "vehicle": {},
+        "task": null
+      },
+      "after": {
+        "total": 0,
+        "vehicle": {
+          "model": "Clio",
+          "generation": "V",
+          "make": "Renault"
+        },
+        "task": "key_battery"
+      }
+    }
+  ],
+  "queries": [
+    {
+      "params": {
+        "q": "ma clim ne fait plus de froid",
+        "language": "fr"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [
+          {
+            "type": "query",
+            "id": "help-climate-no-cold",
+            "label": {
+              "fr": "Climatisation : pas de froid",
+              "en": "Air conditioning: not cooling",
+              "es": "Aire acondicionado: no enfría"
+            },
+            "query": "climatisation",
+            "completion": "climatisation",
+            "filters": {
+              "language": "fr"
+            },
+            "match_basis": "symptom_vocabulary",
+            "corrections": [
+              {
+                "from": "ma clim ne fait plus de froid",
+                "to": "climatisation",
+                "kind": "symptom"
+              }
+            ],
+            "reason": {
+              "fr": "Explorer ce sujet avec les mêmes filtres. Ce n’est pas un diagnostic.",
+              "en": "Explore this topic with the same filters. This is not a diagnosis.",
+              "es": "Explorar este tema con los mismos filtros. No es un diagnóstico."
+            },
+            "count": 28
+          }
+        ],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {},
+      "search_and_suggestions_ms": 358.94,
+      "repeat_search_and_suggestions_ms": 63.06,
+      "python_search_and_suggestions_ms": 678.17
+    },
+    {
+      "params": {
+        "q": "pourquoi ma clim ne fait plus de froid ?",
+        "language": "fr"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [
+          {
+            "type": "query",
+            "id": "help-climate-no-cold",
+            "label": {
+              "fr": "Climatisation : pas de froid",
+              "en": "Air conditioning: not cooling",
+              "es": "Aire acondicionado: no enfría"
+            },
+            "query": "climatisation ?",
+            "completion": "climatisation ?",
+            "filters": {
+              "language": "fr"
+            },
+            "match_basis": "symptom_vocabulary",
+            "corrections": [
+              {
+                "from": "pourquoi ma clim ne fait plus de froid",
+                "to": "climatisation",
+                "kind": "symptom"
+              }
+            ],
+            "reason": {
+              "fr": "Explorer ce sujet avec les mêmes filtres. Ce n’est pas un diagnostic.",
+              "en": "Explore this topic with the same filters. This is not a diagnosis.",
+              "es": "Explorar este tema con los mismos filtros. No es un diagnóstico."
+            },
+            "count": 28
+          }
+        ],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {},
+      "search_and_suggestions_ms": 105.74,
+      "repeat_search_and_suggestions_ms": 61.24,
+      "python_search_and_suggestions_ms": 679.47
+    },
+    {
+      "params": {
+        "q": "ma clim ne fait plus de froid",
+        "language": "fr",
+        "platform": "tiktok"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [
+          {
+            "type": "query",
+            "id": "help-climate-no-cold",
+            "label": {
+              "fr": "Climatisation : pas de froid",
+              "en": "Air conditioning: not cooling",
+              "es": "Aire acondicionado: no enfría"
+            },
+            "query": "climatisation",
+            "completion": "climatisation",
+            "filters": {
+              "language": "fr",
+              "platform": "tiktok"
+            },
+            "match_basis": "symptom_vocabulary",
+            "corrections": [
+              {
+                "from": "ma clim ne fait plus de froid",
+                "to": "climatisation",
+                "kind": "symptom"
+              }
+            ],
+            "reason": {
+              "fr": "Explorer ce sujet avec les mêmes filtres. Ce n’est pas un diagnostic.",
+              "en": "Explore this topic with the same filters. This is not a diagnosis.",
+              "es": "Explorar este tema con los mismos filtros. No es un diagnóstico."
+            },
+            "count": 4
+          }
+        ],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {},
+      "search_and_suggestions_ms": 91.26,
+      "repeat_search_and_suggestions_ms": 50.32,
+      "python_search_and_suggestions_ms": 671.87
+    },
+    {
+      "params": {
+        "q": "ma clim ne fait plus de froid",
+        "language": "fr",
+        "platform": "instagram"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [
+          {
+            "type": "query",
+            "id": "help-climate-no-cold",
+            "label": {
+              "fr": "Climatisation : pas de froid",
+              "en": "Air conditioning: not cooling",
+              "es": "Aire acondicionado: no enfría"
+            },
+            "query": "climatisation",
+            "completion": "climatisation",
+            "filters": {
+              "language": "fr",
+              "platform": "instagram"
+            },
+            "match_basis": "symptom_vocabulary",
+            "corrections": [
+              {
+                "from": "ma clim ne fait plus de froid",
+                "to": "climatisation",
+                "kind": "symptom"
+              }
+            ],
+            "reason": {
+              "fr": "Explorer ce sujet avec les mêmes filtres. Ce n’est pas un diagnostic.",
+              "en": "Explore this topic with the same filters. This is not a diagnosis.",
+              "es": "Explorar este tema con los mismos filtros. No es un diagnóstico."
+            },
+            "count": 1
+          }
+        ],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {},
+      "search_and_suggestions_ms": 90.32,
+      "repeat_search_and_suggestions_ms": 50.38,
+      "python_search_and_suggestions_ms": 657.5
+    },
+    {
+      "params": {
+        "q": "ma clim ne fait plus de froid Clio 4",
+        "language": "fr"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {
+        "model": "Clio",
+        "generation": "IV",
+        "make": "Renault"
+      },
+      "search_and_suggestions_ms": 209.45,
+      "repeat_search_and_suggestions_ms": 91.91,
+      "python_search_and_suggestions_ms": 669.29
+    },
+    {
+      "params": {
+        "q": "essuie glasse",
+        "language": "fr"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [
+          {
+            "type": "query",
+            "id": "help-wiper-spelling",
+            "label": {
+              "fr": "Essuie-glaces",
+              "en": "Wipers",
+              "es": "Limpiaparabrisas"
+            },
+            "query": "essuie-glaces",
+            "completion": "essuie-glaces",
+            "filters": {
+              "language": "fr"
+            },
+            "match_basis": "topic_typo",
+            "corrections": [
+              {
+                "from": "essuie glasse",
+                "to": "essuie-glaces",
+                "kind": "typo"
+              }
+            ],
+            "reason": {
+              "fr": "Orthographe proposée ; la voiture, la langue et les autres filtres sont conservés.",
+              "en": "Suggested spelling; vehicle, language and other filters are preserved.",
+              "es": "Ortografía sugerida; se conservan el vehículo, el idioma y los demás filtros."
+            },
+            "count": 247
+          }
+        ],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {},
+      "search_and_suggestions_ms": 132.46,
+      "repeat_search_and_suggestions_ms": 61.11,
+      "python_search_and_suggestions_ms": 641.84
+    },
+    {
+      "params": {
+        "q": "essuie glasse Clio 4",
+        "language": "fr"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [
+          {
+            "type": "query",
+            "id": "help-wiper-spelling",
+            "label": {
+              "fr": "Essuie-glaces",
+              "en": "Wipers",
+              "es": "Limpiaparabrisas"
+            },
+            "query": "essuie-glaces Clio 4",
+            "completion": "essuie-glaces Clio 4",
+            "filters": {
+              "language": "fr",
+              "model": "Clio",
+              "generation": "IV",
+              "make": "Renault"
+            },
+            "match_basis": "topic_typo",
+            "corrections": [
+              {
+                "from": "essuie glasse",
+                "to": "essuie-glaces",
+                "kind": "typo"
+              }
+            ],
+            "reason": {
+              "fr": "Orthographe proposée ; la voiture, la langue et les autres filtres sont conservés.",
+              "en": "Suggested spelling; vehicle, language and other filters are preserved.",
+              "es": "Ortografía sugerida; se conservan el vehículo, el idioma y los demás filtros."
+            },
+            "count": 3
+          }
+        ],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {
+        "model": "Clio",
+        "generation": "IV",
+        "make": "Renault"
+      },
+      "search_and_suggestions_ms": 203.29,
+      "repeat_search_and_suggestions_ms": 89.23,
+      "python_search_and_suggestions_ms": 745.84
+    },
+    {
+      "params": {
+        "q": "essuie glasse Clio 4",
+        "language": "fr",
+        "generation": "V"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {
+        "model": "Clio",
+        "generation": "IV",
+        "make": "Renault"
+      },
+      "search_and_suggestions_ms": 18.57,
+      "repeat_search_and_suggestions_ms": 17.58,
+      "python_search_and_suggestions_ms": 170.13
+    },
+    {
+      "params": {
+        "q": "pile de ma clé Clio 5",
+        "language": "fr"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {
+        "model": "Clio",
+        "generation": "V",
+        "make": "Renault"
+      },
+      "search_and_suggestions_ms": 392.61,
+      "repeat_search_and_suggestions_ms": 126.19,
+      "python_search_and_suggestions_ms": 1846.53
+    },
+    {
+      "params": {
+        "q": "vidange Clio 4",
+        "language": "fr"
+      },
+      "total": 2,
+      "assistance": {
+        "suggestions": [],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {
+        "model": "Clio",
+        "generation": "IV",
+        "make": "Renault"
+      },
+      "search_and_suggestions_ms": 124.73,
+      "repeat_search_and_suggestions_ms": 92.5,
+      "python_search_and_suggestions_ms": 1397.76
+    },
+    {
+      "params": {
+        "q": "vidange clio4",
+        "language": "fr"
+      },
+      "total": 2,
+      "assistance": {
+        "suggestions": [],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {
+        "model": "Clio",
+        "generation": "IV",
+        "make": "Renault"
+      },
+      "search_and_suggestions_ms": 116.09,
+      "repeat_search_and_suggestions_ms": 80.48,
+      "python_search_and_suggestions_ms": 1401.89
+    },
+    {
+      "params": {
+        "q": "vidange Clio 3",
+        "language": "fr"
+      },
+      "total": 2,
+      "assistance": {
+        "suggestions": [],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {
+        "model": "Clio",
+        "generation": "III",
+        "make": "Renault"
+      },
+      "search_and_suggestions_ms": 120.96,
+      "repeat_search_and_suggestions_ms": 77.37,
+      "python_search_and_suggestions_ms": 1443.31
+    },
+    {
+      "params": {
+        "q": "carplay se déconnecte",
+        "language": "fr"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [
+          {
+            "type": "query",
+            "id": "help-carplay-connection",
+            "label": {
+              "fr": "Connexion CarPlay",
+              "en": "CarPlay connection",
+              "es": "Conexión CarPlay"
+            },
+            "query": "CarPlay",
+            "completion": "CarPlay",
+            "filters": {
+              "language": "fr"
+            },
+            "match_basis": "symptom_vocabulary",
+            "corrections": [
+              {
+                "from": "carplay se déconnecte",
+                "to": "CarPlay",
+                "kind": "symptom"
+              }
+            ],
+            "reason": {
+              "fr": "Explorer ce sujet avec les mêmes filtres. Ce n’est pas un diagnostic.",
+              "en": "Explore this topic with the same filters. This is not a diagnosis.",
+              "es": "Explorar este tema con los mismos filtros. No es un diagnóstico."
+            },
+            "count": 48
+          }
+        ],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {},
+      "search_and_suggestions_ms": 111.54,
+      "repeat_search_and_suggestions_ms": 63.16,
+      "python_search_and_suggestions_ms": 387.22
+    },
+    {
+      "params": {
+        "q": "ma voiture ne démarre plus",
+        "language": "fr"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [
+          {
+            "type": "query",
+            "id": "help-starting-problem",
+            "label": {
+              "fr": "Difficultés de démarrage",
+              "en": "Starting problems",
+              "es": "Problemas de arranque"
+            },
+            "query": "démarrage",
+            "completion": "démarrage",
+            "filters": {
+              "language": "fr"
+            },
+            "match_basis": "symptom_vocabulary",
+            "corrections": [
+              {
+                "from": "ma voiture ne démarre plus",
+                "to": "démarrage",
+                "kind": "symptom"
+              }
+            ],
+            "reason": {
+              "fr": "Explorer ce sujet avec les mêmes filtres. Ce n’est pas un diagnostic.",
+              "en": "Explore this topic with the same filters. This is not a diagnosis.",
+              "es": "Explorar este tema con los mismos filtros. No es un diagnóstico."
+            },
+            "count": 48
+          }
+        ],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {},
+      "search_and_suggestions_ms": 102.49,
+      "repeat_search_and_suggestions_ms": 80.92,
+      "python_search_and_suggestions_ms": 398.02
+    },
+    {
+      "params": {
+        "q": "ma clim ne fait plus de froid",
+        "language": "ja"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {},
+      "search_and_suggestions_ms": 108.12,
+      "repeat_search_and_suggestions_ms": 56.52,
+      "python_search_and_suggestions_ms": 694.71
+    },
+    {
+      "params": {
+        "q": "ma clim ne fait plus de froid",
+        "format": "image"
+      },
+      "total": 0,
+      "assistance": {
+        "suggestions": [],
+        "policy": "explicit_opt_in_filters_preserved"
+      },
+      "inferred_vehicle": {},
+      "search_and_suggestions_ms": 91.28,
+      "repeat_search_and_suggestions_ms": 39.67,
+      "python_search_and_suggestions_ms": 517.51
+    }
+  ]
+}

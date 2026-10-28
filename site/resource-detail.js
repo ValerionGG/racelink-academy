@@ -24,11 +24,12 @@ function context(helpers) {
 }
 
 /** Media first; existing IDs, one tab panel and delegated actions remain intact. */
+import {sourceLabel} from './source-label.js?v=discovery-v34';
 export function renderResourceDetail(resource, helpers) {
   const c = context(helpers), {e,t} = c;
   const source = c.safeUrl(resource.url), image = c.safeUrl(resource.thumbnail_url || resource.thumbnailUrl, true);
   const canEmbed = Boolean(source && c.embedUrl?.(resource)), isSaved = Boolean(c.isSaved);
-  const platform = c.platformName(resource.platform) || t('la source','the source','la fuente');
+  const platform = sourceLabel(resource,c.platformName) || t('la source','the source','la fuente');
   const author = text(resource.creator).trim() || t('Auteur non renseigné','Creator not provided','Autor no indicado');
   const sourceLink = (label,className='') => source ? `<a class="${className}" href="${e(source)}" target="_blank" rel="noopener noreferrer">${e(label)} <span aria-hidden="true">↗</span></a>` : '';
   const levelKnown = resource.level && !['all','unknown'].includes(resource.level) && !String(resource.level_status).includes('unknown');

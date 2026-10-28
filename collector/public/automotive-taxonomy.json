@@ -1,0 +1,615 @@
+{
+  "version": "1.0.1",
+  "tasks": [
+    {
+      "id": "oil_change",
+      "label": {
+        "fr": "Vidange moteur",
+        "en": "Engine oil change",
+        "es": "Cambio de aceite"
+      },
+      "system": "lubrication"
+    },
+    {
+      "id": "oil_filter",
+      "label": {
+        "fr": "Filtre à huile",
+        "en": "Oil filter",
+        "es": "Filtro de aceite"
+      },
+      "system": "lubrication"
+    },
+    {
+      "id": "oil_spec",
+      "label": {
+        "fr": "Grade et norme d’huile",
+        "en": "Oil grade and specification",
+        "es": "Grado y norma del aceite"
+      },
+      "system": "lubrication"
+    },
+    {
+      "id": "wipers",
+      "label": {
+        "fr": "Essuie-glaces",
+        "en": "Wipers",
+        "es": "Limpiaparabrisas"
+      },
+      "system": "visibility"
+    },
+    {
+      "id": "wheel_change",
+      "label": {
+        "fr": "Changement de roue & roue de secours",
+        "en": "Wheel change & spare wheel",
+        "es": "Cambio de rueda y rueda de repuesto"
+      },
+      "system": "wheels_tires"
+    },
+    {
+      "id": "wheel_bearing",
+      "label": {
+        "fr": "Roulement / moyeu de roue",
+        "en": "Wheel bearing / hub",
+        "es": "Rodamiento / buje"
+      },
+      "system": "wheels_tires"
+    },
+    {
+      "id": "tires",
+      "label": {
+        "fr": "Pneus et pression",
+        "en": "Tires and pressure",
+        "es": "Neumáticos y presión"
+      },
+      "system": "wheels_tires"
+    },
+    {
+      "id": "brake_pads",
+      "label": {
+        "fr": "Plaquettes de frein",
+        "en": "Brake pads",
+        "es": "Pastillas de freno"
+      },
+      "system": "braking"
+    },
+    {
+      "id": "brake_discs",
+      "label": {
+        "fr": "Disques de frein",
+        "en": "Brake discs",
+        "es": "Discos de freno"
+      },
+      "system": "braking"
+    },
+    {
+      "id": "brake_drums",
+      "label": {
+        "fr": "Tambours et mâchoires",
+        "en": "Brake drums and shoes",
+        "es": "Tambores y zapatas"
+      },
+      "system": "braking"
+    },
+    {
+      "id": "brake_fluid",
+      "label": {
+        "fr": "Liquide et purge des freins",
+        "en": "Brake fluid and bleeding",
+        "es": "Líquido y purga de frenos"
+      },
+      "system": "braking"
+    },
+    {
+      "id": "brake_caliper",
+      "label": {
+        "fr": "Étrier de frein",
+        "en": "Brake caliper",
+        "es": "Pinza de freno"
+      },
+      "system": "braking"
+    },
+    {
+      "id": "battery",
+      "label": {
+        "fr": "Batterie et charge",
+        "en": "Battery and charging",
+        "es": "Batería y carga"
+      },
+      "system": "electrical"
+    },
+    {
+      "id": "fuses",
+      "label": {
+        "fr": "Fusibles et relais",
+        "en": "Fuses and relays",
+        "es": "Fusibles y relés"
+      },
+      "system": "electrical"
+    },
+    {
+      "id": "lighting",
+      "label": {
+        "fr": "Éclairage et ampoules",
+        "en": "Lighting and bulbs",
+        "es": "Luces y bombillas"
+      },
+      "system": "electrical"
+    },
+    {
+      "id": "diagnostics",
+      "label": {
+        "fr": "Diagnostic / OBD",
+        "en": "Diagnostics / OBD",
+        "es": "Diagnóstico / OBD"
+      },
+      "system": "electronics"
+    },
+    {
+      "id": "service_reset",
+      "label": {
+        "fr": "Remise à zéro / voyant entretien",
+        "en": "Service reminder reset",
+        "es": "Reinicio del mantenimiento"
+      },
+      "system": "electronics"
+    },
+    {
+      "id": "vehicle_menus",
+      "label": {
+        "fr": "Menus et écran du véhicule",
+        "en": "Vehicle menus and display",
+        "es": "Menús y pantalla del vehículo"
+      },
+      "system": "electronics"
+    },
+    {
+      "id": "equipment_controls",
+      "label": {
+        "fr": "Commandes et équipements",
+        "en": "Controls and equipment",
+        "es": "Mandos y equipamiento"
+      },
+      "system": "electronics"
+    },
+    {
+      "id": "key_battery",
+      "label": {
+        "fr": "Pile de clé / télécommande",
+        "en": "Key fob battery",
+        "es": "Pila de llave / mando"
+      },
+      "system": "electrical"
+    },
+    {
+      "id": "fuel_choice",
+      "label": {
+        "fr": "Carburants et indices",
+        "en": "Fuel types and ratings",
+        "es": "Combustibles e índices"
+      },
+      "system": "fuel"
+    },
+    {
+      "id": "fuel_filter",
+      "label": {
+        "fr": "Filtre à carburant",
+        "en": "Fuel filter",
+        "es": "Filtro de combustible"
+      },
+      "system": "fuel"
+    },
+    {
+      "id": "air_filter",
+      "label": {
+        "fr": "Filtre à air moteur",
+        "en": "Engine air filter",
+        "es": "Filtro de aire del motor"
+      },
+      "system": "intake"
+    },
+    {
+      "id": "cabin_filter",
+      "label": {
+        "fr": "Filtre habitacle",
+        "en": "Cabin filter",
+        "es": "Filtro del habitáculo"
+      },
+      "system": "visibility"
+    },
+    {
+      "id": "spark_plugs",
+      "label": {
+        "fr": "Bougies d’allumage",
+        "en": "Spark plugs",
+        "es": "Bujías de encendido"
+      },
+      "system": "ignition"
+    },
+    {
+      "id": "glow_plugs",
+      "label": {
+        "fr": "Bougies de préchauffage",
+        "en": "Glow plugs",
+        "es": "Bujías de precalentamiento"
+      },
+      "system": "ignition"
+    },
+    {
+      "id": "shock_absorbers",
+      "label": {
+        "fr": "Amortisseurs et jambes de force",
+        "en": "Shock absorbers and struts",
+        "es": "Amortiguadores y puntales"
+      },
+      "system": "suspension"
+    },
+    {
+      "id": "suspension_springs",
+      "label": {
+        "fr": "Ressorts de suspension",
+        "en": "Suspension springs",
+        "es": "Muelles de suspensión"
+      },
+      "system": "suspension"
+    },
+    {
+      "id": "suspension_arms",
+      "label": {
+        "fr": "Bras et rotules de suspension",
+        "en": "Suspension arms and ball joints",
+        "es": "Brazos y rótulas de suspensión"
+      },
+      "system": "suspension"
+    },
+    {
+      "id": "stabilizer_links",
+      "label": {
+        "fr": "Barre stabilisatrice et biellettes",
+        "en": "Anti-roll bar and links",
+        "es": "Barra estabilizadora y bieletas"
+      },
+      "system": "suspension"
+    },
+    {
+      "id": "steering",
+      "label": {
+        "fr": "Direction et rotules",
+        "en": "Steering and tie rods",
+        "es": "Dirección y rótulas"
+      },
+      "system": "steering"
+    },
+    {
+      "id": "belts",
+      "label": {
+        "fr": "Courroies et distribution",
+        "en": "Belts and timing",
+        "es": "Correas y distribución"
+      },
+      "system": "engine"
+    },
+    {
+      "id": "cooling",
+      "label": {
+        "fr": "Refroidissement",
+        "en": "Cooling system",
+        "es": "Refrigeración"
+      },
+      "system": "cooling"
+    },
+    {
+      "id": "transmission",
+      "label": {
+        "fr": "Transmission et embrayage",
+        "en": "Transmission and clutch",
+        "es": "Transmisión y embrague"
+      },
+      "system": "transmission"
+    },
+    {
+      "id": "engine_mounts",
+      "label": {
+        "fr": "Supports moteur",
+        "en": "Engine mounts",
+        "es": "Soportes del motor"
+      },
+      "system": "engine"
+    },
+    {
+      "id": "sensors",
+      "label": {
+        "fr": "Capteurs moteur / échappement",
+        "en": "Engine / exhaust sensors",
+        "es": "Sensores del motor / escape"
+      },
+      "system": "electronics"
+    },
+    {
+      "id": "body_hardware",
+      "label": {
+        "fr": "Portes, hayon et carrosserie",
+        "en": "Doors, tailgate and body hardware",
+        "es": "Puertas, portón y carrocería"
+      },
+      "system": "body"
+    }
+  ],
+  "systems": [
+    {
+      "id": "lubrication",
+      "label": {
+        "fr": "Lubrification moteur",
+        "en": "Engine lubrication",
+        "es": "Lubricación del motor"
+      }
+    },
+    {
+      "id": "visibility",
+      "label": {
+        "fr": "Visibilité et habitacle",
+        "en": "Visibility and cabin",
+        "es": "Visibilidad y habitáculo"
+      }
+    },
+    {
+      "id": "wheels_tires",
+      "label": {
+        "fr": "Roues et pneus",
+        "en": "Wheels and tires",
+        "es": "Ruedas y neumáticos"
+      }
+    },
+    {
+      "id": "braking",
+      "label": {
+        "fr": "Freinage",
+        "en": "Brakes",
+        "es": "Frenos"
+      }
+    },
+    {
+      "id": "electrical",
+      "label": {
+        "fr": "Électricité",
+        "en": "Electrical",
+        "es": "Electricidad"
+      }
+    },
+    {
+      "id": "electronics",
+      "label": {
+        "fr": "Électronique et diagnostic",
+        "en": "Electronics and diagnostics",
+        "es": "Electrónica y diagnóstico"
+      }
+    },
+    {
+      "id": "fuel",
+      "label": {
+        "fr": "Carburant et alimentation",
+        "en": "Fuel system",
+        "es": "Combustible y alimentación"
+      }
+    },
+    {
+      "id": "intake",
+      "label": {
+        "fr": "Admission d’air",
+        "en": "Air intake",
+        "es": "Admisión de aire"
+      }
+    },
+    {
+      "id": "ignition",
+      "label": {
+        "fr": "Allumage et préchauffage",
+        "en": "Ignition and preheating",
+        "es": "Encendido y precalentamiento"
+      }
+    },
+    {
+      "id": "suspension",
+      "label": {
+        "fr": "Suspension",
+        "en": "Suspension",
+        "es": "Suspensión"
+      }
+    },
+    {
+      "id": "steering",
+      "label": {
+        "fr": "Direction",
+        "en": "Steering",
+        "es": "Dirección"
+      }
+    },
+    {
+      "id": "engine",
+      "label": {
+        "fr": "Moteur et distribution",
+        "en": "Engine and timing",
+        "es": "Motor y distribución"
+      }
+    },
+    {
+      "id": "cooling",
+      "label": {
+        "fr": "Refroidissement",
+        "en": "Cooling",
+        "es": "Refrigeración"
+      }
+    },
+    {
+      "id": "transmission",
+      "label": {
+        "fr": "Transmission",
+        "en": "Transmission",
+        "es": "Transmisión"
+      }
+    },
+    {
+      "id": "body",
+      "label": {
+        "fr": "Carrosserie",
+        "en": "Body",
+        "es": "Carrocería"
+      }
+    }
+  ],
+  "body_types": [
+    {
+      "id": "sedan",
+      "label": {
+        "fr": "Berline",
+        "en": "Sedan / saloon",
+        "es": "Berlina"
+      }
+    },
+    {
+      "id": "estate",
+      "label": {
+        "fr": "Break",
+        "en": "Estate / wagon",
+        "es": "Familiar"
+      }
+    },
+    {
+      "id": "hatchback",
+      "label": {
+        "fr": "Berline à hayon",
+        "en": "Hatchback",
+        "es": "Compacto con portón"
+      }
+    },
+    {
+      "id": "van",
+      "label": {
+        "fr": "Fourgon",
+        "en": "Van",
+        "es": "Furgoneta"
+      }
+    },
+    {
+      "id": "coupe",
+      "label": {
+        "fr": "Coupé",
+        "en": "Coupe",
+        "es": "Cupé"
+      }
+    },
+    {
+      "id": "convertible",
+      "label": {
+        "fr": "Cabriolet",
+        "en": "Convertible",
+        "es": "Descapotable"
+      }
+    },
+    {
+      "id": "suv",
+      "label": {
+        "fr": "SUV",
+        "en": "SUV",
+        "es": "SUV"
+      }
+    },
+    {
+      "id": "pickup",
+      "label": {
+        "fr": "Pick-up",
+        "en": "Pickup",
+        "es": "Pickup"
+      }
+    }
+  ],
+  "fuel_types": [
+    {
+      "id": "petrol",
+      "label": {
+        "fr": "Essence",
+        "en": "Petrol / gasoline",
+        "es": "Gasolina"
+      }
+    },
+    {
+      "id": "diesel",
+      "label": {
+        "fr": "Diesel",
+        "en": "Diesel",
+        "es": "Diésel"
+      }
+    },
+    {
+      "id": "hybrid",
+      "label": {
+        "fr": "Hybride",
+        "en": "Hybrid",
+        "es": "Híbrido"
+      }
+    },
+    {
+      "id": "electric",
+      "label": {
+        "fr": "Électrique",
+        "en": "Electric",
+        "es": "Eléctrico"
+      }
+    },
+    {
+      "id": "lpg",
+      "label": {
+        "fr": "GPL",
+        "en": "LPG",
+        "es": "GLP"
+      }
+    },
+    {
+      "id": "ethanol",
+      "label": {
+        "fr": "Éthanol / E85",
+        "en": "Ethanol / E85",
+        "es": "Etanol / E85"
+      }
+    }
+  ],
+  "specification_kinds": [
+    {
+      "id": "oil_viscosity",
+      "label": {
+        "fr": "Viscosité SAE mentionnée",
+        "en": "Mentioned SAE viscosity",
+        "es": "Viscosidad SAE mencionada"
+      }
+    },
+    {
+      "id": "oil_standard",
+      "label": {
+        "fr": "Norme d’huile mentionnée",
+        "en": "Mentioned oil standard",
+        "es": "Norma de aceite mencionada"
+      }
+    },
+    {
+      "id": "fuel_grade",
+      "label": {
+        "fr": "Carburant mentionné",
+        "en": "Mentioned fuel grade",
+        "es": "Combustible mencionado"
+      }
+    },
+    {
+      "id": "battery_voltage",
+      "label": {
+        "fr": "Tension mentionnée",
+        "en": "Mentioned voltage",
+        "es": "Tensión mencionada"
+      }
+    }
+  ],
+  "disclaimer": {
+    "fr": "Mentions extraites des titres ou légendes sources. Elles ne confirment ni la compatibilité avec votre véhicule ni une préconisation d’entretien.",
+    "en": "Mentions extracted from source titles or captions. They do not confirm vehicle compatibility or maintenance recommendations.",
+    "es": "Menciones extraídas de los títulos o descripciones originales. No confirman compatibilidad ni recomendaciones de mantenimiento."
+  }
+}

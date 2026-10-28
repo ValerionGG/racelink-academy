@@ -1481,5 +1481,191 @@
     "compatibilityClaimed": false,
     "expiryBehaviour": "hide_expired_shelves_until_review",
     "reviewPeriodDays": 30
-  }
+  },
+  "queryAssistance": [
+    {
+      "id": "climate-no-cold",
+      "query": "climatisation",
+      "label": {
+        "fr": "Climatisation : pas de froid",
+        "en": "Air conditioning: not cooling",
+        "es": "Aire acondicionado: no enfría"
+      },
+      "aliases": [
+        "ma clim ne fait plus de froid",
+        "ma clim ne fait pas de froid",
+        "clim ne fait plus de froid",
+        "clim ne fait pas de froid",
+        "ma climatisation ne fait plus de froid",
+        "climatisation ne fait plus de froid",
+        "ma clim ne refroidit plus",
+        "clim ne refroidit plus",
+        "ma clim souffle chaud",
+        "clim souffle chaud",
+        "clim souffle de l air chaud",
+        "climatisation souffle chaud",
+        "pourquoi ma clim ne fait plus de froid",
+        "pourquoi ma clim ne fait pas de froid",
+        "pourquoi clim ne fait plus de froid",
+        "pourquoi clim ne fait pas de froid",
+        "pourquoi ma climatisation ne fait plus de froid",
+        "pourquoi climatisation ne fait plus de froid",
+        "pourquoi ma clim ne refroidit plus",
+        "pourquoi clim ne refroidit plus",
+        "pourquoi ma clim souffle chaud",
+        "pourquoi clim souffle chaud",
+        "pourquoi clim souffle de l air chaud",
+        "pourquoi climatisation souffle chaud",
+        "que faire si ma clim ne fait plus de froid",
+        "que faire si ma clim ne fait pas de froid",
+        "que faire si clim ne fait plus de froid",
+        "que faire si clim ne fait pas de froid",
+        "que faire si ma climatisation ne fait plus de froid",
+        "que faire si climatisation ne fait plus de froid",
+        "que faire si ma clim ne refroidit plus",
+        "que faire si clim ne refroidit plus",
+        "que faire si ma clim souffle chaud",
+        "que faire si clim souffle chaud",
+        "que faire si clim souffle de l air chaud",
+        "que faire si climatisation souffle chaud"
+      ]
+    },
+    {
+      "id": "starting-problem",
+      "query": "démarrage",
+      "label": {
+        "fr": "Difficultés de démarrage",
+        "en": "Starting problems",
+        "es": "Problemas de arranque"
+      },
+      "aliases": [
+        "ma voiture ne démarre plus",
+        "voiture ne démarre plus",
+        "ma voiture ne démarre pas",
+        "voiture ne démarre pas",
+        "ne démarre plus",
+        "ne démarre pas",
+        "ne veut plus démarrer",
+        "pourquoi ma voiture ne démarre plus",
+        "pourquoi voiture ne démarre plus",
+        "pourquoi ma voiture ne démarre pas",
+        "pourquoi voiture ne démarre pas",
+        "pourquoi ne démarre plus",
+        "pourquoi ne démarre pas",
+        "pourquoi ne veut plus démarrer",
+        "que faire si ma voiture ne démarre plus",
+        "que faire si voiture ne démarre plus",
+        "que faire si ma voiture ne démarre pas",
+        "que faire si voiture ne démarre pas",
+        "que faire si ne démarre plus",
+        "que faire si ne démarre pas",
+        "que faire si ne veut plus démarrer"
+      ]
+    },
+    {
+      "id": "carplay-connection",
+      "query": "CarPlay",
+      "label": {
+        "fr": "Connexion CarPlay",
+        "en": "CarPlay connection",
+        "es": "Conexión CarPlay"
+      },
+      "aliases": [
+        "mon carplay se déconnecte",
+        "carplay se déconnecte",
+        "carplay ne marche plus",
+        "carplay ne fonctionne pas",
+        "carplay ne marche pas",
+        "carplay écran noir",
+        "pourquoi mon carplay se déconnecte",
+        "pourquoi carplay se déconnecte",
+        "pourquoi carplay ne marche plus",
+        "pourquoi carplay ne fonctionne pas",
+        "pourquoi carplay ne marche pas",
+        "pourquoi carplay écran noir",
+        "que faire si mon carplay se déconnecte",
+        "que faire si carplay se déconnecte",
+        "que faire si carplay ne marche plus",
+        "que faire si carplay ne fonctionne pas",
+        "que faire si carplay ne marche pas",
+        "que faire si carplay écran noir"
+      ]
+    },
+    {
+      "id": "android-auto-connection",
+      "query": "Android Auto",
+      "label": {
+        "fr": "Connexion Android Auto",
+        "en": "Android Auto connection",
+        "es": "Conexión Android Auto"
+      },
+      "aliases": [
+        "android auto se déconnecte",
+        "android auto ne marche plus",
+        "android auto ne fonctionne pas",
+        "android auto ne marche pas",
+        "android auto écran noir",
+        "pourquoi android auto se déconnecte",
+        "pourquoi android auto ne marche plus",
+        "pourquoi android auto ne fonctionne pas",
+        "pourquoi android auto ne marche pas",
+        "pourquoi android auto écran noir",
+        "que faire si android auto se déconnecte",
+        "que faire si android auto ne marche plus",
+        "que faire si android auto ne fonctionne pas",
+        "que faire si android auto ne marche pas",
+        "que faire si android auto écran noir"
+      ]
+    },
+    {
+      "id": "engine-warning",
+      "query": "voyant moteur",
+      "label": {
+        "fr": "Comprendre le voyant moteur",
+        "en": "Understanding the engine warning light",
+        "es": "Entender el testigo del motor"
+      },
+      "aliases": [
+        "mon voyant moteur reste allumé",
+        "voyant moteur reste allumé",
+        "mon voyant moteur est allumé",
+        "voyant moteur est allumé",
+        "voyant moteur allumé",
+        "voyant moteur qui clignote",
+        "pourquoi mon voyant moteur reste allumé",
+        "pourquoi voyant moteur reste allumé",
+        "pourquoi mon voyant moteur est allumé",
+        "pourquoi voyant moteur est allumé",
+        "pourquoi voyant moteur allumé",
+        "pourquoi voyant moteur qui clignote",
+        "que faire si mon voyant moteur reste allumé",
+        "que faire si voyant moteur reste allumé",
+        "que faire si mon voyant moteur est allumé",
+        "que faire si voyant moteur est allumé",
+        "que faire si voyant moteur allumé",
+        "que faire si voyant moteur qui clignote"
+      ]
+    },
+    {
+      "id": "wiper-spelling",
+      "kind": "typo",
+      "query": "essuie-glaces",
+      "label": {
+        "fr": "Essuie-glaces",
+        "en": "Wipers",
+        "es": "Limpiaparabrisas"
+      },
+      "aliases": [
+        "essuie glasse",
+        "essuie glasses",
+        "essuies glace",
+        "essuies glaces"
+      ],
+      "reason": {
+        "fr": "Orthographe proposée ; la voiture, la langue et les autres filtres sont conservés.",
+        "en": "Suggested spelling; vehicle, language and other filters are preserved.",
+        "es": "Ortografía sugerida; se conservan el vehículo, el idioma y los demás filtros."
+      }
+    }
+  ]
 }

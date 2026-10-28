@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=studio-v30">
-  <script src="/racelink-academy/catalog-client.js?v=studio-v30" defer></script>
-  <script type="module" src="/racelink-academy/app.js?v=collection-v32"></script>
+  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=search-v34">
+  <script src="/racelink-academy/catalog-client.js?v=search-v34" defer></script>
+  <script type="module" src="/racelink-academy/app.js?v=search-v34"></script>
 </head>
 <body>
   <a class="skip" href="#main">Aller au contenu</a>
@@ -105,7 +105,7 @@
         <div class="catalog-layout">
           <aside id="filters" class="filters" aria-label="Filtres du catalogue">
             <div class="filter-heading"><strong data-i18n="refine">Filtrer les résultats</strong><button id="reset-filters" data-i18n="reset">Effacer</button></div>
-
+            <section class="filter-section filter-language-section" aria-labelledby="filter-language-title"><h3 id="filter-language-title">Langue du contenu</h3><div class="filter-language-shortcuts" role="group" aria-label="Choix rapide de langue"><button type="button" data-filter-language="fr" aria-pressed="false">Français</button><button type="button" data-filter-language="" aria-pressed="true">Toutes les langues</button></div><div class="filter-field"><label for="filter-language">Choisir une langue</label><select id="filter-language" aria-describedby="filter-language-hint"><option value="">Toutes les langues</option><option value="fr">Français</option></select></div><p id="filter-language-hint">La langue peut être estimée à partir du texte de la source.</p></section>
             <details class="filter-section filter-topics" open><summary><h3 data-filter-copy="topic">Quel sujet ?</h3></summary><fieldset class="category-list"><legend class="sr-only" data-i18n="discipline">SUJET</legend><div id="category-filters"></div></fieldset></details>
             <section class="filter-section"><h3 data-filter-copy="preferences">Quel contenu vous convient ?</h3><div class="filter-pair"><div class="filter-field"><label for="level" data-i18n="level">Niveau</label><select id="level"><option value="">Tous les niveaux</option><option value="beginner">Débutant</option><option value="intermediate">Intermédiaire</option><option value="advanced">Avancé / Pro</option></select></div><div class="filter-field"><label for="duration" data-i18n="duration">Durée</label><select id="duration"><option value="">Toutes les durées</option><option value="short">Moins de 10 min</option><option value="medium">10 à 30 min</option><option value="long">Plus de 30 min</option></select></div></div><div class="filter-field"><label for="content_format">Type de vidéo</label><select id="content_format"><option value="">Tous les types</option></select><small class="filter-explainer">Tutoriel, démonstration, cours ou direct. Classement selon les informations disponibles.</small></div></section>
             <section class="filter-section"><h3 data-filter-copy="source">Où regarder ?</h3><p data-filter-copy="sourceHint">Choisissez la plateforme qui publie la vidéo.</p><div class="filter-field platform-field"><label class="sr-only" for="platform" data-i18n="platform">PLATEFORME</label><select id="platform" hidden><option value="">Toutes les plateformes</option></select><div id="platform-choices" class="platform-choices" role="group" aria-label="Plateformes"></div></div></section>
@@ -114,7 +114,8 @@
           </aside>
           <div class="catalog-content">
             <div class="results-toolbar"><p id="results-status" role="status" aria-live="polite">Chargement du catalogue…</p><label><span class="sr-only">Trier les résultats</span><select id="sort"><option value="relevance">Pertinence</option><option value="newest">Les plus récentes</option><option value="duration">Les plus courtes</option><option value="title">Titre A → Z</option></select></label></div>
-            <div id="active-filters" class="active-filters"></div>
+            <div id="active-filters" class="active-filters" role="group" aria-label="Critères appliqués"></div>
+            <section id="search-assistance" class="search-assistance" aria-label="Autres recherches suggérées" hidden></section>
             <details class="result-explanation"><summary id="result-explanation-label">Comprendre ces résultats</summary><p id="search-mode" class="search-mode" hidden></p><div id="maintenance-guide-hint" hidden></div></details>
             <div id="video-grid" class="video-grid" aria-busy="true"></div>
             <section id="context-discovery" class="context-discovery" aria-label="Suggestions liées à votre recherche" hidden></section>

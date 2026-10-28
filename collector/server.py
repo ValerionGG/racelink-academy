@@ -772,6 +772,8 @@ def serialize_video(row, detail=False):
     value["category_label"] = CATEGORY_LABELS.get(value["category"], value["category"])
     value["level_label"] = LEVEL_LABELS.get(value["level"], value["level"])
     value["source_description"] = metadata.get("sourceDescription", "")
+    if metadata.get("provider") == "peertube":
+        value["source_provider"] = "peertube"
     social = metadata.get("social_content", {})
     if isinstance(social, dict) and social.get("normalization"):
         value["hashtags"] = social.get("hashtags", [])
@@ -886,7 +888,9 @@ TASK_PHRASES = {
     "wipers": ["essuie glaces", "essuie glace", "wipers", "wiper", "limpiaparabrisas"],
     "wheel_change": ["changer une roue", "changer la roue", "changement de roue", "wheel change",
                      "change wheel", "cambiar rueda"],
-    "key_battery": ["pile de cle", "pile cle", "key battery", "key fob battery", "pila llave"],
+    "key_battery": ["pile de cle", "pile cle", "pile de la cle", "pile de ma cle", "pile de carte",
+                    "pile de la carte", "pile telecommande", "pile de telecommande",
+                    "key battery", "key fob battery", "pila llave"],
     "battery": ["batterie", "battery", "bateria"],
     "brake_pads": ["plaquettes de frein", "plaquettes frein", "brake pads", "pastillas de freno"],
     "brake_discs": ["disques de frein", "disques frein", "brake discs", "brake rotors", "discos de freno"],
@@ -1013,21 +1017,27 @@ def infer_automotive_request(db_path, q, params):
              or item["make"] == result["vehicle"]["make"]]
     model_mentions = []
     compact_remaining = re.sub(r"[\W_]", "", remaining, flags=re.UNICODE)
-    for model in sorted({item["model"] for item in scope if item["model"]}, key=len, reverse=True):
+    # Case variants in imported evidence name one model, not competing mentions.
+    models = {folded(model): model for model in sorted(
+        {item["model"] for item in scope if item["model"]}, reverse=True)}
+    for model in sorted(models.values(), key=len, reverse=True):
         if re.sub(r"[\W_]", "", folded(model), flags=re.UNICODE) not in compact_remaining:
             continue
         if model.isdigit() and not (result["vehicle"].get("make") or query_value(params, "make")):
             continue
-        model_rows = [item for item in scope if item["model"] == model]
+        model_rows = [item for item in scope if folded(item["model"]) == folded(model)]
         combined = []
-        for generation in {item["generation"] for item in model_rows if item["generation"]}:
+        indexed_generations = {item["generation"] for item in model_rows if item["generation"]}
+        for generation in indexed_generations:
             aliases = [generation]
             if folded(generation) in ROMAN_GENERATIONS:
                 aliases.append(ROMAN_GENERATIONS[folded(generation)])
             for alias in aliases:
                 pattern = phrase_pattern(model + " " + alias) + r"(?![.,]\d)"
                 if re.search(pattern, remaining):
-                    combined.append((generation, pattern))
+                    roman = next((roman for roman, number in ROMAN_GENERATIONS.items() if number == generation), None)
+                    canonical = next((value for value in sorted(indexed_generations) if folded(value) == roman), None) if roman else None
+                    combined.append((canonical or generation, pattern))
         if combined:
             generations = {generation for generation, _ in combined}
             model_mentions.append((model, next(iter(generations)) if len(generations) == 1 else None,
@@ -1055,7 +1065,7 @@ def infer_automotive_request(db_path, q, params):
             result["vehicle"]["generation"] = generation
         for pattern in patterns:
             consume(pattern)
-        scope = [item for item in scope if item["model"] == model]
+        scope = [item for item in scope if folded(item["model"]) == folded(model)]
         makes = {item["make"] for item in scope if item["make"]}
         if len(makes) == 1:
             result["vehicle"].setdefault("make", next(iter(makes)))
@@ -1116,7 +1126,7 @@ def infer_automotive_request(db_path, q, params):
     return result
 
 
-def search(db_path, params, *, count_only=False, offset=None):
+def search(db_path, params, *, count_only=False, offset=None, no_assistance=False):
     page = integer_param(params, "page", 1, 1, 1000000)
     per_page = integer_param(params, "per_page", 24, 1, 100)
     q = query_value(params, "q").strip()
@@ -1276,7 +1286,9 @@ def search(db_path, params, *, count_only=False, offset=None):
             "inferred_vehicle": interpretation["vehicle"], "inferred_task": interpretation["task"],
             "inferred_spec": interpretation["spec"], "interpretation_conflicts": interpretation["conflicts"],
             "interpreted_fields": {key: interpretation[key] for key in ("vehicle", "task", "spec")},
-            "query_residual": residual}
+            "query_residual": residual,
+            "search_assistance": query_assistance(db_path, {**params, "format": "video" if resource_format == "all" else resource_format})
+                if not total and not no_assistance else {"suggestions": [], "policy": "explicit_opt_in_filters_preserved"}}
 
 
 def normalize_guides(payload):
@@ -1360,7 +1372,7 @@ def matching_guides(guides, params, interpretation):
     return sorted(result, key=lambda guide: (guide["title"].lower(), guide["id"]))
 
 
-def search_resources(db_path, params, *, public_path=PUBLIC, guides=None, count_only=False):
+def search_resources(db_path, params, *, public_path=PUBLIC, guides=None, count_only=False, no_assistance=False):
     guides = load_guides(public_path) if guides is None else guides
     kind = query_value(params, "format", "all") or "all"
     video_params = {key: value for key, value in params.items() if key != "format"}
@@ -1372,7 +1384,7 @@ def search_resources(db_path, params, *, public_path=PUBLIC, guides=None, count_
         raise ValidationError("Format attendu : all, video, guide ou image")
     start = (page - 1) * size
     offset = max(0, start - len(found_guides)) if kind == "all" else start
-    videos = search(db_path, video_params, count_only=count_only, offset=offset)
+    videos = search(db_path, video_params, count_only=count_only, offset=offset, no_assistance=True)
     total = (videos["total"] if kind in {"all", "video"} else 0) + (len(found_guides) if kind in {"all", "guide"} else 0)
     if count_only:
         return {"total": total}
@@ -1395,7 +1407,9 @@ def search_resources(db_path, params, *, public_path=PUBLIC, guides=None, count_
                         {"value": "guide", "count": len(found_guides)}, {"value": "image", "count": 0}]
     return {**videos, "items": items, "total": total, "pages": (total + size - 1) // size, "facets": facets,
             "format": kind, "total_videos": videos["total"], "total_guides": len(found_guides), "total_images": 0,
-            "ordering": "guides_first_then_videos", "compatibility_verified": False}
+            "ordering": "guides_first_then_videos", "compatibility_verified": False,
+            "search_assistance": query_assistance(db_path, params, config={**discovery_config(public_path), "_guides": guides})
+                if not total and not no_assistance else {"suggestions": [], "policy": "explicit_opt_in_filters_preserved"}}
 
 
 DISCOVERY_FILTERS = VEHICLE_FILTERS + ("task", "system", "spec", "category", "level",
@@ -1626,6 +1640,87 @@ def topic_score(topic, query):
     return prediction["score"] if prediction else 0
 
 
+def query_assistance(db_path, params, *, config=None, include_topics=True):
+    """Count explicit recovery proposals without modifying the query or relaxing a filter."""
+    query = query_value(params, "q").strip()
+    result = {"suggestions": [], "policy": "explicit_opt_in_filters_preserved"}
+    if not 3 <= len(query) <= 300:
+        return result
+    config = discovery_config() if config is None else config
+    interpretation = infer_automotive_request(db_path, query, params)
+    if interpretation["conflicts"]:
+        return result
+    context = discovery_context(params)
+    for key, value in interpretation["vehicle"].items():
+        context.setdefault(key, str(value))
+    for key in ("task", "spec"):
+        if interpretation[key]:
+            context.setdefault(key, interpretation[key])
+    tokens = list(re.finditer(r"[^\W_]+", query, re.UNICODE))
+    words = [folded(token[0]) for token in tokens]
+    candidates = []
+    for rule in config.get("queryAssistance", [])[:30]:
+        if not isinstance(rule, dict) or not isinstance(rule.get("aliases"), list) or not isinstance(rule.get("query"), str):
+            continue
+        aliases = [re.findall(r"[^\W_]+", folded(alias), re.UNICODE)
+                   for alias in rule["aliases"][:50] if isinstance(alias, str)]
+        aliases.sort(key=len, reverse=True)
+        span = None
+        for alias in aliases:
+            start = next((index for index in range(len(words))
+                          if alias and words[index:index + len(alias)] == alias), None)
+            if start is not None:
+                span = (tokens[start].start(), tokens[start + len(alias) - 1].end())
+                break
+        if span is None:
+            continue
+        start, end = span
+        completion = query[:start] + rule["query"] + query[end:]
+        if folded(completion) == folded(query):
+            continue
+        candidates.append({"type": "query", "id": "help-" + rule["id"], "label": rule.get("label") or rule["query"],
+            "query": completion, "completion": completion, "filters": dict(context),
+            "match_basis": "topic_typo" if rule.get("kind") == "typo" else "symptom_vocabulary",
+            "corrections": [{"from": query[start:end], "to": rule["query"], "kind": "typo" if rule.get("kind") == "typo" else "symptom"}],
+            "reason": rule.get("reason") or {
+                "fr": "Explorer ce sujet avec les mêmes filtres. Ce n’est pas un diagnostic.",
+                "en": "Explore this topic with the same filters. This is not a diagnosis.",
+                "es": "Explorar este tema con los mismos filtros. No es un diagnóstico."}})
+    if include_topics:
+        ranked = []
+        for topic in config.get("topics", [])[:100]:
+            if not isinstance(topic, dict) or topic.get("enabled", True) is False:
+                continue
+            filters = merge_topic_context(topic, context)
+            prediction = topic_prediction(topic, query, context) if filters is not None else None
+            if prediction:
+                ranked.append((prediction["score"], topic, filters, prediction["variants"]))
+        ranked.sort(key=lambda entry: -entry[0])
+        for _, topic, filters, variants in ranked:
+            for variant in variants:
+                if not variant["corrections"]:
+                    continue
+                candidates.append({"type": "query", "id": "help-topic-" + topic["id"], "label": topic.get("label") or topic["id"],
+                    "query": variant["completion"], "filters": filters, **variant, "reason": {
+                        "fr": "Correction proposée pour les mots du sujet ; vos filtres restent appliqués.",
+                        "en": "Suggested topic-word correction; your filters stay applied.",
+                        "es": "Corrección propuesta del tema; se mantienen los filtros."}})
+    seen = set()
+    for candidate in candidates[:8]:
+        if len(candidate["query"]) > 300:
+            continue
+        key = json.dumps([candidate["query"], candidate["filters"]], sort_keys=True, ensure_ascii=False)
+        if key in seen:
+            continue
+        seen.add(key)
+        count = discovery_count(db_path, {**candidate["filters"], "q": candidate["query"]}, config.get("_guides"))
+        if count:
+            result["suggestions"].append({**candidate, "count": count})
+        if len(result["suggestions"]) >= 3:
+            break
+    return result
+
+
 def suggestions(db_path, params, *, config=None, public_path=PUBLIC):
     config = config if config is not None else discovery_config(public_path)
     query = query_value(params, "q").strip()
@@ -1659,7 +1754,7 @@ def suggestions(db_path, params, *, config=None, public_path=PUBLIC):
         -value[0], defaults.index(value[2]["id"]) if not query and value[2]["id"] in defaults
         else len(defaults) + value[1], value[1]))
     limit = 3 if query else 5
-    items = []
+    items = query_assistance(db_path, params, config=config, include_topics=False)["suggestions"][:2]
     for _, _, topic, filters, variants in ranked:
         for prediction in variants:
             completion = prediction["completion"]
@@ -1683,7 +1778,7 @@ def suggestions(db_path, params, *, config=None, public_path=PUBLIC):
             break
     if query and len(items) < 6 and context.get("format", "all") in {"all", "guide"}:
         guide_result = search_resources(db_path, {**context, "format": "guide", "q": query,
-            "per_page": str(6 - len(items))}, guides=config.get("_guides", []))
+            "per_page": str(6 - len(items))}, guides=config.get("_guides", []), no_assistance=True)
         items.extend({"type": "guide", "resource_type": "guide", "id": guide["id"],
             "label": guide["title"], "query": query, "filters": context,
             "reason": {"fr": "Guide RaceLink avec sources citées, correspondant à la recherche.",
@@ -1691,7 +1786,7 @@ def suggestions(db_path, params, *, config=None, public_path=PUBLIC):
                        "es": "Guía RaceLink con fuentes citadas que coincide con la búsqueda."}}
             for guide in guide_result["items"])
     if query and len(items) < 6:
-        result = search(db_path, {**context, "q": query, "per_page": str(6 - len(items)), "sort": "title"})
+        result = search(db_path, {**context, "q": query, "per_page": str(6 - len(items)), "sort": "title"}, no_assistance=True)
         items.extend({"type": "video", "id": item["id"], "video_id": item["id"], "label": item["title"],
                       **{key: item[key] for key in (
                           "creator", "platform", "language", "language_status", "language_confidence")},

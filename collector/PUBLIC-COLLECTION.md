@@ -51,3 +51,9 @@ Dédupliquer contre la base actuelle et les lots précédents. Sceller les candi
 Après export, vérifier les comptes par plateforme/langue, la recherche, les fiches publiées et la version du paquet local. Distinguer dans le bilan lignes reçues, vidéos distinctes, nouvelles fiches retenues et fiches effectivement publiées. Les processus yt-dlp peuvent effectuer plusieurs appels internes : ne pas présenter leur nombre comme un compte exact de requêtes HTTP.
 
 Documentation : [Agent Reach](https://github.com/Panniantong/agent-reach), [yt-dlp](https://github.com/yt-dlp/yt-dlp#usage-and-options), [API Dailymotion](https://developers.dailymotion.com/v0/reference/perform-an-api-call), [champs Dailymotion](https://developers.dailymotion.com/v0/reference/video-fields).
+
+## Voie PeerTube ajoutée en V34
+
+`scripts/peertube_collect.py` recherche SepiaSearch et liste les chaînes pédagogiques explicitement autorisées dans son plan. Prévisualisation par défaut, plafond, délai, checkpoint avant requête, arrêt sur limitation ; aucune vidéo téléchargée. Voir [le guide](scripts/PEERTUBE-COLLECTOR.md).
+
+Une référence PeerTube conserve sa vraie URL et son identité. Le schéma courant la range dans `platform=other`, avec `provider=peertube` et un libellé PeerTube dans sa fiche. Ce n’est pas une vidéo YouTube. L’import est distinct de la collecte, exige revue, preuve native, déduplication globale, sauvegarde et scellé des seuls nouveaux identifiants. Les checkpoints V34 sont terminés ; ne pas les rejouer.

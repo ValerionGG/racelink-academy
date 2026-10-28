@@ -1,0 +1,102 @@
+{
+  "interface_changes": [
+    "Explicit search alternatives with scoped real counts; no automatic query replacement.",
+    "French content-language control visible on mobile and included in staged filters.",
+    "Applied language/format criteria removable one by one; clearing criteria preserves the question.",
+    "Mobile and tablet overlays stage changes with Cancel/Apply; pending drafts show criteria, not stale result counts.",
+    "Four autocomplete suggestions on mobile; changed touch controls at least 44px; safe-area padding.",
+    "Existing real photos, light/dark themes and RaceLink visual identity preserved."
+  ],
+  "search_changes": [
+    "French symptom vocabulary, typographical proposals and natural key-battery phrases.",
+    "Case-insensitive model vocabulary deduplication fixes Clio/clio ambiguity.",
+    "Explicit vehicle, generation, year, engine, language and platform constraints preserved."
+  ],
+  "validation": {
+    "python_tests": 53,
+    "static_catalog_checks": 35,
+    "real_parity_scenarios": 16,
+    "search_validation_baseline_videos": 39845,
+    "ui_contract_checks": 56,
+    "peertube_tests": 21,
+    "html_css_export_contract_checks": 20,
+    "release_integration_checks": 7,
+    "browser_visual_check": false,
+    "physical_mobile_check": false
+  },
+  "collection_accounting": {
+    "raw_rows": 95,
+    "distinct_identities": 89,
+    "within_wave_duplicates": 6,
+    "already_catalogued": 13,
+    "new_retained": 1,
+    "held": 21,
+    "excluded": 54
+  },
+  "acquisition": {
+    "metadata_requests_peertube": 8,
+    "metadata_rows_peertube": 95,
+    "peertube_credits_consumed": 0,
+    "firecrawl_anonymous_documentation_requests": 1,
+    "firecrawl_reported_demo_credits_used": 1,
+    "firecrawl_observed_account_balance": null,
+    "paid_provider_jobs": 0,
+    "out_of_pocket_usd": 0,
+    "media_downloaded": false
+  },
+  "social_status": "No new TikTok/Instagram; browser unavailable; no new observed provider balance, account or paid job.",
+  "language_note": "Metadata-declared language does not certify audio.",
+  "rights_note": "Public metadata is not a verified free license or manufacturer procedure.",
+  "new_providers": [
+    "PeerTube metadata collector tested and delivered",
+    "Firecrawl anonymous documentation extraction tested; plugin not installed"
+  ],
+  "release": "discovery-v34",
+  "prepared_at": "2026-10-28T11:22:26.106677+00:00",
+  "baseline_videos": 39845,
+  "total_videos": 39846,
+  "guides": 11,
+  "new_references": 1,
+  "new_by_platform": {
+    "other": 1
+  },
+  "new_by_language": {
+    "fr": 1
+  },
+  "new_native_metadata_records": 1,
+  "new_transcripts": 0,
+  "total_by_platform": {
+    "dailymotion": 345,
+    "facebook": 46,
+    "instagram": 312,
+    "other": 15,
+    "tiktok": 862,
+    "twitch": 2,
+    "vimeo": 17,
+    "youtube": 38247
+  },
+  "total_by_language": {
+    "ar": 7,
+    "cs": 1,
+    "de": 4018,
+    "en": 13537,
+    "es": 4566,
+    "fa": 1,
+    "fr": 7231,
+    "id": 2,
+    "it": 298,
+    "ja": 96,
+    "ko": 52,
+    "pl": 3759,
+    "pt": 4207,
+    "ru": 6,
+    "ta": 1,
+    "tr": 3,
+    "und": 2048,
+    "zh": 13
+  },
+  "catalog_sha256": "76c0639281942d8a76d906a404becf3cf215a5318c68b5f88cdc64f6b6607221",
+  "catalog_bytes": 65364143,
+  "visual_validation": "Browser unavailable: no V34 visual inspection or physical-phone test.",
+  "old_rows_and_relations_unchanged": true
+}

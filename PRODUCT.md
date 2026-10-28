@@ -1,23 +1,27 @@
-# RaceLink Academy — Clair et Sombre V22
+# RaceLink Academy — Bibliothèque V30
 
-**Version `themes-v22` publiée ; contrôles ciblés documentés.** [Ouvrir](https://valeriongg.github.io/racelink-academy/?release=themes-v22&build=9985987) · [Validation et limites](research/themes-v22/VALIDATION.md).
+## Recherche V34
+
+Les propositions de recherche liées à une question ou à une faute sont affichées avant les résultats, avec le nombre de correspondances effectivement calculé par le catalogue. Elles s’appliquent uniquement au clic et conservent les critères explicites du visiteur. Il s’agit d’un vocabulaire automobile documenté, pas d’un diagnostic ni d’une validation de compatibilité.
+
+Les critères appliqués, y compris la langue et le format, sont visibles et supprimables séparément. Sur mobile, la langue occupe une ligne entière avec accès direct au français ; le véhicule et les autres filtres restent immédiatement accessibles. Le panneau de filtres propose la langue, le sujet, la plateforme puis les caractéristiques du contenu. Les choix sont préparés aussi sur tablette ; Annuler les abandonne, Appliquer les valide ensemble. Le bouton affiche un nombre de critères lorsqu’un brouillon est en cours, jamais un total de résultats non calculé.
+
+Les suggestions mobiles sont limitées à quatre entrées pour laisser davantage de place au clavier. Échap conserve le texte saisi. Les ajustements conservent les grandes photographies et les thèmes clair/sombre. V34 est contrôlé par tests de contrats ; le navigateur de cette session est indisponible, donc aucun nouveau rendu sur téléphone ou viewport mobile n’est revendiqué.
 
 ## Produit
 
-Découvrir des tutoriels ou trouver une réponse par question, langue et voiture. Grandes photographies, six guides d’accueil en 3:4, trois univers et sélections vidéo réelles en 16:9 conservent la composition cinéma. Tous les guides restent accessibles. Le catalogue contient 36,901 références vidéo et 11 guides ; ses octets pédagogiques sont conservés.
-
-## Apparence
-
-Deux vrais thèmes couvrent accueil, résultats, champs, suggestions, filtres, menu, véhicule, aide et lecteurs. Les commandes Clair/Sombre sont dans l’en-tête, avec leurs noms accessibles et leur état sélectionné. Sans préférence enregistrée, le thème suit le système. Le choix n’efface ni recherche, ni langue, ni notes. Les photographies ne sont pas inversées ; texte et boutons sur média gardent une palette dédiée.
+Trouver des tutoriels par question, sujet, langue et voiture, ou explorer les guides et les sélections RaceLink. Le catalogue public expose ses chiffres réels. Un résultat référencé ne signifie ni visionnage intégral, ni validation technique, ni autorisation de réutilisation.
 
 ## Parcours
 
-La recherche unique conserve question, langue et contexte véhicule. Les filtres sont dans un dialogue, plein écran mobile. Les grandes cartes indiquent source, langue et aperçu disponible avant la fiche. Vidéo, transcription, notes et notices conservent leurs rôles. Les guides RaceLink ne sont pas des notices constructeur : chaque référence conserve son modèle, son édition et ses limites.
+Recherche immédiatement accessible à l’accueil ; navigation latérale sur ordinateur, barre basse sur mobile. Les filtres desktop restent visibles à côté des résultats. Sur mobile, les choix du panneau sont appliqués ensemble ou annulés à sa fermeture. La langue française est un filtre de contenu distinct du français de l’interface. Question, véhicule et langue persistent quand on affine une plateforme.
 
-## Données et limites
+Grandes photographies, titres lisibles et source sur les cartes. La fiche commence par le média, conserve notes et transcription lorsqu’elle existe, puis organise les informations originales et leur provenance. Les onze guides RaceLink référencent des notices constructeur avec leur portée : ils ne sont pas eux-mêmes des procédures officielles universelles.
 
-Une description source n’est pas un visionnage ; une langue estimée reste signalée ; une voiture citée n’est pas une garantie de compatibilité. Aucun contenu, classement de popularité ou suivi fictif n’est ajouté par le thème. Photos et licences restent dans [les crédits](https://valeriongg.github.io/racelink-academy/photo-credits.html). La publication GitHub Pages n’intègre pas automatiquement le domaine Focus.
+## Apparence et données
 
-## Preuves
+Clair et Sombre sont accessibles dans l’en-tête. Sans choix local, l’apparence suit le système. Le thème ne change ni recherche, ni langue, ni notes. Les images réelles restent créditées et les miniatures proviennent des sources référencées. Une langue estimée depuis le texte n’est pas une langue audio certifiée ; une voiture citée n’est pas une garantie de compatibilité.
 
-109 contrats applicatifs, 36 tests de thème et 14 observations/scénarios navigateur ont leurs rapports distincts dans [VALIDATION](research/themes-v22/VALIDATION.md). Les viewports sont simulés ; aucun audit d’accessibilité exhaustif n’est revendiqué. [Design](DESIGN.md) · [Historique V21](research/cinema-v21/VALIDATION.md).
+## Livraison
+
+Le site GitHub Pages et le paquet local sont livrés séparément du domaine Focus. Les contrôles et limites propres à V30 sont dans `research/studio-v30/VALIDATION.md`, les références de design dans `public/design-sources.md`. Aucune capture ancienne n’est présentée comme validation visuelle de cette version.

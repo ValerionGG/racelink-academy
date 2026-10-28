@@ -1,0 +1,1671 @@
+{
+  "version": "1.0.0",
+  "updatedAt": "2026-10-20T20:44:13Z",
+  "languageNote": {
+    "fr": "Les thèmes sont traduits ; les ressources gardent leur langue source.",
+    "en": "Topics are translated; resources retain their source language.",
+    "es": "Los temas están traducidos; los recursos mantienen su idioma original."
+  },
+  "intents": [
+    {
+      "id": "maintain",
+      "label": {
+        "fr": "Entretenir",
+        "en": "Maintain",
+        "es": "Mantener"
+      },
+      "description": {
+        "fr": "Préparer les opérations courantes et retrouver les bonnes références.",
+        "en": "Prepare routine maintenance and find the relevant references.",
+        "es": "Preparar el mantenimiento habitual y encontrar las referencias pertinentes."
+      }
+    },
+    {
+      "id": "solve",
+      "label": {
+        "fr": "Résoudre un problème",
+        "en": "Solve a problem",
+        "es": "Resolver un problema"
+      },
+      "description": {
+        "fr": "Comprendre un symptôme et organiser les contrôles.",
+        "en": "Understand a symptom and plan the checks.",
+        "es": "Entender un síntoma y organizar las comprobaciones."
+      }
+    },
+    {
+      "id": "drive",
+      "label": {
+        "fr": "Progresser au volant",
+        "en": "Improve your driving",
+        "es": "Mejorar al volante"
+      },
+      "description": {
+        "fr": "Construire les bases du pilotage sur circuit.",
+        "en": "Build your track-driving foundations.",
+        "es": "Construir las bases del pilotaje en circuito."
+      }
+    },
+    {
+      "id": "understand",
+      "label": {
+        "fr": "Comprendre la voiture",
+        "en": "Understand the car",
+        "es": "Entender el coche"
+      },
+      "description": {
+        "fr": "Relier mécanique, données et comportement du véhicule.",
+        "en": "Connect mechanics, data and vehicle behaviour.",
+        "es": "Relacionar mecánica, datos y comportamiento del vehículo."
+      }
+    },
+    {
+      "id": "sim",
+      "label": {
+        "fr": "Pratiquer en simulation",
+        "en": "Practise in a simulator",
+        "es": "Practicar en simulación"
+      },
+      "description": {
+        "fr": "Configurer son matériel, apprendre et courir avec les autres.",
+        "en": "Set up your equipment, learn and race with others.",
+        "es": "Configurar el equipo, aprender y competir con otros."
+      }
+    },
+    {
+      "id": "career",
+      "label": {
+        "fr": "Construire son projet",
+        "en": "Build your project",
+        "es": "Desarrollar tu proyecto"
+      },
+      "description": {
+        "fr": "Explorer les métiers, les médias, les partenaires et la préparation du pilote.",
+        "en": "Explore careers, media, partnerships and driver preparation.",
+        "es": "Explorar profesiones, medios, colaboradores y preparación del piloto."
+      }
+    }
+  ],
+  "topics": [
+    {
+      "id": "oil-change",
+      "intent": "maintain",
+      "intentId": "maintain",
+      "label": {
+        "fr": "Préparer une vidange",
+        "en": "Prepare an oil change",
+        "es": "Preparar un cambio de aceite"
+      },
+      "description": {
+        "fr": "Retrouver la méthode et les points à vérifier pour son moteur.",
+        "en": "Find the method and checks for your engine.",
+        "es": "Encontrar el método y las comprobaciones para tu motor."
+      },
+      "query": "",
+      "filters": {
+        "category": "mechanics",
+        "task": "oil_change"
+      },
+      "aliases": [
+        "vidange",
+        "filtre huile",
+        "oil change",
+        "cambio aceite"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 816,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "oil-specifications",
+      "intent": "maintain",
+      "intentId": "maintain",
+      "label": {
+        "fr": "Comprendre les références d'huile",
+        "en": "Understand oil specifications",
+        "es": "Entender las normas del aceite"
+      },
+      "description": {
+        "fr": "Distinguer viscosité, normes et exigences constructeur.",
+        "en": "Distinguish viscosity, standards and manufacturer requirements.",
+        "es": "Distinguir viscosidad, normas y requisitos del fabricante."
+      },
+      "query": "",
+      "filters": {
+        "task": "oil_spec"
+      },
+      "aliases": [
+        "quelle huile",
+        "5W30",
+        "ACEA",
+        "API",
+        "homologation",
+        "which oil",
+        "que aceite"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 8,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "fuel-choice",
+      "intent": "maintain",
+      "intentId": "maintain",
+      "label": {
+        "fr": "Comprendre les carburants",
+        "en": "Understand fuels",
+        "es": "Entender los combustibles"
+      },
+      "description": {
+        "fr": "Comprendre les étiquettes avant de consulter la notice du véhicule.",
+        "en": "Understand the labels before checking your owner's manual.",
+        "es": "Entender las etiquetas antes de consultar el manual del vehículo."
+      },
+      "query": "",
+      "filters": {
+        "category": "mechanics",
+        "task": "fuel_choice"
+      },
+      "aliases": [
+        "essence",
+        "SP95",
+        "SP98",
+        "E5",
+        "E10",
+        "E85",
+        "B7",
+        "fuel",
+        "combustible"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 9,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "wiper-blades",
+      "intent": "maintain",
+      "intentId": "maintain",
+      "label": {
+        "fr": "Changer ses essuie-glaces",
+        "en": "Replace wiper blades",
+        "es": "Cambiar los limpiaparabrisas"
+      },
+      "description": {
+        "fr": "Identifier la fixation et la position d'entretien propres au véhicule.",
+        "en": "Identify the correct attachment and vehicle service position.",
+        "es": "Identificar la fijación y la posición de servicio del vehículo."
+      },
+      "query": "",
+      "filters": {
+        "task": "wipers"
+      },
+      "aliases": [
+        "balai",
+        "essuie glace",
+        "wipers",
+        "limpiaparabrisas"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 1041,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "spare-wheel",
+      "intent": "maintain",
+      "intentId": "maintain",
+      "label": {
+        "fr": "Roue de secours et changement de roue",
+        "en": "Spare wheels and wheel changes",
+        "es": "Rueda de repuesto y cambio de rueda"
+      },
+      "description": {
+        "fr": "Trouver des démonstrations à confronter aux points de levage de sa notice.",
+        "en": "Find demonstrations to compare with your manual's lifting points.",
+        "es": "Encontrar demostraciones y contrastarlas con los puntos de elevación del manual."
+      },
+      "query": "",
+      "filters": {
+        "category": "mechanics",
+        "task": "wheel_change"
+      },
+      "aliases": [
+        "crevaison",
+        "cric",
+        "roue de secours",
+        "spare wheel",
+        "rueda repuesto"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 9,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "brake-pads",
+      "intent": "maintain",
+      "intentId": "maintain",
+      "label": {
+        "fr": "Comprendre l'entretien des freins",
+        "en": "Understand brake maintenance",
+        "es": "Entender el mantenimiento de frenos"
+      },
+      "description": {
+        "fr": "Explorer les contrôles et le remplacement des plaquettes par véhicule.",
+        "en": "Explore brake-pad checks and replacement by vehicle.",
+        "es": "Explorar comprobaciones y sustitución de pastillas por vehículo."
+      },
+      "query": "",
+      "filters": {
+        "category": "mechanics",
+        "task": "brake_pads"
+      },
+      "aliases": [
+        "plaquettes",
+        "freins",
+        "brake pads",
+        "pastillas"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 2286,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "battery-12v",
+      "intent": "maintain",
+      "intentId": "maintain",
+      "label": {
+        "fr": "Batterie et circuit de charge",
+        "en": "Battery and charging system",
+        "es": "Batería y circuito de carga"
+      },
+      "description": {
+        "fr": "Explorer les contrôles de batterie, d'alternateur et de charge.",
+        "en": "Explore battery, alternator and charging checks.",
+        "es": "Explorar comprobaciones de batería, alternador y carga."
+      },
+      "query": "",
+      "filters": {
+        "task": "battery"
+      },
+      "aliases": [
+        "batterie",
+        "AGM",
+        "EFB",
+        "battery",
+        "bateria"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 119,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "garage-tools",
+      "intent": "maintain",
+      "intentId": "maintain",
+      "label": {
+        "fr": "S'équiper pour l'atelier",
+        "en": "Equip your garage",
+        "es": "Equipar tu taller"
+      },
+      "description": {
+        "fr": "Découvrir les outils et leur utilisation avant une intervention.",
+        "en": "Explore tools and how they are used before starting a job.",
+        "es": "Conocer las herramientas y su uso antes de intervenir."
+      },
+      "query": "tools",
+      "filters": {
+        "category": "mechanics"
+      },
+      "aliases": [
+        "outillage",
+        "clé dynamométrique",
+        "tools",
+        "herramientas"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 26,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "diagnostic-obd",
+      "intent": "solve",
+      "intentId": "solve",
+      "label": {
+        "fr": "Organiser un diagnostic automobile",
+        "en": "Plan vehicle diagnostics",
+        "es": "Organizar un diagnóstico del vehículo"
+      },
+      "description": {
+        "fr": "Partir des symptômes, mesures et éventuels codes pour organiser les vérifications.",
+        "en": "Use symptoms, measurements and any fault codes to organise your checks.",
+        "es": "Partir de síntomas, medidas y posibles códigos para organizar las comprobaciones."
+      },
+      "query": "",
+      "filters": {
+        "task": "diagnostics"
+      },
+      "aliases": [
+        "voyant moteur",
+        "OBD",
+        "code défaut",
+        "diagnostics",
+        "diagnostico"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 190,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "electrical-fuses",
+      "intent": "solve",
+      "intentId": "solve",
+      "label": {
+        "fr": "Repérer un fusible ou un défaut électrique",
+        "en": "Locate a fuse or electrical fault",
+        "es": "Localizar un fusible o fallo eléctrico"
+      },
+      "description": {
+        "fr": "Retrouver les repères du circuit sans supposer un numéro de fusible.",
+        "en": "Find circuit references without assuming a fuse number.",
+        "es": "Encontrar referencias del circuito sin suponer un número de fusible."
+      },
+      "query": "",
+      "filters": {
+        "task": "fuses"
+      },
+      "aliases": [
+        "fusible",
+        "électrique",
+        "fuse",
+        "electrical",
+        "fusibles"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 22,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "cooling-system",
+      "intent": "solve",
+      "intentId": "solve",
+      "label": {
+        "fr": "Comprendre le refroidissement",
+        "en": "Understand cooling systems",
+        "es": "Entender la refrigeración"
+      },
+      "description": {
+        "fr": "Explorer radiateur, thermostat et circuit de refroidissement.",
+        "en": "Explore radiators, thermostats and coolant circuits.",
+        "es": "Explorar radiador, termostato y circuito de refrigeración."
+      },
+      "query": "",
+      "filters": {
+        "task": "cooling"
+      },
+      "aliases": [
+        "surchauffe",
+        "radiateur",
+        "thermostat",
+        "cooling",
+        "refrigeracion"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 186,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "service-reminder",
+      "intent": "solve",
+      "intentId": "solve",
+      "label": {
+        "fr": "Comprendre le rappel d'entretien",
+        "en": "Understand service reminders",
+        "es": "Entender el aviso de mantenimiento"
+      },
+      "description": {
+        "fr": "Trouver la procédure du modèle après l'entretien réellement effectué.",
+        "en": "Find the model's procedure after the maintenance has actually been done.",
+        "es": "Encontrar el procedimiento del modelo tras realizar el mantenimiento."
+      },
+      "query": "",
+      "filters": {
+        "task": "service_reset"
+      },
+      "aliases": [
+        "remise à zéro",
+        "voyant entretien",
+        "service reset",
+        "reinicio mantenimiento"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 1,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "first-trackday",
+      "intent": "drive",
+      "intentId": "drive",
+      "label": {
+        "fr": "Préparer sa première journée circuit",
+        "en": "Prepare your first track day",
+        "es": "Preparar tu primer día en circuito"
+      },
+      "description": {
+        "fr": "Chercher des repères pour se préparer et prendre ses premières marques.",
+        "en": "Find guidance on preparation and getting familiar with the track.",
+        "es": "Encontrar orientación para prepararte y familiarizarte con el circuito."
+      },
+      "query": "track day",
+      "filters": {
+        "category": "driving"
+      },
+      "aliases": [
+        "trackday",
+        "premier circuit",
+        "track day",
+        "primer circuito"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 6,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "racing-line",
+      "intent": "drive",
+      "intentId": "drive",
+      "label": {
+        "fr": "Construire sa trajectoire",
+        "en": "Build your racing line",
+        "es": "Construir tu trazada"
+      },
+      "description": {
+        "fr": "Relier entrée, point de corde et sortie du virage.",
+        "en": "Connect corner entry, apex and exit.",
+        "es": "Relacionar entrada, vértice y salida de la curva."
+      },
+      "query": "racing line",
+      "filters": {
+        "category": "driving"
+      },
+      "aliases": [
+        "trajectoire",
+        "point de corde",
+        "apex",
+        "racing line",
+        "trazada"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 15,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "trail-braking",
+      "intent": "drive",
+      "intentId": "drive",
+      "label": {
+        "fr": "Travailler le freinage dégressif",
+        "en": "Work on trail braking",
+        "es": "Trabajar la frenada regresiva"
+      },
+      "description": {
+        "fr": "Comprendre comment relâcher progressivement le frein en entrée de virage.",
+        "en": "Understand how to release the brakes progressively into a corner.",
+        "es": "Entender cómo soltar progresivamente el freno al entrar en curva."
+      },
+      "query": "trail braking",
+      "filters": {
+        "category": "driving"
+      },
+      "aliases": [
+        "freinage dégressif",
+        "trail braking",
+        "frenada regresiva"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 27,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "wet-driving",
+      "intent": "drive",
+      "intentId": "drive",
+      "label": {
+        "fr": "Piloter sur piste humide",
+        "en": "Drive on a wet track",
+        "es": "Pilotar en pista mojada"
+      },
+      "description": {
+        "fr": "Explorer les adaptations de trajectoire et de conduite sur faible adhérence.",
+        "en": "Explore line and driving adjustments in low-grip conditions.",
+        "es": "Explorar ajustes de trazada y conducción con poca adherencia."
+      },
+      "query": "wet",
+      "filters": {
+        "category": "driving"
+      },
+      "aliases": [
+        "pluie",
+        "mouillé",
+        "wet",
+        "rain",
+        "lluvia"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 16,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "tire-behaviour",
+      "intent": "understand",
+      "intentId": "understand",
+      "label": {
+        "fr": "Comprendre les pneus",
+        "en": "Understand tyres",
+        "es": "Entender los neumáticos"
+      },
+      "description": {
+        "fr": "Relier adhérence, température et comportement de la voiture.",
+        "en": "Connect grip, temperature and vehicle behaviour.",
+        "es": "Relacionar agarre, temperatura y comportamiento del coche."
+      },
+      "query": "tires",
+      "filters": {
+        "category": "engineering"
+      },
+      "aliases": [
+        "pneus",
+        "pression",
+        "température",
+        "tyres",
+        "tires",
+        "neumaticos"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 10,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "telemetry",
+      "intent": "understand",
+      "intentId": "understand",
+      "label": {
+        "fr": "Débuter avec la télémétrie",
+        "en": "Start with telemetry",
+        "es": "Empezar con la telemetría"
+      },
+      "description": {
+        "fr": "Lire les données d'une séance et formuler une piste de progression.",
+        "en": "Read session data and identify an area to work on.",
+        "es": "Leer datos de una sesión y detectar un aspecto que mejorar."
+      },
+      "query": "telemetry",
+      "filters": {
+        "category": "engineering"
+      },
+      "aliases": [
+        "télémétrie",
+        "Motec",
+        "AIM",
+        "Race Studio",
+        "telemetry",
+        "telemetria"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 24,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "suspension",
+      "intent": "understand",
+      "intentId": "understand",
+      "label": {
+        "fr": "Relier suspension et comportement",
+        "en": "Connect suspension and handling",
+        "es": "Relacionar suspensión y comportamiento"
+      },
+      "description": {
+        "fr": "Explorer ressorts, amortisseurs et géométrie du châssis.",
+        "en": "Explore springs, dampers and chassis geometry.",
+        "es": "Explorar muelles, amortiguadores y geometría del chasis."
+      },
+      "query": "suspension",
+      "filters": {
+        "category": "engineering"
+      },
+      "aliases": [
+        "suspension",
+        "ressorts",
+        "amortisseurs",
+        "spring rate",
+        "suspension"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 125,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "aerodynamics",
+      "intent": "understand",
+      "intentId": "understand",
+      "label": {
+        "fr": "Comprendre l'aérodynamique",
+        "en": "Understand aerodynamics",
+        "es": "Entender la aerodinámica"
+      },
+      "description": {
+        "fr": "Découvrir les effets de l'air sur une voiture de course.",
+        "en": "Explore how air affects a racing car.",
+        "es": "Explorar cómo afecta el aire a un coche de carreras."
+      },
+      "query": "aerodynamics",
+      "filters": {
+        "category": "engineering"
+      },
+      "aliases": [
+        "aérodynamique",
+        "appui",
+        "traînée",
+        "downforce",
+        "aerodynamics",
+        "aerodinamica"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 130,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "engine-fundamentals",
+      "intent": "understand",
+      "intentId": "understand",
+      "label": {
+        "fr": "Comprendre les bases du moteur",
+        "en": "Understand engine fundamentals",
+        "es": "Entender los fundamentos del motor"
+      },
+      "description": {
+        "fr": "Aborder organes, cycles et indicateurs de performance.",
+        "en": "Explore components, cycles and performance measures.",
+        "es": "Conocer componentes, ciclos e indicadores de rendimiento."
+      },
+      "query": "engine",
+      "filters": {
+        "category": "engineering"
+      },
+      "aliases": [
+        "moteur",
+        "cycle Otto",
+        "compression",
+        "engine",
+        "motor"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 707,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "used-car-checks",
+      "intent": "understand",
+      "intentId": "understand",
+      "label": {
+        "fr": "Acheter et reprendre une voiture d'occasion",
+        "en": "Buy and take over a used car",
+        "es": "Comprar y poner al día un coche usado"
+      },
+      "description": {
+        "fr": "Explorer les contrôles avant achat et l'entretien à la reprise.",
+        "en": "Explore checks before buying and maintenance after taking ownership.",
+        "es": "Explorar comprobaciones antes de comprar y mantenimiento tras la compra."
+      },
+      "query": "used car",
+      "filters": {
+        "category": "mechanics"
+      },
+      "aliases": [
+        "achat occasion",
+        "voiture occasion",
+        "inspection",
+        "used car",
+        "coche segunda mano"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 19,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "sim-start",
+      "intent": "sim",
+      "intentId": "sim",
+      "label": {
+        "fr": "Faire ses premiers tours en sim",
+        "en": "Take your first sim laps",
+        "es": "Dar tus primeras vueltas en simulación"
+      },
+      "description": {
+        "fr": "Commencer avec les réglages essentiels et des objectifs simples.",
+        "en": "Start with essential settings and simple goals.",
+        "es": "Empezar con ajustes esenciales y objetivos sencillos."
+      },
+      "query": "beginner",
+      "filters": {
+        "category": "simracing"
+      },
+      "aliases": [
+        "débuter simracing",
+        "beginner",
+        "sim racing",
+        "principiante"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 127,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "wheel-settings",
+      "intent": "sim",
+      "intentId": "sim",
+      "label": {
+        "fr": "Régler son volant",
+        "en": "Set up your steering wheel",
+        "es": "Configurar tu volante"
+      },
+      "description": {
+        "fr": "Explorer calibration et retour de force selon son matériel et son jeu.",
+        "en": "Explore calibration and force feedback for your hardware and game.",
+        "es": "Explorar calibración y force feedback según equipo y juego."
+      },
+      "query": "force feedback",
+      "filters": {
+        "category": "simracing"
+      },
+      "aliases": [
+        "volant",
+        "FFB",
+        "force feedback",
+        "calibration",
+        "volante"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 9,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "sim-car-setup",
+      "intent": "sim",
+      "intentId": "sim",
+      "label": {
+        "fr": "Comprendre un setup en simulation",
+        "en": "Understand a sim car setup",
+        "es": "Entender un setup en simulación"
+      },
+      "description": {
+        "fr": "Relier un réglage à un comportement observé plutôt que copier sans repère.",
+        "en": "Connect settings to observed behaviour before copying a setup.",
+        "es": "Relacionar ajustes con el comportamiento observado antes de copiar un setup."
+      },
+      "query": "car setup",
+      "filters": {
+        "category": "simracing"
+      },
+      "aliases": [
+        "setup",
+        "réglage voiture",
+        "ACC",
+        "iracing",
+        "ajustes"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 6,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "racecraft",
+      "intent": "sim",
+      "intentId": "sim",
+      "label": {
+        "fr": "Courir proprement avec les autres",
+        "en": "Race cleanly with others",
+        "es": "Competir limpiamente con otros"
+      },
+      "description": {
+        "fr": "Explorer dépassements, défense et conscience de l'espace en course.",
+        "en": "Explore overtaking, defence and spatial awareness in a race.",
+        "es": "Explorar adelantamientos, defensa y conciencia del espacio en carrera."
+      },
+      "query": "racecraft",
+      "filters": {
+        "category": "simracing"
+      },
+      "aliases": [
+        "racecraft",
+        "dépassement",
+        "fair play",
+        "overtaking",
+        "adelantamiento"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 3,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "engineering-career",
+      "intent": "career",
+      "intentId": "career",
+      "label": {
+        "fr": "Explorer les métiers d'ingénieur",
+        "en": "Explore engineering careers",
+        "es": "Explorar profesiones de ingeniería"
+      },
+      "description": {
+        "fr": "Comprendre des rôles techniques et préparer son parcours.",
+        "en": "Understand technical roles and plan your path.",
+        "es": "Entender funciones técnicas y preparar tu trayectoria."
+      },
+      "query": "engineer",
+      "filters": {
+        "category": "career"
+      },
+      "aliases": [
+        "ingénieur",
+        "ingénierie",
+        "job",
+        "engineer",
+        "ingeniero"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 15,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "motorsport-media",
+      "intent": "career",
+      "intentId": "career",
+      "label": {
+        "fr": "Photographier et filmer le motorsport",
+        "en": "Photograph and film motorsport",
+        "es": "Fotografiar y grabar automovilismo"
+      },
+      "description": {
+        "fr": "Explorer cadrage, filé et captation d'un événement.",
+        "en": "Explore framing, panning and event filming.",
+        "es": "Explorar encuadre, barrido y grabación de eventos."
+      },
+      "query": "",
+      "filters": {
+        "category": "media"
+      },
+      "aliases": [
+        "photo",
+        "vidéo",
+        "filé",
+        "panning",
+        "photography",
+        "videography",
+        "fotografia"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 122,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "sponsorship",
+      "intent": "career",
+      "intentId": "career",
+      "label": {
+        "fr": "Construire une démarche de sponsoring",
+        "en": "Build a sponsorship approach",
+        "es": "Preparar una propuesta de patrocinio"
+      },
+      "description": {
+        "fr": "Préparer son projet, sa proposition et la recherche de partenaires.",
+        "en": "Prepare your project, proposal and partner search.",
+        "es": "Preparar tu proyecto, propuesta y búsqueda de colaboradores."
+      },
+      "query": "sponsor",
+      "filters": {
+        "category": "business"
+      },
+      "aliases": [
+        "sponsor",
+        "sponsoring",
+        "partenaire",
+        "sponsorship",
+        "patrocinio"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 32,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    },
+    {
+      "id": "driver-fitness",
+      "intent": "career",
+      "intentId": "career",
+      "label": {
+        "fr": "Comprendre la préparation du pilote",
+        "en": "Understand driver preparation",
+        "es": "Entender la preparación del piloto"
+      },
+      "description": {
+        "fr": "Découvrir les exigences physiques du pilotage et des exemples de préparation.",
+        "en": "Explore the physical demands of driving and preparation examples.",
+        "es": "Conocer las exigencias físicas del pilotaje y ejemplos de preparación."
+      },
+      "query": "",
+      "filters": {
+        "category": "fitness"
+      },
+      "aliases": [
+        "préparation physique",
+        "fitness",
+        "entraînement pilote",
+        "driver fitness",
+        "preparacion fisica"
+      ],
+      "enabled": true,
+      "validation": {
+        "total": 36,
+        "checkedAt": "2026-10-20T17:01:37Z",
+        "method": "local_catalog_api"
+      }
+    }
+  ],
+  "shelves": [
+    {
+      "id": "french-discovery",
+      "enabled": true,
+      "intentId": "understand",
+      "title": {
+        "fr": "À découvrir en français",
+        "en": "Discover in French",
+        "es": "Descubre en francés"
+      },
+      "description": {
+        "fr": "Pilotage, simulation, photo, électronique et métiers : six portes d’entrée différentes.",
+        "en": "Driving, simulation, photography, electronics and careers: six different starting points.",
+        "es": "Pilotaje, simulación, fotografía, electrónica y oficios: seis puntos de partida."
+      },
+      "reviewedAt": "2026-10-20T20:44:13Z",
+      "expiresAt": "2026-11-19T20:44:13Z",
+      "items": [
+        {
+          "videoId": "youtube:RxRaNgS6Lc0",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "La description annonce cinq bases utiles avant une première séance sur circuit : position, trajectoires, repères, freinage et équilibre de la voiture.",
+            "en": "The description lists five foundations for a first circuit session: driving position, racing lines, reference points, braking and vehicle balance.",
+            "es": "La descripción anuncia cinco bases para una primera sesión en circuito: posición, trazadas, referencias, frenada y equilibrio del coche."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=RxRaNgS6Lc0",
+            "sourceFile": "research/french-expansion-evidence/video-RxRaNgS6Lc0.json",
+            "note": {
+              "fr": "Le descriptif source énumère ces thèmes. Sélection de découverte sur métadonnées ; aucune validation des consignes de pilotage.",
+              "en": "The source description lists these subjects. Discovery selection based on metadata; driving instructions have not been validated.",
+              "es": "La descripción original enumera estos temas. Selección de descubrimiento basada en metadatos; las instrucciones de conducción no se han validado."
+            }
+          }
+        },
+        {
+          "videoId": "youtube:kGadtlhfQpA",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "Le titre et le descriptif annoncent un tutoriel de paramétrage de FlyPT Mover pour les simulateurs de mouvement.",
+            "en": "The title and description introduce a FlyPT Mover configuration tutorial for motion simulators.",
+            "es": "El título y la descripción presentan un tutorial de configuración de FlyPT Mover para simuladores de movimiento."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=kGadtlhfQpA",
+            "sourceFile": "research/french-expansion-evidence/video-kGadtlhfQpA.json",
+            "note": {
+              "fr": "La portée annoncée est le paramétrage logiciel ; la description signale des liens affiliés. Compatibilité du matériel non vérifiée.",
+              "en": "The stated scope is software configuration; the description discloses affiliate links. Hardware compatibility has not been checked.",
+              "es": "El alcance anunciado es la configuración del programa; la descripción declara enlaces de afiliación. No se ha comprobado la compatibilidad del equipo."
+            }
+          }
+        },
+        {
+          "videoId": "youtube:5ZPsr0ToH3A",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "Le sommaire publié relie photographie sportive, connaissance du sport, triangle d’exposition et exploration de techniques photo.",
+            "en": "The published chapter list connects sports photography, understanding the sport, the exposure triangle and exploring photographic techniques.",
+            "es": "El índice publicado relaciona fotografía deportiva, conocimiento del deporte, triángulo de exposición y exploración de técnicas fotográficas."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=5ZPsr0ToH3A",
+            "sourceFile": "research/french-expansion-evidence/video-5ZPsr0ToH3A.json",
+            "note": {
+              "fr": "Le sommaire comporte des chapitres horodatés et une promotion de formation. Le choix repose sur ces métadonnées, sans visionnage.",
+              "en": "The chapter list includes timestamps and a course promotion. The selection relies on this metadata, without watching the video.",
+              "es": "El índice incluye marcas de tiempo y una promoción de formación. La selección se basa en estos metadatos, sin visionado."
+            }
+          }
+        },
+        {
+          "videoId": "youtube:FwmaGp3NyIY",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "Le titre cible un cas précis de diagnostic électronique : plusieurs défauts associés à un circuit de capteurs alimenté en 5 V commun.",
+            "en": "The title focuses on a specific electronic diagnostic case: multiple faults associated with a shared 5 V sensor circuit.",
+            "es": "El título aborda un caso concreto de diagnóstico electrónico: varios fallos asociados a un circuito de sensores con alimentación común de 5 V."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=FwmaGp3NyIY",
+            "sourceFile": "research/french-expansion-evidence/video-FwmaGp3NyIY.json",
+            "note": {
+              "fr": "Le sujet précis provient du titre ; le descriptif présente surtout la démarche générale de la chaîne. Aucune procédure de réparation n’a été auditée.",
+              "en": "The specific topic comes from the title; the description mostly presents the channel’s general approach. No repair procedure has been audited.",
+              "es": "El tema concreto procede del título; la descripción presenta sobre todo el enfoque general del canal. No se ha auditado ningún procedimiento de reparación."
+            }
+          }
+        },
+        {
+          "videoId": "youtube:VQqxycfsoFw",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "Une porte d’entrée vers la formation professionnelle sur la consignation des véhicules hybrides, dont le descriptif précise le contexte d’habilitation électrique.",
+            "en": "An introduction to professional training on isolating hybrid vehicles, with the electrical authorisation context stated in the description.",
+            "es": "Una introducción a la formación profesional sobre consignación de vehículos híbridos, cuya descripción precisa el contexto de habilitación eléctrica."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=VQqxycfsoFw",
+            "sourceFile": "research/french-expansion-evidence/video-VQqxycfsoFw.json",
+            "note": {
+              "fr": "Contenu présenté par un organisme de formation et destiné au contexte professionnel. La fiche ne remplace ni formation ni habilitation ; aucune intervention haute tension n’est recommandée.",
+              "en": "Presented by a training provider for a professional context. This listing replaces neither training nor authorisation; it does not recommend any high-voltage intervention.",
+              "es": "Contenido presentado por un centro de formación en un contexto profesional. Esta ficha no sustituye formación ni habilitación; no recomienda ninguna intervención de alta tensión."
+            }
+          }
+        },
+        {
+          "videoId": "youtube:57H2-DkYbP4",
+          "enabled": true,
+          "reviewedAt": "2026-10-20T20:44:13Z",
+          "expiresAt": "2026-11-19T20:44:13Z",
+          "reason": {
+            "fr": "Le descriptif détaille un parcours vers le métier de technicien de compétition : matières, pratique en entreprise, débouchés et modalités d’entrée.",
+            "en": "The description outlines a route into competition technician work: subjects, workplace practice, career options and entry arrangements.",
+            "es": "La descripción detalla una vía hacia el oficio de técnico de competición: materias, prácticas en empresa, salidas y modalidades de acceso."
+          },
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "language",
+              "thumbnail"
+            ],
+            "videoWatched": false,
+            "sourceUrl": "https://www.youtube.com/watch?v=57H2-DkYbP4",
+            "sourceFile": "research/french-expansion-evidence/video-57H2-DkYbP4.json",
+            "note": {
+              "fr": "Présentation promotionnelle de sa propre formation par l’école. Sélection pour l’orientation métier ; les affirmations sur certification et financement ne sont pas vérifiées indépendamment.",
+              "en": "The school promotes its own course. Selected for career orientation; certification and funding claims have not been independently verified.",
+              "es": "La escuela presenta su propia formación con fines promocionales. Seleccionada para orientación profesional; no se han verificado de forma independiente las afirmaciones sobre certificación y financiación."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "corner-foundations",
+      "enabled": true,
+      "intentId": "drive",
+      "title": {
+        "fr": "Deux repères pour aborder un virage",
+        "en": "Two foundations for cornering",
+        "es": "Dos bases para afrontar una curva"
+      },
+      "description": {
+        "fr": "Trajectoire et freinage : deux portes d'entrée complémentaires.",
+        "en": "Racing line and braking: two complementary starting points.",
+        "es": "Trazada y frenada: dos puntos de partida complementarios."
+      },
+      "reviewedAt": "2026-10-20T17:01:37Z",
+      "expiresAt": "2026-11-19T17:01:37Z",
+      "items": [
+        {
+          "videoId": "youtube:aZlOkt1oU2k",
+          "reason": {
+            "fr": "Le titre et le descriptif portent explicitement sur la trajectoire et les phases du virage.",
+            "en": "The title and description explicitly cover the racing line and corner phases.",
+            "es": "El título y la descripción tratan explícitamente la trazada y las fases de la curva."
+          },
+          "enabled": true,
+          "reviewedAt": "2026-10-20T17:01:37Z",
+          "expiresAt": "2026-11-19T17:01:37Z",
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "verification_scope"
+            ],
+            "videoWatched": false,
+            "note": {
+              "fr": "Sélection fondée sur les métadonnées vérifiées ; vidéo non visionnée intégralement.",
+              "en": "Selected from checked metadata; the full video has not been watched.",
+              "es": "Selección basada en metadatos comprobados; no se ha visto el vídeo completo."
+            },
+            "sourceUrl": "https://www.youtube.com/watch?v=aZlOkt1oU2k"
+          }
+        },
+        {
+          "videoId": "youtube:IRbNha_4AVI",
+          "reason": {
+            "fr": "Une ressource en français dont le titre et le descriptif ciblent le freinage dégressif.",
+            "en": "A French resource whose title and description focus on trail braking.",
+            "es": "Un recurso en francés cuyo título y descripción se centran en la frenada regresiva."
+          },
+          "enabled": true,
+          "reviewedAt": "2026-10-20T17:01:37Z",
+          "expiresAt": "2026-11-19T17:01:37Z",
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "verification_scope"
+            ],
+            "videoWatched": false,
+            "note": {
+              "fr": "Sélection fondée sur les métadonnées vérifiées ; vidéo non visionnée intégralement.",
+              "en": "Selected from checked metadata; the full video has not been watched.",
+              "es": "Selección basada en metadatos comprobados; no se ha visto el vídeo completo."
+            },
+            "sourceUrl": "https://www.youtube.com/watch?v=IRbNha_4AVI"
+          }
+        }
+      ]
+    },
+    {
+      "id": "sim-first-steps",
+      "enabled": true,
+      "intentId": "sim",
+      "title": {
+        "fr": "Commencer en simulation",
+        "en": "Getting started in simulation",
+        "es": "Empezar en simulación"
+      },
+      "description": {
+        "fr": "Deux introductions, à choisir selon le simulateur utilisé.",
+        "en": "Two introductions to choose from depending on your simulator.",
+        "es": "Dos introducciones para elegir según tu simulador."
+      },
+      "reviewedAt": "2026-10-20T17:01:37Z",
+      "expiresAt": "2026-11-19T17:01:37Z",
+      "items": [
+        {
+          "videoId": "youtube:1dYyre0VmOs",
+          "reason": {
+            "fr": "Le guide « Getting Started » est publié par iRacing et annoncé comme une prise en main.",
+            "en": "The 'Getting Started' guide is published by iRacing and presented as an introduction.",
+            "es": "La guía « Getting Started » está publicada por iRacing y se presenta como una introducción."
+          },
+          "enabled": true,
+          "reviewedAt": "2026-10-20T17:01:37Z",
+          "expiresAt": "2026-11-19T17:01:37Z",
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "verification_scope"
+            ],
+            "videoWatched": false,
+            "note": {
+              "fr": "Sélection fondée sur les métadonnées vérifiées ; vidéo non visionnée intégralement.",
+              "en": "Selected from checked metadata; the full video has not been watched.",
+              "es": "Selección basada en metadatos comprobados; no se ha visto el vídeo completo."
+            },
+            "sourceUrl": "https://www.youtube.com/watch?v=1dYyre0VmOs"
+          }
+        },
+        {
+          "videoId": "youtube:bEVVw4OlYDw",
+          "reason": {
+            "fr": "Le titre et le descriptif annoncent les paramètres de base d'ACC en français.",
+            "en": "The title and description introduce basic ACC settings in French.",
+            "es": "El título y la descripción presentan los ajustes básicos de ACC en francés."
+          },
+          "enabled": true,
+          "reviewedAt": "2026-10-20T17:01:37Z",
+          "expiresAt": "2026-11-19T17:01:37Z",
+          "evidence": {
+            "basis": "public_video_metadata",
+            "fields": [
+              "title",
+              "creator",
+              "description",
+              "verification_scope"
+            ],
+            "videoWatched": false,
+            "note": {
+              "fr": "Sélection fondée sur les métadonnées vérifiées ; vidéo non visionnée intégralement.",
+              "en": "Selected from checked metadata; the full video has not been watched.",
+              "es": "Selección basada en metadatos comprobados; no se ha visto el vídeo completo."
+            },
+            "sourceUrl": "https://www.youtube.com/watch?v=bEVVw4OlYDw"
+          }
+        }
+      ]
+    },
+    {
+      "id": "engines-with-transcripts",
+      "enabled": true,
+      "intentId": "understand",
+      "title": {
+        "fr": "Comprendre le moteur, texte à l'appui",
+        "en": "Understand engines with a transcript",
+        "es": "Entender el motor con una transcripción"
+      },
+      "description": {
+        "fr": "Deux cours avec transcription source disponible et réutilisation documentée.",
+        "en": "Two lectures with source transcripts and documented reuse rights.",
+        "es": "Dos clases con transcripción original y derechos de reutilización documentados."
+      },
+      "reviewedAt": "2026-10-20T17:01:37Z",
+      "expiresAt": "2026-11-19T17:01:37Z",
+      "items": [
+        {
+          "videoId": "youtube:5jl-zqZQ2qQ",
+          "reason": {
+            "fr": "La transcription définit organes, course, alésage, volumes et rapport de compression : un point d'entrée dans le vocabulaire.",
+            "en": "The transcript defines components, stroke, bore, volumes and compression ratio: a starting point for the terminology.",
+            "es": "La transcripción define componentes, carrera, diámetro, volúmenes y relación de compresión: una entrada al vocabulario."
+          },
+          "enabled": true,
+          "reviewedAt": "2026-10-20T17:01:37Z",
+          "expiresAt": "2026-11-19T17:01:37Z",
+          "evidence": {
+            "basis": "authorized_transcript",
+            "fields": [
+              "transcript_text",
+              "transcript_permission_basis",
+              "transcript_permission_reference",
+              "metadata_json.learningPoints"
+            ],
+            "videoWatched": false,
+            "note": {
+              "fr": "Sélection fondée sur la transcription source réellement lue et sa preuve de réutilisation CC BY. La fiche précise l'origine des sous-titres ; les termes techniques restent à vérifier dans la vidéo.",
+              "en": "Selected from the source transcript actually read and its CC BY reuse evidence. The video page identifies the caption source; technical wording should still be checked against the video.",
+              "es": "Selección basada en la transcripción original realmente leída y su permiso CC BY. La ficha identifica el origen de los subtítulos; conviene contrastar los términos técnicos con el vídeo."
+            },
+            "sourceUrl": "https://www.youtube.com/watch?v=5jl-zqZQ2qQ"
+          }
+        },
+        {
+          "videoId": "youtube:ueJa-SI7LmM",
+          "reason": {
+            "fr": "La transcription compare allumage commandé et allumage par compression et explique le rapport de compression.",
+            "en": "The transcript compares spark ignition with compression ignition and explains compression ratio.",
+            "es": "La transcripción compara encendido por chispa y por compresión y explica la relación de compresión."
+          },
+          "enabled": true,
+          "reviewedAt": "2026-10-20T17:01:37Z",
+          "expiresAt": "2026-11-19T17:01:37Z",
+          "evidence": {
+            "basis": "authorized_transcript",
+            "fields": [
+              "transcript_text",
+              "transcript_permission_basis",
+              "transcript_permission_reference",
+              "metadata_json.learningPoints"
+            ],
+            "videoWatched": false,
+            "note": {
+              "fr": "Sélection fondée sur la transcription source réellement lue et sa preuve de réutilisation CC BY. La fiche précise l'origine des sous-titres ; les termes techniques restent à vérifier dans la vidéo.",
+              "en": "Selected from the source transcript actually read and its CC BY reuse evidence. The video page identifies the caption source; technical wording should still be checked against the video.",
+              "es": "Selección basada en la transcripción original realmente leída y su permiso CC BY. La ficha identifica el origen de los subtítulos; conviene contrastar los términos técnicos con el vídeo."
+            },
+            "sourceUrl": "https://www.youtube.com/watch?v=ueJa-SI7LmM"
+          }
+        }
+      ]
+    }
+  ],
+  "defaultTopicIds": [
+    "oil-change",
+    "racing-line",
+    "telemetry",
+    "wheel-settings",
+    "motorsport-media"
+  ],
+  "editorialPolicy": {
+    "basis": "metadata_or_authorized_transcript",
+    "popularityClaimed": false,
+    "compatibilityClaimed": false,
+    "expiryBehaviour": "hide_expired_shelves_until_review",
+    "reviewPeriodDays": 30
+  },
+  "queryAssistance": [
+    {
+      "id": "climate-no-cold",
+      "query": "climatisation",
+      "label": {
+        "fr": "Climatisation : pas de froid",
+        "en": "Air conditioning: not cooling",
+        "es": "Aire acondicionado: no enfría"
+      },
+      "aliases": [
+        "ma clim ne fait plus de froid",
+        "ma clim ne fait pas de froid",
+        "clim ne fait plus de froid",
+        "clim ne fait pas de froid",
+        "ma climatisation ne fait plus de froid",
+        "climatisation ne fait plus de froid",
+        "ma clim ne refroidit plus",
+        "clim ne refroidit plus",
+        "ma clim souffle chaud",
+        "clim souffle chaud",
+        "clim souffle de l air chaud",
+        "climatisation souffle chaud",
+        "pourquoi ma clim ne fait plus de froid",
+        "pourquoi ma clim ne fait pas de froid",
+        "pourquoi clim ne fait plus de froid",
+        "pourquoi clim ne fait pas de froid",
+        "pourquoi ma climatisation ne fait plus de froid",
+        "pourquoi climatisation ne fait plus de froid",
+        "pourquoi ma clim ne refroidit plus",
+        "pourquoi clim ne refroidit plus",
+        "pourquoi ma clim souffle chaud",
+        "pourquoi clim souffle chaud",
+        "pourquoi clim souffle de l air chaud",
+        "pourquoi climatisation souffle chaud",
+        "que faire si ma clim ne fait plus de froid",
+        "que faire si ma clim ne fait pas de froid",
+        "que faire si clim ne fait plus de froid",
+        "que faire si clim ne fait pas de froid",
+        "que faire si ma climatisation ne fait plus de froid",
+        "que faire si climatisation ne fait plus de froid",
+        "que faire si ma clim ne refroidit plus",
+        "que faire si clim ne refroidit plus",
+        "que faire si ma clim souffle chaud",
+        "que faire si clim souffle chaud",
+        "que faire si clim souffle de l air chaud",
+        "que faire si climatisation souffle chaud"
+      ]
+    },
+    {
+      "id": "starting-problem",
+      "query": "démarrage",
+      "label": {
+        "fr": "Difficultés de démarrage",
+        "en": "Starting problems",
+        "es": "Problemas de arranque"
+      },
+      "aliases": [
+        "ma voiture ne démarre plus",
+        "voiture ne démarre plus",
+        "ma voiture ne démarre pas",
+        "voiture ne démarre pas",
+        "ne démarre plus",
+        "ne démarre pas",
+        "ne veut plus démarrer",
+        "pourquoi ma voiture ne démarre plus",
+        "pourquoi voiture ne démarre plus",
+        "pourquoi ma voiture ne démarre pas",
+        "pourquoi voiture ne démarre pas",
+        "pourquoi ne démarre plus",
+        "pourquoi ne démarre pas",
+        "pourquoi ne veut plus démarrer",
+        "que faire si ma voiture ne démarre plus",
+        "que faire si voiture ne démarre plus",
+        "que faire si ma voiture ne démarre pas",
+        "que faire si voiture ne démarre pas",
+        "que faire si ne démarre plus",
+        "que faire si ne démarre pas",
+        "que faire si ne veut plus démarrer"
+      ]
+    },
+    {
+      "id": "carplay-connection",
+      "query": "CarPlay",
+      "label": {
+        "fr": "Connexion CarPlay",
+        "en": "CarPlay connection",
+        "es": "Conexión CarPlay"
+      },
+      "aliases": [
+        "mon carplay se déconnecte",
+        "carplay se déconnecte",
+        "carplay ne marche plus",
+        "carplay ne fonctionne pas",
+        "carplay ne marche pas",
+        "carplay écran noir",
+        "pourquoi mon carplay se déconnecte",
+        "pourquoi carplay se déconnecte",
+        "pourquoi carplay ne marche plus",
+        "pourquoi carplay ne fonctionne pas",
+        "pourquoi carplay ne marche pas",
+        "pourquoi carplay écran noir",
+        "que faire si mon carplay se déconnecte",
+        "que faire si carplay se déconnecte",
+        "que faire si carplay ne marche plus",
+        "que faire si carplay ne fonctionne pas",
+        "que faire si carplay ne marche pas",
+        "que faire si carplay écran noir"
+      ]
+    },
+    {
+      "id": "android-auto-connection",
+      "query": "Android Auto",
+      "label": {
+        "fr": "Connexion Android Auto",
+        "en": "Android Auto connection",
+        "es": "Conexión Android Auto"
+      },
+      "aliases": [
+        "android auto se déconnecte",
+        "android auto ne marche plus",
+        "android auto ne fonctionne pas",
+        "android auto ne marche pas",
+        "android auto écran noir",
+        "pourquoi android auto se déconnecte",
+        "pourquoi android auto ne marche plus",
+        "pourquoi android auto ne fonctionne pas",
+        "pourquoi android auto ne marche pas",
+        "pourquoi android auto écran noir",
+        "que faire si android auto se déconnecte",
+        "que faire si android auto ne marche plus",
+        "que faire si android auto ne fonctionne pas",
+        "que faire si android auto ne marche pas",
+        "que faire si android auto écran noir"
+      ]
+    },
+    {
+      "id": "engine-warning",
+      "query": "voyant moteur",
+      "label": {
+        "fr": "Comprendre le voyant moteur",
+        "en": "Understanding the engine warning light",
+        "es": "Entender el testigo del motor"
+      },
+      "aliases": [
+        "mon voyant moteur reste allumé",
+        "voyant moteur reste allumé",
+        "mon voyant moteur est allumé",
+        "voyant moteur est allumé",
+        "voyant moteur allumé",
+        "voyant moteur qui clignote",
+        "pourquoi mon voyant moteur reste allumé",
+        "pourquoi voyant moteur reste allumé",
+        "pourquoi mon voyant moteur est allumé",
+        "pourquoi voyant moteur est allumé",
+        "pourquoi voyant moteur allumé",
+        "pourquoi voyant moteur qui clignote",
+        "que faire si mon voyant moteur reste allumé",
+        "que faire si voyant moteur reste allumé",
+        "que faire si mon voyant moteur est allumé",
+        "que faire si voyant moteur est allumé",
+        "que faire si voyant moteur allumé",
+        "que faire si voyant moteur qui clignote"
+      ]
+    },
+    {
+      "id": "wiper-spelling",
+      "kind": "typo",
+      "query": "essuie-glaces",
+      "label": {
+        "fr": "Essuie-glaces",
+        "en": "Wipers",
+        "es": "Limpiaparabrisas"
+      },
+      "aliases": [
+        "essuie glasse",
+        "essuie glasses",
+        "essuies glace",
+        "essuies glaces"
+      ],
+      "reason": {
+        "fr": "Orthographe proposée ; la voiture, la langue et les autres filtres sont conservés.",
+        "en": "Suggested spelling; vehicle, language and other filters are preserved.",
+        "es": "Ortografía sugerida; se conservan el vehículo, el idioma y los demás filtros."
+      }
+    }
+  ]
+}

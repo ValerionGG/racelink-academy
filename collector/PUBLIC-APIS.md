@@ -53,3 +53,9 @@ Le 26 octobre 2026, `vehicle_reference.py` a reçu 79 entrées pour Honda, anné
 Le [collecteur borné](scripts/MONOCRAWL-COLLECTOR.md) est maintenant livré avec 42 tests hors réseau. Il prépare les recherches TikTok et Instagram, réserve leur plafond avant appel et sépare les réponses brutes des candidats à relire. Le MCP officiel est privilégié. Un résultat ou un coût incertain suspend la campagne ; aucune nouvelle tentative automatique ne consomme le crédit à l'aveugle.
 
 L'outil est prêt mais le compte n'est pas connecté : aucun solde gratuit n'a été observé, aucun appel authentifié n'a été exécuté et aucun ajout TikTok/Instagram ne provient de ce connecteur. Les exemples et tests ne sont jamais des vidéos acquises.
+
+## Suite V34 : deux nouvelles voies testées
+
+PeerTube/SepiaSearch dispose d’un [collecteur public borné](scripts/PEERTUBE-COLLECTOR.md), avec reprise et preuves natives. Le pilote a reçu 95 lignes et 89 identités : 13 déjà au catalogue, 1 nouvelle référence retenue, 21 en attente, 54 hors périmètre. La forte déduplication interdit de présenter les 95 lignes comme de nouvelles vidéos.
+
+Firecrawl a extrait une page de documentation publique via son premier appel anonyme documenté : HTTP 200, 1 crédit de démonstration déclaré, aucun paiement ni solde de compte observé. Aucun tutoriel ajouté par cet essai. [Comparatif sourcé des six outils](scripts/SCRAPING-SOURCES-V34.md).

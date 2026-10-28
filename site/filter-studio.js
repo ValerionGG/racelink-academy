@@ -34,6 +34,8 @@ export function createFilterStudio({root,t,getState,onApply,onDraftChange=()=>{}
   const topics=$('.filter-topics');
   const firstSection=$('.filter-section');
   if(topics){if(firstSection&&topics!==firstSection)root.insertBefore(topics,firstSection);topics.open=true;}
+  const languageSection=$('.filter-language-section');
+  if(languageSection&&topics)root.insertBefore(languageSection,topics);
   const platformSection=$('[data-filter-copy="source"]')?.closest('.filter-section');
   const preferences=$('[data-filter-copy="preferences"]')?.closest('.filter-section');
   if(platformSection&&preferences)root.insertBefore(platformSection,preferences);
@@ -64,6 +66,13 @@ export function createFilterStudio({root,t,getState,onApply,onDraftChange=()=>{}
     const reset=$('#reset-filters');
     if(reset){reset.setAttribute('aria-label',t('Effacer les critères, y compris la langue et le véhicule','Clear criteria, including language and vehicle','Borrar criterios, incluidos idioma y vehículo'));}
     const state=draft.isActive()?draft.read():getState();
+    const language=$('#filter-language'),languageSource=root.ownerDocument.querySelector('#language');
+    if(language&&languageSource){language.innerHTML=languageSource.innerHTML;language.value=state.language||'';}
+    const languageTitle=$('#filter-language-title'),languageLabel=$('label[for="filter-language"]'),languageHint=$('#filter-language-hint');
+    if(languageTitle)languageTitle.textContent=t('Langue du contenu','Content language','Idioma del contenido');
+    if(languageLabel)languageLabel.textContent=t('Choisir une langue','Choose a language','Elegir un idioma');
+    if(languageHint)languageHint.textContent=t('La langue peut être estimée à partir du texte de la source.','Language may be estimated from the source text.','El idioma puede estimarse a partir del texto de la fuente.');
+    $$('[data-filter-language]').forEach(button=>{button.setAttribute('aria-pressed',String(button.dataset.filterLanguage===(state.language||'')));button.textContent=button.dataset.filterLanguage?t('Français','French','Francés'):t('Toutes les langues','All languages','Todos los idiomas');});
     for(const key of PANEL_KEYS){
       const control=$(`#${key}`);if(!control)continue;
       if(key==='license'||key==='transcript')control.checked=Boolean(state[key]);else control.value=state[key]||'';
@@ -79,15 +88,16 @@ export function createFilterStudio({root,t,getState,onApply,onDraftChange=()=>{}
     if(!draft.isActive())return;
     const button=event.target.closest('button');if(!button||!root.contains(button))return;
     if(button.id==='reset-filters')draft.reset();
+    else if(button.hasAttribute('data-filter-language'))draft.set('language',button.dataset.filterLanguage);
     else if(button.hasAttribute('data-category'))draft.set('category',button.dataset.category);
     else if(button.hasAttribute('data-platform-choice'))draft.set('platform',button.dataset.platformChoice);
     else return;
     event.preventDefault();event.stopPropagation();changed();
   }
   function captureChange(event){
-    if(!draft.isActive()||!PANEL_KEYS.has(event.target.id))return;
+    if(!draft.isActive()||(!PANEL_KEYS.has(event.target.id)&&event.target.id!=='filter-language'))return;
     const {id,value,checked}=event.target;
-    draft.set(id,id==='transcript'?(checked?'available':''):id==='license'?(checked?'open':''):value);
+    draft.set(id==='filter-language'?'language':id,id==='transcript'?(checked?'available':''):id==='license'?(checked?'open':''):value);
     event.stopPropagation();changed();
   }
   root.addEventListener('click',captureClick,true);
@@ -95,6 +105,7 @@ export function createFilterStudio({root,t,getState,onApply,onDraftChange=()=>{}
   update();
   return {
     update,isDraftActive:draft.isActive,hasPendingChanges:draft.isDirty,
+    activeCount(){const state=draft.isActive()?draft.read():getState();return FILTER_KEYS.filter(key=>Boolean(state[key])).length;},
     beginDraft(){draft.begin();changed();},
     cancelDraft(){draft.cancel();changed();},
     applyDraft(){const applied=draft.apply();changed();return applied;},
