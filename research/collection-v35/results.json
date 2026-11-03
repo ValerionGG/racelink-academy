@@ -1,0 +1,104 @@
+{
+  "release": "collection-v35",
+  "prepared_at": "2026-11-03T08:23:19.116720+00:00",
+  "baseline_videos": 39846,
+  "total_videos": 39956,
+  "videos": 39956,
+  "guides": 11,
+  "new_references": 110,
+  "updated_existing_references": 0,
+  "removed_references": 0,
+  "new_by_platform": {
+    "youtube": 110
+  },
+  "new_by_language": {
+    "en": 47,
+    "fr": 57,
+    "und": 6
+  },
+  "new_by_category": {
+    "mechanics": 110
+  },
+  "collection_accounting": {
+    "raw_results_observed": 258,
+    "distinct_posts_observed": 241,
+    "duplicate_occurrences_within_wave": 17,
+    "previously_seen": {
+      "catalogued": 37,
+      "unpublished": 42,
+      "total": 79
+    },
+    "new_identities_reviewed": 162,
+    "new_identity_review_counts": {
+      "retain": 110,
+      "hold": 31,
+      "exclude": 21
+    },
+    "note": "Previous identities and within-wave repeated results are separate from new editorial exclusions."
+  },
+  "total_by_platform": {
+    "dailymotion": 345,
+    "facebook": 46,
+    "instagram": 312,
+    "other": 15,
+    "tiktok": 862,
+    "twitch": 2,
+    "vimeo": 17,
+    "youtube": 38357
+  },
+  "total_by_language": {
+    "ar": 7,
+    "cs": 1,
+    "de": 4018,
+    "en": 13584,
+    "es": 4566,
+    "fa": 1,
+    "fr": 7288,
+    "id": 2,
+    "it": 298,
+    "ja": 96,
+    "ko": 52,
+    "pl": 3759,
+    "pt": 4207,
+    "ru": 6,
+    "ta": 1,
+    "tr": 3,
+    "und": 2054,
+    "zh": 13
+  },
+  "new_native_metadata_records": 110,
+  "new_nonempty_source_descriptions": 108,
+  "new_description_bases": {
+    "source_listing_excerpt_without_social_tokens": 110
+  },
+  "new_transcripts": 0,
+  "new_references_with_thumbnail_url": 110,
+  "new_language_statuses": {
+    "inferred_from_public_listing_text": 104,
+    "mixed_public_listing_text": 6
+  },
+  "new_verification_scopes": {
+    "public_listing_metadata": 110
+  },
+  "catalog_sha256": "a61e5d45d96521ed0f8459f34599f9cdd86c7d9de8f4f26bf5392683df698f55",
+  "catalog_bytes": 65556890,
+  "acquisition": {
+    "provider": "Public platform metadata",
+    "execution_channel": "public_metadata",
+    "raw_results_observed": 258,
+    "distinct_posts_observed": 241,
+    "successful_jobs": 8,
+    "failed_jobs": 0,
+    "free_credits_consumed": 0,
+    "out_of_pocket_usd": 0,
+    "metadata_only": true,
+    "route_status": "completed"
+  },
+  "interface_summary": "Interface Studio claire et sombre conservée : recherche assistée V34, langue et format visibles, accès au français sur mobile, filtres préparés avant application avec Annuler/Appliquer, et correction Échap V32. Cette livraison enrichit le catalogue sans modifier ces interactions.",
+  "visual_browser_check": "CUA stopped this turn because the current browser URL on Windows could not be determined confidently to enforce policy. No UI interaction, visual audit or provider quota was observed. Historical V32 visual checks remain scoped to V32; no V34 or V35 browser audit is claimed.",
+  "provider_status": "No new paid-provider job or credit use. Bright Data and Apify historical reservations are preserved. Monocrawl remains unconnected; no balance or authenticated call observed.",
+  "method": "Exact ID and unchanged-row comparison against a read-only pre-import backup; every addition matches a sealed metadata approval and the public export.",
+  "language_note": "Language labels inferred from public listing titles and partial descriptions do not certify the spoken audio.",
+  "rights_note": "Public availability does not establish a free video licence or validate a mechanical procedure.",
+  "publication_scope": "Reviewed aggregate counts and costs only; no account identifier, job ID, raw export, UI ledger, credentials or account screenshot."
+}
