@@ -6,7 +6,7 @@ import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui
 import {createDiscoveryUI} from './discovery-ui.js?v=search-v34';
 import {createRaceLinkPicks} from './racelink-picks.js';
 import {createMobileUI} from './mobile-ui.js?v=search-v34';
-import {createFilterStudio} from './filter-studio.js?v=search-v34';
+import {createFilterStudio} from './filter-studio.js?v=search-v34&rev=count-v36';
 import {usableSearchAssistance,searchSuggestionPatch,searchAssistanceMarkup} from './search-assistance-ui.js?v=search-v34';
 import {createGuideUI} from './guide-ui.js?v=studio-v30';
 import {socialContentMarkup} from './social-content.js';

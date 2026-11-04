@@ -59,6 +59,7 @@
  .search-assistance-options button{align-items:flex-start;flex-direction:column;gap:8px;padding:12px}
  .assistance-count{align-self:flex-end}
  .search-dialog .mobile-search-body{padding:16px 20px}
+ .search-dialog .mobile-search-body .search-box{position:static}
  .search-dialog #search-suggestions{margin-top:12px}
  .search-dialog #search-suggestions [role=option]{min-height:64px;padding:12px 0}
  .search-dialog #search-suggestions [role=option] strong{font-size:15px}
@@ -66,7 +67,7 @@
  .search-dialog .search-helper{margin-top:8px;padding-bottom:max(12px,env(safe-area-inset-bottom));display:flex;flex-direction:column;gap:8px}
  .search-dialog .search-helper [data-clear-recent]{order:1;background:none;color:var(--rl-muted);border:0}
  .search-dialog .mobile-search-help{display:none}
- .search-dialog .home-language-picker{gap:4px 8px}
+ .search-dialog .home-language-picker{gap:4px 8px;margin-block-start:12px}
  .search-dialog .home-language-picker label{flex-basis:100%;font-size:12px}
  .search-dialog .home-language-picker select{margin-left:0;max-width:50%;font-size:14px;min-height:44px}
  .search-dialog .home-language-picker button{font-size:12px;min-height:44px}

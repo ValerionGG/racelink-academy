@@ -1,0 +1,104 @@
+{
+  "release": "collection-v36",
+  "prepared_at": "2026-11-04T22:27:40.873539+00:00",
+  "baseline_videos": 39956,
+  "total_videos": 40069,
+  "videos": 40069,
+  "guides": 11,
+  "new_references": 113,
+  "updated_existing_references": 0,
+  "removed_references": 0,
+  "new_by_platform": {
+    "youtube": 113
+  },
+  "new_by_language": {
+    "de": 1,
+    "en": 41,
+    "fr": 67,
+    "und": 4
+  },
+  "new_by_category": {
+    "mechanics": 113
+  },
+  "collection_accounting": {
+    "raw_results_observed": 340,
+    "distinct_posts_observed": 298,
+    "duplicate_occurrences_within_wave": 42,
+    "previously_seen": {
+      "catalogued": 79,
+      "unpublished": 50,
+      "total": 129
+    },
+    "new_identities_reviewed": 169,
+    "new_identity_review_counts": {
+      "retain": 113,
+      "hold": 42,
+      "exclude": 14
+    },
+    "note": "Previous identities and within-wave repeated results are separate from new editorial exclusions."
+  },
+  "total_by_platform": {
+    "dailymotion": 345,
+    "facebook": 46,
+    "instagram": 312,
+    "other": 15,
+    "tiktok": 862,
+    "twitch": 2,
+    "vimeo": 17,
+    "youtube": 38470
+  },
+  "total_by_language": {
+    "ar": 7,
+    "cs": 1,
+    "de": 4019,
+    "en": 13625,
+    "es": 4566,
+    "fa": 1,
+    "fr": 7355,
+    "id": 2,
+    "it": 298,
+    "ja": 96,
+    "ko": 52,
+    "pl": 3759,
+    "pt": 4207,
+    "ru": 6,
+    "ta": 1,
+    "tr": 3,
+    "und": 2058,
+    "zh": 13
+  },
+  "new_native_metadata_records": 113,
+  "new_nonempty_source_descriptions": 111,
+  "new_description_bases": {
+    "source_listing_excerpt_without_social_tokens": 113
+  },
+  "new_transcripts": 0,
+  "new_references_with_thumbnail_url": 113,
+  "new_language_statuses": {
+    "inferred_from_public_listing_text": 109,
+    "mixed_public_listing_text": 4
+  },
+  "new_verification_scopes": {
+    "public_listing_metadata": 113
+  },
+  "catalog_sha256": "0d9b74c9430945e70e4c53ece0037a4845ef8a6c18bd820f75c46dbc6392d747",
+  "catalog_bytes": 65754408,
+  "acquisition": {
+    "provider": "Public platform metadata",
+    "execution_channel": "public_metadata",
+    "raw_results_observed": 340,
+    "distinct_posts_observed": 298,
+    "successful_jobs": 8,
+    "failed_jobs": 0,
+    "metadata_only": true,
+    "route_status": "completed",
+    "free_credits_consumed": 0,
+    "out_of_pocket_usd": 0
+  },
+  "interface_summary": "Sur petit écran, « Toutes les langues » dispose de sa propre ligne et le raccourci Français reste accessible. Dans la fenêtre de recherche, le libellé de langue reste lisible sous le champ. « Ouvrir le guide » apparaît en blanc sur la photo dans les deux thèmes. Le panneau compte désormais trois critères avant et après application lorsqu’on choisit Français, Vidéos et Mécanique. Les défauts ont été reproduits sur la V35 publiée ou sur l’aperçu local avant correction. Les vérifications ont porté sur Chrome et sur des cadres mobiles de 320, 390 et 430 px. Les essais à l’écran utilisaient le catalogue V35, avant l’import des nouvelles fiches.",
+  "validation_scope": "This release report checks catalogue records, search data and distributed UI file integrity.",
+  "provider_status": "This YouTube batch used public listing metadata. Its observed credit usage and cost are recorded in acquisition.",
+  "method": "Every imported identity is matched to the approved review and the public export. Earlier records and vehicle relations are checked against the pre-import database.",
+  "language_note": "Les étiquettes de langue décrivent les titres et extraits disponibles. La langue parlée reste à vérifier.",
+  "rights_note": "La licence de chaque vidéo et le statut des procédures techniques restent à vérifier auprès de la source."
+}

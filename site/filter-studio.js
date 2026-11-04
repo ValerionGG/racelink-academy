@@ -105,7 +105,11 @@ export function createFilterStudio({root,t,getState,onApply,onDraftChange=()=>{}
   update();
   return {
     update,isDraftActive:draft.isActive,hasPendingChanges:draft.isDirty,
-    activeCount(){const state=draft.isActive()?draft.read():getState();return FILTER_KEYS.filter(key=>Boolean(state[key])).length;},
+    activeCount(){
+      const state=draft.isActive()?draft.read():getState();
+      const formatCount=state.format && state.format!=='all' ? 1 : 0;
+      return FILTER_KEYS.filter(key=>Boolean(state[key])).length + formatCount;
+    },
     beginDraft(){draft.begin();changed();},
     cancelDraft(){draft.cancel();changed();},
     applyDraft(){const applied=draft.apply();changed();return applied;},

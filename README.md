@@ -1,18 +1,16 @@
-# RaceLink Academy — collecte V35
+# RaceLink Academy — collecte V36
 
-[Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/?release=collection-v35) · [Bilan vérifiable](https://github.com/ValerionGG/racelink-academy/blob/main/research/collection-v35/results.json)
+[Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/?release=collection-v36) · [Bilan vérifiable](https://github.com/ValerionGG/racelink-academy/blob/main/research/collection-v36/results.json)
 
-39 956 références vidéo et 11 guides, dont 7 288 vidéos étiquetées FR dans leurs métadonnées. Cette livraison ajoute 110 références YouTube examinées ; aucune nouvelle vidéo TikTok ou Instagram.
+40 069 références vidéo et 11 guides, dont 7 355 vidéos étiquetées FR dans leurs métadonnées. Cette livraison ajoute 113 références YouTube examinées.
 
-Interface Studio claire et sombre conservée : recherche assistée V34, langue et format visibles, accès au français sur mobile, filtres préparés avant application avec Annuler/Appliquer, et correction Échap V32. Cette livraison enrichit le catalogue sans modifier ces interactions.
+Sur petit écran, « Toutes les langues » dispose de sa propre ligne et le raccourci Français reste accessible. Dans la fenêtre de recherche, le libellé de langue reste lisible sous le champ. « Ouvrir le guide » apparaît en blanc sur la photo dans les deux thèmes. Le panneau compte désormais trois critères avant et après application lorsqu’on choisit Français, Vidéos et Mécanique. Les défauts ont été reproduits sur la V35 publiée ou sur l’aperçu local avant correction. Les vérifications ont porté sur Chrome et sur des cadres mobiles de 320, 390 et 430 px. Les essais à l’écran utilisaient le catalogue V35, avant l’import des nouvelles fiches.
 
 Le catalogue est enrichi à partir des titres et extraits publics disponibles. Les extraits incomplets restent signalés et une description absente reste absente. Aucune transcription n’est créée par cette collecte.
 
-La recherche assistée, les deux thèmes et les grandes photographies de V34 sont conservés. Les contrôles visuels historiques restent limités à V32 ; aucun nouvel audit visuel V34 ou V35 ni test sur téléphone physique n’est revendiqué.
-
-- [Recherche V34 : comportement et validation](https://github.com/ValerionGG/racelink-academy/blob/main/research/search-v34/README.md)
+- [Recherche V34 et validation](https://github.com/ValerionGG/racelink-academy/blob/main/research/search-v34/README.md)
 - [Collecteur PeerTube](https://github.com/ValerionGG/racelink-academy/blob/main/collector/scripts/PEERTUBE-COLLECTOR.md)
 - [Collecte publique et checkpoints](https://github.com/ValerionGG/racelink-academy/blob/main/collector/PUBLIC-COLLECTION.md)
 - [Sources de scraping évaluées](https://github.com/ValerionGG/racelink-academy/blob/main/collector/scripts/SCRAPING-SOURCES-V34.md)
 
-GitHub Pages reste un aperçu indépendant de Focus. Une langue de métadonnées ne certifie pas l’audio ; une vidéo publique ne constitue ni une licence libre vérifiée ni une procédure constructeur validée. Les réponses brutes, registres de comptes et secrets sont exclus de la publication.
+GitHub Pages héberge cet aperçu indépendant de Focus. La langue étiquetée correspond aux métadonnées disponibles.
