@@ -1,0 +1,4 @@
+interface:
+  display_name: "RaceLink · Atlas par voiture"
+  short_description: "Créer une fiche photo et 3D pour une voiture précise."
+  default_prompt: "Utilise $racelink-vehicle-showroom pour créer le dossier de cette voiture avec ses vues, ses versions et ses sources."

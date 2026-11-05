@@ -1,0 +1,13 @@
+{
+  "name": "racelink-clio-v-geometry",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "model": "node build.mjs"
+  },
+  "dependencies": {
+    "three": "0.180.0",
+    "gltfpack": "0.24.0"
+  }
+}

@@ -1,4 +1,5 @@
 import {icon} from './icons.js';
+import {resolveClioDossier} from './vehicle-dossier.js?v=clio-v39';
 import {attachRailNavigation} from './rail-navigation.js?v=studio-v30';
 import {searchSuggestionPatch} from './search-assistance-ui.js?v=search-v34';
 export function createDiscoveryUI(ctx) {
@@ -115,6 +116,7 @@ export function createDiscoveryUI(ctx) {
     $('#search-helper').hidden=true;
   }
   function suggestionDetail(item) {
+    if(item.type==='vehicle-dossier')return t('Photos, habitacle, projections 3D et versions France','Photos, cabin, 3D views and French-market versions · FR','Fotos, habitáculo, vistas 3D y versiones francesas · FR');
     if (typeof item.count === 'number') return `${count(item.count)} ${t('ressources','resources','recursos')}`;
     if (item.type === 'guide') return t('Guide RaceLink · Sources citées','RaceLink guide · Sources included','Guía RaceLink · Fuentes citadas');
     if (item.type === 'history') return t('Reprendre cette recherche','Resume this search','Retomar esta búsqueda');
@@ -125,7 +127,7 @@ export function createDiscoveryUI(ctx) {
     const root=$('#search-suggestions');
     let group='';
     root.innerHTML=suggestions.map((item,i)=>{
-      const kind=item.type==='history'?'history':item.type==='video'||item.type==='guide'?'resource':'topic';
+      const kind=item.type==='history'?'history':['video','guide','vehicle-dossier'].includes(item.type)?'resource':'topic';
       const title=kind==='history'?t('Recherches récentes','Recent searches','Búsquedas recientes'):kind==='resource'?t('Ouvrir une ressource','Open a resource','Abrir un recurso'):t('Recherches suggérées','Suggested searches','Búsquedas sugeridas');
       const heading=kind!==group?`<div class="suggestion-group-label" role="presentation">${title}</div>`:'';group=kind;
       const label=(item.match_basis==='editorial_default'?'':item.completion)||text(item.label)||item.query;
@@ -144,15 +146,19 @@ export function createDiscoveryUI(ctx) {
   async function suggest() {
     const version=++searchVersion,q=$('#search').value.trim();
     $('#search-helper').textContent=t('Recherche de suggestions…','Finding suggestions…','Buscando sugerencias…');$('#search-helper').hidden=false;
+    const station=resolveClioDossier(q,stateContext());
+    const vehicle=station?[{type:'vehicle-dossier',label:'Renault Clio V · 2025',href:station}]:[];
+    if(vehicle.length){suggestions=vehicle;active=-1;renderSuggestions();}
     try {
       const response=await window.getCatalogJson(`/aide/api/suggestions?${request({...stateContext(),q,ui:ctx.getUi()})}`);
       if(version!==searchVersion||document.activeElement!==$('#search'))return;
       const history=q?[]:recent().slice(0,2).map(query=>({type:'history',query,label:query,reason:t('Sur cet appareil uniquement','On this device only','Solo en este dispositivo')}));
-      suggestions=[...history,...(response.suggestions||[])].slice(0,matchMedia('(max-width:760px)').matches?4:6);active=-1;renderSuggestions();
-    } catch {if(version===searchVersion)closeSuggestions();}
+      suggestions=[...vehicle,...history,...(response.suggestions||[])].slice(0,matchMedia('(max-width:760px)').matches?4:6);active=-1;renderSuggestions();
+    } catch {if(version===searchVersion&&!vehicle.length)closeSuggestions();}
   }
   function chooseSuggestion(index) {
     const item=suggestions[index];if(!item)return;
+    if(item.type==='vehicle-dossier'){const route=resolveClioDossier($('#search').value,stateContext());if(route){closeSuggestions();location.assign(route)}return;}
     if(item.type==='query'){remember(item.query);closeSuggestions();ctx.applySearch(searchSuggestionPatch(ctx.getState(),item));}
     else if(item.type==='history'){remember(item.query);closeSuggestions();ctx.applySearch({...ctx.getState(),q:item.query,page:1});}
     else if(item.type==='video'){closeSuggestions();document.dispatchEvent(new Event('rl:search-chosen'));ctx.openVideo(item.video_id||item.id);}

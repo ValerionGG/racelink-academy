@@ -1,0 +1,207 @@
+{
+  "model": "Renault Clio V phase 2",
+  "market": "France",
+  "year": 2025,
+  "illustrated_sections": [
+    {"label":"Poste de conduite avec volant à gauche", "period":"17/03/2025 – 14/09/2025", "detail":"Renault situe 24 repères sur le dessin du poste de conduite, selon les équipements de la voiture.", "url":"https://www.user-manual.renault.com/fr/content/clio/getting-know-your-vehicle/driving-position/poste-de-conduite-direction-gauche"},
+    {"label":"Implantation du système E-Tech 145", "period":"17/03/2025 – 14/09/2025", "detail":"Sur l’hybride, la batterie de traction est sous le plancher arrière et la batterie 12 V dans le coffre. Le schéma Renault repère aussi les moteurs et les câbles de puissance.", "url":"https://www.user-manual.renault.com/fr/content/clio/getting-know-your-vehicle/e-tech-full-hybrid-vehicle-hev/presentation"},
+    {"label":"Commandes de l’Eco-G", "period":"17/03/2025 – 14/09/2025", "detail":"Renault illustre le sélecteur et les indicateurs permettant de distinguer les modes GPL et essence.", "url":"https://www.user-manual.renault.com/fr/content/clio/getting-know-your-vehicle/lpg-vehicle/presentation"},
+    {"label":"Sous le capot", "period":"17/03/2025 – 14/09/2025", "detail":"Accéder aux pages du manuel sur le capot, l’huile, le liquide de refroidissement et les filtres.", "url":"https://www.user-manual.renault.com/fr/content/clio/maintenance/acces-moteur-niveaux"},
+    {"label":"Démonstrations vidéo du constructeur", "period":"17/03/2025 – 14/09/2025", "detail":"28 rubriques, du tableau de bord au kit de gonflage.", "url":"https://www.user-manual.renault.com/fr/notice/13326/videos"}
+  ],
+  "availability_date": "2025-07-01",
+  "scope": "Voitures particulières, nomenclature « - 25 » au tarif Renault France n° 2228-00 du 1er juillet 2025. Gammes de la date, hors auto-école et société.",
+  "sources": {
+    "tariff": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=6",
+    "commercial": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=16",
+    "dimensions": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=18",
+    "engines": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=17",
+    "engine_detail": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=25",
+    "engine_thermal": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=26",
+    "trims": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=24",
+    "colours": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=12",
+    "brochure": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf",
+    "brochure_date": "Crédits de l’édition imprimés avril 2025, fichier CDN nommé mai 2025.",
+    "licence": "Images de la brochure tous droits réservés p. 21 et p. 30. Lien sortant uniquement.",
+    "sixth_gen": "https://media.renault.com/nouvelle-renault-clio-ouverture-des-commandes-en-france/?lang=fra"
+  },
+  "engines": [
+    {
+      "id": "sce65",
+      "label": "SCe 65",
+      "fuel": "Essence",
+      "gearbox": "Manuelle, 5 rapports",
+      "capacity_cm3": 999,
+      "boot_dm3_vda": 317
+    },
+    {
+      "id": "tce90",
+      "label": "TCe 90",
+      "fuel": "Essence",
+      "gearbox": "Manuelle, 6 rapports",
+      "capacity_cm3": 999,
+      "boot_dm3_vda": 317
+    },
+    {
+      "id": "ecog100",
+      "label": "Eco-G 100",
+      "fuel": "Essence et GPL",
+      "gearbox": "Manuelle, 6 rapports",
+      "capacity_cm3": 999,
+      "boot_dm3_vda": 306
+    },
+    {
+      "id": "dci100",
+      "label": "Blue dCi 100",
+      "fuel": "Diesel",
+      "gearbox": "Manuelle, 6 rapports",
+      "capacity_cm3": 1461,
+      "boot_dm3_vda": 302
+    },
+    {
+      "id": "etech145",
+      "label": "E-Tech full hybrid 145",
+      "fuel": "Hybride essence",
+      "gearbox": "Automatique multimode E-Tech",
+      "capacity_cm3": 1598,
+      "boot_dm3_vda": 217
+    }
+  ],
+  "dimensions_mm": {
+    "length": 4053,
+    "width_folded_mirrors": 1798,
+    "width_open_mirrors": 1988,
+    "height": 1440,
+    "height_with_boot_open": 1979,
+    "wheelbase": 2583,
+    "front_overhang": 833,
+    "rear_overhang": 637
+  },
+  "boot_scope": "Volume maxi en dm³ selon la méthode VDA (ISO 3832), avec kit de gonflage. 1 dm³ = 1 L.",
+  "trims": [
+    {
+      "id": "generation",
+      "label": "generation",
+      "engines": {
+        "sce65": 16900,
+        "ecog100": 18000,
+        "tce90": 18500,
+        "dci100": 19900
+      },
+      "standard_examples": [],
+      "options": [
+        "Navigation sur écran Easy Link de 7 pouces"
+      ],
+      "cockpit_page": null
+    },
+    {
+      "id": "evolution",
+      "label": "evolution",
+      "engines": {
+        "sce65": 20100,
+        "ecog100": 21200,
+        "tce90": 21700,
+        "dci100": 23400,
+        "etech145": 24500
+      },
+      "standard_examples": [
+        "Climatisation manuelle",
+        "Enjoliveurs Amicitia de 16 pouces",
+        "Écran Easy Link et instrumentation de 7 pouces"
+      ],
+      "options": [
+        "Navigation sur écran Easy Link de 7 pouces"
+      ],
+      "cockpit_page": 13
+    },
+    {
+      "id": "techno",
+      "label": "techno",
+      "engines": {
+        "ecog100": 22700,
+        "tce90": 23200,
+        "etech145": 26000
+      },
+      "standard_examples": [
+        "Climatisation automatique",
+        "Jantes Boa Vista de 16 pouces",
+        "Caméra de recul",
+        "Navigation Easy Link de 7 pouces"
+      ],
+      "options": [
+        "Navigation 9,3 pouces, compteurs 10 pouces et recharge par induction (pack multimédia)",
+        "Pack look avec jantes Monastella de 17 pouces",
+        "Pack parking 360°",
+        "Pack driving & safety"
+      ],
+      "cockpit_page": 14
+    },
+    {
+      "id": "esprit-alpine",
+      "label": "esprit Alpine",
+      "engines": {
+        "tce90": 25500,
+        "etech145": 28300
+      },
+      "standard_examples": [
+        "Jantes La Flèche de 17 pouces",
+        "Sièges sport à surpiqûres bleues",
+        "Instrumentation de 10 pouces et écran Easy Link de 9,3 pouces"
+      ],
+      "options": [
+        "Pack hiver avec sièges avant et volant chauffants",
+        "Pack parking 360° avec stationnement assisté",
+        "Audio Bose"
+      ],
+      "cockpit_page": 15
+    }
+  ],
+  "price_scope": "Prix catalogue TTC en euros au 1er juillet 2025, hors options et bonus/malus. Champs d’options et d’équipements présentés à titre d’exemples datés.",
+  "colour_scope": "Nuancier illustré sur techno avec pack look, brochure p. 12. Les teintes sont documentées sur cette présentation. La disponibilité doit être vérifiée pour une finition différente.",
+  "colours": [
+    "Blanc Glacier",
+    "Gris Schiste",
+    "Noir Étoilé",
+    "Bleu Iron",
+    "Gris Rafale",
+    "Orange Valencia"
+  ],
+  "date_editions": [
+    {
+      "from": "2023-06-02",
+      "to": "2025-03-16",
+      "id": "20010",
+      "guide": "https://www.user-manual.renault.com/fr/notice/20010/index",
+      "pdf": "https://www.user-manual.renault.com/fr/notice/20010/pdf"
+    },
+    {
+      "from": "2025-03-17",
+      "to": "2025-09-14",
+      "id": "13326",
+      "guide": "https://www.user-manual.renault.com/fr/notice/13326/index",
+      "pdf": "https://www.user-manual.renault.com/fr/notice/13326/pdf"
+    },
+    {
+      "from": "2025-09-15",
+      "to": "2026-03-16",
+      "id": "17627",
+      "guide": "https://www.user-manual.renault.com/fr/notice/17627/index",
+      "pdf": "https://www.user-manual.renault.com/fr/notice/17627/pdf"
+    }
+  ],
+  "special_versions": {
+    "auto_ecole": [
+      "tce90",
+      "dci100",
+      "etech145"
+    ],
+    "utilitaire_evolution_reversible": [
+      "sce65",
+      "ecog100",
+      "tce90",
+      "dci100",
+      "etech145"
+    ]
+  },
+  "sixth_gen_note": "Renault a ouvert les commandes françaises de Clio VI le 15 octobre 2025 et annoncé les premières livraisons clients début 2026."
+}
