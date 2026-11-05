@@ -1,0 +1,89 @@
+{
+  "release": "social3d-v38",
+  "baseline_videos": 40132,
+  "total_videos": 40136,
+  "guides": 11,
+  "total_by_platform": {
+    "dailymotion": 345,
+    "facebook": 46,
+    "instagram": 314,
+    "other": 15,
+    "tiktok": 864,
+    "twitch": 2,
+    "vimeo": 17,
+    "youtube": 38533
+  },
+  "total_by_language": {
+    "ar": 7,
+    "cs": 1,
+    "de": 4019,
+    "en": 13644,
+    "es": 4566,
+    "fa": 1,
+    "fr": 7392,
+    "id": 2,
+    "it": 298,
+    "ja": 96,
+    "ko": 52,
+    "pl": 3759,
+    "pt": 4207,
+    "ru": 6,
+    "ta": 1,
+    "tr": 3,
+    "und": 2069,
+    "zh": 13
+  },
+  "new_references": 4,
+  "new_by_platform": {
+    "instagram": 2,
+    "tiktok": 2
+  },
+  "new_by_language": {
+    "und": 4
+  },
+  "publisher_context_languages": {
+    "fr": 4
+  },
+  "new_transcripts": 0,
+  "updated_existing_references": 0,
+  "new_native_post_ids_confirmed_by_tiktok_oembed": 2,
+  "new_native_captions": 0,
+  "playback_reviewed": false,
+  "acquisition": {
+    "provider": "Publisher pages and official TikTok oEmbed",
+    "post_or_media_identities_reviewed": 56,
+    "retained": 4,
+    "held": 10,
+    "excluded_photo_posts": 14,
+    "free_credits_consumed": 0,
+    "out_of_pocket_usd": 0,
+    "authenticated_creator_api_calls": 0,
+    "excluded": 42,
+    "excluded_carousels_without_video_evidence": 20,
+    "excluded_noneducational_video": 8,
+    "social_link_or_card_occurrences": 85,
+    "repeated_occurrences": 29,
+    "confirmed_native_tiktok_embed_ids": 4,
+    "all_previous_catalog_additions_recounted": false
+  },
+  "social_finder": {
+    "total": 1178,
+    "fr_native_metadata": 787,
+    "publisher_context_fr": 4,
+    "json_bytes": 287913,
+    "platforms": {
+      "instagram": 314,
+      "tiktok": 864
+    }
+  },
+  "atelier": {
+    "vehicle": "WikiSpeed SGT01",
+    "solid_instances": 271,
+    "families": 8,
+    "glb_bytes": 1069348,
+    "glb_sha256": "96760e130f57d02f4d9ddfc93f10883031cc2d9d64e8aa4d74222b57e24a4320"
+  },
+  "catalog_sha256": "31545f208c4246d758c7cacb12fc4e1789b3a26c62fd0fc09171406029e072e0",
+  "catalog_bytes": 65873340,
+  "catalog_gzip_bytes": 5933035
+}

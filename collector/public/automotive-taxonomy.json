@@ -1,5 +1,5 @@
 {
-  "version": "1.0.1",
+  "version": "1.0.3",
   "tasks": [
     {
       "id": "oil_change",
@@ -333,6 +333,42 @@
         "es": "Puertas, portón y carrocería"
       },
       "system": "body"
+    },
+    {
+      "id": "turbo_replacement",
+      "label": {
+        "fr": "Remplacement du turbo",
+        "en": "Turbocharger replacement",
+        "es": "Sustitución del turbo"
+      },
+      "system": "intake"
+    },
+    {
+      "id": "wheel_cleaning",
+      "label": {
+        "fr": "Nettoyage des jantes",
+        "en": "Wheel cleaning",
+        "es": "Limpieza de llantas"
+      },
+      "system": "wheels_tires"
+    },
+    {
+      "id": "leather_cleaning",
+      "label": {
+        "fr": "Nettoyage du cuir",
+        "en": "Leather cleaning",
+        "es": "Limpieza de cuero"
+      },
+      "system": "cabin"
+    },
+    {
+      "id": "child_seat_harness",
+      "label": {
+        "fr": "Harnais de siège enfant",
+        "en": "Child seat harness",
+        "es": "Arnés de silla infantil"
+      },
+      "system": "cabin"
     }
   ],
   "systems": [
@@ -454,6 +490,14 @@
         "fr": "Carrosserie",
         "en": "Body",
         "es": "Carrocería"
+      }
+    },
+    {
+      "id": "cabin",
+      "label": {
+        "fr": "Habitacle et sièges",
+        "en": "Cabin and seats",
+        "es": "Habitáculo y asientos"
       }
     }
   ],

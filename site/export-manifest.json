@@ -1,1 +1,17 @@
-{"mode":"static","base_path":"/racelink-academy/","flat_layout":true,"videos":40132,"guides":11,"images":0,"total_resources":40143,"transcripts":7,"catalog_bytes":65866858,"catalog_gzip_bytes":5931523,"catalog_sha256":"bd22945ef9047be3bb1d188a168957bc4dc1e220a2ef2ed2d24f91dc14a57084","generated_at":"2026-11-05T08:10:59+00:00","contains_synthetic_records":false,"search_engine":"Browser Web Worker, normalized word-prefix matching and bounded glossary","backend_secrets_required":false}
+{
+  "mode": "static",
+  "base_path": "/racelink-academy/",
+  "flat_layout": true,
+  "videos": 40136,
+  "guides": 11,
+  "images": 0,
+  "total_resources": 40147,
+  "transcripts": 7,
+  "catalog_bytes": 65873340,
+  "catalog_gzip_bytes": 5933035,
+  "catalog_sha256": "31545f208c4246d758c7cacb12fc4e1789b3a26c62fd0fc09171406029e072e0",
+  "generated_at": "2026-11-05T18:52:04+00:00",
+  "contains_synthetic_records": false,
+  "search_engine": "Browser Web Worker, normalized word-prefix matching and bounded glossary",
+  "backend_secrets_required": false
+}

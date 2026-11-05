@@ -74,7 +74,8 @@ export function renderResourceOverview(resource, helpers) {
   const reviewed = ['curated','editorial_review','editorial_selection','verified'].includes(resource.review_status);
   const listing = String(resource.verification_scope || '').includes('listing') || String(resource.description_basis || '').includes('listing_excerpt');
   const editorial = ['editorial_summary','existing_editorial_description'].includes(resource.description_type);
-  const descriptionLabel = transcriptBased ? t('Résumé de la transcription','Transcript summary','Resumen de la transcripción')
+  const publisher = ['publisher_embedded_post','publisher_post_oembed_identity'].includes(resource.verification_scope);
+  const descriptionLabel = publisher ? t('Ce que présente l’éditeur','From the publisher','Qué presenta el editor') : transcriptBased ? t('Résumé de la transcription','Transcript summary','Resumen de la transcripción')
     : editorial ? t('Présentation éditoriale','Editorial overview','Presentación editorial')
     : listing ? t('Extrait de la source','Source excerpt','Extracto de la fuente')
     : resource.description_type === 'source_caption_without_social_tokens' ? t('Légende de la source','Source caption','Texto de la fuente')
@@ -87,12 +88,13 @@ export function renderResourceOverview(resource, helpers) {
   const questions = Array.isArray(resource.source_questions) ? resource.source_questions.filter(q => q && typeof q.question === 'string') : [];
   const automotive = c.automotiveMarkup?.(resource) || '';
   const social = c.socialMarkup?.(resource) || '';
-  const provenance = transcriptBased
+  const provenance = publisher ? t('Le sujet et les pièces citées proviennent de la page qui présente cette vidéo. Aucune lecture intégrale ni vérification de l’audio.','The subject and parts are taken from the page featuring this video. Playback and audio have not been reviewed.','El tema y las piezas proceden de la página que presenta este vídeo. No se ha comprobado la reproducción ni el audio.') : transcriptBased
     ? t('Résumé français établi à partir de la transcription de la source. Les pistes automatiques peuvent contenir des erreurs ; les éléments uniquement visuels ne sont pas couverts.','French summary based on the source transcript. Automatic captions may contain errors; visual-only information is not covered.','Resumen en francés basado en la transcripción. Los subtítulos automáticos pueden contener errores; no cubre información solo visual.')
     : reviewed
       ? t('Choix effectué à partir des métadonnées publiques. Le contenu intégral n’a pas été audité.','Selected using public metadata. The full content has not been audited.','Seleccionado a partir de metadatos públicos. No se ha auditado el contenido completo.')
       : t('Le titre et les informations publiques ont permis ce référencement. La pertinence pédagogique reste à confirmer.','Indexed from the title and public information. Its teaching value still needs confirmation.','Indexado a partir del título y de información pública. Su valor didáctico aún debe confirmarse.');
   const reference = c.safeUrl(resource.source_url || resource.url);
+  const publisherNote = publisher && reference ? `<p class="resource-context-note"><a href="${e(reference)}" target="_blank" rel="noopener noreferrer">${e(t('Lire la présentation de l’éditeur','Read the publisher’s account','Leer la presentación del editor'))} ↗</a> · ${e(t('Lecture sur la plateforme non vérifiée.','Playback on the platform not checked.','Reproducción en la plataforma sin verificar.'))}</p>` : '';
   const telemetry = (resource.content_format || resource.contentFormat) === 'telemetry_demonstration';
   const questionMarkup = questions.map(question => {
     const href = c.safeUrl(question.source_url);
@@ -110,7 +112,7 @@ export function renderResourceOverview(resource, helpers) {
     [t('Référence contrôlée le','Reference checked on','Referencia comprobada el'),text(resource.verified_at)||t('Date non renseignée','Date not provided','Fecha no indicada')]
   ];
   return `<section class="resource-overview"><div class="resource-description"><h3>${e(descriptionLabel)}</h3><p class="social-description" dir="auto">${e(excerpt || t('Aucun descriptif disponible. Ouvrez la source pour découvrir le contenu.','No description is available. Open the source to explore the content.','No hay descripción disponible. Abre la fuente para conocer el contenido.'))}</p>${longDescription?`<details class="resource-disclosure resource-full-description"><summary>${e(t('Afficher tout le texte disponible','Show all available text','Mostrar todo el texto disponible'))}</summary><p class="social-description" dir="auto">${e(description)}</p></details>`:''}</div>
-    ${telemetry?`<p class="resource-context-note">${e(t('Tour avec télémétrie : observez les données et les gestes à l’écran. Une explication orale n’est pas garantie.','Lap with telemetry: study the on-screen data and driving inputs. Spoken instruction is not guaranteed.','Vuelta con telemetría: observa los datos y movimientos en pantalla. No se garantiza una explicación oral.'))}</p>`:''}
+    ${publisherNote}${telemetry?`<p class="resource-context-note">${e(t('Tour avec télémétrie : observez les données et les gestes à l’écran. Une explication orale n’est pas garantie.','Lap with telemetry: study the on-screen data and driving inputs. Spoken instruction is not guaranteed.','Vuelta con telemetría: observa los datos y movimientos en pantalla. No se garantiza una explicación oral.'))}</p>`:''}
     ${points.length?`<section class="resource-concepts"><h3>${e(t('Points abordés','Topics covered','Temas tratados'))}</h3><ul class="detail-points">${points.map(point=>`<li>${e(point)}</li>`).join('')}</ul></section>`:''}
     ${automotive?`<details class="resource-disclosure resource-vehicle-context" open><summary>${e(t('Véhicule et entretien','Vehicle and maintenance','Vehículo y mantenimiento'))}</summary>${automotive}</details>`:''}
     ${social?`<details class="resource-disclosure resource-source-text"><summary>${e(t('Texte et hashtags de la source','Source text and hashtags','Texto y hashtags de la fuente'))}</summary>${social}</details>`:''}

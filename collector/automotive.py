@@ -6,7 +6,7 @@ No model year, engine, generation or fuel is supplied from external vehicle know
 import re
 import unicodedata
 
-VERSION = "1.0.2"
+VERSION = "1.0.3"
 
 
 def fold(value):
@@ -20,6 +20,10 @@ def entry(id_, fr, en, es, **extra):
 
 
 TASKS = [
+    entry("turbo_replacement", "Remplacement du turbo", "Turbocharger replacement", "Sustitución del turbo", system="intake"),
+    entry("wheel_cleaning", "Nettoyage des jantes", "Wheel cleaning", "Limpieza de llantas", system="wheels_tires"),
+    entry("leather_cleaning", "Nettoyage du cuir", "Leather cleaning", "Limpieza de cuero", system="cabin"),
+    entry("child_seat_harness", "Harnais de siège enfant", "Child seat harness", "Arnés de silla infantil", system="cabin"),
     entry("oil_change", "Vidange moteur", "Engine oil change", "Cambio de aceite", system="lubrication"),
     entry("oil_filter", "Filtre à huile", "Oil filter", "Filtro de aceite", system="lubrication"),
     entry("oil_spec", "Grade et norme d’huile", "Oil grade and specification", "Grado y norma del aceite", system="lubrication"),
@@ -59,6 +63,7 @@ TASKS = [
     entry("body_hardware", "Portes, hayon et carrosserie", "Doors, tailgate and body hardware", "Puertas, portón y carrocería", system="body"),
 ]
 SYSTEMS = [
+    entry("cabin", "Habitacle et sièges", "Cabin and seats", "Habitáculo y asientos"),
     entry("lubrication", "Lubrification moteur", "Engine lubrication", "Lubricación del motor"),
     entry("visibility", "Visibilité et habitacle", "Visibility and cabin", "Visibilidad y habitáculo"),
     entry("wheels_tires", "Roues et pneus", "Wheels and tires", "Ruedas y neumáticos"),

@@ -297,8 +297,8 @@ def normalize_automotive(value):
         item["evidence"] = text_value(vehicle.get("evidence"), 3000)
         item["status"] = vehicle.get("status", "title_mention")
         if (not isinstance(vehicle.get("evidence"), str) or not item["evidence"]
-                or item["status"] not in {"title_mention", "caption_mention", "inferred_from_unambiguous_model"}):
-            raise ValidationError("Mention véhicule exige une preuve textuelle explicite de titre ou de légende")
+                or item["status"] not in {"title_mention", "caption_mention", "publisher_mention", "inferred_from_unambiguous_model"}):
+            raise ValidationError("Mention véhicule : une preuve textuelle du titre, de la légende ou de la page éditrice est requise")
         if item["status"] == "inferred_from_unambiguous_model" and (
                 item["make"] != "Renault" or item["model"] != "Clio" or not re.search(
                     r"(?<!\w)clio\s*(?:iii|iv|ii|v|i|[1-5])(?!\w|[.,]\d)", folded(item["evidence"]))):

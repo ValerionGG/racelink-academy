@@ -1,16 +1,9 @@
-# RaceLink Academy — collecte V37
+# RaceLink Academy
 
-[Ouvrir la bibliothèque](https://valeriongg.github.io/racelink-academy/?release=collection-v37) · [Bilan vérifiable](https://github.com/ValerionGG/racelink-academy/blob/main/research/collection-v37/results.json)
+[TikTok et Instagram par voiture et par sujet](https://valeriongg.github.io/racelink-academy/formats-courts.html) · [Atelier 3D WikiSpeed SGT01](https://valeriongg.github.io/racelink-academy/3d.html) · [Bibliothèque](https://valeriongg.github.io/racelink-academy/)
 
-40 132 références vidéo et 11 guides, dont 7 392 vidéos étiquetées FR dans leurs métadonnées. Cette livraison ajoute 63 références YouTube examinées.
+40 136 vidéos et 11 guides. Le moteur social regroupe 864 TikTok et 314 publications vidéo Instagram. Parmi elles, 787 portent une étiquette de métadonnées FR. Quatre nouvelles démonstrations disposent d’une présentation d’éditeur en français ; la langue de leur audio est inconnue.
 
-Les contrôles de recherche retrouvent les 63 nouvelles fiches dans le catalogue exporté et vérifient leurs champs affichés.
+[Bilan, sources et contrôles de cette livraison](https://github.com/ValerionGG/racelink-academy/blob/main/research/social3d-v38/README.md) · [Collecte des comptes autorisés](https://github.com/ValerionGG/racelink-academy/blob/main/collector/scripts/CREATOR-API-PAGES.md) · [Skill CAO automobile](https://github.com/ValerionGG/racelink-academy/blob/main/skills/racelink-vehicle-atlas/SKILL.md)
 
-Le catalogue est enrichi à partir des titres et extraits publics disponibles. Les extraits incomplets restent signalés et une description absente reste absente. Aucune transcription n’est créée par cette collecte.
-
-- [Recherche V34 et validation](https://github.com/ValerionGG/racelink-academy/blob/main/research/search-v34/README.md)
-- [Collecteur PeerTube](https://github.com/ValerionGG/racelink-academy/blob/main/collector/scripts/PEERTUBE-COLLECTOR.md)
-- [Collecte publique et checkpoints](https://github.com/ValerionGG/racelink-academy/blob/main/collector/PUBLIC-COLLECTION.md)
-- [Sources de scraping évaluées](https://github.com/ValerionGG/racelink-academy/blob/main/collector/scripts/SCRAPING-SOURCES-V34.md)
-
-GitHub Pages héberge cet aperçu indépendant de Focus. La langue étiquetée correspond aux métadonnées disponibles.
+GitHub Pages héberge cette version indépendamment du domaine Focus. Le catalogue conserve ses onze guides et ses références constructeur.

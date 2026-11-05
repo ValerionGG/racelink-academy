@@ -1,0 +1,22 @@
+.atelier-entry{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(205px,1fr);gap:clamp(14px,2.4vw,30px);padding-block:18px 10px;color:var(--rl-ink);line-height:1.35}
+.results-mode .atelier-entry{display:none}
+.atelier-social{align-self:center}
+.atelier-entry h2{font:inherit;font-size:clamp(19px,2vw,25px);font-weight:650;margin:0;letter-spacing:-.035em}
+.atelier-social p{margin:6px 0 12px;color:var(--rl-muted);font-size:14px;max-width:58ch}
+.atelier-social-links{display:flex;flex-wrap:wrap;gap:7px}
+.atelier-social-links a,.atelier-model{color:inherit;text-decoration:none}
+.atelier-social-links a{display:inline-flex;align-items:center;gap:6px;min-height:44px;padding:0 12px;border:1px solid var(--rl-line-strong);border-radius:8px;background:var(--rl-surface);font-size:13px}
+.atelier-social-links span{color:var(--rl-muted);font-size:12px}
+.atelier-social-links b{font-weight:500;margin-inline-start:3px}
+.atelier-model{position:relative;display:grid;align-content:center;padding:19px 46px 19px 20px;border-block:1px solid var(--rl-line-strong)}
+.atelier-model>span{font-size:12px;color:var(--rl-muted);font-weight:600}
+.atelier-model strong{font-size:clamp(20px,2.2vw,29px);letter-spacing:-.045em}
+.atelier-model small{font-size:13px;text-decoration:underline;text-underline-offset:3px}
+.atelier-model b{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:23px}
+.atelier-model img{max-width:100%;object-fit:contain;width:clamp(75px,9vw,120px);height:88px;grid-column:2;grid-row:1 / span 3;align-self:center}
+.atelier-model{grid-template-columns:minmax(0,1fr) auto;align-items:center;column-gap:7px;padding-inline:8px 28px}
+.atelier-model>span,.atelier-model strong,.atelier-model small{grid-column:1}
+.atelier-model b{right:4px;font-size:17px}
+.atelier-entry a:hover{background:var(--rl-hover)}
+.atelier-entry a:focus-visible{outline:3px solid var(--rl-accent,currentColor);outline-offset:3px}
+@media(max-width:700px){.atelier-entry{grid-template-columns:minmax(0,1fr);gap:16px}.atelier-model{padding:14px 44px 14px 2px}.atelier-social-links a{flex:1;min-width:max-content;justify-content:space-between}.atelier-social-links{gap:6px}}
