@@ -1,0 +1,1675 @@
+[
+  {
+    "id": "renault-clio-v",
+    "make": "Renault",
+    "model": "Clio",
+    "generation": "V",
+    "phase": "Phase 2 (2023)",
+    "year": 2025,
+    "market": "France",
+    "aliases": [
+      "Renault Clio",
+      "Clio V",
+      "Clio 2025"
+    ],
+    "availability_date": "2025-07-01",
+    "availability_scope": "Voitures particulières, nomenclature « - 25 » au tarif Renault France n° 2228-00 du 1er juillet 2025. Gammes de la date, hors auto-école et société.",
+    "availability_status": "verified",
+    "engines": [
+      {
+        "id": "sce65",
+        "label": "SCe 65",
+        "fuel": "Essence",
+        "gearbox": "Manuelle, 5 rapports",
+        "capacity_cm3": 999,
+        "boot_dm3_vda": 317,
+        "source": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=17"
+      },
+      {
+        "id": "tce90",
+        "label": "TCe 90",
+        "fuel": "Essence",
+        "gearbox": "Manuelle, 6 rapports",
+        "capacity_cm3": 999,
+        "boot_dm3_vda": 317,
+        "source": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=17"
+      },
+      {
+        "id": "ecog100",
+        "label": "Eco-G 100",
+        "fuel": "Essence et GPL",
+        "gearbox": "Manuelle, 6 rapports",
+        "capacity_cm3": 999,
+        "boot_dm3_vda": 306,
+        "source": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=17",
+        "aliases": [
+          "EcoG 100",
+          "GPL 100"
+        ]
+      },
+      {
+        "id": "dci100",
+        "label": "Blue dCi 100",
+        "fuel": "Diesel",
+        "gearbox": "Manuelle, 6 rapports",
+        "capacity_cm3": 1461,
+        "boot_dm3_vda": 302,
+        "source": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=17"
+      },
+      {
+        "id": "etech145",
+        "label": "E-Tech full hybrid 145",
+        "fuel": "Hybride essence",
+        "gearbox": "Automatique multimode E-Tech",
+        "capacity_cm3": 1598,
+        "boot_dm3_vda": 217,
+        "source": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=17",
+        "aliases": [
+          "Etech 145",
+          "hybride 145"
+        ]
+      }
+    ],
+    "trims": [
+      {
+        "id": "generation",
+        "label": "generation",
+        "engines": [
+          "sce65",
+          "ecog100",
+          "tce90",
+          "dci100"
+        ],
+        "source": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=6"
+      },
+      {
+        "id": "evolution",
+        "label": "evolution",
+        "engines": [
+          "sce65",
+          "ecog100",
+          "tce90",
+          "dci100",
+          "etech145"
+        ],
+        "source": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=6"
+      },
+      {
+        "id": "techno",
+        "label": "techno",
+        "engines": [
+          "ecog100",
+          "tce90",
+          "etech145"
+        ],
+        "source": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=6"
+      },
+      {
+        "id": "esprit-alpine",
+        "label": "esprit Alpine",
+        "engines": [
+          "tce90",
+          "etech145"
+        ],
+        "source": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=6"
+      }
+    ],
+    "professional_versions": [],
+    "dimensions_mm": {
+      "length": 4053,
+      "width_folded_mirrors": 1798,
+      "width_open_mirrors": 1988,
+      "height": 1440,
+      "height_with_boot_open": 1979,
+      "wheelbase": 2583,
+      "front_overhang": 833,
+      "rear_overhang": 637
+    },
+    "sources": {
+      "tariff": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=6",
+      "commercial": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=16",
+      "dimensions": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=18",
+      "engines": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=17",
+      "engine_detail": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=25",
+      "engine_thermal": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=26",
+      "trims": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=24",
+      "colours": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf#page=12",
+      "brochure": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf",
+      "brochure_date": "Crédits de l’édition imprimés avril 2025, fichier CDN nommé mai 2025.",
+      "licence": "Images de la brochure tous droits réservés p. 21 et p. 30. Lien sortant uniquement.",
+      "sixth_gen": "https://media.renault.com/nouvelle-renault-clio-ouverture-des-commandes-en-france/?lang=fra"
+    },
+    "official_links": [
+      {
+        "label": "Notice Clio V : mars–septembre 2025",
+        "url": "https://www.user-manual.renault.com/fr/notice/13326/index",
+        "scope": "Édition 17/03/2025–14/09/2025 ; sélectionner selon date du véhicule.",
+        "kind": "manual"
+      },
+      {
+        "label": "Brochure Clio V phase 2",
+        "url": "https://cdn.group.renault.com/ren/fr/product-plans/clio-ph2/Brochure_Clio_mai_2025.pdf.asset.pdf/b560ce39fc.pdf",
+        "scope": "France 2025, photos et caractéristiques",
+        "kind": "brochure"
+      },
+      {
+        "label": "Configurateur constructeur",
+        "url": "https://www.renault.ma/vehicules-hybrides/clio/configurateur.html",
+        "scope": "Configurateur live. Les finitions actuelles peuvent différer du dossier France 2025.",
+        "kind": "configurator"
+      },
+      {
+        "label": "Dossier Clio détaillé",
+        "url": "./clio-5-2025.html",
+        "scope": "Équipements, couleurs, prix historiques et éditions de la notice.",
+        "kind": "archive"
+      }
+    ],
+    "popularity": {
+      "rank": 1,
+      "registrations": 100101,
+      "period": "2025-01-01/2025-12-31",
+      "source": "https://pfa-auto.fr/wp-content/uploads/2026/01/Dossier-de-presse-PFA.pdf#page=18",
+      "scope": "VP neufs immatriculés en France, modèle selon nomenclature PFA/AAA DATA, pas parc roulant ni finition précise."
+    },
+    "researched_at": "2026-11-06",
+    "availability_complete": true,
+    "rights_note": "Références et faits documentaires. Aucune licence de réutilisation des photos ou géométries constructeur n’est déduite de ces liens.",
+    "photos": [
+      {
+        "src": "./clio-v/photos/clio-hero.webp",
+        "title": "Trois-quarts avant",
+        "alt": "Clio V restylée orange vue de trois-quarts avant, phares, calandre et profil côté passager visibles.",
+        "caption": "Esprit Alpine au salon Auto Zürich, Suisse.",
+        "date": "2023-11-01",
+        "author": "Alexander-93 / Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Renault_Clio_V_(2023)_Esprit_Alpine_Auto_Zuerich_2023_1X7A1073.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Renault Clio V (2023) Esprit Alpine Auto Zuerich 2023 1X7A1073.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 1068,
+        "view": "exterior"
+      },
+      {
+        "src": "./clio-v/photos/clio-rear.webp",
+        "title": "Trois-quarts arrière",
+        "alt": "Clio V restylée orange vue de trois-quarts arrière, hayon, feux, bouclier et flanc droit visibles.",
+        "caption": "Esprit Alpine au salon Auto Zürich, Suisse.",
+        "date": "2023-11-01",
+        "author": "Alexander-93 / Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Renault_Clio_V_(2023)_Esprit_Alpine_Auto_Zuerich_2023_1X7A1075.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Renault Clio V (2023) Esprit Alpine Auto Zuerich 2023 1X7A1075.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1440,
+        "height": 960,
+        "view": "exterior"
+      },
+      {
+        "src": "./clio-v/photos/clio-cockpit.webp",
+        "title": "Poste de conduite",
+        "alt": "Habitacle de la Clio V restylée, volant à gauche, écran central vertical, commandes de climatisation et levier de vitesses.",
+        "caption": "Esprit Alpine à boîte manuelle exposée à Ludwigsburg, Allemagne.",
+        "date": "2023-09-02",
+        "author": "Alexander-93 / Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Renault_Clio_V_(2023)_Esprit_Alpine_Automesse_Ludwigsburg_2023_1X7A0088.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Renault Clio V (2023) Esprit Alpine Automesse Ludwigsburg 2023 1X7A0088.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1440,
+        "height": 1042,
+        "view": "interior"
+      },
+      {
+        "src": "./clio-v/photos/clio-2025.webp",
+        "title": "Vue extérieure en 2025",
+        "alt": "Clio V restylée blanche vue de trois-quarts, avec sa signature lumineuse verticale.",
+        "caption": "Exemplaire photographié le 2 septembre 2025. Année de première immatriculation et finition inconnues.",
+        "date": "2025-09-02",
+        "author": "© M 93 / Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Renault_Clio_(V,_Facelift)_%E2%80%93_f_02092025.jpg",
+        "license": "CC BY-SA 3.0 DE",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/",
+        "originalTitle": "Renault Clio (V, Facelift) – f 02092025.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1440,
+        "height": 818,
+        "view": "exterior"
+      },
+      {
+        "src": "./clio-v/photos/clio-engine.webp",
+        "title": "Compartiment moteur hybride",
+        "alt": "Sous le capot d’une Clio V 1.6 E-Tech hybride, vue d’ensemble du compartiment avant.",
+        "caption": "Clio 1.6 E-Tech hybride. Cette vue est propre à la motorisation photographiée.",
+        "date": "2024-01-09",
+        "author": "MoCars / Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:2024_Renault_Clio_1.6_E-Tech_Hybrid_Powertrain.jpg",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "originalTitle": "2024 Renault Clio 1.6 E-Tech Hybrid Powertrain.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1440,
+        "height": 810,
+        "view": "engine"
+      },
+      {
+        "src": "./clio-v/photos/clio-bleu.webp",
+        "title": "Face avant, Esprit Alpine",
+        "alt": "Clio V Esprit Alpine bleue vue de trois-quarts avant côté conducteur.",
+        "caption": "Esprit Alpine au salon de Ludwigsburg, Allemagne.",
+        "date": "2023-09-02",
+        "author": "Alexander-93 / Wikimedia Commons",
+        "source": "https://commons.wikimedia.org/wiki/File:Renault_Clio_V_(2023)_Esprit_Alpine_Automesse_Ludwigsburg_2023_1X7A0086.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Renault Clio V (2023) Esprit Alpine Automesse Ludwigsburg 2023 1X7A0086.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1440,
+        "height": 874,
+        "view": "exterior"
+      }
+    ],
+    "immersive": [
+      {
+        "id": "clio-official",
+        "kind": "oem",
+        "label": "Renault Maroc · Clio MY25",
+        "embedUrl": "https://www.renault.ma/vehicules-hybrides/clio/configurateur.html",
+        "url": "https://www.renault.ma/vehicules-hybrides/clio/configurateur.html",
+        "author": "Renault Maroc",
+        "market": "Maroc",
+        "modelScope": "Clio V phase 2, Authentic+ 1,0 TCe 100 CVT MY25, marché Maroc.",
+        "note": "Visite officielle du marché marocain. Les moteurs, finitions, prix et équipements affichés diffèrent de la gamme France 2025 de cette fiche.",
+        "verified": {
+          "exterior": true,
+          "interior": true,
+          "render": true,
+          "controls": true
+        },
+        "checkedAt": "2026-11-06T11:10:10.866Z",
+        "recommended": true,
+        "format": "360 interactive constructeur",
+        "redistribution": "Aucun modèle ni image constructeur téléchargé pour redistribution. Page officielle distante intacte dans iframe.",
+        "licenseUrl": ""
+      },
+      {
+        "id": "8fbb3a6f3dcc409585cb6d7153b473fb",
+        "kind": "artist",
+        "label": "2024 Renault Clio · maquette communautaire",
+        "embedUrl": "https://sketchfab.com/models/8fbb3a6f3dcc409585cb6d7153b473fb/embed?autostart=1",
+        "url": "https://sketchfab.com/3d-models/2024-renault-clio-8fbb3a6f3dcc409585cb6d7153b473fb",
+        "author": "tonielpro520",
+        "authorUrl": "https://sketchfab.com/tonielpro520",
+        "license": "CC Attribution",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "modelScope": "2024 Renault Clio selon le créateur. Géométrie extérieure inspectée; finition et équipements exacts non certifiés.",
+        "note": "Maquette communautaire, pas un modèle constructeur. Rendu blanc sans textures de carrosserie. Habitacle, moteur et démontage non vérifiés.",
+        "verified": {
+          "exterior": true,
+          "interior": false,
+          "render": true,
+          "controls": true
+        },
+        "checkedAt": "2026-11-06T11:05:07.054Z",
+        "recommended": false,
+        "format": "Maquette 3D communautaire",
+        "metadataSource": "https://api.sketchfab.com/v3/models/8fbb3a6f3dcc409585cb6d7153b473fb",
+        "market": ""
+      }
+    ],
+    "immersive_unavailable_reason": ""
+  },
+  {
+    "id": "peugeot-208-ii",
+    "make": "Peugeot",
+    "model": "208",
+    "generation": "II",
+    "phase": "Phase 2 (2023)",
+    "year": 2025,
+    "market": "France",
+    "aliases": [
+      "Peugeot 208",
+      "208 II",
+      "208 2025"
+    ],
+    "availability_date": "2025-09-19",
+    "availability_scope": "Sélection attestée dans les communiqués Peugeot France des 11 et 19 septembre 2025 : ENVY essence 100 BVM6, ENVY Hybrid 110 e-DCS6 et GT Hybrid 145. Ce relevé ne décrit pas toute la gamme. Les tarifs historiques indexés n’ont pas pu être ouverts ; aucune combinaison supplémentaire déduite.",
+    "availability_status": "partial_verified",
+    "engines": [
+      {
+        "id": "essence100",
+        "label": "Essence 100",
+        "fuel": "Essence",
+        "gearbox": "Manuelle, 6 rapports",
+        "source": "https://www.media.stellantis.com/fr-fr/peugeot/press/peugeot-fait-sa-rentree-offres-sans-apport-sur-toute-la-gamme-et-serie-speciale-208-envy"
+      },
+      {
+        "id": "hybrid110",
+        "label": "Hybrid 110",
+        "fuel": "Essence hybride",
+        "gearbox": "Automatique e-DCS6",
+        "source": "https://www.media.stellantis.com/fr-fr/peugeot/press/peugeot-fait-sa-rentree-offres-sans-apport-sur-toute-la-gamme-et-serie-speciale-208-envy"
+      },
+      {
+        "id": "hybrid145",
+        "label": "Hybrid 145",
+        "fuel": "Essence hybride",
+        "gearbox": null,
+        "source": "https://www.media.stellantis.com/fr-fr/peugeot/press/peugeot-au-salon-de-lyon-deux-nouveautes-majeures-peugeot-e-208-gti-et-la-toute-nouvelle-peugeot-308-peugeot-allie-plaisir-de-conduire-et-des-offres-exclusives"
+      }
+    ],
+    "trims": [
+      {
+        "id": "envy",
+        "label": "ENVY",
+        "engines": [
+          "essence100",
+          "hybrid110"
+        ],
+        "source": "https://www.media.stellantis.com/fr-fr/peugeot/press/peugeot-fait-sa-rentree-offres-sans-apport-sur-toute-la-gamme-et-serie-speciale-208-envy"
+      },
+      {
+        "id": "gt",
+        "label": "GT",
+        "engines": [
+          "hybrid145"
+        ],
+        "source": "https://www.media.stellantis.com/fr-fr/peugeot/press/peugeot-au-salon-de-lyon-deux-nouveautes-majeures-peugeot-e-208-gti-et-la-toute-nouvelle-peugeot-308-peugeot-allie-plaisir-de-conduire-et-des-offres-exclusives"
+      }
+    ],
+    "professional_versions": [],
+    "dimensions_mm": {
+      "length": 4055,
+      "width_without_mirrors": 1745,
+      "height": 1430
+    },
+    "sources": {
+      "availability": "https://www.media.stellantis.com/fr-fr/peugeot/press/peugeot-au-salon-de-lyon-deux-nouveautes-majeures-peugeot-e-208-gti-et-la-toute-nouvelle-peugeot-308-peugeot-allie-plaisir-de-conduire-et-des-offres-exclusives",
+      "special_edition": "https://www.media.stellantis.com/fr-fr/peugeot/press/peugeot-fait-sa-rentree-offres-sans-apport-sur-toute-la-gamme-et-serie-speciale-208-envy",
+      "phase": "https://www.media.stellantis.com/fr-fr/peugeot/press/nouvelle-peugeot-e-208-irresistible-et-fun-a-conduire",
+      "dimensions": "https://www.media.stellantis.com/fr-fr/peugeot/press/nouvelle-peugeot-e-208-irresistible-et-fun-a-conduire"
+    },
+    "official_links": [
+      {
+        "label": "Photos et présentation de la phase 2",
+        "url": "https://www.media.stellantis.com/fr-fr/peugeot/press/nouvelle-peugeot-e-208-irresistible-et-fun-a-conduire",
+        "scope": "Présentation constructeur de juillet 2023 ; carrosserie phase 2.",
+        "kind": "presentation"
+      },
+      {
+        "label": "Documents de bord Peugeot",
+        "url": "https://public.servicebox.peugeot.com/APddb/index.html",
+        "scope": "Choisir 208 puis période d’édition selon première circulation.",
+        "kind": "manual"
+      },
+      {
+        "label": "Configurateur Peugeot 208",
+        "url": "https://store.peugeot.fr/selector/configurable/208-5-portes",
+        "scope": "Le site officiel refuse son intégration dans une iframe (X-Frame-Options SAMEORIGIN). Ouvrir le lien officiel dans un autre onglet.",
+        "kind": "configurator"
+      }
+    ],
+    "popularity": {
+      "rank": 2,
+      "registrations": 73092,
+      "period": "2025-01-01/2025-12-31",
+      "source": "https://pfa-auto.fr/wp-content/uploads/2026/01/Dossier-de-presse-PFA.pdf#page=18",
+      "scope": "VP neufs immatriculés en France, modèle selon nomenclature PFA/AAA DATA, pas parc roulant ni finition précise."
+    },
+    "dimensions_scope": "Cotes extérieures de la phase 2 dans le communiqué européen de lancement du 6 juillet 2023. Elles ne sont pas un relevé d’un exemplaire 2025.",
+    "researched_at": "2026-11-06",
+    "availability_complete": false,
+    "rights_note": "Références et faits documentaires. Aucune licence de réutilisation des photos ou géométries constructeur n’est déduite de ces liens.",
+    "photos": [
+      {
+        "src": "./atlas/photos/peugeot-208-ii/front.webp",
+        "title": "Allure, vue avant",
+        "alt": "Peugeot 208 II restylée jaune, vue de trois-quarts avant.",
+        "caption": "PureTech 100 Allure photographiée le 4 septembre 2025.",
+        "view": "exterior",
+        "author": "© M 93 / Wikimedia Commons",
+        "date": "2025-09-04",
+        "source": "https://commons.wikimedia.org/wiki/File:Peugeot_208_PureTech_100_Allure_(II,_Facelift)_%E2%80%93_f_04092025.jpg",
+        "license": "CC BY-SA 3.0 DE",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/",
+        "originalTitle": "Peugeot 208 PureTech 100 Allure (II, Facelift) – f 04092025.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 834
+      },
+      {
+        "src": "./atlas/photos/peugeot-208-ii/rear.webp",
+        "title": "Allure, vue arrière",
+        "alt": "Peugeot 208 II restylée jaune, vue de trois-quarts arrière.",
+        "caption": "PureTech 100 Allure photographiée le 4 septembre 2025.",
+        "view": "exterior",
+        "author": "© M 93 / Wikimedia Commons",
+        "date": "2025-09-04",
+        "source": "https://commons.wikimedia.org/wiki/File:Peugeot_208_PureTech_100_Allure_(II,_Facelift)_%E2%80%93_h_04092025.jpg",
+        "license": "CC BY-SA 3.0 DE",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/de/",
+        "originalTitle": "Peugeot 208 PureTech 100 Allure (II, Facelift) – h 04092025.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 862
+      }
+    ],
+    "immersive": [],
+    "immersive_unavailable_reason": "Le site officiel refuse son intégration dans une iframe (X-Frame-Options SAMEORIGIN). Ouvrir le lien officiel dans un autre onglet."
+  },
+  {
+    "id": "dacia-sandero-iii",
+    "make": "Dacia",
+    "model": "Sandero",
+    "generation": "III",
+    "phase": "Identité Dacia 2022, avant restylage fin 2025",
+    "year": 2025,
+    "market": "France",
+    "aliases": [
+      "Dacia Sandero",
+      "Sandero III",
+      "Sandero 2025"
+    ],
+    "availability_date": "2025-07-01",
+    "availability_scope": "Sandero berline, tarif Dacia France 2228-00 ; Stepway est une silhouette distincte, non incluse dans cette matrice.",
+    "availability_status": "verified",
+    "engines": [
+      {
+        "id": "sce65",
+        "label": "SCe 65",
+        "fuel": "Essence",
+        "gearbox": null,
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=1"
+      },
+      {
+        "id": "tce90",
+        "label": "TCe 90",
+        "fuel": "Essence",
+        "gearbox": null,
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=1"
+      },
+      {
+        "id": "tce90-auto",
+        "label": "TCe 90 auto",
+        "fuel": "Essence",
+        "gearbox": "Automatique",
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=1"
+      },
+      {
+        "id": "ecog100",
+        "label": "Eco-G 100",
+        "fuel": "Essence / GPL",
+        "gearbox": null,
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=1",
+        "aliases": [
+          "EcoG 100",
+          "GPL 100"
+        ]
+      }
+    ],
+    "trims": [
+      {
+        "id": "essential",
+        "label": "essential",
+        "engines": [
+          "sce65",
+          "ecog100"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=1"
+      },
+      {
+        "id": "expression",
+        "label": "expression",
+        "engines": [
+          "sce65",
+          "tce90",
+          "ecog100"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=1"
+      },
+      {
+        "id": "journey",
+        "label": "journey",
+        "engines": [
+          "tce90",
+          "tce90-auto",
+          "ecog100"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=1"
+      }
+    ],
+    "professional_versions": [],
+    "dimensions_mm": {
+      "length": 4088,
+      "width_without_mirrors": 1784,
+      "width_folded_mirrors": 1848,
+      "width_open_mirrors": 2007,
+      "height": 1499,
+      "wheelbase": 2604
+    },
+    "sources": {
+      "tariff": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=1",
+      "dimensions": "https://media.dacia.com/wp-content/uploads/2022/07/9f320bddf9e83a1194526bf807b9c03b-keeexed.pdf"
+    },
+    "official_links": [
+      {
+        "label": "Notices Dacia",
+        "url": "https://www.user-manual.dacia.com/fr/notices",
+        "scope": "Choisir Sandero 3 puis la période du véhicule.",
+        "kind": "manual"
+      },
+      {
+        "label": "Configurateur constructeur",
+        "url": "https://www.dacia.ma/notre-gamme/sandero-citadine/configurateur.html",
+        "scope": "La connexion au configurateur officiel n’a pas abouti durant la vérification; aucune vue interactive validée pour ce véhicule.",
+        "kind": "configurator"
+      }
+    ],
+    "popularity": {
+      "rank": 3,
+      "registrations": 64399,
+      "period": "2025-01-01/2025-12-31",
+      "source": "https://pfa-auto.fr/wp-content/uploads/2026/01/Dossier-de-presse-PFA.pdf#page=18",
+      "scope": "VP neufs immatriculés en France, modèle selon nomenclature PFA/AAA DATA, pas parc roulant ni finition précise."
+    },
+    "dimensions_scope": "Fiche géométrique de la Sandero III berline à identité 2022, publiée le 15 juin 2022. Ne pas appliquer à Stepway ou au restylage de fin 2025.",
+    "researched_at": "2026-11-06",
+    "availability_complete": true,
+    "rights_note": "Références et faits documentaires. Aucune licence de réutilisation des photos ou géométries constructeur n’est déduite de ces liens.",
+    "photos": [
+      {
+        "src": "./atlas/photos/dacia-sandero-iii/rear.webp",
+        "title": "Trois-quarts arrière · berline",
+        "alt": "Dacia Sandero III berline blanche, vue de trois-quarts arrière avec le mot-symbole Dacia sur le hayon.",
+        "caption": "Dacia Sandero III berline 2023, nouvelle identité Dacia ; vue trois-quarts arrière. Photo illustrative de la génération, finition et moteur non certifiés.",
+        "view": "exterior",
+        "author": "Charles (usf1fan2) / Flickr",
+        "date": "2023-04-17",
+        "source": "https://www.flickr.com/photos/charles79/52918906353/",
+        "license": "CC BY 2.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/2.0/",
+        "changes": "Redimensionnement à 1600 px et conversion WebP par RaceLink. Aucun changement du véhicule.",
+        "width": 1600,
+        "height": 1084,
+        "exactBodyMatch": true
+      }
+    ],
+    "immersive": [],
+    "immersive_unavailable_reason": "La connexion au configurateur officiel n’a pas abouti durant la vérification; aucune vue interactive validée pour ce véhicule.",
+    "related_models": [
+      {
+        "id": "dacia-sandero-stepway-iii",
+        "label": "Autre carrosserie : Sandero Stepway"
+      }
+    ]
+  },
+  {
+    "id": "dacia-sandero-stepway-iii",
+    "make": "Dacia",
+    "model": "Sandero Stepway",
+    "generation": "III",
+    "phase": "Identité Dacia 2022, avant restylage fin 2025",
+    "year": 2025,
+    "market": "France",
+    "parent_family": "dacia-sandero-iii",
+    "body_variant": "Stepway",
+    "aliases": [
+      "Sandero Stepway",
+      "Dacia Stepway",
+      "Stepway 3",
+      "Stepway III",
+      "Stepway 2025"
+    ],
+    "availability_date": "2025-07-01",
+    "availability_status": "verified",
+    "availability_complete": true,
+    "availability_scope": "Sandero Stepway, tarif Dacia France 2228-00 au 1er juillet 2025, page 3. Silhouette et versions distinctes de Sandero berline. Ne pas substituer une photo Stepway à une berline sans nommer explicitement la variante.",
+    "engines": [
+      {
+        "id": "tce90",
+        "label": "TCe 90",
+        "fuel": "Essence",
+        "gearbox": null,
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      },
+      {
+        "id": "tce90-auto",
+        "label": "TCe 90 auto",
+        "fuel": "Essence",
+        "gearbox": "Automatique",
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      },
+      {
+        "id": "ecog100",
+        "label": "Eco-G 100",
+        "fuel": "Essence / GPL",
+        "gearbox": null,
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3",
+        "aliases": [
+          "EcoG 100",
+          "GPL 100"
+        ]
+      },
+      {
+        "id": "tce110",
+        "label": "TCe 110",
+        "fuel": "Essence",
+        "gearbox": null,
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      }
+    ],
+    "trims": [
+      {
+        "id": "essential",
+        "label": "essential",
+        "engines": [
+          "tce90",
+          "ecog100"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      },
+      {
+        "id": "expression",
+        "label": "expression",
+        "engines": [
+          "tce90",
+          "tce90-auto",
+          "ecog100"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      },
+      {
+        "id": "extreme",
+        "label": "extreme",
+        "engines": [
+          "tce90",
+          "tce110",
+          "ecog100",
+          "tce90-auto"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      },
+      {
+        "id": "extreme-plus",
+        "label": "extreme + (Up&Go)",
+        "engines": [
+          "ecog100"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      }
+    ],
+    "sources": {
+      "tariff": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3",
+      "dimensions": "https://media.dacia.com/wp-content/uploads/2022/07/9f320bddf9e83a1194526bf807b9c03b-keeexed.pdf"
+    },
+    "professional_versions": [],
+    "dimensions_mm": {
+      "length": 4099,
+      "width_folded_mirrors": 1848,
+      "width_open_mirrors": 2007,
+      "height": 1535,
+      "height_with_roof_bars": 1587,
+      "wheelbase": 2604
+    },
+    "dimensions_scope": "Fiche géométrique constructeur de la Stepway III à identité 2022, publiée le 15 juin 2022 ; non transposée au restylage de fin 2025.",
+    "researched_at": "2026-11-06",
+    "popularity": {
+      "rank": 3,
+      "registrations": 64399,
+      "period": "2025-01-01/2025-12-31",
+      "source": "https://pfa-auto.fr/wp-content/uploads/2026/01/Dossier-de-presse-PFA.pdf#page=18",
+      "scope": "VP neufs immatriculés en France, modèle selon nomenclature PFA/AAA DATA, pas parc roulant ni finition précise.",
+      "note": "La ligne PFA Sandero regroupe la famille. Elle ne classe pas séparément cette carrosserie Stepway."
+    },
+    "official_links": [
+      {
+        "label": "Notices Dacia Sandero Stepway",
+        "url": "https://www.user-manual.dacia.com/fr/notices",
+        "kind": "manual",
+        "scope": "Choisir le modèle et la période correspondant au véhicule."
+      }
+    ],
+    "photos": [
+      {
+        "src": "./atlas/photos/dacia-sandero-stepway-iii/stepway-exterior.webp",
+        "title": "Trois-quarts avant · Stepway",
+        "alt": "Dacia Sandero III Stepway bleue, barres de toit, protections de carrosserie et nouvelle identité Dacia visibles.",
+        "caption": "Sandero Stepway présentée comme TCe 100 (2024) par le photographe, photographiée en juillet 2025. Motorisation de cet exemplaire non confirmée par RaceLink ; aucune attribution à une version de la matrice.",
+        "view": "exterior",
+        "author": "Charles (usf1fan2) / Flickr",
+        "date": "2025-07-31",
+        "source": "https://www.flickr.com/photos/charles79/54733542999/",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Conversion en WebP par RaceLink, sans agrandissement ni retouche du véhicule.",
+        "width": 1024,
+        "height": 667,
+        "sourceResolution": "Image de présentation 1024 px fournie par le photographe sur Flickr ; original haute définition non téléchargé.",
+        "body": "Stepway",
+        "scope": "same-body",
+        "exactBodyMatch": true
+      }
+    ],
+    "immersive": [],
+    "immersive_unavailable_reason": "Aucune visite de cette carrosserie vérifiée pour intégration.",
+    "related_models": [
+      {
+        "id": "dacia-sandero-iii",
+        "label": "Autre carrosserie : Sandero berline"
+      }
+    ]
+  },
+  {
+    "id": "peugeot-2008-ii",
+    "make": "Peugeot",
+    "model": "2008",
+    "generation": "II",
+    "phase": "Phase 2 (2023)",
+    "year": 2025,
+    "market": "France",
+    "aliases": [
+      "Peugeot 2008",
+      "2008 II",
+      "2008 2025"
+    ],
+    "availability_date": "2025-09-19",
+    "availability_scope": "Sélection attestée au Salon de Lyon 2025 : 2008 GT Hybrid 145 automatique 6 rapports. Le relevé ne décrit pas toute la gamme. Les tarifs historiques indexés n’ont pas pu être ouverts ; aucune combinaison supplémentaire déduite.",
+    "availability_status": "partial_verified",
+    "engines": [
+      {
+        "id": "hybrid145",
+        "label": "Hybrid 145",
+        "fuel": "Essence hybride",
+        "gearbox": "Automatique, 6 rapports",
+        "source": "https://www.media.stellantis.com/fr-fr/peugeot/press/peugeot-au-salon-de-lyon-deux-nouveautes-majeures-peugeot-e-208-gti-et-la-toute-nouvelle-peugeot-308-peugeot-allie-plaisir-de-conduire-et-des-offres-exclusives"
+      }
+    ],
+    "trims": [
+      {
+        "id": "gt",
+        "label": "GT",
+        "engines": [
+          "hybrid145"
+        ],
+        "source": "https://www.media.stellantis.com/fr-fr/peugeot/press/peugeot-au-salon-de-lyon-deux-nouveautes-majeures-peugeot-e-208-gti-et-la-toute-nouvelle-peugeot-308-peugeot-allie-plaisir-de-conduire-et-des-offres-exclusives"
+      }
+    ],
+    "professional_versions": [],
+    "dimensions_mm": {
+      "length": 4300,
+      "width_open_mirrors": 1987,
+      "height": 1550
+    },
+    "sources": {
+      "availability": "https://www.media.stellantis.com/fr-fr/peugeot/press/peugeot-au-salon-de-lyon-deux-nouveautes-majeures-peugeot-e-208-gti-et-la-toute-nouvelle-peugeot-308-peugeot-allie-plaisir-de-conduire-et-des-offres-exclusives",
+      "phase": "https://www.media.stellantis.com/fr-fr/peugeot/press/nouveau-peugeot-2008-le-suv-impertinent-et-agile-affiche-son-renouveau-design-et-ses-nouvelles-performances-electriques-jusqu-a-406-km-d-autonomie",
+      "dimensions": "https://www.media.stellantis.com/fr-fr/peugeot/press/nouveau-peugeot-2008-le-suv-impertinent-et-agile-affiche-son-renouveau-design-et-ses-nouvelles-performances-electriques-jusqu-a-406-km-d-autonomie"
+    },
+    "official_links": [
+      {
+        "label": "Photos et présentation de la phase 2",
+        "url": "https://www.media.stellantis.com/fr-fr/peugeot/press/nouveau-peugeot-2008-le-suv-impertinent-et-agile-affiche-son-renouveau-design-et-ses-nouvelles-performances-electriques-jusqu-a-406-km-d-autonomie",
+        "scope": "Présentation constructeur de mai 2023 ; carrosserie phase 2.",
+        "kind": "presentation"
+      },
+      {
+        "label": "Documents de bord Peugeot",
+        "url": "https://public.servicebox.peugeot.com/APddb/index.html",
+        "scope": "Choisir 2008 puis période d’édition selon première circulation.",
+        "kind": "manual"
+      },
+      {
+        "label": "Configurateur Peugeot 2008",
+        "url": "https://store.peugeot.fr/selector/configurable/2008-suv?channel=b2c",
+        "scope": "Le site officiel refuse son intégration dans une iframe (X-Frame-Options SAMEORIGIN). Ouvrir le lien officiel dans un autre onglet.",
+        "kind": "configurator"
+      }
+    ],
+    "popularity": {
+      "rank": 4,
+      "registrations": 54634,
+      "period": "2025-01-01/2025-12-31",
+      "source": "https://pfa-auto.fr/wp-content/uploads/2026/01/Dossier-de-presse-PFA.pdf#page=18",
+      "scope": "VP neufs immatriculés en France, modèle selon nomenclature PFA/AAA DATA, pas parc roulant ni finition précise."
+    },
+    "dimensions_scope": "Cotes arrondies du communiqué européen de lancement du 4 mai 2023 pour la phase 2. Pas de précision millimétrique supplémentaire déduite.",
+    "researched_at": "2026-11-06",
+    "availability_complete": false,
+    "rights_note": "Références et faits documentaires. Aucune licence de réutilisation des photos ou géométries constructeur n’est déduite de ces liens.",
+    "photos": [
+      {
+        "src": "./atlas/photos/peugeot-2008-ii/front.webp",
+        "title": "Trois-quarts avant",
+        "alt": "Peugeot 2008 II restylé rouge, calandre et trois griffes lumineuses visibles.",
+        "caption": "2008 II restylé photographié à Stuttgart, Allemagne. Finition et motorisation non attestées.",
+        "view": "exterior",
+        "author": "Alexander Migl (Alexander-93) / Wikimedia Commons",
+        "date": "2024-09-08",
+        "source": "https://commons.wikimedia.org/wiki/File:Peugeot_2008_B_Facelift_IMG_1185.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Peugeot 2008 B Facelift IMG 1185.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 1066
+      }
+    ],
+    "immersive": [],
+    "immersive_unavailable_reason": "Le site officiel refuse son intégration dans une iframe (X-Frame-Options SAMEORIGIN). Ouvrir le lien officiel dans un autre onglet."
+  },
+  {
+    "id": "citroen-c3-iv",
+    "make": "Citroën",
+    "model": "C3",
+    "generation": "IV",
+    "phase": "Europe, depuis 2024",
+    "year": 2025,
+    "market": "France",
+    "aliases": [
+      "Citroën C3",
+      "C3 IV",
+      "C3 2025"
+    ],
+    "availability_date": "2025-10-01",
+    "availability_scope": "Caractéristiques techniques et équipements France, édition octobre 2025. Le document cite le mois ; le premier jour est une normalisation machine. C3 Europe IV, pas C3 Aircross ni version Inde/Amérique du Sud.",
+    "availability_status": "verified",
+    "engines": [
+      {
+        "id": "turbo100",
+        "label": "Turbo 100",
+        "fuel": "Essence",
+        "gearbox": "Manuelle, 6 rapports",
+        "source": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf#page=2"
+      },
+      {
+        "id": "hybrid110",
+        "label": "Hybrid 110",
+        "fuel": "Essence hybride 48 V",
+        "gearbox": "Automatique ë-DCS, 6 rapports",
+        "source": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf#page=2"
+      },
+      {
+        "id": "electric113-urban",
+        "label": "ë-C3 113 · autonomie urbaine",
+        "fuel": "Électrique",
+        "gearbox": "Réducteur mono-rapport",
+        "source": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf#page=4"
+      },
+      {
+        "id": "electric113-comfort",
+        "label": "ë-C3 113 · autonomie confort",
+        "fuel": "Électrique",
+        "gearbox": "Réducteur mono-rapport",
+        "source": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf#page=4"
+      }
+    ],
+    "trims": [
+      {
+        "id": "you",
+        "label": "YOU",
+        "engines": [
+          "turbo100",
+          "electric113-urban",
+          "electric113-comfort"
+        ],
+        "source": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf"
+      },
+      {
+        "id": "plus",
+        "label": "PLUS",
+        "engines": [
+          "turbo100",
+          "hybrid110",
+          "electric113-urban",
+          "electric113-comfort"
+        ],
+        "source": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf"
+      },
+      {
+        "id": "max",
+        "label": "MAX",
+        "engines": [
+          "turbo100",
+          "hybrid110",
+          "electric113-comfort"
+        ],
+        "source": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf"
+      }
+    ],
+    "professional_versions": [
+      {
+        "id": "business",
+        "label": "BUSINESS",
+        "engines": [
+          "turbo100",
+          "hybrid110",
+          "electric113-comfort"
+        ],
+        "source": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf"
+      }
+    ],
+    "dimensions_mm": {
+      "length": 4015,
+      "width_without_mirrors": 1755,
+      "width_folded_mirrors": 1813,
+      "width_open_mirrors": 2017,
+      "height": 1567,
+      "height_with_roof_bars": 1577,
+      "wheelbase": 2540
+    },
+    "sources": {
+      "technical": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf",
+      "dimensions": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf#page=13"
+    },
+    "official_links": [
+      {
+        "label": "Fiche technique et habitacle C3 / ë-C3",
+        "url": "https://www.media.stellantis.com/uploads/fr/model-document/ctc3etec301102025-6985f4785815d.pdf",
+        "scope": "France, octobre 2025 : équipements, garnissages, dimensions.",
+        "kind": "brochure"
+      },
+      {
+        "label": "Notices Citroën",
+        "url": "https://service.citroen.com/ACddb/index.html",
+        "scope": "Choisir C3 puis période d’édition selon première circulation.",
+        "kind": "manual"
+      },
+      {
+        "label": "Configurateur C3",
+        "url": "https://store.citroen.fr/selector/configurable/c3-berline-5-portes?resetFilters=true",
+        "scope": "Le site officiel refuse son intégration dans une iframe (X-Frame-Options SAMEORIGIN). Ouvrir le lien officiel dans un autre onglet.",
+        "kind": "configurator"
+      }
+    ],
+    "popularity": {
+      "rank": 5,
+      "registrations": 41127,
+      "period": "2025-01-01/2025-12-31",
+      "source": "https://pfa-auto.fr/wp-content/uploads/2026/01/Dossier-de-presse-PFA.pdf#page=18",
+      "scope": "VP neufs immatriculés en France, modèle selon nomenclature PFA/AAA DATA, pas parc roulant ni finition précise.",
+      "note": "La PFA sépare C3 IV thermique/hybride (rang 5, 41127) et ë-C3 (rang 21, 16223). Le rang 5 ne porte pas sur leur somme."
+    },
+    "availability_date_precision": "month",
+    "researched_at": "2026-11-06",
+    "availability_complete": true,
+    "rights_note": "Références et faits documentaires. Aucune licence de réutilisation des photos ou géométries constructeur n’est déduite de ces liens.",
+    "photos": [
+      {
+        "src": "./atlas/photos/citroen-c3-iv/front.webp",
+        "title": "Trois-quarts avant",
+        "alt": "Citroën ë-C3 rouge à toit noir, vue de trois-quarts avant.",
+        "caption": "Version électrique de la C3 IV, exposée à Auto Zürich 2024, Suisse.",
+        "view": "exterior",
+        "author": "Alexander Migl (Alexander-93) / Wikimedia Commons",
+        "date": "2024-11-06",
+        "source": "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_%C3%AB-C3_Auto_Zuerich_2024_DSC_6102.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Citroën ë-C3 Auto Zuerich 2024 DSC 6102.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 1070
+      },
+      {
+        "src": "./atlas/photos/citroen-c3-iv/rear.webp",
+        "title": "Trois-quarts arrière",
+        "alt": "Citroën ë-C3 rouge à toit noir, vue du hayon et du flanc arrière.",
+        "caption": "Version électrique de la C3 IV, exposée à Auto Zürich 2024, Suisse.",
+        "view": "exterior",
+        "author": "Alexander Migl (Alexander-93) / Wikimedia Commons",
+        "date": "2024-11-06",
+        "source": "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_%C3%AB-C3_Auto_Zuerich_2024_DSC_6104.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Citroën ë-C3 Auto Zuerich 2024 DSC 6104.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 1070
+      },
+      {
+        "src": "./atlas/photos/citroen-c3-iv/interior.webp",
+        "title": "Habitacle électrique",
+        "alt": "Habitacle d’une Citroën ë-C3, volant à gauche, petit afficheur haut et écran central.",
+        "caption": "Habitacle de la version électrique exposée à Auto Zürich 2024. Les commandes ne représentent pas toutes les motorisations de C3.",
+        "view": "interior",
+        "author": "Alexander Migl (Alexander-93) / Wikimedia Commons",
+        "date": "2024-11-06",
+        "source": "https://commons.wikimedia.org/wiki/File:Citro%C3%ABn_%C3%AB-C3_Auto_Zuerich_2024_DSC_6643.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Citroën ë-C3 Auto Zuerich 2024 DSC 6643.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 1070
+      }
+    ],
+    "immersive": [
+      {
+        "id": "8cc7990f48ea4dd58122d748ebc601c3",
+        "kind": "artist",
+        "label": "2025 Citroën ë-C3 · maquette communautaire",
+        "embedUrl": "https://sketchfab.com/models/8cc7990f48ea4dd58122d748ebc601c3/embed?autostart=1",
+        "url": "https://sketchfab.com/3d-models/2025-citroen-e-c3-8cc7990f48ea4dd58122d748ebc601c3",
+        "author": "tonielpro520",
+        "authorUrl": "https://sketchfab.com/tonielpro520",
+        "license": "CC Attribution",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "modelScope": "2025 Citroën ë-C3 selon le créateur. Géométrie extérieure inspectée; finition et équipements exacts non certifiés.",
+        "note": "Maquette communautaire, pas un modèle constructeur. Matériaux simplifiés. Habitacle, moteur et démontage non vérifiés.",
+        "verified": {
+          "exterior": true,
+          "interior": false,
+          "render": true,
+          "controls": true
+        },
+        "checkedAt": "2026-11-06T11:05:45.244Z",
+        "recommended": false,
+        "format": "Maquette 3D communautaire",
+        "metadataSource": "https://api.sketchfab.com/v3/models/8cc7990f48ea4dd58122d748ebc601c3",
+        "market": ""
+      }
+    ],
+    "immersive_unavailable_reason": "Le site officiel refuse son intégration dans une iframe (X-Frame-Options SAMEORIGIN). Ouvrir le lien officiel dans un autre onglet."
+  },
+  {
+    "id": "renault-captur-ii",
+    "make": "Renault",
+    "model": "Captur",
+    "generation": "II",
+    "phase": "Phase 2 (2024)",
+    "year": 2025,
+    "market": "France",
+    "aliases": [
+      "Renault Captur",
+      "Captur II",
+      "Captur 2025"
+    ],
+    "availability_date": "2025-07-01",
+    "availability_scope": "Captur II phase 2, tarif Renault France 2228-00, appellation -25. La gamme du début 2025 pouvait utiliser E-Tech 145 ; ce dossier photographie juillet 2025.",
+    "availability_status": "verified",
+    "engines": [
+      {
+        "id": "ecog100",
+        "label": "Eco-G 100",
+        "fuel": "Essence / GPL",
+        "gearbox": null,
+        "source": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=7",
+        "aliases": [
+          "EcoG 100",
+          "GPL 100"
+        ]
+      },
+      {
+        "id": "tce90",
+        "label": "TCe 90",
+        "fuel": "Essence",
+        "gearbox": null,
+        "source": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=7"
+      },
+      {
+        "id": "etech160",
+        "label": "E-Tech full hybrid 160",
+        "fuel": "Essence hybride",
+        "gearbox": null,
+        "source": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=7"
+      }
+    ],
+    "trims": [
+      {
+        "id": "evolution",
+        "label": "evolution",
+        "engines": [
+          "ecog100",
+          "tce90",
+          "etech160"
+        ],
+        "source": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=7"
+      },
+      {
+        "id": "techno",
+        "label": "techno",
+        "engines": [
+          "ecog100",
+          "tce90",
+          "etech160"
+        ],
+        "source": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=7"
+      },
+      {
+        "id": "esprit-alpine",
+        "label": "esprit Alpine",
+        "engines": [
+          "etech160"
+        ],
+        "source": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=7"
+      }
+    ],
+    "professional_versions": [],
+    "dimensions_mm": {
+      "length": 4239,
+      "height": 1575,
+      "height_with_roof_bars": 1584,
+      "wheelbase": 2639
+    },
+    "sources": {
+      "tariff": "https://media.renault.com/wp-content/uploads/2025/07/959031faf015d3e963109a43f05d55df.pdf#page=7",
+      "dimensions": "https://media.renault.ro/uploads/RENAULT/Nouveau%20Renault%20Captur%202024/Fisa%20produs%20Noul%20Renault%20Captur.pdf?image=250"
+    },
+    "official_links": [
+      {
+        "label": "Notice Captur : mars–novembre 2025",
+        "url": "https://www.user-manual.renault.com/fr/content/renault-captur-2",
+        "scope": "Édition constructeur du 03/03/2025 au 30/11/2025.",
+        "kind": "manual"
+      },
+      {
+        "label": "Configurateur constructeur",
+        "url": "https://www.renault.fr/vehicules-hybrides/captur/configurateur.html",
+        "scope": "Configurateur live. Les finitions actuelles peuvent différer du dossier France 2025.",
+        "kind": "configurator"
+      }
+    ],
+    "popularity": {
+      "rank": 8,
+      "registrations": 36912,
+      "period": "2025-01-01/2025-12-31",
+      "source": "https://pfa-auto.fr/wp-content/uploads/2026/01/Dossier-de-presse-PFA.pdf#page=18",
+      "scope": "VP neufs immatriculés en France, modèle selon nomenclature PFA/AAA DATA, pas parc roulant ni finition précise."
+    },
+    "dimensions_scope": "Fiche constructeur européenne Captur restylé 2024, hébergée par Renault Roumanie. Seules cotes de carrosserie reprises ; équipements/moteurs France issus du tarif France 2025.",
+    "researched_at": "2026-11-06",
+    "availability_complete": true,
+    "rights_note": "Références et faits documentaires. Aucune licence de réutilisation des photos ou géométries constructeur n’est déduite de ces liens.",
+    "photos": [
+      {
+        "src": "./atlas/photos/renault-captur-ii/front.webp",
+        "title": "Trois-quarts avant",
+        "alt": "Renault Captur II restylé blanc, vu de trois-quarts avant.",
+        "caption": "Captur II phase 2 exposé à Ludwigsburg, Allemagne. Finition et motorisation non attestées.",
+        "view": "exterior",
+        "author": "Alexander Migl (Alexander-93) / Wikimedia Commons",
+        "date": "2024-09-14",
+        "source": "https://commons.wikimedia.org/wiki/File:2024_Renault_Captur_II_Automesse_Ludwigsburg_2024_IMG_1375.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "2024 Renault Captur II Automesse Ludwigsburg 2024 IMG 1375.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 932
+      },
+      {
+        "src": "./atlas/photos/renault-captur-ii/rear.webp",
+        "title": "Trois-quarts arrière",
+        "alt": "Renault Captur II restylé blanc, hayon et feux arrière visibles.",
+        "caption": "Captur II phase 2 exposé à Ludwigsburg, Allemagne.",
+        "view": "exterior",
+        "author": "Alexander Migl (Alexander-93) / Wikimedia Commons",
+        "date": "2024-09-14",
+        "source": "https://commons.wikimedia.org/wiki/File:2024_Renault_Captur_II_Automesse_Ludwigsburg_2024_IMG_1382.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "2024 Renault Captur II Automesse Ludwigsburg 2024 IMG 1382.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 1066
+      },
+      {
+        "src": "./atlas/photos/renault-captur-ii/interior.webp",
+        "title": "Poste de conduite",
+        "alt": "Habitacle d’un Captur II restylé, volant à gauche, écran central vertical et console.",
+        "caption": "Captur II phase 2 exposé à Ludwigsburg, Allemagne. Cet habitacle est celui de l’exemplaire photographié.",
+        "view": "interior",
+        "author": "Alexander Migl (Alexander-93) / Wikimedia Commons",
+        "date": "2024-09-14",
+        "source": "https://commons.wikimedia.org/wiki/File:2024_Renault_Captur_II_Automesse_Ludwigsburg_2024_IMG_1713.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "2024 Renault Captur II Automesse Ludwigsburg 2024 IMG 1713.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 1064
+      }
+    ],
+    "immersive": [
+      {
+        "id": "captur-official",
+        "kind": "oem",
+        "label": "Renault France · Captur",
+        "embedUrl": "https://www.renault.fr/vehicules-hybrides/captur/configurateur.html",
+        "url": "https://www.renault.fr/vehicules-hybrides/captur/configurateur.html",
+        "author": "Renault France",
+        "market": "France",
+        "modelScope": "Captur II phase 2, configurateur France actuel, version 26b observée.",
+        "note": "Le configurateur suit la gamme actuelle 2026. Il ne restitue pas les disponibilités France 2025 archivées dans cette fiche.",
+        "verified": {
+          "exterior": true,
+          "interior": true,
+          "render": true,
+          "controls": true
+        },
+        "checkedAt": "2026-11-06T11:10:36.871Z",
+        "recommended": true,
+        "format": "360 interactive constructeur",
+        "redistribution": "Aucun modèle ni image constructeur téléchargé pour redistribution. Page officielle distante intacte dans iframe.",
+        "licenseUrl": ""
+      },
+      {
+        "id": "3fe3f58932cf46bd8cfb4437187b287f",
+        "kind": "artist",
+        "label": "2025 Renault Captur · maquette communautaire",
+        "embedUrl": "https://sketchfab.com/models/3fe3f58932cf46bd8cfb4437187b287f/embed?autostart=1",
+        "url": "https://sketchfab.com/3d-models/2025-renault-captur-3fe3f58932cf46bd8cfb4437187b287f",
+        "author": "tonielpro520",
+        "authorUrl": "https://sketchfab.com/tonielpro520",
+        "license": "CC Attribution",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "modelScope": "2025 Renault Captur selon le créateur. Géométrie extérieure inspectée; finition et équipements exacts non certifiés.",
+        "note": "Maquette communautaire, pas un modèle constructeur. Matériaux simplifiés. Habitacle, moteur et démontage non vérifiés.",
+        "verified": {
+          "exterior": true,
+          "interior": false,
+          "render": true,
+          "controls": true
+        },
+        "checkedAt": "2026-11-06T11:05:26.157Z",
+        "recommended": false,
+        "format": "Maquette 3D communautaire",
+        "metadataSource": "https://api.sketchfab.com/v3/models/3fe3f58932cf46bd8cfb4437187b287f",
+        "market": ""
+      }
+    ],
+    "immersive_unavailable_reason": ""
+  },
+  {
+    "id": "dacia-duster-iii",
+    "make": "Dacia",
+    "model": "Duster",
+    "generation": "III",
+    "phase": "Depuis 2024",
+    "year": 2025,
+    "market": "France",
+    "aliases": [
+      "Dacia Duster",
+      "Duster III",
+      "Duster 2025"
+    ],
+    "availability_date": "2025-07-01",
+    "availability_scope": "Duster III voitures particulières au 1er juillet 2025. Versions Réversible professionnelles séparées. Gamme antérieure aux moteurs 155/120 de fin 2025.",
+    "availability_status": "verified",
+    "engines": [
+      {
+        "id": "ecog100",
+        "label": "Eco-G 100",
+        "fuel": "Essence / GPL",
+        "gearbox": null,
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3",
+        "aliases": [
+          "EcoG 100",
+          "GPL 100"
+        ]
+      },
+      {
+        "id": "mild130",
+        "label": "mild hybrid 130",
+        "fuel": "Essence micro-hybride",
+        "gearbox": null,
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3",
+        "aliases": [
+          "micro hybride 130"
+        ]
+      },
+      {
+        "id": "mild130-4x4",
+        "label": "mild hybrid 130 4x4",
+        "fuel": "Essence micro-hybride",
+        "gearbox": null,
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3",
+        "aliases": [
+          "micro hybride 130 4x4",
+          "hybride 130 4x4"
+        ]
+      },
+      {
+        "id": "hybrid140",
+        "label": "hybrid 140",
+        "fuel": "Essence hybride",
+        "gearbox": null,
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      }
+    ],
+    "trims": [
+      {
+        "id": "essential",
+        "label": "essential",
+        "engines": [
+          "ecog100"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      },
+      {
+        "id": "expression",
+        "label": "expression",
+        "engines": [
+          "ecog100",
+          "mild130",
+          "mild130-4x4",
+          "hybrid140"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      },
+      {
+        "id": "extreme",
+        "label": "extreme",
+        "engines": [
+          "ecog100",
+          "mild130",
+          "mild130-4x4",
+          "hybrid140"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      },
+      {
+        "id": "journey",
+        "label": "journey",
+        "engines": [
+          "ecog100",
+          "mild130",
+          "mild130-4x4",
+          "hybrid140"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      },
+      {
+        "id": "extreme-plus",
+        "label": "extreme +",
+        "engines": [
+          "hybrid140"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3"
+      }
+    ],
+    "professional_versions": [
+      {
+        "id": "expression-reversible",
+        "label": "expression Réversible",
+        "engines": [
+          "hybrid140",
+          "mild130-4x4"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=4"
+      },
+      {
+        "id": "journey-reversible",
+        "label": "journey Réversible",
+        "engines": [
+          "hybrid140",
+          "mild130-4x4"
+        ],
+        "source": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=4"
+      }
+    ],
+    "dimensions_mm": {
+      "length": 4345,
+      "width_folded_mirrors": 1921,
+      "width_open_mirrors": 2069,
+      "height_with_roof_bars": 1661,
+      "wheelbase": 2658
+    },
+    "sources": {
+      "tariff": "https://media.dacia.com/wp-content/uploads/2025/07/32fe9776977542621ebd3778dbb20473.pdf#page=3",
+      "dimensions": "https://www.user-manual.dacia.com/fr/content/duster/technical-specifications/information-about-vehicle/dimensions-en-metres"
+    },
+    "official_links": [
+      {
+        "label": "Dimensions du manuel Duster III",
+        "url": "https://www.user-manual.dacia.com/fr/content/duster/technical-specifications/information-about-vehicle/dimensions-en-metres",
+        "scope": "Édition 13/01/2024–14/09/2025.",
+        "kind": "manual"
+      },
+      {
+        "label": "Notices Dacia",
+        "url": "https://www.user-manual.dacia.com/fr/notices",
+        "scope": "Choisir Duster puis la période exacte.",
+        "kind": "manual"
+      },
+      {
+        "label": "Configurateur constructeur",
+        "url": "https://www.dacia.fr/gamme-electrique-et-hybride/duster-suv/configurateur.html",
+        "scope": "Configurateur live. Les finitions actuelles peuvent différer du dossier France 2025.",
+        "kind": "configurator"
+      }
+    ],
+    "popularity": {
+      "rank": 9,
+      "registrations": 36687,
+      "period": "2025-01-01/2025-12-31",
+      "source": "https://pfa-auto.fr/wp-content/uploads/2026/01/Dossier-de-presse-PFA.pdf#page=18",
+      "scope": "VP neufs immatriculés en France, modèle selon nomenclature PFA/AAA DATA, pas parc roulant ni finition précise."
+    },
+    "dimensions_scope": "Manuel Dacia, édition 13 janvier 2024–14 septembre 2025 ; hauteur à vide avec barres. Ne pas confondre largeur carrosserie et largeur rétroviseurs repliés.",
+    "researched_at": "2026-11-06",
+    "availability_complete": true,
+    "rights_note": "Références et faits documentaires. Aucune licence de réutilisation des photos ou géométries constructeur n’est déduite de ces liens.",
+    "photos": [
+      {
+        "src": "./atlas/photos/dacia-duster-iii/front.webp",
+        "title": "Trois-quarts avant",
+        "alt": "Dacia Duster III gris, calandre et silhouette vues de trois-quarts avant.",
+        "caption": "Duster III exposé au Salon de Genève 2024. Finition et motorisation non attestées par la source.",
+        "view": "exterior",
+        "author": "Alexander Migl (Alexander-93) / Wikimedia Commons",
+        "date": "2024-02-26",
+        "source": "https://commons.wikimedia.org/wiki/File:Dacia_Duster_III_GIMS_2024_1X7A2015.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Dacia Duster III GIMS 2024 1X7A2015.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 1068
+      },
+      {
+        "src": "./atlas/photos/dacia-duster-iii/rear.webp",
+        "title": "Trois-quarts arrière",
+        "alt": "Dacia Duster III gris, feux en Y, hayon et flanc arrière visibles.",
+        "caption": "Duster III exposé au Salon de Genève 2024.",
+        "view": "exterior",
+        "author": "Alexander Migl (Alexander-93) / Wikimedia Commons",
+        "date": "2024-02-26",
+        "source": "https://commons.wikimedia.org/wiki/File:Dacia_Duster_III_GIMS_2024_1X7A2016.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Dacia Duster III GIMS 2024 1X7A2016.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 1068
+      },
+      {
+        "src": "./atlas/photos/dacia-duster-iii/interior.webp",
+        "title": "Poste de conduite",
+        "alt": "Habitacle d’un Duster III, volant à gauche, écran central et console.",
+        "caption": "Duster III exposé au Salon de Genève 2024. Équipements propres à cet exemplaire.",
+        "view": "interior",
+        "author": "Alexander Migl (Alexander-93) / Wikimedia Commons",
+        "date": "2024-02-26",
+        "source": "https://commons.wikimedia.org/wiki/File:Dacia_Duster_III_GIMS_2024_1X7A2291.jpg",
+        "license": "CC BY-SA 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "originalTitle": "Dacia Duster III GIMS 2024 1X7A2291.jpg",
+        "changes": "Redimensionnement et conversion en WebP par RaceLink. Licence du fichier original conservée.",
+        "width": 1600,
+        "height": 1068
+      }
+    ],
+    "immersive": [
+      {
+        "id": "duster-official",
+        "kind": "oem",
+        "label": "Dacia France · Duster",
+        "embedUrl": "https://www.dacia.fr/gamme-electrique-et-hybride/duster-suv/configurateur.html",
+        "url": "https://www.dacia.fr/gamme-electrique-et-hybride/duster-suv/configurateur.html",
+        "author": "Dacia France",
+        "market": "France",
+        "modelScope": "Duster III, configurateur France actuel, Eco-G120 observé.",
+        "note": "Le configurateur suit la gamme actuelle 2026. Il ne restitue pas les motorisations et équipements France 2025 archivés dans cette fiche.",
+        "verified": {
+          "exterior": true,
+          "interior": true,
+          "render": true,
+          "controls": true
+        },
+        "checkedAt": "2026-11-06T11:11:26.874Z",
+        "recommended": true,
+        "format": "360 interactive constructeur",
+        "redistribution": "Aucun modèle ni image constructeur téléchargé pour redistribution. Page officielle distante intacte dans iframe.",
+        "licenseUrl": ""
+      }
+    ],
+    "immersive_unavailable_reason": ""
+  },
+  {
+    "id": "toyota-yaris-iv",
+    "make": "Toyota",
+    "model": "Yaris",
+    "generation": "IV",
+    "phase": "MY25",
+    "year": 2025,
+    "market": "France",
+    "aliases": [
+      "Toyota Yaris",
+      "Yaris IV",
+      "Yaris 2025"
+    ],
+    "availability_date": "2025-11-01",
+    "availability_scope": "Yaris Hybride MY25, tarif Toyota France 1236, page 2. Ne pas fusionner avec MY24 encore sur stocks page 3, Yaris Cross ou GR Yaris.",
+    "availability_status": "verified",
+    "engines": [
+      {
+        "id": "hybrid116",
+        "label": "Hybride 116h",
+        "fuel": "Essence hybride",
+        "gearbox": null,
+        "source": "https://media.toyota.fr/download/bae79a77-8f50-49a5-9cbc-e0dd5f46204b/1-tariftoyotavp1236.pdf#page=2",
+        "aliases": [
+          "hybride 116",
+          "116h",
+          "116"
+        ]
+      },
+      {
+        "id": "hybrid130",
+        "label": "Hybride 130h",
+        "fuel": "Essence hybride",
+        "gearbox": null,
+        "source": "https://media.toyota.fr/download/bae79a77-8f50-49a5-9cbc-e0dd5f46204b/1-tariftoyotavp1236.pdf#page=2",
+        "aliases": [
+          "hybride 130",
+          "130h",
+          "130"
+        ]
+      }
+    ],
+    "trims": [
+      {
+        "id": "dynamic",
+        "label": "Dynamic",
+        "engines": [
+          "hybrid116"
+        ],
+        "source": "https://media.toyota.fr/download/bae79a77-8f50-49a5-9cbc-e0dd5f46204b/1-tariftoyotavp1236.pdf#page=2"
+      },
+      {
+        "id": "design",
+        "label": "Design",
+        "engines": [
+          "hybrid116"
+        ],
+        "source": "https://media.toyota.fr/download/bae79a77-8f50-49a5-9cbc-e0dd5f46204b/1-tariftoyotavp1236.pdf#page=2"
+      },
+      {
+        "id": "collection",
+        "label": "Collection",
+        "engines": [
+          "hybrid130"
+        ],
+        "source": "https://media.toyota.fr/download/bae79a77-8f50-49a5-9cbc-e0dd5f46204b/1-tariftoyotavp1236.pdf#page=2"
+      },
+      {
+        "id": "gr-sport",
+        "label": "GR SPORT",
+        "engines": [
+          "hybrid130"
+        ],
+        "source": "https://media.toyota.fr/download/bae79a77-8f50-49a5-9cbc-e0dd5f46204b/1-tariftoyotavp1236.pdf#page=2"
+      }
+    ],
+    "professional_versions": [
+      {
+        "id": "dynamic-business",
+        "label": "Dynamic Business",
+        "engines": [
+          "hybrid116"
+        ],
+        "source": "https://media.toyota.fr/download/bae79a77-8f50-49a5-9cbc-e0dd5f46204b/1-tariftoyotavp1236.pdf#page=2"
+      }
+    ],
+    "dimensions_mm": null,
+    "sources": {
+      "tariff": "https://media.toyota.fr/download/bae79a77-8f50-49a5-9cbc-e0dd5f46204b/1-tariftoyotavp1236.pdf#page=2",
+      "model_year": "https://media.toyota.fr/la-toyota-yaris-encore-plus-seduisante-en-2025/"
+    },
+    "official_links": [
+      {
+        "label": "Trouver le manuel Toyota",
+        "url": "https://www.toyota.fr/informations/faq/informations-techniques",
+        "scope": "Rubrique officielle : manuel selon VIN et année ; accès Ma Toyota possible.",
+        "kind": "manual"
+      },
+      {
+        "label": "Présentation Toyota Yaris MY25",
+        "url": "https://media.toyota.fr/la-toyota-yaris-encore-plus-seduisante-en-2025/",
+        "scope": "Annonce du 16 décembre 2024 pour l’année modèle 2025, extérieur et habitacle.",
+        "kind": "presentation"
+      },
+      {
+        "label": "Configurateur Toyota Yaris",
+        "url": "https://www.toyota.fr/vehicules-neufs/yaris/configurateur",
+        "scope": "Le site officiel refuse son intégration dans une iframe (X-Frame-Options SAMEORIGIN). Ouvrir le lien officiel dans un autre onglet.",
+        "kind": "configurator"
+      }
+    ],
+    "popularity": {
+      "rank": 10,
+      "registrations": 33437,
+      "period": "2025-01-01/2025-12-31",
+      "source": "https://pfa-auto.fr/wp-content/uploads/2026/01/Dossier-de-presse-PFA.pdf#page=18",
+      "scope": "VP neufs immatriculés en France, modèle selon nomenclature PFA/AAA DATA, pas parc roulant ni finition précise."
+    },
+    "researched_at": "2026-11-06",
+    "availability_complete": true,
+    "rights_note": "Références et faits documentaires. Aucune licence de réutilisation des photos ou géométries constructeur n’est déduite de ces liens.",
+    "photos": [
+      {
+        "src": "./atlas/photos/toyota-yaris-iv/front.webp",
+        "title": "Yaris IV, vue extérieure",
+        "alt": "Toyota Yaris IV blanche à toit noir vue de trois-quarts avant depuis un point élevé.",
+        "caption": "Yaris présentée comme modèle 2024 par son auteur, photographiée le 7 septembre 2025. Finition et motorisation non vérifiées indépendamment.",
+        "view": "exterior",
+        "author": "Charles (usf1fan2) / Flickr",
+        "date": "2025-09-07",
+        "source": "https://www.flickr.com/photos/charles79/54832847589/",
+        "license": "CC0 1.0",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "changes": "Conversion en WebP par RaceLink, sans agrandissement ni retouche du véhicule.",
+        "width": 1024,
+        "height": 669,
+        "sourceResolution": "Image de présentation 1024 px fournie par le photographe sur Flickr ; original haute définition non téléchargé."
+      }
+    ],
+    "immersive": [],
+    "immersive_unavailable_reason": "Le site officiel refuse son intégration dans une iframe (X-Frame-Options SAMEORIGIN). Ouvrir le lien officiel dans un autre onglet."
+  }
+]

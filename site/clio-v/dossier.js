@@ -43,7 +43,7 @@ async function start(view=chosen){chosen=view;store('vue',view);
 for(const [key,label] of Object.entries(presetNames)){const b=make('button',label);b.value=key;pressed(b,key===chosen);b.onclick=()=>start(key);$('#angles').append(b)}
 $('#activate').onclick=()=>start();$('#orbit-l').onclick=()=>api?.orbit(-15);$('#orbit-r').onclick=()=>api?.orbit(15);$('#near').onclick=()=>api?.zoom(1.17);$('#far').onclick=()=>api?.zoom(1/1.17);$('#reset').onclick=()=>{api?.reset();chosen='three-quarter';api?.setView(chosen);store('vue',chosen)};
 document.addEventListener('rl:theme-change',()=>api?.setTheme(theme()));
-if(params.has('vue')&&presetNames[params.get('vue')])start();
+// Legacy geometry is an explicit opt-in archive, never the default showroom.
 $('#open-external').onclick=()=>{const host=$('#external-slot');if(host.firstChild){host.replaceChildren();$('#open-external').textContent='Charger le lecteur Sketchfab';return}const f=make('iframe');f.title='Renault Clio restylée 2024, maquette de tonielpro520';f.allowFullscreen=true;f.src='https://sketchfab.com/models/8fbb3a6f3dcc409585cb6d7153b473fb/embed';host.append(f);$('#open-external').textContent='Fermer le lecteur externe'};
 async function versions(){const d=await req('renault.json'), rail=$('#trims'),select=$('#engine');brochure=d.sources.brochure;
  renderOfficialSystems($('#systemes'),d);

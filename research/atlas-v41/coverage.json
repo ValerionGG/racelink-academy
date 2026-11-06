@@ -1,0 +1,92 @@
+{
+  "status": "passed",
+  "models": 9,
+  "photos": 21,
+  "pairs": 71,
+  "coverage": [
+    {
+      "id": "renault-clio-v",
+      "photos": 6,
+      "missing_photo_views": [],
+      "viewers": 2,
+      "pairs": 14,
+      "complete_availability": true
+    },
+    {
+      "id": "peugeot-208-ii",
+      "photos": 2,
+      "missing_photo_views": [
+        "interior"
+      ],
+      "viewers": 0,
+      "pairs": 3,
+      "complete_availability": false
+    },
+    {
+      "id": "dacia-sandero-iii",
+      "photos": 1,
+      "missing_photo_views": [
+        "interior"
+      ],
+      "viewers": 0,
+      "pairs": 8,
+      "complete_availability": true
+    },
+    {
+      "id": "dacia-sandero-stepway-iii",
+      "photos": 1,
+      "missing_photo_views": [
+        "interior"
+      ],
+      "viewers": 0,
+      "pairs": 10,
+      "complete_availability": true
+    },
+    {
+      "id": "peugeot-2008-ii",
+      "photos": 1,
+      "missing_photo_views": [
+        "interior"
+      ],
+      "viewers": 0,
+      "pairs": 1,
+      "complete_availability": false
+    },
+    {
+      "id": "citroen-c3-iv",
+      "photos": 3,
+      "missing_photo_views": [],
+      "viewers": 1,
+      "pairs": 10,
+      "complete_availability": true
+    },
+    {
+      "id": "renault-captur-ii",
+      "photos": 3,
+      "missing_photo_views": [],
+      "viewers": 2,
+      "pairs": 7,
+      "complete_availability": true
+    },
+    {
+      "id": "dacia-duster-iii",
+      "photos": 3,
+      "missing_photo_views": [],
+      "viewers": 1,
+      "pairs": 14,
+      "complete_availability": true
+    },
+    {
+      "id": "toyota-yaris-iv",
+      "photos": 1,
+      "missing_photo_views": [
+        "interior"
+      ],
+      "viewers": 0,
+      "pairs": 4,
+      "complete_availability": true
+    }
+  ],
+  "errors": [],
+  "scope": "Structure, provenance fields and local file presence only. Visual identity and the behaviour of remote viewers require separate review."
+}

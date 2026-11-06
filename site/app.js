@@ -3,8 +3,8 @@ import {icon as glyph, categoryIcon} from './icons.js';
 import {createIdentityUI} from './identity-ui.js?v=studio-v30';
 import {tracks} from './tracks.js';
 import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=studio-v30&publisher=v38';
-import {createDiscoveryUI} from './discovery-ui.js?v=search-v34&atlas=v39';
-import {resolveClioDossier} from './vehicle-dossier.js?v=clio-v39';
+import {createDiscoveryUI} from './discovery-ui.js?v=search-v34&atlas=v41';
+import {matchVehicleDossiers} from './vehicle-dossier.js?v=atlas-v41';
 import {createRaceLinkPicks} from './racelink-picks.js';
 import {createMobileUI} from './mobile-ui.js?v=search-v34';
 import {createFilterStudio} from './filter-studio.js?v=search-v34&rev=count-v36';
@@ -103,7 +103,7 @@ const cinemaHome=createCinemaHome({root:$('#cinema-home'),escape,t,getUi:()=>ui,
 function translateCinema(){
   const atelierCopy={shorts:t('Les tutos des créateurs','Tutorials from creators','Tutoriales de creadores'),refine:t('Commencez par une plateforme, puis précisez votre voiture ou le sujet.','Choose a platform, then narrow by car or topic.','Elige una plataforma y filtra por coche o tema.'),cutaway:t('Atelier 3D','3D workshop','Taller 3D'),inspect:t('Explorer les pièces','Explore the parts','Explorar las piezas')};
   atelierCopy.allSocial=t('Explorer les deux','Browse both','Explorar ambas');
-  atelierCopy.clio=t('Photos, 3D et finitions','Photos, 3D and trims · FR','Fotos, 3D y acabados · FR');
+  atelierCopy.clio=t('Photos, habitacles & versions','Photos, interiors & versions · FR','Fotos, interiores y versiones · FR');
   $$('[data-atelier-copy]').forEach(el=>{el.textContent=atelierCopy[el.dataset.atelierCopy];});
   $$('[data-atelier-dest]').forEach(el=>{const target=new URL(el.href);if(ui==='fr')target.searchParams.delete('ui');else target.searchParams.set('ui',ui);el.href=target.href;});
   const labels={featured:t('Le guide à découvrir','A guide to explore','Una guía por descubrir'),featuredTitle:t('Avant votre première vidange.','Before your first oil change.','Antes de tu primer cambio de aceite.'),featuredAction:t('Ouvrir le guide →','Open the guide →','Abrir la guía →'),finderTitle:t('Rechercher dans la bibliothèque','Search the library','Buscar en la biblioteca'),garageLabel:t('Un tuto pour votre voiture','A tutorial for your car','Un tutorial para tu coche'),garageDescription:t('Précisez le modèle, le moteur et l’intervention pour affiner votre recherche.','Choose the model, engine and task to narrow your search.','Indica el modelo, motor e intervención para afinar tu búsqueda.'),garageAction:t('Choisir mon véhicule','Choose my vehicle','Elegir mi vehículo'),oil:t('Huile moteur','Engine oil','Aceite de motor'),tires:t('Pneus & roues','Tires & wheels','Neumáticos y ruedas'),warning:t('Voyants','Warning lights','Testigos')};
@@ -139,7 +139,9 @@ function restoreUrl(){
   activeTrack=tracks[p.get('track')]?p.get('track'):'';
 }
 function syncControls(){
-  const station=resolveClioDossier(state.q,state);$('#clio-result').hidden=!station;if(station)$('#clio-result').href=station;
+  const stations=matchVehicleDossiers(state.q,state),stationRoot=$('#vehicle-dossiers');
+  stationRoot.hidden=!stations.length;
+  stationRoot.innerHTML=stations.map(item=>`<a class="dossier-result" href="${escape(item.href)}">${item.photo?`<img src="${escape(item.photo)}" alt="" width="106" height="65" loading="lazy">`:''}<span><strong>${escape(item.label)}</strong><small>${t('Explorer la voiture · Atlas','Explore this car · Atlas · FR','Explorar el coche · Atlas · FR')}</small></span><b aria-hidden="true">↗</b></a>`).join('');
   document.body.classList.toggle('results-mode',browsing);
   $('#explore-view .catalog').hidden=!browsing;
   $$('#format-tabs button').forEach(b=>b.setAttribute('aria-pressed',String((state.format||'all')===b.dataset.format)));

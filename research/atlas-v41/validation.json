@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "release": "atlas-v41",
+  "search": {
+    "checks": 355,
+    "valid_trim_engine_pairs": 71,
+    "invalid_pairs_rejected": 33
+  },
+  "escape_regressions": 10,
+  "local_ui": {
+    "states": 152,
+    "viewports": [
+      320,
+      390,
+      430,
+      1440
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "overflow": 0,
+    "javascript_errors": 0,
+    "local_http_errors": 0,
+    "frame_behavior": "Lazy loading and unloading tested with simulated remote documents; no real provider-render claim in this UI audit.",
+    "final_targeted_checks": [
+      "Nine cards, decoded photos and corrected mobile crop",
+      "Brand focus and fuel search preserved on open/back",
+      "Invalid combination explained and URL normalized; engine photo and eight dimensions accessible",
+      "Month precision and French date label",
+      "Both themes at 320 px after final adjustments",
+      "Stepway missing-view action and source available",
+      "Real main-library keyboard suggestion opens precise dossier"
+    ]
+  },
+  "limits": [
+    "Desktop Chrome with simulated mobile widths; no physical phone or Safari test.",
+    "Sampled contrast and focus checks do not constitute a full accessibility audit.",
+    "OEM visual controls verified separately; provider sites and live ranges can change."
+  ],
+  "catalogue_changed": false,
+  "new_video_references": 0
+}
