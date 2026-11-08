@@ -23,9 +23,11 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: actions/configure-pages@v5
+      - name: Build
+        run: bash scripts/build_pages.sh _site
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: site
+          path: _site
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4

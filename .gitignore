@@ -7,3 +7,5 @@ __pycache__/
 .DS_Store
 /collector/collection/runtime/
 **/private-raw/
+/_site/
+site/catalog/home-snapshot.json

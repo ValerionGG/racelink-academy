@@ -65,9 +65,28 @@
     return workerPromise;
   }
 
+  let snapshotPromise, warmed = false;
+  // Precomputed answers let the home page appear before the full catalogue has loaded.
+  function loadSnapshot(mode) {
+    if (!snapshotPromise) {
+      const url = new URL("catalog/home-snapshot.json", base);
+      if (mode.catalog_sha256) url.searchParams.set("v", mode.catalog_sha256);
+      snapshotPromise = fetch(url)
+        .then(response => response.ok ? response.json() : null)
+        .then(data => data && data.catalog_sha256 === mode.catalog_sha256 ? data.responses : null)
+        .catch(() => null);
+    }
+    return snapshotPromise;
+  }
+
   window.getCatalogJson = async function getCatalogJson(path) {
     const mode = await resolveMode();
     if (mode.mode === "static") {
+      const responses = await loadSnapshot(mode);
+      if (responses && Object.hasOwn(responses, String(path))) {
+        if (!warmed) { warmed = true; setTimeout(() => ensureWorker(mode).catch(() => {}), 2500); }
+        return structuredClone(responses[String(path)]);
+      }
       await ensureWorker(mode);
       return workerRequest({type: "request", path: String(path)});
     }

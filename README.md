@@ -35,7 +35,7 @@ Après une modification d'un fichier JS ou CSS, augmenter son paramètre `?v=` l
 
 ### Publier
 
-Un push sur `main` déploie `site/` sur GitHub Pages (`.github/workflows/pages.yml`).
+Un push sur `main` déploie le site sur GitHub Pages (`.github/workflows/pages.yml`). `scripts/build_pages.sh` génère au passage `catalog/home-snapshot.json`, qui permet d'afficher l'accueil sans attendre le catalogue, et une copie du site sous `/v2/`.
 
 ### Base de données
 
