@@ -2644,5 +2644,7 @@ button.resource-watch-primary span{font-size:24px;margin-left:4px;color:#fff}
 .home-finder #search-form>button[type=submit]{display:flex;align-items:center;justify-content:center;padding:0 26px}
 @media (max-width:760px){.home-finder .pd-go-label{display:none}.home-finder #search-form>button[type=submit]{padding:0 14px}.pd-player{min-height:240px;aspect-ratio:16/9;height:auto}.cinema-section-heading{flex-wrap:wrap}}
 @media (max-width:760px){body:not(.results-mode) .pd-ticker{display:block}}
+.home-finder .pd-go-label{font:700 15px var(--pd-body)}
+.home-finder #search-helper,.home-finder .search-helper{display:none}
 
 }
