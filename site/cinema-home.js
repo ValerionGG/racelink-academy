@@ -1,5 +1,5 @@
 import {GUIDE_PHOTOS} from './guide-photos.js?v=studio-v30';
-import {icon} from './icons.js';
+import {icon} from './icons.js?v=paddock-1';
 import {attachRailNavigation} from './rail-navigation.js?v=studio-v30';
 
 // Composition only: the catalogue and photo registries remain the sources of truth.
@@ -100,7 +100,7 @@ export function createCinemaHome(ctx) {
     const reviewed = Date.parse(item.reviewedAt ?? item.reviewed_at ?? shelf.reviewedAt ?? shelf.reviewed_at);
     const date = Number.isFinite(reviewed) ? new Intl.DateTimeFormat(locale(), {dateStyle:'medium', timeZone:'UTC'}).format(reviewed) : '';
     const basis = item.evidence?.basis === 'authorized_transcript' ? t('Transcription consultée','Transcript reviewed','Transcripción consultada') : t('Sélection sur métadonnées','Metadata-based selection','Selección por metadatos');
-    return `<article class="cinema-card cinema-video"><h3><button type="button" class="cinema-card-open" data-video="${escape(video.id)}"><span class="cinema-video-visual">${image({src:video.thumbnail_url || video.thumbnailUrl}, 'cinema-thumbnail', true)}<span class="cinema-play" aria-hidden="true">${icon('play', {size:22})}</span>${length ? `<span class="cinema-duration">${escape(length)}</span>` : ''}</span><span class="cinema-card-copy"><span class="cinema-kind">${escape(platformName(video.platform,t('Autres sources','Other sources','Otras fuentes')))}<span>${escape(languageLabel(video))}</span></span><span class="cinema-card-title" dir="auto">${escape(video.title)}</span></span></button></h3><p class="cinema-card-creator" dir="auto">${escape(String(video.creator || '').trim() || t('Auteur non renseigné','Creator not provided','Autor no indicado'))}</p>${ctx.picks?.badge('video', video.id, {compact:true}) || ''}<details class="cinema-reason"><summary>${escape(t('Pourquoi ce choix ?','Why this pick?','¿Por qué esta selección?'))}</summary>${reason ? `<p>${escape(reason)}</p>` : ''}<p>${escape(basis)}${evidence ? ` · ${escape(evidence)}` : ''}</p>${date ? `<small>${escape(t('Revu le ','Reviewed ','Revisado ')+date)}</small>` : ''}</details></article>`;
+    return `<article class="cinema-card cinema-video"><h3><button type="button" class="cinema-card-open" data-video="${escape(video.id)}"><span class="cinema-video-visual"><span class="pd-plat-badge">${escape(({youtube:'YT',tiktok:'TIKTOK',instagram:'INSTA',dailymotion:'DM',vimeo:'VIMEO'})[video.platform]||'')}</span>${image({src:video.thumbnail_url || video.thumbnailUrl}, 'cinema-thumbnail', true)}<span class="cinema-play" aria-hidden="true">${icon('play', {size:22})}</span>${length ? `<span class="cinema-duration">${escape(length)}</span>` : ''}</span><span class="cinema-card-copy"><span class="cinema-kind">${escape(platformName(video.platform,t('Autres sources','Other sources','Otras fuentes')))}<span>${escape(languageLabel(video))}</span></span><span class="cinema-card-title" dir="auto">${escape(video.title)}</span></span></button></h3><p class="cinema-card-creator" dir="auto">${escape([String(video.creator || '').trim() || t('Auteur non renseigné','Creator not provided','Autor no indicado'), platformName(video.platform, '')].filter(Boolean).join(' · '))}</p>${ctx.picks?.badge('video', video.id, {compact:true}) || ''}<details class="cinema-reason"><summary>${escape(t('Pourquoi ce choix ?','Why this pick?','¿Por qué esta selección?'))}</summary>${reason ? `<p>${escape(reason)}</p>` : ''}<p>${escape(basis)}${evidence ? ` · ${escape(evidence)}` : ''}</p>${date ? `<small>${escape(t('Revu le ','Reviewed ','Revisado ')+date)}</small>` : ''}</details></article>`;
   }
   function credits(photos) {
     const unique = [...new Map(photos.filter(Boolean).map(photo => [photo.sourceUrl, photo])).values()];
@@ -110,7 +110,7 @@ export function createCinemaHome(ctx) {
   function render() {
     if (disposed) return {ready:false, guides:0, videos:0};
     cleanupRails();
-    const allGuides = ESSENTIALS.map(task => array(guideData?.guides).find(guide => (guide?.task === task || guide?.id === task) && guide.id && guide.title)).filter(Boolean);
+    const allGuides = ESSENTIALS.map(task => task === 'vehicle-identification' ? {id:task, task, title:'Commencer par identifier votre véhicule', language:'fr', sources:[]} : array(guideData?.guides).find(guide => (guide?.task === task || guide?.id === task) && guide.id && guide.title)).filter(Boolean);
     const guides = allGuides.filter(guide => matchesLanguage(guide.language || guideData?.language));
     const universes = []; // ponytail: the eight subjects now live in paddock-home.js.
     const videos = selectedVideos();

@@ -1,7 +1,7 @@
 // A photograph, one opening action, and the source. Evidence lives in the reader.
 // Pure rendering: no request, storage, or mutation of the source record.
 import {sourceLabel} from './source-label.js?v=discovery-v34';
-import {poster} from './paddock-home.js?v=5';
+import {poster} from './paddock-home.js?v=6';
 export function resourceCard(video,c){
   const {escape:e,t,glyph,safeUrl,platformName,languageLabel,estimatedLanguage,fmtDuration}=c;
   const id=e(video.id),image=safeUrl(video.thumbnail_url,true);

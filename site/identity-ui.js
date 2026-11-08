@@ -1,4 +1,4 @@
-import {icon, categoryIcon} from './icons.js';
+import {icon, categoryIcon} from './icons.js?v=paddock-1';
 
 // Navigation is a native dialog: focus containment, Escape and focus return
 // remain provided by the browser. Links reuse the existing catalog actions.

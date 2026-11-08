@@ -15,7 +15,7 @@ const items = [
 const current = sections => sections.split(',').includes(page) ? ' aria-current="page"' : '';
 const bar = document.createElement('div');
 bar.className = 'pd-bar';
-bar.innerHTML = `<a class="pd-brand" href="${link('./')}" aria-label="RaceLink Academy"><svg viewBox="0 0 36 36" aria-hidden="true"><rect width="36" height="36" rx="9" fill="#e8141f"/><path d="M11 27V10h8a5.3 5.3 0 0 1 1.6 10.4L25 27h-4.4l-3.9-6.2H15V27Zm4-9.7h3.8a2 2 0 0 0 0-4H15Z" fill="#fff"/></svg><span>RACELINK<small>ACADEMY</small></span></a>
+bar.innerHTML = `<a class="pd-brand" href="${link('./')}" aria-label="RaceLink Academy"><svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="#e8141f"/><path d="M9 23V9h8.5a4.5 4.5 0 0 1 1.4 8.8L23 23h-4.6l-3.6-5H13v5Zm4-8.6h4.2a1.6 1.6 0 0 0 0-3.2H13Z" fill="#fff"/></svg><span>RACELINK<small>ACADEMY</small></span></a>
   <nav aria-label="${t('Navigation principale', 'Main navigation', 'Navegación principal')}">${items.map(([href, label, sections]) => `<a href="${href}"${current(sections)}>${label}</a>`).join('')}</nav>
   <div class="pd-bar-theme" data-theme-controls role="group"><button type="button" data-theme-choice="light"><span data-theme-label></span></button><button type="button" data-theme-choice="dark"><span data-theme-label></span></button></div>`;
 document.body.prepend(bar);

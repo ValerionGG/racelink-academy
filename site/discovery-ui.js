@@ -1,4 +1,5 @@
-import {icon} from './icons.js';
+import {poster} from './paddock-home.js?v=6';
+import {icon} from './icons.js?v=paddock-1';
 import {matchVehicleDossiers} from './vehicle-dossier.js?v=atlas-v41';
 import {attachRailNavigation} from './rail-navigation.js?v=studio-v30';
 import {searchSuggestionPatch} from './search-assistance-ui.js?v=search-v34';
@@ -125,15 +126,18 @@ export function createDiscoveryUI(ctx) {
   }
   function renderSuggestions() {
     const root=$('#search-suggestions');
-    let group='';
-    root.innerHTML=suggestions.map((item,i)=>{
-      const kind=item.type==='history'?'history':['video','guide','vehicle-dossier'].includes(item.type)?'resource':'topic';
-      const title=kind==='history'?t('Recherches récentes','Recent searches','Búsquedas recientes'):kind==='resource'?t('Ouvrir une ressource','Open a resource','Abrir un recurso'):t('Recherches suggérées','Suggested searches','Búsquedas sugeridas');
-      const heading=kind!==group?`<div class="suggestion-group-label" role="presentation">${title}</div>`:'';group=kind;
+    const columns=[['topic',t('Recherches','Searches','Búsquedas')],['resource',t('Tutos','Tutorials','Tutoriales')],['guide',t('Guides et voitures','Guides and cars','Guías y coches')]];
+    const column=item=>['video'].includes(item.type)?'resource':['guide','vehicle-dossier'].includes(item.type)?'guide':'topic';
+    const row=(item,i)=>{
       const label=(item.match_basis==='editorial_default'?'':item.completion)||text(item.label)||item.query;
       const correction=item.corrections?.length?item.corrections.map(c=>`${c.from} → ${c.to}`).join(' · '):text(item.correction);
       const detail=[correction,suggestionDetail(item)].filter(Boolean).join(' · ');
-      return heading+`<button type="button" role="option" tabindex="-1" id="suggestion-${i}" data-suggestion="${i}" aria-selected="${active===i}"><span class="suggestion-copy"><strong dir="auto">${e(label)}</strong>${detail?`<small>${e(detail)}</small>`:''}</span><b aria-hidden="true">${item.type==='video'||item.type==='guide'?'↗':'→'}</b></button>`;
+      const art=column(item)==='topic'?'':`<img src="${poster({id:item.id||label,t:label,s:[],c:item.category})}" alt="" loading="lazy">`;
+      return `<button type="button" role="option" tabindex="-1" id="suggestion-${i}" data-suggestion="${i}" aria-selected="${active===i}">${art}<span class="suggestion-copy"><strong dir="auto">${e(label)}</strong>${detail?`<small>${e(detail)}</small>`:''}</span><b aria-hidden="true">${item.type==='video'||item.type==='guide'?'↗':'→'}</b></button>`;
+    };
+    root.innerHTML=columns.map(([key,title])=>{
+      const entries=suggestions.map((item,i)=>[item,i]).filter(([item])=>column(item)===key);
+      return entries.length?`<div class="suggestion-column"><div class="suggestion-group-label" role="presentation">${title}</div>${entries.map(([item,i])=>row(item,i)).join('')}</div>`:'';
     }).join('');
     root.hidden=!suggestions.length;$('#search').setAttribute('aria-expanded',String(suggestions.length>0));
     if(active>=0)$('#search').setAttribute('aria-activedescendant',`suggestion-${active}`);else $('#search').removeAttribute('aria-activedescendant');
@@ -152,7 +156,7 @@ export function createDiscoveryUI(ctx) {
       const response=await window.getCatalogJson(`/aide/api/suggestions?${request({...stateContext(),q,ui:ctx.getUi()})}`);
       if(version!==searchVersion||document.activeElement!==$('#search'))return;
       const history=q?[]:recent().slice(0,2).map(query=>({type:'history',query,label:query,reason:t('Sur cet appareil uniquement','On this device only','Solo en este dispositivo')}));
-      suggestions=[...vehicle,...history,...(response.suggestions||[])].slice(0,matchMedia('(max-width:760px)').matches?4:6);active=-1;renderSuggestions();
+      suggestions=[...vehicle,...history,...(response.suggestions||[])].slice(0,matchMedia('(max-width:760px)').matches?4:9);active=-1;renderSuggestions();
     } catch {if(version===searchVersion&&!vehicle.length)closeSuggestions();}
   }
   function chooseSuggestion(index) {

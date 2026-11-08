@@ -29,6 +29,7 @@ export const poster = item => {
   for (const char of String(item.id || item.t || '')) hash = (hash * 31 + char.charCodeAt(0)) >>> 0;
   return IMAGE(pool[hash % pool.length]);
 };
+const PATH_TITLES = {mechanics:['Comprendre sa voiture','Understand your car','Entender tu coche'], driving:['Freiner plus tard','Brake later','Frenar más tarde'], simracing:['Régler son simulateur','Set up your simulator','Ajustar tu simulador'], engineering:['Lire la télémétrie','Read telemetry','Leer la telemetría']};
 const CLOCK = '\\d{1,2}:\\d{2}(?::\\d{2})?';
 const CHAPTER = new RegExp(`(${CLOCK})\\s*[-–—:)\\]]?\\s*([^\\n]*?)(?=\\s*${CLOCK}\\s*[-–—:)\\]]?\\s|\\n|$)`, 'g');
 // Chapters published by the author in the video description. Nothing is inferred.
@@ -53,28 +54,34 @@ export function pickShorts(items, limit = SHORTS_SHOWN, perPoster = PER_POSTER) 
   return picked;
 }
 
-export function createPaddockHome({$, escape, t, getUi, getJson, cardMarkup, setImageFallback, catName, fmtDuration}) {
-  let stats = null, frenchCounts = {}, shorts = [], faq = [], taskNames = {}, previewGeneration = '', previewChoices = [];
+export function createPaddockHome({$, escape, t, getUi, getJson, cardMarkup, setImageFallback, catName, fmtDuration, storage}) {
+  let stats = null, frenchCounts = {}, shorts = [], faq = [], taskNames = {}, previewGeneration = '', previewChoices = [], socialTotals = null, featured = null;
+  const previewFilters = {language:'fr', category:'mechanics', level:'', transcript:'', license:'', platform:''};
   const pick = values => t(...values);
   const number = value => Number(value || 0).toLocaleString(getUi());
   const count = id => stats?.facets?.category?.find(entry => entry.value === id)?.count || 0;
   const progress = () => { try { return JSON.parse(localStorage.getItem('rl-library-progress') || '{}'); } catch { return {}; } };
 
   function ticker() {
-    const entries = [[stats?.total_videos, t('vidéos','videos','vídeos')],...LARGE.map(([id,,name]) => [count(id), pick(name)]),
-      [stats?.facets?.platform?.find(p => p.value === 'tiktok')?.count, 'TikTok'],[stats?.facets?.platform?.find(p => p.value === 'instagram')?.count, 'Instagram']].filter(([n]) => n);
-    const text = entries.map(([n, label]) => `<span>${escape(label)} <b>${number(n)}</b></span>`).join('');
+    const language = stats?.facets?.language?.find(entry => entry.value === 'fr')?.count, platform = id => stats?.facets?.platform?.find(entry => entry.value === id)?.count || 0;
+    const text = [`<span><i>●</i> ${t('Catalogue','Catalogue','Catálogo')} · <b>${number(stats?.total_videos)}</b> ${t('vidéos','videos','vídeos')}</span>`,
+      `<span><b>${number(language)}</b> ${t('en français','in French','en francés')}</span>`,
+      ...LARGE.map(([id,,name]) => `<span>${escape(pick(name))} <b>${number(count(id))}</b></span>`),
+      `<span><b>${number(platform('tiktok'))}</b> TikTok · <b>${number(platform('instagram'))}</b> Instagram</span>`,
+      `<span><b>11</b> ${t('guides RaceLink','RaceLink guides','guías RaceLink')}</span>`, `<span><b>8</b> ${t('parcours guidés','guided paths','itinerarios')}</span>`].join('');
     $('#pd-ticker').innerHTML = text + text;
   }
   function subjects() {
     const badge = id => stats ? `<span class="pd-subject-count">${number(count(id))}</span>` : '';
     const fr = id => frenchCounts[id] ? `<span class="pd-fr">${number(frenchCounts[id])} ${t('en français','in French','en francés')}</span>` : '';
+    if (stats) $('#pd-subjects-kick').textContent = `8 ${t('univers','worlds','mundos')} · ${number(stats.total_videos)} ${t('vidéos','videos','vídeos')}`;
     $('#pd-subjects-grid').innerHTML = LARGE.map(([id, src, name, hint]) => `<button type="button" class="pd-subject pd-subject-photo" data-entry-category="${id}"><img src="${src}" alt="" loading="lazy" decoding="async">${badge(id)}<strong>${escape(pick(name))}</strong><small>${escape(pick(hint))}</small>${fr(id)}</button>`).join('') +
       SMALL.map(([id, name, hint, path]) => `<button type="button" class="pd-subject" data-entry-category="${id}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">${path}</svg>${badge(id)}<strong>${escape(pick(name))}</strong><small>${escape(pick(hint))}</small></button>`).join('');
   }
   function shortsRail() {
     const root = $('#pd-shorts-rail');
     root.closest('section').hidden = !shorts.length;
+    if (socialTotals) { $('#pd-shorts-kick').textContent = `TikTok · Instagram · ${number(socialTotals.french)} ${t('en français','in French','en francés')}`; $('#pd-shorts-all').textContent = `${t('Voir les','See all','Ver los')} ${number(socialTotals.total)} →`; }
     root.innerHTML = shorts.map(item => {
       const topic = taskNames[item.s?.[0]]?.[getUi()] || (item.c ? catName(item.c) : ''), author = String(item.a || '').replace(/^@/, '');
       return `<article class="pd-short"><button type="button" data-video="${escape(item.id)}" aria-label="${escape(item.t)}"><img src="${item.poster}" alt="" loading="lazy" decoding="async"><span class="pd-short-top"><span class="pd-plat">${item.p === 'instagram' ? 'INSTA' : 'TIKTOK'}</span><span class="pd-plat">FR</span></span><span class="pd-short-copy">${topic ? `<span class="pd-short-tag">${escape(topic)}</span>` : ''}<strong dir="auto">${escape(item.t)}</strong><small dir="auto"><i aria-hidden="true">${escape(author.charAt(0).toUpperCase())}</i>${escape(author)}</small></span></button></article>`;
@@ -85,7 +92,7 @@ export function createPaddockHome({$, escape, t, getUi, getJson, cardMarkup, set
     $('#pd-paths-grid').innerHTML = PATHS.map(([id, name]) => {
       const steps = tracks[id] || [], finished = steps.filter((_, index) => done[`${id}:${index}`]).length;
       const state = finished ? t(`Étape ${Math.min(finished + 1, steps.length)}/${steps.length}`,`Step ${Math.min(finished + 1, steps.length)}/${steps.length}`,`Paso ${Math.min(finished + 1, steps.length)}/${steps.length}`) : t('À commencer','Not started','Sin empezar');
-      return `<button type="button" class="pd-path" data-path="${id}"><span class="pd-path-kind">${escape(pick(name))}</span><strong>${escape(pick(steps[0]?.title || name))}</strong><span class="pd-sectors" aria-hidden="true">${steps.map((_, index) => `<i class="${done[`${id}:${index}`] ? 'on' : ''}"></i>`).join('')}</span><small><span>${steps.length} ${t('étapes','steps','pasos')}</span><span>${state}</span></small></button>`;
+      return `<button type="button" class="pd-path" data-path="${id}"><span class="pd-path-kind">${escape(pick(name))}</span><strong>${escape(pick(PATH_TITLES[id] || name))}</strong><span class="pd-sectors" aria-hidden="true">${steps.map((_, index) => `<i class="${done[`${id}:${index}`] ? 'on' : ''}"></i>`).join('')}</span><small><span>${steps.length} ${t('étapes','steps','pasos')}</span><span>${state}</span></small></button>`;
     }).join('');
   }
   function help() {
@@ -111,39 +118,78 @@ export function createPaddockHome({$, escape, t, getUi, getJson, cardMarkup, set
       atlasHint:t('Photos, habitacles, versions et visites 360° constructeur.','Photos, interiors, versions and manufacturer 360° tours.','Fotos, interiores, versiones y visitas 360° del fabricante.'),
       workshopHint:t('Un châssis ouvert à démonter pièce par pièce.','An open chassis to take apart piece by piece.','Un chasis abierto para desmontar pieza a pieza.'),
       footLearn:t('Apprendre','Learn','Aprender'),footLibrary:t('Bibliothèque','Library','Biblioteca'),footCar:t('Ta voiture','Your car','Tu coche'),footAtlas:t('Atlas des voitures','Car atlas','Atlas de coches'),footWorkshop:t('Atelier 3D','3D workshop','Taller 3D'),
-      navTopics:t('Sujets','Topics','Temas'),
+      navTopics:t('Sujets','Topics','Temas'),goLabel:t('Chercher','Search','Buscar'),askLabel:t('Qu’est-ce que tu veux apprendre ?','What do you want to learn?','¿Qué quieres aprender?'),carOptional:t('Ma voiture · optionnel','My car · optional','Mi coche · opcional'),chipTelemetry:t('Lire la télémétrie','Read telemetry','Leer la telemetría'),chipCareer:t('Devenir mécanicien','Become a mechanic','Ser mecánico'),tabSearch:t('Chercher','Search','Buscar'),tabShorts:t('Courts','Shorts','Cortos'),tabHelp:t('Aide','Help','Ayuda'),academy:t('Masterclass Focus ↗','Focus Masterclass ↗','Masterclass Focus ↗'),
       previewKick:t('Bibliothèque','Library','Biblioteca'),previewTitle:t('Trouve le bon tuto','Find the right tutorial','Encuentra el tutorial'),previewHint:t('Les filtres restent visibles, chaque critère se retire d’un clic, et la recherche comprend les modèles de voiture.','Filters stay visible, each one clears in a click, and search understands car models.','Los filtros siguen visibles, cada criterio se quita con un clic y la búsqueda entiende los modelos de coche.'),
-      ficheKick:t('La fiche tuto','The tutorial page','La ficha'),ficheTitle:t('Comprendre avant de regarder','Understand before you watch','Entender antes de ver'),ficheHint:t('Les chapitres, la source et tes notes, sur la même page.','Chapters, source and your notes on one page.','Los capítulos, la fuente y tus notas en la misma página.'),
+      ficheKick:t('La fiche tuto','The tutorial page','La ficha'),ficheTitle:t('Comprendre<br>avant de regarder','Understand before you watch','Entender antes de ver'),ficheHint:t('Chapitres, transcription, tes notes et la source, sur la même page. Tu sais ce qu’il y a dans la vidéo avant de l’ouvrir.','Chapters, transcript, your notes and the source on one page. You know what is in a video before opening it.','Capítulos, transcripción, tus notas y la fuente en la misma página. Sabes qué hay en el vídeo antes de abrirlo.'),
       faqAll:t('Toute l’aide →','All help →','Toda la ayuda →'),
     };
     document.querySelectorAll('[data-pd]').forEach(el => { const value = labels[el.dataset.pd]; if (value) el.innerHTML = value; });
   }
+  const PREVIEW_KEYS = ['language', 'category', 'level', 'transcript', 'license', 'platform'];
+  const FILTER_VALUES = {language:'fr', level:'beginner', transcript:'available', license:'open'};
+  function filterLabel(key, value) {
+    if (key === 'category') return catName(value);
+    if (key === 'platform') return platformLabel(value);
+    return {language:t('Français','French','Francés'), level:t('Débutant','Beginner','Principiante'), transcript:t('Avec transcription','With transcript','Con transcripción'), license:t('Licence libre','Open licence','Licencia libre')}[key];
+  }
+  const platformLabel = value => ({youtube:'YouTube', tiktok:'TikTok', instagram:'Instagram', dailymotion:'Dailymotion', vimeo:'Vimeo', facebook:'Facebook', racelink:'RaceLink'})[value] || value;
   async function libraryPreview() {
     const root = $('#pd-lib-preview');
-    const params = new URLSearchParams({q:'vidange clio', language:'fr', per_page:'3'});
-    if (previewGeneration) params.set('generation', previewGeneration);
-    const data = await getJson(`/aide/api/resources?${params}`);
+    const fields = {q:'vidange clio'};
+    PREVIEW_KEYS.forEach(key => { if (previewFilters[key]) fields[key] = previewFilters[key]; });
+    fields.per_page = '3';
+    if (previewGeneration) fields.generation = previewGeneration;
+    const data = await getJson(`/aide/api/resources?${new URLSearchParams(fields)}`);
     if (!previewGeneration) previewChoices = data.facets?.generation || [];
-    const facet = (label, entries, name) => `<div class="pd-lib-facet"><span class="pd-label">${label}</span>${entries.slice(0, 3).map(entry => `<button type="button" data-query="vidange clio">${escape(name(entry.value))}<small>${number(entry.count)}</small></button>`).join('')}</div>`;
-    const platformLabel = value => ({youtube:'YouTube', tiktok:'TikTok', instagram:'Instagram', dailymotion:'Dailymotion', racelink:'RaceLink'})[value] || value;
-    const tabs = [[t('Tout','All','Todo'), data.total], [t('Vidéos','Videos','Vídeos'), data.total_videos], [t('Guides','Guides','Guías'), data.total_guides]];
-    root.innerHTML = `<aside class="pd-lib-side">${facet(t('Sujet','Topic','Tema'), data.facets?.category || [], catName)}${facet(t('Plateforme','Platform','Plataforma'), data.facets?.platform || [], platformLabel)}<button type="button" class="pd-more" data-query="vidange clio">${t('Toute la recherche →','Full search →','Búsqueda completa →')}</button></aside>
+    const rows = (key, label, entries, name) => `<div class="pd-lib-facet"><span class="pd-label">${label}</span>${entries.slice(0, 3).map(entry => `<button type="button" data-preview-set="${key}" data-value="${escape(entry.value)}" class="${previewFilters[key] === entry.value ? 'on' : ''}">${escape(name(entry.value))}<small>${number(entry.count)}</small></button>`).join('')}</div>`;
+    const toggle = key => `<button type="button" class="pd-toggle ${previewFilters[key] ? 'on' : ''}" data-preview-toggle="${key}" aria-pressed="${Boolean(previewFilters[key])}"><span>${filterLabel(key)}</span><i></i></button>`;
+    const chips = PREVIEW_KEYS.filter(key => previewFilters[key]).map(key => `<button type="button" class="pd-chip-x" data-preview-clear="${key}">${escape(filterLabel(key, previewFilters[key]))}</button>`).join('');
+    const tabs = [[t('Tout','All','Todo'), data.total], [t('Vidéos','Videos','Vídeos'), data.total_videos], [t('Guides','Guides','Guías'), data.total_guides], [t('Formats courts','Short videos','Vídeos cortos'), (data.facets?.platform || []).filter(entry => ['tiktok','instagram'].includes(entry.value)).reduce((sum, entry) => sum + entry.count, 0)]];
+    root.innerHTML = `<aside class="pd-lib-side">${rows('category', t('Sujet','Topic','Tema'), data.facets?.category || [], catName)}${rows('platform', t('Plateforme','Platform','Plataforma'), data.facets?.platform || [], platformLabel)}<div class="pd-lib-facet"><span class="pd-label">${t('Contenu','Content','Contenido')}</span>${['language','level','transcript','license'].map(toggle).join('')}</div><button type="button" class="pd-more" data-query="vidange clio">${t('Toute la recherche →','Full search →','Búsqueda completa →')}</button></aside>
       <div class="pd-lib-main"><div class="pd-lib-top"><h3>« vidange clio »</h3><span class="pd-label">${t('Tri : pertinence','Sort: relevance','Orden: relevancia')}</span></div>
       <div class="pd-lib-tabs">${tabs.map(([label, count], index) => `<span class="${index ? '' : 'on'}">${label}<small>${number(count)}</small></span>`).join('')}</div>
+      ${chips ? `<div class="pd-lib-chips"><span class="pd-label">${t('Critères','Filters','Criterios')}</span>${chips}</div>` : ''}
       ${previewChoices.length > 1 ? `<div class="generation-choices"><span>${t('Quelle Clio ?','Which Clio?','¿Qué Clio?')}</span>${[{value:'', label:t('Toutes','All','Todas')}, ...previewChoices.map(choice => ({...choice, label:choice.value}))].map(choice => `<button type="button" data-preview-generation="${escape(choice.value)}" aria-pressed="${previewGeneration === choice.value}">${escape(choice.label)}${choice.count ? ` <small>${choice.count}</small>` : ''}</button>`).join('')}</div>` : ''}
-      <div class="video-grid pd-lib-grid">${(data.items || []).map(cardMarkup).join('')}</div></div>`;
-    root.hidden = false; setImageFallback(root);
+      <div class="video-grid pd-lib-grid">${(data.items || []).length ? data.items.map(cardMarkup).join('') : `<div class="empty"><strong>${t('Aucun résultat','No results','Sin resultados')}</strong><p>${t('Retire un critère pour élargir.','Remove a filter to widen the search.','Quita un criterio para ampliar.')}</p></div>`}</div></div>`;
+    setImageFallback(root);
+  }
+  function previewClick(event) {
+    const set = event.target.closest('[data-preview-set]'), toggle = event.target.closest('[data-preview-toggle]'), clear = event.target.closest('[data-preview-clear]'), generation = event.target.closest('[data-preview-generation]');
+    if (set) previewFilters[set.dataset.previewSet] = previewFilters[set.dataset.previewSet] === set.dataset.value ? '' : set.dataset.value;
+    else if (toggle) previewFilters[toggle.dataset.previewToggle] = previewFilters[toggle.dataset.previewToggle] ? '' : FILTER_VALUES[toggle.dataset.previewToggle];
+    else if (clear) previewFilters[clear.dataset.previewClear] = '';
+    else if (generation) previewGeneration = generation.dataset.previewGeneration;
+    else return;
+    if (!generation) previewGeneration = '';
+    libraryPreview().catch(() => {});
+  }
+  function ficheTab(name) {
+    document.querySelectorAll('[data-fiche-tab]').forEach(tab => tab.setAttribute('aria-selected', String(tab.dataset.ficheTab === name)));
+    document.querySelectorAll('[data-fiche-pane]').forEach(pane => { pane.hidden = pane.dataset.fichePane !== name; });
   }
   async function fichePreview() {
     const root = $('#pd-fiche-preview');
     const result = await getJson(`/aide/api/videos/${encodeURIComponent(FEATURED_VIDEO)}`);
-    const video = result.video || result.item || result, chapters = parseChapters(video.description).slice(0, 6);
+    const video = result.video || result.item || result, all = parseChapters(video.description), chapters = all.slice(0, 6);
     if (!video?.id || !chapters.length) return;
-    root.innerHTML = `<div class="pd-player" style="background-image:url('${escape(String(video.thumbnail_url || '').replace(/'/g, '%27'))}')"><button type="button" class="pd-big-play" data-video="${escape(video.id)}" aria-label="${t('Ouvrir la fiche','Open the page','Abrir la ficha')}"><svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg></button><div class="pd-player-cap"><strong dir="auto">${escape(video.title)}</strong><span dir="auto">${escape(video.creator || '')} · ${fmtDuration(video.duration_seconds)}</span></div></div>
-      <div class="pd-fiche-side"><div class="pd-specs"><div><span class="pd-label">${t('Durée','Duration','Duración')}</span><b>${fmtDuration(video.duration_seconds)}</b></div><div><span class="pd-label">${t('Sujet','Topic','Tema')}</span><b>${escape(catName(video.category))}</b></div><div><span class="pd-label">${t('Langue','Language','Idioma')}</span><b>FR</b></div><div><span class="pd-label">${t('Chapitres','Chapters','Capítulos')}</span><b>${parseChapters(video.description).length}</b></div></div>
-      <ol class="pd-chapters-list">${chapters.map(chapter => `<li><button type="button" data-video="${escape(video.id)}"><b>${escape(chapter.clock)}</b><span dir="auto">${escape(chapter.title)}</span></button></li>`).join('')}</ol>
-      <button type="button" class="pd-open-fiche" data-video="${escape(video.id)}">▶ ${t('Ouvrir la fiche','Open the page','Abrir la ficha')}</button></div>`;
+    featured = video;
+    const tabs = [['chapters',t('Chapitres','Chapters','Capítulos')],['transcript',t('Transcription','Transcript','Transcripción')],['notes',t('Mes notes','My notes','Mis notas')],['source',t('Source','Source','Fuente')]];
+    const specs = [[t('Durée','Duration','Duración'),fmtDuration(video.duration_seconds)],[t('Niveau','Level','Nivel'),t('Débutant','Beginner','Principiante')],[t('Sujet','Topic','Tema'),catName(video.category)],[t('Chapitres','Chapters','Capítulos'),String(all.length)]];
+    const url = new URL(location.href); url.search = ''; url.hash = ''; url.searchParams.set('video', video.id);
+    root.innerHTML = `<div class="pd-player" style="background-image:url('${escape(String(video.thumbnail_url || '').replace(/'/g, '%27'))}')"><button type="button" class="pd-big-play" data-video="${escape(video.id)}" aria-label="${t('Regarder ici','Watch here','Ver aquí')}"><svg viewBox="0 0 10 12" aria-hidden="true"><path d="M0 0l10 6-10 6z"/></svg></button><div class="pd-player-cap"><strong dir="auto">${escape(video.title)}</strong><span dir="auto">${escape(video.creator || '')} · YouTube · ${fmtDuration(video.duration_seconds)} · ${t('Français','French','Francés')}</span></div></div>
+      <div class="pd-fiche-side"><div class="pd-fiche-tabs" role="tablist">${tabs.map(([key,label],i) => `<button type="button" role="tab" data-fiche-tab="${key}" aria-selected="${!i}">${label}</button>`).join('')}</div>
+      <div class="pd-specs">${specs.map(([label,value]) => `<div><span class="pd-label">${label}</span><b>${escape(value)}</b></div>`).join('')}</div>
+      <div data-fiche-pane="chapters"><ol class="pd-chapters-list">${chapters.map(chapter => `<li><button type="button" data-video="${escape(video.id)}"><b>${escape(chapter.clock)}</b><span dir="auto">${escape(chapter.title)}</span></button></li>`).join('')}</ol></div>
+      <div data-fiche-pane="transcript" hidden><p class="pd-fiche-note">${t('L’auteur n’a pas publié de transcription pour cette vidéo. Le filtre « Avec transcription » de la bibliothèque liste celles qui en ont une.','The author has not published a transcript for this video. The library’s “With transcript” filter lists those that have one.','El autor no ha publicado una transcripción de este vídeo. El filtro «Con transcripción» de la biblioteca muestra los que la tienen.')}</p></div>
+      <div data-fiche-pane="notes" hidden><label class="pd-label" for="pd-fiche-notes">${t('Gardées sur cet appareil','Kept on this device','Guardadas en este dispositivo')}</label><textarea id="pd-fiche-notes" class="pd-notes" placeholder="${t('Ce que tu veux retenir…','What you want to remember…','Lo que quieres recordar…')}">${escape(storage.get(`rl-note-${video.id}`, '') || '')}</textarea></div>
+      <div data-fiche-pane="source" hidden><p class="pd-fiche-note">${t('Vidéo publique de','Public video by','Vídeo público de')} ${escape(video.creator || '')}, ${t('référencée par RaceLink. Elle reste chez son auteur.','indexed by RaceLink. It stays with its author.','referenciado por RaceLink. Sigue en manos de su autor.')}</p></div>
+      <div class="pd-fiche-acts"><button type="button" class="on" data-video="${escape(video.id)}">▶ ${t('Regarder ici','Watch here','Ver aquí')}</button><button type="button" data-save="${escape(video.id)}">${t('Enregistrer','Save','Guardar')}</button><button type="button" data-pd-copy="${escape(url.href)}">${t('Copier le lien','Copy link','Copiar enlace')}</button></div></div>`;
     root.closest('section').hidden = false;
+  }
+  function ficheEvents(event) {
+    const tab = event.target.closest('[data-fiche-tab]'); if (tab) ficheTab(tab.dataset.ficheTab);
+    const copy = event.target.closest('[data-pd-copy]');
+    if (copy) navigator.clipboard?.writeText(copy.dataset.pdCopy).then(() => { copy.textContent = t('Lien copié ✓','Link copied ✓','Enlace copiado ✓'); }).catch(() => {});
   }
   function render() { copy(); if (stats) ticker(); subjects(); shortsRail(); paths(); help(); }
   // Static content appears at once; the counts follow when the catalogue is ready.
@@ -151,10 +197,12 @@ export function createPaddockHome({$, escape, t, getUi, getJson, cardMarkup, set
     render();
     // The manifest is tiny, so the total shows before the catalogue finishes loading.
     fetch('./export-manifest.json').then(r => r.ok ? r.json() : Promise.reject()).then(data => { const total = $('#catalog-total'); if (total.textContent === '…' && data.videos) total.textContent = number(data.videos); }).catch(() => {});
-    fetch('./social-index.json').then(r => r.ok ? r.json() : Promise.reject()).then(data => { taskNames = data.tasks || {}; shorts = pickShorts(Array.isArray(data.items) ? data.items : []); shortsRail(); }).catch(() => {});
+    fetch('./social-index.json').then(r => r.ok ? r.json() : Promise.reject()).then(data => { taskNames = data.tasks || {}; socialTotals = {total:(data.items || []).length, french:(data.items || []).filter(item => item.l === 'fr').length}; shorts = pickShorts(Array.isArray(data.items) ? data.items : []); shortsRail(); }).catch(() => {});
     libraryPreview().catch(() => {}); fichePreview().catch(() => {});
-    $('#pd-lib-preview').addEventListener('click', event => { const button = event.target.closest('[data-preview-generation]'); if (button) { previewGeneration = button.dataset.previewGeneration; libraryPreview().catch(() => {}); } });
+    $('#pd-lib-preview').addEventListener('click', previewClick);
+    $('#pd-fiche-preview').addEventListener('click', ficheEvents);
+    $('#pd-fiche-preview').addEventListener('input', event => { if (event.target.id === 'pd-fiche-notes') storage.set(`rl-note-${featured.id}`, event.target.value); });
     getJson('/aide/api/resources?language=fr&per_page=1').then(data => { frenchCounts = Object.fromEntries((data.facets?.category || []).map(entry => [entry.value, entry.count])); subjects(); }).catch(() => {});
   }
-  return {load, render, setStats(value) { stats = value; render(); }, setFaq(value) { faq = value; help(); }};
+  return {load, render, featured: id => featured?.id === id ? featured : null, setStats(value) { stats = value; render(); }, setFaq(value) { faq = value; help(); }};
 }

@@ -1,19 +1,19 @@
-import {createCinemaHome} from './cinema-home.js?v=paddock-2';
-import {icon as glyph, categoryIcon} from './icons.js';
-import {createIdentityUI} from './identity-ui.js?v=studio-v30';
+import {createCinemaHome} from './cinema-home.js?v=paddock-3';
+import {icon as glyph, categoryIcon} from './icons.js?v=paddock-1';
+import {createIdentityUI} from './identity-ui.js?v=paddock-1';
 import {tracks} from './tracks.js';
 import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=studio-v30&publisher=v38';
-import {createDiscoveryUI} from './discovery-ui.js?v=search-v34&atlas=v41';
+import {createDiscoveryUI} from './discovery-ui.js?v=paddock-1';
 import {matchVehicleDossiers} from './vehicle-dossier.js?v=atlas-v41';
 import {createRaceLinkPicks} from './racelink-picks.js';
 import {createMobileUI} from './mobile-ui.js?v=search-v34';
 import {createFilterStudio} from './filter-studio.js?v=search-v34&rev=count-v36';
 import {usableSearchAssistance,searchSuggestionPatch,searchAssistanceMarkup} from './search-assistance-ui.js?v=search-v34';
-import {createGuideUI} from './guide-ui.js?v=studio-v30';
+import {createGuideUI} from './guide-ui.js?v=paddock-1';
 import {socialContentMarkup} from './social-content.js';
-import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-5';
-import {resourceCard} from './resource-card.js?v=paddock-4';
-import {createPaddockHome,poster} from './paddock-home.js?v=5';
+import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-6';
+import {resourceCard} from './resource-card.js?v=paddock-5';
+import {createPaddockHome,poster} from './paddock-home.js?v=6';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -101,7 +101,7 @@ const discoveryUI=createDiscoveryUI({
   }
 });
 const cinemaHome=createCinemaHome({root:$('#cinema-home'),escape,t,getUi:()=>ui,getState:()=>state,langName,picks:raceLinkPicks,getJson:url=>window.getCatalogJson(url)});
-const paddockHome=createPaddockHome({$,escape,t,getUi:()=>ui,getJson:url=>window.getCatalogJson(url),cardMarkup,setImageFallback,catName,fmtDuration});
+const paddockHome=createPaddockHome({$,escape,t,getUi:()=>ui,getJson:url=>window.getCatalogJson(url),cardMarkup,setImageFallback,catName,fmtDuration,storage});
 function translateCinema(){
   const atelierCopy={shorts:t('Les tutos des créateurs','Tutorials from creators','Tutoriales de creadores'),refine:t('Commencez par une plateforme, puis précisez votre voiture ou le sujet.','Choose a platform, then narrow by car or topic.','Elige una plataforma y filtra por coche o tema.'),cutaway:t('Atelier 3D','3D workshop','Taller 3D'),inspect:t('Explorer les pièces','Explore the parts','Explorar las piezas')};
   atelierCopy.allSocial=t('Explorer les deux','Browse both','Explorar ambas');
@@ -186,7 +186,7 @@ function applyTranslations(){
   $('.language-shortcuts [data-content-language=""]').textContent=t('Toutes','All','Todos');
   $('#content-language-note').textContent=t('La langue peut être estimée à partir du titre et de la source.','Language may be estimated from the title and source.','El idioma puede estimarse a partir del título y la fuente.');
   $$('[data-i18n]').forEach(el=>{el.innerHTML=ui==='fr'?originalText[el.dataset.i18n]:dictionaries[ui]?.[el.dataset.i18n]||originalText[el.dataset.i18n];});
-  $('#search').placeholder=t('Un sujet, un modèle…','A topic, a car model…','Un tema, un modelo…');
+  $('#search').placeholder=t('Freiner plus tard, faire une vidange, régler un volant…','Brake later, change the oil, set up a wheel…','Frenar más tarde, cambiar el aceite, ajustar un volante…');
   $('#search').setAttribute('aria-label',t('Rechercher des tutoriels','Search tutorials','Buscar tutoriales'));
   $('#search-form button[type=submit]').setAttribute('aria-label',t('Lancer la recherche','Search','Buscar'));
   $('.results-toolbar label .sr-only').textContent=t('Trier les résultats','Sort results','Ordenar resultados');
@@ -373,7 +373,7 @@ function renderSaved(){
   setImageFallback($('#saved-view'));
 }
 function toggleSave(id){
-  if(saved[id])delete saved[id];else{const video=loadedItems.find(v=>v.id===id)||(detail?.id===id?detail:null);if(!video)return;saved[id]=video;}
+  if(saved[id])delete saved[id];else{const video=loadedItems.find(v=>v.id===id)||(detail?.id===id?detail:null)||paddockHome.featured(id);if(!video)return;saved[id]=video;}
   if(!storage.set('rl-library-saved',saved))showToast(t('Sauvegarde indisponible dans ce navigateur.','Saving is unavailable in this browser.','No se puede guardar en este navegador.'));
   else showToast(saved[id]?t('Ajouté à votre sélection','Added to your collection','Añadido a tu selección'):t('Retiré de votre sélection','Removed from your collection','Quitado de tu selección'));
   updateSavedCount();

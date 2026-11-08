@@ -25,7 +25,7 @@ function context(helpers) {
 
 /** Media first; existing IDs, one tab panel and delegated actions remain intact. */
 import {sourceLabel} from './source-label.js?v=discovery-v34';
-import {poster,parseChapters} from './paddock-home.js?v=5';
+import {poster,parseChapters} from './paddock-home.js?v=6';
 export function renderResourceDetail(resource, helpers) {
   const c = context(helpers), {e,t} = c;
   const source = c.safeUrl(resource.url), image = c.safeUrl(resource.thumbnail_url || resource.thumbnailUrl, true);
