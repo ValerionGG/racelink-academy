@@ -50,7 +50,7 @@
   }
 
   function applyTheme() {
-    const theme = explicit || (media?.matches ? 'dark' : 'light');
+    const theme = explicit || 'dark';
     const changed = current !== theme;
     current = theme;
     root.dataset.theme = theme;

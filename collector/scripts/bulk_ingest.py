@@ -30,7 +30,7 @@ from server import (DEFAULT_DB, ValidationError, canonical_url, folded, import_i
 from automotive import extract_automotive
 from scripts.social_metadata import normalize_social_metadata
 
-VERSION = "1.1.2"
+VERSION = "1.1.3"
 MAX_INPUT_BYTES = 150 * 1024 * 1024
 MAX_LINE_BYTES = 2 * 1024 * 1024
 MAX_ITEMS = 100000
@@ -46,7 +46,16 @@ EDUCATION = re.compile(r"\b(?:how to|how (?:do|can|should) (?:i|you)|tutorial\w*
     r"nettoyage|entretien|reglage|remplacement|changement|reparation|purge|"
     r"demontage|remontage|verification|controle|astuces?|etapes? pour|que signifie\w*|"
     r"quel ordre|dans quel ordre|brancher|debrancher|installer|connecter|"
-    r"maintenance|bleed|adjust|inspect|remove|install|connect|pair|pairing)\b")
+    r"maintenance|bleed|adjust|inspect|remove|install|connect|pair|pairing|"
+    r"cambiar|cambio|reemplazar|sustituir|sustitucion|reparar|tutorial|"
+    r"wechsel\w*|tauschen|austauschen|einbauen|ausbauen|reparatur|erklar\w*|"
+    r"come (?:cambiare|sostituire|riparare|fare|si )|cambiare|sostituzione|riparare|"
+    r"trocar|troca|substituir|substituicao|consertar|"
+    r"jak wymienic|wymiana|wymienic|poradnik|naprawa|naprawic|"
+    r"nas[iı]l (?:yap[iı]l[iı]r|degistirilir)|degisimi|degistirilir|"
+    r"طريقة|تغيير|شرح|كيفية|اصلاح|"
+    r"vervangen|uitleg|verversen|cum (?:schimbi|se schimba)|schimb|inlocuire|"
+    r"exercices?|exercises?|workout|entrainement|training routine)\b")
 CONTEXTUAL_LEARNING = re.compile(r"\b(?:ou trouver|ou se situ\w*|where to find|where is|"
     r"comment (?:passer|engager) (?:la )?marche arriere|"
     r"regarde[rz]? (?:cet |l['’]|le )?indicateur d['’]usure)\b")
@@ -88,26 +97,47 @@ MECHANICAL_COMPONENTS = (
     r"carplay|android auto|autoradio|pulseur|pusleur|fusibles?|climatisation|faisceau electrique|"
     r"redemarrer (?:votre |la |sa |une )?voiture"
 )
+MULTILINGUAL_MECHANICS = (
+    r"pastillas? de freno|frenos?|aceite|correa de distribucion|amortiguador\w*|bujia\w*|embrague|coche|"
+    r"bremsbel\w*|bremsscheibe\w*|bremsen|olwechsel|motorol|zahnriemen|stossdampfer|zundkerze\w*|kupplung|lichtmaschine|anlasser|"
+    r"pastiglie|freni|olio motore|cinghia distribuzione|ammortizzator\w*|candele|frizione|"
+    r"pastilha\w* de freio|freios?|oleo do motor|correia dentada|amortecedor\w*|embreagem|"
+    r"klocki hamulcowe|hamulc\w*|wymiana oleju|olej\w*|rozrzad\w*|amortyzator\w*|sprzeg\w*|"
+    r"balatas\w*|balatas[iı]|fren|yag degisimi|triger|amortisor\w*|debriyaj|"
+    r"فرامل|فحمات|زيت المحرك|زيت|سير التوقيت|بواجي|دبرياج|"
+    r"remblokken|olie verversen|placutele de frana|ulei motor"
+)
 CATEGORY_RULES = (
+    ("fitness", r"\b(?:preparation physique[^.]{0,40}(?:pilote|karting|automobile|sport auto)|"
+     r"(?:racing )?driver (?:fitness|workout|training routine|neck)|racing drivers?\b.{0,30}(?:fitness|neck|training|workout)|"
+     r"neck (?:training|strengthening|exercises)[^.]{0,40}(?:racing|driver|f1|pilote)|exercices? (?:de )?cou[^.]{0,20}pilote|"
+     r"(?:entrainement|musculation)[^.]{0,20}pilote|pilote[^.]{0,20}(?:entrainement|musculation)|"
+     r"reflexes pilote|karting fitness|sim racing fitness)\b"),
     ("simracing", r"\b(?:sim ?racing|iracing|assetto corsa|acc setup|force feedback|simucube|fanatec|thrustmaster)\b"),
-    ("media", r"\b(?:photography|photographie|photographier|filming|filmer|video editing|montage video|photo shoot)\b"),
-    ("career", r"\b(?:career|carriere|devenir mecanicien|become a mechanic|become a racing driver|devenir pilote|metier)\b"),
-    ("business", r"\b(?:business|car dealership|car shop|ouvrir un garage|sponsorship|sponsoring|patrocinio)\b"),
+    ("media", r"\b(?:photography|photographie|photographier|filming|filmer|film cars|video editing|montage video|photo shoot|"
+     r"rolling shots?|cinematograph\w*|photo (?:automobile|motorsport))\b"),
+    ("career", r"\b(?:career|carriere|devenir mecanicien|become a mechanic|become a racing driver|become a race engineer|devenir pilote|metiers?|"
+     r"how to become|comment devenir|mecanicien f1|f1 mechanic|ingenieur (?:de piste|course|de course)|race engineer|"
+     r"commissaire de piste|formation (?:carrossier|mecanicien|peintre)|(?:cap|bts) maintenance|automotive technician)\b"),
+    ("business", r"\b(?:business|car dealership|car shop|ouvrir un garage|sponsorship|sponsoring|patrocinio|"
+     r"auto repair shop|garage auto(?:mobile)?[^.]{0,30}(?:ouvrir|creer|gerer)|sponsors? pilote|trouver des sponsors|"
+     r"financer[^.]{0,30}saison|gerer[^.]{0,20}atelier|racing team budget)\b"),
     ("engineering", r"\b(?:telemetr\w*|aerodynam\w*|thermodynam\w*|vehicle dynamics)\b"),
     ("driving", r"\b(?:trail braking|racing line|apex|understeer|oversteer|pilotage|"
-     r"trajectoire|karting|racecraft|rally|trackday|motorsport|"
+     r"trajectoire|karting|racecraft|rally|trackday|track day|motorsport|heel.toe|talon.pointe|"
+     r"freinage degressif|left foot braking|pace notes|notes de rallye|drift\w*|sous.virage|survirage|overtak\w*|"
      r"(?:passer|engager) (?:la )?marche arriere|reverse gear)\b"),
     ("mechanics", r"\b(?:motor|moteur|engine|"
      r"vidange|oil change|essuie|wiper\w*|brake\w*|frein\w*|clio\d?|golf|peugeot|renault|"
      r"toyota|bmw|audi|diesel|obd(?:2|ii)?|batter\w*|embrayage|clutch|suspension|alternateur|"
-     r"neumatic\w*|pneu\w*|tyre\w*|spark plug\w*|bougie\w*|carbur\w*|wheel\w*|" + MECHANICAL_COMPONENTS + r")\b"),
+     r"neumatic\w*|pneu\w*|tyre\w*|spark plug\w*|bougie\w*|carbur\w*|wheel\w*|" + MULTILINGUAL_MECHANICS + "|" + MECHANICAL_COMPONENTS + r")\b"),
 )
-AUTO_CONTEXT = re.compile(r"\b(?:cars?|auto|automobiles?|vehicles?|vehicules?|voitures?|coche|garage|"
+AUTO_CONTEXT = re.compile(r"\b(?:cars?|f1|formula 1|formule 1|race engineer|race cars?|carrossier|technician|auto|automobiles?|vehicles?|vehicules?|voitures?|coche|garage|"
     r"mecanicien|mechanic|racing|motorsport|pilotage|pilote|karting|rally|circuit)\b")
 AUTO_CONTEXT_TAGS = {"auto","automobile","voiture","mecaniqueauto","mecaniqueautomobile","garageautomobile"}
 MECHANICAL_CONTEXT = re.compile(r"\b(?:moteur|engine|vidange|oil change|oil filter|essuie|wiper\w*|"
     r"brake\w*|frein\w*|clio\d?|golf|peugeot|renault|toyota|bmw|audi|diesel|obd(?:2|ii)?|"
-    r"embrayage|clutch|alternateur|neumatic\w*|pneu\w*|tyre\w*|spark plug\w*|carbur\w*|" + MECHANICAL_COMPONENTS + r")\b")
+    r"embrayage|clutch|alternateur|neumatic\w*|pneu\w*|tyre\w*|spark plug\w*|carbur\w*|" + MULTILINGUAL_MECHANICS + "|" + MECHANICAL_COMPONENTS + r")\b")
 NON_AUTO_CONTEXT = re.compile(r"\b(?:iphone|smartphone|laptop|ordinateur|smartwatch|washing machine|"
     r"machine a laver|vacuum cleaner|aspirateur|velo|bicycle|cycling|vtt|"
     r"mountain bike|road bike|e.bike|trottinette|scooter electrique|chauffage central|"
@@ -385,7 +415,9 @@ def language_metadata(row, provider):
     supplied_status = str(row.get("language_status") or "")
     if supplied_status.startswith("unknown"):
         return "und", "unknown", {"basis": "source_explicitly_has_no_language_evidence"}
-    if supplied_status.startswith(("estimated", "inferred")):
+    if supplied_status in {"estimated_from_public_title", "inferred_from_channel_not_verified"}:
+        status, basis = supplied_status, "title_or_channel_text_estimate_not_audio_declaration"
+    elif supplied_status.startswith(("estimated", "inferred")):
         status, basis = "inferred_from_exported_caption_language", "exported_language_estimate_not_audio_declaration"
     return tag, status, {"basis": basis, "field": path, "value": value,
                          "audio_language_verified": False}
@@ -409,7 +441,7 @@ def educational_decision(title, description, row):
     category = next(((name, re.search(pattern, text)) for name, pattern in CATEGORY_RULES
                      if re.search(pattern, text)), None)
     context_tags = set(re.findall(r"#(\w+)",folded(title+" "+description))) & AUTO_CONTEXT_TAGS
-    if category and category[0] in {"media", "business", "career"} and not AUTO_CONTEXT.search(text):
+    if category and category[0] in {"media", "business", "career", "fitness"} and not AUTO_CONTEXT.search(text):
         category = None
     technical_pilotage = (category and category[0] == "driving" and category[1][0] == "pilotage" and
         (re.search(r"\bpilotage (?:pneumatique|du turbo|de la geometrie|des ailettes)\b",text) or

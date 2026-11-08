@@ -50,6 +50,26 @@ def instagram(**extra):
 
 
 class MappingTests(unittest.TestCase):
+    def test_multilingual_and_weak_category_rules(self):
+        from scripts.bulk_ingest import educational_decision
+        for title, category, status in (
+                ("Anleitung Bremsbeläge wechseln VW Golf 7", "mechanics", "candidate"),
+                ("jak wymienić klocki hamulcowe Opel Astra", "mechanics", "candidate"),
+                ("fren balatası değişimi nasıl yapılır Fiat Egea", "mechanics", "candidate"),
+                ("طريقة تغيير زيت المحرك تويوتا كورولا", "mechanics", "candidate"),
+                ("F1 driver neck training routine explained", "fitness", "candidate"),
+                ("Préparation physique du pilote automobile : les exercices", "fitness", "candidate"),
+                ("How to become a race engineer in F1", "career", "candidate"),
+                ("How to become a doctor", "other", "quarantine"),
+                ("Tokyo drift music video", "driving", "quarantine")):
+            decision, found = educational_decision(title, "", {})
+            self.assertEqual((found, decision["status"]), (category, status), title)
+
+    def test_title_estimate_keeps_its_language_status(self):
+        record, _ = adapt({"webpage_url": "https://www.youtube.com/watch?v=abcdefghijk", "title": "Ölwechsel Anleitung VW Golf 7",
+                           "channel": "c", "language": "de", "language_status": "estimated_from_public_title"}, "yt-dlp")
+        self.assertEqual((record["language"], record["language_status"]), ("de", "estimated_from_public_title"))
+
     def test_social_display_cleanup_runs_after_source_classification(self):
         caption="Comment changer les essuie-glaces ? Renault Clio III 1.5 dCi. #Auto #Wipers"
         raw=tiktok(text=caption, _collection={"provider":"yt-dlp","evidence_scope":"public_video_metadata"})

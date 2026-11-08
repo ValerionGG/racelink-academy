@@ -1,3 +1,4 @@
+import {poster} from './paddock-home.js?v=2';
 const norm=x=>String(x||'').normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 const $=q=>document.querySelector(q);
 const form=$('#finder'),params=new URLSearchParams(location.search);
@@ -16,7 +17,7 @@ const brand=p=>p==='instagram'?'Instagram':'TikTok';
 const cats={mechanics:tr('Mécanique','Mechanics','Mecánica'),driving:tr('Conduite et pilotage','Driving','Conducción'),engineering:tr('Ingénierie','Engineering','Ingeniería'),simracing:'Sim racing',safety:tr('Sécurité','Safety','Seguridad')};
 const cat=k=>cats[k]||k.replaceAll('_',' ');
 const el=(tag,txt,cls)=>{const x=document.createElement(tag);if(txt!==undefined)x.textContent=txt;if(cls)x.className=cls;return x};
-let rows=[],tasks={},limit=20;
+let rows=[],tasks={},limit=24;
 const st={q:(params.get('q')||'').slice(0,160),p:params.get('p')||'',l:params.has('l')?params.get('l'):'fr',v:params.get('v')||'',s:params.get('s')||''};
 function task(id){return tasks[id]?.[ui]||id.replaceAll('_',' ')}
 function filter(r,skip=''){
@@ -44,7 +45,7 @@ function draw(){
   const frag=document.createDocumentFragment();
   for(const r of found.slice(0,limit)){
     const a=el('article'), h=el('h3'), detail=el('a',r.t);detail.href='./?'+new URLSearchParams({video:r.id,...(ui!=='fr'?{ui}:{})});
-    detail.dir='auto';h.append(detail);a.append(h,el('p',[brand(r.p),r.a,r.l==='und'?tr('Langue non confirmée','Language unconfirmed','Idioma sin confirmar'):lang(r.l),r.editorFr?editorFr:''].filter(Boolean).join(' · ')));
+    detail.dir='auto';h.append(detail);const shot=el('img');shot.src='./assets/photos/'+poster(r)+'.jpg';shot.alt='';shot.loading='lazy';a.append(shot,el('span',brand(r.p),'plat'),h,el('p',[brand(r.p),r.a,r.l==='und'?tr('Langue non confirmée','Language unconfirmed','Idioma sin confirmar'):lang(r.l),r.editorFr?editorFr:''].filter(Boolean).join(' · ')));
     const tags=el('p',undefined,'tags');const labels=[...new Set([...r.vehicles,...r.s.map(task)])].slice(0,5);
     if(!labels.length&&r.c)labels.push(cat(r.c));for(const label of labels)tags.append(el('span',label));a.append(tags);
     const native=el('a',tr('Voir sur ','Watch on ','Ver en ')+brand(r.p)+' ↗','native');native.href=r.u;native.target='_blank';native.rel='noopener noreferrer';a.append(native);frag.append(a)
@@ -61,10 +62,10 @@ function sync(){
 function sort(map){return [...map].sort((a,b)=>a[1].localeCompare(b[1],ui,{sensitivity:'base'}))}
 let ready=false;
 form.addEventListener('submit',e=>e.preventDefault());
-form.addEventListener('change',e=>{if(!ready||!['p','l','v','s'].includes(e.target.name))return;st[e.target.name]=e.target.value;limit=20;draw();sync()});
-form.elements.q.addEventListener('input',()=>{if(!ready)return;st.q=form.elements.q.value;limit=20;draw();sync()});
-$('#reset').onclick=()=>{if(!ready)return;Object.keys(st).forEach(k=>st[k]='');form.elements.q.value='';limit=20;draw();sync();form.elements.q.focus()};
-$('#more').onclick=()=>{const old=limit;limit+=20;draw();$('#list').children[old]?.querySelector('h3 a')?.focus()};
+form.addEventListener('change',e=>{if(!ready||!['p','l','v','s'].includes(e.target.name))return;st[e.target.name]=e.target.value;limit=24;draw();sync()});
+form.elements.q.addEventListener('input',()=>{if(!ready)return;st.q=form.elements.q.value;limit=24;draw();sync()});
+$('#reset').onclick=()=>{if(!ready)return;Object.keys(st).forEach(k=>st[k]='');form.elements.q.value='';limit=24;draw();sync();form.elements.q.focus()};
+$('#more').onclick=()=>{const old=limit;limit+=24;draw();$('#list').children[old]?.querySelector('h3 a')?.focus()};
 async function start(){
  try{
   const res=await fetch('./social-index.json');if(!res.ok)throw Error();const d=await res.json();if(d.version!==1||!Array.isArray(d.items))throw Error();

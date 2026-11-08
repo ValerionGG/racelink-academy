@@ -166,6 +166,33 @@ function facet(items, field, transform = value => value) {
     .sort((a, b) => b.count - a.count || String(a.value).localeCompare(String(b.value)));
 }
 
+function generationFacet(items, vehicle) {
+  if (!vehicle.model || vehicle.generation) return [];
+  const counts = new Map();
+  for (const item of items) {
+    const found = item._vehicles.filter(application => application.generation && vehicleMatches(application, vehicle)).map(application => application.generation);
+    for (const value of new Set(found)) counts.set(value, (counts.get(value) || 0) + 1);
+  }
+  return [...counts].map(([value, count]) => ({value, count}))
+    .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
+}
+
+function withoutDuplicates(items) {
+  const seen = new Set();
+  return items.filter(item => {
+    const key = `${normalize(item.creator)}|${wordsOf(item.title).join(" ")}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+// Prefers listings a visitor can judge before opening them. No popularity or validation is implied.
+function listingQuality(item) {
+  return (item.thumbnail_url ? 2 : 0) + (item.duration_seconds >= 60 && item.duration_seconds <= 2400 ? 1 : 0) +
+    (item.pedagogical_format === "tutorial" ? 1 : 0) + (item.language_confidence === "estimated" ? 0 : 1) + (item.has_transcript ? 1 : 0);
+}
+
 function automotiveFacet(items, field) {
   const counts = new Map();
   for (const item of items) {
@@ -409,9 +436,11 @@ export function searchCatalog(catalog, params = {}, options = {}) {
       }
     }
   }
+  if (q) results = withoutDuplicates(results);
   if (options.countOnly) return {total: results.length};
   const facets = Object.fromEntries(["category", "level", "language", "platform", "license"]
     .map(key => [key, facet(results, key)]));
+  facets.generation = generationFacet(results, vehicle);
   facets.transcript = facet(results, "has_transcript", value => value ? "available" : "missing");
   facets.domain = facet(results, "domain_scope");
   facets.content_format = facet(results, "pedagogical_format");
@@ -429,10 +458,12 @@ export function searchCatalog(catalog, params = {}, options = {}) {
   else if (sort === "duration") sorted.sort((a, b) =>
     (a.duration_seconds ?? Infinity) - (b.duration_seconds ?? Infinity) || a.id.localeCompare(b.id));
   else if (sort === "relevance") {
+    const quality = new Map(sorted.map(item => [item.id, listingQuality(item)]));
+    const byQuality = (a, b) => quality.get(b.id) - quality.get(a.id) || compareTitle(a, b);
     if (queryWords.length) {
       const scores = new Map(sorted.map(item => [item.id, score(item)]));
-      sorted.sort((a, b) => scores.get(b.id) - scores.get(a.id) || compareTitle(a, b));
-    } else sorted.sort((a, b) => Number(selection(b)) - Number(selection(a)) || compareTitle(a, b));
+      sorted.sort((a, b) => scores.get(b.id) - scores.get(a.id) || byQuality(a, b));
+    } else sorted.sort((a, b) => Number(selection(b)) - Number(selection(a)) || byQuality(a, b));
   } else sorted.sort(compareTitle);
   const offset = options.offset ?? (page - 1) * perPage;
   return {items: sorted.slice(offset, offset + perPage).map(clean), total: results.length,
@@ -492,9 +523,11 @@ export function videoDetail(catalog, id) {
 }
 
 function matchingGuides(catalog, params, interpretation) {
-  if (interpretation.conflicts.length || Object.keys(interpretation.vehicle).length || interpretation.spec ||
-      [...vehicleFilters, "spec", "system", "duration", "content_format"].some(key => validFilter(param(params, key)))) return [];
+  if (interpretation.conflicts.length || interpretation.spec ||
+      [...vehicleFilters.filter(key => key !== "generation"), "spec", "system", "duration", "content_format"].some(key => validFilter(param(params, key)))) return [];
   const task = param(params, "task") || interpretation.task;
+  // A car named in the query keeps the generic guide for that task; an explicit vehicle filter does not.
+  if (Object.keys(interpretation.vehicle).length && !validFilter(task)) return [];
   const terms = wordsOf(interpretation.residual).filter(word => !automotiveStopwords.has(word));
   return catalog.guides.filter(guide => {
     if (validFilter(task) && guide.task !== task) return false;

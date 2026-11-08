@@ -1,4 +1,4 @@
-import {createCinemaHome} from './cinema-home.js?v=studio-v30';
+import {createCinemaHome} from './cinema-home.js?v=paddock-1';
 import {icon as glyph, categoryIcon} from './icons.js';
 import {createIdentityUI} from './identity-ui.js?v=studio-v30';
 import {tracks} from './tracks.js';
@@ -11,8 +11,9 @@ import {createFilterStudio} from './filter-studio.js?v=search-v34&rev=count-v36'
 import {usableSearchAssistance,searchSuggestionPatch,searchAssistanceMarkup} from './search-assistance-ui.js?v=search-v34';
 import {createGuideUI} from './guide-ui.js?v=studio-v30';
 import {socialContentMarkup} from './social-content.js';
-import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=discovery-v34&editor=v38';
+import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-1';
 import {resourceCard} from './resource-card.js?v=discovery-v34';
+import {createPaddockHome} from './paddock-home.js?v=2';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -100,6 +101,7 @@ const discoveryUI=createDiscoveryUI({
   }
 });
 const cinemaHome=createCinemaHome({root:$('#cinema-home'),escape,t,getUi:()=>ui,getState:()=>state,langName,picks:raceLinkPicks,getJson:url=>window.getCatalogJson(url)});
+const paddockHome=createPaddockHome({$,escape,t,getUi:()=>ui,getJson:url=>window.getCatalogJson(url)});
 function translateCinema(){
   const atelierCopy={shorts:t('Les tutos des créateurs','Tutorials from creators','Tutoriales de creadores'),refine:t('Commencez par une plateforme, puis précisez votre voiture ou le sujet.','Choose a platform, then narrow by car or topic.','Elige una plataforma y filtra por coche o tema.'),cutaway:t('Atelier 3D','3D workshop','Taller 3D'),inspect:t('Explorer les pièces','Explore the parts','Explorar las piezas')};
   atelierCopy.allSocial=t('Explorer les deux','Browse both','Explorar ambas');
@@ -109,6 +111,7 @@ function translateCinema(){
   const labels={featured:t('Le guide à découvrir','A guide to explore','Una guía por descubrir'),featuredTitle:t('Avant votre première vidange.','Before your first oil change.','Antes de tu primer cambio de aceite.'),featuredAction:t('Ouvrir le guide →','Open the guide →','Abrir la guía →'),finderTitle:t('Rechercher dans la bibliothèque','Search the library','Buscar en la biblioteca'),garageLabel:t('Un tuto pour votre voiture','A tutorial for your car','Un tutorial para tu coche'),garageDescription:t('Précisez le modèle, le moteur et l’intervention pour affiner votre recherche.','Choose the model, engine and task to narrow your search.','Indica el modelo, motor e intervención para afinar tu búsqueda.'),garageAction:t('Choisir mon véhicule','Choose my vehicle','Elegir mi vehículo'),oil:t('Huile moteur','Engine oil','Aceite de motor'),tires:t('Pneus & roues','Tires & wheels','Neumáticos y ruedas'),warning:t('Voyants','Warning lights','Testigos')};
   $$('[data-cinema-copy]').forEach(el=>{el.textContent=labels[el.dataset.cinemaCopy]||'';});
   cinemaHome.render();
+  paddockHome.render();
 }
 const filterStudio=createFilterStudio({root:$('#filters'),t,getState:()=>state,onDraftChange:()=>mobileUI.update(),onApply(patch){
   browsing=true;state={...state,...patch,page:1};syncControls();syncUrl();
@@ -137,6 +140,7 @@ function restoreUrl(){
   if(['fr','en','es'].includes(p.get('ui')))ui=p.get('ui');
   view=['paths','faq','saved'].includes(p.get('view'))?p.get('view'):'explore';
   activeTrack=tracks[p.get('track')]?p.get('track'):'';
+  if(!location.search)state.language='fr';
 }
 function syncControls(){
   const stations=matchVehicleDossiers(state.q,state),stationRoot=$('#vehicle-dossiers');
@@ -184,7 +188,7 @@ function applyTranslations(){
   $$('[data-i18n]').forEach(el=>{el.innerHTML=ui==='fr'?originalText[el.dataset.i18n]:dictionaries[ui]?.[el.dataset.i18n]||originalText[el.dataset.i18n];});
   $('#search').placeholder=t('Un sujet, un modèle…','A topic, a car model…','Un tema, un modelo…');
   $('#search').setAttribute('aria-label',t('Rechercher des tutoriels','Search tutorials','Buscar tutoriales'));
-  $('#search-form button').setAttribute('aria-label',t('Lancer la recherche','Search','Buscar'));
+  $('#search-form button[type=submit]').setAttribute('aria-label',t('Lancer la recherche','Search','Buscar'));
   $('.results-toolbar label .sr-only').textContent=t('Trier les résultats','Sort results','Ordenar resultados');
   $('label[for="domain"]').textContent=t('CONTEXTE','CONTEXT','CONTEXTO');
   $('label[for="content_format"]').textContent=t('TYPE DE VIDÉO','VIDEO TYPE','TIPO DE VÍDEO');
@@ -211,8 +215,8 @@ function renderStats(){
   const domains=stats.facets?.domain||[];
   const core=domains.find(d=>d.value==='motorsport')?.count,auto=domains.find(d=>d.value==='automotive_adjacent')?.count;
   if(core!==undefined&&auto!==undefined)$('#scope-totals').textContent=`${Number(core).toLocaleString(ui)} motorsport · ${Number(auto).toLocaleString(ui)} ${t('mécanique auto','automotive mechanics','mecánica auto')}`;
-  $('#language-total').textContent=`${count} ${t('langues repérées','languages identified','idiomas identificados')}`;
-  renderLanguages();
+  $('#language-total').innerHTML=`<strong>${count}</strong> ${t('langues','languages','idiomas')}`;
+  renderLanguages();paddockHome.setStats(stats);
 }
 let facets={};
 function renderLanguages(){
@@ -231,7 +235,7 @@ function renderFacets(){
   identityUI.sync();
   automotiveUI.setResultFacets(facets);
   const categoriesFacet=facets.category||[];
-  $('#category-filters').innerHTML=[['','⌘',t('Tout explorer','Explore everything','Explorar todo')],...categories.map(c=>[c[0],c[1],catName(c[0])])].map(([id,icon,name])=>{
+  $('#category-filters').innerHTML=[['','⌘',t('Tout explorer','Explore everything','Explorar todo')],...categories.filter(c=>state.category===c[0]||!lastTotal||categoriesFacet.some(f=>f.value===c[0]&&f.count>0)).map(c=>[c[0],c[1],catName(c[0])])].map(([id,icon,name])=>{
     const count=id?(categoriesFacet.find(f=>f.value===id)?.count??0):(lastTotal??stats?.total_videos);
     return `<button class="category-button ${state.category===id?'active':''}" data-category="${id}" aria-pressed="${state.category===id}"><span class="cat-icon" aria-hidden="true">${glyph(categoryIcon[id]||'library',{size:20})}</span>${escape(name)}<span class="cat-count">${count??'—'}</span></button>`;
   }).join('');
@@ -258,6 +262,15 @@ function renderDetailPick(){
   const slot=$('#detail-racelink-pick');
   if(slot&&detail){slot.innerHTML=raceLinkPicks.badge('video',detail.id)+raceLinkPicks.note('video',detail.id);slot.hidden=!raceLinkPicks.has('video',detail.id);}
 }
+let generationChoices=[],generationModel='';
+function renderGenerations(data){
+  const model=data.inferred_vehicle?.model||state.model||'';
+  if(facets.generation?.length){generationChoices=facets.generation;generationModel=model;}
+  else if(!state.generation||model!==generationModel)generationChoices=[];
+  const root=$('#generation-choices');root.hidden=generationChoices.length<2;
+  root.setAttribute('aria-label',t('Génération','Generation','Generación'));
+  root.innerHTML=root.hidden?'':`<span>${escape(t(`Quelle ${generationModel} ?`,`Which ${generationModel}?`,`¿Qué ${generationModel}?`))}</span>`+[{value:'',label:t('Toutes','All','Todas')},...generationChoices.map(c=>({...c,label:c.value}))].map(c=>`<button type="button" data-generation="${escape(c.value)}" aria-pressed="${(state.generation||'')===c.value}">${escape(c.label)}${c.count?` <small>${c.count}</small>`:''}</button>`).join('');
+}
 async function loadVideos(){
   const version=++requestVersion;
   discoveryUI.beginSearch();
@@ -273,7 +286,7 @@ async function loadVideos(){
     loadedItems=data.items||[];
     if(data.facets)facets=data.facets;
     const n=Number(data.total)||0;
-    lastTotal=n;renderFacets();renderActiveFilters();automotiveUI.renderContext(data.inferred_task||state.task);
+    lastTotal=n;renderGenerations(data);renderFacets();renderActiveFilters();automotiveUI.renderContext(data.inferred_task||state.task);
     searchAssistance=usableSearchAssistance(data);
     $('#search-assistance').innerHTML=searchAssistanceMarkup(searchAssistance,{escape,t,ui});
     $('#search-assistance').hidden=!searchAssistance.length;
@@ -432,14 +445,14 @@ document.addEventListener('click',async event=>{
   else if(el.hasAttribute('data-faq')){changeView('faq');renderFaq(el.dataset.faq);$(`#faq-${el.dataset.faq}`)?.scrollIntoView({behavior:'smooth',block:'center'});}
   else if(el.hasAttribute('data-share')){try{await navigator.clipboard.writeText(detail.url);showToast(t('Lien source copié','Source link copied','Enlace de origen copiado'));}catch{showToast(t('Utilisez le bouton Voir la source pour copier l’adresse.','Use View source to copy its address.','Usa Ver fuente para copiar la dirección.'));}}
 });
-$('#search-form').addEventListener('submit',e=>{e.preventDefault();const query=$('#search').value.trim();document.dispatchEvent(new Event('rl:search-chosen'));if(view!=='explore')changeView('explore',false);setFilter('q',query);$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
+$('#generation-choices').addEventListener('click',e=>{const b=e.target.closest('[data-generation]');if(b)setFilter('generation',b.dataset.generation);});
+$('#search-form').addEventListener('submit',e=>{e.preventDefault();const query=$('#search').value.trim();if(!browsing&&$('#home-category').value)state.category=$('#home-category').value;document.dispatchEvent(new Event('rl:search-chosen'));if(view!=='explore')changeView('explore',false);setFilter('q',query);$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
 for(const key of ['level','platform','duration','sort','domain','content_format'])$(`#${key}`).addEventListener('change',e=>setFilter(key,e.target.value));
 $('#language').addEventListener('change',e=>chooseContentLanguage(e.target.value));
 $('#home-language').addEventListener('change',e=>chooseContentLanguage(e.target.value,true));
 $('#transcript').addEventListener('change',e=>setFilter('transcript',e.target.checked?'available':''));
 $('#license').addEventListener('change',e=>setFilter('license',e.target.checked?'open':''));
 $('#reset-filters').addEventListener('click',()=>{const query=state.q,format=state.format;state={...automotiveDefaults,q:query,category:'',domain:'',level:'',language:'',platform:'',format,content_format:'',duration:'',transcript:'',license:'',sort:state.sort,page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();});
-$('#method-link').addEventListener('click',e=>{e.preventDefault();changeView('faq');renderFaq('method');});
 function openVehicle(){
   browsing=true;changeView('explore',false);syncControls();syncUrl(true);loadVideos();
   $('#vehicle-disclosure').open=true;$('#vehicle-disclosure').scrollIntoView({behavior:'smooth',block:'start'});
@@ -458,14 +471,17 @@ window.addEventListener('popstate',()=>{restoreUrl();applyTranslations();changeV
 async function init(){
   restoreUrl();applyTranslations();changeView(view,false);updateSavedCount();
   const discoveryLoad=discoveryUI.load();
-  const [statsResult,faqResult,vehicleFaqResult]=await Promise.allSettled([window.getCatalogJson('/aide/api/stats'),fetch('/racelink-academy/faq.json').then(r=>r.ok?r.json():Promise.reject()),fetch('/racelink-academy/vehicle-faq.json').then(r=>r.ok?r.json():Promise.reject()),automotiveUI.load()]);
+  const cinemaLoad=cinemaHome.load();
+  paddockHome.load();
+  const [statsResult,faqResult,vehicleFaqResult]=await Promise.allSettled([window.getCatalogJson('/aide/api/stats'),fetch('/racelink-academy/faq.json').then(r=>r.ok?r.json():Promise.reject()).then(data=>{paddockHome.setFaq(data.items||data);return data;}),fetch('/racelink-academy/vehicle-faq.json').then(r=>r.ok?r.json():Promise.reject()),automotiveUI.load()]);
   if(statsResult.status==='fulfilled'){stats=statsResult.value;renderStats();}
   if(faqResult.status==='fulfilled')faqItems=faqResult.value.items||faqResult.value;
   if(vehicleFaqResult.status==='fulfilled')faqItems.push(...(vehicleFaqResult.value.items||vehicleFaqResult.value));
   if(view==='faq')renderFaq();
+  paddockHome.setFaq(faqItems);
   await loadVideos();
   await discoveryLoad;
-  const cinemaResult=await cinemaHome.load();
+  const cinemaResult=await cinemaLoad;
   document.body.classList.toggle('cinema-ready',Boolean(cinemaResult?.ready));
   if(new URLSearchParams(location.search).has('video'))openVideo(new URLSearchParams(location.search).get('video'));
 }

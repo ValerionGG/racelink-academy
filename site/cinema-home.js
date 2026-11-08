@@ -3,7 +3,7 @@ import {icon} from './icons.js';
 import {attachRailNavigation} from './rail-navigation.js?v=studio-v30';
 
 // Composition only: the catalogue and photo registries remain the sources of truth.
-const ESSENTIALS = ['oil_spec', 'fuel_choice', 'wheel_change', 'wipers', 'battery', 'diagnostics'];
+const ESSENTIALS = ['oil_change', 'fuel_choice', 'wheel_change', 'wipers', 'battery', 'oil_spec', 'fuses', 'lighting', 'diagnostics', 'service_reset'];
 const UNIVERSES = [
   {id:'maintenance', category:'mechanics', title:['Mécanique','Mechanics','Mecánica'], description:['Comprendre, entretenir, réparer.','Understand, maintain, repair.','Comprender, mantener, reparar.']},
   {id:'driving', category:'driving', title:['Pilotage','Driving','Pilotaje'], description:['Freinage, trajectoires et technique.','Braking, racing lines and technique.','Frenada, trazadas y técnica.']},
@@ -112,14 +112,14 @@ export function createCinemaHome(ctx) {
     cleanupRails();
     const allGuides = ESSENTIALS.map(task => array(guideData?.guides).find(guide => guide?.task === task && guide.id && guide.title)).filter(Boolean);
     const guides = allGuides.filter(guide => matchesLanguage(guide.language || guideData?.language));
-    const universes = UNIVERSES.map(entry => ({entry, asset:visuals.find(asset => asset?.id === entry.id && safeUrl(asset.url, true))})).filter(({asset}) => asset);
+    const universes = []; // ponytail: the eight subjects now live in paddock-home.js.
     const videos = selectedVideos();
     const ready = Boolean(allGuides.length || universes.length || data);
     root.classList.add('cinema-home');
     if (!ready) { root.innerHTML = ''; return {ready:false, guides:0, videos:0}; }
     root.innerHTML = `${allGuides.length ? `<section class="cinema-section cinema-essentials" aria-labelledby="cinema-essentials-title">${heading('cinema-essentials-title', t('Les gestes du quotidien','Everyday essentials','Lo esencial del día a día'), 'data-browse-guides', t('Tous les guides','All guides','Todas las guías'))}${guides.length ? `<div class="cinema-rail cinema-guide-rail" id="cinema-essentials-rail">${guides.map(guideCard).join('')}</div>${controls('cinema-essentials-rail')}` : `<p class="cinema-empty">${escape(t('Ces guides sont disponibles en français. Aucun guide de cette collection dans la langue choisie.','These guides are available in French. This collection has no guide in your selected language.','Estas guías están disponibles en francés. Esta colección no tiene guías en el idioma elegido.'))}</p>`}<p class="cinema-scope">${escape(t('Des repères généraux, à rapprocher de la notice de votre version.','General guidance to use alongside the manual for your exact version.','Orientaciones generales que debes contrastar con el manual de tu versión exacta.'))}</p></section>` : ''}
       ${universes.length ? `<section class="cinema-section cinema-passions" aria-labelledby="cinema-passions-title">${heading('cinema-passions-title', t('Explorez votre passion','Explore your passion','Explora tu pasión'), 'data-browse-all', t('Toute la bibliothèque','The whole library','Toda la biblioteca'))}<div class="cinema-rail cinema-universe-rail" id="cinema-passions-rail">${universes.map(({entry, asset}) => universeCard(entry, asset)).join('')}</div>${controls('cinema-passions-rail')}</section>` : ''}
-      ${data ? `<section class="cinema-section cinema-practice" aria-labelledby="cinema-practice-title">${heading('cinema-practice-title', t('Pour passer à la pratique','Put it into practice','Para pasar a la práctica'), 'data-browse-all', t('Explorer le catalogue','Explore the catalogue','Explorar el catálogo'))}${videos.length ? `<div class="cinema-rail cinema-video-rail" id="cinema-practice-rail">${videos.map(videoCard).join('')}</div>${controls('cinema-practice-rail')}<p class="cinema-scope">${escape(t('Des sélections documentées. Elles ne constituent pas une validation technique.','Documented selections. They do not constitute technical validation.','Selecciones documentadas. No constituyen una validación técnica.'))}</p>` : `<p class="cinema-empty">${escape(t('Aucune sélection éditoriale active dans la langue choisie. Le catalogue reste accessible.','No active editorial selection in your chosen language. The catalogue is still available.','No hay una selección editorial activa en el idioma elegido. El catálogo sigue disponible.'))}</p>`}</section>` : ''}
+      ${data ? `<section class="cinema-section cinema-practice" aria-labelledby="cinema-practice-title">${heading('cinema-practice-title', t('La sélection RaceLink','The RaceLink selection','La selección RaceLink'), 'data-browse-all', t('Explorer le catalogue','Explore the catalogue','Explorar el catálogo'))}${videos.length ? `<div class="cinema-rail cinema-video-rail" id="cinema-practice-rail">${videos.map(videoCard).join('')}</div>${controls('cinema-practice-rail')}<p class="cinema-scope">${escape(t('Des sélections documentées. Elles ne constituent pas une validation technique.','Documented selections. They do not constitute technical validation.','Selecciones documentadas. No constituyen una validación técnica.'))}</p>` : `<p class="cinema-empty">${escape(t('Aucune sélection éditoriale active dans la langue choisie. Le catalogue reste accessible.','No active editorial selection in your chosen language. The catalogue is still available.','No hay una selección editorial activa en el idioma elegido. El catálogo sigue disponible.'))}</p>`}</section>` : ''}
       ${credits([...guides.map(guide => GUIDE_PHOTOS[guide.task]), ...universes.map(({asset}) => asset)])}`;
     root.querySelectorAll('[data-cinema-controls]').forEach(control => {
       const rail = root.querySelector(`#${control.dataset.cinemaControls}`);
@@ -137,14 +137,16 @@ export function createCinemaHome(ctx) {
       return response.json();
     };
     const getJson = ctx.getJson || (path => window.getCatalogJson(path));
-    loading = Promise.allSettled([
-      Promise.resolve().then(() => getJson('/aide/api/discovery')),
-      staticJson('vehicle-guides.json'), staticJson('visual-assets.json'),
-    ]).then(results => {
+    // Guides are static: show them without waiting for the catalogue behind the selection.
+    const guidesReady = Promise.allSettled([staticJson('vehicle-guides.json'), staticJson('visual-assets.json')]).then(results => {
+      if (disposed) return;
+      if (results[0].status === 'fulfilled') guideData = results[0].value;
+      if (results[1].status === 'fulfilled') visuals = array(results[1].value?.assets);
+      render();
+    });
+    loading = Promise.allSettled([Promise.resolve().then(() => getJson('/aide/api/discovery')), guidesReady]).then(([discovery]) => {
       if (disposed) return {ready:false, guides:0, videos:0};
-      if (results[0].status === 'fulfilled' && Array.isArray(results[0].value?.shelves)) data = results[0].value;
-      if (results[1].status === 'fulfilled') guideData = results[1].value;
-      if (results[2].status === 'fulfilled') visuals = array(results[2].value?.assets);
+      if (discovery.status === 'fulfilled' && Array.isArray(discovery.value?.shelves)) data = discovery.value;
       return render();
     });
     return loading;
