@@ -1,4 +1,4 @@
-import {poster} from './paddock-home.js?v=3';
+import {poster} from './paddock-home.js?v=4';
 const norm=x=>String(x||'').normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 const $=q=>document.querySelector(q);
 const form=$('#finder'),params=new URLSearchParams(location.search);

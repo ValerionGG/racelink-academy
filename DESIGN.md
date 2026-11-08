@@ -1,43 +1,74 @@
 ---
-version: alpha
+version: paddock-2
 name: RaceLink Academy
-description: V30 library workspace, photographic content, light and dark themes.
+description: Paddock design. Dark by default, one saturated red for action, display type at large scale, photography first.
 ---
 
-# RaceLink Academy — Design V30
+# RaceLink Academy : design Paddock
 
-## Ajustements de recherche V34
+L'Academy reprend l'identité de racelink-app.co : noir, rouge d'action, lime pour la progression, or pour les niveaux, ton de paddock.
 
-La recherche commence par la question réellement saisie. Les suggestions de reformulation explicites présentent une expression du catalogue, une courte raison et un compte calculé dans le contexte des critères conservés. Aucun changement silencieux de véhicule, plateforme ou langue. Les propositions sont séparées des résultats réellement trouvés et des ressources pouvant être ouvertes directement.
+- **Maquette validée** : [`docs/design/paddock-prototype.html`](docs/design/paddock-prototype.html)
+- **Audit et benchmark** : [`docs/design/etude-refonte.html`](docs/design/etude-refonte.html)
+- **Captures** : [`docs/design/screens/`](docs/design/screens/)
 
-Le résumé des critères comprend maintenant la langue et le format ; chaque bouton porte un libellé de suppression explicite. Les contrôles de langue occupent une ligne complète sur mobile et le français reste visible. Le panneau mobile/tablette place la langue en premier, distingue sujet et plateforme, et dispose d’actions Annuler/Appliquer persistantes. Une modification du brouillon affiche son nombre de critères, pas le nombre de résultats de la recherche précédente.
+## Principes
 
-`public/search-workspace.css` contient ces composants et adaptations, avec les jetons `--rl-*` existants ; `scripts/build_ui.py` l’intègre au bundle. Le cadrage photographique V30 reste intact. Boutons de recherche et de filtres : cibles minimales de 44 px, sélecteurs mobiles de 48 px, pied du panneau tenant compte de la zone sûre. Les règles ont été relues à 320–430 px et pour la transition tablette 761–1000 px ; cela ne constitue pas une inspection du rendu.
+1. **L'Academy d'abord.** Sujets, guides, bibliothèque, parcours et aide sont le cœur. La voiture et la 3D sont un bonus.
+2. **Une seule couleur forte.** Le rouge sert l'action et l'état sélectionné. La lime marque la progression, l'or les niveaux.
+3. **La typographie porte l'identité.** Titres très larges en capitales, libellés en mono, jamais de grand titre en police de texte.
+4. **La photo avant le décor.** Pas de dégradé décoratif ni de panneau vide : une vidéo sans vignette reçoit une photo liée à son sujet.
+5. **Le français d'abord**, les autres langues à un clic.
 
-Références : [Baymard, critères appliqués](https://baymard.com/research-articles/how-to-design-applied-filters), [Baymard, suggestions](https://baymard.com/research-articles/autocomplete-design), [Udemy, recherche et filtres](https://support.udemy.com/hc/en-us/sections/206458408-Purchasing-a-course), [Coursera, langue d’interface distincte du contenu](https://www.coursera.support/s/article/learner-000001029?language=en_US). Aucun asset de ces plateformes n’a été copié. Skills lus : Impeccable (registre produit) et Interface Design.
+## Jetons
 
-Validation V34 : 12 contrats UI de récupération/critères, 17 filtres, 10 interactions de recherche/Échap et 17 de navigation, soit 56 contrôles. Les tests utilisent des modules réels, des doubles DOM ciblés et certains gestionnaires de l’application extraits sans modification. Ils ne couvrent pas le bootstrap complet, le rendu CSS, le clavier tactile ou un lecteur d’écran. Le navigateur n’étant pas disponible dans la session, aucune capture V34 ni validation visuelle mobile n’est annoncée ; les preuves antérieures restent datées de leur propre version.
+Définis dans `site/paddock-ui.css`. Les composants historiques héritent des jetons `--rl-*`.
 
-Une bibliothèque à utiliser au quotidien : recherche au premier écran, navigation persistante sur ordinateur et grandes photographies. Le rouge sert les actions et les états sélectionnés. Les modes clair et sombre couvrent les mêmes fonctions.
+| Rôle | Jeton | Sombre | Clair |
+|---|---|---|---|
+| Fond | `--rl-canvas` | `#070708` | `#ecebe6` |
+| Surface | `--rl-surface` | `#111114` | `#ffffff` |
+| Surface relevée | `--rl-surface-raised` | `#18181d` | `#f6f5f1` |
+| Texte | `--rl-ink` | `#f4f4f6` | `#0e0f12` |
+| Texte secondaire | `--rl-muted` | `#a7a9b2` | `#4f5259` |
+| Filet | `--rl-line` | `#26262c` | `#d8d6cf` |
+| Action | `--rl-action` | `#e8141f` | `#d9141f` |
+| Accent texte | `--rl-accent-text` | `#ff5a64` | `#b50f19` |
+| Progression | `--pd-lime` | `#b5f23d` | `#4c8a00` |
+| Niveau | `--pd-gold` | `#e7b94a` | `#8c650c` |
 
-## Structure
+Le thème sombre est le réglage par défaut (`site/theme.js`). Le choix du visiteur est conservé dans `localStorage`, clé `rl-academy-theme`.
 
-L’accueil commence par une question et le champ de recherche. Une photographie ouvre un guide réel ; le panneau adjacent mène au choix du véhicule. Les rangées montrent des gestes du quotidien, des univers et des sélections éditoriales documentées. Aucun chiffre de progression, popularité ou personnalisation fictif.
+## Typographie
 
-Sur ordinateur, un rail gauche contient les quatre destinations principales. La recherche affiche ses filtres à côté de la grille lorsque la largeur le permet. Les groupes sont Sujet, Plateforme, Type/niveau/durée, Texte et droits ; le format et la langue restent visibles au-dessus. Sur mobile, les critères du panneau sont un brouillon : fermer annule, appliquer lance une recherche. Aucun compteur n’est présenté comme le total d’un brouillon non exécuté.
+| Usage | Police | Réglage |
+|---|---|---|
+| Titres | Archivo (`--pd-display`) | graisse 800 à 900, `font-stretch:125%`, capitales |
+| Texte | Onest (`--pd-body`) | 400 à 700 |
+| Libellés, durées, compteurs | Geist Mono (`--pd-mono`) | 11 px, capitales, `letter-spacing:.14em` à `.16em` |
 
-## Cartes et lecture
+## Écrans
 
-Les cartes vidéo ont une photographie 16:9, un seul bouton photo+titre, la source, la langue et la sauvegarde. Les guides suivent la même hiérarchie avec un accès aux références constructeur. Les extraits longs, métadonnées et preuves se lisent dans la fiche. La vidéo précède son titre dans le lecteur, avec les détails à droite sur grand écran et dans un flux unique sur mobile. Les références de guide gardent leur portée et leurs limites.
+| Écran | Fichier principal | Éléments |
+|---|---|---|
+| Accueil | `site/index.html`, `site/paddock-home.js` | bandeau, console de recherche, 8 sujets, guides, sélection, parcours, formats courts, bonus, FAQ |
+| Bibliothèque | `site/paddock-pages.css`, `site/app.js` | en-tête et compteur, rangée de sujets, filtres fixes, cartes, « Quelle Clio ? » |
+| Fiche vidéo | `site/resource-detail.js` | plein écran, lecteur, panneau fixe, « À regarder ensuite » |
+| Fiche guide | `site/guide-ui.js` | photo en tête, plan fixe, étapes numérotées, liste à cocher, notices |
+| Parcours | `site/app.js` (`renderPaths`) | tuiles numérotées, secteurs de progression, étapes |
+| Aide | `site/app.js` (`renderFaq`) | filtres par catégorie, recherche, questions |
+| Pages autonomes | `site/paddock-annex.css`, `site/paddock-chrome.js` | navigation commune, jetons de chaque page redéfinis |
 
-## Système
+## Règles techniques
 
-Onest porte le texte et les titres, Orbitron reste limité à la signature. `product-ui.css` conserve les rôles sémantiques `--rl-*` et les composants existants ; `studio-ui.css` définit la nouvelle structure, `resource-ui.css` les cartes et lecteurs vidéo. `scripts/build_ui.py` construit l’unique entrée `app-ui.css`. Ne pas modifier le fichier généré directement.
+`site/app-ui.css` est généré par `python3 scripts/build_ui.py` : couches `legacy`, `product`, puis `paddock` (`paddock-ui.css` et `paddock-pages.css`). Ne pas le modifier à la main.
 
-Focus visible, dialogues natifs, libellés FR/EN/ES, préférences de thème persistées et mouvement réduit sont conservés. Les contrôles automatiques ne remplacent pas une inspection du rendu.
+Trois effets ont bloqué le navigateur et ont été retirés. Ne pas les réintroduire :
 
-## Références et validation
+- `text-wrap:balance` sur les titres en Archivo très large ;
+- `backdrop-filter` sur l'en-tête et la console, au-dessus du bandeau animé ;
+- `filter:blur()` de grande taille en arrière-plan de la fiche.
 
-[Sources et observations de design](public/design-sources.md) : deux maquettes inspectées, documentation réelle des plateformes, limites Pinterest/Behance/MotionSite précisées. Aucune image de maquette tierce n’est utilisée comme asset produit. Photographies existantes créditées dans `public/photo-sources.json`.
+Le mouvement se limite à `transform` et `opacity`, et respecte `prefers-reduced-motion`. Les cibles tactiles font au moins 44 px.
 
-La validation V30 est séparée des anciennes preuves : `research/studio-v30/VALIDATION.md`. Le navigateur intégré n’a pas permis d’inspecter cette version ; aucun contrôle visuel mobile/desktop V30 n’est donc revendiqué. Les anciennes captures V22 ne constituent pas une preuve du nouveau rendu.
+Ne jamais inventer de durée, de chapitre, d'étape ou de compteur : un champ absent de la source n'est pas affiché.

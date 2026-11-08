@@ -93,6 +93,8 @@ export function createPaddockHome({$, escape, t, getUi, getJson}) {
   // Static content appears at once; the counts follow when the catalogue is ready.
   function load() {
     render();
+    // The manifest is tiny, so the total shows before the catalogue finishes loading.
+    fetch('./export-manifest.json').then(r => r.ok ? r.json() : Promise.reject()).then(data => { const total = $('#catalog-total'); if (total.textContent === '…' && data.videos) total.textContent = number(data.videos); }).catch(() => {});
     fetch('./social-index.json').then(r => r.ok ? r.json() : Promise.reject()).then(data => { shorts = pickShorts(Array.isArray(data.items) ? data.items : []); shortsRail(); }).catch(() => {});
     getJson('/aide/api/resources?language=fr&per_page=1').then(data => { frenchCounts = Object.fromEntries((data.facets?.category || []).map(entry => [entry.value, entry.count])); subjects(); }).catch(() => {});
   }

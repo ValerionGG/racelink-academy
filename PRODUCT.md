@@ -1,27 +1,28 @@
-# RaceLink Academy — Bibliothèque V30
+# RaceLink Academy : produit
 
-## Recherche V34
+Une bibliothèque ouverte pour apprendre l'automobile et le sport auto : entretenir sa voiture, piloter, régler son simulateur, comprendre la data, découvrir les métiers. Les vidéos sont référencées et restent chez leurs auteurs.
 
-Les propositions de recherche liées à une question ou à une faute sont affichées avant les résultats, avec le nombre de correspondances effectivement calculé par le catalogue. Elles s’appliquent uniquement au clic et conservent les critères explicites du visiteur. Il s’agit d’un vocabulaire automobile documenté, pas d’un diagnostic ni d’une validation de compatibilité.
+Chiffres à jour : [`docs/CHIFFRES.md`](docs/CHIFFRES.md).
 
-Les critères appliqués, y compris la langue et le format, sont visibles et supprimables séparément. Sur mobile, la langue occupe une ligne entière avec accès direct au français ; le véhicule et les autres filtres restent immédiatement accessibles. Le panneau de filtres propose la langue, le sujet, la plateforme puis les caractéristiques du contenu. Les choix sont préparés aussi sur tablette ; Annuler les abandonne, Appliquer les valide ensemble. Le bouton affiche un nombre de critères lorsqu’un brouillon est en cours, jamais un total de résultats non calculé.
+## Pour qui
 
-Les suggestions mobiles sont limitées à quatre entrées pour laisser davantage de place au clavier. Échap conserve le texte saisi. Les ajustements conservent les grandes photographies et les thèmes clair/sombre. V34 est contrôlé par tests de contrats ; le navigateur de cette session est indisponible, donc aucun nouveau rendu sur téléphone ou viewport mobile n’est revendiqué.
-
-## Produit
-
-Trouver des tutoriels par question, sujet, langue et voiture, ou explorer les guides et les sélections RaceLink. Le catalogue public expose ses chiffres réels. Un résultat référencé ne signifie ni visionnage intégral, ni validation technique, ni autorisation de réutilisation.
+Le grand public francophone d'abord, du conducteur qui veut changer ses essuie-glaces au pilote ou au sim racer qui veut progresser. Les autres langues restent accessibles.
 
 ## Parcours
 
-Recherche immédiatement accessible à l’accueil ; navigation latérale sur ordinateur, barre basse sur mobile. Les filtres desktop restent visibles à côté des résultats. Sur mobile, les choix du panneau sont appliqués ensemble ou annulés à sa fermeture. La langue française est un filtre de contenu distinct du français de l’interface. Question, véhicule et langue persistent quand on affine une plateforme.
+1. **Accueil** : une question, un sujet parmi huit, ou une sélection de guides, de parcours et de formats courts.
+2. **Bibliothèque** : recherche tolérante aux fautes, filtres par sujet, plateforme, type, niveau, durée, transcription et licence. La recherche reconnaît les voitures et propose la génération.
+3. **Fiche** : la vidéo, sa source, sa transcription quand elle existe, des notes personnelles et les vidéos suivantes.
+4. **Guides RaceLink** : onze méthodes générales appuyées sur des notices constructeur.
+5. **Parcours guidés** : huit disciplines en quatre étapes, avec une progression gardée sur l'appareil.
+6. **En bonus** : Mon véhicule, l'atlas de neuf voitures courantes et l'atelier 3D.
 
-Grandes photographies, titres lisibles et source sur les cartes. La fiche commence par le média, conserve notes et transcription lorsqu’elle existe, puis organise les informations originales et leur provenance. Les onze guides RaceLink référencent des notices constructeur avec leur portée : ils ne sont pas eux-mêmes des procédures officielles universelles.
+## Ce qui est garanti et ce qui ne l'est pas
 
-## Apparence et données
+Le catalogue expose ses chiffres réels. Un résultat référencé ne signifie ni visionnage intégral, ni validation technique, ni droit de réutilisation. La langue peut être estimée à partir du texte, et une voiture citée ne garantit pas la compatibilité avec une version précise. Les guides ne remplacent pas la notice du constructeur.
 
-Clair et Sombre sont accessibles dans l’en-tête. Sans choix local, l’apparence suit le système. Le thème ne change ni recherche, ni langue, ni notes. Les images réelles restent créditées et les miniatures proviennent des sources référencées. Une langue estimée depuis le texte n’est pas une langue audio certifiée ; une voiture citée n’est pas une garantie de compatibilité.
+Les enregistrements, les notes et la progression restent dans le navigateur du visiteur.
 
-## Livraison
+## Hébergement
 
-Le site GitHub Pages et le paquet local sont livrés séparément du domaine Focus. Les contrôles et limites propres à V30 sont dans `research/studio-v30/VALIDATION.md`, les références de design dans `public/design-sources.md`. Aucune capture ancienne n’est présentée comme validation visuelle de cette version.
+GitHub Pages, sans serveur. Le site n'est pas intégré au domaine focus.racelink-app.co, vers lequel il renvoie pour les masterclass.

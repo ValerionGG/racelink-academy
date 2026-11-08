@@ -11,9 +11,9 @@ import {createFilterStudio} from './filter-studio.js?v=search-v34&rev=count-v36'
 import {usableSearchAssistance,searchSuggestionPatch,searchAssistanceMarkup} from './search-assistance-ui.js?v=search-v34';
 import {createGuideUI} from './guide-ui.js?v=studio-v30';
 import {socialContentMarkup} from './social-content.js';
-import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-3';
-import {resourceCard} from './resource-card.js?v=paddock-2';
-import {createPaddockHome,poster} from './paddock-home.js?v=3';
+import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-4';
+import {resourceCard} from './resource-card.js?v=paddock-3';
+import {createPaddockHome,poster} from './paddock-home.js?v=4';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));

@@ -37,10 +37,38 @@ Après une modification d'un fichier JS ou CSS, augmenter son paramètre `?v=` l
 
 Un push sur `main` déploie `site/` sur GitHub Pages (`.github/workflows/pages.yml`).
 
+### Base de données
+
+La base SQLite complète (50 520 vidéos, voitures, tâches, transcriptions) est publiée avec la release [`data-2026-11-08`](https://github.com/ValerionGG/racelink-academy/releases/tag/data-2026-11-08), car elle dépasse la taille permise dans le dépôt. Les traces de collecte internes en ont été retirées. Schéma : `collector/schema.sql`.
+
+```bash
+curl -LO https://github.com/ValerionGG/racelink-academy/releases/download/data-2026-11-08/racelink-catalog.sqlite3.gz
+gunzip racelink-catalog.sqlite3.gz
+```
+
+Pour régénérer le catalogue public depuis cette base :
+
+```bash
+cd collector
+python3 scripts/export_static.py --db ../racelink-catalog.sqlite3 --output /tmp/rl-export --base-path /racelink-academy/ --flat
+cp /tmp/rl-export/catalog/catalog.json /tmp/rl-export/catalog/catalog.json.gz /tmp/rl-export/catalog/config.json ../site/catalog/
+cp /tmp/rl-export/catalog/transcripts/*.json ../site/catalog/transcripts/
+cp /tmp/rl-export/social-index.json /tmp/rl-export/export-manifest.json ../site/
+cd .. && python3 scripts/report_stats.py
+```
+
+Sous Git Bash (Windows), préfixer la commande d'export par `MSYS2_ARG_CONV_EXCL="*"`.
+
+### Documentation
+
+- [`docs/CHIFFRES.md`](docs/CHIFFRES.md) : chiffres détaillés, générés depuis le catalogue
+- [`DESIGN.md`](DESIGN.md) : système de design, jetons et règles
+- [`PRODUCT.md`](PRODUCT.md) : produit et parcours
+- [`docs/design/`](docs/design/) : maquette, audit et captures d'écran
+
 ### À savoir
 
 - **Publication automatique** : une automatisation Codex quotidienne pousse aussi des mises à jour du catalogue sur `main`. Faire `git pull --rebase` avant de pousser.
-- **Base de collecte absente du dépôt** : la base SQLite de référence est locale et ignorée par Git. Le dépôt contient le catalogue exporté.
 - **Taille du catalogue** : `catalog.json` pèse 77 Mo sur GitHub, dont la limite par fichier est de 100 Mo. Il ralentit aussi le premier chargement : c'est le prochain chantier technique.
 - **Vignettes TikTok et Instagram** : leurs URL expirent. Une photo liée au sujet les remplace.
 
