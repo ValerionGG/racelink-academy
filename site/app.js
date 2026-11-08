@@ -11,9 +11,9 @@ import {createFilterStudio} from './filter-studio.js?v=search-v34&rev=count-v36'
 import {usableSearchAssistance,searchSuggestionPatch,searchAssistanceMarkup} from './search-assistance-ui.js?v=search-v34';
 import {createGuideUI} from './guide-ui.js?v=studio-v30';
 import {socialContentMarkup} from './social-content.js';
-import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-1';
-import {resourceCard} from './resource-card.js?v=discovery-v34';
-import {createPaddockHome} from './paddock-home.js?v=2';
+import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-3';
+import {resourceCard} from './resource-card.js?v=paddock-2';
+import {createPaddockHome,poster} from './paddock-home.js?v=3';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -35,10 +35,10 @@ const categories = [
   ['engineering','⌁','Ingénierie','Engineering','Ingeniería','Lire la data, comprendre les pneus et prendre de meilleures décisions.'],
   ['mechanics','⚒','Mécanique','Mechanics','Mecánica','Comprendre la voiture, ses réglages et ses composants.'],
   ['simracing','⊕','Sim racing','Sim racing','Sim racing','Du premier setup à une pratique plus précise sur simulateur.'],
-  ['media','▣','Média','Media','Medios','Raconter la course, de la prise de vue au montage.'],
+  ['media','▣','Photo & vidéo','Photo & video','Foto y vídeo','Raconter la course, de la prise de vue au montage.'],
   ['business','↗','Business','Business','Negocio','Sponsoring, partenariats et économie du sport automobile.'],
-  ['career','◇','Carrière','Careers','Carrera','Découvrir les métiers et les compétences du paddock.'],
-  ['fitness','⌇','Physique','Fitness','Preparación física','Préparation et compréhension des exigences du pilote.']
+  ['career','◇','Métiers','Careers','Profesiones','Découvrir les métiers et les compétences du paddock.'],
+  ['fitness','⌇','Préparation','Preparation','Preparación','Préparation et compréhension des exigences du pilote.']
 ];
 const catName = value => {const c = categories.find(c => c[0] === value);return c ? t(c[2],c[3],c[4]) : value;};
 const levelName = value => ({beginner:t('Débutant','Beginner','Principiante'),intermediate:t('Intermédiaire','Intermediate','Intermedio'),advanced:t('Avancé / Pro','Advanced / Pro','Avanzado / Pro'),all:t('Tous niveaux','All levels','Todos los niveles'),unknown:t('À qualifier','To review','Por revisar')})[value] || value;
@@ -162,7 +162,7 @@ function syncControls(){
   updateLibrary();renderActiveFilters();mobileUI.update();
 }
 function updateLibrary(){
-  $('#catalog-heading').textContent=state.q?t('Résultats pour « ','Results for “','Resultados para « ')+state.q+t(' »','”',' »'):t('Trouver le bon tuto','Find the right tutorial','Encuentra el tutorial adecuado');
+  $('#catalog-heading').textContent=state.q?t('Résultats pour « ','Results for “','Resultados para « ')+state.q+t(' »','”',' »'):t('Bibliothèque','Library','Biblioteca');
   $('#active-filters').setAttribute('aria-label',t('Critères appliqués, à retirer individuellement','Applied criteria, remove individually','Criterios aplicados, quitar individualmente'));
   $('#search-assistance').setAttribute('aria-label',t('Autres recherches suggérées','Suggested searches','Búsquedas sugeridas'));
   $('#vehicle-trigger-label').textContent=[state.make,state.model].filter(Boolean).join(' ')||t('Ma voiture','My car','Mi coche');
@@ -239,6 +239,8 @@ function renderFacets(){
     const count=id?(categoriesFacet.find(f=>f.value===id)?.count??0):(lastTotal??stats?.total_videos);
     return `<button class="category-button ${state.category===id?'active':''}" data-category="${id}" aria-pressed="${state.category===id}"><span class="cat-icon" aria-hidden="true">${glyph(categoryIcon[id]||'library',{size:20})}</span>${escape(name)}<span class="cat-count">${count??'—'}</span></button>`;
   }).join('');
+  const subjectChoices=categories.filter(c=>state.category===c[0]||categoriesFacet.some(f=>f.value===c[0]&&f.count>0));
+  $('#pd-lib-subjects').innerHTML=[['',t('Tout','All','Todo'),lastTotal],...subjectChoices.map(c=>[c[0],catName(c[0]),categoriesFacet.find(f=>f.value===c[0])?.count])].map(([id,name,count])=>`<button type="button" data-lib-category="${id}" aria-pressed="${(state.category||'')===id}">${escape(name)}${count==null?'':` <small>${Number(count).toLocaleString(ui)}</small>`}</button>`).join('');
   renderLanguages();
   const platforms=['youtube','dailymotion','vimeo','tiktok','instagram','facebook','twitch','bilibili','racelink','other'].filter(v=>v===state.platform||(facets.platform||[]).some(f=>f.value===v&&f.count>0));
   $('#platform').innerHTML=`<option value="">${t('Toutes les plateformes','All platforms','Todas las plataformas')}</option>${platforms.map(value=>`<option value="${value}">${platformName(value)} (${(facets.platform||[]).find(f=>f.value===value)?.count||0})</option>`).join('')}`;
@@ -256,7 +258,7 @@ function cardMarkup(video){
   return resourceCard(video,{escape,t,glyph,safeUrl,catName,platformName,languageLabel,estimatedLanguage,fmtDuration,isSaved:Boolean(saved[video.id]),badge:raceLinkPicks.badge('video',video.id,{compact:true}),automotiveMarkup:automotiveUI.cardMarkup(video)});
 }
 function setImageFallback(root){
-  $$('img',root).forEach(img=>img.addEventListener('error',()=>{img.style.display='none';const parent=img.parentElement;if(parent.classList.contains('thumbnail'))parent.insertAdjacentHTML('afterbegin','<span class="thumb-fallback">RACELINK</span>');},{once:true}));
+  $$('img',root).forEach(img=>img.addEventListener('error',()=>{img.style.display='none';const parent=img.parentElement;if(parent.classList.contains('thumbnail')&&!parent.style.backgroundImage)parent.insertAdjacentHTML('afterbegin','<span class="thumb-fallback">RACELINK</span>');},{once:true}));
 }
 function renderDetailPick(){
   const slot=$('#detail-racelink-pick');
@@ -277,7 +279,7 @@ async function loadVideos(){
   searchAssistance=[];$('#search-assistance').hidden=true;
   const params=new URLSearchParams({...state,per_page:18});
   const grid=$('#video-grid');grid.setAttribute('aria-busy','true');grid.inert=true;
-  lastTotal=null;
+  lastTotal=null;$('#pd-lib-total').textContent='…';
   mobileUI.update();
   $('#results-status').textContent=t('Recherche en cours…','Searching…','Buscando…');
   if(!loadedItems.length)grid.innerHTML=Array.from({length:6},()=>'<div class="skeleton" aria-hidden="true"></div>').join('');
@@ -286,7 +288,7 @@ async function loadVideos(){
     loadedItems=data.items||[];
     if(data.facets)facets=data.facets;
     const n=Number(data.total)||0;
-    lastTotal=n;renderGenerations(data);renderFacets();renderActiveFilters();automotiveUI.renderContext(data.inferred_task||state.task);
+    lastTotal=n;$('#pd-lib-total').textContent=n.toLocaleString(ui);$('#pd-lib-total-label').textContent=n===1?t('ressource','resource','recurso'):t('ressources','resources','recursos');renderGenerations(data);renderFacets();renderActiveFilters();automotiveUI.renderContext(data.inferred_task||state.task);
     searchAssistance=usableSearchAssistance(data);
     $('#search-assistance').innerHTML=searchAssistanceMarkup(searchAssistance,{escape,t,ui});
     $('#search-assistance').hidden=!searchAssistance.length;
@@ -340,18 +342,29 @@ function changeView(next,push=true){
   identityUI.sync();if(next==='saved')renderSaved();if(next==='faq')renderFaq();if(next==='paths')renderPaths();
   if(push){syncUrl(true);window.scrollTo({top:0,behavior:'instant'});$('#main').focus({preventScroll:true});}
 }
+const pathPhotos={mechanics:'service',driving:'driving',simracing:'simracing',engineering:'diagnostics'};
+function sectors(track){const progress=storage.get('rl-library-progress',{}),steps=tracks[track]||[];return `<span class="pd-sectors" aria-hidden="true">${steps.map((_,i)=>`<i class="${progress[`${track}:${i}`]?'on':''}"></i>`).join('')}</span>`;}
 function renderPaths(){
   if(activeTrack&&tracks[activeTrack]){
     const progress=storage.get('rl-library-progress',{}),steps=tracks[activeTrack];
     const done=steps.filter((_,i)=>progress[`${activeTrack}:${i}`]).length;
-    $('#paths-view').innerHTML=`<button class="track-back" data-all-tracks>← ${t('Tous les parcours','All learning paths','Todos los itinerarios')}</button><p class="eyebrow">${t('PARCOURS GUIDÉ · 4 ÉTAPES','GUIDED PATH · 4 STEPS','ITINERARIO · 4 PASOS')}</p><h1>${escape(catName(activeTrack)).toUpperCase()}<br><span class="track-accent">${t('UN REPÈRE À LA FOIS.','ONE STEP AT A TIME.','PASO A PASO.')}</span></h1><p class="lead">${t('Explorez les ressources, notez ce que vous retenez, puis marquez l’étape comprise. Ce suivi personnel ne délivre pas de certification.','Explore resources, take notes, then mark a step understood. This personal tracker does not award certification.','Explora recursos, toma notas y marca los pasos comprendidos. Este seguimiento no otorga certificación.')}</p><div class="track-progress"><span>${done} / 4 ${t('étapes comprises','steps understood','pasos comprendidos')}</span><progress max="4" value="${done}" aria-label="${t('Progression personnelle','Personal progress','Progreso personal')}"></progress></div><div class="track-steps">${steps.map((step,i)=>`<article class="track-step ${progress[`${activeTrack}:${i}`]?'done':''}"><span class="step-number">0${i+1}</span><div><h2>${escape(t(...step.title))}</h2><p>${escape(t(...step.goal))}</p><div class="step-actions"><button data-step-query="${escape(step.query)}" data-step-category="${activeTrack}">${t('Trouver les tutoriels','Find tutorials','Buscar tutoriales')} ↗</button><button class="step-done" data-complete-step="${activeTrack}:${i}" aria-pressed="${Boolean(progress[`${activeTrack}:${i}`])}">${progress[`${activeTrack}:${i}`]?t('Compris ✓','Understood ✓','Comprendido ✓'):t('Marquer comme compris','Mark as understood','Marcar como comprendido')}</button></div></div></article>`).join('')}</div>`;
+    $('#paths-view').innerHTML=`<button class="track-back" data-all-tracks>← ${t('Tous les parcours','All learning paths','Todos los itinerarios')}</button><p class="eyebrow">${t('PARCOURS GUIDÉ · 4 ÉTAPES','GUIDED PATH · 4 STEPS','ITINERARIO · 4 PASOS')}</p><h1>${escape(catName(activeTrack)).toUpperCase()}<br><span class="track-accent">${t('UN REPÈRE À LA FOIS.','ONE STEP AT A TIME.','PASO A PASO.')}</span></h1><p class="lead">${t('Explorez les ressources, notez ce que vous retenez, puis marquez l’étape comprise. Ce suivi personnel ne délivre pas de certification.','Explore resources, take notes, then mark a step understood. This personal tracker does not award certification.','Explora recursos, toma notas y marca los pasos comprendidos. Este seguimiento no otorga certificación.')}</p><div class="track-progress"><span>${done} / 4 ${t('étapes comprises','steps understood','pasos comprendidos')}</span>${sectors(activeTrack)}</div><div class="track-steps">${steps.map((step,i)=>`<article class="track-step ${progress[`${activeTrack}:${i}`]?'done':''}"><span class="step-number">0${i+1}</span><div><h2>${escape(t(...step.title))}</h2><p>${escape(t(...step.goal))}</p><div class="step-actions"><button data-step-query="${escape(step.query)}" data-step-category="${activeTrack}">${t('Trouver les tutoriels','Find tutorials','Buscar tutoriales')} ↗</button><button class="step-done" data-complete-step="${activeTrack}:${i}" aria-pressed="${Boolean(progress[`${activeTrack}:${i}`])}">${progress[`${activeTrack}:${i}`]?t('Compris ✓','Understood ✓','Comprendido ✓'):t('Marquer comme compris','Mark as understood','Marcar como comprendido')}</button></div></div></article>`).join('')}</div>`;
     return;
   }
-  $('#paths-view').innerHTML=`<p class="eyebrow">${t('UN POINT DE DÉPART POUR CHAQUE AMBITION','A STARTING POINT FOR EVERY AMBITION','UN PUNTO DE PARTIDA PARA CADA AMBICIÓN')}</p><h1>${t('Apprenez, étape par étape.','Learn, step by step.','Aprende, paso a paso.')}</h1><p class="lead">${t('Huit portes d’entrée pour explorer le motorsport. Choisissez une discipline, puis adaptez les ressources à votre niveau.','Eight ways into motorsport. Pick a discipline, then filter the resources to your level.','Ocho puertas al automovilismo. Elige una disciplina y filtra los recursos según tu nivel.')}</p><div class="path-grid">${categories.map((c,i)=>`<button class="path-card" data-path="${c[0]}">${['mechanics','driving','simracing'].includes(c[0])?`<img class="path-photo" src="./assets/photos/${c[0]==='mechanics'?'service':c[0]}.jpg" alt="" width="960" height="640" loading="lazy">`:''}<span class="path-top"><span class="path-number">0${i+1} / RACELINK</span></span><h2>${escape(catName(c[0]))}</h2><p>${ui==='fr'?c[5]:t('',`Explore tutorials, methods and explanations in ${catName(c[0]).toLowerCase()}.`,`Explora tutoriales, métodos y explicaciones de ${catName(c[0]).toLowerCase()}.`)}</p><span class="path-bottom">${t('Découvrir le parcours','Explore this path','Descubrir el itinerario')}<span>↗</span></span></button>`).join('')}</div>`;
+  $('#paths-view').innerHTML=`<p class="eyebrow">${t('UN POINT DE DÉPART POUR CHAQUE AMBITION','A STARTING POINT FOR EVERY AMBITION','UN PUNTO DE PARTIDA PARA CADA AMBICIÓN')}</p><h1>${t('Apprenez, étape par étape.','Learn, step by step.','Aprende, paso a paso.')}</h1><p class="lead">${t('Huit portes d’entrée pour explorer le motorsport. Choisissez une discipline, puis adaptez les ressources à votre niveau.','Eight ways into motorsport. Pick a discipline, then filter the resources to your level.','Ocho puertas al automovilismo. Elige una disciplina y filtra los recursos según tu nivel.')}</p><div class="path-grid">${categories.map((c,i)=>`<button class="path-card" data-path="${c[0]}">${pathPhotos[c[0]]?`<img class="path-photo" src="./assets/photos/${pathPhotos[c[0]]}.jpg" alt="" width="960" height="640" loading="lazy">`:''}<span class="path-top"><span class="path-number">0${i+1}</span></span><h2>${escape(catName(c[0]))}</h2><p>${ui==='fr'?c[5]:t('',`Explore tutorials, methods and explanations in ${catName(c[0]).toLowerCase()}.`,`Explora tutoriales, métodos y explicaciones de ${catName(c[0]).toLowerCase()}.`)}</p>${sectors(c[0])}<span class="path-bottom">${t('Découvrir le parcours','Explore this path','Descubrir el itinerario')}<span>↗</span></span></button>`).join('')}</div>`;
 }
+function faqCategories(items){
+  const counts=new Map();items.forEach(f=>{if(f.category)counts.set(f.category,(counts.get(f.category)||0)+1);});
+  return [['',t('Toutes les questions','All questions','Todas las preguntas'),items.length],...counts].map(([id,label,count],i)=>`<button type="button" class="pd-faq-cat" data-faq-filter="${escape(i?id:'')}" aria-pressed="${!i}"><span>${escape(i?id:label)}</span><small>${i?label:count}</small></button>`).join('');
+}
+$('#faq-view').addEventListener('click',e=>{
+  const button=e.target.closest('[data-faq-filter]');if(!button)return;
+  $$('.pd-faq-cat').forEach(x=>x.setAttribute('aria-pressed',String(x===button)));$('#faq-search').value='';
+  let count=0;$$('.faq-item').forEach(el=>{el.hidden=Boolean(button.dataset.faqFilter)&&el.dataset.faqCategory!==button.dataset.faqFilter;if(!el.hidden)count++;});$('#faq-empty').hidden=count>0;
+});
 function renderFaq(openId){
   const merged=[...seedFaq,...faqItems.filter(x=>!seedFaq.some(s=>s.question===x.question))];
-  $('#faq-view').innerHTML=`<p class="eyebrow">${t('LE STAND DES BONNES RÉPONSES','YOUR PIT STOP FOR ANSWERS','TU PARADA PARA ENCONTRAR RESPUESTAS')}</p><h1>${t('Comment peut-on vous aider ?','How can we help?','¿Cómo podemos ayudarte?' )}</h1><p class="lead">${t('Recherche, langues, transcriptions et premiers pas. Retrouvez les réponses aux questions qui vous ralentissent.','Search, languages, transcripts and first steps. Help articles are currently written in French.','Búsqueda, idiomas, transcripciones y primeros pasos. Los artículos de ayuda están disponibles en francés.')}</p><div class="faq-layout"><aside class="faq-side"><strong>RACELINK ACADEMY</strong><p>${t('Apprendre à votre rythme, comprendre vos sources et retrouver facilement ce qui vous aide.','Learn at your pace, understand your sources and find what helps you.','Aprende a tu ritmo, conoce tus fuentes y encuentra lo que te ayuda.')}</p></aside><div><input class="faq-search" id="faq-search" type="search" placeholder="${t('Rechercher dans l’aide…','Search help articles…','Buscar en la ayuda…')}" aria-label="${t('Rechercher dans l’aide','Search help','Buscar ayuda')}"><div id="faq-list">${merged.map(f=>`<details class="faq-item" id="faq-${escape(f.id)}" ${f.id===openId?'open':''}><summary>${escape(f.question)}</summary><p>${escape(f.answer)}</p>${f.sources?.length?`<div class="faq-sources">${f.sources.filter(source=>safeUrl(source.url)).map(source=>`<a href="${escape(safeUrl(source.url))}" target="_blank" rel="noopener noreferrer">${escape(source.title)} ↗</a>`).join('')}</div>`:''}</details>`).join('')}</div><p id="faq-empty" hidden>${t('Aucune réponse trouvée.','No answers found.','No se encontraron respuestas.')}</p></div></div>`;
+  $('#faq-view').innerHTML=`<p class="eyebrow">${t('LE STAND DES BONNES RÉPONSES','YOUR PIT STOP FOR ANSWERS','TU PARADA PARA ENCONTRAR RESPUESTAS')}</p><h1>${t('Comment peut-on vous aider ?','How can we help?','¿Cómo podemos ayudarte?' )}</h1><p class="lead">${t('Recherche, langues, transcriptions et premiers pas. Retrouvez les réponses aux questions qui vous ralentissent.','Search, languages, transcripts and first steps. Help articles are currently written in French.','Búsqueda, idiomas, transcripciones y primeros pasos. Los artículos de ayuda están disponibles en francés.')}</p><div class="faq-layout"><aside class="faq-side"><strong>RACELINK ACADEMY</strong><p>${t('Apprendre à votre rythme, comprendre vos sources et retrouver facilement ce qui vous aide.','Learn at your pace, understand your sources and find what helps you.','Aprende a tu ritmo, conoce tus fuentes y encuentra lo que te ayuda.')}</p>${faqCategories(merged)}</aside><div><input class="faq-search" id="faq-search" type="search" placeholder="${t('Rechercher dans l’aide…','Search help articles…','Buscar en la ayuda…')}" aria-label="${t('Rechercher dans l’aide','Search help','Buscar ayuda')}"><div id="faq-list">${merged.map(f=>`<details class="faq-item" data-faq-category="${escape(f.category||'')}" id="faq-${escape(f.id)}" ${f.id===openId?'open':''}><summary>${escape(f.question)}</summary><p>${escape(f.answer)}</p>${f.sources?.length?`<div class="faq-sources">${f.sources.filter(source=>safeUrl(source.url)).map(source=>`<a href="${escape(safeUrl(source.url))}" target="_blank" rel="noopener noreferrer">${escape(source.title)} ↗</a>`).join('')}</div>`:''}</details>`).join('')}</div><p id="faq-empty" hidden>${t('Aucune réponse trouvée.','No answers found.','No se encontraron respuestas.')}</p></div></div>`;
   $('#faq-search').addEventListener('input',event=>{const q=normalize(event.target.value);let count=0;$$('.faq-item').forEach(el=>{el.hidden=!normalize(el.textContent).includes(q);if(!el.hidden)count++;});$('#faq-empty').hidden=count>0;});
 }
 function renderSaved(){
@@ -381,6 +394,22 @@ function loadPlayer(time=0){
   $('#player').innerHTML=`<iframe src="${escape(embed)}" title="${escape(detail.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
 }
 function resourceDetailContext(){return {escape,t,safeUrl,embedUrl,catName,levelName,platformName,langName,estimatedLanguage,licenseName,fmtDuration,isSaved:Boolean(saved[detail.id]),socialMarkup:video=>socialContentMarkup(video,{escape,t}),automotiveMarkup:video=>automotiveUI.detailMarkup(video)};}
+async function loadNext(video,version){
+  const root=$('#pd-next');if(!root)return;
+  const car=video.automotive?.vehicles?.find(v=>v?.model),task=video.automotive?.tasks?.[0];
+  const base={format:'video',per_page:'7'};if(video.language&&video.language!=='und')base.language=video.language;
+  const variants=[...(task&&car?[{...base,task,model:car.model}]:[]),...(task?[{...base,task}]:[]),{...base,category:video.category||''}];
+  try{
+    for(const variant of variants){
+      const data=await window.getCatalogJson(`/aide/api/resources?${new URLSearchParams(variant)}`);if(version!==detailVersion)return;
+      const items=(data.items||[]).filter(x=>x.id!==video.id).slice(0,6);
+      if(items.length<3&&variant!==variants.at(-1))continue;
+      if(!items.length)return;
+      root.innerHTML=`<h3>${t('À regarder ensuite','Watch next','Ver a continuación')}</h3><div class="pd-next-list">${items.map(x=>{const art=`./assets/photos/${poster({t:x.title||'',s:x.automotive?.tasks||[],c:x.category})}.jpg`,img=safeUrl(x.thumbnail_url,true);return `<button type="button" data-video="${escape(x.id)}"><span class="pd-next-photo" style="background-image:url('${art}')">${img?`<img src="${escape(img)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}</span><span><strong dir="auto">${escape(x.title||'')}</strong><small dir="auto">${escape(x.creator||'')}${Number(x.duration_seconds)>0?` · ${fmtDuration(x.duration_seconds)}`:''}</small></span></button>`;}).join('')}</div>`;
+      root.hidden=false;setImageFallback(root);return;
+    }
+  }catch{root.hidden=true;}
+}
 async function openVideo(id){
   const version=++detailVersion;const dialog=$('#video-dialog');
   if(!dialog.open)dialog.showModal();
@@ -388,7 +417,7 @@ async function openVideo(id){
   try{
     const result=await window.getCatalogJson(`/aide/api/videos/${encodeURIComponent(id)}`);if(version!==detailVersion||!dialog.open)return;detail=result.video||result.item||result;
     $('#video-detail').innerHTML=renderResourceDetail(detail,resourceDetailContext());
-    renderDetailPick();setDetailTab('about');setImageFallback($('#video-detail'));$('#dialog-title').tabIndex=-1;$('#dialog-title').focus({preventScroll:true});
+    renderDetailPick();setDetailTab('about');setImageFallback($('#video-detail'));$('#video-dialog').scrollTop=0;loadNext(detail,version);$('#dialog-title').tabIndex=-1;$('#dialog-title').focus({preventScroll:true});
   }catch{
     if(version!==detailVersion)return;
     $('#video-detail').insertAdjacentHTML('beforeend',`<div class="empty"><p>${t('Cette ressource ne peut pas être chargée. Fermez la fiche et réessayez.','This resource could not be loaded. Close this panel and retry.','No se pudo cargar este recurso. Cierra la ficha y vuelve a intentarlo.')}</p></div>`);
@@ -445,6 +474,7 @@ document.addEventListener('click',async event=>{
   else if(el.hasAttribute('data-faq')){changeView('faq');renderFaq(el.dataset.faq);$(`#faq-${el.dataset.faq}`)?.scrollIntoView({behavior:'smooth',block:'center'});}
   else if(el.hasAttribute('data-share')){try{await navigator.clipboard.writeText(detail.url);showToast(t('Lien source copié','Source link copied','Enlace de origen copiado'));}catch{showToast(t('Utilisez le bouton Voir la source pour copier l’adresse.','Use View source to copy its address.','Usa Ver fuente para copiar la dirección.'));}}
 });
+$('#pd-lib-subjects').addEventListener('click',e=>{const b=e.target.closest('[data-lib-category]');if(b)setFilter('category',b.dataset.libCategory);});
 $('#generation-choices').addEventListener('click',e=>{const b=e.target.closest('[data-generation]');if(b)setFilter('generation',b.dataset.generation);});
 $('#search-form').addEventListener('submit',e=>{e.preventDefault();const query=$('#search').value.trim();if(!browsing&&$('#home-category').value)state.category=$('#home-category').value;document.dispatchEvent(new Event('rl:search-chosen'));if(view!=='explore')changeView('explore',false);setFilter('q',query);$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
 for(const key of ['level','platform','duration','sort','domain','content_format'])$(`#${key}`).addEventListener('change',e=>setFilter(key,e.target.value));

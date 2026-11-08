@@ -1,6 +1,7 @@
 // A photograph, one opening action, and the source. Evidence lives in the reader.
 // Pure rendering: no request, storage, or mutation of the source record.
 import {sourceLabel} from './source-label.js?v=discovery-v34';
+import {poster} from './paddock-home.js?v=3';
 export function resourceCard(video,c){
   const {escape:e,t,glyph,safeUrl,platformName,languageLabel,estimatedLanguage,fmtDuration}=c;
   const id=e(video.id),image=safeUrl(video.thumbnail_url,true);
@@ -10,9 +11,10 @@ export function resourceCard(video,c){
   const saved=Boolean(c.isSaved);
   const duration=Number(video.duration_seconds)>0?fmtDuration(video.duration_seconds):'';
   const source=sourceLabel(video,platformName);
+  const art=`./assets/photos/${poster({t:title,s:video.automotive?.tasks||[],c:video.category})}.jpg`;
   return `<article class="video-card resource-card">
     <h3 class="resource-card-heading"><button type="button" class="resource-card-open" data-video="${id}" aria-label="${e(t('Ouvrir : ','Open: ','Abrir: ')+title)}">
-      <span class="thumbnail resource-photo">${image?`<img src="${e(image)}" alt="" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer">`:`<span class="thumb-fallback">${e(source)}<small>${e(t('Aperçu non fourni par la source','No preview supplied by the source','Vista previa no disponible en la fuente'))}</small></span>`}<span class="resource-format" aria-hidden="true">${e(t('Vidéo','Video','Vídeo'))}</span>${duration?`<span class="thumb-duration">${e(duration)}</span>`:''}</span>
+      <span class="thumbnail resource-photo" style="background-image:url('${art}')">${image?`<img src="${e(image)}" alt="" width="640" height="360" loading="lazy" decoding="async" referrerpolicy="no-referrer">`:''}<span class="pd-card-plat">${e(source)}</span><span class="resource-format" aria-hidden="true">${e(t('Vidéo','Video','Vídeo'))}</span>${duration?`<span class="thumb-duration">${e(duration)}</span>`:''}</span>
       <span class="resource-card-title" dir="auto">${e(title)}</span>
     </button></h3>
     <p class="resource-card-source"><span class="resource-card-creator" dir="auto" title="${e(author)}">${e(author)}</span><span class="resource-card-platform">${e(source)}</span><span class="resource-card-language">${e(language)}</span></p>

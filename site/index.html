@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Geist+Mono:wght@400;500;600&family=Onest:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=paddock-2">
+  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=paddock-4">
   <script src="/racelink-academy/catalog-client.js?v=paddock-1" defer></script>
-  <script type="module" src="/racelink-academy/app.js?v=paddock-3"></script>
+  <script type="module" src="/racelink-academy/app.js?v=paddock-5"></script>
   <link rel="stylesheet" href="./atelier-entry.css?v=2">
 </head>
 <body>
@@ -96,7 +96,7 @@
       <section class="catalog wrap" aria-labelledby="catalog-heading">
 
         <header class="library-head">
-          <div class="library-heading"><button type="button" class="results-back" data-home>← Accueil</button><h1 id="catalog-heading" tabindex="-1" data-i18n="catalogTitle">Trouver le bon tuto</h1></div>
+          <div class="library-heading"><button type="button" class="results-back" data-home>← Accueil</button><h1 id="catalog-heading" tabindex="-1" data-i18n="catalogTitle">Bibliothèque</h1></div><div class="pd-lib-total" aria-live="off"><strong id="pd-lib-total">…</strong><span id="pd-lib-total-label">ressources</span></div>
           <div class="library-search-row"><div id="results-search-desktop"></div><div class="catalog-actions"><button type="button" id="edit-search"><span data-icon="search"></span><span id="edit-search-label">Rechercher un tuto, une question…</span><small aria-hidden="true">Modifier</small></button></div></div>
           <div class="library-controls">
             <div class="content-language-bar"><div><label for="language">Langue</label><select id="language" aria-describedby="content-language-note"><option value="">Toutes les langues</option><option value="fr">Français</option></select></div><div class="language-shortcuts" role="group" aria-label="Choix rapide de langue"><button type="button" data-content-language="fr" aria-pressed="false">Français</button><button type="button" data-content-language="" aria-pressed="true">Toutes</button></div><p id="content-language-note">La langue peut être estimée à partir du titre et de la source.</p></div>
@@ -106,6 +106,7 @@
         </header>
         <details id="vehicle-disclosure" class="vehicle-disclosure"><summary><span id="vehicle-disclosure-label">Votre véhicule</span><span id="vehicle-disclosure-value">Marque, moteur, huile, intervention…</span><b aria-hidden="true">−</b></summary><section id="vehicle-hub" class="vehicle-hub" aria-label="Mon véhicule et mes interventions"></section><button type="button" class="vehicle-apply" data-close-vehicle>Voir les résultats →</button></details>
         <div class="library-typebar"><div id="format-tabs" class="format-tabs" role="group" aria-label="Format de la ressource"><button data-format="all" aria-pressed="true">Tout</button><button data-format="video" aria-pressed="false">Vidéos</button><button data-format="guide" aria-pressed="false">Guides</button></div><span id="library-context-caption"></span></div>
+        <div id="pd-lib-subjects" class="pd-lib-subjects" role="group" aria-label="Sujet"></div>
         <div class="catalog-layout">
           <aside id="filters" class="filters" aria-label="Filtres du catalogue">
             <div class="filter-heading"><strong data-i18n="refine">Filtrer les résultats</strong><button id="reset-filters" data-i18n="reset">Effacer</button></div>
@@ -123,7 +124,7 @@
             <div id="vehicle-dossiers" aria-label="Dossiers des voitures" hidden></div>
             <section id="search-assistance" class="search-assistance" aria-label="Autres recherches suggérées" hidden></section>
             <details class="result-explanation"><summary id="result-explanation-label">Comprendre ces résultats</summary><p id="search-mode" class="search-mode" hidden></p><div id="maintenance-guide-hint" hidden></div></details>
-            <div id="video-grid" class="video-grid" aria-busy="true"></div>
+            <div id="video-grid" class="video-grid" aria-busy="true"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
             <section id="context-discovery" class="context-discovery" aria-label="Suggestions liées à votre recherche" hidden></section>
             <div id="pagination" class="pagination"></div>
             <p class="catalog-disclosure" data-i18n="catalogDisclosure">Le référencement repose sur les métadonnées publiques. La langue, le niveau et la pertinence pédagogique peuvent rester à confirmer : chaque fiche précise les informations consultées.</p>
@@ -136,7 +137,10 @@
     <section id="faq-view" class="wrap alternate-view" hidden></section>
     <section id="saved-view" class="wrap alternate-view" hidden></section>
   </main>
-  <footer class="footer wrap"><a href="/racelink-academy/" class="footer-brand">RACELINK <span>ACADEMY</span></a><p data-i18n="footer">La passion se partage. Le savoir aussi.</p><a href="./photo-credits.html" target="_blank" rel="noopener">Crédits photo ↗</a><button data-faq="method" data-i18n="method">Notre méthode ↗</button><a href="https://focus.racelink-app.co/" target="_blank" rel="noopener">Focus ↗</a></footer>
+  <footer class="footer wrap pd-footer"><div><a href="/racelink-academy/" class="footer-brand">RACELINK <span>ACADEMY</span></a><p data-i18n="footer">La passion se partage. Le savoir aussi.</p></div>
+    <div><h2 data-pd="footLearn">Apprendre</h2><nav><button data-browse-all data-pd="footLibrary">Bibliothèque</button><button data-view="paths" data-i18n="paths">Parcours</button><a href="./formats-courts.html" data-pd="shortsTitle">Formats courts</a><button data-view="saved" data-i18n="saved">Enregistrés</button></nav></div>
+    <div><h2 data-pd="footCar">Ta voiture</h2><nav><button data-open-vehicle data-product-text="myCar">Mon véhicule</button><a href="./vehicules.html" data-pd="footAtlas">Atlas des voitures</a><a href="./3d.html" data-pd="footWorkshop">Atelier 3D</a></nav></div>
+    <div><h2>RaceLink</h2><nav><button data-view="faq" data-i18n="help">Aide & FAQ</button><button data-faq="method" data-i18n="method">Notre méthode ↗</button><a href="./photo-credits.html" target="_blank" rel="noopener">Crédits photo ↗</a><a href="https://focus.racelink-app.co/" target="_blank" rel="noopener">Focus Masterclass ↗</a></nav></div></footer>
   <nav class="mobile-nav" aria-label="Navigation mobile"><button data-view="explore" class="active"><span data-icon="home"></span><span data-i18n="explore">Accueil</span></button><button data-open-search><span data-icon="search"></span><span data-identity-text="search">Rechercher</span></button><button data-view="paths"><span data-icon="route"></span><span data-i18n="paths">Parcours</span></button><button data-view="saved"><span data-icon="bookmark"></span><span data-i18n="saved">Enregistrés</span></button></nav>
   <dialog id="video-dialog" aria-labelledby="dialog-title"><div id="video-detail"></div></dialog>
   <div id="toast" role="status" aria-live="polite"></div>

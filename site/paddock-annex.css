@@ -58,3 +58,25 @@
   [data-annex=social] #list .tags{display:none}
 }
 @media (prefers-reduced-motion:reduce){[data-annex=social] #list article{transition:none}}
+
+/* Car pages */
+[tabindex="-1"]:focus-visible{outline:none}
+[data-annex=atlas] .shell,[data-annex=clio] .shell{max-width:1560px}
+[data-annex=atlas] .browse-intro h1{font-size:clamp(44px,7vw,112px)}
+[data-annex=atlas] .car-grid{gap:24px 18px}
+[data-annex=atlas] .car-grid img{border-radius:16px;transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+[data-annex=atlas] #car-title{font-size:clamp(56px,10vw,156px);margin:6px 0}
+[data-annex=atlas] .view-tabs button,[data-annex=atlas] .makes button{border-radius:99px;font-weight:600;min-height:40px}
+[data-annex=atlas] .view-tabs button[aria-pressed=true],[data-annex=atlas] .view-tabs button.active,[data-annex=atlas] .makes button[aria-pressed=true]{background:var(--pd-red);border-color:var(--pd-red);color:#fff}
+[data-annex=atlas] .media{border-radius:20px;overflow:hidden}
+[data-annex=atlas] .configuration{padding:22px;border:1px solid var(--pd-line);border-radius:20px;background:var(--pd-paper)}
+[data-annex=atlas] .configuration select{border-radius:12px;min-height:48px;background:var(--pd-soft);color:var(--pd-ink);border:1px solid var(--pd-line);font-weight:600}
+[data-annex=atlas] .under-title h2{font-size:clamp(30px,4.4vw,64px);text-transform:uppercase;font-weight:900;font-stretch:125%}
+[data-annex=atlas] .official-card{border-radius:16px;padding:20px;background:var(--pd-paper);transition:border-color .2s,transform .3s}
+[data-annex=atlas] .official-card:hover{border-color:var(--pd-red);transform:translateY(-3px)}
+[data-annex=atlas] .eyebrow{font-family:var(--pd-mono);font-weight:500;letter-spacing:.16em}
+[data-annex=clio] h1{font-size:clamp(60px,9vw,140px)}
+[data-annex=clio] .section-nav{position:sticky;top:64px;z-index:20;background:var(--pd-glass)}
+[data-annex=clio] .section-nav a{font-weight:600}
+[data-annex="3d"] h1{font-size:clamp(44px,7vw,112px)}
+@media (max-width:760px){[data-annex=atlas] #car-title{font-size:17vw}}

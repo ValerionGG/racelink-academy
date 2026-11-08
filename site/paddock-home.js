@@ -84,6 +84,7 @@ export function createPaddockHome({$, escape, t, getUi, getJson}) {
       carTitle:t('Des tutos pour ta voiture','Tutorials for your car','Tutoriales para tu coche'),carHint:t('Marque, modèle, génération, moteur : la bibliothèque se cale sur ta voiture.','Make, model, generation, engine: the library adapts to your car.','Marca, modelo, generación, motor: la biblioteca se adapta a tu coche.'),
       atlasHint:t('Photos, habitacles, versions et visites 360° constructeur.','Photos, interiors, versions and manufacturer 360° tours.','Fotos, interiores, versiones y visitas 360° del fabricante.'),
       workshopHint:t('Un châssis ouvert à démonter pièce par pièce.','An open chassis to take apart piece by piece.','Un chasis abierto para desmontar pieza a pieza.'),
+      footLearn:t('Apprendre','Learn','Aprender'),footLibrary:t('Bibliothèque','Library','Biblioteca'),footCar:t('Ta voiture','Your car','Tu coche'),footAtlas:t('Atlas des voitures','Car atlas','Atlas de coches'),footWorkshop:t('Atelier 3D','3D workshop','Taller 3D'),
       faqAll:t('Toute l’aide →','All help →','Toda la ayuda →'),
     };
     document.querySelectorAll('[data-pd]').forEach(el => { const value = labels[el.dataset.pd]; if (value) el.innerHTML = value; });

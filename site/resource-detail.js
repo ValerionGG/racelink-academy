@@ -25,6 +25,7 @@ function context(helpers) {
 
 /** Media first; existing IDs, one tab panel and delegated actions remain intact. */
 import {sourceLabel} from './source-label.js?v=discovery-v34';
+import {poster} from './paddock-home.js?v=3';
 export function renderResourceDetail(resource, helpers) {
   const c = context(helpers), {e,t} = c;
   const source = c.safeUrl(resource.url), image = c.safeUrl(resource.thumbnail_url || resource.thumbnailUrl, true);
@@ -34,6 +35,9 @@ export function renderResourceDetail(resource, helpers) {
   const sourceLink = (label,className='') => source ? `<a class="${className}" href="${e(source)}" target="_blank" rel="noopener noreferrer">${e(label)} <span aria-hidden="true">↗</span></a>` : '';
   const levelKnown = resource.level && !['all','unknown'].includes(resource.level) && !String(resource.level_status).includes('unknown');
   const facts = [Number(resource.duration_seconds)>0 ? c.fmtDuration(resource.duration_seconds) : '', c.langName(resource.language)+(c.estimatedLanguage(resource)?t(' · estimée',' · estimated',' · estimado'):''), levelKnown ? c.levelName(resource.level) : ''].filter(Boolean);
+  const art = `./assets/photos/${poster({t:text(resource.title),s:resource.automotive?.tasks||[],c:resource.category})}.jpg`;
+  const car = resource.automotive?.vehicles?.find(vehicle => vehicle?.model);
+  if (car) facts.unshift([car.make,car.model,car.generation].filter(Boolean).join(' '));
   const tabs = [['about',t('Détails','Details','Detalles')],['transcript',t('Transcription','Transcript','Transcripción')],['notes',t('Mes notes','My notes','Mis notas')]];
   return `<article class="resource-workspace" data-resource-kind="video">
     <header class="detail-header resource-toolbar">
@@ -43,7 +47,7 @@ export function renderResourceDetail(resource, helpers) {
     <div class="resource-body">
       <section class="resource-media" aria-label="${e(t('Vidéo et repères','Video and key details','Vídeo y datos principales'))}">
         <div class="player resource-player" id="player">
-          <div class="resource-preview"><div class="resource-preview-empty"><span>${e(platform)}</span><p>${e(t('Aperçu indisponible','Preview unavailable','Vista previa no disponible'))}</p></div>${image?`<img src="${e(image)}" alt="" width="960" height="540" decoding="async" referrerpolicy="no-referrer">`:''}</div>
+          <div class="resource-preview" style="background-image:url('${art}')">${image?`<img src="${e(image)}" alt="" width="960" height="540" decoding="async" referrerpolicy="no-referrer">`:''}</div>
           <div class="player-prompt resource-watch"><div class="resource-watch-actions">${canEmbed?`<button type="button" data-play class="resource-watch-primary"><span aria-hidden="true">▶</span> ${e(t('Regarder ici','Watch here','Ver aquí'))}</button>`:sourceLink(t(`Voir sur ${platform}`,`Watch on ${platform}`,`Ver en ${platform}`),'resource-watch-primary')}${!source?`<p>${e(t('Lien source indisponible','Source link unavailable','Enlace de origen no disponible'))}</p>`:''}</div></div>
         </div>
         <header class="resource-heading">
@@ -58,6 +62,7 @@ export function renderResourceDetail(resource, helpers) {
           ${source?`<p class="resource-playback-note">${e(canEmbed?t('Le lecteur externe se charge à votre demande et peut utiliser des cookies.','The external player loads when you choose and may use cookies.','El reproductor externo se carga cuando lo eliges y puede utilizar cookies.'):t('La vidéo s’ouvre chez son auteur, dans un nouvel onglet.','The video opens at its source in a new tab.','El vídeo se abre en su fuente, en una pestaña nueva.'))}</p>`:''}
           <div id="detail-racelink-pick" class="detail-racelink-pick resource-pick" hidden></div>
         </header>
+        <section id="pd-next" class="pd-next" hidden></section>
       </section>
       <section class="detail-side resource-reading" aria-label="${e(t('Lire et retenir','Read and learn','Leer y aprender'))}">
         <div class="detail-tabs resource-tabs" role="tablist" aria-label="${e(t('Contenu de la fiche','Resource contents','Contenido de la ficha'))}">${tabs.map(([key,label],i)=>`<button type="button" role="tab" id="tab-${key}" data-tab="${key}" aria-controls="detail-panel" aria-selected="${i===0}" tabindex="${i===0?'0':'-1'}"${i===0?' class="active"':''}>${e(label)}</button>`).join('')}</div>
