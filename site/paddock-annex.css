@@ -1,6 +1,6 @@
 /* Paddock look for the standalone pages: each page keeps its own CSS, only its tokens and shell change. */
-:root[data-annex]{--pd-bg:#ecebe6;--pd-paper:#fff;--pd-soft:#f6f5f1;--pd-ink:#0e0f12;--pd-sub:#4f5259;--pd-line:#d8d6cf;--pd-red:#d9141f;--pd-red-text:#b50f19;--pd-glass:#fffffff2;--pd-display:"Archivo","Arial Black",system-ui,sans-serif;--pd-mono:"Geist Mono",ui-monospace,Consolas,monospace;--pd-gutter:clamp(20px,4vw,56px)}
-:root[data-annex][data-theme=dark]{--pd-bg:#070708;--pd-paper:#111114;--pd-soft:#18181d;--pd-ink:#f4f4f6;--pd-sub:#a7a9b2;--pd-line:#2c2c33;--pd-red:#e8141f;--pd-red-text:#ff5a64;--pd-glass:#0d0d10f2}
+:root[data-annex]{--pd-bg:#ecebe6;--pd-paper:#fff;--pd-soft:#f6f5f1;--pd-ink:#0e0f12;--pd-sub:#4f5259;--pd-line:#d8d6cf;--pd-red:#d9141f;--pd-red-text:#b50f19;--pd-glass:#ffffffc7;--pd-display:"Archivo","Arial Black",system-ui,sans-serif;--pd-mono:"Geist Mono",ui-monospace,Consolas,monospace;--pd-gutter:clamp(20px,4vw,56px)}
+:root[data-annex][data-theme=dark]{--pd-bg:#070708;--pd-paper:#111114;--pd-soft:#18181d;--pd-ink:#f4f4f6;--pd-sub:#a7a9b2;--pd-line:#2c2c33;--pd-red:#e8141f;--pd-red-text:#ff5a64;--pd-glass:#141418c2}
 :root[data-annex=atlas],:root[data-annex=atlas][data-theme=dark]{--bg:var(--pd-bg);--paper:var(--pd-paper);--ink:var(--pd-ink);--sub:var(--pd-sub);--line:var(--pd-line);--soft:var(--pd-soft);--accent:var(--pd-red-text);--active:var(--pd-ink);--inverse:var(--pd-bg)}
 :root[data-annex=clio],:root[data-annex=clio][data-theme=dark]{--bg:var(--pd-bg);--paper:var(--pd-paper);--ink:var(--pd-ink);--muted:var(--pd-sub);--line:var(--pd-line);--sub:var(--pd-soft);--red:var(--pd-red-text);--sel:var(--pd-ink);--on:var(--pd-bg)}
 :root[data-annex="3d"],:root[data-annex="3d"][data-theme=dark]{--base:var(--pd-bg);--paper:var(--pd-paper);--ink:var(--pd-ink);--sub:var(--pd-sub);--rule:var(--pd-line);--accent:var(--pd-red-text)}
@@ -80,3 +80,9 @@
 [data-annex=clio] .section-nav a{font-weight:600}
 [data-annex="3d"] h1{font-size:clamp(44px,7vw,112px)}
 @media (max-width:760px){[data-annex=atlas] #car-title{font-size:17vw}}
+[data-annex=social] #list h3{order:2}
+[data-annex=social] #list .tags{order:1;display:flex;flex-wrap:wrap;gap:4px}
+[data-annex=social] #list .who{order:3;display:flex;align-items:center;gap:8px}
+[data-annex=social] #list .who i{flex:none;width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:var(--pd-red);color:#fff;font:700 10px var(--pd-mono);font-style:normal}
+[data-annex=social] #list .native{order:4}
+[data-annex=social] .fr{position:absolute;top:12px;right:12px;padding:4px 8px;border-radius:99px;background:#0009;color:#fff;font:700 10px var(--pd-mono)}

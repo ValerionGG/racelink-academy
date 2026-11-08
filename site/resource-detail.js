@@ -25,7 +25,7 @@ function context(helpers) {
 
 /** Media first; existing IDs, one tab panel and delegated actions remain intact. */
 import {sourceLabel} from './source-label.js?v=discovery-v34';
-import {poster} from './paddock-home.js?v=4';
+import {poster,parseChapters} from './paddock-home.js?v=5';
 export function renderResourceDetail(resource, helpers) {
   const c = context(helpers), {e,t} = c;
   const source = c.safeUrl(resource.url), image = c.safeUrl(resource.thumbnail_url || resource.thumbnailUrl, true);
@@ -35,8 +35,9 @@ export function renderResourceDetail(resource, helpers) {
   const sourceLink = (label,className='') => source ? `<a class="${className}" href="${e(source)}" target="_blank" rel="noopener noreferrer">${e(label)} <span aria-hidden="true">↗</span></a>` : '';
   const levelKnown = resource.level && !['all','unknown'].includes(resource.level) && !String(resource.level_status).includes('unknown');
   const facts = [Number(resource.duration_seconds)>0 ? c.fmtDuration(resource.duration_seconds) : '', c.langName(resource.language)+(c.estimatedLanguage(resource)?t(' · estimée',' · estimated',' · estimado'):''), levelKnown ? c.levelName(resource.level) : ''].filter(Boolean);
-  const art = `./assets/photos/${poster({t:text(resource.title),s:resource.automotive?.tasks||[],c:resource.category})}.jpg`;
   const car = resource.automotive?.vehicles?.find(vehicle => vehicle?.model);
+  const art = poster({id:resource.id,t:text(resource.title),s:resource.automotive?.tasks||[],c:resource.category});
+  const specs = [[t('Durée','Duration','Duración'),Number(resource.duration_seconds)>0?c.fmtDuration(resource.duration_seconds):''],[t('Niveau','Level','Nivel'),levelKnown?c.levelName(resource.level):''],[t('Sujet','Topic','Tema'),c.catName(resource.category)],[t('Voiture','Car','Coche'),car?[car.model,car.generation].filter(Boolean).join(' '):''],[t('Langue','Language','Idioma'),c.langName(resource.language)]].filter(([,value])=>value).slice(0,4);
   if (car) facts.unshift([car.make,car.model,car.generation].filter(Boolean).join(' '));
   const tabs = [['about',t('Détails','Details','Detalles')],['transcript',t('Transcription','Transcript','Transcripción')],['notes',t('Mes notes','My notes','Mis notas')]];
   return `<article class="resource-workspace" data-resource-kind="video">
@@ -65,6 +66,7 @@ export function renderResourceDetail(resource, helpers) {
         <section id="pd-next" class="pd-next" hidden></section>
       </section>
       <section class="detail-side resource-reading" aria-label="${e(t('Lire et retenir','Read and learn','Leer y aprender'))}">
+        <div class="pd-specs">${specs.map(([label,value])=>`<div><span class="pd-label">${e(label)}</span><b dir="auto">${e(value)}</b></div>`).join('')}</div>
         <div class="detail-tabs resource-tabs" role="tablist" aria-label="${e(t('Contenu de la fiche','Resource contents','Contenido de la ficha'))}">${tabs.map(([key,label],i)=>`<button type="button" role="tab" id="tab-${key}" data-tab="${key}" aria-controls="detail-panel" aria-selected="${i===0}" tabindex="${i===0?'0':'-1'}"${i===0?' class="active"':''}>${e(label)}</button>`).join('')}</div>
         <div class="detail-panel resource-panel" id="detail-panel" role="tabpanel" aria-labelledby="tab-about" tabindex="0">${renderResourceOverview(resource,helpers)}</div>
       </section>
@@ -116,7 +118,8 @@ export function renderResourceOverview(resource, helpers) {
     [t('Licence de réutilisation','Reuse license','Licencia de reutilización'),c.licenseName(resource.license)],
     [t('Référence contrôlée le','Reference checked on','Referencia comprobada el'),text(resource.verified_at)||t('Date non renseignée','Date not provided','Fecha no indicada')]
   ];
-  return `<section class="resource-overview"><div class="resource-description">${excerpt?`<h3>${e(descriptionLabel)}</h3><p class="social-description" dir="auto">${e(excerpt)}</p>`:''}${longDescription?`<details class="resource-disclosure resource-full-description"><summary>${e(t('Afficher tout le texte disponible','Show all available text','Mostrar todo el texto disponible'))}</summary><p class="social-description" dir="auto">${e(description)}</p></details>`:''}</div>
+  const chapters = parseChapters(resource.description);
+  return `<section class="resource-overview">${chapters.length?`<section class="pd-chapters"><h3>${e(t('Chapitres','Chapters','Capítulos'))}</h3><ol class="pd-chapters-list">${chapters.map(chapter=>`<li><button type="button" data-seek="${chapter.seconds}"><b>${e(chapter.clock)}</b><span dir="auto">${e(chapter.title)}</span></button></li>`).join('')}</ol></section>`:''}<div class="resource-description">${excerpt?`<h3>${e(descriptionLabel)}</h3><p class="social-description" dir="auto">${e(excerpt)}</p>`:''}${longDescription?`<details class="resource-disclosure resource-full-description"><summary>${e(t('Afficher tout le texte disponible','Show all available text','Mostrar todo el texto disponible'))}</summary><p class="social-description" dir="auto">${e(description)}</p></details>`:''}</div>
     ${publisherNote}${telemetry?`<p class="resource-context-note">${e(t('Tour avec télémétrie : observez les données et les gestes à l’écran. Une explication orale n’est pas garantie.','Lap with telemetry: study the on-screen data and driving inputs. Spoken instruction is not guaranteed.','Vuelta con telemetría: observa los datos y movimientos en pantalla. No se garantiza una explicación oral.'))}</p>`:''}
     ${points.length?`<section class="resource-concepts"><h3>${e(t('Points abordés','Topics covered','Temas tratados'))}</h3><ul class="detail-points">${points.map(point=>`<li>${e(point)}</li>`).join('')}</ul></section>`:''}
     ${automotive?`<details class="resource-disclosure resource-vehicle-context" open><summary>${e(t('Véhicule et entretien','Vehicle and maintenance','Vehículo y mantenimiento'))}</summary>${automotive}</details>`:''}

@@ -3,7 +3,7 @@ import {icon} from './icons.js';
 import {attachRailNavigation} from './rail-navigation.js?v=studio-v30';
 
 // Composition only: the catalogue and photo registries remain the sources of truth.
-const ESSENTIALS = ['oil_change', 'fuel_choice', 'wheel_change', 'wipers', 'battery', 'oil_spec', 'fuses', 'lighting', 'diagnostics', 'service_reset'];
+const ESSENTIALS = ['vehicle-identification', 'oil_change', 'fuel_choice', 'wheel_change', 'wipers', 'battery', 'oil_spec', 'fuses', 'lighting', 'diagnostics', 'service_reset'];
 const UNIVERSES = [
   {id:'maintenance', category:'mechanics', title:['Mécanique','Mechanics','Mecánica'], description:['Comprendre, entretenir, réparer.','Understand, maintain, repair.','Comprender, mantener, reparar.']},
   {id:'driving', category:'driving', title:['Pilotage','Driving','Pilotaje'], description:['Freinage, trajectoires et technique.','Braking, racing lines and technique.','Frenada, trazadas y técnica.']},
@@ -69,11 +69,11 @@ export function createCinemaHome(ctx) {
   function controls(id) {
     return `<nav class="cinema-controls" data-cinema-controls="${id}" aria-label="${escape(t('Parcourir la collection','Browse the collection','Explorar la colección'))}" hidden><span data-rail-position></span><button type="button" data-rail-previous aria-controls="${id}" aria-label="${escape(t('Carte précédente','Previous card','Tarjeta anterior'))}">${icon('arrow-right', {size:20})}</button><button type="button" data-rail-next aria-controls="${id}" aria-label="${escape(t('Carte suivante','Next card','Tarjeta siguiente'))}">${icon('arrow-right', {size:20})}</button></nav>`;
   }
-  function heading(id, title, action, label) {
-    return `<div class="cinema-section-heading"><h2 id="${id}">${escape(title)}</h2><button type="button" class="cinema-browse" ${action}>${escape(label)} ${icon('arrow-right', {size:18})}</button></div>`;
+  function heading(id, title, action, label, kicker, hint) {
+    return `<div class="cinema-section-heading"><div><p class="pd-label">${escape(kicker)}</p><h2 id="${id}">${escape(title)}</h2><p class="pd-hint">${escape(hint)}</p></div><button type="button" class="cinema-browse" ${action}>${escape(label)} ${icon('arrow-right', {size:18})}</button></div>`;
   }
   function guideCard(guide) {
-    const photo = GUIDE_PHOTOS[guide.task];
+    const photo = GUIDE_PHOTOS[guide.task] || {src:'./assets/photos/identification.jpg'};
     const publishers = [...new Set(array(guide.sources).filter(source => ['manufacturer_procedure','manufacturer_specification'].includes(source?.sourceType) && safeUrl(source.url)).map(source => source.publisher).filter(Boolean))];
     const badge = ctx.picks?.badge('guide', guide.id, {compact:true}) || '';
     return `<article class="cinema-card cinema-guide"><h3><button type="button" class="cinema-card-open" data-guide="${escape(guide.id)}">${image(photo, 'cinema-poster')}<span class="cinema-card-copy"><span class="cinema-kind">${escape(t('Guide pratique','Practical guide','Guía práctica'))}<span>FR</span></span><span class="cinema-card-title" lang="fr">${escape(guide.title)}</span></span></button></h3>${publishers.length ? `<p class="cinema-card-source">${escape(t('Sources : ','Sources: ','Fuentes: ')+publishers.join(' · '))}</p>` : ''}${badge ? `<div class="cinema-card-pick">${badge}</div>` : ''}</article>`;
@@ -110,22 +110,27 @@ export function createCinemaHome(ctx) {
   function render() {
     if (disposed) return {ready:false, guides:0, videos:0};
     cleanupRails();
-    const allGuides = ESSENTIALS.map(task => array(guideData?.guides).find(guide => guide?.task === task && guide.id && guide.title)).filter(Boolean);
+    const allGuides = ESSENTIALS.map(task => array(guideData?.guides).find(guide => (guide?.task === task || guide?.id === task) && guide.id && guide.title)).filter(Boolean);
     const guides = allGuides.filter(guide => matchesLanguage(guide.language || guideData?.language));
     const universes = []; // ponytail: the eight subjects now live in paddock-home.js.
     const videos = selectedVideos();
     const ready = Boolean(allGuides.length || universes.length || data);
     root.classList.add('cinema-home');
     if (!ready) { root.innerHTML = ''; return {ready:false, guides:0, videos:0}; }
-    root.innerHTML = `${allGuides.length ? `<section class="cinema-section cinema-essentials" aria-labelledby="cinema-essentials-title">${heading('cinema-essentials-title', t('Les gestes du quotidien','Everyday essentials','Lo esencial del día a día'), 'data-browse-guides', t('Tous les guides','All guides','Todas las guías'))}${guides.length ? `<div class="cinema-rail cinema-guide-rail" id="cinema-essentials-rail">${guides.map(guideCard).join('')}</div>${controls('cinema-essentials-rail')}` : `<p class="cinema-empty">${escape(t('Ces guides sont disponibles en français. Aucun guide de cette collection dans la langue choisie.','These guides are available in French. This collection has no guide in your selected language.','Estas guías están disponibles en francés. Esta colección no tiene guías en el idioma elegido.'))}</p>`}<p class="cinema-scope">${escape(t('Des repères généraux, à rapprocher de la notice de votre version.','General guidance to use alongside the manual for your exact version.','Orientaciones generales que debes contrastar con el manual de tu versión exacta.'))}</p></section>` : ''}
+    root.innerHTML = `${allGuides.length ? `<section class="cinema-section cinema-essentials" aria-labelledby="cinema-essentials-title">${heading('cinema-essentials-title', t('Les gestes du quotidien','Everyday essentials','Lo esencial del día a día'), 'data-browse-guides', t('Tous les guides →','All guides →','Todas las guías →'), t('11 guides RaceLink · sources constructeur','11 RaceLink guides · manufacturer sources','11 guías RaceLink · fuentes del fabricante'), t('Des repères écrits par RaceLink, appuyés sur les notices constructeur, puis les meilleures vidéos du geste.','Reference points written by RaceLink from manufacturer manuals, then the best videos of each task.','Referencias escritas por RaceLink a partir de los manuales del fabricante y los mejores vídeos.'))}${guides.length ? `<div class="cinema-rail cinema-guide-rail" id="cinema-essentials-rail">${guides.map(guideCard).join('')}</div>${controls('cinema-essentials-rail')}` : `<p class="cinema-empty">${escape(t('Ces guides sont disponibles en français. Aucun guide de cette collection dans la langue choisie.','These guides are available in French. This collection has no guide in your selected language.','Estas guías están disponibles en francés. Esta colección no tiene guías en el idioma elegido.'))}</p>`}<p class="cinema-scope">${escape(t('Des repères généraux, à rapprocher de la notice de votre version.','General guidance to use alongside the manual for your exact version.','Orientaciones generales que debes contrastar con el manual de tu versión exacta.'))}</p></section>` : ''}
       ${universes.length ? `<section class="cinema-section cinema-passions" aria-labelledby="cinema-passions-title">${heading('cinema-passions-title', t('Explorez votre passion','Explore your passion','Explora tu pasión'), 'data-browse-all', t('Toute la bibliothèque','The whole library','Toda la biblioteca'))}<div class="cinema-rail cinema-universe-rail" id="cinema-passions-rail">${universes.map(({entry, asset}) => universeCard(entry, asset)).join('')}</div>${controls('cinema-passions-rail')}</section>` : ''}
-      ${data ? `<section class="cinema-section cinema-practice" aria-labelledby="cinema-practice-title">${heading('cinema-practice-title', t('La sélection RaceLink','The RaceLink selection','La selección RaceLink'), 'data-browse-all', t('Explorer le catalogue','Explore the catalogue','Explorar el catálogo'))}${videos.length ? `<div class="cinema-rail cinema-video-rail" id="cinema-practice-rail">${videos.map(videoCard).join('')}</div>${controls('cinema-practice-rail')}<p class="cinema-scope">${escape(t('Des sélections documentées. Elles ne constituent pas une validation technique.','Documented selections. They do not constitute technical validation.','Selecciones documentadas. No constituyen una validación técnica.'))}</p>` : `<p class="cinema-empty">${escape(t('Aucune sélection éditoriale active dans la langue choisie. Le catalogue reste accessible.','No active editorial selection in your chosen language. The catalogue is still available.','No hay una selección editorial activa en el idioma elegido. El catálogo sigue disponible.'))}</p>`}</section>` : ''}
+      ${data ? `<section class="cinema-section cinema-practice" aria-labelledby="cinema-practice-title">${heading('cinema-practice-title', t('La sélection','The selection','La selección'), 'data-browse-all', t('Toute la sélection →','The whole selection →','Toda la selección →'), t('Proposé par RaceLink','Picked by RaceLink','Propuesto por RaceLink'), t('Des vidéos choisies à la main, avec la raison du choix.','Hand-picked videos, with the reason for each choice.','Vídeos elegidos a mano, con el motivo de cada elección.'))}${videos.length ? `<div class="cinema-rail cinema-video-rail" id="cinema-practice-rail">${videos.map(videoCard).join('')}</div>${controls('cinema-practice-rail')}<p class="cinema-scope">${escape(t('Des sélections documentées. Elles ne constituent pas une validation technique.','Documented selections. They do not constitute technical validation.','Selecciones documentadas. No constituyen una validación técnica.'))}</p>` : `<p class="cinema-empty">${escape(t('Aucune sélection éditoriale active dans la langue choisie. Le catalogue reste accessible.','No active editorial selection in your chosen language. The catalogue is still available.','No hay una selección editorial activa en el idioma elegido. El catálogo sigue disponible.'))}</p>`}</section>` : ''}
       ${credits([...guides.map(guide => GUIDE_PHOTOS[guide.task]), ...universes.map(({asset}) => asset)])}`;
     root.querySelectorAll('[data-cinema-controls]').forEach(control => {
       const rail = root.querySelector(`#${control.dataset.cinemaControls}`);
       detach.push(attachRailNavigation(rail, control));
     });
     root.querySelectorAll('.cinema-image img').forEach(img => img.addEventListener('error', () => { img.hidden = true; }, {once:true}));
+    // The selection and credits sit further down the page than the guides.
+    const practice = root.querySelector('.cinema-practice'), selection = document.querySelector('#pd-selection');
+    if (practice && selection) selection.replaceChildren(practice);
+    const credit = root.querySelector('.cinema-credits'), creditSlot = document.querySelector('#pd-credits');
+    if (credit && creditSlot) creditSlot.replaceChildren(credit);
     return {ready, guides:guides.length, videos:videos.length};
   }
   async function load() {

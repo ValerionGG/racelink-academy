@@ -1,4 +1,4 @@
-import {createCinemaHome} from './cinema-home.js?v=paddock-1';
+import {createCinemaHome} from './cinema-home.js?v=paddock-2';
 import {icon as glyph, categoryIcon} from './icons.js';
 import {createIdentityUI} from './identity-ui.js?v=studio-v30';
 import {tracks} from './tracks.js';
@@ -11,9 +11,9 @@ import {createFilterStudio} from './filter-studio.js?v=search-v34&rev=count-v36'
 import {usableSearchAssistance,searchSuggestionPatch,searchAssistanceMarkup} from './search-assistance-ui.js?v=search-v34';
 import {createGuideUI} from './guide-ui.js?v=studio-v30';
 import {socialContentMarkup} from './social-content.js';
-import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-4';
-import {resourceCard} from './resource-card.js?v=paddock-3';
-import {createPaddockHome,poster} from './paddock-home.js?v=4';
+import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-5';
+import {resourceCard} from './resource-card.js?v=paddock-4';
+import {createPaddockHome,poster} from './paddock-home.js?v=5';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -101,7 +101,7 @@ const discoveryUI=createDiscoveryUI({
   }
 });
 const cinemaHome=createCinemaHome({root:$('#cinema-home'),escape,t,getUi:()=>ui,getState:()=>state,langName,picks:raceLinkPicks,getJson:url=>window.getCatalogJson(url)});
-const paddockHome=createPaddockHome({$,escape,t,getUi:()=>ui,getJson:url=>window.getCatalogJson(url)});
+const paddockHome=createPaddockHome({$,escape,t,getUi:()=>ui,getJson:url=>window.getCatalogJson(url),cardMarkup,setImageFallback,catName,fmtDuration});
 function translateCinema(){
   const atelierCopy={shorts:t('Les tutos des créateurs','Tutorials from creators','Tutoriales de creadores'),refine:t('Commencez par une plateforme, puis précisez votre voiture ou le sujet.','Choose a platform, then narrow by car or topic.','Elige una plataforma y filtra por coche o tema.'),cutaway:t('Atelier 3D','3D workshop','Taller 3D'),inspect:t('Explorer les pièces','Explore the parts','Explorar las piezas')};
   atelierCopy.allSocial=t('Explorer les deux','Browse both','Explorar ambas');
@@ -405,7 +405,7 @@ async function loadNext(video,version){
       const items=(data.items||[]).filter(x=>x.id!==video.id).slice(0,6);
       if(items.length<3&&variant!==variants.at(-1))continue;
       if(!items.length)return;
-      root.innerHTML=`<h3>${t('À regarder ensuite','Watch next','Ver a continuación')}</h3><div class="pd-next-list">${items.map(x=>{const art=`./assets/photos/${poster({t:x.title||'',s:x.automotive?.tasks||[],c:x.category})}.jpg`,img=safeUrl(x.thumbnail_url,true);return `<button type="button" data-video="${escape(x.id)}"><span class="pd-next-photo" style="background-image:url('${art}')">${img?`<img src="${escape(img)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}</span><span><strong dir="auto">${escape(x.title||'')}</strong><small dir="auto">${escape(x.creator||'')}${Number(x.duration_seconds)>0?` · ${fmtDuration(x.duration_seconds)}`:''}</small></span></button>`;}).join('')}</div>`;
+      root.innerHTML=`<h3>${t('À regarder ensuite','Watch next','Ver a continuación')}</h3><div class="pd-next-list">${items.map(x=>{const art=poster({id:x.id,t:x.title||'',s:x.automotive?.tasks||[],c:x.category}),img=safeUrl(x.thumbnail_url,true);return `<button type="button" data-video="${escape(x.id)}"><span class="pd-next-photo" style="background-image:url('${art}')">${img?`<img src="${escape(img)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}</span><span><strong dir="auto">${escape(x.title||'')}</strong><small dir="auto">${escape(x.creator||'')}${Number(x.duration_seconds)>0?` · ${fmtDuration(x.duration_seconds)}`:''}</small></span></button>`;}).join('')}</div>`;
       root.hidden=false;setImageFallback(root);return;
     }
   }catch{root.hidden=true;}

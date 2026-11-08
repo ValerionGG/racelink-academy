@@ -10,9 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&family=Geist+Mono:wght@400;500;600&family=Onest:wght@400;500;600;700;800&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=paddock-5">
+  <link rel="stylesheet" href="/racelink-academy/app-ui.css?v=paddock-6">
   <script src="/racelink-academy/catalog-client.js?v=paddock-1" defer></script>
-  <script type="module" src="/racelink-academy/app.js?v=paddock-6"></script>
+  <script type="module" src="/racelink-academy/app.js?v=paddock-7"></script>
   <link rel="stylesheet" href="./atelier-entry.css?v=2">
 </head>
 <body>
@@ -22,8 +22,8 @@
     <a href="/racelink-academy/" class="brand" aria-label="RaceLink Academy, accueil"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36" fill="none"><path d="M9 27V9h9a6 6 0 0 1 0 12h-3l8 6M24 9v12h5" stroke="currentColor" stroke-width="3.3" stroke-linejoin="round"/><path d="M6 31h12" stroke="currentColor" stroke-width="2"/></svg></span><span><strong>RACELINK<span class="brand-academy"> ACADEMY</span></strong><small data-i18n="brandSub">Votre bibliothèque automobile</small></span></a>
     <nav class="desktop-nav" aria-label="Navigation principale">
       <button class="nav-item active" data-view="explore"><span data-icon="home"></span><span data-i18n="explore">Accueil</span></button>
+      <button class="nav-item" data-open-navigation aria-haspopup="dialog" aria-expanded="false" aria-controls="navigation-dialog"><span data-icon="library"></span><span data-pd="navTopics">Sujets</span></button>
       <button class="nav-item" data-browse-all data-library-nav><span data-icon="library"></span><span data-identity-text="library">Bibliothèque</span></button>
-      <button class="nav-item" data-open-navigation aria-haspopup="dialog" aria-expanded="false" aria-controls="navigation-dialog"><span data-icon="library"></span><span data-product-text="allTopics">Sujets</span></button>
       <button class="nav-item" data-view="paths"><span data-icon="route"></span><span data-i18n="paths">Parcours</span></button>
       <a class="nav-item" href="./formats-courts.html"><span data-icon="play"></span><span data-pd="shortsTitle">Formats courts</span></a>
       <button class="nav-item" data-view="faq"><span data-icon="help"></span><span data-i18n="help">Aide & FAQ</span></button>
@@ -86,7 +86,10 @@
       </section>
       <section id="pd-subjects" class="wrap pd-section" aria-labelledby="pd-subjects-title"><div class="pd-head"><div><p class="pd-label" data-pd="subjectsKick">8 univers</p><h2 id="pd-subjects-title" data-pd="subjectsTitle">Choisis ton sujet</h2></div><button type="button" class="pd-more" data-browse-all data-pd="library">Toute la bibliothèque →</button></div><div id="pd-subjects-grid" class="pd-subjects"></div></section>
       <section id="cinema-home" class="wrap" aria-label="Collections RaceLink"></section>
+      <section id="pd-library" class="wrap pd-section" aria-labelledby="pd-library-title"><div class="pd-head"><div><p class="pd-label" data-pd="previewKick">Bibliothèque</p><h2 id="pd-library-title" data-pd="previewTitle">Trouve le bon tuto</h2><p data-pd="previewHint"></p></div></div><div id="pd-lib-preview" class="pd-lib"><div class="skeleton"></div></div></section>
+      <section id="pd-fiche" class="wrap pd-section" aria-labelledby="pd-fiche-title" hidden><div class="pd-head"><div><p class="pd-label" data-pd="ficheKick">La fiche tuto</p><h2 id="pd-fiche-title" data-pd="ficheTitle">Comprendre avant de regarder</h2><p data-pd="ficheHint"></p></div></div><div id="pd-fiche-preview" class="pd-sheet"></div></section>
       <section id="pd-paths" class="wrap pd-section" aria-labelledby="pd-paths-title"><div class="pd-head"><div><p class="pd-label" data-pd="pathsKick">8 parcours guidés</p><h2 id="pd-paths-title" data-pd="pathsTitle">Apprends étape par étape</h2></div><button type="button" class="pd-more" data-view="paths" data-pd="pathsAll">Tous les parcours →</button></div><div id="pd-paths-grid" class="pd-paths"></div></section>
+      <section id="pd-selection" class="wrap"></section>
       <section id="pd-shorts" class="wrap pd-section" aria-labelledby="pd-shorts-title" hidden><div class="pd-head"><div><p class="pd-label" data-pd="shortsKick">TikTok · Instagram</p><h2 id="pd-shorts-title" data-pd="shortsTitle">Formats courts</h2><p data-pd="shortsHint"></p></div><a class="pd-more" href="./formats-courts.html?l=fr" data-atelier-dest="all" data-pd="shortsAll">Tout voir →</a></div><div id="pd-shorts-rail" class="pd-shorts"></div></section>
       <section id="pd-bonus" class="wrap pd-section" aria-labelledby="pd-bonus-title"><div class="pd-head"><div><p class="pd-label" data-pd="bonusKick">En plus</p><h2 id="pd-bonus-title" data-pd="bonusTitle">Ta voiture, en détail</h2><p data-pd="bonusHint"></p></div></div>
         <div class="pd-bonus"><button type="button" class="pd-bonus-card" data-open-vehicle><img src="./clio-v/photos/clio-hero.webp" alt="" loading="lazy" decoding="async"><span><b data-product-text="myCar">Mon véhicule</b><strong data-pd="carTitle">Des tutos pour ta voiture</strong><small data-pd="carHint"></small></span></button>
@@ -114,7 +117,7 @@
             <details class="filter-section filter-topics" open><summary><h3 data-filter-copy="topic">Quel sujet ?</h3></summary><fieldset class="category-list"><legend class="sr-only" data-i18n="discipline">SUJET</legend><div id="category-filters"></div></fieldset></details>
             <section class="filter-section"><h3 data-filter-copy="preferences">Quel contenu vous convient ?</h3><div class="filter-pair"><div class="filter-field"><label for="level" data-i18n="level">Niveau</label><select id="level"><option value="">Tous les niveaux</option><option value="beginner">Débutant</option><option value="intermediate">Intermédiaire</option><option value="advanced">Avancé / Pro</option></select></div><div class="filter-field"><label for="duration" data-i18n="duration">Durée</label><select id="duration"><option value="">Toutes les durées</option><option value="short">Moins de 10 min</option><option value="medium">10 à 30 min</option><option value="long">Plus de 30 min</option></select></div></div><div class="filter-field"><label for="content_format">Type de vidéo</label><select id="content_format"><option value="">Tous les types</option></select><small class="filter-explainer">Tutoriel, démonstration, cours ou direct. Classement selon les informations disponibles.</small></div></section>
             <section class="filter-section"><h3 data-filter-copy="source">Où regarder ?</h3><p data-filter-copy="sourceHint">Choisissez la plateforme qui publie la vidéo.</p><div class="filter-field platform-field"><label class="sr-only" for="platform" data-i18n="platform">PLATEFORME</label><select id="platform" hidden><option value="">Toutes les plateformes</option></select><div id="platform-choices" class="platform-choices" role="group" aria-label="Plateformes"></div></div></section>
-            <details class="advanced-filters"><summary>Disponibilité du texte et droits</summary><div class="filter-field context-field"><label for="domain">CONTEXTE</label><select id="domain"><option value="">Tous les contextes</option><option value="motorsport">Motorsport & fondamentaux</option><option value="automotive_adjacent">Mécanique automobile</option></select></div><label class="check-filter"><input type="checkbox" id="transcript"><span data-i18n="withTranscript">Avec transcription</span></label><label class="check-filter"><input type="checkbox" id="license"><span data-i18n="freeLicense">Licence libre confirmée</span></label></details>
+            <details class="advanced-filters" open><summary>Disponibilité du texte et droits</summary><div class="filter-field context-field"><label for="domain">CONTEXTE</label><select id="domain"><option value="">Tous les contextes</option><option value="motorsport">Motorsport & fondamentaux</option><option value="automotive_adjacent">Mécanique automobile</option></select></div><label class="check-filter"><input type="checkbox" id="transcript"><span data-i18n="withTranscript">Avec transcription</span></label><label class="check-filter"><input type="checkbox" id="license"><span data-i18n="freeLicense">Licence libre confirmée</span></label></details>
             <div class="filter-note"><p data-i18n="filterNote">La plateforme indique où la ressource est publiée. Le format distingue vidéos et guides.</p></div>
           </aside>
           <div class="catalog-content">
@@ -131,7 +134,8 @@
           </div>
         </div>
       </section>
-      <section class="question-band wrap"><div><p class="eyebrow" data-i18n="notAlone">BESOIN D’UN POINT DE DÉPART ?</p><h2 data-i18n="helpTitle">On apprend aussi<br>en posant des questions.</h2></div><div class="pd-help-side"><div id="pd-faq" class="pd-faq"></div><div class="quick-questions"><button data-view="faq"><span data-pd="faqAll">Toute l’aide →</span></button></div></div></section>
+      <div id="pd-credits" class="wrap"></div>
+      <section class="question-band wrap"><div><p class="eyebrow" id="pd-help-kick">Aide &amp; FAQ</p><h2 data-i18n="helpTitle">On apprend aussi<br>en posant des questions.</h2><div id="pd-help-cats" class="pd-help-cats"></div></div><div class="pd-help-side"><div id="pd-faq" class="pd-faq"></div><div class="quick-questions"><button data-view="faq"><span data-pd="faqAll">Toute l’aide →</span></button></div></div></section>
     </section>
     <section id="paths-view" class="wrap alternate-view" hidden></section>
     <section id="faq-view" class="wrap alternate-view" hidden></section>
