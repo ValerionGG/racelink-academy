@@ -1,19 +1,20 @@
+import {DISCIPLINES} from './disciplines.js?v=themes-v47';
 import {createCinemaHome} from './cinema-home.js?v=paddock-3';
 import {icon as glyph, categoryIcon} from './icons.js?v=paddock-1';
 import {createIdentityUI} from './identity-ui.js?v=paddock-1';
 import {tracks} from './tracks.js';
 import {createAutomotiveUI,automotiveDefaults,vehicleKeys} from './automotive-ui.js?v=studio-v30&publisher=v38';
-import {createDiscoveryUI} from './discovery-ui.js?v=paddock-1';
+import {createDiscoveryUI} from './discovery-ui.js?v=search-v34&rev=themes-v47';
 import {matchVehicleDossiers} from './vehicle-dossier.js?v=atlas-v41';
 import {createRaceLinkPicks} from './racelink-picks.js';
 import {createMobileUI} from './mobile-ui.js?v=search-v34';
-import {createFilterStudio} from './filter-studio.js?v=search-v34&rev=count-v36';
+import {createFilterStudio} from './filter-studio.js?v=search-v34&rev=themes-v47';
 import {usableSearchAssistance,searchSuggestionPatch,searchAssistanceMarkup} from './search-assistance-ui.js?v=search-v34';
 import {createGuideUI} from './guide-ui.js?v=paddock-1';
 import {socialContentMarkup} from './social-content.js';
 import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-6';
 import {resourceCard} from './resource-card.js?v=paddock-5';
-import {createPaddockHome,poster} from './paddock-home.js?v=6';
+import {createPaddockHome,poster} from './paddock-home.js?v=themes-v47';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -62,7 +63,7 @@ const estimatedLanguage = video => video.language_confidence==='estimated'||/est
 const fmtDuration = seconds => {if (!seconds) return t('Durée inconnue','Duration unknown','Duración desconocida');const n=Math.round(seconds);return n>=3600 ? `${Math.floor(n/3600)}:${String(Math.floor(n%3600/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}` : `${Math.floor(n/60)}:${String(n%60).padStart(2,'0')}`;};
 const safeUrl = (value, image = false) => {try{const u = new URL(value);return u.protocol === 'https:' || (!image && u.protocol === 'http:' && ['localhost','127.0.0.1'].includes(u.hostname)) ? u.href : '';}catch{return '';}};
 const readSaved = () => storage.get('rl-library-saved',{});let saved = readSaved();
-let state = {...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};
+let state = {...automotiveDefaults,q:'',category:'',discipline:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};
 let browsing=false;
 let view='explore',stats=null,loadedItems=[],detail=null,requestVersion=0,detailVersion=0,toastTimer=null,lastTotal=null,activeTrack='';
 let faqItems = [];
@@ -95,13 +96,13 @@ const discoveryUI=createDiscoveryUI({
   clearVehicle(){vehicleKeys.forEach(key=>state[key]='');syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();},
   applySearch(patch){
     document.dispatchEvent(new Event('rl:search-chosen'));
-    browsing=true;state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:state.language,platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1,...patch};
+    browsing=true;state={...automotiveDefaults,q:'',category:'',discipline:'',domain:'',level:'',language:state.language,platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1,...patch};
     changeView('explore',false);syncControls();syncUrl(true);automotiveUI.loadOptions();loadVideos();
     $('#catalog-heading').scrollIntoView({behavior:'smooth'});
   }
 });
 const cinemaHome=createCinemaHome({root:$('#cinema-home'),escape,t,getUi:()=>ui,getState:()=>state,langName,picks:raceLinkPicks,getJson:url=>window.getCatalogJson(url)});
-const paddockHome=createPaddockHome({$,escape,t,getUi:()=>ui,getJson:url=>window.getCatalogJson(url),cardMarkup,setImageFallback,catName,fmtDuration,storage});
+const paddockHome=createPaddockHome({$,escape,t,getUi:()=>ui,getContentLanguage:()=>state.language,getJson:url=>window.getCatalogJson(url),cardMarkup,setImageFallback,catName,fmtDuration,storage});
 function translateCinema(){
   const atelierCopy={shorts:t('Les tutos des créateurs','Tutorials from creators','Tutoriales de creadores'),refine:t('Commencez par une plateforme, puis précisez votre voiture ou le sujet.','Choose a platform, then narrow by car or topic.','Elige una plataforma y filtra por coche o tema.'),cutaway:t('Atelier 3D','3D workshop','Taller 3D'),inspect:t('Explorer les pièces','Explore the parts','Explorar las piezas')};
   atelierCopy.allSocial=t('Explorer les deux','Browse both','Explorar ambas');
@@ -152,7 +153,7 @@ function syncControls(){
   $('.results-back').textContent=t('← Accueil','← Home','← Inicio');
   $('.advanced-filters>summary').textContent=t('Disponibilité du texte et droits','Text availability and rights','Disponibilidad de texto y derechos');
   $('#search').value=state.q;
-  for(const key of ['level','language','platform','duration','sort','domain','content_format'])$(`#${key}`).value=state[key]||'';
+  for(const key of ['discipline','level','language','platform','duration','sort','domain','content_format'])$(`#${key}`).value=state[key]||'';
   $('#home-language').value=state.language||'';
   $$('[data-content-language]').forEach(button=>button.setAttribute('aria-pressed',String(state.language===button.dataset.contentLanguage)));
   $('#transcript').checked=Boolean(state.transcript);$('#license').checked=Boolean(state.license);automotiveUI.sync();
@@ -242,6 +243,10 @@ function renderFacets(){
   const subjectChoices=categories.filter(c=>state.category===c[0]||categoriesFacet.some(f=>f.value===c[0]&&f.count>0));
   $('#pd-lib-subjects').innerHTML=[['',t('Tout','All','Todo'),lastTotal],...subjectChoices.map(c=>[c[0],catName(c[0]),categoriesFacet.find(f=>f.value===c[0])?.count])].map(([id,name,count])=>`<button type="button" data-lib-category="${id}" aria-pressed="${(state.category||'')===id}">${escape(name)}${count==null?'':` <small>${Number(count).toLocaleString(ui)}</small>`}</button>`).join('');
   renderLanguages();
+  $('#discipline-label').textContent=t('Discipline','Discipline','Disciplina');
+  $('#discipline-hint').textContent=t('Moto, karting et drift : titres explicites. Sport automobile et sim racing : classement du catalogue.','Motorcycling, karting and drift: explicit titles. Motorsport and sim racing: catalogue classification.','Moto, karting y drift: títulos explícitos. Automovilismo y sim racing: clasificación del catálogo.');
+  $('#discipline').innerHTML=`<option value="">${t('Toutes les disciplines','All disciplines','Todas las disciplinas')}</option>${DISCIPLINES.map(({id,label})=>`<option value="${id}">${escape(label[ui])} (${Number((facets.discipline||[]).find(f=>f.value===id)?.count||0).toLocaleString(ui)})</option>`).join('')}`;
+  $('#discipline').value=state.discipline;
   const platforms=['youtube','dailymotion','vimeo','tiktok','instagram','facebook','twitch','bilibili','racelink','other'].filter(v=>v===state.platform||(facets.platform||[]).some(f=>f.value===v&&f.count>0));
   $('#platform').innerHTML=`<option value="">${t('Toutes les plateformes','All platforms','Todas las plataformas')}</option>${platforms.map(value=>`<option value="${value}">${platformName(value)} (${(facets.platform||[]).find(f=>f.value===value)?.count||0})</option>`).join('')}`;
   $('#platform').value=state.platform;
@@ -312,7 +317,7 @@ async function loadVideos(){
 function renderActiveFilters(){
   const active=Object.entries(state).filter(([key,val])=>val&&!['q','sort','page'].includes(key)&&!(key==='format'&&val==='all'));
   $('#active-filters').innerHTML=active.map(([key,value])=>{
-    const label=[...vehicleKeys,'task','system','spec'].includes(key)?automotiveUI.filterLabel(key,value):key==='format'?(value==='guide'?t('Guides','Guides','Guías'):t('Vidéos','Videos','Vídeos')):key==='content_format'?$('#content_format').selectedOptions[0]?.textContent: key==='category'?catName(value):key==='domain'?(value==='motorsport'?'Motorsport':t('Auto & compétences complémentaires','Automotive & related skills','Automóvil y competencias complementarias')):key==='level'?levelName(value):key==='language'?langName(value):key==='platform'?platformName(value):key==='transcript'?t('Transcription','Transcript','Transcripción'):key==='license'?t('Licence libre','Open license','Licencia libre'):value;
+    const label=[...vehicleKeys,'task','system','spec'].includes(key)?automotiveUI.filterLabel(key,value):key==='format'?(value==='guide'?t('Guides','Guides','Guías'):t('Vidéos','Videos','Vídeos')):key==='content_format'?$('#content_format').selectedOptions[0]?.textContent: key==='discipline'?(DISCIPLINES.find(d=>d.id===value)?.label[ui]||value):key==='category'?catName(value):key==='domain'?(value==='motorsport'?'Motorsport':t('Auto & compétences complémentaires','Automotive & related skills','Automóvil y competencias complementarias')):key==='level'?levelName(value):key==='language'?langName(value):key==='platform'?platformName(value):key==='transcript'?t('Transcription','Transcript','Transcripción'):key==='license'?t('Licence libre','Open license','Licencia libre'):value;
     const readable=key==='duration'?$('#duration').selectedOptions[0]?.textContent||label:label;
     return `<button type="button" data-remove="${key}" aria-label="${escape(t('Retirer le filtre ','Remove filter ','Quitar filtro ')+readable)}"><span>${escape(readable)}</span><span aria-hidden="true">×</span></button>`;
   }).join('')+(active.length?`<button type="button" class="clear-criteria" data-clear-criteria>${t('Effacer les critères','Clear criteria','Borrar criterios')}</button>`:'');
@@ -334,8 +339,8 @@ function chooseContentLanguage(value,videoOnly=false){
   if(fromHome){heading.tabIndex=-1;heading.focus({preventScroll:true});}
   heading.scrollIntoView({behavior:'smooth'});
 }
-function reset(){browsing=true;state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
-function goHome(){state={...automotiveDefaults,q:'',category:'',domain:'',level:'',language:state.language,platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};browsing=false;$('#vehicle-disclosure').open=false;discoveryUI.refresh();cinemaHome.render();changeView('explore');syncControls();automotiveUI.loadOptions();loadVideos();window.scrollTo({top:0,behavior:'instant'});}
+function reset(){browsing=true;state={...automotiveDefaults,q:'',category:'',discipline:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
+function goHome(){state={...automotiveDefaults,q:'',category:'',discipline:'',domain:'',level:'',language:state.language,platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:'relevance',page:1};browsing=false;$('#vehicle-disclosure').open=false;discoveryUI.refresh();cinemaHome.render();changeView('explore');syncControls();automotiveUI.loadOptions();loadVideos();window.scrollTo({top:0,behavior:'instant'});}
 function changeView(next,push=true){
   view=next;$$('main>section').forEach(el=>el.hidden=el.id!==`${next}-view`);
   $$('[data-view]').forEach(el=>{el.classList.toggle('active',el.dataset.view===next);if(el.dataset.view===next)el.setAttribute('aria-current','page');else el.removeAttribute('aria-current');});
@@ -460,7 +465,7 @@ document.addEventListener('click',async event=>{
   else if(el.hasAttribute('data-platform-choice'))setFilter('platform',el.dataset.platformChoice);
   else if(el.hasAttribute('data-close-vehicle')){$('#vehicle-disclosure').open=false;$('#catalog-heading').focus({preventScroll:true});}
   else if(el.hasAttribute('data-remove'))setFilter(el.dataset.remove,'');
-  else if(el.hasAttribute('data-clear-criteria')){const query=state.q;state={...automotiveDefaults,q:query,category:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:state.sort,page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
+  else if(el.hasAttribute('data-clear-criteria')){const query=state.q;state={...automotiveDefaults,q:query,category:'',discipline:'',domain:'',level:'',language:'',platform:'',format:'all',content_format:'',duration:'',transcript:'',license:'',sort:state.sort,page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();}
   else if(el.hasAttribute('data-search-assist')){const item=searchAssistance[Number(el.dataset.searchAssist)];if(item){state=searchSuggestionPatch(state,item);syncControls();syncUrl(true);automotiveUI.loadOptions();loadVideos();$('#catalog-heading').focus({preventScroll:true});}}
   else if(el.hasAttribute('data-reset'))reset();
   else if(el.hasAttribute('data-retry'))loadVideos();
@@ -477,12 +482,12 @@ document.addEventListener('click',async event=>{
 $('#pd-lib-subjects').addEventListener('click',e=>{const b=e.target.closest('[data-lib-category]');if(b)setFilter('category',b.dataset.libCategory);});
 $('#generation-choices').addEventListener('click',e=>{const b=e.target.closest('[data-generation]');if(b)setFilter('generation',b.dataset.generation);});
 $('#search-form').addEventListener('submit',e=>{e.preventDefault();const query=$('#search').value.trim();if(!browsing&&$('#home-category').value)state.category=$('#home-category').value;document.dispatchEvent(new Event('rl:search-chosen'));if(view!=='explore')changeView('explore',false);setFilter('q',query);$('#catalog-heading').scrollIntoView({behavior:'smooth'});});
-for(const key of ['level','platform','duration','sort','domain','content_format'])$(`#${key}`).addEventListener('change',e=>setFilter(key,e.target.value));
+for(const key of ['discipline','level','platform','duration','sort','domain','content_format'])$(`#${key}`).addEventListener('change',e=>setFilter(key,e.target.value));
 $('#language').addEventListener('change',e=>chooseContentLanguage(e.target.value));
 $('#home-language').addEventListener('change',e=>chooseContentLanguage(e.target.value,true));
 $('#transcript').addEventListener('change',e=>setFilter('transcript',e.target.checked?'available':''));
 $('#license').addEventListener('change',e=>setFilter('license',e.target.checked?'open':''));
-$('#reset-filters').addEventListener('click',()=>{const query=state.q,format=state.format;state={...automotiveDefaults,q:query,category:'',domain:'',level:'',language:'',platform:'',format,content_format:'',duration:'',transcript:'',license:'',sort:state.sort,page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();});
+$('#reset-filters').addEventListener('click',()=>{const query=state.q,format=state.format;state={...automotiveDefaults,q:query,category:'',discipline:'',domain:'',level:'',language:'',platform:'',format,content_format:'',duration:'',transcript:'',license:'',sort:state.sort,page:1};syncControls();syncUrl();automotiveUI.loadOptions();loadVideos();});
 function openVehicle(){
   browsing=true;changeView('explore',false);syncControls();syncUrl(true);loadVideos();
   $('#vehicle-disclosure').open=true;$('#vehicle-disclosure').scrollIntoView({behavior:'smooth',block:'start'});

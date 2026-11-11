@@ -1,7 +1,7 @@
 // The catalogue owns committed state. This module only stages the filter sheet.
 // No request, URL, language inference or vehicle compatibility is produced here.
-export const FILTER_KEYS=Object.freeze(['category','platform','level','duration','content_format','domain','transcript','license','language','make','model','generation','engine','year','fuel_type','body_type','task','system','spec']);
-const PANEL_KEYS=new Set(['category','platform','level','duration','content_format','domain','transcript','license']);
+export const FILTER_KEYS=Object.freeze(['discipline','category','platform','level','duration','content_format','domain','transcript','license','language','make','model','generation','engine','year','fuel_type','body_type','task','system','spec']);
+const PANEL_KEYS=new Set(['discipline','category','platform','level','duration','content_format','domain','transcript','license']);
 
 export function createFilterDraft({getState,onApply}) {
   let baseline=null,patch={};
@@ -61,7 +61,7 @@ export function createFilterStudio({root,t,getState,onApply,onDraftChange=()=>{}
     if(platforms){platforms.setAttribute('aria-labelledby','filter-platform-title');platforms.setAttribute('aria-describedby','filter-platform-hint');}
     const categories=$('#category-filters');
     if(categories){categories.setAttribute('role','group');categories.setAttribute('aria-labelledby','filter-topic-title');}
-    const type=$('#content_format'),explanation=$('.filter-explainer');
+    const type=$('#content_format'),explanation=type?.closest('.filter-field')?.querySelector('.filter-explainer');
     if(type&&explanation){explanation.id='filter-type-explanation';type.setAttribute('aria-describedby',explanation.id);}
     const reset=$('#reset-filters');
     if(reset){reset.setAttribute('aria-label',t('Effacer les critères, y compris la langue et le véhicule','Clear criteria, including language and vehicle','Borrar criterios, incluidos idioma y vehículo'));}

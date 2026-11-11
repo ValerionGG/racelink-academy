@@ -1,4 +1,5 @@
-import {poster} from './paddock-home.js?v=6';
+import {DISCIPLINES,disciplineIds} from './disciplines.js?v=themes-v47';
+import {poster} from './paddock-home.js?v=themes-v47';
 const norm=x=>String(x||'').normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 const $=q=>document.querySelector(q);
 const form=$('#finder'),params=new URLSearchParams(location.search);
@@ -6,7 +7,7 @@ const ui=['en','es'].includes(params.get('ui'))?params.get('ui'):'fr';
 document.documentElement.lang=ui;
 const tr=(fr,en,es)=>({fr,en,es})[ui];
 const both=tr('TikTok et Instagram','TikTok and Instagram','TikTok e Instagram');
-const labels={both,lede:tr('Les vidéos auto des créateurs, classées par voiture et par sujet.','Car videos from creators, by vehicle and topic.','Vídeos de automoción de creadores, por coche y tema.'),source:tr('Plateforme','Platform','Plataforma'),language:tr('Langue des métadonnées','Metadata language','Idioma de los metadatos'),topic:tr('Sujet','Topic','Tema'),model:tr('Modèle cité','Model mentioned','Modelo mencionado'),q:tr('Que cherchez-vous ?','What are you looking for?','¿Qué buscas?'),reset:tr('Tout effacer','Clear all','Borrar todo'),more:tr('Afficher la suite','Show more','Mostrar más'),photo:tr('Crédits photo','Photo credits','Créditos de foto'),hint:tr('Une voiture citée dans une vidéo ne garantit pas la compatibilité avec votre version.','A model mentioned in a video does not establish compatibility with your version.','Que un vídeo mencione un modelo no garantiza compatibilidad con tu versión.')};
+const labels={both,discipline:tr('Discipline','Discipline','Disciplina'),lede:tr('Auto, moto, karting et sport mécanique : explorez les vidéos par discipline et par sujet.','Cars, motorcycling, karting and motorsport: explore videos by discipline and topic.','Coches, motos, karting y deporte de motor: explora vídeos por disciplina y tema.'),source:tr('Plateforme','Platform','Plataforma'),language:tr('Langue des métadonnées','Metadata language','Idioma de los metadatos'),topic:tr('Sujet','Topic','Tema'),model:tr('Modèle cité','Model mentioned','Modelo mencionado'),q:tr('Que cherchez-vous ?','What are you looking for?','¿Qué buscas?'),reset:tr('Tout effacer','Clear all','Borrar todo'),more:tr('Afficher la suite','Show more','Mostrar más'),photo:tr('Crédits photo','Photo credits','Créditos de foto'),hint:tr('Une voiture citée dans une vidéo ne garantit pas la compatibilité avec votre version.','A model mentioned in a video does not establish compatibility with your version.','Que un vídeo mencione un modelo no garantiza compatibilidad con tu versión.')};
 document.querySelectorAll('[data-copy]').forEach(x=>{x.textContent=labels[x.dataset.copy]});
 $('#back').href=ui==='fr'?'./':'./?ui='+ui;
 form.elements.q.placeholder=tr('Golf, vidange, diagnostic…','Golf, oil change, diagnostics…','Golf, cambio de aceite, diagnóstico…');
@@ -19,9 +20,10 @@ const cat=k=>cats[k]||k.replaceAll('_',' ');
 const el=(tag,txt,cls)=>{const x=document.createElement(tag);if(txt!==undefined)x.textContent=txt;if(cls)x.className=cls;return x};
 const who=author=>{const name=String(author||'').replace(/^@/,''),line=el('p',undefined,'who'),mark=el('i',name.charAt(0).toUpperCase());mark.setAttribute('aria-hidden','true');line.append(mark,name);return line;};
 let rows=[],tasks={},limit=24;
-const st={q:(params.get('q')||'').slice(0,160),p:params.get('p')||'',l:params.has('l')?params.get('l'):'fr',v:params.get('v')||'',s:params.get('s')||''};
+const st={q:(params.get('q')||'').slice(0,160),p:params.get('p')||'',l:params.has('l')?params.get('l'):'fr',v:params.get('v')||'',s:params.get('s')||'',discipline:params.get('discipline')||''};
 function task(id){return tasks[id]?.[ui]||id.replaceAll('_',' ')}
 function filter(r,skip=''){
+  if(skip!=='discipline'&&st.discipline&&!r.disciplines.includes(st.discipline))return false;
   if(skip!=='p'&&st.p&&r.p!==st.p || skip!=='l'&&st.l&&(st.l==='ed-fr'?!r.editorFr:r.l!==st.l)) return false;
   if(skip!=='v'&&st.v&&!r.models.has(st.v) || skip!=='s'&&st.s&&!r.s.includes(st.s))return false;
   return !st.q||norm(st.q).split(' ').every(w=>r.words.includes(w));
@@ -31,12 +33,13 @@ function options(key,all,values,defaultText){
   for(const r of rows)if(filter(r,key))for(const id of values(r))counts.set(id,(counts.get(id)||0)+1);
   const blank=new Option(defaultText,'');
   select.replaceChildren(blank);
-  for(const [id,label] of all)if(counts.has(id)||id===st[key])select.add(new Option(label+' · '+(counts.get(id)||0),id));
+  for(const [id,label] of all)if(key==='discipline'||counts.has(id)||id===st[key])select.add(new Option(label+' · '+(counts.get(id)||0),id));
   if(st[key]&&![...select.options].some(o=>o.value===st[key]))select.add(new Option(st[key]+' · 0',st[key]));
   select.value=st[key];
 }
 let languages=[],models=[],topics=[];
 function draw(){
+  options('discipline',DISCIPLINES.map(d=>[d.id,d.label[ui]]),r=>r.disciplines,tr('Toutes les disciplines','All disciplines','Todas las disciplinas'));
   options('p',[['tiktok','TikTok'],['instagram','Instagram']],r=>[r.p],both);
   options('l',languages,r=>r.editorFr?[r.l,'ed-fr']:[r.l],tr('Toutes les langues','All languages','Todos los idiomas'));
   options('v',models,r=>r.models.keys(),tr('Tous les modèles','All models','Todos los modelos'));
@@ -63,19 +66,19 @@ function sync(){
 function sort(map){return [...map].sort((a,b)=>a[1].localeCompare(b[1],ui,{sensitivity:'base'}))}
 let ready=false;
 form.addEventListener('submit',e=>e.preventDefault());
-form.addEventListener('change',e=>{if(!ready||!['p','l','v','s'].includes(e.target.name))return;st[e.target.name]=e.target.value;limit=24;draw();sync()});
+form.addEventListener('change',e=>{if(!ready||!['p','l','v','s','discipline'].includes(e.target.name))return;st[e.target.name]=e.target.value;limit=24;draw();sync()});
 form.elements.q.addEventListener('input',()=>{if(!ready)return;st.q=form.elements.q.value;limit=24;draw();sync()});
 $('#reset').onclick=()=>{if(!ready)return;Object.keys(st).forEach(k=>st[k]='');form.elements.q.value='';limit=24;draw();sync();form.elements.q.focus()};
 $('#more').onclick=()=>{const old=limit;limit+=24;draw();$('#list').children[old]?.querySelector('h3 a')?.focus()};
 async function start(){
  try{
-  const res=await fetch('./social-index.json');if(!res.ok)throw Error();const d=await res.json();if(d.version!==1||!Array.isArray(d.items))throw Error();
+  const res=await fetch('./social-index.json?v=themes-v47');if(!res.ok)throw Error();const d=await res.json();if(d.version!==1||!Array.isArray(d.items))throw Error();
   tasks=d.tasks;const m=new Map(),l=new Map(),s=new Map();rows=d.items.map(r=>{
     // Only link to a canonical public post. Ignore untrusted or malformed destinations.
     const u=new URL(r.u);if(u.protocol!=='https:'||!['tiktok','instagram'].includes(r.p)||!['www.'+r.p+'.com',r.p+'.com'].includes(u.host)||u.username||u.password)throw Error();
     const models=new Map();r.v.forEach(([make,model])=>{if(model){const label=[make,model].filter(Boolean).join(' ');models.set(norm(label),label);if(!m.has(norm(label)))m.set(norm(label),label)}});
     const vehicles=r.v.map(v=>v.filter(Boolean).join(' ')).filter(Boolean);
-    l.set(r.l,lang(r.l));if(r.editorFr)l.set('ed-fr',editorFr);r.s.forEach(k=>s.set(k,task(k)));return {...r,models,vehicles,words:norm([r.t,r.a,...vehicles,...r.s.map(task),cat(r.c)].join(' '))}
+    l.set(r.l,lang(r.l));if(r.editorFr)l.set('ed-fr',editorFr);r.s.forEach(k=>s.set(k,task(k)));return {...r,models,vehicles,disciplines:disciplineIds(r),words:norm([r.t,r.a,...vehicles,...r.s.map(task),cat(r.c)].join(' '))}
   });
   models=sort(m);languages=sort(l);topics=sort(s);ready=true;form.elements.q.value=st.q;draw();
  }catch{$('#status').textContent=tr('Impossible de charger le catalogue social.','The social catalogue could not be loaded.','No se pudo cargar el catálogo social.');const back=el('a',tr('Ouvrir la bibliothèque','Open the library','Abrir la biblioteca'));back.href='./?browse=1';$('#list').replaceChildren(back)}

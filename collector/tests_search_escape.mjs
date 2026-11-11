@@ -3,6 +3,7 @@
 import assert from 'node:assert/strict';
 import {createDiscoveryUI} from '../site/discovery-ui.js';
 import {createMobileUI} from '../site/mobile-ui.js';
+import {createFilterDraft, FILTER_KEYS} from '../site/filter-studio.js';
 
 class UiEvent {
   constructor(type,options={}){this.type=type;this.defaultPrevented=false;this.propagationStopped=false;Object.assign(this,options);}
@@ -45,7 +46,15 @@ function fixture(isMobile){
   env.beforeState=JSON.stringify(env.state);env.beforeUrl=env.url.href;doc.body.classList.add('results-mode');
   const ctx={escape:String,t:(fr)=>fr,getUi:()=> 'fr',getState:()=>env.state,storage:{get:(_,fallback)=>fallback,set(){}},langName:l=>l,applySearch:state=>{env.applied++;env.state=state;env.url.searchParams.set('q',state.q||'');},openVideo(){},openGuide(){},clearFilter(){throw Error('Escape must not clear a filter');},clearVehicle(){throw Error('Escape must not clear a vehicle');}};
   env.discovery=createDiscoveryUI(ctx);
-  env.mobile=createMobileUI({t:ctx.t,getState:ctx.getState,getTotal:()=>20,isLoading:()=>false,onExplore:()=>{env.get('#search').value=env.state.q;},filterStudio:{beginDraft(){},cancelDraft(){env.filterCancelled++;},update(){},hasPendingChanges:()=>false}});
+  env.filterDraft=createFilterDraft({getState:ctx.getState,onApply:patch=>{
+    env.applied++;env.state={...env.state,...patch,page:1};
+    for(const [key,value] of Object.entries(patch)){if(value)env.url.searchParams.set(key,value);else env.url.searchParams.delete(key);}
+  }});
+  env.mobile=createMobileUI({t:ctx.t,getState:ctx.getState,getTotal:()=>20,isLoading:()=>false,onExplore:()=>{env.get('#search').value=env.state.q;},filterStudio:{
+    beginDraft:()=>env.filterDraft.begin(),cancelDraft(){env.filterCancelled++;env.filterDraft.cancel();},
+    applyDraft:()=>env.filterDraft.apply(),update(){},hasPendingChanges:()=>env.filterDraft.isDirty(),
+    activeCount:()=>FILTER_KEYS.filter(key=>Boolean(env.filterDraft.read()[key])).length,
+  }});
   doc.addEventListener('rl:search-dismiss',()=>env.dismissed++);
   env.input=env.get('#search');env.input.value='alternateur';env.input.setSelectionRange(2,6,'forward');env.mobile.openSearch();
   env.escape=()=>{
@@ -83,6 +92,23 @@ try{
   });
   await test('native filter-dialog cancel still cancels its draft and returns focus',()=>{
     const e=fixture(true);e.mobile.closeSearch();e.flush();e.mobile.openFilters();const dialog=e.get('#filters-dialog'),event=new UiEvent('cancel');dialog.dispatchEvent(event);assert.equal(event.defaultPrevented,false);dialog.close();e.flush();assert.equal(e.filterCancelled,1);assert.equal(e.document.activeElement,e.get('#mobile-filters'));assert.equal(e.get('#filters').parentElement,e.host);e.assertUnchanged();
+  });
+  await test('mobile discipline stays in draft until Apply and Cancel preserves committed URL and criteria',()=>{
+    const e=fixture(true);e.mobile.closeSearch();e.flush();e.mobile.openFilters();
+    assert.equal(e.filterDraft.set('discipline','drift'),true);e.mobile.update();
+    assert.equal(e.filterDraft.read().discipline,'drift');
+    assert.match(e.get('#show-filter-results').textContent,/Appliquer/);
+    e.assertUnchanged();
+    e.get('#cancel-filter-draft').dispatchEvent(new UiEvent('click'));e.flush();
+    assert.equal(e.filterDraft.isActive(),false);assert.equal(e.filterDraft.isDirty(),false);e.assertUnchanged();
+    e.mobile.openFilters();assert.equal(e.filterDraft.read().discipline,undefined);
+    e.filterDraft.set('discipline','drift');e.mobile.update();
+    e.get('#show-filter-results').dispatchEvent(new UiEvent('click'));e.flush();
+    assert.equal(e.state.discipline,'drift');assert.equal(e.url.searchParams.get('discipline'),'drift');
+    assert.equal(e.state.q,'alternateur');assert.equal(e.state.language,'fr');assert.equal(e.state.category,'mechanics');
+    assert.equal(e.state.make,'Renault');assert.equal(e.state.model,'Clio');assert.equal(e.state.platform,'youtube');
+    assert.equal(e.applied,1);assert.equal(e.filterDraft.isActive(),false);
+    assert.equal(e.get('#filters-dialog').open,false);assert.equal(e.document.activeElement,e.get('#catalog-heading'));
   });
   await test('non-Escape keys retain their default action when suggestions are closed',()=>{
     const e=fixture(false);for(const key of ['Enter','Tab','ArrowLeft','Backspace']){const event=new UiEvent('keydown',{key});e.input.dispatchEvent(event);assert.equal(event.defaultPrevented,false);assert.equal(event.propagationStopped,false);}assert.equal(e.dismissed,0);e.assertUnchanged();

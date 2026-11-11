@@ -1,4 +1,4 @@
-import {poster} from './paddock-home.js?v=6';
+import {poster} from './paddock-home.js?v=themes-v47';
 import {icon} from './icons.js?v=paddock-1';
 import {matchVehicleDossiers} from './vehicle-dossier.js?v=atlas-v41';
 import {attachRailNavigation} from './rail-navigation.js?v=studio-v30';
@@ -16,7 +16,7 @@ export function createDiscoveryUI(ctx) {
   $('.search-shell').insertAdjacentHTML('beforeend','<div id="search-helper" class="search-helper" hidden></div>');
   const recent=()=>{const items=ctx.storage.get('rl-search-recent',[]);return Array.isArray(items)?items.filter(x=>typeof x==='string'&&x.length<161).slice(0,5):[];};
   function remember(query){if(query?.trim()&&query.trim().length<161)ctx.storage.set('rl-search-recent',[query.trim(),...recent().filter(x=>x!==query.trim())].slice(0,5));}
-  const personalKeys=['make','model','generation','year','engine','fuel_type','body_type','spec','language','duration','platform','level','license','transcript','format','content_format'];
+  const personalKeys=['make','model','generation','year','engine','fuel_type','body_type','spec','language','discipline','duration','platform','level','license','transcript','format','content_format'];
   const hasValue=value=>value!==''&&value!==undefined&&value!==null&&value!=='all';
   const imageUrl=value=>{try{const local=typeof value==='string'&&/^\.\/assets\/[\w./-]+$/.test(value)&&!value.split('/').includes('..');const url=new URL(value,local?import.meta.url:undefined);return url.protocol==='https:'||local?url.href:'';}catch{return '';}};
   const platformName=value=>({youtube:'YouTube',dailymotion:'Dailymotion',vimeo:'Vimeo',tiktok:'TikTok',instagram:'Instagram',facebook:'Facebook',twitch:'Twitch',bilibili:'Bilibili',other:t('Autres sources','Other sources','Otras fuentes')})[value]||value||'';

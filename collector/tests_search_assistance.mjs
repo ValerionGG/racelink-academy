@@ -3,7 +3,7 @@ import fs from 'node:fs';
 const data = JSON.parse(fs.readFileSync(0, 'utf8'));
 const source = fs.readFileSync(new URL('./public/catalog-worker.js', import.meta.url), 'utf8');
 const {prepareCatalog, queryAssistance, searchResources, suggestCatalog} =
-  await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+  await import(new URL('../site/catalog-worker.js', import.meta.url));
 const catalog = prepareCatalog(data.payload);
 catalog.discovery = data.config;
 process.stdout.write(JSON.stringify(data.params.map(params => ({

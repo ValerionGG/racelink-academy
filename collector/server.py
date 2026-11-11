@@ -17,6 +17,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlencode, unquote, urlsplit, urlunsplit
 
+from discipline_rules import DISCIPLINE_IDS, DISCIPLINE_BITS, discipline_mask, discipline_ids
+
 BASE = Path(__file__).resolve().parent
 DEFAULT_DB = BASE / "data" / "catalog.sqlite3"
 PUBLIC = BASE / "public"
@@ -98,6 +100,7 @@ def folded(value):
 def connect(db_path=DEFAULT_DB):
     conn = sqlite3.connect(str(db_path), timeout=20, factory=ClosingConnection)
     conn.row_factory = sqlite3.Row
+    conn.create_function("discipline_mask", 3, discipline_mask, deterministic=True)
     conn.execute("PRAGMA foreign_keys=ON")
     conn.execute("PRAGMA busy_timeout=20000")
     return conn
@@ -1126,7 +1129,28 @@ def infer_automotive_request(db_path, q, params):
     return result
 
 
+def selected_discipline(params):
+    value = query_value(params, "discipline")
+    if value in {"", "all", "any", "*"}:
+        return ""
+    if value not in DISCIPLINE_BITS:
+        raise ValidationError("Discipline invalide")
+    return value
+
+
+def discipline_facets(conn, base, args):
+    # Group the complete filtered selection, before pagination. Overlap is
+    # intentional: a motorcycle lesson may also have domain_scope=motorsport.
+    groups = conn.execute("SELECT discipline_mask(v.title,v.domain_scope,v.category) AS mask,"
+                          "COUNT(*) AS count" + base + " GROUP BY mask", args).fetchall()
+    counts = {key: sum(row["count"] for row in groups if row["mask"] & DISCIPLINE_BITS[key])
+              for key in DISCIPLINE_IDS}
+    return [{"value": key, "count": count} for key, count in
+            sorted(counts.items(), key=lambda pair: (-pair[1], pair[0])) if count]
+
+
 def search(db_path, params, *, count_only=False, offset=None, no_assistance=False):
+    discipline = selected_discipline(params)
     page = integer_param(params, "page", 1, 1, 1000000)
     per_page = integer_param(params, "per_page", 24, 1, 100)
     q = query_value(params, "q").strip()
@@ -1228,6 +1252,13 @@ def search(db_path, params, *, count_only=False, offset=None, no_assistance=Fals
             where.append("v.transcript_text = ''")
         else:
             raise ValidationError("Filtre transcription invalide")
+    # Switching the single-choice discipline replaces that criterion. Keep a
+    # separate facet scope with the same query and every other active filter.
+    discipline_base = " FROM videos v " + join + (" WHERE " + " AND ".join(where) if where else "")
+    discipline_args = list(args)
+    if discipline:
+        where.append("(discipline_mask(v.title,v.domain_scope,v.category) & ?) <> 0")
+        args.append(DISCIPLINE_BITS[discipline])
     base = " FROM videos v " + join + (" WHERE " + " AND ".join(where) if where else "")
     sort = query_value(params, "sort", "relevance")
     sorts = {
@@ -1257,6 +1288,20 @@ def search(db_path, params, *, count_only=False, offset=None, no_assistance=Fals
         rows = conn.execute("SELECT v.*" + base + " ORDER BY " + sorts[sort] + " LIMIT ? OFFSET ?",
                             args + [per_page, (page - 1) * per_page if offset is None else offset]).fetchall()
         facets = {}
+        if discipline:
+            # Resolve the same explicit query independently of the selected
+            # discipline; no recursive search or relaxed secondary filters.
+            if has_search and not conn.execute("SELECT COUNT(*)" + discipline_base, discipline_args).fetchone()[0]:
+                original_fts = discipline_args[0]
+                for alternative, _mode, _topics in educational_query_candidates(residual, words):
+                    discipline_args[0] = alternative
+                    if conn.execute("SELECT COUNT(*)" + discipline_base, discipline_args).fetchone()[0]:
+                        break
+                else:
+                    discipline_args[0] = original_fts
+            facets["discipline"] = discipline_facets(conn, discipline_base, discipline_args)
+        else:
+            facets["discipline"] = discipline_facets(conn, base, args)
         for facet in ("category", "level", "language", "platform", "license"):
             rows_facet = conn.execute(
                 f"SELECT v.{facet} AS value,COUNT(*) AS count" + base
@@ -1341,6 +1386,7 @@ def load_guides(public_path=PUBLIC):
 
 
 def matching_guides(guides, params, interpretation):
+    discipline = selected_discipline(params)
     # These explain a method; cited manufacturer examples never imply fitment.
     if (interpretation["conflicts"] or interpretation["vehicle"] or interpretation["spec"]
             or any(query_value(params, key) not in {"", "all", "any", "*"}
@@ -1351,6 +1397,8 @@ def matching_guides(guides, params, interpretation):
              if word not in AUTOMOTIVE_STOPWORDS]
     result = []
     for guide in guides:
+        if discipline and discipline not in discipline_ids(guide):
+            continue
         if task and task not in {"all", "any", "*"} and guide.get("task") != task:
             continue
         if any(query_value(params, key) not in {"", "all", "any", "*", str(guide.get(column, ""))}
@@ -1373,6 +1421,7 @@ def matching_guides(guides, params, interpretation):
 
 
 def search_resources(db_path, params, *, public_path=PUBLIC, guides=None, count_only=False, no_assistance=False):
+    selected_discipline(params)
     guides = load_guides(public_path) if guides is None else guides
     kind = query_value(params, "format", "all") or "all"
     video_params = {key: value for key, value in params.items() if key != "format"}
@@ -1403,6 +1452,13 @@ def search_resources(db_path, params, *, public_path=PUBLIC, guides=None, count_
                     counts[value] = counts.get(value, 0) + 1
             facets[name] = [{"value": value, "count": count} for value, count in
                             sorted(counts.items(), key=lambda item: (-item[1], item[0]))]
+        counts = {item["value"]: item["count"] for item in facets.get("discipline", [])}
+        guide_facet_items = matching_guides(guides, {**params, "discipline": ""}, interpretation)
+        for guide in guide_facet_items:
+            for value in discipline_ids(guide):
+                counts[value] = counts.get(value, 0) + 1
+        facets["discipline"] = [{"value": value, "count": count} for value, count in
+                                sorted(counts.items(), key=lambda item: (-item[1], item[0]))]
     facets["format"] = [{"value": "video", "count": videos["total"]},
                         {"value": "guide", "count": len(found_guides)}, {"value": "image", "count": 0}]
     return {**videos, "items": items, "total": total, "pages": (total + size - 1) // size, "facets": facets,
@@ -1413,11 +1469,12 @@ def search_resources(db_path, params, *, public_path=PUBLIC, guides=None, count_
 
 
 DISCOVERY_FILTERS = VEHICLE_FILTERS + ("task", "system", "spec", "category", "level",
-    "language", "platform", "license", "duration", "transcript", "domain", "ids", "format", "content_format")
+    "language", "platform", "license", "duration", "transcript", "domain", "ids", "format", "content_format", "discipline")
 _DISCOVERY_COUNTS = {}
 
 
 def discovery_context(params):
+    selected_discipline(params)
     return {key: query_value(params, key) for key in DISCOVERY_FILTERS
             if query_value(params, key) not in {"", "all", "any", "*"}}
 
@@ -1642,6 +1699,7 @@ def topic_score(topic, query):
 
 def query_assistance(db_path, params, *, config=None, include_topics=True):
     """Count explicit recovery proposals without modifying the query or relaxing a filter."""
+    selected_discipline(params)
     query = query_value(params, "q").strip()
     result = {"suggestions": [], "policy": "explicit_opt_in_filters_preserved"}
     if not 3 <= len(query) <= 300:
@@ -1722,6 +1780,7 @@ def query_assistance(db_path, params, *, config=None, include_topics=True):
 
 
 def suggestions(db_path, params, *, config=None, public_path=PUBLIC):
+    selected_discipline(params)
     config = config if config is not None else discovery_config(public_path)
     query = query_value(params, "q").strip()
     if len(query) > 300:
@@ -1878,6 +1937,7 @@ def stats(db_path, public_path=PUBLIC):
         result["facets"]["domain"] = [dict(r) for r in conn.execute(
             "SELECT domain_scope AS value,COUNT(*) AS count FROM videos "
             "GROUP BY domain_scope ORDER BY count DESC,value").fetchall()]
+        result["facets"]["discipline"] = discipline_facets(conn, " FROM videos v", [])
         result["language_status_counts"] = [dict(row) for row in conn.execute(
             "SELECT language,language_status AS status,COUNT(*) AS count FROM videos "
             "GROUP BY language,language_status ORDER BY language,language_status")]

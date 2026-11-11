@@ -4,13 +4,12 @@ import fs from 'node:fs';
 
 const root = new URL('../site/', import.meta.url);
 const read = path => JSON.parse(fs.readFileSync(new URL(path, root), 'utf8'));
-const source = fs.readFileSync(new URL('catalog-worker.js', root), 'utf8');
-const worker = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+const worker = await import(new URL('catalog-worker.js', root));
 const catalog = worker.prepareCatalog(read('catalog/catalog.json'));
 catalog.discovery = read('discovery-catalog.json');
 
 const FEATURED = encodeURIComponent('youtube:-1amcyQPvL4');
-const homeList = 'make=&model=&generation=&engine=&body_type=&fuel_type=&year=&task=&system=&spec=&q=&category=&domain=&level=&language=fr&platform=&format=all&content_format=&duration=&transcript=&license=&sort=relevance&page=1&per_page=18';
+const homeList = 'make=&model=&generation=&engine=&body_type=&fuel_type=&year=&task=&system=&spec=&q=&category=&discipline=&domain=&level=&language=fr&platform=&format=all&content_format=&duration=&transcript=&license=&sort=relevance&page=1&per_page=18';
 const preview = 'q=vidange+clio&language=fr&category=mechanics&per_page=3';
 const urls = [
   '/aide/api/stats', '/aide/api/discovery', `/aide/api/videos/${FEATURED}`,

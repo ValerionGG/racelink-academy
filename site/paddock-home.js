@@ -1,4 +1,4 @@
-// Home sections of the Paddock design. Counts come from the catalogue; navigation stays delegated to app.js.
+// Home sections of the Paddock design. Counts come from the catalogue; links use the shared search parameters.
 import {tracks} from './tracks.js';
 
 const LARGE = [
@@ -14,6 +14,25 @@ const SMALL = [
   ['fitness', ['Préparation','Preparation','Preparación'], ['Le pilote aussi progresse.','Drivers train too.','El piloto también progresa.'], '<path d="M3 12h4l3-7 4 14 3-7h4"/>'],
 ];
 const PATHS = [['mechanics',['Mécanique','Mechanics','Mecánica']],['driving',['Pilotage','Driving','Pilotaje']],['simracing',['Sim racing','Sim racing','Sim racing']],['engineering',['Ingénierie','Engineering','Ingeniería']]];
+const DISCIPLINES = [
+  ['motorcycle', ['Moto','Motorcycle','Moto']],
+  ['karting', ['Karting','Karting','Karting']],
+  ['drift', ['Drift','Drift','Drift']],
+  ['motorsport', ['Motorsport','Motorsport','Automovilismo']],
+  ['simracing', ['Sim racing','Sim racing','Sim racing']],
+  ['racelink', ['Guides RaceLink','RaceLink guides','Guías RaceLink']],
+];
+
+// A new discipline starts a fresh search, retaining only the visitor's languages.
+export function disciplineHref(id, language = 'fr', ui = 'fr') {
+  if (!DISCIPLINES.some(([value]) => value === id)) throw new TypeError('Unknown discipline');
+  const params = new URLSearchParams({browse:'1'});
+  if (id === 'racelink') { params.set('format', 'guide'); params.set('platform', 'racelink'); }
+  else params.set('discipline', id);
+  if (language) params.set('language', language);
+  if (ui && ui !== 'fr') params.set('ui', ui);
+  return `?${params}`;
+}
 const POSTERS = [[/oil|huile|vidange/,'oil'],[/wiper|essuie/,'wipers'],[/wheel|tire|tyre|pneu/,'wheel'],[/batter/,'battery'],[/fuse|fusible/,'fuses'],[/light|bulb|lamp|phare/,'lighting'],[/fuel|carburant/,'fuel'],[/diag|obd|code|warning|voyant/,'diagnostics']];
 const SHORTS_SHOWN = 14, PER_POSTER = 2, FEATURED_VIDEO = 'youtube:-1amcyQPvL4';
 
@@ -54,13 +73,24 @@ export function pickShorts(items, limit = SHORTS_SHOWN, perPoster = PER_POSTER) 
   return picked;
 }
 
-export function createPaddockHome({$, escape, t, getUi, getJson, cardMarkup, setImageFallback, catName, fmtDuration, storage}) {
+export function createPaddockHome({$, escape, t, getUi, getContentLanguage, getJson, cardMarkup, setImageFallback, catName, fmtDuration, storage}) {
   let stats = null, frenchCounts = {}, shorts = [], faq = [], taskNames = {}, previewGeneration = '', previewChoices = [], socialTotals = null, featured = null;
   const previewFilters = {language:'fr', category:'mechanics', level:'', transcript:'', license:'', platform:''};
   const pick = values => t(...values);
   const number = value => Number(value || 0).toLocaleString(getUi());
   const count = id => stats?.facets?.category?.find(entry => entry.value === id)?.count || 0;
   const progress = () => { try { return JSON.parse(localStorage.getItem('rl-library-progress') || '{}'); } catch { return {}; } };
+  const contentLanguage = () => typeof getContentLanguage === 'function' ? getContentLanguage() : new URLSearchParams(location.search).get('language') ?? (location.search ? '' : 'fr');
+  function disciplines() {
+    document.querySelectorAll('[data-discipline-nav]').forEach(nav => {
+      nav.setAttribute('aria-label', t('Disciplines et guides RaceLink','Disciplines and RaceLink guides','Disciplinas y guías RaceLink'));
+      nav.innerHTML = DISCIPLINES.map(([id, name]) => `<a data-discipline-link="${id}" class="${id === 'racelink' ? 'pd-discipline-guide' : ''}" href="${escape(disciplineHref(id, contentLanguage(), getUi()))}">${escape(pick(name))}${id === 'racelink' ? '<span aria-hidden="true">→</span>' : ''}</a>`).join('');
+    });
+  }
+  function refreshDisciplineLink(event) {
+    const link = event.target.closest?.('a[data-discipline-link]');
+    if (link) link.setAttribute('href', disciplineHref(link.dataset.disciplineLink, contentLanguage(), getUi()));
+  }
 
   function ticker() {
     const language = stats?.facets?.language?.find(entry => entry.value === 'fr')?.count, platform = id => stats?.facets?.platform?.find(entry => entry.value === id)?.count || 0;
@@ -74,7 +104,7 @@ export function createPaddockHome({$, escape, t, getUi, getJson, cardMarkup, set
   function subjects() {
     const badge = id => stats ? `<span class="pd-subject-count">${number(count(id))}</span>` : '';
     const fr = id => frenchCounts[id] ? `<span class="pd-fr">${number(frenchCounts[id])} ${t('en français','in French','en francés')}</span>` : '';
-    if (stats) $('#pd-subjects-kick').textContent = `8 ${t('univers','worlds','mundos')} · ${number(stats.total_videos)} ${t('vidéos','videos','vídeos')}`;
+    if (stats) $('#pd-subjects-kick').textContent = `8 ${t('sujets','topics','temas')} · ${number(stats.total_videos)} ${t('vidéos','videos','vídeos')}`;
     $('#pd-subjects-grid').innerHTML = LARGE.map(([id, src, name, hint]) => `<button type="button" class="pd-subject pd-subject-photo" data-entry-category="${id}"><img src="${src}" alt="" loading="lazy" decoding="async">${badge(id)}<strong>${escape(pick(name))}</strong><small>${escape(pick(hint))}</small>${fr(id)}</button>`).join('') +
       SMALL.map(([id, name, hint, path]) => `<button type="button" class="pd-subject" data-entry-category="${id}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">${path}</svg>${badge(id)}<strong>${escape(pick(name))}</strong><small>${escape(pick(hint))}</small></button>`).join('');
   }
@@ -110,7 +140,8 @@ export function createPaddockHome({$, escape, t, getUi, getJson, cardMarkup, set
       intro:t('Mécanique, pilotage, sim racing, ingénierie, métiers. Les meilleurs tutos du web, triés et expliqués, en français d’abord.','Mechanics, driving, sim racing, engineering, careers. The best tutorials on the web, sorted and explained.','Mecánica, pilotaje, sim racing, ingeniería, profesiones. Los mejores tutoriales de la web, ordenados y explicados.'),
       videos:t('tutos vidéo','video tutorials','tutoriales'),guides:t('guides RaceLink','RaceLink guides','guías RaceLink'),paths:t('parcours','learning paths','itinerarios'),
       subject:t('Sujet','Topic','Tema'),allSubjects:t('Tous les sujets','All topics','Todos los temas'),car:t('Ma voiture','My car','Mi coche'),optional:t('Ajouter','Add','Añadir'),
-      subjectsKick:t('8 univers','8 worlds','8 mundos'),subjectsTitle:t('Choisis ton sujet','Pick your topic','Elige tu tema'),library:t('Toute la bibliothèque →','The whole library →','Toda la biblioteca →'),
+      subjectsKick:t('8 sujets','8 topics','8 temas'),subjectsTitle:t('Choisis ton sujet','Pick your topic','Elige tu tema'),library:t('Toute la bibliothèque →','The whole library →','Toda la biblioteca →'),
+      disciplineTitle:t('Explorer par discipline','Explore by discipline','Explorar por disciplina'),
       shortsKick:t('TikTok · Instagram','TikTok · Instagram','TikTok · Instagram'),shortsTitle:t('Formats courts','Short videos','Vídeos cortos'),shortsHint:t('Une astuce en moins d’une minute, dans son format d’origine.','A tip in under a minute, in its original format.','Un consejo en menos de un minuto, en su formato original.'),shortsAll:t('Tout voir →','See all →','Ver todo →'),
       pathsKick:t('8 parcours guidés','8 guided paths','8 itinerarios'),pathsTitle:t('Apprends étape par étape','Learn step by step','Aprende paso a paso'),pathsAll:t('Tous les parcours →','All paths →','Todos los itinerarios →'),
       bonusKick:t('En plus','Going further','Además'),bonusTitle:t('Ta voiture, en détail','Your car, in detail','Tu coche, en detalle'),bonusHint:t('Des tutos ciblés sur ton modèle, un atlas des voitures courantes et un atelier 3D.','Tutorials for your model, an atlas of common cars and a 3D workshop.','Tutoriales para tu modelo, un atlas de coches comunes y un taller 3D.'),
@@ -191,10 +222,12 @@ export function createPaddockHome({$, escape, t, getUi, getJson, cardMarkup, set
     const copy = event.target.closest('[data-pd-copy]');
     if (copy) navigator.clipboard?.writeText(copy.dataset.pdCopy).then(() => { copy.textContent = t('Lien copié ✓','Link copied ✓','Enlace copiado ✓'); }).catch(() => {});
   }
-  function render() { copy(); if (stats) ticker(); subjects(); shortsRail(); paths(); help(); }
+  function render() { copy(); if (stats) ticker(); disciplines(); subjects(); shortsRail(); paths(); help(); }
   // Static content appears at once; the counts follow when the catalogue is ready.
   function load() {
     render();
+    // Refresh before navigation, including keyboard activation and opening in a new tab.
+    for (const type of ['click', 'pointerdown', 'focusin', 'contextmenu']) document.addEventListener(type, refreshDisciplineLink);
     // The manifest is tiny, so the total shows before the catalogue finishes loading.
     fetch('./export-manifest.json').then(r => r.ok ? r.json() : Promise.reject()).then(data => { const total = $('#catalog-total'); if (total.textContent === '…' && data.videos) total.textContent = number(data.videos); }).catch(() => {});
     fetch('./social-index.json').then(r => r.ok ? r.json() : Promise.reject()).then(data => { taskNames = data.tasks || {}; socialTotals = {total:(data.items || []).length, french:(data.items || []).filter(item => item.l === 'fr').length}; shorts = pickShorts(Array.isArray(data.items) ? data.items : []); shortsRail(); }).catch(() => {});

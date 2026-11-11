@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "updatedAt": "2026-10-20T20:44:13Z",
+  "version": "themes-v47",
+  "updatedAt": "2026-11-11",
   "languageNote": {
     "fr": "Les thèmes sont traduits ; les ressources gardent leur langue source.",
     "en": "Topics are translated; resources retain their source language.",
@@ -1052,6 +1052,133 @@
         "checkedAt": "2026-10-20T17:01:37Z",
         "method": "local_catalog_api"
       }
+    },
+    {
+      "id": "discipline-motorcycle",
+      "intent": "drive",
+      "intentId": "drive",
+      "label": {
+        "fr": "Explorer la moto",
+        "en": "Explore motorcycling",
+        "es": "Explorar la moto"
+      },
+      "description": {
+        "fr": "Explorer les références de cette discipline en conservant vos autres critères.",
+        "en": "Explore this discipline while keeping your other criteria.",
+        "es": "Explora esta disciplina manteniendo los demás criterios."
+      },
+      "query": "",
+      "filters": {
+        "discipline": "motorcycle"
+      },
+      "aliases": [
+        "moto",
+        "motos",
+        "motorcycle",
+        "motocyclisme",
+        "motorrad"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "discipline-karting",
+      "intent": "drive",
+      "intentId": "drive",
+      "label": {
+        "fr": "Apprendre le karting",
+        "en": "Learn karting",
+        "es": "Aprender karting"
+      },
+      "description": {
+        "fr": "Explorer les références de cette discipline en conservant vos autres critères.",
+        "en": "Explore this discipline while keeping your other criteria.",
+        "es": "Explora esta disciplina manteniendo los demás criterios."
+      },
+      "query": "",
+      "filters": {
+        "discipline": "karting"
+      },
+      "aliases": [
+        "karting",
+        "kart",
+        "karts",
+        "go kart"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "discipline-drift",
+      "intent": "drive",
+      "intentId": "drive",
+      "label": {
+        "fr": "Comprendre le drift",
+        "en": "Understand drifting",
+        "es": "Comprender el drift"
+      },
+      "description": {
+        "fr": "Explorer les références de cette discipline en conservant vos autres critères.",
+        "en": "Explore this discipline while keeping your other criteria.",
+        "es": "Explora esta disciplina manteniendo los demás criterios."
+      },
+      "query": "",
+      "filters": {
+        "discipline": "drift"
+      },
+      "aliases": [
+        "drift",
+        "drifting"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "discipline-motorsport",
+      "intent": "understand",
+      "intentId": "understand",
+      "label": {
+        "fr": "Explorer le sport automobile",
+        "en": "Explore motorsport",
+        "es": "Explorar el automovilismo"
+      },
+      "description": {
+        "fr": "Explorer les références de cette discipline en conservant vos autres critères.",
+        "en": "Explore this discipline while keeping your other criteria.",
+        "es": "Explora esta disciplina manteniendo los demás criterios."
+      },
+      "query": "",
+      "filters": {
+        "discipline": "motorsport"
+      },
+      "aliases": [
+        "motorsport",
+        "sport automobile",
+        "sport auto",
+        "automovilismo"
+      ],
+      "enabled": true
+    },
+    {
+      "id": "discipline-simracing",
+      "intent": "sim",
+      "intentId": "sim",
+      "label": {
+        "fr": "Progresser en sim racing",
+        "en": "Improve at sim racing",
+        "es": "Mejorar en sim racing"
+      },
+      "description": {
+        "fr": "Explorer les références de cette discipline en conservant vos autres critères.",
+        "en": "Explore this discipline while keeping your other criteria.",
+        "es": "Explora esta disciplina manteniendo los demás criterios."
+      },
+      "query": "",
+      "filters": {
+        "discipline": "simracing"
+      },
+      "aliases": [
+        "simracing",
+        "sim racing"
+      ],
+      "enabled": true
     }
   ],
   "shelves": [

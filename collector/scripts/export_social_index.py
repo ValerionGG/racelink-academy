@@ -16,8 +16,8 @@ def build(db, taxonomy):
             if make or model or generation or engine: vehicles[key].append([make,model,generation,engine])
         for key,task in c.execute("SELECT v.video_id,v.task FROM video_tasks v JOIN videos r ON v.video_id=r.id WHERE"+where+" ORDER BY v.video_id,v.task"):
             tasks[key].append(task)
-        data=[dict(id=k,p=p,t=t,a=a,l=l,c=cat,v=vehicles[k],s=tasks[k],u=url,**({'editorFr':True} if pl=='fr' and scope in {'publisher_embedded_post','publisher_post_oembed_identity'} else {})) for k,p,t,a,l,cat,url,pl,scope in
-              c.execute("SELECT id,platform,title,creator,language,category,url,json_extract(metadata_json,'$.publisher_context_language'),verification_scope FROM videos WHERE"+where+" ORDER BY verified_at DESC,published_at DESC,id")]
+        data=[dict(id=k,p=p,t=t,a=a,l=l,c=cat,d=domain,v=vehicles[k],s=tasks[k],u=url,**({'editorFr':True} if pl=='fr' and scope in {'publisher_embedded_post','publisher_post_oembed_identity'} else {})) for k,p,t,a,l,cat,domain,url,pl,scope in
+              c.execute("SELECT id,platform,title,creator,language,category,domain_scope,url,json_extract(metadata_json,'$.publisher_context_language'),verification_scope FROM videos WHERE"+where+" ORDER BY verified_at DESC,published_at DESC,id")]
     return dict(version=1,tasks={e['id']:e['label'] for e in taxonomy['tasks']},items=data)
 
 if __name__=='__main__':

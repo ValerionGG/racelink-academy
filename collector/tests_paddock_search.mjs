@@ -1,9 +1,7 @@
 // Run: node --test collector/tests_paddock_search.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import fs from 'node:fs';
-const source = fs.readFileSync(new URL('../site/catalog-worker.js', import.meta.url), 'utf8');
-const {prepareCatalog, searchResources} = await import('data:text/javascript;base64,' + Buffer.from(source).toString('base64'));
+import {prepareCatalog, searchResources} from '../site/catalog-worker.js';
 
 const video = (id, title, generation, extra = {}) => ({
   id: `youtube:${id}`, url: `https://youtu.be/${id}`, title, platform: 'youtube', creator: 'Atelier', language: 'fr',

@@ -1,4 +1,5 @@
 /* No DOM, network trackers, external libraries, or generated content. */
+import {DISCIPLINES, disciplineIds, disciplineMatches} from "./disciplines.js";
 export const normalize = value => String(value ?? "").normalize("NFKD")
   .replace(/\p{M}/gu, "").toLowerCase().trim();
 const wordsOf = value => normalize(value).match(/[\p{L}\p{N}]+/gu) || [];
@@ -27,6 +28,12 @@ const clean = item => Object.fromEntries(Object.entries(item).filter(([key]) => 
 const vehicleFields = ["make", "model", "generation", "engine", "body_type", "fuel_type"];
 const vehicleFilters = [...vehicleFields, "year"];
 const validFilter = value => value != null && value !== "" && !["all", "any", "*"].includes(String(value));
+const knownDisciplines = new Set(DISCIPLINES.map(item => item.id));
+function selectedDiscipline(params) {
+  const value = param(params, "discipline");
+  if (validFilter(value) && !knownDisciplines.has(value)) throw new Error("Discipline invalide");
+  return value;
+}
 const specKey = value => normalize(value).replace(/[^a-z0-9]/g, "");
 const contentFormats = {tutorial: "tutorial", tutorial_candidate: "tutorial", demonstration: "demonstration",
   telemetry_demonstration: "demonstration", course: "course", course_candidate: "course", lecture: "course",
@@ -80,6 +87,7 @@ export function prepareCatalog(payload) {
       item.language = String(item.language || "und").toLowerCase().replaceAll("_", "-").split("-")[0];
       item.language_confidence = languageConfidence(item.language, item.language_status);
       item.resource_type = "video";
+      item._disciplines = disciplineIds(item);
       item.pedagogical_format = contentFormats[item.content_format || item.contentFormat] || "unspecified";
       item.format_status = item.format_status || (item.pedagogical_format === "unspecified" ? "not_classified" : "metadata_candidate");
       const searchWords = wordsOf(item._search || [
@@ -164,6 +172,14 @@ function facet(items, field, transform = value => value) {
   }
   return [...counts].map(([value, count]) => ({value, count}))
     .sort((a, b) => b.count - a.count || String(a.value).localeCompare(String(b.value)));
+}
+
+function disciplineFacet(items) {
+  const counts = new Map();
+  for (const item of items) for (const value of item._disciplines || disciplineIds(item))
+    counts.set(value, (counts.get(value) || 0) + 1);
+  return [...counts].map(([value, count]) => ({value, count}))
+    .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
 }
 
 function generationFacet(items, vehicle) {
@@ -387,6 +403,7 @@ export function searchCatalog(catalog, params = {}, options = {}) {
   if (!["relevance", "newest", "title", "duration"].includes(sort)) throw new Error("Tri invalide");
   const filters = ["category", "level", "language", "platform", "license"].map(key => [key, param(params, key)]);
   const duration = param(params, "duration"), transcript = param(params, "transcript"), domain = param(params, "domain");
+  const discipline = selectedDiscipline(params);
   if (duration && !["all", "any", "short", "medium", "long"].includes(duration)) throw new Error("Durée invalide");
   if (transcript && !["all", "any", "available", "true", "1", "missing", "unavailable", "false", "0"].includes(transcript))
     throw new Error("Filtre transcription invalide");
@@ -394,7 +411,7 @@ export function searchCatalog(catalog, params = {}, options = {}) {
   const idsValue = param(params, "ids"), ids = idsValue ? [...new Set(idsValue.split(","))] : null;
   if (ids && (ids.length > 100 || ids.some(id => !/^[A-Za-z0-9_:-]{1,100}$/.test(id)))) throw new Error("Identifiants invalides");
   const valid = value => value && !["all", "any", "*"].includes(value);
-  const filtered = catalog.items.filter(item => {
+  const eligible = catalog.items.filter(item => {
     if (!["all", "video"].includes(resourceFormat)) return false;
     if (validFilter(contentFormat) && item.pedagogical_format !== contentFormat) return false;
     if (interpretation.conflicts.length) return false;
@@ -422,27 +439,35 @@ export function searchCatalog(catalog, params = {}, options = {}) {
     }
     return true;
   });
-  let groups = queryWords.map(word => [word]);
-  let results = residual ? (queryWords.length ? filtered.filter(item => matches(item, groups)) : []) : filtered;
-  let searchMode = Object.keys(interpretation.vehicle).length || interpretation.task || interpretation.spec ? "structured" : "literal";
-  let expandedTopics = [];
-  if (queryWords.length && !results.length) {
-    for (const candidate of educationalCandidates(residual, queryWords)) {
-      const expanded = filtered.filter(item => matches(item, candidate.groups));
-      if (expanded.length) {
-        results = expanded; groups = candidate.groups;
-        searchMode = candidate.mode; expandedTopics = candidate.topics;
-        break;
+  const resolveQuery = candidates => {
+    let groups = queryWords.map(word => [word]);
+    let results = residual ? (queryWords.length ? candidates.filter(item => matches(item, groups)) : []) : candidates;
+    let searchMode = Object.keys(interpretation.vehicle).length || interpretation.task || interpretation.spec ? "structured" : "literal";
+    let expandedTopics = [];
+    if (queryWords.length && !results.length) {
+      for (const candidate of educationalCandidates(residual, queryWords)) {
+        const expanded = candidates.filter(item => matches(item, candidate.groups));
+        if (expanded.length) {
+          results = expanded; groups = candidate.groups;
+          searchMode = candidate.mode; expandedTopics = candidate.topics;
+          break;
+        }
       }
     }
-  }
-  if (q) results = withoutDuplicates(results);
+    if (q) results = withoutDuplicates(results);
+    return {results, groups, searchMode, expandedTopics};
+  };
+  const filtered = validFilter(discipline) ? eligible.filter(item => item._disciplines.includes(discipline)) : eligible;
+  const {results, groups, searchMode, expandedTopics} = resolveQuery(filtered);
   if (options.countOnly) return {total: results.length};
   const facets = Object.fromEntries(["category", "level", "language", "platform", "license"]
     .map(key => [key, facet(results, key)]));
   facets.generation = generationFacet(results, vehicle);
   facets.transcript = facet(results, "has_transcript", value => value ? "available" : "missing");
   facets.domain = facet(results, "domain_scope");
+  // This is a single-choice selector: selecting another discipline replaces it.
+  // Retain the query and every other criterion when counting its alternatives.
+  facets.discipline = disciplineFacet(validFilter(discipline) ? resolveQuery(eligible).results : results);
   facets.content_format = facet(results, "pedagogical_format");
   facets.format = [{value: "video", count: results.length}];
   for (const field of ["task", "system", "spec"]) facets[field] = automotiveFacet(results, field);
@@ -492,6 +517,7 @@ export function catalogStats(catalog) {
   const facets = Object.fromEntries(["category", "language", "platform", "level", "license"]
     .map(key => [key, facet(items, key)]));
   facets.domain = facet(items, "domain_scope");
+  facets.discipline = disciplineFacet([...items, ...catalog.guides]);
   facets.content_format = facet(items, "pedagogical_format");
   facets.format = [{value: "video", count: items.length}, {value: "guide", count: catalog.guides.length}, {value: "image", count: 0}];
   for (const field of ["task", "system", "spec"]) facets[field] = automotiveFacet(items, field);
@@ -530,6 +556,7 @@ function matchingGuides(catalog, params, interpretation) {
   if (Object.keys(interpretation.vehicle).length && !validFilter(task)) return [];
   const terms = wordsOf(interpretation.residual).filter(word => !automotiveStopwords.has(word));
   return catalog.guides.filter(guide => {
+    if (validFilter(param(params, "discipline")) && !disciplineMatches(guide, param(params, "discipline"))) return false;
     if (validFilter(task) && guide.task !== task) return false;
     for (const [key, column] of [["language", "language"], ["platform", "platform"], ["category", "category"],
       ["level", "level"], ["license", "license"], ["domain", "domain_scope"]])
@@ -561,6 +588,13 @@ export function searchResources(catalog, params = {}, options = {}) {
   const facets = Object.fromEntries(Object.entries(videos.facets).map(([key, values]) =>
     [key, ["all", "video"].includes(kind) ? [...values] : []]));
   if (["all", "guide"].includes(kind)) {
+    const counts = new Map((facets.discipline || []).map(item => [item.value, item.count]));
+    const guideFacetParams = {...Object.fromEntries(params instanceof URLSearchParams ? params : Object.entries(params)), discipline: ""};
+    const guideFacetItems = matchingGuides(catalog, guideFacetParams, interpretation);
+    for (const guide of guideFacetItems) for (const value of disciplineIds(guide))
+      counts.set(value, (counts.get(value) || 0) + 1);
+    facets.discipline = [...counts].map(([value, count]) => ({value, count}))
+      .sort((a, b) => b.count - a.count || a.value.localeCompare(b.value));
     for (const [name, column] of [["category", "category"], ["level", "level"], ["language", "language"],
       ["platform", "platform"], ["license", "license"], ["domain", "domain_scope"], ["task", "task"], ["transcript", "transcript_status"]]) {
       const counts = new Map((facets[name] || []).map(item => [item.value, item.count]));
@@ -586,9 +620,12 @@ export function guideDetail(catalog, id) {
 }
 
 const discoveryFilters = [...vehicleFilters, "task", "system", "spec", "category", "level",
-  "language", "platform", "license", "duration", "transcript", "domain", "ids", "format", "content_format"];
-const discoveryContext = params => Object.fromEntries(discoveryFilters.map(key => [key, param(params, key)])
-  .filter(([, value]) => validFilter(value)));
+  "language", "platform", "license", "duration", "transcript", "domain", "discipline", "ids", "format", "content_format"];
+function discoveryContext(params) {
+  selectedDiscipline(params);
+  return Object.fromEntries(discoveryFilters.map(key => [key, param(params, key)])
+    .filter(([, value]) => validFilter(value)));
+}
 const discoveryText = value => value && typeof value === "object"
   ? Object.values(value).map(discoveryText).join(" ") : String(value || "");
 
@@ -740,6 +777,7 @@ function topicScore(topic, query) {
 // A recovery is a proposal, never a replacement of the submitted query or filters.
 // The shared vocabulary describes search topics, not the cause of a vehicle fault.
 export function queryAssistance(catalog, params = {}, config = catalog.discovery, includeTopics = true) {
+  selectedDiscipline(params);
   const query = param(params, "q").trim();
   const result = {suggestions: [], policy: "explicit_opt_in_filters_preserved"};
   if (query.length < 3 || query.length > 300) return result;
@@ -800,6 +838,7 @@ export function queryAssistance(catalog, params = {}, config = catalog.discovery
 }
 
 export function suggestCatalog(catalog, params = {}, config = catalog.discovery) {
+  selectedDiscipline(params);
   const query = param(params, "q").trim();
   if (query.length > 300) throw new Error("Recherche limitée à 300 caractères");
   if (query && query.length < 2) return {query, suggestions: [], limit: 6};
