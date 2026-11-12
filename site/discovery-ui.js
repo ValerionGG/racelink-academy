@@ -1,4 +1,4 @@
-import {poster} from './paddock-home.js?v=themes-v47';
+import {poster} from './paddock-home.js?v=themes-v48';
 import {icon} from './icons.js?v=paddock-1';
 import {matchVehicleDossiers} from './vehicle-dossier.js?v=atlas-v41';
 import {attachRailNavigation} from './rail-navigation.js?v=studio-v30';

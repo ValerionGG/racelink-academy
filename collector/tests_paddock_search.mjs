@@ -1,7 +1,7 @@
 // Run: node --test collector/tests_paddock_search.mjs
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {prepareCatalog, searchResources} from '../site/catalog-worker.js';
+import {prepareCatalog, searchResources, estimateLevel} from '../site/catalog-worker.js';
 
 const video = (id, title, generation, extra = {}) => ({
   id: `youtube:${id}`, url: `https://youtu.be/${id}`, title, platform: 'youtube', creator: 'Atelier', language: 'fr',
@@ -38,4 +38,20 @@ test('same title from the same creator is listed once', () => {
 test('well-documented tutorials rank before bare listings', () => {
   const videos = searchResources(catalog(), {...params, format: 'video'}).items;
   assert.equal(videos.at(-1).id, 'youtube:a');
+});
+
+test('estimates a level only from a known job or an explicit title', () => {
+  const job = (title, ...tasks) => estimateLevel({title, automotive: {tasks}});
+  assert.equal(job('Clio 4', 'oil_change'), 'beginner');
+  assert.equal(job('Clio 4', 'oil_change', 'brake_pads'), 'intermediate');
+  assert.equal(job('Clio 4', 'belts'), 'intermediate');
+  assert.equal(job('Remplacement courroie de distribution', 'belts'), 'advanced');
+  assert.equal(job('Le sim racing pour débutants'), 'beginner');
+  assert.equal(job('Trajectoire au Mans'), null);
+  const [known, unknown] = prepareCatalog({items: [
+    video('a', 'Vidange', 'V', {level: 'advanced', level_status: 'editorial_estimate'}),
+    video('b', 'Vidange', 'V', {level: 'unknown', level_status: 'not_assessed'}),
+  ], guides: []}).items;
+  assert.deepEqual([known.level, known.level_status], ['advanced', 'editorial_estimate']);
+  assert.deepEqual([unknown.level, unknown.level_status], ['beginner', 'estimated_from_task']);
 });

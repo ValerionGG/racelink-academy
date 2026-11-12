@@ -52,6 +52,22 @@ const PATH_TITLES = {mechanics:['Comprendre sa voiture','Understand your car','E
 const CLOCK = '\\d{1,2}:\\d{2}(?::\\d{2})?';
 const CHAPTER = new RegExp(`(${CLOCK})\\s*[-–—:)\\]]?\\s*([^\\n]*?)(?=\\s*${CLOCK}\\s*[-–—:)\\]]?\\s|\\n|$)`, 'g');
 // Chapters published by the author in the video description. Nothing is inferred.
+const LEVELS = {
+  beginner: [1, 'Débutant', 'Beginner', 'Principiante'],
+  intermediate: [2, 'Intermédiaire', 'Intermediate', 'Intermedio'],
+  advanced: [3, 'Avancé', 'Advanced', 'Avanzado'],
+  all: [0, 'Tous niveaux', 'All levels', 'Todos los niveles'],
+};
+export function levelBadge(item, t) {
+  const bars = '<span class="pd-level" aria-hidden="true"><i></i><i></i><i></i></span>';
+  const level = String(item.level_status || '').includes('unknown') ? null : LEVELS[item.level];
+  if (!level) return `<span class="pd-card-level none" title="${t('Niveau non évalué', 'Level not assessed', 'Nivel sin evaluar')}">${bars}</span>`;
+  const [rank, ...names] = level, label = t(...names);
+  const hint = String(item.level_status || '').startsWith('estimated_from') ? t('Niveau estimé d’après l’intervention', 'Level estimated from the job', 'Nivel estimado según la intervención') : label;
+  return `<span class="pd-card-level" data-l="${rank}" title="${hint}">${bars}${label}</span>`;
+}
+// The RaceLink guides are all first-step jobs, except reading a fault diagnosis.
+export const guideBadge = (guide, t) => levelBadge({level: guide.task === 'diagnostics' ? 'intermediate' : 'beginner', level_status: 'estimated_from_task'}, t);
 export function parseChapters(description) {
   const chapters = [];
   for (const [, clock, label] of String(description || '').matchAll(CHAPTER)) {
@@ -147,8 +163,8 @@ export function createPaddockHome({$, escape, t, getUi, getContentLanguage, getJ
       bonusKick:t('En plus','Going further','Además'),bonusTitle:t('Ta voiture, en détail','Your car, in detail','Tu coche, en detalle'),bonusHint:t('Des tutos ciblés sur ton modèle, un atlas des voitures courantes et un atelier 3D.','Tutorials for your model, an atlas of common cars and a 3D workshop.','Tutoriales para tu modelo, un atlas de coches comunes y un taller 3D.'),
       carTitle:t('Des tutos pour ta voiture','Tutorials for your car','Tutoriales para tu coche'),carHint:t('Marque, modèle, génération, moteur : la bibliothèque se cale sur ta voiture.','Make, model, generation, engine: the library adapts to your car.','Marca, modelo, generación, motor: la biblioteca se adapta a tu coche.'),
       atlasHint:t('Photos, habitacles, versions et visites 360° constructeur.','Photos, interiors, versions and manufacturer 360° tours.','Fotos, interiores, versiones y visitas 360° del fabricante.'),
-      workshopHint:t('Un châssis ouvert à démonter pièce par pièce.','An open chassis to take apart piece by piece.','Un chasis abierto para desmontar pieza a pieza.'),
-      footLearn:t('Apprendre','Learn','Aprender'),footLibrary:t('Bibliothèque','Library','Biblioteca'),footCar:t('Ta voiture','Your car','Tu coche'),footAtlas:t('Atlas des voitures','Car atlas','Atlas de coches'),footWorkshop:t('Atelier 3D','3D workshop','Taller 3D'),
+      workshopTitle:t('Comprendre ta voiture','Understand your car','Entiende tu coche'),workshopHint:t('Chaque système expliqué, avec les bons tutos.','Every system explained, with the right tutorials.','Cada sistema explicado, con los tutoriales adecuados.'),
+      footLearn:t('Apprendre','Learn','Aprender'),footLibrary:t('Bibliothèque','Library','Biblioteca'),footCar:t('Ta voiture','Your car','Tu coche'),footAtlas:t('Atlas des voitures','Car atlas','Atlas de coches'),footWorkshop:t('Comprendre ta voiture','Understand your car','Entiende tu coche'),
       navTopics:t('Sujets','Topics','Temas'),goLabel:t('Chercher','Search','Buscar'),askLabel:t('Qu’est-ce que tu veux apprendre ?','What do you want to learn?','¿Qué quieres aprender?'),carOptional:t('Ma voiture · optionnel','My car · optional','Mi coche · opcional'),chipTelemetry:t('Lire la télémétrie','Read telemetry','Leer la telemetría'),chipCareer:t('Devenir mécanicien','Become a mechanic','Ser mecánico'),tabSearch:t('Chercher','Search','Buscar'),tabShorts:t('Courts','Shorts','Cortos'),tabHelp:t('Aide','Help','Ayuda'),academy:t('Masterclass Focus ↗','Focus Masterclass ↗','Masterclass Focus ↗'),
       previewKick:t('Bibliothèque','Library','Biblioteca'),previewTitle:t('Trouve le bon tuto','Find the right tutorial','Encuentra el tutorial'),previewHint:t('Les filtres restent visibles, chaque critère se retire d’un clic, et la recherche comprend les modèles de voiture.','Filters stay visible, each one clears in a click, and search understands car models.','Los filtros siguen visibles, cada criterio se quita con un clic y la búsqueda entiende los modelos de coche.'),
       ficheKick:t('La fiche tuto','The tutorial page','La ficha'),ficheTitle:t('Comprendre<br>avant de regarder','Understand before you watch','Entender antes de ver'),ficheHint:t('Chapitres, transcription, tes notes et la source, sur la même page. Tu sais ce qu’il y a dans la vidéo avant de l’ouvrir.','Chapters, transcript, your notes and the source on one page. You know what is in a video before opening it.','Capítulos, transcripción, tus notas y la fuente en la misma página. Sabes qué hay en el vídeo antes de abrirlo.'),

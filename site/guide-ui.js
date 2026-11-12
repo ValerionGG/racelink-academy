@@ -1,6 +1,8 @@
 import {guidePhoto,guideTopic} from './guide-art.js?v=studio-v30';
 import {createGuideSources,isManufacturerReference} from './guide-sources.js?v=studio-v30';
 
+import {guideBadge} from './paddock-home.js?v=themes-v48';
+
 export function createGuideUI({escape:e,t,picks,safeUrl}) {
   let version=0;
   const $=s=>document.querySelector(s),sourcesUI=createGuideSources({escape:e,safeUrl});
@@ -24,7 +26,7 @@ export function createGuideUI({escape:e,t,picks,safeUrl}) {
     const topic=guideTopic(resource,{t}),photo=guidePhoto(resource),src=photoSource(photo?.src),g=resource.guide||resource;
     const id=resource.id||g.id,title=resource.title||g.title||'',references=official(g.sources||resource.sources);
     return `<article class="video-card guide-card guide-card-v30">
-      <h3 class="guide-card-target"><button class="guide-open" data-guide="${e(id)}" data-guide-topic="${e(topic.key)}"><span class="guide-cover">${src?`<img class="guide-photo" src="${e(src)}" alt="" width="640" height="360" loading="lazy" decoding="async" style="object-position:${e(photoPosition(photo.position))}">`:`<span class="guide-photo-unavailable">${t('Illustration indisponible','Image unavailable','Imagen no disponible')}</span>`}</span><span class="guide-card-title" lang="fr">${e(title)}</span></button></h3>
+      <h3 class="guide-card-target"><button class="guide-open" data-guide="${e(id)}" data-guide-topic="${e(topic.key)}"><span class="guide-cover">${src?`<img class="guide-photo" src="${e(src)}" alt="" width="640" height="360" loading="lazy" decoding="async" style="object-position:${e(photoPosition(photo.position))}">`:`<span class="guide-photo-unavailable">${t('Illustration indisponible','Image unavailable','Imagen no disponible')}</span>`}${guideBadge({task:g.task||resource.task},t)}</span><span class="guide-card-title" lang="fr">${e(title)}</span></button></h3>
       <div class="guide-card-body">
         <div class="guide-card-labels"><p class="guide-card-kind">${t('Guide pratique','Practical guide','Guía práctica')}<span aria-hidden="true"> / </span><span>${e(topic.label)}</span></p><span class="guide-language" aria-label="${t('Contenu en français','Content in French','Contenido en francés')}">FR</span></div>
         ${references.length?`<button class="guide-reference-count" data-guide="${e(id)}" data-guide-section="sources">${references.length} ${referenceLabel(references.length)} <span aria-hidden="true">↗</span></button>`:''}

@@ -27,7 +27,7 @@ Puis ouvrir <http://localhost:8420/racelink-academy/>.
 | Feuille de style finale | `site/app-ui.css` est générée : `python3 scripts/build_ui.py` après toute modification de CSS |
 | Application | `site/app.js`, `site/paddock-home.js` (sections de l'accueil), `site/resource-card.js`, `site/resource-detail.js`, `site/guide-ui.js` |
 | Recherche et classement | `site/catalog-worker.js`, tests : `node --test collector/tests_paddock_search.mjs` |
-| Pages autonomes | `site/vehicules.html`, `site/clio-5-2025.html`, `site/3d.html`, `site/formats-courts.html`, habillées par `site/paddock-annex.css` et `site/paddock-chrome.js` |
+| Pages autonomes | `site/vehicules.html`, `site/clio-5-2025.html`, `site/comprendre.html`, `site/formats-courts.html`, habillées par `site/paddock-annex.css` et `site/paddock-chrome.js` |
 | Données publiées | `site/catalog/catalog.json` et sa version `.gz`, `site/social-index.json` |
 | Collecte et ingestion | `collector/`, dernier lot : `collector/collection/tutos-v43/` |
 
@@ -82,7 +82,7 @@ Sous Git Bash (Windows), préfixer la commande d'export par `MSYS2_ARG_CONV_EXCL
 
 Photos de la phase 2, visite Renault extérieur/intérieur, projections locales, équipements et 14 combinaisons de finition et de moteur au tarif français du 1er juillet 2025.
 
-[TikTok et Instagram par voiture et par sujet](https://valeriongg.github.io/racelink-academy/formats-courts.html) · [Atelier 3D WikiSpeed SGT01](https://valeriongg.github.io/racelink-academy/3d.html) · [Bibliothèque](https://valeriongg.github.io/racelink-academy/)
+[TikTok et Instagram par voiture et par sujet](https://valeriongg.github.io/racelink-academy/formats-courts.html) · [Comprendre ta voiture](https://valeriongg.github.io/racelink-academy/comprendre.html) · [Bibliothèque](https://valeriongg.github.io/racelink-academy/)
 
 [Bilan, sources et contrôles de cette livraison](https://github.com/ValerionGG/racelink-academy/blob/main/research/social3d-v38/README.md) · [Collecte des comptes autorisés](https://github.com/ValerionGG/racelink-academy/blob/main/collector/scripts/CREATOR-API-PAGES.md) · [Skill CAO automobile](https://github.com/ValerionGG/racelink-academy/blob/main/skills/racelink-vehicle-atlas/SKILL.md)
 

@@ -1,5 +1,5 @@
 import {DISCIPLINES} from './disciplines.js?v=themes-v47';
-import {createCinemaHome} from './cinema-home.js?v=paddock-3';
+import {createCinemaHome} from './cinema-home.js?v=themes-v48';
 import {icon as glyph, categoryIcon} from './icons.js?v=paddock-1';
 import {createIdentityUI} from './identity-ui.js?v=paddock-1';
 import {tracks} from './tracks.js';
@@ -10,11 +10,11 @@ import {createRaceLinkPicks} from './racelink-picks.js';
 import {createMobileUI} from './mobile-ui.js?v=search-v34';
 import {createFilterStudio} from './filter-studio.js?v=search-v34&rev=themes-v47';
 import {usableSearchAssistance,searchSuggestionPatch,searchAssistanceMarkup} from './search-assistance-ui.js?v=search-v34';
-import {createGuideUI} from './guide-ui.js?v=paddock-1';
+import {createGuideUI} from './guide-ui.js?v=themes-v48';
 import {socialContentMarkup} from './social-content.js';
-import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=paddock-6';
-import {resourceCard} from './resource-card.js?v=paddock-5';
-import {createPaddockHome,poster} from './paddock-home.js?v=themes-v47';
+import {renderResourceDetail,renderResourceOverview} from './resource-detail.js?v=themes-v48';
+import {resourceCard} from './resource-card.js?v=themes-v48';
+import {createPaddockHome,poster} from './paddock-home.js?v=themes-v48';
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => [...root.querySelectorAll(s)];
 const escape = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -104,7 +104,7 @@ const discoveryUI=createDiscoveryUI({
 const cinemaHome=createCinemaHome({root:$('#cinema-home'),escape,t,getUi:()=>ui,getState:()=>state,langName,picks:raceLinkPicks,getJson:url=>window.getCatalogJson(url)});
 const paddockHome=createPaddockHome({$,escape,t,getUi:()=>ui,getContentLanguage:()=>state.language,getJson:url=>window.getCatalogJson(url),cardMarkup,setImageFallback,catName,fmtDuration,storage});
 function translateCinema(){
-  const atelierCopy={shorts:t('Les tutos des créateurs','Tutorials from creators','Tutoriales de creadores'),refine:t('Commencez par une plateforme, puis précisez votre voiture ou le sujet.','Choose a platform, then narrow by car or topic.','Elige una plataforma y filtra por coche o tema.'),cutaway:t('Atelier 3D','3D workshop','Taller 3D'),inspect:t('Explorer les pièces','Explore the parts','Explorar las piezas')};
+  const atelierCopy={shorts:t('Les tutos des créateurs','Tutorials from creators','Tutoriales de creadores'),refine:t('Commencez par une plateforme, puis précisez votre voiture ou le sujet.','Choose a platform, then narrow by car or topic.','Elige una plataforma y filtra por coche o tema.'),cutaway:t('Comprendre','Understand','Entender')};
   atelierCopy.allSocial=t('Explorer les deux','Browse both','Explorar ambas');
   atelierCopy.clio=t('Photos, habitacles & versions','Photos, interiors & versions · FR','Fotos, interiores y versiones · FR');
   $$('[data-atelier-copy]').forEach(el=>{el.textContent=atelierCopy[el.dataset.atelierCopy];});

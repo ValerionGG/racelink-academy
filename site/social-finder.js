@@ -1,5 +1,5 @@
 import {DISCIPLINES,disciplineIds} from './disciplines.js?v=themes-v47';
-import {poster} from './paddock-home.js?v=themes-v47';
+import {poster} from './paddock-home.js?v=themes-v48';
 const norm=x=>String(x||'').normalize('NFD').replace(/\p{M}/gu,'').toLowerCase().replace(/[^\p{L}\p{N}]+/gu,' ').trim();
 const $=q=>document.querySelector(q);
 const form=$('#finder'),params=new URLSearchParams(location.search);

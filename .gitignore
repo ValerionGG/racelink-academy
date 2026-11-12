@@ -9,3 +9,4 @@ __pycache__/
 **/private-raw/
 /_site/
 site/catalog/home-snapshot.json
+site/catalog/anatomy-counts.json

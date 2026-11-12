@@ -9,7 +9,7 @@ const items = [
   [link('./', 'browse=1&language=fr'), t('Bibliothèque', 'Library', 'Biblioteca'), ''],
   [link('./', 'view=paths'), t('Parcours', 'Paths', 'Itinerarios'), ''],
   [link('./formats-courts.html'), t('Formats courts', 'Short videos', 'Vídeos cortos'), 'social'],
-  [link('./vehicules.html'), t('Voitures', 'Cars', 'Coches'), 'atlas,clio,3d'],
+  [link('./vehicules.html'), t('Voitures', 'Cars', 'Coches'), 'atlas,clio,comprendre'],
   [link('./', 'view=faq'), t('Aide & FAQ', 'Help & FAQ', 'Ayuda y FAQ'), ''],
 ];
 const current = sections => sections.split(',').includes(page) ? ' aria-current="page"' : '';

@@ -45,3 +45,9 @@ const {catalog_sha256} = read('catalog/config.json');
 const output = JSON.stringify({catalog_sha256, responses});
 fs.writeFileSync(new URL('catalog/home-snapshot.json', root), output);
 console.log(`home-snapshot.json: ${Object.keys(responses).length} responses, ${Math.round(output.length / 1024)} KB`);
+
+// Tutorial counts per car system and job, for the Comprendre page: [all languages, French].
+const taxonomy = read('automotive-taxonomy.json');
+const tally = (key, value) => ['', 'fr'].map(language => worker.searchResources(catalog, new URLSearchParams({[key]: value, language, format: 'video', per_page: '1'})).total_videos);
+const entries = (key, list) => Object.fromEntries(list.map(({id}) => [id, tally(key, id)]));
+fs.writeFileSync(new URL('catalog/anatomy-counts.json', root), JSON.stringify({systems: entries('system', taxonomy.systems), tasks: entries('task', taxonomy.tasks)}));

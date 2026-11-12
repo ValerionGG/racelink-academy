@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr" data-annex="comprendre">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070708">
+  <meta name="description" content="Les systèmes d’une voiture expliqués simplement, reliés aux tutoriels de la bibliothèque RaceLink Academy.">
+  <title>Comprendre ta voiture · RaceLink Academy</title>
+  <script src="./theme.js?v=paddock-1"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..900&amp;family=Geist+Mono:wght@400;500;600&amp;family=Onest:wght@400;500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="./paddock-annex.css?v=4">
+  <script type="module" src="./paddock-chrome.js?v=2"></script>
+  <script type="module" src="./comprendre.js?v=1"></script>
+</head>
+<body>
+  <main id="main" class="ca">
+    <header class="ca-head">
+      <p class="ca-kick" data-t="kick">Comprendre</p>
+      <h1 data-t="title">Ta voiture, système par système.</h1>
+      <p class="ca-lead" data-t="lead">Touche une partie du schéma pour savoir à quoi elle sert, puis ouvre les tutos qui en parlent.</p>
+    </header>
+    <div class="ca-grid">
+      <div id="car" class="ca-car"></div>
+      <aside id="panel" class="ca-panel" aria-live="polite"></aside>
+    </div>
+    <div id="systems" class="ca-systems" role="group" aria-label="Systèmes de la voiture"></div>
+    <p class="ca-note" data-t="note">Schéma simplifié d’une voiture à moteur thermique avant. L’emplacement réel des pièces varie selon le modèle : vérifie toujours la notice de ton véhicule.</p>
+  </main>
+</body>
+</html>

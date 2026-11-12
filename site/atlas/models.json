@@ -295,30 +295,6 @@
         "format": "360 interactive constructeur",
         "redistribution": "Aucun modèle ni image constructeur téléchargé pour redistribution. Page officielle distante intacte dans iframe.",
         "licenseUrl": ""
-      },
-      {
-        "id": "8fbb3a6f3dcc409585cb6d7153b473fb",
-        "kind": "artist",
-        "label": "2024 Renault Clio · maquette communautaire",
-        "embedUrl": "https://sketchfab.com/models/8fbb3a6f3dcc409585cb6d7153b473fb/embed?autostart=1",
-        "url": "https://sketchfab.com/3d-models/2024-renault-clio-8fbb3a6f3dcc409585cb6d7153b473fb",
-        "author": "tonielpro520",
-        "authorUrl": "https://sketchfab.com/tonielpro520",
-        "license": "CC Attribution",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-        "modelScope": "2024 Renault Clio selon le créateur. Géométrie extérieure inspectée; finition et équipements exacts non certifiés.",
-        "note": "Maquette communautaire, pas un modèle constructeur. Rendu blanc sans textures de carrosserie. Habitacle, moteur et démontage non vérifiés.",
-        "verified": {
-          "exterior": true,
-          "interior": false,
-          "render": true,
-          "controls": true
-        },
-        "checkedAt": "2026-11-06T11:05:07.054Z",
-        "recommended": false,
-        "format": "Maquette 3D communautaire",
-        "metadataSource": "https://api.sketchfab.com/v3/models/8fbb3a6f3dcc409585cb6d7153b473fb",
-        "market": ""
       }
     ],
     "immersive_unavailable_reason": ""
@@ -1047,32 +1023,7 @@
         "height": 1070
       }
     ],
-    "immersive": [
-      {
-        "id": "8cc7990f48ea4dd58122d748ebc601c3",
-        "kind": "artist",
-        "label": "2025 Citroën ë-C3 · maquette communautaire",
-        "embedUrl": "https://sketchfab.com/models/8cc7990f48ea4dd58122d748ebc601c3/embed?autostart=1",
-        "url": "https://sketchfab.com/3d-models/2025-citroen-e-c3-8cc7990f48ea4dd58122d748ebc601c3",
-        "author": "tonielpro520",
-        "authorUrl": "https://sketchfab.com/tonielpro520",
-        "license": "CC Attribution",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-        "modelScope": "2025 Citroën ë-C3 selon le créateur. Géométrie extérieure inspectée; finition et équipements exacts non certifiés.",
-        "note": "Maquette communautaire, pas un modèle constructeur. Matériaux simplifiés. Habitacle, moteur et démontage non vérifiés.",
-        "verified": {
-          "exterior": true,
-          "interior": false,
-          "render": true,
-          "controls": true
-        },
-        "checkedAt": "2026-11-06T11:05:45.244Z",
-        "recommended": false,
-        "format": "Maquette 3D communautaire",
-        "metadataSource": "https://api.sketchfab.com/v3/models/8cc7990f48ea4dd58122d748ebc601c3",
-        "market": ""
-      }
-    ],
+    "immersive": [],
     "immersive_unavailable_reason": "Le site officiel refuse son intégration dans une iframe (X-Frame-Options SAMEORIGIN). Ouvrir le lien officiel dans un autre onglet."
   },
   {
@@ -1256,30 +1207,6 @@
         "format": "360 interactive constructeur",
         "redistribution": "Aucun modèle ni image constructeur téléchargé pour redistribution. Page officielle distante intacte dans iframe.",
         "licenseUrl": ""
-      },
-      {
-        "id": "3fe3f58932cf46bd8cfb4437187b287f",
-        "kind": "artist",
-        "label": "2025 Renault Captur · maquette communautaire",
-        "embedUrl": "https://sketchfab.com/models/3fe3f58932cf46bd8cfb4437187b287f/embed?autostart=1",
-        "url": "https://sketchfab.com/3d-models/2025-renault-captur-3fe3f58932cf46bd8cfb4437187b287f",
-        "author": "tonielpro520",
-        "authorUrl": "https://sketchfab.com/tonielpro520",
-        "license": "CC Attribution",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
-        "modelScope": "2025 Renault Captur selon le créateur. Géométrie extérieure inspectée; finition et équipements exacts non certifiés.",
-        "note": "Maquette communautaire, pas un modèle constructeur. Matériaux simplifiés. Habitacle, moteur et démontage non vérifiés.",
-        "verified": {
-          "exterior": true,
-          "interior": false,
-          "render": true,
-          "controls": true
-        },
-        "checkedAt": "2026-11-06T11:05:26.157Z",
-        "recommended": false,
-        "format": "Maquette 3D communautaire",
-        "metadataSource": "https://api.sketchfab.com/v3/models/3fe3f58932cf46bd8cfb4437187b287f",
-        "market": ""
       }
     ],
     "immersive_unavailable_reason": ""

@@ -8,7 +8,6 @@ const pressed=(el,v)=>el.setAttribute('aria-pressed',String(v));
 const params=new URLSearchParams(location.search);
 function store(k,v){const u=new URL(location.href);if(v)u.searchParams.set(k,v);else u.searchParams.delete(k);history.replaceState(null,'',u)}
 const req=async url=>{const r=await fetch(new URL(url,base));if(!r.ok)throw Error('Données indisponibles');return r.json()};
-const presetNames={'three-quarter':'Trois-quarts',front:'Avant',rear:'Arrière',left:'Profil gauche',right:'Profil droit',top:'Dessus',cabin:'Habitacle ouvert',cockpit:'Place conducteur'};
 const pinMap={
  'clio-hero.webp':[[80,62,'Signature avant','La face avant et ses feux ont changé lors du restylage.',4],[51,76,'Roue avant','Retrouvez les jantes illustrées pour chaque finition.',24]],
  'clio-rear.webp':[[23,60,'Hayon','Renault donne aussi la hauteur du véhicule hayon ouvert.',18]],
@@ -29,22 +28,6 @@ async function gallery(){
  photos.forEach((p,i)=>{const b=make('button'),img=make('img');img.alt='';img.loading='lazy';img.src=new URL(p.src,photoBase);b.title=p.title;b.setAttribute('aria-label',p.title);b.append(img,make('span',short[i]||p.title));b.onclick=()=>{open(i);store('photo',id(p))};film.append(b)});
  open(Math.max(0,photos.findIndex(p=>id(p)===params.get('photo'))));$('#closebox').onclick=()=>box.close();box.onclick=e=>{if(e.target===box)box.close()};
 }
-let api=null,task=null,chosen=presetNames[params.get('vue')]?params.get('vue'):'three-quarter',visualMode='';
-function theme(){return document.documentElement.dataset.theme==='dark'?'dark':'light'}
-function updated(state){visualMode=state.mode;$('#view-state').textContent=(state.mode==='webgl'?'3D interactive':'Projection illustrée')+' · '+(presetNames[state.view]||'');$('#tools').hidden=state.mode!=='webgl';for(const b of $('#angles').children)pressed(b,b.value===state.view)}
-async function start(view=chosen){chosen=view;store('vue',view);
- if(api){api.setView(view);return}
- if(task)return;
- $('#activate').disabled=true;$('#view-state').textContent='Ouverture de la vue…';
- const stage=$('#viewport'),host=make('div');host.className='scene-host';stage.append(host);
- try{task=import('./model/viewer.js').then(m=>m.mountClioViewer(host,{view:chosen,theme:theme(),onChange:updated}));api=await task;$('#activate').hidden=true;api.setView(chosen);if(!visualMode)updated({mode:'webgl',view:chosen})}
- catch{host.remove();$('#activate').disabled=false;$('#view-state').textContent='La maquette ne peut pas être ouverte ici. Les photographies et les plans Renault restent disponibles.';task=null}
-}
-for(const [key,label] of Object.entries(presetNames)){const b=make('button',label);b.value=key;pressed(b,key===chosen);b.onclick=()=>start(key);$('#angles').append(b)}
-$('#activate').onclick=()=>start();$('#orbit-l').onclick=()=>api?.orbit(-15);$('#orbit-r').onclick=()=>api?.orbit(15);$('#near').onclick=()=>api?.zoom(1.17);$('#far').onclick=()=>api?.zoom(1/1.17);$('#reset').onclick=()=>{api?.reset();chosen='three-quarter';api?.setView(chosen);store('vue',chosen)};
-document.addEventListener('rl:theme-change',()=>api?.setTheme(theme()));
-// Legacy geometry is an explicit opt-in archive, never the default showroom.
-$('#open-external').onclick=()=>{const host=$('#external-slot');if(host.firstChild){host.replaceChildren();$('#open-external').textContent='Charger le lecteur Sketchfab';return}const f=make('iframe');f.title='Renault Clio restylée 2024, maquette de tonielpro520';f.allowFullscreen=true;f.src='https://sketchfab.com/models/8fbb3a6f3dcc409585cb6d7153b473fb/embed';host.append(f);$('#open-external').textContent='Fermer le lecteur externe'};
 async function versions(){const d=await req('renault.json'), rail=$('#trims'),select=$('#engine');brochure=d.sources.brochure;
  renderOfficialSystems($('#systemes'),d);
  const engines=new Map(d.engines.map(e=>[e.id,e])), trims=new Map(d.trims.map(t=>[t.id,t]));let selected;

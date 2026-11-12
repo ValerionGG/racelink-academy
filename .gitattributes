@@ -30,4 +30,3 @@
 /collector/scripts/MONOCRAWL-COLLECTOR.md -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 
 # Prebuilt Three.js code retains literal upstream shader whitespace.
-/site/atelier-3d/engine.mjs -text whitespace=-trailing-space

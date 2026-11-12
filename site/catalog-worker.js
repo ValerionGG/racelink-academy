@@ -74,6 +74,26 @@ function languageConfidence(language, status = "unknown") {
   return /^(inferred|estimated)/.test(status) ? "estimated" : "unknown";
 }
 
+// Editorial difficulty of a job, used only when the source states no level. Shown as an estimate.
+const taskLevels = {
+  beginner: ["oil_spec", "fuel_choice", "wipers", "lighting", "battery", "tires", "wheel_change", "key_battery", "fuses", "vehicle_menus", "equipment_controls", "service_reset", "wheel_cleaning", "child_seat_harness", "vehicle-identification", "air_filter", "cabin_filter", "oil_change", "oil_filter"],
+  intermediate: ["brake_pads", "brake_discs", "brake_drums", "brake_fluid", "brake_caliper", "shock_absorbers", "suspension_springs", "stabilizer_links", "suspension_arms", "spark_plugs", "glow_plugs", "fuel_filter", "diagnostics", "sensors", "cooling", "body_hardware", "belts"],
+  advanced: ["wheel_bearing", "steering", "transmission", "engine_mounts", "turbo_replacement"],
+};
+const hardJobs = /\b(courroie de distribution|chaine de distribution|timing (belt|chain)|correa de distribucion|joint de culasse|head gasket|junta de culata|embrayage|clutch|embrague|boite de vitesses?|gearbox|caja de cambios|injecteurs?|injectors?|rebuild|reprogrammation|remap)\b/;
+export function estimateLevel(item) {
+  const title = normalize(item.title);
+  if (/\b(debutants?|beginners?|principiantes?|pour les nuls)\b/.test(title)) return "beginner";
+  if (/\b(avance|advanced|avanzado)\b/.test(title) || hardJobs.test(title)) return "advanced";
+  const tasks = [...(item.automotive?.tasks || []), item.task, item.id];
+  return ["advanced", "intermediate", "beginner"].find(level => tasks.some(task => taskLevels[level].includes(task))) || null;
+}
+function withEstimatedLevel(item) {
+  if (item.level && item.level !== "unknown") return item;
+  const level = estimateLevel(item);
+  return level ? {...item, level, level_status: "estimated_from_task"} : item;
+}
+
 export function prepareCatalog(payload) {
   const unique = new Map();
   for (const raw of payload.items || []) {
@@ -100,6 +120,7 @@ export function prepareCatalog(payload) {
       item._tagTokens = wordsOf((item.tags || []).join(" "));
       item._search = searchWords.join(" ");
       item.automotive = item.automotive || emptyAutomotive();
+      Object.assign(item, withEstimatedLevel(item));
       item._vehicles = item.automotive.vehicles.map(vehicle => ({...vehicle,
         _keys: Object.fromEntries(vehicleFields.map(field => [field, normalize(vehicle[field])]))}));
       item._specs = item.automotive.specifications.map(spec => specKey(spec.value));
@@ -116,7 +137,7 @@ export function prepareCatalog(payload) {
     for (const spec of item.automotive.specifications) specifications.add(spec.value);
   }
   return {items, byId: unique, stats: payload.stats || {},
-    applications: [...applications.values()], specifications: [...specifications], guides: payload.guides || [],
+    applications: [...applications.values()], specifications: [...specifications], guides: (payload.guides || []).map(withEstimatedLevel),
     discovery: payload.discovery || {version: 1, intents: [], topics: [], shelves: []}, _discoveryCounts: new Map()};
 }
 

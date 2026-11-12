@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="50 90 880 330" role="img" aria-label="Schéma en coupe d’une voiture et de ses systèmes">
+  <style>
+    .ca-o{fill:none;stroke:#8e9099;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .ca-f{fill:none;stroke:#5f6169;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+    .ca-p{fill:#8e909926;stroke:#c3c5cc;stroke-width:2;stroke-linejoin:round}
+    .ca-l{fill:none;stroke:#c3c5cc;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    .ca-m circle{fill:#e8141f}
+    .ca-m text{fill:#fff;font:700 13px system-ui,sans-serif;text-anchor:middle;dominant-baseline:central}
+  </style>
+
+  <g>
+    <path class="ca-f" d="M60 402H920"/>
+    <path class="ca-f" d="M430 318q-5-26 14-26h66v26ZM512 318 503 232q-2-16 12-16 13 0 15 14l12 88ZM612 318q-5-26 14-26h60v26ZM688 318l-9-86q-2-16 12-16 13 0 15 14l12 88Z"/>
+    <path class="ca-f" d="M330 350H560M716 350H860q10 0 12-6"/>
+    <rect class="ca-f" x="716" y="340" width="60" height="16" rx="6"/>
+  </g>
+
+  <g data-system="body">
+    <path class="ca-o" stroke-width="3" d="M84 350C72 332 72 306 86 292L114 270C180 240 260 222 330 212C378 172 424 136 474 124C544 110 650 110 728 120C786 130 838 176 868 226C884 248 902 268 902 300C902 332 894 352 872 356H853A80 80 0 1 0 697 356H293A80 80 0 1 0 137 356H96C90 356 87 354 84 350Z"/>
+    <path class="ca-o" d="M358 214C398 178 440 148 480 138C522 130 556 128 574 128V214ZM590 128C640 128 694 130 722 134C760 144 790 174 812 212L590 214ZM582 128V356M346 216C351 262 352 310 352 356M812 212C816 250 808 310 800 330"/>
+    <path class="ca-o" d="M540 238h26M750 238h26M346 214l-16-6q-6 8 2 14l18 2"/>
+  </g>
+
+  <g data-system="cooling"><rect class="ca-p" x="118" y="272" width="16" height="60" rx="3"/><path class="ca-f" d="M118 286h16M118 300h16M118 314h16"/></g>
+  <g data-system="electrical"><rect class="ca-p" x="146" y="262" width="38" height="26" rx="3"/><path class="ca-l" d="M154 262v-4M176 262v-4"/></g>
+  <g data-system="intake"><rect class="ca-p" x="240" y="236" width="58" height="18" rx="6"/><path class="ca-l" d="M286 254v8"/></g>
+  <g data-system="engine"><path class="ca-p" d="M240 272h82v50h-82ZM246 262h70v10h-70Z"/><path class="ca-f" d="M254 282v32M274 282v32M294 282v32"/></g>
+  <g data-system="ignition"><path class="ca-l" d="M258 256v6M272 256v6"/></g>
+  <g data-system="lubrication"><path class="ca-p" d="M250 322h62l-6 18q-2 6-8 6h-34q-6 0-8-6Z"/></g>
+  <g data-system="transmission"><path class="ca-p" d="M322 284h40v44l-40 12Z"/><path class="ca-l" d="M322 332 215 338"/></g>
+  <g data-system="electronics"><rect class="ca-p" x="356" y="224" width="46" height="22" rx="3"/><path class="ca-f" d="M402 246q18 22 12 72"/></g>
+  <g data-system="steering"><path class="ca-l" d="M396 180 420 226M408 203 348 262 276 348"/></g>
+  <g data-system="visibility"><path class="ca-p" d="M94 288 116 272l30-10q2 8-6 14l-24 16q-14 4-20-4Z"/><path class="ca-l" d="M340 212 388 178"/><path class="ca-p" d="M874 234q13 16 20 36l-16 2q-8-20-14-34Z"/></g>
+  <g data-system="fuel"><rect class="ca-p" x="590" y="322" width="112" height="28" rx="8"/><path class="ca-l" d="M702 328 748 284 850 250"/></g>
+
+  <g data-system="wheels_tires">
+    <circle class="ca-p" cx="215" cy="338" r="62" fill-rule="evenodd"/>
+    <circle class="ca-p" cx="775" cy="338" r="62" fill-rule="evenodd"/>
+    <circle class="ca-f" cx="215" cy="338" r="44"/>
+    <circle class="ca-f" cx="775" cy="338" r="44"/>
+  </g>
+  <g data-system="braking">
+    <circle class="ca-p" cx="215" cy="338" r="28"/>
+    <circle class="ca-p" cx="775" cy="338" r="28"/>
+    <path class="ca-l" d="M240 322a30 30 0 0 1 4 30M800 322a30 30 0 0 1 4 30"/>
+  </g>
+  <g data-system="suspension">
+    <path class="ca-l" d="M205 318V306l-12-5 24-8-24-8 24-8-24-8 24-8-12-5V244"/>
+    <path class="ca-l" d="M775 318V306l-12-5 24-8-24-8 24-8-24-8 24-8-12-5V244"/>
+  </g>
+
+  <g class="ca-m" data-system="engine"><circle cx="281" cy="298" r="13"/><text x="281" y="298">1</text></g>
+  <g class="ca-m" data-system="lubrication"><circle cx="281" cy="336" r="13"/><text x="281" y="336">2</text></g>
+  <g class="ca-m" data-system="cooling"><circle cx="126" cy="303" r="13"/><text x="126" y="303">3</text></g>
+  <g class="ca-m" data-system="intake"><circle cx="268" cy="245" r="13"/><text x="268" y="245">4</text></g>
+  <g class="ca-m" data-system="ignition"><circle cx="324" cy="250" r="13"/><text x="324" y="250">5</text></g>
+  <g class="ca-m" data-system="fuel"><circle cx="646" cy="336" r="13"/><text x="646" y="336">6</text></g>
+  <g class="ca-m" data-system="transmission"><circle cx="344" cy="310" r="13"/><text x="344" y="310">7</text></g>
+  <g class="ca-m" data-system="electrical"><circle cx="165" cy="275" r="13"/><text x="165" y="275">8</text></g>
+  <g class="ca-m" data-system="electronics"><circle cx="379" cy="235" r="13"/><text x="379" y="235">9</text></g>
+  <g class="ca-m" data-system="visibility"><circle cx="104" cy="280" r="13"/><text x="104" y="280">10</text></g>
+  <g class="ca-m" data-system="steering"><circle cx="424" cy="178" r="13"/><text x="424" y="178">11</text></g>
+  <g class="ca-m" data-system="braking"><circle cx="215" cy="338" r="13"/><text x="215" y="338">12</text></g>
+  <g class="ca-m" data-system="suspension"><circle cx="775" cy="262" r="13"/><text x="775" y="262">13</text></g>
+  <g class="ca-m" data-system="wheels_tires"><circle cx="722" cy="372" r="13"/><text x="722" y="372">14</text></g>
+  <g class="ca-m" data-system="body"><circle cx="600" cy="114" r="13"/><text x="600" y="114">15</text></g>
+</svg>

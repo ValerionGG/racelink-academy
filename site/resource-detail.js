@@ -25,7 +25,7 @@ function context(helpers) {
 
 /** Media first; existing IDs, one tab panel and delegated actions remain intact. */
 import {sourceLabel} from './source-label.js?v=discovery-v34';
-import {poster,parseChapters} from './paddock-home.js?v=6';
+import {poster,parseChapters} from './paddock-home.js?v=themes-v48';
 export function renderResourceDetail(resource, helpers) {
   const c = context(helpers), {e,t} = c;
   const source = c.safeUrl(resource.url), image = c.safeUrl(resource.thumbnail_url || resource.thumbnailUrl, true);
@@ -33,11 +33,11 @@ export function renderResourceDetail(resource, helpers) {
   const platform = sourceLabel(resource,c.platformName) || t('la source','the source','la fuente');
   const author = text(resource.creator).trim() || t('Auteur non renseigné','Creator not provided','Autor no indicado');
   const sourceLink = (label,className='') => source ? `<a class="${className}" href="${e(source)}" target="_blank" rel="noopener noreferrer">${e(label)} <span aria-hidden="true">↗</span></a>` : '';
-  const levelKnown = resource.level && !['all','unknown'].includes(resource.level) && !String(resource.level_status).includes('unknown');
-  const facts = [Number(resource.duration_seconds)>0 ? c.fmtDuration(resource.duration_seconds) : '', c.langName(resource.language)+(c.estimatedLanguage(resource)?t(' · estimée',' · estimated',' · estimado'):''), levelKnown ? c.levelName(resource.level) : ''].filter(Boolean);
+  const levelKnown = resource.level && !['all','unknown'].includes(resource.level) && !String(resource.level_status).includes('unknown'); const levelText = levelKnown ? c.levelName(resource.level)+(String(resource.level_status).startsWith('estimated_from')?t(' · estimé',' · estimated',' · estimado'):'') : '';
+  const facts = [Number(resource.duration_seconds)>0 ? c.fmtDuration(resource.duration_seconds) : '', c.langName(resource.language)+(c.estimatedLanguage(resource)?t(' · estimée',' · estimated',' · estimado'):''), levelText].filter(Boolean);
   const car = resource.automotive?.vehicles?.find(vehicle => vehicle?.model);
   const art = poster({id:resource.id,t:text(resource.title),s:resource.automotive?.tasks||[],c:resource.category});
-  const specs = [[t('Durée','Duration','Duración'),Number(resource.duration_seconds)>0?c.fmtDuration(resource.duration_seconds):''],[t('Niveau','Level','Nivel'),levelKnown?c.levelName(resource.level):''],[t('Sujet','Topic','Tema'),c.catName(resource.category)],[t('Voiture','Car','Coche'),car?[car.model,car.generation].filter(Boolean).join(' '):''],[t('Langue','Language','Idioma'),c.langName(resource.language)]].filter(([,value])=>value).slice(0,4);
+  const specs = [[t('Durée','Duration','Duración'),Number(resource.duration_seconds)>0?c.fmtDuration(resource.duration_seconds):''],[t('Niveau','Level','Nivel'),levelText],[t('Sujet','Topic','Tema'),c.catName(resource.category)],[t('Voiture','Car','Coche'),car?[car.model,car.generation].filter(Boolean).join(' '):''],[t('Langue','Language','Idioma'),c.langName(resource.language)]].filter(([,value])=>value).slice(0,4);
   if (car) facts.unshift([car.make,car.model,car.generation].filter(Boolean).join(' '));
   const tabs = [['about',t('Détails','Details','Detalles')],['transcript',t('Transcription','Transcript','Transcripción')],['notes',t('Mes notes','My notes','Mis notas')]];
   return `<article class="resource-workspace" data-resource-kind="video">
