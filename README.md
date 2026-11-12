@@ -65,6 +65,7 @@ Sous Git Bash (Windows), préfixer la commande d'export par `MSYS2_ARG_CONV_EXCL
 - [`DESIGN.md`](DESIGN.md) : système de design, jetons et règles
 - [`PRODUCT.md`](PRODUCT.md) : produit et parcours
 - [`docs/design/`](docs/design/) : maquette, audit et captures d'écran
+- [`docs/evolutions/`](docs/evolutions/README.md) : prochains chantiers, sources à intégrer et specs prêtes à développer
 
 ### À savoir
 
